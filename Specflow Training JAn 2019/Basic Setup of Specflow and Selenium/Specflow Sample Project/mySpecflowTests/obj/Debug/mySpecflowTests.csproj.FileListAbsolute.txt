@@ -1,0 +1,49 @@
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\mySpecflowTests.dll.config
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\mySpecflowTests.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\mySpecflowTests.pdb
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\nunit.framework.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\System.ValueTuple.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\WebDriver.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\WebDriver.Support.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\nunit.framework.xml
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\WebDriver.xml
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\bin\Debug\WebDriver.Support.xml
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\obj\Debug\mySpecflowTests.csproj.CoreCompileInputs.cache
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\obj\Debug\mySpecflowTests.csproj.CopyComplete
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\obj\Debug\mySpecflowTests.dll
+C:\Users\arpad_polan\Desktop\mySpecflowTests\mySpecflowTests\obj\Debug\mySpecflowTests.pdb
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\mySpecflowTests.dll.config
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\mySpecflowTests.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\mySpecflowTests.pdb
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\nunit.framework.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\System.ValueTuple.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\WebDriver.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\WebDriver.Support.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\nunit.framework.xml
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\WebDriver.xml
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\bin\Debug\WebDriver.Support.xml
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\obj\Debug\mySpecflowTests.csprojResolveAssemblyReference.cache
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\obj\Debug\mySpecflowTests.csproj.CoreCompileInputs.cache
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\obj\Debug\mySpecflowTests.csproj.CopyComplete
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\obj\Debug\mySpecflowTests.dll
+C:\Users\arpad_polan\Desktop\Specflow Training JAn 2019\Basic Setup of Specflow and Selenium\Specflow Sample Project\mySpecflowTests\obj\Debug\mySpecflowTests.pdb

@@ -1,0 +1,73 @@
+These are the complete steps to create a basic specflow VS project with a scenario that brings up a web page via Selenium Webdriver. Tested on Jan 9, 2019...
+
+1 - in VS 2017 15.6.4 create a solution with a .NET framework unit test type project "mySpecflowTests"
+delete the UnitTest1.cs file on thebottom of the Solution Explorer, it will not be used
+
+2 - in VS "Tools/Extensions and Updates" menu install Specflow for Visual Studio 2017 v2017.2.7
+
+( Important Note: if you want to run the tests from Resharper install the JetBrains ReSharper Ultimate 2017.2.1 extension
+that allows runing the tests by right clicking the autogen-ed feature class file, but if you do not have Resharper 
+install the Nunit 3 Test Adapter v3.12.00 extension instead to allow running from the more basic VS test explorer)
+
+3 - add the Selenium.Webdriver v3.141.0 NUGET and Selenium.Support v3.141.0 to the solution (right click solution in Solution Explorer / "Manage Nuget Packages for Solution" )
+
+4 - add Specflow v2.4.1 and Specflow.NUnit v2.4.1 NUGET to the solution (this will also install NUnit as a dependency)
+
+5 - download the Chrome driver chromedriver.exe from the "Third Party Drivers, Bindings, and Plugins" section of the selenium download site:
+	https://www.seleniumhq.org/download/ and place it the root of your solution folder where the selenium webdriver constructor can reference it from
+	(Also place it under this directory for the sake of the simplest test sccenario only: "C:\seleniumDrivers")
+
+6 - create a specflow Feature file GoogleBrowsing.feature in mySpecflowTests project
+
+7 - create a test scenario called "bring up PlanetWin365 in Google", with just a single Given step, make sure that the angle brackets are present for the step argument:
+Given Google is launched on url <http://www.planetwin365.dvl/Sport/default.aspx>
+
+8 - right click in the feature file editor window and select "Generate Step Definitions" and hit OK and SAVE in the followup dialog
+
+9 - edit the GoogleBrowsingSteps.cs step file, replacing the GivenGoogleIsLaunchedOnUrl method with the content given below
+
+10 - go back to the feature file and take out the step argument angle brackets <>. Rebuild project
+
+11 - bring up MS Test Exlporer from the VS Test/Windows/Test Explorer menu and run your test scenario from there
+alternately, if resharper is enabled, you can run by right clicking on the feture.cs file....
+
+
+
+HERE IS A COPY OF THE BASIC FEATURE AND STEP FILE:
+--------------------------------------------------
+
+feature file: GoogleBrowsing.feature
+"
+Feature: GoogleBrowsing
+Scenario: bring up PlanetWin365 in Google
+Given Google is launched on url http://www.planetwin365.com
+"
+
+step file: GoogleBrowsingSteps.cs :
+"
+using System;
+using System.Threading;
+using TechTalk.SpecFlow;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
+
+namespace mySpecflowTests
+{
+    [Binding]
+    public class GoogleBrowsingSteps
+    {
+        [Given(@"Google is launched on url (.*)")]
+        public void GivenGoogleIsLaunchedOnUrl(string url)
+        {
+            IWebDriver webdriver = new ChromeDriver(@"C:\seleniumDrivers");
+            // IWebDriver webdriver = new InternetExplorerDriver(@"C:\seleniumDrivers");
+            webdriver.Navigate().GoToUrl(url);
+ 	    Thread.Sleep(3000);
+            webdriver.Quit();
+        }
+    }
+}
+"
+
+
