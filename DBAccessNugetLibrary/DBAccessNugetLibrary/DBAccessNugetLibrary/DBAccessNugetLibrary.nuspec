@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>library for connection and queries to platform databases</description>
+    <releaseNotes>initial release.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>SQL DB Access</tags>
+  </metadata>
+</package>
