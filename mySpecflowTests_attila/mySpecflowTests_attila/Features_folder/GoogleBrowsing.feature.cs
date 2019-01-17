@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace mySpecflowTests_attila
+namespace mySpecflowTests_attila.Features
 {
     using TechTalk.SpecFlow;
     
@@ -78,7 +78,7 @@ namespace mySpecflowTests_attila
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
-testRunner.Given("I visit the Google", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I am navigated to the \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace mySpecflowTests_attila
+namespace Schroders.com_UI_TA.Features
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace mySpecflowTests_attila
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("GoogleBrowsing")]
-    public partial class GoogleBrowsingFeature
+    [NUnit.Framework.DescriptionAttribute("User Form")]
+    public partial class UserFormFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GoogleBrowsing.feature"
+#line 1 "UserForm.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GoogleBrowsing", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "User Form", "\tFeature which holds all the user details entry", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,15 +70,41 @@ namespace mySpecflowTests_attila
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("bring up PlanetWin365 in Google")]
-        public virtual void BringUpPlanetWin365InGoogle()
+        [NUnit.Framework.DescriptionAttribute("User Details form entry verification")]
+        [NUnit.Framework.CategoryAttribute("Feature_Scenarios")]
+        public virtual void UserDetailsFormEntryVerification()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("bring up PlanetWin365 in Google", null, ((string[])(null)));
-#line 3
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User Details form entry verification", null, new string[] {
+                        "Feature_Scenarios"});
+#line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
-testRunner.Given("I visit the Google", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.Given("I navigate to application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "UserName",
+                        "Password"});
+            table1.AddRow(new string[] {
+                        "admin",
+                        "admin"});
+#line 9
+ testRunner.When("I enter username and password", ((string)(null)), table1, "When ");
+#line 12
+ testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Initial",
+                        "FirstName",
+                        "MiddleName"});
+            table2.AddRow(new string[] {
+                        "k",
+                        "Karthik",
+                        "k"});
+#line 13
+ testRunner.And("I start entering user form details like", ((string)(null)), table2, "And ");
+#line 16
+ testRunner.And("I click submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
