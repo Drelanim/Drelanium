@@ -15,10 +15,13 @@ namespace mySpecflowTests_attila
     public class GoogleBrowsingSteps
     {
 
+
         [Given(@"I visit the Google")]
         public void GivenGoogleIsLaunchedOnUrl()
         {
                       
+
+
 
 
 
