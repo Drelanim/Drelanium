@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>MyServiceClasses</title>
+    <authors>Arpad</authors>
+    <owners>Arpad</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>this is a long description here....la la laaaaaaaaaaaaaa ,long enough?</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>DOTNET RESTAPI LIBRARY</tags>
+  </metadata>
+</package>

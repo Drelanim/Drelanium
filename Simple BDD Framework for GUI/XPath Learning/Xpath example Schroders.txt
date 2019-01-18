@@ -1,0 +1,43 @@
+Schroders.com site, main page
+
+On the Chrome Debug Console (F12) verify XPATH by entering
+$x("your xpath string here")
+
+
+The three tab panes
+-------------------
+
+Insights Pane
+<button class="btn btn-carousel btn-block active" data-target="#carousel-example-generic" data-index="1" data-slide-to="1">Insights</button>
+//*[@id="carousel-nav-items"]/div/div[1]/button
+//button[@data-index='1' and text()[contains(.,'Insights')]]
+
+
+About Us Pane
+<button class="btn btn-carousel btn-block" data-target="#carousel-example-generic" data-index="2" data-slide-to="0">About Us</button>
+//*[@id="carousel-nav-items"]/div/div[2]/button
+//button[@data-index='2' and text()[contains(.,'About Us')]]
+
+People Pane
+<button class="btn btn-carousel btn-block" data-target="#carousel-example-generic" data-index="3" data-slide-to="2">People</button>
+//*[@id="carousel-nav-items"]/div/div[3]/button
+//button[@data-index='3' and text()[contains(.,'People')]]
+
+
+
+Most recent pulldown menu on Insights Pane
+-------------------------------------------
+
+<button type="button" class="btn btn-default btn-block dropdown toggle-menu"><i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>Most Recent</button>
+//*[@id="GS-insights-tabs"]/div/div[1]/div/div[1]/div/div/div[1]/button
+//button[@class='btn btn-default btn-block dropdown toggle-menu' and text()[contains(.,'Most Recent')]]
+
+Economics item
+<li>
+Economics
+</li>
+//*[@id="GS-insights-tabs"]/div/div[1]/div/div[1]/div/div/div[2]/div/ul/a[3]/li
+//div[@class='dropdown-menu-options is-active']//li[text()[contains(.,'Economics')]]
+
+
+

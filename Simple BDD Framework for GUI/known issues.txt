@@ -1,0 +1,43 @@
+- when we are running tests in parallel the specflow detail scenario logs cannot be trusted, they are sometimes missing and other times contain the results for different tests. The PASS indication, however, is accurate. So the workaround is to run parallell when time is of the essence, but switch to single mode when you need to debug or examine the detail results.
+
+- with the current combination of VS and specflow versions we lost the automatic recompile upon starting test from the Resharper test explorer. This means that we always have to recompile the test project before re-running it. The problem does not affect the MS Test explorer, there the same test can be run without recompiling.
+
+- Selenium Grid does not work with more than 1 instance of EDGE - no known workaround
+
+- IAlert type popup alerts (such as those that come up on invalid credetials during login) block screenshots - no known workaround
+
+------------------------
+Things to watch out for
+------------------------
+
+STEP BINDINGS - in large, multi test project specflow solutions often externally defined test steps work but show up in purple print in the VS feature file and cannot be richt clicked to go to their definition. Common causes for this are as follows:
+a) step files with the same name in different projects (e.g. commSteps.cs) - action: rename
+b) stale specflow-stepmap .cache files in Appdata temp folder action: delete contens of %TEMP% dir  (i.e. C:\Users\<username>\AppData\Local\Temp), restart and rebuild
+Note that for big projects it takes minutes for Specflow to analyse the bindings
+
+
+USING STEPS FROM OTHER PROJECTS - to be able to reference step files in another project the appconfig file needs to be updated:
+a) have the other project's assempbly added such as in the following app.config file segment
+<configuration>
+.....
+   <specFlow>
+      <unitTestProvider name="NUnit" />
+      <stepAssemblies>
+        <stepAssembly assembly="Z_PayPalStepLibrary" />
+        <stepAssembly assembly="TestCommon" />
+      </stepAssemblies>
+    </specFlow>
+</configuration>
+
+b) also the referenced project needs to be added to references. 
+c) if the steps referenced use app config settings, such as service url-s, they need to be also copied into the app config files.
+
+
+PARALLEL EXECUTION - parallel execution is enabled in the executable project's AssemblyInfo.cs file bu adding the following
+using NUnit.Framework;
+[assembly: Parallelizable(ParallelScope.Fixtures)]
+[assembly: LevelOfParallelism(8)]
+
+CIRCULARITY
+Does not seem to be a problem, two specflow projects can freely refer to each other. For example, the PlanetWin test project can call PayPal test steps and vice versa...
+
