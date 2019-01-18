@@ -1,17 +1,17 @@
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
 
-[assembly: AssemblyTitle("Schroders.com_UI_TA")]
+[assembly: AssemblyTitle("PFW.SchrodersCom.TA")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Schroders.com_UI_TA")]
+[assembly: AssemblyProduct("PFW.SchrodersCom.TA")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: Parallelizable(ParallelScope.Fixtures)]
+[assembly: LevelOfParallelism(2)]
 
 [assembly: ComVisible(false)]
 

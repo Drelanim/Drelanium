@@ -1,7 +1,6 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium.Firefox;
+﻿using OpenQA.Selenium.Firefox;
 
-namespace Schroders.com_UI_TA.Setup
+namespace PFW.SchrodersCom.TA.Setup
 {
     public static class FirefoxSetup
     {

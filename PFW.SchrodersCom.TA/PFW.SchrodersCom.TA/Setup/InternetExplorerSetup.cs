@@ -1,7 +1,6 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium.IE;
+﻿using OpenQA.Selenium.IE;
 
-namespace Schroders.com_UI_TA.Setup
+namespace PFW.SchrodersCom.TA.Setup
 {
     public static class InternetExplorerSetup
     {

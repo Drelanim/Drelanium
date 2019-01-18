@@ -1,7 +1,6 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium.Chrome;
 
-namespace Schroders.com_UI_TA.Setup
+namespace PFW.SchrodersCom.TA.Setup
 {
     public static class ChromeSetup
     {

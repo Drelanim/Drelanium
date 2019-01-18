@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Schroders.com_UI_TA.Pages;
 
-namespace Schroders.com_UI_TA.Pages
+namespace PFW.SchrodersCom.TA.Pages
 {
     public enum TestEnvironment
     {

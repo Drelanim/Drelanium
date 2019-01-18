@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFW.SchrodersCom.TA", "PFW.SchrodersCom.TA\PFW.SchrodersCom.TA.csproj", "{C572170C-1ABB-449B-BE02-8344EB934544}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SYS1|Any CPU = SYS1|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C572170C-1ABB-449B-BE02-8344EB934544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C572170C-1ABB-449B-BE02-8344EB934544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C572170C-1ABB-449B-BE02-8344EB934544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C572170C-1ABB-449B-BE02-8344EB934544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C572170C-1ABB-449B-BE02-8344EB934544}.SYS1|Any CPU.ActiveCfg = SYS1|Any CPU
+		{C572170C-1ABB-449B-BE02-8344EB934544}.SYS1|Any CPU.Build.0 = SYS1|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D77F7C0-97AE-4CD4-862A-A308B225DBF3}
+	EndGlobalSection
+EndGlobal
