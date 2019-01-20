@@ -88,6 +88,21 @@
     <Reference Include="Dynamitey, Version=2.0.9.136, Culture=neutral, PublicKeyToken=cbf53ea3aeb972c6, processorArchitecture=MSIL">
       <HintPath>..\packages\Dynamitey.2.0.9.136\lib\net40\Dynamitey.dll</HintPath>
     </Reference>
+    <Reference Include="Gherkin, Version=5.0.0.0, Culture=neutral, PublicKeyToken=86496cfa5b4a5851, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.1\lib\net45\Gherkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Ghpr.Core, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghpr.Core.0.9.4\lib\net452\Ghpr.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ghpr.LocalFileSystem, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghpr.LocalFileSystem.0.9.4\lib\net452\Ghpr.LocalFileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Ghpr.SpecFlow.Common, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghpr.SpecFlow.Common.0.9.4\lib\net452\Ghpr.SpecFlow.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ghpr.SpecFlowPlugin, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ghpr.SpecFlowPlugin.0.9.4\lib\net452\Ghpr.SpecFlowPlugin.dll</HintPath>
+    </Reference>
     <Reference Include="ImpromptuInterface, Version=7.0.1.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">
       <HintPath>..\packages\ImpromptuInterface.7.0.1\lib\net40\ImpromptuInterface.dll</HintPath>
     </Reference>
@@ -132,6 +147,15 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.2.4.1\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Generator, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.1\lib\net45\TechTalk.SpecFlow.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Parser, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.1\lib\net45\TechTalk.SpecFlow.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Utils, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.4.1\lib\net45\TechTalk.SpecFlow.Utils.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
@@ -243,6 +267,8 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserForm.feature.cs</LastGenOutput>
     </None>
+    <None Include="Ghpr.Core.Settings.json" />
+    <None Include="Ghpr.SpecFlow.Settings.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
