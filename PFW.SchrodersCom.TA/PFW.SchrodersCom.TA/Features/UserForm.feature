@@ -1,15 +1,8 @@
-﻿Feature: Userform
+﻿Feature: Userform specific feature
 
-
-@smoke @testtag
-Scenario: User Details form entry verification
-	Given I navigate to application
-	Given I enter username and password
-	| UserName | Password |
-	| admin    | admin    |
-	Given I click login
-	Given I start entering user form details like
-	| Initial | FirstName | MiddleName |
-	| k       | Karthik   | k          |
-	Given I click submit button
-
+Scenario: I fill out the userform on the page
+	Given I am on the EA Login Page
+	When I type my username and password
+	And I click the Login button
+	And I fill out the userform on the page
+	Then The userform is filled out

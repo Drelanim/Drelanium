@@ -1,12 +1,8 @@
-﻿Feature: Login
+﻿Feature: Login specific feature
 
 
-@mytag
-Scenario: Login user as Administrator
-	Given I navigate to application
-	Given I enter username and password
-	| UserName | Password |
-	| admin    | admin    |
-	Given I click login
-	Then I should see user logged in to the application
-
+Scenario: Login to the EA Login page
+	Given I am on the EA Login Page
+	When I type my username and password
+	And I click the Login button
+	Then I am logged in
