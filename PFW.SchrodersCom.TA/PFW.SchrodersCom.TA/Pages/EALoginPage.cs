@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
 using PFW.SchrodersCom.TA.BaseClasses;
 
@@ -7,28 +8,26 @@ namespace PFW.SchrodersCom.TA.Pages
     public class EALoginPage : BasePage
     {
 
-        public EALoginPage(IWebDriver driver) : base(driver)
+        public EALoginPage(RemoteWebDriver driver) : base(driver)
         {
             PageUrl = @"http://executeautomation.com/demosite/Login.html";
         }
 
-        [FindsBy(How = How.Name, Using = "UserName")]
-        public IWebElement txtUserName { get; set; }
 
 
-        [FindsBy(How = How.Name, Using = "Password")]
-        public IWebElement txtPassword { get; set; }
 
-
-        [FindsBy(How = How.Name, Using = "Login")]
-        public IWebElement btnLogin { get; set; }
+        public IWebElement txtUserName => Driver.FindElementByName("UserName");
+ 
+        public IWebElement txtPassword => Driver.FindElementByName("Password");
+   
+        public IWebElement btnLogin => Driver.FindElementByName("Login");
 
 
 
         public void FillEALoginPageFields()
         {
-            txtUserName.SendKeys("nyiriattila88@gmail.com");
-            txtPassword.SendKeys("goodPass%1");
+            txtUserName.SendKeys("attila");
+            txtPassword.SendKeys("nyiri");
         }
 
         public void ClickLogin()

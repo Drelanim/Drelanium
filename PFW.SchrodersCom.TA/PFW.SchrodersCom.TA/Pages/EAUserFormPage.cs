@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
 using PFW.SchrodersCom.TA.BaseClasses;
 
@@ -7,22 +8,16 @@ namespace PFW.SchrodersCom.TA.Pages
     public class EAUserFormPage : BasePage
     {
 
-        public EAUserFormPage(IWebDriver driver) : base(driver)
+        public EAUserFormPage(RemoteWebDriver driver) : base(driver)
         {
             PageUrl = @"http://executeautomation.com/demosite/index.html";
         }
 
+        public IWebElement txtInitial => Driver.FindElementByName("Initial");
 
-        [FindsBy(How = How.Name, Using = "Initial")]
-        public IWebElement txtInitial { get; set; }
+        public IWebElement txtFirstName => Driver.FindElementByName("FirstName");
 
-
-        [FindsBy(How = How.Name, Using = "FirstName")]
-        public IWebElement txtFirstName { get; set; }
-
-
-        [FindsBy(How = How.Name, Using = "MiddleName")]
-        public IWebElement txtMiddleName { get; set; }
+        public IWebElement txtMiddleName => Driver.FindElementByName("MiddleName");
 
 
         public void FillEAUserFormPageFields()

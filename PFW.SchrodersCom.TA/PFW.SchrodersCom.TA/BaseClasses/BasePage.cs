@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,12 @@ namespace PFW.SchrodersCom.TA.BaseClasses
 
         public string PageUrl { get; set; }
 
-        public BasePage(IWebDriver driver) : base()
-        {
-            PageFactory.InitElements(driver, this);
-        }
-  
-                     
+
+        public BasePage(RemoteWebDriver driver) : base() => Driver = driver;
+
+
+
+
 
 
 

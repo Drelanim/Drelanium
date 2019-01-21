@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 using PFW.SchrodersCom.TA.BaseClasses;
 using PFW.SchrodersCom.TA.Steps;
 using System;
@@ -24,7 +25,7 @@ namespace PFW.SchrodersCom.TA.Steps
         public void Initialize ()
         {
             Driver = StartWebDriver();
-            _objectContainer.RegisterInstanceAs<IWebDriver>(Driver);
+            _objectContainer.RegisterInstanceAs<RemoteWebDriver>(Driver);
         }
 
 

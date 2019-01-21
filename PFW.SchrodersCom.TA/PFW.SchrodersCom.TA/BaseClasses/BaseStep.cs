@@ -12,17 +12,15 @@ using System.Xml.XPath;
 using System.Xml;
 using System.Xml.Linq;
 using System.Configuration;
-
-
+using OpenQA.Selenium.Remote;
 
 namespace PFW.SchrodersCom.TA.BaseClasses
 {
 
     public abstract class BaseStep : Base
     {
+
         public readonly ScenarioContext scenarioContext;
-
-
 
 
         public BaseStep(ScenarioContext scenarioContext) :base() => this.scenarioContext = scenarioContext;
@@ -46,9 +44,9 @@ namespace PFW.SchrodersCom.TA.BaseClasses
 
 
 
-        public IWebDriver StartWebDriver()
+        public RemoteWebDriver StartWebDriver()
         {
-            IWebDriver driver;
+            RemoteWebDriver driver;
 
             switch (SelectedBrowser())
             {
@@ -115,44 +113,41 @@ namespace PFW.SchrodersCom.TA.BaseClasses
 
 
 
-
-        public void SaveCurrentPage(BasePage page)
+        public T CreateANewPage<T>()
         {
-            CurrentPage = (BasePage)page;
-            scenarioContext.Set(CurrentPage, CurrentPageKey);
+            object[] args = new object[] {Driver};
+            return (T)Activator.CreateInstance(typeof(T), args);
         }
 
-        public BasePage GetCurrentPage()
+        public void SaveCurrentPage<T>(T page)
         {
-           return scenarioContext.Get<BasePage>(CurrentPageKey);
+            scenarioContext.Set(page, CurrentPageKey);
         }
 
-        public void NavigateToCurrentPage()
+        public T LoadCurrentPage<T>()
         {
-            scenarioContext.Set(CurrentPage, CurrentPageKey);
+            return scenarioContext.Get<T>(CurrentPageKey);
         }
 
-                                 
+        public void NavigateToCurrentPage<T>(T pageType)
+        {
+            var url = pageType.GetType().GetProperty("PageUrl").GetValue(pageType, null) as string;
+            Driver.Navigate().GoToUrl(url);
+        }
 
+        public void NavigateAndSaveNewCurrentPage<T>()
+        {
+            T page = CreateANewPage<T>();
+            NavigateToCurrentPage(page);
+            SaveCurrentPage(page);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public void ClickOnWebElementNavigatesToNewPage<T>(IWebElement elementOnOldPage)
+        {
+            elementOnOldPage.Submit();
+            T page = CreateANewPage<T>();
+            SaveCurrentPage(page);
+        }
 
 
 

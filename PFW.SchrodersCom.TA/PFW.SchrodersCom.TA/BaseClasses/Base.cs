@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,26 @@ namespace PFW.SchrodersCom.TA.BaseClasses
     {
 
         public string CurrentPageKey { get; }
-        public BasePage CurrentPage { get; set; }
+        public RemoteWebDriver Driver { get; set; }
 
-        public IWebDriver Driver { get; set; }
+
+
 
         public Base()
         {
             CurrentPageKey = "CurrentPageKey";
         }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

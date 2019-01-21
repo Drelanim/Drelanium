@@ -179,11 +179,11 @@
     </Compile>
     <Compile Include="Pages\EAUserFormPage.cs" />
     <Compile Include="Pages\EALoginPage.cs" />
-    <Compile Include="Steps\Steps2.cs" />
+    <Compile Include="Steps\UserFormSteps.cs" />
     <Compile Include="Steps\Hooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseClasses\BaseStep.cs" />
-    <Compile Include="Steps\Steps1.cs" />
+    <Compile Include="Steps\LoginSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Debug.config">
