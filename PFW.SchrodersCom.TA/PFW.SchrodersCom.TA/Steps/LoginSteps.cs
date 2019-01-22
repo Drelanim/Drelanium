@@ -27,7 +27,8 @@ namespace PFW.SchrodersCom.TA.Steps
         [Given(@"I am on the EA Login Page")]
         public void GivenIAmOnTheEALoginPage()
         {
-            NavigateAndSaveNewCurrentPage<EALoginPage>();
+
+            SetCurrentPageAndNavigateToIt<EALoginPage>();
             Console.WriteLine("1. Step Run perfectly");
         }
 
@@ -42,7 +43,7 @@ namespace PFW.SchrodersCom.TA.Steps
         public void WhenIClickTheLoginButton()
         {
 
-            ClickOnWebElementNavigatesToNewPage<EAUserFormPage>(LoadCurrentPage<EALoginPage>().btnLogin);
+            // njkkhh
             
             Console.WriteLine("3. Step Run perfectly");
         }

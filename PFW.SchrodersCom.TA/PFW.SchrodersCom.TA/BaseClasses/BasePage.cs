@@ -21,6 +21,18 @@ namespace PFW.SchrodersCom.TA.BaseClasses
 
 
 
+        public T ClickOnWebElementCreatesANewPage<T>(IWebElement webElementOnOldPage)
+        {
+            webElementOnOldPage.Submit();
+            return CreateANewPage<T>();
+        }
+
+
+
+
+
+
+
 
 
 

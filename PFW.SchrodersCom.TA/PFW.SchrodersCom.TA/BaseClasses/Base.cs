@@ -27,7 +27,11 @@ namespace PFW.SchrodersCom.TA.BaseClasses
 
 
 
-
+        public T CreateANewPage<T>()
+        {
+            object[] args = new object[] { Driver };
+            return (T)Activator.CreateInstance(typeof(T), args);
+        }
 
 
 

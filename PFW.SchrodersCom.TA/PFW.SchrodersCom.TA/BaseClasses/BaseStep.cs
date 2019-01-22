@@ -13,6 +13,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Configuration;
 using OpenQA.Selenium.Remote;
+using NUnit.Framework;
 
 namespace PFW.SchrodersCom.TA.BaseClasses
 {
@@ -111,14 +112,6 @@ namespace PFW.SchrodersCom.TA.BaseClasses
         }
 
 
-
-
-        public T CreateANewPage<T>()
-        {
-            object[] args = new object[] {Driver};
-            return (T)Activator.CreateInstance(typeof(T), args);
-        }
-
         public void SaveCurrentPage<T>(T page)
         {
             scenarioContext.Set(page, CurrentPageKey);
@@ -129,25 +122,45 @@ namespace PFW.SchrodersCom.TA.BaseClasses
             return scenarioContext.Get<T>(CurrentPageKey);
         }
 
-        public void NavigateToCurrentPage<T>(T pageType)
+        public string LoadCurrentPageUrl<T>()
         {
-            var url = pageType.GetType().GetProperty("PageUrl").GetValue(pageType, null) as string;
+           T page = LoadCurrentPage<T>();
+           return page.GetType().GetProperty("PageUrl").GetValue(page, null) as string;
+        }
+
+
+        public void NavigateToCurrentPage<T>()
+        {
+            string url = LoadCurrentPageUrl<T>();
             Driver.Navigate().GoToUrl(url);
         }
 
-        public void NavigateAndSaveNewCurrentPage<T>()
+        public T SetCurrentPageAndNavigateToIt<T>()
         {
             T page = CreateANewPage<T>();
-            NavigateToCurrentPage(page);
+            NavigateToCurrentPage<T>();
             SaveCurrentPage(page);
+            return page;
         }
 
-        public void ClickOnWebElementNavigatesToNewPage<T>(IWebElement elementOnOldPage)
+        public void CheckIfGoodPageIsLoaded<T>()
         {
-            elementOnOldPage.Submit();
-            T page = CreateANewPage<T>();
-            SaveCurrentPage(page);
+            string urlLoaded = Driver.Url;
+            string currentPageUrl = LoadCurrentPageUrl<T>();
+            Assert.AreEqual(urlLoaded, currentPageUrl);
         }
+
+        public void AssertThatGoodPageIsLoaded<T>()
+        {
+           
+            
+
+        }
+
+
+
+
+
 
 
 
