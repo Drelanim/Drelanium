@@ -14,15 +14,11 @@ namespace PFW.SchrodersCom.TA.Pages
         }
 
 
-
-
         public IWebElement txtUserName => Driver.FindElementByName("UserName");
  
         public IWebElement txtPassword => Driver.FindElementByName("Password");
    
         public IWebElement btnLogin => Driver.FindElementByName("Login");
-
-
 
         public void FillEALoginPageFields()
         {
@@ -30,9 +26,9 @@ namespace PFW.SchrodersCom.TA.Pages
             txtPassword.SendKeys("nyiri");
         }
 
-        public void ClickLogin()
+        public EAUserFormPage ClickLogin()
         {
-            btnLogin.Submit();
+            return ClickOnWebElementCreatesANewPage<EAUserFormPage>(btnLogin);
         }
 
 

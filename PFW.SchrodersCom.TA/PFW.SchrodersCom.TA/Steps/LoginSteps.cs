@@ -27,7 +27,6 @@ namespace PFW.SchrodersCom.TA.Steps
         [Given(@"I am on the EA Login Page")]
         public void GivenIAmOnTheEALoginPage()
         {
-
             SetCurrentPageAndNavigateToIt<EALoginPage>();
             Console.WriteLine("1. Step Run perfectly");
         }
@@ -42,17 +41,14 @@ namespace PFW.SchrodersCom.TA.Steps
         [When(@"I click the Login button")]
         public void WhenIClickTheLoginButton()
         {
-
-            // njkkhh
-            
+            LoadCurrentPage<EALoginPage>().ClickLogin();
             Console.WriteLine("3. Step Run perfectly");
         }
 
         [Then(@"I am logged in")]
         public void ThenIAmLoggedIn()
         {
-            bool question = LoadCurrentPage<EAUserFormPage>().txtFirstName.Displayed;
-            Assert.IsTrue(question);
+            AssertThatCurrentPageIsLoaded<EALoginPage>();
 
 
         }

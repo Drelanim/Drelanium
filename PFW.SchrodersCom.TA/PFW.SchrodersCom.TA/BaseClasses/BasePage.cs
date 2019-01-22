@@ -9,32 +9,17 @@ using System.Threading.Tasks;
 
 namespace PFW.SchrodersCom.TA.BaseClasses
 {
-    public abstract class BasePage : Base
+    public abstract class BasePage
     {
 
-        public string PageUrl { get; set; }
+        public RemoteWebDriver Driver { get; set; }
 
+        public string PageUrl { get; set; }
 
         public BasePage(RemoteWebDriver driver) : base() => Driver = driver;
 
 
-
-
-
-        public T ClickOnWebElementCreatesANewPage<T>(IWebElement webElementOnOldPage)
-        {
-            webElementOnOldPage.Submit();
-            return CreateANewPage<T>();
-        }
-
-
-
-
-
-
-
-
-
+      
 
 
 

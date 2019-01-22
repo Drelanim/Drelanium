@@ -24,8 +24,8 @@ namespace PFW.SchrodersCom.TA.Steps
         [BeforeScenario]
         public void Initialize ()
         {
-            Driver = StartWebDriver();
-            _objectContainer.RegisterInstanceAs<RemoteWebDriver>(Driver);
+            Driver = WebDriverSetup.StartWebDriver();
+            _objectContainer.RegisterInstanceAs(Driver);
         }
 
 

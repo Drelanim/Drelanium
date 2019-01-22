@@ -14,148 +14,155 @@ using System.Xml.Linq;
 using System.Configuration;
 using OpenQA.Selenium.Remote;
 using NUnit.Framework;
+using PFW.SchrodersCom.TA.Setup;
 
 namespace PFW.SchrodersCom.TA.BaseClasses
 {
 
-    public abstract class BaseStep : Base
+    public abstract class BaseStep
     {
 
-        public readonly ScenarioContext scenarioContext;
 
 
-        public BaseStep(ScenarioContext scenarioContext) :base() => this.scenarioContext = scenarioContext;
-
-
-
-        public string SelectedEnvironment()
+        public string CurrentPageKey
         {
-                return ConfigurationManager.AppSettings["Environment"];
+            get { return CurrentPageKey; }
+            set { CurrentPageKey = "CurrentPageKey"; }
         }
 
-        public string SelectedBrowser()
+        public RemoteWebDriver Driver { get; set; }
+        public ScenarioContext ScenarioContext { get; }
+        public TestConfiguration TestConfiguration { get; }
+        public WebDriverSetup WebDriverSetup { get; }
+
+
+        public BaseStep(ScenarioContext scenarioContext) : base()
         {
-            return ConfigurationManager.AppSettings["Browser"];
-        }
-
-        public string SelectedHeadlessMode()
-        {
-            return ConfigurationManager.AppSettings["HeadlessMode"];
-        }
-
-
-
-        public RemoteWebDriver StartWebDriver()
-        {
-            RemoteWebDriver driver;
-
-            switch (SelectedBrowser())
-            {
-                case "CHROME":
-                    driver = new ChromeDriver(CreateChromeOptions());
-                    break;
-                case "FIREFOX":
-                    driver = new FirefoxDriver(CreateFirefoxOptions());
-                    break;
-                case "INTERNETEXPLORER":
-                    driver = new InternetExplorerDriver(CreateInternetExplorerOptions());
-                    break;
-                default:
-                    throw new Exception();
-            }
-
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            return driver;
+            ScenarioContext = scenarioContext;
+            TestConfiguration = new TestConfiguration();
+            WebDriverSetup = new WebDriverSetup();
         }
 
 
-        public ChromeOptions CreateChromeOptions()
-        {
-            ChromeOptions options = new ChromeOptions();
 
-            switch (SelectedHeadlessMode())
-            {
-                case "ON":
-                    options.AddArgument("--headless");
-                    break;
-                case "OFF":
-                    break;
-                default:
-                    throw new Exception();
-            }
-            return options;
+        public T CreateANewPage<T>()
+        {
+            object[] args = new object[] { Driver };
+            return (T)Activator.CreateInstance(typeof(T), args);
         }
 
-        public FirefoxOptions CreateFirefoxOptions()
-        {
-            FirefoxOptions options = new FirefoxOptions();
 
-            switch (SelectedHeadlessMode())
-            {
-                case "ON":
-                    options.AddArgument("--headless");
-                    break;
-                case "OFF":
-                    break;
-                default:
-                    throw new Exception();
-            }
-            return options;
-        }
 
-        public InternetExplorerOptions CreateInternetExplorerOptions()
-        {
-            InternetExplorerOptions options = new InternetExplorerOptions();
-            options.IgnoreZoomLevel = true;
-            return options;
-        }
 
 
         public void SaveCurrentPage<T>(T page)
         {
-            scenarioContext.Set(page, CurrentPageKey);
+            ScenarioContext.Set(page, CurrentPageKey);
         }
+
 
         public T LoadCurrentPage<T>()
         {
-            return scenarioContext.Get<T>(CurrentPageKey);
+            return ScenarioContext.Get<T>(CurrentPageKey);
         }
 
-        public string LoadCurrentPageUrl<T>()
+
+        public string GetCurrentPageUrl<T>()
         {
            T page = LoadCurrentPage<T>();
            return page.GetType().GetProperty("PageUrl").GetValue(page, null) as string;
         }
 
 
+
         public void NavigateToCurrentPage<T>()
         {
-            string url = LoadCurrentPageUrl<T>();
+            string url = GetCurrentPageUrl<T>();
             Driver.Navigate().GoToUrl(url);
         }
+
 
         public T SetCurrentPageAndNavigateToIt<T>()
         {
             T page = CreateANewPage<T>();
-            NavigateToCurrentPage<T>();
             SaveCurrentPage(page);
+            NavigateToCurrentPage<T>();
             return page;
         }
 
-        public void CheckIfGoodPageIsLoaded<T>()
+        public T ClickOnWebElementCreatesANewPage<T>(IWebElement webElementOnOldPage)
+        {
+            webElementOnOldPage.Submit();
+            return CreateANewPage<T>();
+        }
+
+
+
+
+
+
+        public string GetWebElementAttribute(IWebElement webElement, string attributeName)
+        {
+            return webElement.GetAttribute(attributeName);
+        }
+
+        public string[] GetWebElementClasses(IWebElement webElement)
+        {
+            return GetWebElementAttribute(webElement,"class").Split(' ').Select(x => x.Trim()).ToArray();
+        }
+
+        public string[] GetWebElementStyles(IWebElement webElement)
+        {
+            return GetWebElementAttribute(webElement, "style").Split(';').Select(x => x.Trim()).ToArray();
+        }
+
+
+
+
+
+
+        public void AssertThatCurrentPageIsLoaded<T>()
         {
             string urlLoaded = Driver.Url;
-            string currentPageUrl = LoadCurrentPageUrl<T>();
+            string currentPageUrl = GetCurrentPageUrl<T>();
             Assert.AreEqual(urlLoaded, currentPageUrl);
         }
 
-        public void AssertThatGoodPageIsLoaded<T>()
+        public void AssertThatExpectedPageIsLoaded<T>(string expectedUrl)
         {
-           
-            
-
+            Assert.AreEqual(expectedUrl, Driver.Url);
         }
+
+
+        public void AssertThatWebElementIsDisplayed<T>(IWebElement webElement)
+        {
+            Assert.IsTrue(webElement.Displayed);
+        }
+
+
+        public void AssertThatWebElementIsEnabled<T>(IWebElement webElement)
+        {
+            Assert.IsTrue(webElement.Enabled);
+        }
+
+        public void AssertThatWebElementIsSelected<T>(IWebElement webElement)
+        {
+            Assert.IsTrue(webElement.Selected);
+        }
+
+        public void AssertThatWebElementClassesContains<T>(IWebElement webElement, string expectedClass)
+        {
+            Assert.IsTrue(GetWebElementClasses(webElement).Contains(expectedClass));
+        }
+
+        public void AssertThatWebElementStylesContains<T>(IWebElement webElement, string expectedStyle)
+        {
+            Assert.IsTrue(GetWebElementClasses(webElement).Contains(expectedStyle));
+        }
+
+
+
+
 
 
 

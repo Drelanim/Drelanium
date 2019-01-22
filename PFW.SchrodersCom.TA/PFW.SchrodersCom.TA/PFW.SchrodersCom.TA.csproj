@@ -165,8 +165,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClasses\Base.cs" />
     <Compile Include="BaseClasses\BasePage.cs" />
+    <Compile Include="BaseClasses\WebElementMethods.cs" />
+    <Compile Include="BaseClasses\TestConfiguration.cs" />
     <Compile Include="Features\UserForm.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +180,7 @@
     </Compile>
     <Compile Include="Pages\EAUserFormPage.cs" />
     <Compile Include="Pages\EALoginPage.cs" />
+    <Compile Include="BaseClasses\WebDriverSetup.cs" />
     <Compile Include="Steps\UserFormSteps.cs" />
     <Compile Include="Steps\Hooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -271,7 +273,9 @@
     <None Include="Ghpr.SpecFlow.Settings.json" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Setup\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
