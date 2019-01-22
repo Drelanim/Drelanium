@@ -1,26 +1,62 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
-using SeleniumExtras.PageObjects;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PFW.SchrodersCom.TA.BaseClasses
 {
-    public abstract class BasePage
+    public class BasePage
     {
-
-        public RemoteWebDriver Driver { get; set; }
+        public IWebDriver Driver { get; set; }
 
         public string PageUrl { get; set; }
 
-        public BasePage(RemoteWebDriver driver) : base() => Driver = driver;
+        public BasePage(IWebDriver driver) => Driver = driver;
+
+        public string CurrentPageKey
+        {
+            get { return CurrentPageKey; }
+            set { CurrentPageKey = "CurrentPageKey"; }
+        }
 
 
-      
 
+
+
+        public IWebElement FindWebElementByName(string name)
+        {
+            return Driver.FindElement(By.Name(name));
+        }
+
+        public IWebElement FindWebElementById(string id)
+        {
+            return Driver.FindElement(By.Id(id));
+        }
+
+        public IWebElement FindWebElementByCSSSelector(string cssSelector)
+        {
+            return Driver.FindElement(By.CssSelector(cssSelector));
+        }
+
+        public IWebElement FindWebElementByXPath(string xPath)
+        {
+            return Driver.FindElement(By.XPath(xPath));
+        }
+
+
+        public string GetWebElementAttribute(IWebElement webElement, string attributeName)
+        {
+            return webElement.GetAttribute(attributeName);
+        }
+
+        public string[] GetWebElementClasses(IWebElement webElement)
+        {
+            return GetWebElementAttribute(webElement, "class").Split(' ').Select(x => x.Trim()).ToArray();
+        }
+
+        public string[] GetWebElementStyles(IWebElement webElement)
+        {
+            return GetWebElementAttribute(webElement, "style").Split(';').Select(x => x.Trim()).ToArray();
+        }
 
 
     }

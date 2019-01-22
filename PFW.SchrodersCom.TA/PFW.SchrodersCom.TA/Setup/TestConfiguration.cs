@@ -1,34 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Configuration;
+using PFW.SchrodersCom.TA.Setup;
+using OpenQA.Selenium;
 
 namespace PFW.SchrodersCom.TA.Setup
 {
-    public class WebDriverSetup
+    public static class TestConfiguration
     {
 
-        public TestConfiguration TestConfiguration { get; }
+        public static string SelectedEnvironment()
+        {  
+            return ConfigurationManager.AppSettings["Environment"];
+        }
 
-        public WebDriverSetup()
+        public static string SelectedBrowser()
         {
-            TestConfiguration = new TestConfiguration();
+            return ConfigurationManager.AppSettings["Browser"];
+        }
+
+        public static string SelectedHeadlessMode()
+        {
+            return ConfigurationManager.AppSettings["HeadlessMode"];
         }
 
 
-
-        public RemoteWebDriver StartWebDriver()
+        public static IWebDriver StartWebDriver()
         {
-            
-            RemoteWebDriver driver;
 
-            switch (TestConfiguration.SelectedBrowser())
+            IWebDriver driver;
+
+            switch (SelectedBrowser())
             {
                 case "CHROME":
                     driver = new ChromeDriver(CreateChromeOptions());
@@ -44,16 +49,16 @@ namespace PFW.SchrodersCom.TA.Setup
             }
 
             driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             return driver;
         }
 
 
-        public ChromeOptions CreateChromeOptions()
+        public static ChromeOptions CreateChromeOptions()
         {
             ChromeOptions options = new ChromeOptions();
 
-            switch (TestConfiguration.SelectedHeadlessMode())
+            switch (SelectedHeadlessMode())
             {
                 case "ON":
                     options.AddArgument("--headless");
@@ -66,11 +71,11 @@ namespace PFW.SchrodersCom.TA.Setup
             return options;
         }
 
-        public FirefoxOptions CreateFirefoxOptions()
+        public static FirefoxOptions CreateFirefoxOptions()
         {
             FirefoxOptions options = new FirefoxOptions();
 
-            switch (TestConfiguration.SelectedHeadlessMode())
+            switch (SelectedHeadlessMode())
             {
                 case "ON":
                     options.AddArgument("--headless");
@@ -84,14 +89,12 @@ namespace PFW.SchrodersCom.TA.Setup
         }
 
 
-        public InternetExplorerOptions CreateInternetExplorerOptions()
+        public static InternetExplorerOptions CreateInternetExplorerOptions()
         {
             InternetExplorerOptions options = new InternetExplorerOptions();
             options.IgnoreZoomLevel = true;
             return options;
         }
-
-
 
 
 

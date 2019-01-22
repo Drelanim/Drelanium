@@ -8,6 +8,7 @@ using PFW.SchrodersCom.TA.BaseClasses;
 using PFW.SchrodersCom.TA.Steps;
 using System;
 using TechTalk.SpecFlow;
+using PFW.SchrodersCom.TA.Setup;
 
 namespace PFW.SchrodersCom.TA.Steps
 {
@@ -16,15 +17,18 @@ namespace PFW.SchrodersCom.TA.Steps
     {
         private readonly IObjectContainer _objectContainer;
 
-                              
+        public new IWebDriver Driver { get; set; }
+
+
+
         public Hooks(IObjectContainer objectContainer, ScenarioContext scenarioContext) : base(scenarioContext) => _objectContainer = objectContainer;
 
 
 
         [BeforeScenario]
-        public void Initialize ()
+        public void Initialize()
         {
-            Driver = WebDriverSetup.StartWebDriver();
+            Driver = TestConfiguration.StartWebDriver();
             _objectContainer.RegisterInstanceAs(Driver);
         }
 

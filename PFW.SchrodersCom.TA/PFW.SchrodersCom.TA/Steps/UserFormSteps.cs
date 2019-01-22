@@ -16,7 +16,7 @@ namespace PFW.SchrodersCom.TA.Steps
     class UserFormSteps : BaseStep
     {
 
-        public UserFormSteps(RemoteWebDriver driver, ScenarioContext scenarioContext) : base(scenarioContext) => Driver = driver;
+        public UserFormSteps(IWebDriver driver, ScenarioContext scenarioContext) : base(scenarioContext) => Driver = driver;
 
 
 

@@ -8,31 +8,31 @@ namespace PFW.SchrodersCom.TA.Pages
     public class EAUserFormPage : BasePage
     {
 
-        public EAUserFormPage(RemoteWebDriver driver) : base(driver)
+        public EAUserFormPage(IWebDriver driver) : base(driver)
         {
             PageUrl = @"http://executeautomation.com/demosite/index.html";
         }
 
-        public IWebElement txtInitial => Driver.FindElementByName("Initial");
+        public IWebElement TxtInitial => FindWebElementByCSSSelector("#Initial");
 
-        public IWebElement txtFirstName => Driver.FindElementByName("FirstName");
+        public IWebElement TxtFirstName => FindWebElementByCSSSelector("#Initial");
 
-        public IWebElement txtMiddleName => Driver.FindElementByName("MiddleName");
+        public IWebElement TxtMiddleName => FindWebElementByCSSSelector("#MiddleName");
 
 
         public void FillEAUserFormPageFields()
         {
-            txtInitial.SendKeys("initial");
-            txtFirstName.SendKeys("Attila");
-            txtMiddleName.SendKeys("Nyiri");
+            TxtInitial.SendKeys("initial");
+            TxtFirstName.SendKeys("Attila");
+            TxtMiddleName.SendKeys("Nyiri");
         }
 
 
         public bool CheckIfUserFormIsFilled()
         {
-            if ((txtInitial.Text != string.Empty)&&
-                (txtFirstName.Text != string.Empty)&&
-                (txtMiddleName.Text != string.Empty))
+            if ((TxtInitial.Text != string.Empty)&&
+                (TxtFirstName.Text != string.Empty)&&
+                (TxtMiddleName.Text != string.Empty))
             {
                 return true;
             }

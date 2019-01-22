@@ -8,27 +8,22 @@ namespace PFW.SchrodersCom.TA.Pages
     public class EALoginPage : BasePage
     {
 
-        public EALoginPage(RemoteWebDriver driver) : base(driver)
+        public EALoginPage(IWebDriver driver) : base(driver)
         {
             PageUrl = @"http://executeautomation.com/demosite/Login.html";
         }
 
 
-        public IWebElement txtUserName => Driver.FindElementByName("UserName");
- 
-        public IWebElement txtPassword => Driver.FindElementByName("Password");
+        public IWebElement TxtUserName => FindWebElementByCSSSelector("#userName > p:nth-child(1) > input[type=\"text\"]");
+
+        public IWebElement TxtPassword => FindWebElementByCSSSelector("#userName > p:nth-child(2) > input[type=\"text\"]");
    
-        public IWebElement btnLogin => Driver.FindElementByName("Login");
+        public IWebElement BtnLogin => FindWebElementByCSSSelector("#userName > p:nth-child(3) > input[type=\"submit\"]");
 
         public void FillEALoginPageFields()
         {
-            txtUserName.SendKeys("attila");
-            txtPassword.SendKeys("nyiri");
-        }
-
-        public EAUserFormPage ClickLogin()
-        {
-            return ClickOnWebElementCreatesANewPage<EAUserFormPage>(btnLogin);
+            TxtUserName.SendKeys("attila");
+            TxtPassword.SendKeys("nyiri");
         }
 
 
