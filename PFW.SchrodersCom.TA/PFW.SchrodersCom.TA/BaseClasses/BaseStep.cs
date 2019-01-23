@@ -22,21 +22,13 @@ namespace PFW.SchrodersCom.TA.BaseClasses
     public class BaseStep
     {
 
-        public string CurrentPageKey
-        {
-            get { return CurrentPageKey; }
-            set { CurrentPageKey = "CurrentPageKey"; }
-        }
+        public string CurrentPageKey => "CurrentPageKey";
 
         public IWebDriver Driver { get; set; }
+        
         public ScenarioContext ScenarioContext;
 
-
-        public BaseStep(IWebDriver driver, ScenarioContext scenarioContext)
-        {
-            ScenarioContext = scenarioContext;
-            Driver = driver;
-        }
+        public BaseStep(IWebDriver driver, ScenarioContext scenarioContext) => ScenarioContext = scenarioContext;
 
 
         public T CreateNewPage<T>()
