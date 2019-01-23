@@ -4,11 +4,11 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
-using PFW.SchrodersCom.TA.BaseClasses;
 using PFW.SchrodersCom.TA.Steps;
 using System;
+using PFW.SchrodersCom.TA.Bases;
+using PFW.SchrodersCom.TA.Bases.Support;
 using TechTalk.SpecFlow;
-using PFW.SchrodersCom.TA.Setup;
 
 namespace PFW.SchrodersCom.TA.Steps
 {
@@ -28,7 +28,7 @@ namespace PFW.SchrodersCom.TA.Steps
         [BeforeScenario]
         public void Initialize()
         {
-            Driver = TestConfiguration.StartWebDriver();
+            Driver = DriverConfiguration.StartWebDriver();
             _objectContainer.RegisterInstanceAs(Driver);
         }
 

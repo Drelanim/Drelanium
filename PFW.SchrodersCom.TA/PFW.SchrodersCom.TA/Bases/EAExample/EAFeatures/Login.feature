@@ -1,4 +1,4 @@
-﻿Feature: Login specific feature
+﻿Feature: EAExample_Login specific feature
 
 
 Scenario: Login to the EA Login page

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace PFW.SchrodersCom.TA.Features
+namespace PFW.SchrodersCom.TA.Bases.EAExample.EAFeatures
 {
     using TechTalk.SpecFlow;
     
@@ -18,8 +18,8 @@ namespace PFW.SchrodersCom.TA.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Userform specific feature")]
-    public partial class UserformSpecificFeatureFeature
+    [NUnit.Framework.DescriptionAttribute("EAExample_Userform specific feature")]
+    public partial class EAExample_UserformSpecificFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace PFW.SchrodersCom.TA.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Userform specific feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EAExample_Userform specific feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,10 +83,19 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I type my username and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
  testRunner.And("I click the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Initial",
+                        "FirstName",
+                        "MiddleName"});
+            table1.AddRow(new string[] {
+                        "ini",
+                        "Attila",
+                        "Nyiri"});
 #line 7
- testRunner.And("I fill out the userform on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
- testRunner.Then("The userform is filled out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I fill out the userform on the page", ((string)(null)), table1, "And ");
+#line 10
+ testRunner.Then("The Fields Are filled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

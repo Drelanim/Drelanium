@@ -165,25 +165,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClasses\BasePage.cs" />
-    <Compile Include="BaseClasses\BaseStep.cs" />
-    <Compile Include="Features\Login.feature.cs">
+    <Compile Include="Bases\BasePage.cs" />
+    <Compile Include="Bases\BaseStep.cs" />
+    <Compile Include="Bases\Support\Assertions.cs" />
+    <Compile Include="Bases\Support\CommonSteps.cs" />
+    <Compile Include="Bases\Support\WebElementActions.cs" />
+    <Compile Include="Bases\EAExample\EAFeatures\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Userform.feature.cs">
+    <Compile Include="Bases\EAExample\EAFeatures\Userform.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Userform.feature</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EALoginPage.cs" />
-    <Compile Include="Pages\EAUserFormPage.cs" />
+    <Compile Include="Bases\EAExample\EAPages\EALoginPage.cs" />
+    <Compile Include="Bases\EAExample\EAPages\EAUserFormPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setup\TestConfiguration.cs" />
+    <Compile Include="Bases\Support\DriverConfiguration.cs" />
     <Compile Include="Steps\Hooks.cs" />
-    <Compile Include="Steps\LoginSteps.cs" />
-    <Compile Include="Steps\UserFormSteps.cs" />
+    <Compile Include="Bases\EAExample\EASteps\LoginSteps.cs" />
+    <Compile Include="Bases\EAExample\EASteps\UserFormSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Debug.config">
@@ -259,11 +262,11 @@
       <DependentUpon>App.config</DependentUpon>
       <IsTransformFile>true</IsTransformFile>
     </None>
-    <None Include="Features\Login.feature">
+    <None Include="Bases\EAExample\EAFeatures\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Userform.feature">
+    <None Include="Bases\EAExample\EAFeatures\Userform.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Userform.feature.cs</LastGenOutput>
     </None>
@@ -271,7 +274,10 @@
     <None Include="Ghpr.SpecFlow.Settings.json" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Features\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

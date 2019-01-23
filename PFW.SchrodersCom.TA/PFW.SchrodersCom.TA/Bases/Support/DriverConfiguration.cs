@@ -1,16 +1,17 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using System;
+using System.Configuration;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Remote;
-using System;
-using System.Configuration;
-using PFW.SchrodersCom.TA.Setup;
-using OpenQA.Selenium;
 
-namespace PFW.SchrodersCom.TA.Setup
+namespace PFW.SchrodersCom.TA.Bases.Support
 {
-    public static class TestConfiguration
+    public static class DriverConfiguration
     {
+
+
+
 
         public static string SelectedEnvironment()
         {  
