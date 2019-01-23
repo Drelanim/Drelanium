@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using PFW.SchrodersCom.TA.Bases.Support;
 
 namespace PFW.SchrodersCom.TA.Bases.EAExample.EAPages
@@ -6,7 +7,7 @@ namespace PFW.SchrodersCom.TA.Bases.EAExample.EAPages
     public class EALoginPage : BasePage
     {
 
-        public EALoginPage(IWebDriver driver) : base(driver)
+        public EALoginPage(RemoteWebDriver driver) : base(driver)
         {
             PageUrl = @"http://executeautomation.com/demosite/Login.html";
         }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 
 namespace PFW.SchrodersCom.TA.Bases.Support
 {
@@ -14,22 +15,22 @@ namespace PFW.SchrodersCom.TA.Bases.Support
 
 
 
-        public static IWebElement FindWebElementByName(IWebDriver driver, string name)
+        public static IWebElement FindWebElementByName(RemoteWebDriver driver, string name)
         {
             return driver.FindElement(By.Name(name));
         }
 
-        public static IWebElement FindWebElementById(IWebDriver driver, string id)
+        public static IWebElement FindWebElementById(RemoteWebDriver driver, string id)
         {
             return driver.FindElement(By.Id(id));
         }
 
-        public static IWebElement FindWebElementByCSSSelector(IWebDriver driver, string cssSelector)
+        public static IWebElement FindWebElementByCSSSelector(RemoteWebDriver driver, string cssSelector)
         {
             return driver.FindElement(By.CssSelector(cssSelector));
         }
 
-        public static IWebElement FindWebElementByXPath(IWebDriver driver, string xPath)
+        public static IWebElement FindWebElementByXPath(RemoteWebDriver driver, string xPath)
         {
             return driver.FindElement(By.XPath(xPath));
         }

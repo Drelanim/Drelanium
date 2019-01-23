@@ -17,7 +17,7 @@ namespace PFW.SchrodersCom.TA.Steps
     {
         private readonly IObjectContainer _objectContainer;
 
-        public new IWebDriver Driver { get; set; }
+        public new RemoteWebDriver Driver { get; set; }
 
 
 

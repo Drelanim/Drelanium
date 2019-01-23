@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using PFW.SchrodersCom.TA.Bases.Support;
 using TechTalk.SpecFlow;
 
@@ -7,7 +8,7 @@ namespace PFW.SchrodersCom.TA.Bases.EAExample.EAPages
     public class EAUserFormPage : BasePage
     {
 
-        public EAUserFormPage(IWebDriver driver) : base(driver)
+        public EAUserFormPage(RemoteWebDriver driver) : base(driver)
         {
             PageUrl = @"http://executeautomation.com/demosite/index.html";
         }

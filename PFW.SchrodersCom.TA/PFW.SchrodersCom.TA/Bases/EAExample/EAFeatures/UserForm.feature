@@ -8,3 +8,4 @@ Scenario: I fill out the userform on the page
 	| Initial   | FirstName   | MiddleName |
 	| ini	    | Attila	  | Nyiri	   |
 	Then The Fields Are filled
+	 

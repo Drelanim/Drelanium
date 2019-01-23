@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using PFW.SchrodersCom.TA.Bases.EAExample.EAPages;
 using PFW.SchrodersCom.TA.Bases.Support;
 using TechTalk.SpecFlow;
@@ -11,7 +12,7 @@ namespace PFW.SchrodersCom.TA.Bases.EAExample.EASteps
     class UserFormSteps : BaseStep
     {
 
-        public UserFormSteps(IWebDriver driver, ScenarioContext scenarioContext) : base(scenarioContext) => Driver = driver;
+        public UserFormSteps(RemoteWebDriver driver, ScenarioContext scenarioContext) : base(scenarioContext) => Driver = driver;
 
 
 

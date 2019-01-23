@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 
 namespace PFW.SchrodersCom.TA.Bases.Support
 {
@@ -29,10 +30,10 @@ namespace PFW.SchrodersCom.TA.Bases.Support
         }
 
 
-        public static IWebDriver StartWebDriver()
+        public static RemoteWebDriver StartWebDriver()
         {
 
-            IWebDriver driver;
+            RemoteWebDriver driver;
 
             switch (SelectedBrowser())
             {
