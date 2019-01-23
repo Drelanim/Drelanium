@@ -12,14 +12,6 @@ namespace PFW.SchrodersCom.TA.BaseClasses
 
         public BasePage(IWebDriver driver) => Driver = driver;
 
-        public string CurrentPageKey
-        {
-            get { return CurrentPageKey; }
-            set { CurrentPageKey = "CurrentPageKey"; }
-        }
-
-
-
 
 
         public IWebElement FindWebElementByName(string name)
