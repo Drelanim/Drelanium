@@ -11,61 +11,98 @@ namespace PFW.SchrodersCom.TA.Bases.Support
     public static class DriverConfiguration
     {
 
-
-
-
-        public static string SelectedEnvironment()
-        {  
-            return ConfigurationManager.AppSettings["Environment"];
-        }
-
-        public static string SelectedBrowser()
-        {
-            return ConfigurationManager.AppSettings["Browser"];
-        }
-
-        public static string SelectedHeadlessMode()
-        {
-            return ConfigurationManager.AppSettings["HeadlessMode"];
-        }
-
-
         public static RemoteWebDriver StartWebDriver()
         {
-
-            RemoteWebDriver driver;
-
-            switch (SelectedBrowser())
+            switch (TestMode)
             {
-                case "CHROME":
-                    driver = new ChromeDriver(CreateChromeOptions());
-                    break;
-                case "FIREFOX":
-                    driver = new FirefoxDriver(CreateFirefoxOptions());
-                    break;
-                case "INTERNETEXPLORER":
-                    driver = new InternetExplorerDriver(CreateInternetExplorerOptions());
-                    break;
+                case testmodeLOCAL:
+                    switch (Browser)
+                    {
+                        case browserCHROME:
+                            return new ChromeDriver(ChromeOptions);
+                        case browserFIREFOX:
+                            return new FirefoxDriver(FirefoxOptions);
+                        case browserINTERNETEXPLORER:
+                            return new InternetExplorerDriver(InternetExplorerOptions);
+                        default:
+                            throw new Exception();
+                    }
+                case testmodeREMOTE:
+                    switch (Browser)
+                    {
+                        case browserCHROME:
+                            return new RemoteWebDriver(SeleniumGridUri, ChromeOptions.ToCapabilities());
+                        case browserFIREFOX:
+                            return new RemoteWebDriver(SeleniumGridUri, FirefoxOptions.ToCapabilities());
+                        case browserINTERNETEXPLORER:
+                            return new RemoteWebDriver(SeleniumGridUri, ChromeOptions.ToCapabilities());
+                        default:
+                            throw new Exception();
+                    }
                 default:
                     throw new Exception();
             }
-
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            return driver;
         }
 
+        private const string keyEnvironment = "Environment";
+        private const string keySYS1Domain = "SYS1Domain";
+        private const string keyUATDomain = "UATDomain";
+        private const string keyPRODDomain = "PRODDomain";
+        private const string keyTestMode = "TestMode";
+        private const string keySeleniumGridHubUrl = "SeleniumGridHubUrl";
+        private const string keyBrowser = "Browser";
+        private const string keyHeadlessMode = "HeadlessMode";
+        private const string browserCHROME = "CHROME";
+        private const string browserFIREFOX = "FIREFOX";
+        private const string browserINTERNETEXPLORER = "INTERNETEXPLORER";
+        private const string envSYS1 = "SYS1";
+        private const string envUAT = "UAT";
+        private const string envPROD = "PROD";
+        private const string headlessmodeON = "ON";
+        private const string headlessmodeOFF = "OFF";
+        private const string testmodeLOCAL = "LOCAL";
+        private const string testmodeREMOTE = "REMOTE";
 
-        public static ChromeOptions CreateChromeOptions()
+
+        private static string Environment => ConfigurationManager.AppSettings[keyEnvironment];
+        private static string SYS1Domain => ConfigurationManager.AppSettings[keySYS1Domain];
+        private static string UATDomain => ConfigurationManager.AppSettings[keyUATDomain];
+        private static string PRODDomain => ConfigurationManager.AppSettings[keyPRODDomain];
+        private static string TestMode => ConfigurationManager.AppSettings[keyTestMode];
+        private static string SeleniumGridHubUrl => ConfigurationManager.AppSettings[keySeleniumGridHubUrl];
+        private static string Browser => ConfigurationManager.AppSettings[keyBrowser];
+        private static string HeadlessMode => ConfigurationManager.AppSettings[keyHeadlessMode];
+        private static string Domain => SelectDomain(Environment);
+        private static ChromeOptions ChromeOptions => CreateChromeOptions(HeadlessMode);
+        private static FirefoxOptions FirefoxOptions => CreateFirefoxOptions(HeadlessMode);
+        private static InternetExplorerOptions InternetExplorerOptions => CreateInternetExplorerOptions();
+        private static Uri SeleniumGridUri => new Uri(SeleniumGridHubUrl);
+
+        private static string SelectDomain (string environment)
+        {
+            switch (environment)
+            {
+                case envSYS1:
+                    return SYS1Domain;
+                case envUAT:
+                    return UATDomain;
+                case envPROD:
+                    return PRODDomain;
+                default:
+                    throw new Exception();
+            }
+        }
+
+        private static ChromeOptions CreateChromeOptions(string headlessmode)
         {
             ChromeOptions options = new ChromeOptions();
 
-            switch (SelectedHeadlessMode())
+            switch (headlessmode)
             {
-                case "ON":
+                case headlessmodeON:
                     options.AddArgument("--headless");
                     break;
-                case "OFF":
+                case headlessmodeOFF:
                     break;
                 default:
                     throw new Exception();
@@ -73,16 +110,16 @@ namespace PFW.SchrodersCom.TA.Bases.Support
             return options;
         }
 
-        public static FirefoxOptions CreateFirefoxOptions()
+        private static FirefoxOptions CreateFirefoxOptions(string headlessmode)
         {
             FirefoxOptions options = new FirefoxOptions();
 
-            switch (SelectedHeadlessMode())
+            switch (headlessmode)
             {
-                case "ON":
+                case headlessmodeON:
                     options.AddArgument("--headless");
                     break;
-                case "OFF":
+                case headlessmodeOFF:
                     break;
                 default:
                     throw new Exception();
@@ -90,16 +127,12 @@ namespace PFW.SchrodersCom.TA.Bases.Support
             return options;
         }
 
-
-        public static InternetExplorerOptions CreateInternetExplorerOptions()
+        private static InternetExplorerOptions CreateInternetExplorerOptions()
         {
             InternetExplorerOptions options = new InternetExplorerOptions();
             options.IgnoreZoomLevel = true;
             return options;
         }
-
-
-
 
     }
 }
