@@ -28,7 +28,7 @@ namespace PFW.SchrodersCom.TA.BaseClasses
         
         public ScenarioContext ScenarioContext;
 
-        public BaseStep(IWebDriver driver, ScenarioContext scenarioContext) => ScenarioContext = scenarioContext;
+        public BaseStep(ScenarioContext scenarioContext) => ScenarioContext = scenarioContext;
 
 
         public T CreateNewPage<T>()

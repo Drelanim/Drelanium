@@ -41,22 +41,22 @@ namespace PFW.SchrodersCom.TA.Steps
         [When(@"I type my username and password")]
         public void WhenITypeMyUsernameAndPassword()
         {
-      //      LoadCurrentPage<EALoginPage>().FillEALoginPageFields();
+           LoadCurrentPage<EALoginPage>().FillEALoginPageFields();
             Console.WriteLine("2. Step Run perfectly");
         }
 
         [When(@"I click the Login button")]
         public void WhenIClickTheLoginButton()
         {
-    //        LoadCurrentPage<EALoginPage>().BtnLogin.Submit();
-      //      CreateSaveNewPage<EAUserFormPage>();
+           LoadCurrentPage<EALoginPage>().BtnLogin.Submit();
+           CreateSaveNewPage<EAUserFormPage>();
             Console.WriteLine("3. Step Run perfectly");
         }
 
         [Then(@"I am logged in")]
         public void ThenIAmLoggedIn()
         {
-        //    AssertThatCurrentPageIsLoaded<EAUserFormPage>();
+          AssertThatCurrentPageIsLoaded<EAUserFormPage>();
 
 
         }
