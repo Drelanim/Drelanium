@@ -176,23 +176,23 @@
     <Compile Include="Bases\Support\Assertions.cs" />
     <Compile Include="Bases\Support\CommonSteps.cs" />
     <Compile Include="Bases\Support\WebElementActions.cs" />
-    <Compile Include="Bases\EAExample\EAFeatures\Login.feature.cs">
+    <Compile Include="Example\EAFeatures\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="Bases\EAExample\EAFeatures\Userform.feature.cs">
+    <Compile Include="Example\EAFeatures\Userform.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Userform.feature</DependentUpon>
     </Compile>
-    <Compile Include="Bases\EAExample\EAPages\EALoginPage.cs" />
-    <Compile Include="Bases\EAExample\EAPages\EAUserFormPage.cs" />
+    <Compile Include="Example\EAPages\EALoginPage.cs" />
+    <Compile Include="Example\EAPages\EAUserFormPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bases\Support\DriverConfiguration.cs" />
     <Compile Include="Steps\Hooks.cs" />
-    <Compile Include="Bases\EAExample\EASteps\LoginSteps.cs" />
-    <Compile Include="Bases\EAExample\EASteps\UserFormSteps.cs" />
+    <Compile Include="Example\EASteps\LoginSteps.cs" />
+    <Compile Include="Example\EASteps\UserFormSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Debug.config">
@@ -276,11 +276,11 @@
       <DependentUpon>App.config</DependentUpon>
       <IsTransformFile>true</IsTransformFile>
     </None>
-    <None Include="Bases\EAExample\EAFeatures\Login.feature">
+    <None Include="Example\EAFeatures\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="Bases\EAExample\EAFeatures\Userform.feature">
+    <None Include="Example\EAFeatures\Userform.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Userform.feature.cs</LastGenOutput>
     </None>

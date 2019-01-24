@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace PFW.SchrodersCom.TA.Bases.EAExample.EAFeatures
+namespace PFW.SchrodersCom.TA.Example.EAFeatures
 {
     using TechTalk.SpecFlow;
     
