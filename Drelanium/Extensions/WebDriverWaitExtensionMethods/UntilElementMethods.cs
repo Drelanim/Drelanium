@@ -6,10 +6,14 @@ using Serilog.Core;
 
 namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+    /// Extension methods for <see cref="WebDriverWait"/> types.
+    ///</summary>
     public static class UntilElementMethods
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -25,7 +29,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
@@ -44,7 +50,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -61,7 +69,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
@@ -80,7 +90,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -96,7 +108,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
@@ -115,7 +129,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -131,7 +147,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
@@ -150,7 +168,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
@@ -171,7 +191,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="webElementAttributeName">To be added...</param>
@@ -183,7 +205,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return wait.UntilElementAttribute(element, webElementAttributeName.AttributeName, condition, logger);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added..
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
@@ -206,7 +230,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="webElementAttributeName">To be added...</param>
         /// <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
@@ -221,7 +247,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
                 logger);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
@@ -239,7 +267,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>

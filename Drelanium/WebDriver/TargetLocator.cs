@@ -5,10 +5,12 @@ using Serilog.Core;
 
 namespace Drelanium.WebDriver
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...</summary>
     public class TargetLocator : ITargetLocator
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public TargetLocator(IWebDriver driver)
         {
@@ -16,61 +18,73 @@ namespace Drelanium.WebDriver
             TargetLocatorImplementation = driver.SwitchTo();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private ITargetLocator TargetLocatorImplementation { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+        /// The browser, that is represented by an <see cref="IWebDriver" /> instance.
+        ///</summary>
         private IWebDriver Driver { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IWebDriver Frame(int frameIndex)
         {
             return TargetLocatorImplementation.Frame(frameIndex);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IWebDriver Frame(string frameName)
         {
             return TargetLocatorImplementation.Frame(frameName);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IWebDriver Frame(IWebElement frameElement)
         {
             return TargetLocatorImplementation.Frame(frameElement);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IWebDriver ParentFrame()
         {
             return TargetLocatorImplementation.ParentFrame();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IWebDriver Window(string windowName)
         {
             return TargetLocatorImplementation.Window(windowName);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IWebDriver DefaultContent()
         {
             return TargetLocatorImplementation.DefaultContent();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IWebElement ActiveElement()
         {
             return TargetLocatorImplementation.ActiveElement();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IAlert Alert()
         {
             return TargetLocatorImplementation.Alert();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(int frameIndex, Logger logger = null)
         {
@@ -81,7 +95,8 @@ namespace Drelanium.WebDriver
             return Frame(frameIndex);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(string frameName, Logger logger = null)
         {
@@ -92,7 +107,8 @@ namespace Drelanium.WebDriver
             return Frame(frameName);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(IWebElement frameElement, Logger logger = null)
         {
@@ -103,7 +119,8 @@ namespace Drelanium.WebDriver
             return Frame(frameElement);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver ParentFrame(Logger logger = null)
         {
@@ -114,7 +131,8 @@ namespace Drelanium.WebDriver
             return ParentFrame();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Window(string windowName, Logger logger = null)
         {
@@ -125,7 +143,8 @@ namespace Drelanium.WebDriver
             return Window(windowName);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver DefaultContent(Logger logger = null)
         {
@@ -134,7 +153,8 @@ namespace Drelanium.WebDriver
             return DefaultContent();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebElement ActiveElement(Logger logger = null)
         {
@@ -143,7 +163,8 @@ namespace Drelanium.WebDriver
             return ActiveElement();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IAlert Alert(Logger logger = null)
         {
@@ -152,7 +173,8 @@ namespace Drelanium.WebDriver
             return Alert();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Window(int indexOfWindow, Logger logger = null)
         {
@@ -165,7 +187,8 @@ namespace Drelanium.WebDriver
             return Window(Driver.WindowHandles[indexOfWindow], logger);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver FirstWindow(Logger logger = null)
         {
@@ -176,7 +199,8 @@ namespace Drelanium.WebDriver
             return Window(Driver.WindowHandles[0]);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver LastWindow(Logger logger = null)
         {

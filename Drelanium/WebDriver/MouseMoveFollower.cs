@@ -9,10 +9,12 @@ using Serilog.Core;
 // ReSharper disable InconsistentNaming
 namespace Drelanium.WebDriver
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...</summary>
     public class MouseMoveFollower
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private const string pictureInBase64 =
             "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAQAAACGG/bgAAAAAmJLR0QA" +
             "/4ePzL8AAAAJcEhZcwAAHsYAAB7GAZEt8iwAAAAHdElNRQfgAwgMIwdxU/i7AAABZklEQVQ4y43TsU" +
@@ -24,26 +26,36 @@ namespace Drelanium.WebDriver
             "2+pPOWW6ONcpr3PrXy9VfS473M/D7H+TLmrqsXtOGctvxvMv2oVNP+Av0uHbzbxyJaywyUjx8TlnPY" +
             "2YxqkDdAAAAABJRU5ErkJggg==";
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private const string SeleniumMouseMoveFollowerID = "SeleniumMouseMoveFollower";
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private const string MouseMoveFollowerFunctionName = "MouseMoveFollower";
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public MouseMoveFollower(IWebDriver driver)
         {
             Driver = driver;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public bool IsTurnedON => Driver.Search().HasElement(By.Id(SeleniumMouseMoveFollowerID));
 
-        /// <summary>To be added...</summary>
+
+
+
+        /// <summary>
+        /// The browser, that is represented by an <see cref="IWebDriver" /> instance.
+        ///</summary>
         private IWebDriver Driver { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public void TurnON(Logger logger = null)
         {
             if (IsTurnedON)
@@ -68,7 +80,8 @@ namespace Drelanium.WebDriver
             seleniumMouseMoveFollower.Attributes().Src = pictureInBase64;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public void TurnOFF(Logger logger = null)
         {
             if (!IsTurnedON)

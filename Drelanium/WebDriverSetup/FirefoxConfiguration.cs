@@ -3,19 +3,24 @@ using OpenQA.Selenium.Firefox;
 
 namespace Drelanium.WebDriverSetup
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...</summary>
     public class FirefoxConfiguration
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public FirefoxOptions InitialOptions { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public string[] Arguments { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public string FirefoxDriverDirectory { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public FirefoxOptions BuildOptions()
         {
             var options = InitialOptions;

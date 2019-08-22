@@ -7,10 +7,14 @@ using Serilog.Core;
 
 namespace Drelanium.WebDriver
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...
+ ///</summary>
     public class CookieJar : ICookieJar
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public CookieJar(IWebDriver driver)
         {
@@ -18,46 +22,64 @@ namespace Drelanium.WebDriver
             CookieJarImplementation = driver.Manage().Cookies;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         private ICookieJar CookieJarImplementation { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+        /// The browser, that is represented by an <see cref="IWebDriver" /> instance.
+        ///</summary>
         private IWebDriver Driver { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added..
+ ///</summary>
         public void AddCookie(Cookie cookie)
         {
             CookieJarImplementation.AddCookie(cookie);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public Cookie GetCookieNamed(string name)
         {
             return CookieJarImplementation.GetCookieNamed(name);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteCookie(Cookie cookie)
         {
             CookieJarImplementation.DeleteCookie(cookie);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteCookieNamed(string name)
         {
             CookieJarImplementation.DeleteCookieNamed(name);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteAllCookies()
         {
             CookieJarImplementation.DeleteAllCookies();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public ReadOnlyCollection<Cookie> AllCookies => CookieJarImplementation.AllCookies;
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void AddCookie(Cookie cookie, Logger logger = null)
         {
             logger?.Information($"Adding cookie {cookie}");
@@ -65,7 +87,9 @@ namespace Drelanium.WebDriver
             AddCookie(cookie);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public Cookie GetCookieNamed(string name, Logger logger = null)
         {
             logger?.Information($"Getting cookie named {name}");
@@ -73,7 +97,9 @@ namespace Drelanium.WebDriver
             return GetCookieNamed(name);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteCookie(Cookie cookie, Logger logger = null)
         {
             logger?.Information($"Deleting cookie {cookie}");
@@ -83,7 +109,9 @@ namespace Drelanium.WebDriver
             logger?.Information($"Deleted cookie {cookie}");
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteCookieNamed(string name, Logger logger = null)
         {
             logger?.Information($"Deleting cookie named {name}");
@@ -93,7 +121,9 @@ namespace Drelanium.WebDriver
             logger?.Information($"Deleted cookie named {name}");
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteAllCookies(Logger logger = null)
         {
             logger?.Information($"Deleting all available cookies in current domain: ({Driver.Url().Host})");
@@ -103,7 +133,9 @@ namespace Drelanium.WebDriver
             logger?.Information($"Deleted all available cookies in current domain: ({Driver.Url().Host})");
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         private void CheckDomain(string domainName, Logger logger = null)
         {
             var actualDomain = Driver.Url().Host;
@@ -119,35 +151,45 @@ namespace Drelanium.WebDriver
             logger?.Information("Domain compare passed");
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public Cookie GetCookieNamed(string domainName, string name, Logger logger = null)
         {
             CheckDomain(domainName, logger);
             return GetCookieNamed(name, logger);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteCookie(string domainName, Cookie cookie, Logger logger = null)
         {
             CheckDomain(domainName, logger);
             DeleteCookie(cookie, logger);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteCookieNamed(string domainName, string name, Logger logger = null)
         {
             CheckDomain(domainName, logger);
             DeleteCookieNamed(name, logger);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public void DeleteAllCookies(string domainName, Logger logger = null)
         {
             CheckDomain(domainName, logger);
             DeleteAllCookies(logger);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public IEnumerable<Cookie> DomainCookies(string domainName, Logger logger = null)
         {
             CheckDomain(domainName, logger);

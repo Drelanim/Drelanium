@@ -7,32 +7,45 @@ using Serilog.Core;
 
 namespace Drelanium.SearchContext
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...
+ ///</summary>
     public class Search : ISearchContext
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         public Search(ISearchContext searchContext)
         {
             SearchContextImplementation = searchContext;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         private ISearchContext SearchContextImplementation { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public IWebElement FindElement(By by)
         {
             return SearchContextImplementation.FindElement(by);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary
+ ///>
         public ReadOnlyCollection<IWebElement> FindElements(By by)
         {
             return SearchContextImplementation.FindElements(by);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="by">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebElement FindElement(By by, Logger logger = null)
@@ -46,7 +59,9 @@ namespace Drelanium.SearchContext
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="by">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public ReadOnlyCollection<IWebElement> FindElements(By by, Logger logger = null)
@@ -60,14 +75,18 @@ namespace Drelanium.SearchContext
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="locator">The locating mechanism to use.</param>
         public bool HasElement(By locator)
         {
             return FindElements(locator).Count > 0;
         }
 
-        /// <summary>Finds the first <see cref="IWebElement" />, until a set timeout.</summary>
+        /// <summary>
+ ///Finds the first <see cref="IWebElement" />, until a set timeout.
+ ///</summary>
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -84,7 +103,9 @@ namespace Drelanium.SearchContext
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
         /// <param name="timeoutMessage">The message that appears on timeout.</param>
         /// <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
@@ -104,7 +125,9 @@ namespace Drelanium.SearchContext
             return result;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>

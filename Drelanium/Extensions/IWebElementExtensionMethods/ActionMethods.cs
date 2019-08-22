@@ -3,17 +3,23 @@ using OpenQA.Selenium;
 
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+    /// Extension methods for <see cref="IWebElement"/> types.
+    ///</summary>
     public static class ActionMethods
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static ExtendedActions Actions(this IWebElement element)
         {
             return new ExtendedActions(element.Driver());
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="theKey">To be added...</param>
         public static void KeyDownAndUp(this IWebElement element, string theKey)
@@ -25,7 +31,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
                 .BuildAndPerform();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement MoveMouseOver(this IWebElement element)
         {
@@ -37,7 +45,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
             return element;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement MoveMouseOverAndClick(this IWebElement element)
         {
@@ -50,7 +60,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
             return element;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="offsetX">To be added...</param>
         /// <param name="offsetY">To be added...</param>
@@ -66,7 +78,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
             return element;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="offsetX">To be added...</param>
         /// <param name="offsetY">To be added...</param>
@@ -82,7 +96,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
             return element;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement RightClick(this IWebElement element)
         {
@@ -95,7 +111,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
             return element;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="offsetX">To be added...</param>
         /// <param name="offsetY">To be added...</param>

@@ -3,22 +3,28 @@ using OpenQA.Selenium.Chrome;
 
 namespace Drelanium.WebDriverSetup
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...</summary>
     public class ChromeConfiguration
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public ChromeOptions InitialOptions { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public string[] Arguments { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public bool? CapabilityUseAutomationExtension { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public string ChromeDriverDirectory { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public ChromeOptions BuildOptions()
         {
             var options = InitialOptions;

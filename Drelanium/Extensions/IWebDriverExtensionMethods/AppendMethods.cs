@@ -3,10 +3,14 @@ using OpenQA.Selenium.Support.Extensions;
 
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+    /// Extension methods for <see cref="IWebDriver"/> types.
+    ///</summary>
     public static class AppendMethods
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="parentElementName">The variable name for the parent element that can be used in the window global object.</param>
         /// <param name="childElementName">The variable name for the child element that can be used in the window global object.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -16,7 +20,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             driver.ExecuteJavaScript($"window['{parentElementName}'].appendChild({childElementName}); ");
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="childElementName">The variable name for the child element that can be used in the window global object.</param>
@@ -26,7 +32,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             driver.ExecuteJavaScript($"arguments[0].appendChild({childElementName}); ", parentElement);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="childElement">The child element.</param>

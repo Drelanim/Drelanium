@@ -9,10 +9,14 @@ using Serilog.Core;
 // ReSharper disable InconsistentNaming
 namespace Drelanium.DriverProcessManager
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+    /// Methods to dispose stuck WebDriver processes
+    /// </summary>
     public static class DisposeDriverServices
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+        /// List of WebDriver process names
+        /// </summary>
         private static readonly List<string> _processesToCheck =
             new List<string>
             {
@@ -27,12 +31,14 @@ namespace Drelanium.DriverProcessManager
                 "webdriver"
             };
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+        /// Ends all WebDriver processes, that has been stuck longer, than the given timespan.
+        /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="processLifeSpan">The lifespan of the webdriver processes, that should be killed.</param>
         public static void EndAllWebDriverProcess(TimeSpan processLifeSpan, Logger logger = null)
         {
-            logger?.Information("Attempting to end all webdriver processes");
+            logger?.Information("Attempting to end all WebDriver processes");
 
             var processes = Process.GetProcesses();
 

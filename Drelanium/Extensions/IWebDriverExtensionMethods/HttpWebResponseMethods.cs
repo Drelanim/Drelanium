@@ -6,10 +6,14 @@ using Serilog.Core;
 
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+    /// Extension methods for <see cref="IWebDriver"/> types.
+    ///</summary>
     public static class HttpWebResponseMethods
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="url">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="driver">To be added...</param>
@@ -20,7 +24,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             return url.HttpWebResponse();
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static HttpWebResponse HttpWebResponse(this IWebDriver driver, Logger logger = null)

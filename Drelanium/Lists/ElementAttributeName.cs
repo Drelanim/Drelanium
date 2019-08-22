@@ -1,16 +1,22 @@
 ﻿namespace Drelanium.Lists
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...
+ ///</summary>
     public class ElementAttributeName
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public ElementAttributeName(string attributeName)
         {
             AttributeName = attributeName;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         public string AttributeName { get; }
 
         public static ElementAttributeName Accept => new ElementAttributeName("accept");

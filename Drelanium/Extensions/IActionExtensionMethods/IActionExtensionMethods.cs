@@ -6,10 +6,14 @@ using Serilog.Core;
 
 namespace Drelanium.Extensions.IActionExtensionMethods
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...
+ ///</summary>
     public static class IActionExtensionMethods
     {
-        /// <summary>Performs this action on the browser, and then waits until the condition is met.</summary>
+        /// <summary>
+ ///Performs this action on the browser, and then waits until the condition is met.
+ ///</summary>
         /// <param name="action">The <see cref="IAction" /> chain, that should be performed on the browser.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>

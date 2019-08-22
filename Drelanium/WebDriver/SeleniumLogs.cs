@@ -8,10 +8,12 @@ using Serilog.Events;
 
 namespace Drelanium.WebDriver
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...</summary>
     public class SeleniumLogs
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public SeleniumLogs(LogsManager logsManager, string logKind)
         {
             LogsManager = logsManager;
@@ -19,16 +21,20 @@ namespace Drelanium.WebDriver
             Logs = logsManager.GetLog(logKind);
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private string LogKind { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private LogsManager LogsManager { get; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private IEnumerable<LogEntry> Logs { get; set; }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="logTimeFilter">
         ///     The <see cref="Func" />, that is applied to filter the LogEntries by their TimeStamp
         ///     property.
@@ -52,13 +58,15 @@ namespace Drelanium.WebDriver
             return this;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public IEnumerable<LogEntry> Get()
         {
             return Logs;
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         private LogEventLevel DefineLogEventLevel(LogLevel logLevel)
         {
             switch (logLevel)
@@ -83,7 +91,8 @@ namespace Drelanium.WebDriver
             }
         }
 
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         public void PrintToLogger(Logger logger = null)
         {
             if (Logs == null)

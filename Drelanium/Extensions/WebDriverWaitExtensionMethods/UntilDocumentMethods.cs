@@ -4,10 +4,14 @@ using Serilog.Core;
 
 namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+    /// Extension methods for <see cref="WebDriverWait"/> types.
+    ///</summary>
     public static class UntilDocumentMethods
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...
+ ///</summary>
         /// <param name="documentReadyState">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>

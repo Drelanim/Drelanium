@@ -11,10 +11,12 @@ using Serilog.Core;
 
 namespace Drelanium.WebDriverSetup
 {
-    /// <summary>To be added...</summary>
+    /// <summary>
+ ///To be added...</summary>
     public static class DriverInitializer
     {
-        /// <summary>To be added...</summary>
+        /// <summary>
+ ///To be added...</summary>
         /// <param name="executionMode">To be added...</param>
         /// <param name="browserType">To be added...</param>
         /// <param name="driverOptions">To be added...</param>
