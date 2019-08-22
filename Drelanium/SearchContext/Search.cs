@@ -5,14 +5,11 @@ using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 
-
 namespace Drelanium.SearchContext
 {
-
     /// <summary>To be added...</summary>
     public class Search : ISearchContext
     {
-
         /// <summary>To be added...</summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         public Search(ISearchContext searchContext)
@@ -93,7 +90,8 @@ namespace Drelanium.SearchContext
         /// <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        public IWebElement FindElement(By locator, TimeSpan timeout, Func<IWebDriver, IWebElement> condition, string timeoutMessage = "", Type[] ignoredExceptionTypes = null, Logger logger = null)
+        public IWebElement FindElement(By locator, TimeSpan timeout, Func<IWebDriver, IWebElement> condition,
+            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, Logger logger = null)
         {
             logger?.Information($"Attempting to Find element By ({locator})");
 
@@ -113,12 +111,12 @@ namespace Drelanium.SearchContext
         public IWebElement FindDisplayedElement(By locator, TimeSpan timeout, Logger logger = null)
         {
             SearchContextImplementation
-                .Wait(timeout, ignoredExceptionTypes: new[] {typeof(NoSuchElementException), typeof(StaleElementReferenceException)})
+                .Wait(timeout,
+                    ignoredExceptionTypes: new[]
+                        {typeof(NoSuchElementException), typeof(StaleElementReferenceException)})
                 .UntilElementIsDisplayed(SearchContextImplementation, locator);
 
             return FindElement(locator);
         }
-
     }
-
 }

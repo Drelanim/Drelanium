@@ -1,7 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.IO;
-using System.Reflection;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
@@ -12,14 +9,11 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Safari;
 using Serilog.Core;
 
-
 namespace Drelanium.WebDriverSetup
 {
-
     /// <summary>To be added...</summary>
     public static class DriverInitializer
     {
-
         /// <summary>To be added...</summary>
         /// <param name="executionMode">To be added...</param>
         /// <param name="browserType">To be added...</param>
@@ -41,15 +35,23 @@ namespace Drelanium.WebDriverSetup
             {
                 case ExecutionMode.LOCAL:
                 {
-                    if (localDriverDirectory == null)
-                    {
-                        localDriverDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                    }
-
                     logger?.Information($"Attempting to start a ({browserType}) WebDriver on " +
                                         $"({executionMode}) ExecutionMode, " +
                                         $"using local driver directory ({localDriverDirectory}) " +
                                         $"with the following DriverOptions: ({driverOptions})");
+
+
+                    if (localDriverDirectory == null)
+                    {
+                        var errorMessage =
+                            $"Using WebDriver in ({ExecutionMode.LOCAL}) mode requires a valid local path for the WebDriver.";
+
+                        logger?.Error(errorMessage);
+
+
+                        throw new ArgumentException(errorMessage);
+                    }
+
 
                     switch (browserType)
                     {
@@ -73,7 +75,8 @@ namespace Drelanium.WebDriverSetup
 
                         case BrowserType.INTERNETEXPLROER:
                         {
-                            driver = new InternetExplorerDriver(localDriverDirectory, (InternetExplorerOptions) driverOptions);
+                            driver = new InternetExplorerDriver(localDriverDirectory,
+                                (InternetExplorerOptions) driverOptions);
                             break;
                         }
 
@@ -100,15 +103,24 @@ namespace Drelanium.WebDriverSetup
 
                 case ExecutionMode.REMOTE:
                 {
-                    if (seleniumGridHubUrl == null)
-                    {
-                        throw new InvalidEnumArgumentException($"Using WebDriver in {ExecutionMode.REMOTE} requires a SeleniumGridHubUrl.");
-                    }
-
                     logger?.Information($"Attempting to start a ({browserType}) WebDriver on " +
                                         $"({executionMode}) ExecutionMode, " +
-                                        $"using SeleniumGrid Hub Url ({seleniumGridHubUrl.AbsoluteUri}) " +
+                                        $"using SeleniumGrid Hub Url ({seleniumGridHubUrl?.AbsoluteUri}) " +
                                         $"with the following DriverOptions: ({driverOptions})");
+
+
+                    if (seleniumGridHubUrl == null)
+                    {
+                        var errorMessage =
+                            $"Using WebDriver in ({ExecutionMode.REMOTE}) mode requires a valid url to connect to a SeleniumGrid Hub.";
+
+
+                        logger?.Error(errorMessage);
+
+
+                        throw new ArgumentException(errorMessage);
+                    }
+
 
                     switch (browserType)
                     {
@@ -167,7 +179,5 @@ namespace Drelanium.WebDriverSetup
 
             return driver;
         }
-
     }
-
 }

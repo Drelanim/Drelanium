@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 
-
 namespace Drelanium.WebDriverSetup
 {
-
     /// <summary>To be added...</summary>
     public class InternetExplorerConfiguration
     {
-
         /// <summary>To be added...</summary>
         public InternetExplorerOptions InitialOptions { get; set; }
 
@@ -28,7 +25,5 @@ namespace Drelanium.WebDriverSetup
 
             return options;
         }
-
     }
-
 }

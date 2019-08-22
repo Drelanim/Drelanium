@@ -3,14 +3,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public enum SeleniumLogType
     {
-
         BrowserLogs,
 
         ClientLogs,
@@ -20,13 +17,11 @@ namespace Drelanium.WebDriver
         ProfilerLogs,
 
         ServerLogs
-
     }
 
     /// <summary>To be added...</summary>
     public class LogsManager : ILogs
     {
-
         /// <summary>To be added...</summary>
         public LogsManager(IOptions options)
         {
@@ -144,7 +139,5 @@ namespace Drelanium.WebDriver
         {
             return GetLog(LogKind(seleniumLogType));
         }
-
     }
-
 }

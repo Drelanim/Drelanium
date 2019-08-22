@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-
 namespace Drelanium.WebDriverSetup
 {
-
     /// <summary>To be added...</summary>
     public class ChromeConfiguration
     {
-
         /// <summary>To be added...</summary>
         public ChromeOptions InitialOptions { get; set; }
 
@@ -44,7 +41,5 @@ namespace Drelanium.WebDriverSetup
 
             return options;
         }
-
     }
-
 }

@@ -2,14 +2,11 @@
 using OpenQA.Selenium.Support.Extensions;
 using Serilog.Core;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Scroll
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Scroll(IWebDriver driver)
@@ -39,7 +36,8 @@ namespace Drelanium.WebDriver
         {
             logger?.Information("Scrolling to the bottom of the body");
 
-            Driver.ExecuteJavaScript($"window.scrollTo({{top: document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
+            Driver.ExecuteJavaScript(
+                $"window.scrollTo({{top: document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
         }
 
         /// <summary>To be added...</summary>
@@ -49,7 +47,8 @@ namespace Drelanium.WebDriver
         {
             logger?.Information("Scrolling to the top of the body");
 
-            Driver.ExecuteJavaScript($"window.scrollTo({{top: -document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
+            Driver.ExecuteJavaScript(
+                $"window.scrollTo({{top: -document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
         }
 
         /// <summary>To be added...</summary>
@@ -63,7 +62,5 @@ namespace Drelanium.WebDriver
 
             Driver.ExecuteJavaScript($"window.scrollBy({{top: {x}, left: {y}, behaviour: '{behaviour}'}});");
         }
-
     }
-
 }

@@ -1,14 +1,11 @@
 ﻿using System.Text;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class SendKeysMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static void SendTabKey(this IWebElement element)
@@ -77,7 +74,5 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
 
             element.SendKeys(text);
         }
-
     }
-
 }

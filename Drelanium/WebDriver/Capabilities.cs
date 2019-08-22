@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Capabilities : ICapabilities
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Capabilities(IWebDriver driver)
@@ -33,58 +30,85 @@ namespace Drelanium.WebDriver
         public string Platform => HasCapability("platform") ? GetCapability("platform").ToString() : null;
 
         /// <summary>To be added...</summary>
-        public string HandlesAlerts => HasCapability("handlesAlerts") ? GetCapability("handlesAlerts").ToString().ToLower() : null;
+        public string HandlesAlerts =>
+            HasCapability("handlesAlerts") ? GetCapability("handlesAlerts").ToString().ToLower() : null;
 
         /// <summary>To be added...</summary>
-        public string CssSelectorsEnabled => HasCapability("cssSelectorsEnabled") ? GetCapability("cssSelectorsEnabled").ToString().ToLower() : null;
+        public string CssSelectorsEnabled => HasCapability("cssSelectorsEnabled")
+            ? GetCapability("cssSelectorsEnabled").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string JavascriptEnabled => HasCapability("javascriptEnabled") ? GetCapability("javascriptEnabled").ToString().ToLower() : null;
+        public string JavascriptEnabled => HasCapability("javascriptEnabled")
+            ? GetCapability("javascriptEnabled").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string DatabaseEnabled => HasCapability("databaseEnabled") ? GetCapability("databaseEnabled").ToString().ToLower() : null;
+        public string DatabaseEnabled => HasCapability("databaseEnabled")
+            ? GetCapability("databaseEnabled").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string LocationContextEnabled => HasCapability("locationContextEnabled") ? GetCapability("locationContextEnabled").ToString().ToLower() : null;
+        public string LocationContextEnabled => HasCapability("locationContextEnabled")
+            ? GetCapability("locationContextEnabled").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string ApplicationCacheEnabled => HasCapability("applicationCacheEnabled") ? GetCapability("applicationCacheEnabled").ToString().ToLower() : null;
+        public string ApplicationCacheEnabled => HasCapability("applicationCacheEnabled")
+            ? GetCapability("applicationCacheEnabled").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string BrowserConnectionEnabled => HasCapability("browserConnectionEnabled") ? GetCapability("browserConnectionEnabled").ToString().ToLower() : null;
+        public string BrowserConnectionEnabled => HasCapability("browserConnectionEnabled")
+            ? GetCapability("browserConnectionEnabled").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string WebStorageEnabled => HasCapability("webStorageEnabled") ? GetCapability("webStorageEnabled").ToString().ToLower() : null;
+        public string WebStorageEnabled => HasCapability("webStorageEnabled")
+            ? GetCapability("webStorageEnabled").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string AcceptSslCerts => HasCapability("acceptSslCerts") ? GetCapability("acceptSslCerts").ToString().ToLower() : null;
+        public string AcceptSslCerts => HasCapability("acceptSslCerts")
+            ? GetCapability("acceptSslCerts").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
         public string Rotatable => HasCapability("rotatable") ? GetCapability("rotatable").ToString().ToLower() : null;
 
         /// <summary>To be added...</summary>
-        public string NativeEvents => HasCapability("nativeEvents") ? GetCapability("nativeEvents").ToString().ToLower() : null;
+        public string NativeEvents =>
+            HasCapability("nativeEvents") ? GetCapability("nativeEvents").ToString().ToLower() : null;
 
         /// <summary>To be added...</summary>
         public string Proxy => HasCapability("proxy") ? GetCapability("proxy").ToString() : null;
 
         /// <summary>To be added...</summary>
-        public string UnexpectedAlertBehaviour => HasCapability("unexpectedAlertBehaviour") ? GetCapability("unexpectedAlertBehaviour").ToString() : null;
+        public string UnexpectedAlertBehaviour => HasCapability("unexpectedAlertBehaviour")
+            ? GetCapability("unexpectedAlertBehaviour").ToString()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string ElementScrollBehavior => HasCapability("elementScrollBehavior") ? GetCapability("elementScrollBehavior").ToString() : null;
+        public string ElementScrollBehavior => HasCapability("elementScrollBehavior")
+            ? GetCapability("elementScrollBehavior").ToString()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string WebdriverRemoteSessionid => HasCapability("webdriver.remote.sessionid") ? GetCapability("webdriver.remote.sessionid").ToString() : null;
+        public string WebdriverRemoteSessionid => HasCapability("webdriver.remote.sessionid")
+            ? GetCapability("webdriver.remote.sessionid").ToString()
+            : null;
 
         /// <summary>To be added...</summary>
-        public string WebdriverRemoteQuietExceptions => HasCapability("webdriver.remote.quietExceptions") ? GetCapability("webdriver.remote.quietExceptions").ToString().ToLower() : null;
+        public string WebdriverRemoteQuietExceptions => HasCapability("webdriver.remote.quietExceptions")
+            ? GetCapability("webdriver.remote.quietExceptions").ToString().ToLower()
+            : null;
 
         /// <summary>To be added...</summary>
         public string Path => HasCapability("path") ? GetCapability("path").ToString() : null;
 
         /// <summary>To be added...</summary>
-        public string SeleniumProtocol => HasCapability("seleniumProtocol") ? GetCapability("seleniumProtocol").ToString() : null;
+        public string SeleniumProtocol =>
+            HasCapability("seleniumProtocol") ? GetCapability("seleniumProtocol").ToString() : null;
 
         /// <summary>To be added...</summary>
         public string MaxInstances => HasCapability("maxInstances") ? GetCapability("maxInstances").ToString() : null;
@@ -112,7 +136,5 @@ namespace Drelanium.WebDriver
         {
             return CapabilitiesImplementation.ToString();
         }
-
     }
-
 }

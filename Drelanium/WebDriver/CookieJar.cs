@@ -5,14 +5,11 @@ using Drelanium.Extensions.IWebDriverExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class CookieJar : ICookieJar
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public CookieJar(IWebDriver driver)
@@ -115,7 +112,8 @@ namespace Drelanium.WebDriver
 
             if (actualDomain != domainName)
             {
-                throw new InvalidCookieDomainException($"Actual domain ({actualDomain}) is not equal to the expected ({domainName}) domain");
+                throw new InvalidCookieDomainException(
+                    $"Actual domain ({actualDomain}) is not equal to the expected ({domainName}) domain");
             }
 
             logger?.Information("Domain compare passed");
@@ -158,7 +156,5 @@ namespace Drelanium.WebDriver
 
             return AllCookies.Where(cookie => cookie.Domain == domainName);
         }
-
     }
-
 }

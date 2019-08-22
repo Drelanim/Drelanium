@@ -2,14 +2,11 @@
 using Drelanium.Lists;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.WebElement
 {
-
     /// <summary>To be added...</summary>
     public class Style
     {
-
         /// <summary>To be added...</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Style(IWebElement element)
@@ -35,7 +32,8 @@ namespace Drelanium.WebElement
         /// <summary>To be added...</summary>
         public string Get(string stylePropertyName)
         {
-            return Element.ExecuteJavaScript<object>("return arguments[0].style.getPropertyValue(arguments[1]);", Element, stylePropertyName).ToString();
+            return Element.ExecuteJavaScript<object>("return arguments[0].style.getPropertyValue(arguments[1]);",
+                Element, stylePropertyName).ToString();
         }
 
         /// <summary>To be added...</summary>
@@ -47,7 +45,8 @@ namespace Drelanium.WebElement
         /// <summary>To be added...</summary>
         public void Set(string stylePropertyName, object stylePropertyValue)
         {
-            Element.ExecuteJavaScript("arguments[0].style.setProperty(arguments[1], arguments[2]);", Element, stylePropertyName, stylePropertyValue);
+            Element.ExecuteJavaScript("arguments[0].style.setProperty(arguments[1], arguments[2]);", Element,
+                stylePropertyName, stylePropertyValue);
         }
 
         /// <summary>To be added...</summary>
@@ -67,7 +66,5 @@ namespace Drelanium.WebElement
         {
             Remove(elementStylePropertyName.PropertyName);
         }
-
     }
-
 }

@@ -5,14 +5,11 @@ using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Navigation : INavigation
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Navigation(IWebDriver driver)
@@ -145,7 +142,8 @@ namespace Drelanium.WebDriver
         /// <param name="matchingUriPartial">Part of the URL that should match after navigation.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        public void GoToUrl(UriBuilder url, bool checkHttpResponse, bool loadWithoutCookies, TimeSpan timeout, UriPartial matchingUriPartial, Logger logger = null)
+        public void GoToUrl(UriBuilder url, bool checkHttpResponse, bool loadWithoutCookies, TimeSpan timeout,
+            UriPartial matchingUriPartial, Logger logger = null)
         {
             GoToUrl(url, checkHttpResponse, logger);
 
@@ -157,7 +155,5 @@ namespace Drelanium.WebDriver
 
             Driver.Wait(timeout).UntilPageHasLoaded(url, matchingUriPartial, logger);
         }
-
     }
-
 }

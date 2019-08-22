@@ -4,14 +4,11 @@ using Drelanium.Extensions.UriExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 
-
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class HttpWebResponseMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="url">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -32,7 +29,5 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
             return driver.Url().HttpWebResponse();
         }
-
     }
-
 }

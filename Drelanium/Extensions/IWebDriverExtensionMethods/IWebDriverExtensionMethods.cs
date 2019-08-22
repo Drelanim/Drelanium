@@ -4,14 +4,11 @@ using Drelanium.WebDriver;
 using OpenQA.Selenium;
 using Serilog.Core;
 
-
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class IWebDriverExtensionMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static Uri Url(this IWebDriver driver)
@@ -116,7 +113,5 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             driver.Quit();
             logger?.Information("Quitting WebDriver.");
         }
-
     }
-
 }

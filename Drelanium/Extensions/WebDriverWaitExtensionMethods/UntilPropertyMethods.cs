@@ -1,14 +1,11 @@
 ﻿using System;
 using OpenQA.Selenium.Support.UI;
 
-
 namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class UntilPropertyMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="message">To be added...</param>
@@ -35,7 +32,5 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             wait.IgnoreExceptionTypes(exceptionTypes);
             return wait;
         }
-
     }
-
 }

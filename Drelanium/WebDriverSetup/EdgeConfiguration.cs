@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 
-
 namespace Drelanium.WebDriverSetup
 {
-
     /// <summary>To be added...</summary>
     public class EdgeConfiguration
     {
-
         /// <summary>To be added...</summary>
         public EdgeOptions InitialOptions { get; set; }
 
@@ -28,7 +25,5 @@ namespace Drelanium.WebDriverSetup
 
             return options;
         }
-
     }
-
 }

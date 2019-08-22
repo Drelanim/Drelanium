@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Safari;
 
-
 namespace Drelanium.WebDriverSetup
 {
-
     /// <summary>To be added...</summary>
     public class SafariConfiguration
     {
-
         /// <summary>To be added...</summary>
         public SafariOptions InitialOptions { get; set; }
 
@@ -28,7 +25,5 @@ namespace Drelanium.WebDriverSetup
 
             return options;
         }
-
     }
-
 }

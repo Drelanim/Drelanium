@@ -4,27 +4,22 @@ using System.ComponentModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
-
 namespace Drelanium.WebDriver
 {
-
     // ReSharper disable InconsistentNaming
     /// <summary>To be added...</summary>
     public enum DocumentReadyState
     {
-
         loading,
 
         interactive,
 
         complete
-
     }
 
     /// <summary>To be added...</summary>
     public class Document
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Document(IWebDriver driver)
@@ -45,10 +40,12 @@ namespace Drelanium.WebDriver
         public IWebElement Body => Driver.ExecuteJavaScript<IWebElement>("return document['body']; ");
 
         /// <summary>To be added...</summary>
-        public IWebElement DocumentElement => Driver.ExecuteJavaScript<IWebElement>("return document['documentElement']; ");
+        public IWebElement DocumentElement =>
+            Driver.ExecuteJavaScript<IWebElement>("return document['documentElement']; ");
 
         /// <summary>To be added...</summary>
-        public Uri DocumentURI => new Uri(Driver.ExecuteJavaScript<object>("return document['documentURI']; ").ToString());
+        public Uri DocumentURI =>
+            new Uri(Driver.ExecuteJavaScript<object>("return document['documentURI']; ").ToString());
 
         /// <summary>To be added...</summary>
         public string Domain => Driver.ExecuteJavaScript<object>("return document['domain']; ").ToString();
@@ -57,7 +54,8 @@ namespace Drelanium.WebDriver
         public IWebElement Head => Driver.ExecuteJavaScript<IWebElement>("return document['head']; ");
 
         /// <summary>To be added...</summary>
-        public ReadOnlyCollection<IWebElement> Links => Driver.ExecuteJavaScript<ReadOnlyCollection<IWebElement>>("return document['links']; ");
+        public ReadOnlyCollection<IWebElement> Links =>
+            Driver.ExecuteJavaScript<ReadOnlyCollection<IWebElement>>("return document['links']; ");
 
         /// <summary>To be added...</summary>
         public DocumentReadyState ReadyState
@@ -91,7 +89,5 @@ namespace Drelanium.WebDriver
 
         /// <summary>To be added...</summary>
         public Uri URL => new Uri(Driver.ExecuteJavaScript<object>("return document['URL']; ").ToString());
-
     }
-
 }

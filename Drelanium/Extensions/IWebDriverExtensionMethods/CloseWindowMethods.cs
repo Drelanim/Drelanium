@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Serilog.Core;
 
-
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class CloseWindowMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="indexOfWindow">Index of the window that should be closed.</param>
@@ -42,7 +39,5 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
             return driver.CloseWindow(driver.WindowHandles.Count - 1);
         }
-
     }
-
 }

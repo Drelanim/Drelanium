@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Opera;
 
-
 namespace Drelanium.WebDriverSetup
 {
-
     /// <summary>To be added...</summary>
     public class OperaConfiguration
     {
-
         /// <summary>To be added...</summary>
         public OperaOptions InitialOptions { get; set; }
 
@@ -36,7 +33,5 @@ namespace Drelanium.WebDriverSetup
 
             return options;
         }
-
     }
-
 }

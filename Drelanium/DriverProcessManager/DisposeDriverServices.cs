@@ -9,11 +9,9 @@ using Serilog.Core;
 // ReSharper disable InconsistentNaming
 namespace Drelanium.DriverProcessManager
 {
-
     /// <summary>To be added...</summary>
     public static class DisposeDriverServices
     {
-
         /// <summary>To be added...</summary>
         private static readonly List<string> _processesToCheck =
             new List<string>
@@ -66,7 +64,5 @@ namespace Drelanium.DriverProcessManager
                 }
             }
         }
-
     }
-
 }

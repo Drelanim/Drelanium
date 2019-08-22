@@ -2,14 +2,11 @@
 using System.Drawing;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.WebElement
 {
-
     /// <summary>To be added...</summary>
     public enum ElementPoint
     {
-
         TopLeftPoint,
 
         MiddleLeftPoint,
@@ -27,13 +24,11 @@ namespace Drelanium.WebElement
         MiddleRightPoint,
 
         BottomRightPoint
-
     }
 
     /// <summary>To be added...</summary>
     public class Location
     {
-
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Location(IWebElement element)
         {
@@ -112,7 +107,5 @@ namespace Drelanium.WebElement
                     throw new InvalidEnumArgumentException();
             }
         }
-
     }
-
 }

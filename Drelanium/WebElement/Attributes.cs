@@ -7,11 +7,9 @@ using OpenQA.Selenium;
 // ReSharper disable InconsistentNaming
 namespace Drelanium.WebElement
 {
-
     /// <summary>To be added...</summary>
     public class Attributes
     {
-
         /// <summary>To be added...</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Attributes(IWebElement element)
@@ -194,7 +192,8 @@ namespace Drelanium.WebElement
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public string Get(string attributeName)
         {
-            return Element.ExecuteJavaScript<string>("return arguments[0].getAttribute(arguments[1]); ", Element, attributeName);
+            return Element.ExecuteJavaScript<string>("return arguments[0].getAttribute(arguments[1]); ", Element,
+                attributeName);
         }
 
         /// <summary>To be added...</summary>
@@ -207,7 +206,8 @@ namespace Drelanium.WebElement
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public void Set(string attributeName, object attributeValue)
         {
-            Element.ExecuteJavaScript("arguments[0].setAttribute(arguments[1], arguments[2]); ", Element, attributeName, attributeValue);
+            Element.ExecuteJavaScript("arguments[0].setAttribute(arguments[1], arguments[2]); ", Element, attributeName,
+                attributeValue);
         }
 
         /// <summary>To be added...</summary>
@@ -228,7 +228,5 @@ namespace Drelanium.WebElement
         {
             Remove(elementAttributeName.AttributeName);
         }
-
     }
-
 }

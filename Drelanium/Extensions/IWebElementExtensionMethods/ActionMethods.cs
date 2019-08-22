@@ -1,14 +1,11 @@
 ﻿using Drelanium.WebDriver;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class ActionMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static ExtendedActions Actions(this IWebElement element)
@@ -111,7 +108,5 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
 
             return element;
         }
-
     }
-
 }

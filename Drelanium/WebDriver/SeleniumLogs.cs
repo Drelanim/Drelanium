@@ -6,14 +6,11 @@ using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class SeleniumLogs
     {
-
         /// <summary>To be added...</summary>
         public SeleniumLogs(LogsManager logsManager, string logKind)
         {
@@ -44,7 +41,8 @@ namespace Drelanium.WebDriver
         ///     The <see cref="Func" />, that is applied to filter the LogEntries by their Message
         ///     property.
         /// </param>
-        public SeleniumLogs Filter(Func<DateTime, bool> logTimeFilter = null, Func<LogLevel, bool> logLevelFilter = null, Func<string, bool> logMessageFilter = null)
+        public SeleniumLogs Filter(Func<DateTime, bool> logTimeFilter = null,
+            Func<LogLevel, bool> logLevelFilter = null, Func<string, bool> logMessageFilter = null)
         {
             Logs = Logs
                 ?.Where(logEntry => logTimeFilter == null || logTimeFilter(logEntry.Timestamp))
@@ -99,7 +97,5 @@ namespace Drelanium.WebDriver
                     $"[Source: {LogKind.ToUpper()}] [OriginTime: {logEntry.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")}]: {logEntry.Message.Trim()}");
             }
         }
-
     }
-
 }

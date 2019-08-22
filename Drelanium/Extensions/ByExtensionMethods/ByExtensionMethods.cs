@@ -1,14 +1,11 @@
 ﻿using Drelanium.SearchContext;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.Extensions.ByExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class ByExtensionMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
@@ -32,7 +29,5 @@ namespace Drelanium.Extensions.ByExtensionMethods
         {
             return locator.ToString().Substring(locator.ToString().IndexOf(":") + 2);
         }
-
     }
-
 }

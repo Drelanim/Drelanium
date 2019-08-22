@@ -1,13 +1,10 @@
 ﻿using OpenQA.Selenium;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Options : IOptions
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Options(IWebDriver driver)
@@ -42,7 +39,5 @@ namespace Drelanium.WebDriver
         {
             return new MouseMoveFollower(Driver);
         }
-
     }
-
 }

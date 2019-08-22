@@ -10,11 +10,9 @@ using Serilog.Core;
 // ReSharper disable InconsistentNaming
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class IWebElementExtensionMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Attributes Attributes(this IWebElement element)
@@ -71,7 +69,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
             logger?.Information($"Attempting to Click on element ({element})");
 
             element
-                .Wait(timeout, $"Waited ({timeout.TotalSeconds}) seconds until ({element}) element is successfully clicked", new[] {typeof(WebDriverException)})
+                .Wait(timeout,
+                    $"Waited ({timeout.TotalSeconds}) seconds until ({element}) element is successfully clicked",
+                    new[] {typeof(WebDriverException)})
                 .Until(webDriver =>
                 {
                     element.Click();
@@ -136,7 +136,5 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
 
             logger?.Information("Dispatch event on element was successful");
         }
-
     }
-
 }

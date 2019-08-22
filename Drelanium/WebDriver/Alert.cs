@@ -1,13 +1,10 @@
 ﻿using OpenQA.Selenium;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Alert : IAlert
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Alert(IWebDriver driver)
@@ -43,7 +40,5 @@ namespace Drelanium.WebDriver
         }
 
         public string Text => AlertImplementation.Text;
-
     }
-
 }

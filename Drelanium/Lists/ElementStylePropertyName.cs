@@ -2,11 +2,9 @@
 
 namespace Drelanium.Lists
 {
-
     /// <summary>To be added...</summary>
     public class ElementStylePropertyName
     {
-
         /// <summary>To be added...</summary>
         /// <param name="propertyName">To be added...</param>
         public ElementStylePropertyName(string propertyName)
@@ -23,22 +21,43 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName All => new ElementStylePropertyName("all");
         public static ElementStylePropertyName Animation => new ElementStylePropertyName("animation");
         public static ElementStylePropertyName Animationdelay => new ElementStylePropertyName("animation-delay");
-        public static ElementStylePropertyName Animationdirection => new ElementStylePropertyName("animation-direction");
+
+        public static ElementStylePropertyName Animationdirection =>
+            new ElementStylePropertyName("animation-direction");
+
         public static ElementStylePropertyName Animationduration => new ElementStylePropertyName("animation-duration");
         public static ElementStylePropertyName Animationfillmode => new ElementStylePropertyName("animation-fill-mode");
-        public static ElementStylePropertyName Animationiterationcount => new ElementStylePropertyName("animation-iteration-count");
+
+        public static ElementStylePropertyName Animationiterationcount =>
+            new ElementStylePropertyName("animation-iteration-count");
+
         public static ElementStylePropertyName Animationname => new ElementStylePropertyName("animation-name");
-        public static ElementStylePropertyName Animationplaystate => new ElementStylePropertyName("animation-play-state");
-        public static ElementStylePropertyName Animationtimingfunction => new ElementStylePropertyName("animation-timing-function");
-        public static ElementStylePropertyName Backfacevisibility => new ElementStylePropertyName("backface-visibility");
+
+        public static ElementStylePropertyName Animationplaystate =>
+            new ElementStylePropertyName("animation-play-state");
+
+        public static ElementStylePropertyName Animationtimingfunction =>
+            new ElementStylePropertyName("animation-timing-function");
+
+        public static ElementStylePropertyName Backfacevisibility =>
+            new ElementStylePropertyName("backface-visibility");
+
         public static ElementStylePropertyName Background => new ElementStylePropertyName("background");
-        public static ElementStylePropertyName Backgroundattachment => new ElementStylePropertyName("background-attachment");
-        public static ElementStylePropertyName Backgroundblendmode => new ElementStylePropertyName("background-blend-mode");
+
+        public static ElementStylePropertyName Backgroundattachment =>
+            new ElementStylePropertyName("background-attachment");
+
+        public static ElementStylePropertyName Backgroundblendmode =>
+            new ElementStylePropertyName("background-blend-mode");
+
         public static ElementStylePropertyName Backgroundclip => new ElementStylePropertyName("background-clip");
         public static ElementStylePropertyName BackgroundColor => new ElementStylePropertyName("background-color");
         public static ElementStylePropertyName Backgroundimage => new ElementStylePropertyName("background-image");
         public static ElementStylePropertyName Backgroundorigin => new ElementStylePropertyName("background-origin");
-        public static ElementStylePropertyName Backgroundposition => new ElementStylePropertyName("background-position");
+
+        public static ElementStylePropertyName Backgroundposition =>
+            new ElementStylePropertyName("background-position");
+
         public static ElementStylePropertyName Backgroundrepeat => new ElementStylePropertyName("background-repeat");
         public static ElementStylePropertyName Backgroundsize => new ElementStylePropertyName("background-size");
         public static ElementStylePropertyName Blocksize => new ElementStylePropertyName("block-size");
@@ -46,25 +65,49 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Borderblock => new ElementStylePropertyName("border-block");
         public static ElementStylePropertyName Borderblockcolor => new ElementStylePropertyName("border-block-color");
         public static ElementStylePropertyName Borderblockend => new ElementStylePropertyName("border-block-end");
-        public static ElementStylePropertyName Borderblockendcolor => new ElementStylePropertyName("border-block-end-color");
-        public static ElementStylePropertyName Borderblockendstyle => new ElementStylePropertyName("border-block-end-style");
-        public static ElementStylePropertyName Borderblockendwidth => new ElementStylePropertyName("border-block-end-width");
+
+        public static ElementStylePropertyName Borderblockendcolor =>
+            new ElementStylePropertyName("border-block-end-color");
+
+        public static ElementStylePropertyName Borderblockendstyle =>
+            new ElementStylePropertyName("border-block-end-style");
+
+        public static ElementStylePropertyName Borderblockendwidth =>
+            new ElementStylePropertyName("border-block-end-width");
+
         public static ElementStylePropertyName Borderblockstart => new ElementStylePropertyName("border-block-start");
-        public static ElementStylePropertyName Borderblockstartcolor => new ElementStylePropertyName("border-block-start-color");
-        public static ElementStylePropertyName Borderblockstartstyle => new ElementStylePropertyName("border-block-start-style");
-        public static ElementStylePropertyName Borderblockstartwidth => new ElementStylePropertyName("border-block-start-width");
+
+        public static ElementStylePropertyName Borderblockstartcolor =>
+            new ElementStylePropertyName("border-block-start-color");
+
+        public static ElementStylePropertyName Borderblockstartstyle =>
+            new ElementStylePropertyName("border-block-start-style");
+
+        public static ElementStylePropertyName Borderblockstartwidth =>
+            new ElementStylePropertyName("border-block-start-width");
+
         public static ElementStylePropertyName Borderblockstyle => new ElementStylePropertyName("border-block-style");
         public static ElementStylePropertyName Borderblockwidth => new ElementStylePropertyName("border-block-width");
         public static ElementStylePropertyName BorderBottom => new ElementStylePropertyName("border-bottom");
         public static ElementStylePropertyName Borderbottomcolor => new ElementStylePropertyName("border-bottom-color");
-        public static ElementStylePropertyName Borderbottomleftradius => new ElementStylePropertyName("border-bottom-left-radius");
-        public static ElementStylePropertyName Borderbottomrightradius => new ElementStylePropertyName("border-bottom-right-radius");
+
+        public static ElementStylePropertyName Borderbottomleftradius =>
+            new ElementStylePropertyName("border-bottom-left-radius");
+
+        public static ElementStylePropertyName Borderbottomrightradius =>
+            new ElementStylePropertyName("border-bottom-right-radius");
+
         public static ElementStylePropertyName Borderbottomstyle => new ElementStylePropertyName("border-bottom-style");
         public static ElementStylePropertyName Borderbottomwidth => new ElementStylePropertyName("border-bottom-width");
         public static ElementStylePropertyName Bordercollapse => new ElementStylePropertyName("border-collapse");
         public static ElementStylePropertyName Bordercolor => new ElementStylePropertyName("border-color");
-        public static ElementStylePropertyName BorderendEndradius => new ElementStylePropertyName("border-end-end-radius");
-        public static ElementStylePropertyName Borderendstartradius => new ElementStylePropertyName("border-end-start-radius");
+
+        public static ElementStylePropertyName BorderendEndradius =>
+            new ElementStylePropertyName("border-end-end-radius");
+
+        public static ElementStylePropertyName Borderendstartradius =>
+            new ElementStylePropertyName("border-end-start-radius");
+
         public static ElementStylePropertyName Borderimage => new ElementStylePropertyName("border-image");
         public static ElementStylePropertyName Borderimageoutset => new ElementStylePropertyName("border-image-outset");
         public static ElementStylePropertyName Borderimagerepeat => new ElementStylePropertyName("border-image-repeat");
@@ -74,13 +117,27 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Borderinline => new ElementStylePropertyName("border-inline");
         public static ElementStylePropertyName Borderinlinecolor => new ElementStylePropertyName("border-inline-color");
         public static ElementStylePropertyName Borderinlineend => new ElementStylePropertyName("border-inline-end");
-        public static ElementStylePropertyName Borderinlineendcolor => new ElementStylePropertyName("border-inline-end-color");
-        public static ElementStylePropertyName Borderinlineendstyle => new ElementStylePropertyName("border-inline-end-style");
-        public static ElementStylePropertyName Borderinlineendwidth => new ElementStylePropertyName("border-inline-end-width");
+
+        public static ElementStylePropertyName Borderinlineendcolor =>
+            new ElementStylePropertyName("border-inline-end-color");
+
+        public static ElementStylePropertyName Borderinlineendstyle =>
+            new ElementStylePropertyName("border-inline-end-style");
+
+        public static ElementStylePropertyName Borderinlineendwidth =>
+            new ElementStylePropertyName("border-inline-end-width");
+
         public static ElementStylePropertyName Borderinlinestart => new ElementStylePropertyName("border-inline-start");
-        public static ElementStylePropertyName Borderinlinestartcolor => new ElementStylePropertyName("border-inline-start-color");
-        public static ElementStylePropertyName Borderinlinestartstyle => new ElementStylePropertyName("border-inline-start-style");
-        public static ElementStylePropertyName Borderinlinestartwidth => new ElementStylePropertyName("border-inline-start-width");
+
+        public static ElementStylePropertyName Borderinlinestartcolor =>
+            new ElementStylePropertyName("border-inline-start-color");
+
+        public static ElementStylePropertyName Borderinlinestartstyle =>
+            new ElementStylePropertyName("border-inline-start-style");
+
+        public static ElementStylePropertyName Borderinlinestartwidth =>
+            new ElementStylePropertyName("border-inline-start-width");
+
         public static ElementStylePropertyName Borderinlinestyle => new ElementStylePropertyName("border-inline-style");
         public static ElementStylePropertyName Borderinlinewidth => new ElementStylePropertyName("border-inline-width");
         public static ElementStylePropertyName Borderleft => new ElementStylePropertyName("border-left");
@@ -93,18 +150,31 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Borderrightstyle => new ElementStylePropertyName("border-right-style");
         public static ElementStylePropertyName Borderrightwidth => new ElementStylePropertyName("border-right-width");
         public static ElementStylePropertyName Borderspacing => new ElementStylePropertyName("border-spacing");
-        public static ElementStylePropertyName Borderstartendradius => new ElementStylePropertyName("border-start-end-radius");
-        public static ElementStylePropertyName Borderstartstartradius => new ElementStylePropertyName("border-start-start-radius");
+
+        public static ElementStylePropertyName Borderstartendradius =>
+            new ElementStylePropertyName("border-start-end-radius");
+
+        public static ElementStylePropertyName Borderstartstartradius =>
+            new ElementStylePropertyName("border-start-start-radius");
+
         public static ElementStylePropertyName BorderStyle => new ElementStylePropertyName("border-style");
         public static ElementStylePropertyName Bordertop => new ElementStylePropertyName("border-top");
         public static ElementStylePropertyName Bordertopcolor => new ElementStylePropertyName("border-top-color");
-        public static ElementStylePropertyName Bordertopleftradius => new ElementStylePropertyName("border-top-left-radius");
-        public static ElementStylePropertyName Bordertoprightradius => new ElementStylePropertyName("border-top-right-radius");
+
+        public static ElementStylePropertyName Bordertopleftradius =>
+            new ElementStylePropertyName("border-top-left-radius");
+
+        public static ElementStylePropertyName Bordertoprightradius =>
+            new ElementStylePropertyName("border-top-right-radius");
+
         public static ElementStylePropertyName Bordertopstyle => new ElementStylePropertyName("border-top-style");
         public static ElementStylePropertyName Bordertopwidth => new ElementStylePropertyName("border-top-width");
         public static ElementStylePropertyName BorderWidth => new ElementStylePropertyName("border-width");
         public static ElementStylePropertyName Bottom => new ElementStylePropertyName("bottom");
-        public static ElementStylePropertyName Boxdecorationbreak => new ElementStylePropertyName("box-decoration-break");
+
+        public static ElementStylePropertyName Boxdecorationbreak =>
+            new ElementStylePropertyName("box-decoration-break");
+
         public static ElementStylePropertyName Boxshadow => new ElementStylePropertyName("box-shadow");
         public static ElementStylePropertyName Boxsizing => new ElementStylePropertyName("box-sizing");
         public static ElementStylePropertyName Breakafter => new ElementStylePropertyName("break-after");
@@ -154,9 +224,15 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Float => new ElementStylePropertyName("float");
         public static ElementStylePropertyName Font => new ElementStylePropertyName("font");
         public static ElementStylePropertyName Fontfamily => new ElementStylePropertyName("font-family");
-        public static ElementStylePropertyName Fontfeaturesettings => new ElementStylePropertyName("font-feature-settings");
+
+        public static ElementStylePropertyName Fontfeaturesettings =>
+            new ElementStylePropertyName("font-feature-settings");
+
         public static ElementStylePropertyName Fontkerning => new ElementStylePropertyName("font-kerning");
-        public static ElementStylePropertyName Fontlanguageoverride => new ElementStylePropertyName("font-language-override");
+
+        public static ElementStylePropertyName Fontlanguageoverride =>
+            new ElementStylePropertyName("font-language-override");
+
         public static ElementStylePropertyName Fontopticalsizing => new ElementStylePropertyName("font-optical-sizing");
         public static ElementStylePropertyName Fontsize => new ElementStylePropertyName("font-size");
         public static ElementStylePropertyName Fontsizeadjust => new ElementStylePropertyName("font-size-adjust");
@@ -164,12 +240,24 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Fontstyle => new ElementStylePropertyName("font-style");
         public static ElementStylePropertyName Fontsynthesis => new ElementStylePropertyName("font-synthesis");
         public static ElementStylePropertyName Fontvariant => new ElementStylePropertyName("font-variant");
-        public static ElementStylePropertyName Fontvariantalternates => new ElementStylePropertyName("font-variant-alternates");
+
+        public static ElementStylePropertyName Fontvariantalternates =>
+            new ElementStylePropertyName("font-variant-alternates");
+
         public static ElementStylePropertyName Fontvariantcaps => new ElementStylePropertyName("font-variant-caps");
-        public static ElementStylePropertyName Fontvarianteastasian => new ElementStylePropertyName("font-variant-east-asian");
-        public static ElementStylePropertyName Fontvariantligatures => new ElementStylePropertyName("font-variant-ligatures");
-        public static ElementStylePropertyName Fontvariantnumeric => new ElementStylePropertyName("font-variant-numeric");
-        public static ElementStylePropertyName Fontvariantposition => new ElementStylePropertyName("font-variant-position");
+
+        public static ElementStylePropertyName Fontvarianteastasian =>
+            new ElementStylePropertyName("font-variant-east-asian");
+
+        public static ElementStylePropertyName Fontvariantligatures =>
+            new ElementStylePropertyName("font-variant-ligatures");
+
+        public static ElementStylePropertyName Fontvariantnumeric =>
+            new ElementStylePropertyName("font-variant-numeric");
+
+        public static ElementStylePropertyName Fontvariantposition =>
+            new ElementStylePropertyName("font-variant-position");
+
         public static ElementStylePropertyName Fontweight => new ElementStylePropertyName("font-weight");
         public static ElementStylePropertyName Fr => new ElementStylePropertyName("fr");
         public static ElementStylePropertyName Gap => new ElementStylePropertyName("gap");
@@ -187,10 +275,16 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Gridrowstart => new ElementStylePropertyName("grid-row-start");
         public static ElementStylePropertyName Gridtemplate => new ElementStylePropertyName("grid-template");
         public static ElementStylePropertyName Gridtemplateareas => new ElementStylePropertyName("grid-template-areas");
-        public static ElementStylePropertyName Gridtemplatecolumns => new ElementStylePropertyName("grid-template-columns");
+
+        public static ElementStylePropertyName Gridtemplatecolumns =>
+            new ElementStylePropertyName("grid-template-columns");
+
         public static ElementStylePropertyName Gridtemplaterows => new ElementStylePropertyName("grid-template-rows");
         public static ElementStylePropertyName Hz => new ElementStylePropertyName("Hz");
-        public static ElementStylePropertyName Hangingpunctuation => new ElementStylePropertyName("hanging-punctuation");
+
+        public static ElementStylePropertyName Hangingpunctuation =>
+            new ElementStylePropertyName("hanging-punctuation");
+
         public static ElementStylePropertyName Height => new ElementStylePropertyName("height");
         public static ElementStylePropertyName Hyphens => new ElementStylePropertyName("hyphens");
         public static ElementStylePropertyName Imageorientation => new ElementStylePropertyName("image-orientation");
@@ -270,7 +364,10 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Paddingbottom => new ElementStylePropertyName("padding-bottom");
         public static ElementStylePropertyName Paddinginline => new ElementStylePropertyName("padding-inline");
         public static ElementStylePropertyName Paddinginlineend => new ElementStylePropertyName("padding-inline-end");
-        public static ElementStylePropertyName Paddinginlinestart => new ElementStylePropertyName("padding-inline-start");
+
+        public static ElementStylePropertyName Paddinginlinestart =>
+            new ElementStylePropertyName("padding-inline-start");
+
         public static ElementStylePropertyName Paddingleft => new ElementStylePropertyName("padding-left");
         public static ElementStylePropertyName Paddingright => new ElementStylePropertyName("padding-right");
         public static ElementStylePropertyName Paddingtop => new ElementStylePropertyName("padding-top");
@@ -301,46 +398,93 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Scrollbehavior => new ElementStylePropertyName("scroll-behavior");
         public static ElementStylePropertyName ScrollMargin => new ElementStylePropertyName("scroll-margin");
         public static ElementStylePropertyName ScrollMarginblock => new ElementStylePropertyName("scroll-margin-block");
-        public static ElementStylePropertyName ScrollMarginblockend => new ElementStylePropertyName("scroll-margin-block-end");
-        public static ElementStylePropertyName ScrollMarginblockstart => new ElementStylePropertyName("scroll-margin-block-start");
-        public static ElementStylePropertyName ScrollMarginbottom => new ElementStylePropertyName("scroll-margin-bottom");
-        public static ElementStylePropertyName ScrollMargininline => new ElementStylePropertyName("scroll-margin-inline");
-        public static ElementStylePropertyName ScrollMargininlineend => new ElementStylePropertyName("scroll-margin-inline-end");
-        public static ElementStylePropertyName ScrollMargininlinestart => new ElementStylePropertyName("scroll-margin-inline-start");
+
+        public static ElementStylePropertyName ScrollMarginblockend =>
+            new ElementStylePropertyName("scroll-margin-block-end");
+
+        public static ElementStylePropertyName ScrollMarginblockstart =>
+            new ElementStylePropertyName("scroll-margin-block-start");
+
+        public static ElementStylePropertyName ScrollMarginbottom =>
+            new ElementStylePropertyName("scroll-margin-bottom");
+
+        public static ElementStylePropertyName ScrollMargininline =>
+            new ElementStylePropertyName("scroll-margin-inline");
+
+        public static ElementStylePropertyName ScrollMargininlineend =>
+            new ElementStylePropertyName("scroll-margin-inline-end");
+
+        public static ElementStylePropertyName ScrollMargininlinestart =>
+            new ElementStylePropertyName("scroll-margin-inline-start");
+
         public static ElementStylePropertyName ScrollMarginleft => new ElementStylePropertyName("scroll-margin-left");
         public static ElementStylePropertyName ScrollMarginright => new ElementStylePropertyName("scroll-margin-right");
         public static ElementStylePropertyName ScrollMargintop => new ElementStylePropertyName("scroll-margin-top");
         public static ElementStylePropertyName ScrollPadding => new ElementStylePropertyName("scroll-padding");
-        public static ElementStylePropertyName ScrollPaddingblock => new ElementStylePropertyName("scroll-padding-block");
-        public static ElementStylePropertyName ScrollPaddingblockend => new ElementStylePropertyName("scroll-padding-block-end");
-        public static ElementStylePropertyName ScrollPaddingblockstart => new ElementStylePropertyName("scroll-padding-block-start");
-        public static ElementStylePropertyName ScrollPaddingbottom => new ElementStylePropertyName("scroll-padding-bottom");
-        public static ElementStylePropertyName ScrollPaddinginline => new ElementStylePropertyName("scroll-padding-inline");
-        public static ElementStylePropertyName ScrollPaddinginlineend => new ElementStylePropertyName("scroll-padding-inline-end");
-        public static ElementStylePropertyName ScrollPaddinginlinestart => new ElementStylePropertyName("scroll-padding-inline-start");
+
+        public static ElementStylePropertyName ScrollPaddingblock =>
+            new ElementStylePropertyName("scroll-padding-block");
+
+        public static ElementStylePropertyName ScrollPaddingblockend =>
+            new ElementStylePropertyName("scroll-padding-block-end");
+
+        public static ElementStylePropertyName ScrollPaddingblockstart =>
+            new ElementStylePropertyName("scroll-padding-block-start");
+
+        public static ElementStylePropertyName ScrollPaddingbottom =>
+            new ElementStylePropertyName("scroll-padding-bottom");
+
+        public static ElementStylePropertyName ScrollPaddinginline =>
+            new ElementStylePropertyName("scroll-padding-inline");
+
+        public static ElementStylePropertyName ScrollPaddinginlineend =>
+            new ElementStylePropertyName("scroll-padding-inline-end");
+
+        public static ElementStylePropertyName ScrollPaddinginlinestart =>
+            new ElementStylePropertyName("scroll-padding-inline-start");
+
         public static ElementStylePropertyName ScrollPaddingleft => new ElementStylePropertyName("scroll-padding-left");
-        public static ElementStylePropertyName ScrollPaddingright => new ElementStylePropertyName("scroll-padding-right");
+
+        public static ElementStylePropertyName ScrollPaddingright =>
+            new ElementStylePropertyName("scroll-padding-right");
+
         public static ElementStylePropertyName ScrollPaddingtop => new ElementStylePropertyName("scroll-padding-top");
         public static ElementStylePropertyName Scrollsnapalign => new ElementStylePropertyName("scroll-snap-align");
         public static ElementStylePropertyName Scrollsnapstop => new ElementStylePropertyName("scroll-snap-stop");
         public static ElementStylePropertyName Scrollsnaptype => new ElementStylePropertyName("scroll-snap-type");
         public static ElementStylePropertyName Scrollbarcolor => new ElementStylePropertyName("scrollbar-color");
         public static ElementStylePropertyName Scrollbarwidth => new ElementStylePropertyName("scrollbar-width");
-        public static ElementStylePropertyName Shapeimagethreshold => new ElementStylePropertyName("shape-image-threshold");
+
+        public static ElementStylePropertyName Shapeimagethreshold =>
+            new ElementStylePropertyName("shape-image-threshold");
+
         public static ElementStylePropertyName Shapemargin => new ElementStylePropertyName("shape-margin");
         public static ElementStylePropertyName Shapeoutside => new ElementStylePropertyName("shape-outside");
         public static ElementStylePropertyName Tabsize => new ElementStylePropertyName("tab-size");
         public static ElementStylePropertyName Tablelayout => new ElementStylePropertyName("table-layout");
         public static ElementStylePropertyName TextAlign => new ElementStylePropertyName("text-align");
         public static ElementStylePropertyName Textalignlast => new ElementStylePropertyName("text-align-last");
-        public static ElementStylePropertyName Textcombineupright => new ElementStylePropertyName("text-combine-upright");
+
+        public static ElementStylePropertyName Textcombineupright =>
+            new ElementStylePropertyName("text-combine-upright");
+
         public static ElementStylePropertyName Textdecoration => new ElementStylePropertyName("text-decoration");
-        public static ElementStylePropertyName Textdecorationcolor => new ElementStylePropertyName("text-decoration-color");
-        public static ElementStylePropertyName Textdecorationline => new ElementStylePropertyName("text-decoration-line");
-        public static ElementStylePropertyName Textdecorationstyle => new ElementStylePropertyName("text-decoration-style");
+
+        public static ElementStylePropertyName Textdecorationcolor =>
+            new ElementStylePropertyName("text-decoration-color");
+
+        public static ElementStylePropertyName Textdecorationline =>
+            new ElementStylePropertyName("text-decoration-line");
+
+        public static ElementStylePropertyName Textdecorationstyle =>
+            new ElementStylePropertyName("text-decoration-style");
+
         public static ElementStylePropertyName Textemphasis => new ElementStylePropertyName("text-emphasis");
         public static ElementStylePropertyName Textemphasiscolor => new ElementStylePropertyName("text-emphasis-color");
-        public static ElementStylePropertyName Textemphasisposition => new ElementStylePropertyName("text-emphasis-position");
+
+        public static ElementStylePropertyName Textemphasisposition =>
+            new ElementStylePropertyName("text-emphasis-position");
+
         public static ElementStylePropertyName Textemphasisstyle => new ElementStylePropertyName("text-emphasis-style");
         public static ElementStylePropertyName Textindent => new ElementStylePropertyName("text-indent");
         public static ElementStylePropertyName Textjustify => new ElementStylePropertyName("text-justify");
@@ -349,7 +493,10 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Textrendering => new ElementStylePropertyName("text-rendering");
         public static ElementStylePropertyName Textshadow => new ElementStylePropertyName("text-shadow");
         public static ElementStylePropertyName Texttransform => new ElementStylePropertyName("text-transform");
-        public static ElementStylePropertyName Textunderlineposition => new ElementStylePropertyName("text-underline-position");
+
+        public static ElementStylePropertyName Textunderlineposition =>
+            new ElementStylePropertyName("text-underline-position");
+
         public static ElementStylePropertyName Top => new ElementStylePropertyName("top");
         public static ElementStylePropertyName Touchaction => new ElementStylePropertyName("touch-action");
         public static ElementStylePropertyName Transform => new ElementStylePropertyName("transform");
@@ -358,9 +505,16 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Transformstyle => new ElementStylePropertyName("transform-style");
         public static ElementStylePropertyName Transition => new ElementStylePropertyName("transition");
         public static ElementStylePropertyName Transitiondelay => new ElementStylePropertyName("transition-delay");
-        public static ElementStylePropertyName Transitionduration => new ElementStylePropertyName("transition-duration");
-        public static ElementStylePropertyName Transitionproperty => new ElementStylePropertyName("transition-property");
-        public static ElementStylePropertyName Transitiontimingfunction => new ElementStylePropertyName("transition-timing-function");
+
+        public static ElementStylePropertyName Transitionduration =>
+            new ElementStylePropertyName("transition-duration");
+
+        public static ElementStylePropertyName Transitionproperty =>
+            new ElementStylePropertyName("transition-property");
+
+        public static ElementStylePropertyName Transitiontimingfunction =>
+            new ElementStylePropertyName("transition-timing-function");
+
         public static ElementStylePropertyName Translate => new ElementStylePropertyName("translate");
         public static ElementStylePropertyName Turn => new ElementStylePropertyName("turn");
         public static ElementStylePropertyName Unicodebidi => new ElementStylePropertyName("unicode-bidi");
@@ -381,7 +535,5 @@ namespace Drelanium.Lists
         public static ElementStylePropertyName Writingmode => new ElementStylePropertyName("writing-mode");
         public static ElementStylePropertyName X => new ElementStylePropertyName("x");
         public static ElementStylePropertyName ZIndex => new ElementStylePropertyName("z-index");
-
     }
-
 }

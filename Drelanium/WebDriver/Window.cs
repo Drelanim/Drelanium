@@ -1,14 +1,11 @@
 ﻿using System.Drawing;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Window : IWindow
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Window(IWebDriver driver)
@@ -54,7 +51,5 @@ namespace Drelanium.WebDriver
             get => WindowImplementation.Size;
             set => WindowImplementation.Size = value;
         }
-
     }
-
 }

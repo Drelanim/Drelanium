@@ -1,10 +1,8 @@
 ﻿namespace Drelanium.Lists
 {
-
     /// <summary>To be added...</summary>
     public class ColorName
     {
-
         /// <summary>To be added...</summary>
         /// <param name="name">To be added...</param>
         public ColorName(string name)
@@ -163,7 +161,5 @@
         public static ColorName WhiteSmoke => new ColorName("WhiteSmoke");
         public static ColorName Yellow => new ColorName("Yellow");
         public static ColorName YellowGreen => new ColorName("YellowGreen");
-
     }
-
 }

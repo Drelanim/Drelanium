@@ -3,14 +3,11 @@ using Drelanium.Lists;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Create
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Create(IWebDriver driver)
@@ -52,7 +49,8 @@ namespace Drelanium.WebDriver
         public string CreateEvent(string eventName, string eventType, bool bubbles = true, bool cancelable = false)
         {
             Driver.ExecuteJavaScript($"window['{eventName}'] = document.createEvent('HTMLEvents'); ");
-            Driver.ExecuteJavaScript($"{eventName}.initEvent('{eventType}', {bubbles.ToString().ToLower()}, {cancelable.ToString().ToLower()}); ");
+            Driver.ExecuteJavaScript(
+                $"{eventName}.initEvent('{eventType}', {bubbles.ToString().ToLower()}, {cancelable.ToString().ToLower()}); ");
 
             return eventName;
         }
@@ -71,13 +69,13 @@ namespace Drelanium.WebDriver
         /// <param name="functionName">The name that is used to save the function to the window.</param>
         /// <param name="functionArguments">The arguments of the function.</param>
         /// <param name="functionImplementation">The implementation of the function.</param>
-        public string CreateFunction(string functionName, string functionArguments = "()", string functionImplementation = "{}")
+        public string CreateFunction(string functionName, string functionArguments = "()",
+            string functionImplementation = "{}")
         {
-            Driver.ExecuteJavaScript($"window['{functionName}'] = function{functionArguments} {functionImplementation}; ");
+            Driver.ExecuteJavaScript(
+                $"window['{functionName}'] = function{functionArguments} {functionImplementation}; ");
 
             return functionName;
         }
-
     }
-
 }

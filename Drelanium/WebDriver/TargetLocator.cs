@@ -3,14 +3,11 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 using Serilog.Core;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class TargetLocator : ITargetLocator
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public TargetLocator(IWebDriver driver)
@@ -189,7 +186,5 @@ namespace Drelanium.WebDriver
 
             return Window(Driver.WindowHandles[Driver.WindowHandles.Count - 1]);
         }
-
     }
-
 }

@@ -4,21 +4,19 @@ using Drelanium.Extensions.IWebElementExtensionMethods;
 using Drelanium.Lists;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.Highlighter
 {
-
     /// <summary>To be added...</summary>
     public static class Highlighter
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="circleName">To be added...</param>
         /// <param name="text">To be added...</param>
         /// <param name="xPosCenter">To be added...</param>
         /// <param name="yPosCenter">To be added...</param>
-        public static IWebElement CreateCircle(IWebDriver driver, string circleName, string text, int xPosCenter, int yPosCenter)
+        public static IWebElement CreateCircle(IWebDriver driver, string circleName, string text, int xPosCenter,
+            int yPosCenter)
         {
             var circle = driver.Create().CreateElement(circleName, "div", driver.Body());
 
@@ -76,7 +74,5 @@ namespace Drelanium.Highlighter
         {
             circle.Remove();
         }
-
     }
-
 }

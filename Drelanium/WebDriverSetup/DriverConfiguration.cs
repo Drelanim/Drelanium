@@ -4,14 +4,11 @@
 using System;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.WebDriverSetup
 {
-
     /// <summary>To be added...</summary>
     public enum BrowserType
     {
-
         CHROME,
 
         EDGE,
@@ -23,23 +20,19 @@ namespace Drelanium.WebDriverSetup
         SAFARI,
 
         OPERA
-
     }
 
     /// <summary>To be added...</summary>
     public enum ExecutionMode
     {
-
         LOCAL,
 
         REMOTE
-
     }
 
     /// <summary>To be added...</summary>
     public class DriverConfiguration
     {
-
         /// <summary>To be added...</summary>
         public BrowserType BrowserType { get; set; }
 
@@ -94,7 +87,5 @@ namespace Drelanium.WebDriverSetup
                     throw new ArgumentOutOfRangeException();
             }
         }
-
     }
-
 }

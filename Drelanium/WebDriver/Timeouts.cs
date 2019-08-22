@@ -1,14 +1,11 @@
 ﻿using System;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class Timeouts : ITimeouts
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Timeouts(IWebDriver driver)
@@ -43,7 +40,5 @@ namespace Drelanium.WebDriver
             get => TimeoutsImplementation.PageLoad;
             set => TimeoutsImplementation.PageLoad = value;
         }
-
     }
-
 }

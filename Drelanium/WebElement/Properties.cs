@@ -2,14 +2,11 @@
 using Drelanium.Lists;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.WebElement
 {
-
     /// <summary>To be added...</summary>
     public class Properties
     {
-
         /// <summary>To be added...</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Properties(IWebElement element)
@@ -56,7 +53,8 @@ namespace Drelanium.WebElement
         /// <summary>To be added...</summary>
         public void Set(string propertyName, object propertyValue)
         {
-            Element.ExecuteJavaScript("arguments[0][arguments[1]] = arguments[2]; ", Element, propertyName, propertyValue);
+            Element.ExecuteJavaScript("arguments[0][arguments[1]] = arguments[2]; ", Element, propertyName,
+                propertyValue);
         }
 
         /// <summary>To be added...</summary>
@@ -64,7 +62,5 @@ namespace Drelanium.WebElement
         {
             Set(elementPropertyName.PropertyName, propertyValue);
         }
-
     }
-
 }

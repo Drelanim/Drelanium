@@ -1,14 +1,11 @@
 ﻿using Drelanium.Extensions.IWebDriverExtensionMethods;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class AppendMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="childElement">The child element.</param>
@@ -24,7 +21,5 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         {
             AppendChild(parentElement, childElement);
         }
-
     }
-
 }

@@ -5,14 +5,11 @@ using Drelanium.SearchContext;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-
 namespace Drelanium.Extensions.ISearchContextExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class ISearchContextExtensionMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         private static IWebDriver GetDriver(ISearchContext searchContext)
@@ -42,7 +39,8 @@ namespace Drelanium.Extensions.ISearchContextExtensionMethods
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        public static WebDriverWait Wait(this ISearchContext searchContext, TimeSpan timeout, string timeoutMessage = "", Type[] ignoredExceptionTypes = null)
+        public static WebDriverWait Wait(this ISearchContext searchContext, TimeSpan timeout,
+            string timeoutMessage = "", Type[] ignoredExceptionTypes = null)
         {
             var driver = GetDriver(searchContext);
 
@@ -68,7 +66,8 @@ namespace Drelanium.Extensions.ISearchContextExtensionMethods
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="sleepInterval">A value indicating how often to check for the condition to be true.</param>
-        public static WebDriverWait Wait(this ISearchContext searchContext, TimeSpan timeout, IClock clock, TimeSpan sleepInterval, string timeoutMessage = "", Type[] ignoredExceptionTypes = null)
+        public static WebDriverWait Wait(this ISearchContext searchContext, TimeSpan timeout, IClock clock,
+            TimeSpan sleepInterval, string timeoutMessage = "", Type[] ignoredExceptionTypes = null)
         {
             var driver = GetDriver(searchContext);
 
@@ -86,7 +85,5 @@ namespace Drelanium.Extensions.ISearchContextExtensionMethods
 
             return wait;
         }
-
     }
-
 }

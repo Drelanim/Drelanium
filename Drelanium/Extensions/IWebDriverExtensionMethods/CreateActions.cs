@@ -2,14 +2,11 @@
 using OpenQA.Selenium;
 using Serilog.Core;
 
-
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class CreateActions
     {
-
         /// <summary>To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static ExtendedActions Actions(this IWebDriver driver)
@@ -45,7 +42,5 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
                 .SendKeys(textToSend)
                 .BuildAndPerform(logger);
         }
-
     }
-
 }

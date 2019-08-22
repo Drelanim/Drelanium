@@ -8,14 +8,11 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 
-
 namespace Drelanium.WebDriver
 {
-
     /// <summary>To be added...</summary>
     public class ExtendedActions
     {
-
         /// <summary>To be added...</summary>
         public ExtendedActions(IWebDriver driver)
         {
@@ -196,9 +193,11 @@ namespace Drelanium.WebDriver
         /// <param name="offsetX">To be added...</param>
         /// <param name="offsetY">To be added...</param>
         /// <param name="offsetOrigin">To be added...</param>
-        public ExtendedActions MoveToElement(IWebElement toElement, int offsetX, int offsetY, MoveToElementOffsetOrigin offsetOrigin)
+        public ExtendedActions MoveToElement(IWebElement toElement, int offsetX, int offsetY,
+            MoveToElementOffsetOrigin offsetOrigin)
         {
-            ChainedActions += $"MoveToElement(toElement: {toElement}, offsetX: {offsetX}, offsetY: {offsetY}, offsetOrigin: {offsetOrigin}), ";
+            ChainedActions +=
+                $"MoveToElement(toElement: {toElement}, offsetX: {offsetX}, offsetY: {offsetY}, offsetOrigin: {offsetOrigin}), ";
             Actions = Actions.MoveToElement(toElement, offsetX, offsetY, offsetOrigin);
             return this;
         }
@@ -304,7 +303,5 @@ namespace Drelanium.WebDriver
 
             logger?.Information("Wait is finished, condition is met!");
         }
-
     }
-
 }

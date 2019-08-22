@@ -3,10 +3,8 @@
 
 namespace Drelanium.Lists
 {
-
     public enum EventType
     {
-
         cancel,
 
         error,
@@ -88,7 +86,5 @@ namespace Drelanium.Lists
         touchmove,
 
         touchstart
-
     }
-
 }

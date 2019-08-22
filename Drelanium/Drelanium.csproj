@@ -1,25 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>netcoreapp2.1</TargetFramework>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Authors>Drelanim</Authors>
-		<Company />
-		<Description>Extensions for Selenium.</Description>
-		<PackageReleaseNotes>This is the initial release</PackageReleaseNotes>
-		<PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
-		<Version>1.1.0</Version>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Drelanim</Authors>
+    <Company />
+    <Description>Extensions for Selenium.</Description>
+    <PackageReleaseNotes>This is the initial release</PackageReleaseNotes>
+    <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
+    <Version>1.2.0</Version>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <DocumentationFile></DocumentationFile>
-	</PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Selenium.Support" Version="3.141.0" />
-		<PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-		<PackageReference Include="Serilog" Version="2.8.0" />
-
+  <ItemGroup>
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Serilog" Version="2.8.0" />
 
 
   </ItemGroup>

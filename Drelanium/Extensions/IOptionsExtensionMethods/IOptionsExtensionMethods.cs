@@ -1,14 +1,11 @@
 ﻿using Drelanium.WebDriver;
 using OpenQA.Selenium;
 
-
 namespace Drelanium.Extensions.IOptionsExtensionMethods
 {
-
     /// <summary>To be added...</summary>
     public static class IOptionsExtensionMethods
     {
-
         /// <summary>To be added...</summary>
         /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -47,7 +44,5 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
         {
             return new MouseMoveFollower(driver);
         }
-
     }
-
 }

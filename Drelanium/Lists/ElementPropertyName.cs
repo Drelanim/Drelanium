@@ -1,10 +1,8 @@
 ﻿namespace Drelanium.Lists
 {
-
     /// <summary>To be added...</summary>
     public class ElementPropertyName
     {
-
         /// <summary>To be added...</summary>
         /// <param name="propertyName">To be added...</param>
         public ElementPropertyName(string propertyName)
@@ -55,7 +53,5 @@
         public static ElementPropertyName Slot => new ElementPropertyName("slot");
         public static ElementPropertyName TagName => new ElementPropertyName("tagName");
         public static ElementPropertyName Value => new ElementPropertyName("value");
-
     }
-
 }
