@@ -1,56 +1,62 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
+﻿using Drelanium.WebDriver;
+using OpenQA.Selenium;
 
 
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
 
+    /// <summary>To be added...</summary>
     public static class ActionMethods
     {
 
-        /// <param name="element">The element.</param>
-        public static Actions Actions(this IWebElement element)
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static ExtendedActions Actions(this IWebElement element)
         {
-            return new Actions(element.Driver());
+            return new ExtendedActions(element.Driver());
         }
 
-        /// <param name="element">The element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <param name="theKey">To be added...</param>
         public static void KeyDownAndUp(this IWebElement element, string theKey)
         {
             element
                 .Actions()
                 .KeyDown(element, theKey)
                 .KeyUp(element, theKey)
-                .Build()
-                .Perform();
+                .BuildAndPerform();
         }
 
-        /// <param name="element">The element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement MoveMouseOver(this IWebElement element)
         {
             element
                 .Actions()
                 .MoveToElement(element)
-                .Build()
-                .Perform();
+                .BuildAndPerform();
 
             return element;
         }
 
-        /// <param name="element">The element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement MoveMouseOverAndClick(this IWebElement element)
         {
             element
                 .Actions()
                 .MoveToElement(element)
                 .Click()
-                .Build()
-                .Perform();
+                .BuildAndPerform();
 
             return element;
         }
 
-        /// <param name="element">The element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <param name="offsetX">To be added...</param>
+        /// <param name="offsetY">To be added...</param>
         public static IWebElement RelativeClick(this IWebElement element, int offsetX, int offsetY)
         {
             element
@@ -58,13 +64,15 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
                 .MoveToElement(element)
                 .MoveByOffset(offsetX, offsetY)
                 .Click()
-                .Build()
-                .Perform();
+                .BuildAndPerform();
 
             return element;
         }
 
-        /// <param name="element">The element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <param name="offsetX">To be added...</param>
+        /// <param name="offsetY">To be added...</param>
         public static IWebElement RelativeRightClick(this IWebElement element, int offsetX, int offsetY)
         {
             element
@@ -72,33 +80,34 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
                 .MoveToElement(element)
                 .MoveByOffset(offsetX, offsetY)
                 .ContextClick()
-                .Build()
-                .Perform();
+                .BuildAndPerform();
 
             return element;
         }
 
-        /// <param name="element">The element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement RightClick(this IWebElement element)
         {
             element
                 .Actions()
                 .MoveToElement(element)
                 .ContextClick()
-                .Build()
-                .Perform();
+                .BuildAndPerform();
 
             return element;
         }
 
-        /// <param name="element">The element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <param name="offsetX">To be added...</param>
+        /// <param name="offsetY">To be added...</param>
         public static IWebElement DragAndDropToOffset(this IWebElement element, int offsetX, int offsetY)
         {
             element
                 .Actions()
                 .DragAndDropToOffset(element, offsetX, offsetY)
-                .Build()
-                .Perform();
+                .BuildAndPerform();
 
             return element;
         }

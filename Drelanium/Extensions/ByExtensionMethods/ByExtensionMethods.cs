@@ -5,10 +5,12 @@ using OpenQA.Selenium;
 namespace Drelanium.Extensions.ByExtensionMethods
 {
 
+    /// <summary>To be added...</summary>
     public static class ByExtensionMethods
     {
 
-        /// <param name="searchContext">The context used to search element.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
         public static Search Search(this By locator, ISearchContext searchContext)
         {

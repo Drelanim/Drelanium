@@ -1,29 +1,29 @@
-﻿using Drelanium.Extensions.IWebDriverExtensionMethods;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 
 namespace Drelanium.WebDriver
 {
 
+    /// <summary>To be added...</summary>
     public class Alert : IAlert
     {
 
-        /// <param name="driver">The used WebDriver instance.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Alert(IWebDriver driver)
         {
             Driver = driver;
             AlertImplementation = driver.SwitchTo().Alert();
         }
 
+        /// <summary>To be added...</summary>
         private IAlert AlertImplementation { get; }
+
+        /// <summary>To be added...</summary>
         private IWebDriver Driver { get; }
 
         public void Dismiss()
         {
-
-   
-
-
             AlertImplementation.Dismiss();
         }
 

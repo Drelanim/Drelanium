@@ -1,55 +1,50 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
+﻿using Drelanium.WebDriver;
+using OpenQA.Selenium;
+using Serilog.Core;
 
 
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
 
+    /// <summary>To be added...</summary>
     public static class CreateActions
     {
 
-        /// <param name="driver">The used WebDriver instance.</param>
-        public static Actions Actions(this IWebDriver driver)
+        /// <summary>To be added...</summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static ExtendedActions Actions(this IWebDriver driver)
         {
-
-          
-
-
-            return new Actions(driver);
+            return new ExtendedActions(driver);
         }
 
-        /// <param name="driver">The used WebDriver instance.</param>
-        public static void KeyDownAndUp(this IWebDriver driver, string theKey)
+        /// <summary>To be added...</summary>
+        /// <param name="theKey">To be added...</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static void KeyDownAndUp(this IWebDriver driver, string theKey, Logger logger = null)
         {
+            logger?.Information($"Executing a KeyDown and then a KeyUp action using the {theKey}.");
+
             driver
                 .Actions()
                 .KeyDown(theKey)
                 .KeyUp(theKey)
-                .Build()
-                .Perform();
+                .BuildAndPerform(logger);
         }
 
-        /// <param name="driver">The used WebDriver instance.</param>
-        public static void SendKeys(this IWebDriver driver, string textToSend)
+        /// <summary>To be added...</summary>
+        /// <param name="textToSend">To be added...</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static void SendKeys(this IWebDriver driver, string textToSend, Logger logger = null)
         {
+            logger?.Information($"Executing a SendKeys action with text {textToSend}");
+
             driver
                 .Actions()
                 .SendKeys(textToSend)
-                .Build()
-                .Perform();
+                .BuildAndPerform(logger);
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 

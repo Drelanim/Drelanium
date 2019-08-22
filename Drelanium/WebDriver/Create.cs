@@ -7,17 +7,21 @@ using OpenQA.Selenium.Support.Extensions;
 namespace Drelanium.WebDriver
 {
 
+    /// <summary>To be added...</summary>
     public class Create
     {
 
-        /// <param name="driver">The used WebDriver instance.</param>
+        /// <summary>To be added...</summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Create(IWebDriver driver)
         {
             Driver = driver;
         }
 
+        /// <summary>To be added...</summary>
         private IWebDriver Driver { get; }
 
+        /// <summary>To be added...</summary>
         /// <param name="tagType">The used html tag.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
         public string CreateElement(string elementName, string tagType)
@@ -27,6 +31,7 @@ namespace Drelanium.WebDriver
             return elementName;
         }
 
+        /// <summary>To be added...</summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="tagType">The used html tag.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
