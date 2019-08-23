@@ -10,8 +10,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     public static class UntilDocumentMethods
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="documentReadyState">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>

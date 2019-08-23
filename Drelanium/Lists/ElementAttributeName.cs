@@ -1,13 +1,13 @@
 ﻿namespace Drelanium.Lists
 {
     /// <summary>
- ///To be added...
- ///</summary>
+    ///To be added...
+    ///</summary>
     public class ElementAttributeName
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public ElementAttributeName(string attributeName)
         {
@@ -15,8 +15,8 @@
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         public string AttributeName { get; }
 
         public static ElementAttributeName Accept => new ElementAttributeName("accept");

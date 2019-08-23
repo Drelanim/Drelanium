@@ -10,20 +10,15 @@ namespace Drelanium.WebDriver
     public class Scroll
     {
         /// <summary>
- /// Methods to perform scroll in the browser.
- ///</summary>
+        /// Methods to perform scroll in the browser.
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Scroll(IWebDriver driver)
         {
-
-          
-
             Driver = driver;
         }
 
-        /// <summary>
-        /// The browser, that is represented by an <see cref="IWebDriver" /> instance.
-        ///</summary>
+        /// <inheritdoc cref="IWebDriver"/>
         private IWebDriver Driver { get; }
 
         /// <summary>
@@ -41,8 +36,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="behaviour">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public void ToBodyBottom(string behaviour = "smooth", Logger logger = null)
@@ -54,16 +49,14 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="behaviour">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public void ToBodyTop(string behaviour = "smooth", Logger logger = null)
         {
             logger?.Information("Scrolling to the top of the body");
 
-           
-           
 
             Driver.ExecuteJavaScript(
                 $"window.scrollTo({{top: -document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
@@ -78,9 +71,6 @@ namespace Drelanium.WebDriver
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public void By(int x, int y, string behaviour = "smooth", Logger logger = null)
         {
-
-            
-
             logger?.Information($"Scrolling By({x},{y})");
 
             Driver.ExecuteJavaScript($"window.scrollBy({{top: {x}, left: {y}, behaviour: '{behaviour}'}});");

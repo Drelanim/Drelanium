@@ -3,13 +3,13 @@
 namespace Drelanium.Lists
 {
     /// <summary>
- ///To be added...
- ///</summary>
+    ///To be added...
+    ///</summary>
     public class ElementStylePropertyName
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="propertyName">To be added...</param>
         public ElementStylePropertyName(string propertyName)
         {
@@ -17,8 +17,8 @@ namespace Drelanium.Lists
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         public string PropertyName { get; }
 
         public static ElementStylePropertyName Aligncontent => new ElementStylePropertyName("align-content");

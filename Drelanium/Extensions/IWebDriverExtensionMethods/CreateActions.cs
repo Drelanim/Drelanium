@@ -5,13 +5,13 @@ using Serilog.Core;
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
     /// <summary>
- ///To be added...
- ///</summary>
+    /// Extension methods for <see cref="IWebDriver"/> types.
+    ///</summary>
     public static class CreateActions
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static ExtendedActions Actions(this IWebDriver driver)
         {
@@ -19,8 +19,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="theKey">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -36,8 +36,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="textToSend">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>

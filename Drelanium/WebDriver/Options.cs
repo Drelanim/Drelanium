@@ -3,11 +3,11 @@
 namespace Drelanium.WebDriver
 {
     /// <summary>
- ///To be added...</summary>
+    ///To be added...</summary>
     public class Options : IOptions
     {
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Options(IWebDriver driver)
         {
@@ -15,36 +15,34 @@ namespace Drelanium.WebDriver
             OptionsImplementation = driver.Manage();
         }
 
-        /// <summary>
- ///To be added...</summary>
+
+        /// <inheritdoc cref="IOptions"/>
         private IOptions OptionsImplementation { get; }
 
-        /// <summary>
-        /// The browser, that is represented by an <see cref="IWebDriver" /> instance.
-        ///</summary>
+        /// <inheritdoc cref="IWebDriver"/>
         private IWebDriver Driver { get; }
 
-        /// <summary>
- ///To be added...</summary>
+
+        /// <inheritdoc></inheritdoc>
         public ITimeouts Timeouts()
         {
             return OptionsImplementation.Timeouts();
         }
 
-        /// <summary>
- ///To be added...</summary>
+        /// <inheritdoc></inheritdoc>
         public ICookieJar Cookies => OptionsImplementation.Cookies;
 
-        /// <summary>
- ///To be added...</summary>
+
+        /// <inheritdoc></inheritdoc>
         public IWindow Window => OptionsImplementation.Window;
 
-        /// <summary>
- ///To be added...</summary>
+
+        /// <inheritdoc></inheritdoc>
         public ILogs Logs => OptionsImplementation.Logs;
 
+
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public MouseMoveFollower MouseMoveFollower()
         {
             return new MouseMoveFollower(Driver);

@@ -8,7 +8,7 @@
     <Description>Extensions for Selenium.</Description>
     <PackageReleaseNotes>This is the initial release</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

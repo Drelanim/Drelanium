@@ -12,8 +12,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     public static class UntilPageMethods
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="url">To be added...</param>
@@ -38,8 +38,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
         /// <param name="matchingUriPartial">
@@ -54,8 +54,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
         /// <param name="matchingUriPartial">
@@ -90,8 +90,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,

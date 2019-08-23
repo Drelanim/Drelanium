@@ -3,13 +3,13 @@
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
     /// <summary>
- ///To be added...
- ///</summary>
+    /// Extension methods for <see cref="IWebElement"/> types.
+    ///</summary>
     public static class ViewMethods
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="behavior">To be added...</param>
         /// <param name="block">To be added...</param>

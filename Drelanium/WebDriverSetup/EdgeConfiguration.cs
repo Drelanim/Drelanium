@@ -4,19 +4,19 @@ using OpenQA.Selenium.Edge;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
- ///To be added...</summary>
+    ///To be added...</summary>
     public class EdgeConfiguration
     {
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public EdgeOptions InitialOptions { get; set; }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string EdgeDriverDirectory { get; set; }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public EdgeOptions BuildOptions()
         {
             var options = InitialOptions;

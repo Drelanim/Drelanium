@@ -4,11 +4,11 @@ using OpenQA.Selenium;
 namespace Drelanium.WebDriver
 {
     /// <summary>
- ///To be added...</summary>
+    ///To be added...</summary>
     public class Timeouts : ITimeouts
     {
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Timeouts(IWebDriver driver)
         {
@@ -16,33 +16,30 @@ namespace Drelanium.WebDriver
             TimeoutsImplementation = driver.Manage().Timeouts();
         }
 
-        /// <summary>
- ///To be added...</summary>
+
+        /// <inheritdoc cref="ITimeouts"/>
         private ITimeouts TimeoutsImplementation { get; }
 
-        /// <summary>
-        /// The browser, that is represented by an <see cref="IWebDriver" /> instance.
-        ///</summary>
+
+        /// <inheritdoc cref="IWebDriver"/>
         private IWebDriver Driver { get; }
 
-        /// <summary>
- ///To be added...</summary>
+
+        /// <inheritdoc></inheritdoc>
         public TimeSpan ImplicitWait
         {
             get => TimeoutsImplementation.ImplicitWait;
             set => TimeoutsImplementation.ImplicitWait = value;
         }
 
-        /// <summary>
- ///To be added...</summary>
+        /// <inheritdoc></inheritdoc>
         public TimeSpan AsynchronousJavaScript
         {
             get => TimeoutsImplementation.AsynchronousJavaScript;
             set => TimeoutsImplementation.AsynchronousJavaScript = value;
         }
 
-        /// <summary>
- ///To be added...</summary>
+        /// <inheritdoc></inheritdoc>
         public TimeSpan PageLoad
         {
             get => TimeoutsImplementation.PageLoad;

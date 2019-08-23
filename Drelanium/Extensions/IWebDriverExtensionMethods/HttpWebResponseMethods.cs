@@ -11,12 +11,10 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
     ///</summary>
     public static class HttpWebResponseMethods
     {
-        /// <summary>
- ///To be added...
- ///</summary>
+        /// <inheritdoc cref="System.Net.HttpWebResponse"/>
         /// <param name="url">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        /// <param name="driver">To be added...</param>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static HttpWebResponse HttpWebResponse(this IWebDriver driver, Uri url, Logger logger = null)
         {
             logger?.Information($"Getting HttpWebResponse using url: ({url.AbsoluteUri})");
@@ -24,9 +22,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             return url.HttpWebResponse();
         }
 
-        /// <summary>
- ///To be added...
- ///</summary>
+
+        /// <inheritdoc cref="System.Net.HttpWebResponse"/>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static HttpWebResponse HttpWebResponse(this IWebDriver driver, Logger logger = null)

@@ -12,8 +12,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
     public static class HttpWebRequestMethods
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="url">The URL to load.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -25,8 +25,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static HttpWebRequest HttpWebRequest(this IWebDriver driver, Logger logger = null)

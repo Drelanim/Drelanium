@@ -12,8 +12,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     public static class UntilUrlMethods
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -30,8 +30,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -48,8 +48,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="fraction">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -66,8 +66,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="fraction">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -77,8 +77,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="fraction">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -95,8 +95,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="fraction">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -106,8 +106,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="regex">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -125,8 +125,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="regex">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -144,8 +144,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -166,8 +166,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -180,8 +180,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -202,8 +202,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -216,8 +216,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -237,8 +237,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -250,8 +250,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -271,8 +271,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="expected">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>

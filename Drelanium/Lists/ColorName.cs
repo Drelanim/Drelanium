@@ -1,13 +1,13 @@
 ﻿namespace Drelanium.Lists
 {
     /// <summary>
- ///To be added...
- ///</summary>
+    ///To be added...
+    ///</summary>
     public class ColorName
     {
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="name">To be added...</param>
         public ColorName(string name)
         {
@@ -15,8 +15,8 @@
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         public string Name { get; }
 
         public static ColorName AliceBlue => new ColorName("AliceBlue");

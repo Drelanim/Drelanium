@@ -10,9 +10,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
     public static class EventListenerMethods
     {
         /// <summary>
- ///To be added...
- ///
- /// </summary>
+        ///To be added...
+        ///
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
@@ -24,9 +24,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///
- /// </summary>
+        ///To be added...
+        ///
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
@@ -38,8 +38,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -51,8 +51,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -64,8 +64,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
@@ -75,8 +75,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
@@ -86,8 +86,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
@@ -99,8 +99,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
@@ -112,8 +112,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -125,8 +125,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -138,9 +138,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///
- /// </summary>
+        ///To be added...
+        ///
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
@@ -150,8 +150,8 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
- ///To be added...
- ///</summary>
+        ///To be added...
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>

@@ -8,11 +8,11 @@ using OpenQA.Selenium;
 namespace Drelanium.WebElement
 {
     /// <summary>
- ///To be added...</summary>
+    ///To be added...</summary>
     public class Attributes
     {
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Attributes(IWebElement element)
         {
@@ -20,11 +20,11 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         private IWebElement Element { get; }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Accesskey
         {
             get => Get(ElementAttributeName.Accesskey);
@@ -32,7 +32,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Contenteditable
         {
             get => Get(ElementAttributeName.Contenteditable);
@@ -40,7 +40,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Contextmenu
         {
             get => Get(ElementAttributeName.Contextmenu);
@@ -48,7 +48,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Dir
         {
             get => Get(ElementAttributeName.Dir);
@@ -56,7 +56,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Draggable
         {
             get => Get(ElementAttributeName.Draggable);
@@ -64,7 +64,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Hidden
         {
             get => Get(ElementAttributeName.Hidden);
@@ -72,7 +72,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Lang
         {
             get => Get(ElementAttributeName.Lang);
@@ -80,7 +80,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Spellcheck
         {
             get => Get(ElementAttributeName.Spellcheck);
@@ -88,7 +88,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Tabindex
         {
             get => Get(ElementAttributeName.Tabindex);
@@ -96,7 +96,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Title
         {
             get => Get(ElementAttributeName.Title);
@@ -104,7 +104,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Class
         {
             get => Get(ElementAttributeName.Class);
@@ -112,7 +112,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Value
         {
             get => Get(ElementAttributeName.Value);
@@ -120,7 +120,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Name
         {
             get => Get(ElementAttributeName.Name);
@@ -128,7 +128,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Type
         {
             get => Get(ElementAttributeName.Type);
@@ -136,7 +136,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string TagName
         {
             get => Get(ElementAttributeName.TagName);
@@ -144,7 +144,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Checked
         {
             get => Get(ElementAttributeName.Checked);
@@ -152,7 +152,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Selected
         {
             get => Get(ElementAttributeName.Selected);
@@ -160,7 +160,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string SelectedIndex
         {
             get => Get(ElementAttributeName.SelectedIndex);
@@ -168,7 +168,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Href
         {
             get => Get(ElementAttributeName.Href);
@@ -176,7 +176,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Src
         {
             get => Get(ElementAttributeName.Src);
@@ -184,7 +184,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string ReadOnly
         {
             get => Get(ElementAttributeName.ReadOnly);
@@ -192,7 +192,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Disabled
         {
             get => Get(ElementAttributeName.Disabled);
@@ -200,7 +200,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Style
         {
             get => Get(ElementAttributeName.Style);
@@ -208,7 +208,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string ID
         {
             get => Get(ElementAttributeName.ID);
@@ -216,7 +216,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public string Get(string attributeName)
         {
@@ -225,14 +225,14 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public string Get(ElementAttributeName elementAttributeName)
         {
             return Get(elementAttributeName.AttributeName);
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public void Set(string attributeName, object attributeValue)
         {
@@ -241,14 +241,14 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public void Set(ElementAttributeName elementAttributeName, object attributeValue)
         {
             Set(elementAttributeName.AttributeName, attributeValue);
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public void Remove(string attributeName)
         {
@@ -256,7 +256,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
- ///To be added...</summary>
+        ///To be added...</summary>
         public void Remove(ElementAttributeName elementAttributeName)
         {
             Remove(elementAttributeName.AttributeName);
