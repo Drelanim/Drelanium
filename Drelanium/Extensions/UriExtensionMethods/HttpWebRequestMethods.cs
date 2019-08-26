@@ -10,8 +10,10 @@ namespace Drelanium.Extensions.UriExtensionMethods
     public static class HttpWebRequestMethods
     {
         /// <summary>
-        ///To be added...</summary>
-        /// <param name="url">To be added...</param>
+        ///To be added...
+        /// </summary>
+        /// <param name="url">To be added...
+        /// </param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public static HttpWebRequest HttpWebRequest(this Uri url, Logger logger = null)
         {

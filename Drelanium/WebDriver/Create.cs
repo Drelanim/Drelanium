@@ -19,7 +19,9 @@ namespace Drelanium.WebDriver
             Driver = driver;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="IWebDriver"/>
         private IWebDriver Driver { get; }
 

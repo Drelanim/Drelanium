@@ -8,11 +8,13 @@ using OpenQA.Selenium;
 namespace Drelanium.WebElement
 {
     /// <summary>
-    ///To be added...</summary>
+    ///To be added...
+    /// </summary>
     public class Attributes
     {
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Attributes(IWebElement element)
         {
@@ -20,11 +22,13 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         private IWebElement Element { get; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         public string Accesskey
         {
             get => Get(ElementAttributeName.Accesskey);
@@ -32,7 +36,8 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         public string Contenteditable
         {
             get => Get(ElementAttributeName.Contenteditable);
@@ -40,7 +45,8 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         public string Contextmenu
         {
             get => Get(ElementAttributeName.Contextmenu);
@@ -48,7 +54,8 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         public string Dir
         {
             get => Get(ElementAttributeName.Dir);
@@ -56,7 +63,8 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         public string Draggable
         {
             get => Get(ElementAttributeName.Draggable);

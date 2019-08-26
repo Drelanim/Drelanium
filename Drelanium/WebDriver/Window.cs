@@ -4,11 +4,13 @@ using OpenQA.Selenium;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///To be added...</summary>
+    /// Extended implementation of <see cref="IWindow"/>
+    /// </summary>
     public class Window : IWindow
     {
         /// <summary>
-        ///To be added...</summary>
+        /// <see cref="Window"/>
+        ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Window(IWebDriver driver)
         {
@@ -16,40 +18,54 @@ namespace Drelanium.WebDriver
             WindowImplementation = driver.Manage().Window;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="IWindow"/>
         private IWindow WindowImplementation { get; }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="IWebDriver"/>
         private IWebDriver Driver { get; }
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public void Maximize()
         {
             WindowImplementation.Maximize();
         }
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public void Minimize()
         {
             WindowImplementation.Minimize();
         }
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public void FullScreen()
         {
             WindowImplementation.FullScreen();
         }
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public Point Position
         {
             get => WindowImplementation.Position;
             set => WindowImplementation.Position = value;
         }
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public Size Size
         {
             get => WindowImplementation.Size;

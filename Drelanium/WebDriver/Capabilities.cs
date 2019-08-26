@@ -4,12 +4,12 @@ using OpenQA.Selenium.Remote;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///To be added...
+    /// Extended implementation of <see cref="ICapabilities"/>
     ///</summary>
     public class Capabilities : ICapabilities
     {
         /// <summary>
-        ///To be added...
+        /// <see cref="Capabilities"/>
         ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Capabilities(IWebDriver driver)
@@ -18,11 +18,15 @@ namespace Drelanium.WebDriver
             CapabilitiesImplementation = ((RemoteWebDriver) driver).Capabilities;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="ICapabilities"/>
         private ICapabilities CapabilitiesImplementation { get; }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="IWebDriver"/>
         private IWebDriver Driver { get; }
 
@@ -62,7 +66,8 @@ namespace Drelanium.WebDriver
             : null;
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         public string DatabaseEnabled => HasCapability("databaseEnabled")
             ? GetCapability("databaseEnabled").ToString().ToLower()
             : null;
@@ -168,23 +173,31 @@ namespace Drelanium.WebDriver
         public string Environment => HasCapability("environment") ? GetCapability("environment").ToString() : null;
 
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public bool HasCapability(string capability)
         {
             return CapabilitiesImplementation.HasCapability(capability);
         }
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public object GetCapability(string capability)
         {
             return CapabilitiesImplementation.GetCapability(capability);
         }
 
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public object this[string capabilityName] => CapabilitiesImplementation[capabilityName];
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public override string ToString()
         {
             return CapabilitiesImplementation.ToString();

@@ -9,7 +9,7 @@ namespace Drelanium.Extensions.ByExtensionMethods
     public static class ByExtensionMethods
     {
         /// <summary>
-        ///To be added...
+        /// <inheritdoc cref="Drelanium.SearchContext.Search"/>
         ///</summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>

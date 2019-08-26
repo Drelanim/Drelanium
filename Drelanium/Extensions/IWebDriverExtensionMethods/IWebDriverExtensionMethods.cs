@@ -4,6 +4,9 @@ using Drelanium.WebDriver;
 using OpenQA.Selenium;
 using Serilog.Core;
 
+
+// ReSharper disable InconsistentNaming
+
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
     /// <summary>
@@ -20,8 +23,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             return new Uri(driver.Url);
         }
 
+
         /// <summary>
-        ///To be added...
+        /// Extended implementation of <see cref="IOptions"/>
         ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static Options Options(this IWebDriver driver)
@@ -29,8 +33,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             return new Options(driver);
         }
 
+
         /// <summary>
-        ///To be added...
+        /// Extended implementation of <see cref="INavigation"/>
         ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static Navigation Navigation(this IWebDriver driver)
@@ -38,14 +43,16 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             return new Navigation(driver);
         }
 
+
         /// <summary>
-        ///To be added...
+        /// Extended implementation of <see cref="ITargetLocator"/>
         ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static TargetLocator Switch(this IWebDriver driver)
         {
             return new TargetLocator(driver);
         }
+
 
         /// <summary>
         /// Methods to perform scroll in the browser.
@@ -57,7 +64,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added..
+        /// Extended implementation of <see cref="ICapabilities"/>
         ///</summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static Capabilities Capabilities(this IWebDriver driver)
@@ -111,7 +118,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
+        /// Moves the cursor to a given x-y point and performs a click.
         ///</summary>
         /// <param name="y">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
@@ -123,7 +130,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
+        /// Moves the cursor to a given point and performs a click.
         ///</summary>
         /// <param name="point">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
@@ -134,11 +141,11 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
+        ///<inheritdoc cref="IWebDriver.Quit()"/> Logs the action.
         ///</summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static void Quit(this IWebDriver driver, Logger logger = null)
+        public static void Quit(this IWebDriver driver, Logger logger)
         {
             driver.Quit();
             logger?.Information("Quitting WebDriver.");

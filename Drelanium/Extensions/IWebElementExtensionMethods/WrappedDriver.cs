@@ -9,7 +9,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class WrappedDriver
     {
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebDriver Driver(this IWebElement element)
         {

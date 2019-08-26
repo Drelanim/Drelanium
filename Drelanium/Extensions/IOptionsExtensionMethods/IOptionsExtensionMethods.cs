@@ -1,6 +1,9 @@
 ﻿using Drelanium.WebDriver;
 using OpenQA.Selenium;
 
+
+// ReSharper disable InconsistentNaming
+
 namespace Drelanium.Extensions.IOptionsExtensionMethods
 {
     /// <summary>
@@ -9,7 +12,7 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
     public static class IOptionsExtensionMethods
     {
         /// <summary>
-        ///To be added...
+        /// <see cref="CookieJar"/>
         ///</summary>
         /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -18,8 +21,9 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
             return new CookieJar(driver);
         }
 
+
         /// <summary>
-        ///To be added...
+        /// <see cref="WebDriver.Timeouts"/>
         ///</summary>
         /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -28,8 +32,9 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
             return new Timeouts(driver);
         }
 
+
         /// <summary>
-        ///To be added...
+        /// <see cref="WebDriver.LogsManager"/>
         ///</summary>
         /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
         public static LogsManager Logs(this IOptions options)
@@ -37,8 +42,9 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
             return new LogsManager(options);
         }
 
+
         /// <summary>
-        ///To be added...
+        /// <see cref="WebDriver.Window"/>
         ///</summary>
         /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -47,8 +53,9 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
             return new Window(driver);
         }
 
+
         /// <summary>
-        ///To be added...
+        /// <see cref="WebDriver.MouseMoveFollower"/>
         ///</summary>
         /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>

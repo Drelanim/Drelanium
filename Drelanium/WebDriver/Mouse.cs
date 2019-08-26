@@ -8,23 +8,28 @@ using Serilog.Core;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///To be added...</summary>
+    ///To be added...
+    /// </summary>
     public class Mouse
     {
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Mouse(IWebDriver driver)
         {
             Driver = driver;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="IWebDriver"/>
         private IWebDriver Driver { get; }
 
         ///  <summary>
-        /// To be added...</summary>
+        /// To be added...
+        /// </summary>
         ///  <param name="y"></param>
         ///  <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         ///  <param name="x"></param>
@@ -34,7 +39,8 @@ namespace Drelanium.WebDriver
         }
 
         ///  <summary>
-        /// To be added...</summary>
+        /// To be added...
+        /// </summary>
         ///  <param name="point"></param>
         ///  <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public void MoveTo(Point point, Logger logger = null)
@@ -43,7 +49,8 @@ namespace Drelanium.WebDriver
         }
 
         ///  <summary>
-        /// To be added...</summary>
+        /// To be added...
+        /// </summary>
         ///  <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         ///  <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
         ///  <param name="y"></param>
@@ -56,7 +63,8 @@ namespace Drelanium.WebDriver
         }
 
         ///  <summary>
-        /// To be added...</summary>
+        /// To be added...
+        /// </summary>
         ///  <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         ///  <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
         ///  <param name="point"></param>
@@ -68,7 +76,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void MoveBy(int x, int y, Logger logger = null)
         {
@@ -76,7 +85,8 @@ namespace Drelanium.WebDriver
         }
 
         ///  <summary>
-        /// To be added...</summary>
+        /// To be added...
+        /// </summary>
         ///  <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         ///  <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
         ///  <param name="y"></param>

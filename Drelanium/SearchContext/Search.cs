@@ -8,12 +8,12 @@ using Serilog.Core;
 namespace Drelanium.SearchContext
 {
     /// <summary>
-    ///To be added...
+    /// Extended implementation of <see cref="ISearchContext"/>
     ///</summary>
     public class Search : ISearchContext
     {
         /// <summary>
-        ///To be added...
+        /// <see cref="Search"/>
         ///</summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         public Search(ISearchContext searchContext)
@@ -21,18 +21,24 @@ namespace Drelanium.SearchContext
             SearchContextImplementation = searchContext;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="ISearchContext"/>
         private ISearchContext SearchContextImplementation { get; }
 
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public IWebElement FindElement(By by)
         {
             return SearchContextImplementation.FindElement(by);
         }
 
+        /// <summary>
         /// <inheritdoc></inheritdoc>
+        /// </summary>
         public ReadOnlyCollection<IWebElement> FindElements(By by)
         {
             return SearchContextImplementation.FindElements(by);
@@ -53,7 +59,9 @@ namespace Drelanium.SearchContext
             return result;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="FindElements(By)"/>
         /// <param name="by">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
@@ -78,7 +86,9 @@ namespace Drelanium.SearchContext
             return FindElements(locator).Count > 0;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="FindElement(By)"/>
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
@@ -96,7 +106,9 @@ namespace Drelanium.SearchContext
             return result;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="FindElements(By)"/>
         ///  <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
         ///  <param name="timeoutMessage">The message that appears on timeout.</param>
@@ -118,7 +130,9 @@ namespace Drelanium.SearchContext
             return result;
         }
 
-
+        /// <summary>
+        ///
+        /// </summary>
         /// <inheritdoc cref="FindElements(By)"/>
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
