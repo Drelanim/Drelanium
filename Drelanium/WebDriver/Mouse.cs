@@ -69,7 +69,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///To be added...</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void MoveBy(int x, int y, Logger logger = null)
         {
             Driver.Actions().MoveByOffset(x, y).BuildAndPerform(logger);

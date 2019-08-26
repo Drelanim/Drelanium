@@ -119,7 +119,7 @@ namespace Drelanium.WebDriver
 
 
         /// <inheritdoc cref="ParentFrame()"/>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebDriver ParentFrame(Logger logger)
         {
             {
@@ -132,7 +132,7 @@ namespace Drelanium.WebDriver
 
         /// <inheritdoc cref="Window(string)"/>
         /// <param name="windowName"></param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebDriver Window(string windowName, Logger logger)
         {
             {
@@ -144,7 +144,7 @@ namespace Drelanium.WebDriver
 
 
         /// <inheritdoc cref="DefaultContent()"/>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebDriver DefaultContent(Logger logger)
         {
             logger?.Information("Switching to default content");
@@ -154,7 +154,7 @@ namespace Drelanium.WebDriver
 
 
         /// <inheritdoc cref="ActiveElement()"/>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebElement ActiveElement(Logger logger)
         {
             logger?.Information("Switching to Active element");
@@ -164,7 +164,7 @@ namespace Drelanium.WebDriver
 
 
         /// <inheritdoc cref="Alert()"/>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IAlert Alert(Logger logger)
         {
             logger?.Information("Switching to Alert");
@@ -191,7 +191,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///To be added...</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebDriver FirstWindow(Logger logger = null)
         {
             {
@@ -203,7 +203,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///To be added...</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebDriver LastWindow(Logger logger = null)
         {
             {

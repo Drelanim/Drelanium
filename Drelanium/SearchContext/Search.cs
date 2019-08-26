@@ -41,7 +41,7 @@ namespace Drelanium.SearchContext
 
         /// <inheritdoc cref="FindElement(By)"/>
         /// <param name="by">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebElement FindElement(By by, Logger logger)
         {
             logger?.Information($"Attempting to Find element By ({by})");
@@ -56,7 +56,7 @@ namespace Drelanium.SearchContext
 
         /// <inheritdoc cref="FindElements(By)"/>
         /// <param name="by">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public ReadOnlyCollection<IWebElement> FindElements(By by, Logger logger)
         {
             logger?.Information($"Attempting to Find element By ({by})");
@@ -82,7 +82,7 @@ namespace Drelanium.SearchContext
         /// <inheritdoc cref="FindElement(By)"/>
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebElement FindElement(By locator, TimeSpan timeout, Logger logger = null)
         {
             logger?.Information($"Attempting to Find element By ({locator})");
@@ -103,7 +103,7 @@ namespace Drelanium.SearchContext
         ///  <param name="condition">The <see cref="Func{IWebDriver, IWebElement}" />, that defines the condition until the browser must wait.</param>
         ///  <param name="locator">The locating mechanism to use.</param>
         ///  <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebElement FindElement(By locator, TimeSpan timeout, Func<IWebDriver, IWebElement> condition,
             string timeoutMessage = "", Type[] ignoredExceptionTypes = null, Logger logger = null)
         {
@@ -122,7 +122,7 @@ namespace Drelanium.SearchContext
         /// <inheritdoc cref="FindElements(By)"/>
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public IWebElement FindDisplayedElement(By locator, TimeSpan timeout, Logger logger = null)
         {
             SearchContextImplementation

@@ -7,7 +7,8 @@ using OpenQA.Selenium;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
-    ///To be added...</summary>
+    /// The type of the selected browser to be automated.
+    /// </summary>
     public enum BrowserType
     {
         CHROME,
@@ -23,8 +24,10 @@ namespace Drelanium.WebDriverSetup
         OPERA
     }
 
+
     /// <summary>
-    ///To be added...</summary>
+    /// Switch between local and remote execution.
+    /// </summary>
     public enum ExecutionMode
     {
         LOCAL,
@@ -33,47 +36,58 @@ namespace Drelanium.WebDriverSetup
     }
 
     /// <summary>
-    ///To be added...</summary>
+    ///To be added...
+    /// </summary>
     public class DriverConfiguration
     {
         /// <summary>
-        ///To be added...</summary>
+        /// The type of the selected browser to be automated.
+        /// </summary>
         public BrowserType BrowserType { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        /// Switch between local and remote execution.
+        ///</summary>
         public ExecutionMode ExecutionMode { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public UriBuilder SeleniumGridHubUrl { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public ChromeConfiguration ChromeConfiguration { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public EdgeConfiguration EdgeConfiguration { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public FirefoxConfiguration FirefoxConfiguration { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public InternetExplorerConfiguration InternetExplorerConfiguration { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public SafariConfiguration SafariConfiguration { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public OperaConfiguration OperaConfiguration { get; set; }
 
         /// <summary>
-        ///To be added...</summary>
+        ///To be added...
+        ///</summary>
         public DriverOptions BuildDriverOptions()
         {
             switch (BrowserType)

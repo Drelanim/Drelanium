@@ -114,7 +114,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         ///To be added...
         ///</summary>
         /// <param name="y">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="x">To be added...</param>
         public static void Click(this IWebDriver driver, int x, int y, Logger logger = null)
@@ -126,7 +126,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         ///To be added...
         ///</summary>
         /// <param name="point">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static void Click(this IWebDriver driver, Point point, Logger logger = null)
         {
@@ -136,7 +136,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         /// <summary>
         ///To be added...
         ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static void Quit(this IWebDriver driver, Logger logger = null)
         {

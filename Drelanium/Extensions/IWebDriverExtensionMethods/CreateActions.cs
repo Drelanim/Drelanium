@@ -22,7 +22,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         ///To be added...
         ///</summary>
         /// <param name="theKey">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static void KeyDownAndUp(this IWebDriver driver, string theKey, Logger logger = null)
         {
@@ -39,7 +39,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         ///To be added...
         ///</summary>
         /// <param name="textToSend">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static void SendKeys(this IWebDriver driver, string textToSend, Logger logger = null)
         {

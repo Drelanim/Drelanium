@@ -13,7 +13,7 @@ namespace Drelanium.Extensions.UriExtensionMethods
         ///To be added...
         ///</summary>
         /// <param name="suppressExceptions">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="url">To be added...</param>
         public static HttpWebResponse HttpWebResponse(this Uri url, bool suppressExceptions = false,
             Logger logger = null)

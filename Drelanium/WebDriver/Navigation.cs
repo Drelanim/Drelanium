@@ -64,7 +64,7 @@ namespace Drelanium.WebDriver
 
 
         /// <inheritdoc cref="Back()"/>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void Back(Logger logger)
         {
             {
@@ -80,7 +80,7 @@ namespace Drelanium.WebDriver
 
 
         /// <inheritdoc cref="Forward()"/>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void Forward(Logger logger)
         {
             {
@@ -97,7 +97,7 @@ namespace Drelanium.WebDriver
 
         /// <inheritdoc cref="GoToUrl(string)"/>
         /// <param name="url"></param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void GoToUrl(string url, Logger logger)
         {
             {
@@ -114,7 +114,7 @@ namespace Drelanium.WebDriver
 
         /// <inheritdoc cref="GoToUrl(string)"/>
         /// <param name="url"></param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void GoToUrl(Uri url, Logger logger)
         {
             GoToUrl(url.AbsoluteUri, logger);
@@ -122,7 +122,7 @@ namespace Drelanium.WebDriver
 
 
         /// <inheritdoc cref="Refresh()"/>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void Refresh(Logger logger)
         {
             {
@@ -140,7 +140,7 @@ namespace Drelanium.WebDriver
         /// <inheritdoc cref="GoToUrl(string)"/>
         /// <param name="url">To be added...</param>
         /// <param name="checkHttpResponse">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void GoToUrl(UriBuilder url, bool checkHttpResponse, Logger logger = null)
         {
             if (checkHttpResponse)
@@ -158,7 +158,7 @@ namespace Drelanium.WebDriver
         /// <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
         /// <param name="matchingUriPartial">Part of the URL that should match after navigation.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void GoToUrl(UriBuilder url, bool checkHttpResponse, bool loadWithoutCookies, TimeSpan timeout,
             UriPartial matchingUriPartial, Logger logger = null)
         {

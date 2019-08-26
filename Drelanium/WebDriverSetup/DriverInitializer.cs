@@ -12,17 +12,19 @@ using Serilog.Core;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
-    ///To be added...</summary>
+    /// Static class, that contains the StartWebDriver method.
+    ///</summary>
     public static class DriverInitializer
     {
         /// <summary>
-        ///To be added...</summary>
-        /// <param name="executionMode">To be added...</param>
-        /// <param name="browserType">To be added...</param>
-        /// <param name="driverOptions">To be added...</param>
-        /// <param name="localDriverDirectory">To be added...</param>
-        /// <param name="seleniumGridHubUrl">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// Method, that initializes an <see cref="IWebDriver"/> type, depending on the given attributes.
+        ///</summary>
+        /// <param name="executionMode">Switch between local and remote execution.</param>
+        /// <param name="browserType">  The type of the selected browser to be automated.</param>
+        /// <param name="driverOptions">An <see cref="DriverOptions"/> object containing the desired capabilities of the browser.</param>
+        /// <param name="localDriverDirectory">The full path to the directory containing ***driver.exe.</param>
+        /// <param name="seleniumGridHubUrl">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4444/wd/hub).</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public static IWebDriver StartWebDriver(
             ExecutionMode executionMode,
             BrowserType browserType,
@@ -32,6 +34,7 @@ namespace Drelanium.WebDriverSetup
             Logger logger = null)
         {
             IWebDriver driver;
+
 
             switch (executionMode)
             {

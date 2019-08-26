@@ -312,7 +312,7 @@ namespace Drelanium.WebDriver
         /// <summary>
         ///To be added...
         /// </summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void BuildAndPerform(Logger logger = null)
         {
             ChainedActions = ChainedActions.Trim().Trim(',');
@@ -328,7 +328,7 @@ namespace Drelanium.WebDriver
         ///Performs this action on the browser, and then waits until the condition is met.</summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func" />, that defines the condition until the browser must wait.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         public void BuildAndPerform<T>(WebDriverWait wait, Func<IWebDriver, T> condition, Logger logger = null)
         {
             BuildAndPerform(logger);

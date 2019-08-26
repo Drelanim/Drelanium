@@ -34,11 +34,12 @@ namespace Drelanium.DriverProcessManager
         /// <summary>
         /// Ends all WebDriver processes, that has been stuck longer, than the given timespan.
         /// </summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
         /// <param name="processLifeSpan">The lifespan of the webdriver processes, that should be killed.</param>
         public static void EndAllWebDriverProcess(TimeSpan processLifeSpan, Logger logger = null)
         {
             logger?.Information("Attempting to end all WebDriver processes");
+
 
             var processes = Process.GetProcesses();
 
