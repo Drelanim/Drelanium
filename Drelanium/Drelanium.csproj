@@ -2,8 +2,8 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.6.0</PackageVersion>
-    <PackageId></PackageId>
+    <PackageVersion>1.4.0</PackageVersion>
+    <PackageId>Drelanium</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
     <PackageDescription>Extensions for Selenium.</PackageDescription>
@@ -13,7 +13,7 @@
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageIconUrl>$(MSBuildProjectDirectory)\NugetLogo.jpg</PackageIconUrl>
+    <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
     <PackageReleaseNotes>Added summaries to methods</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
     <PackageOutputPath></PackageOutputPath>
