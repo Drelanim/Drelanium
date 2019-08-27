@@ -1,6 +1,9 @@
 ﻿// ReSharper disable IdentifierTypo
 // ReSharper disable InconsistentNaming
 
+#pragma warning disable 1591
+
+
 namespace Drelanium.Lists
 {
     public enum EventType
@@ -53,6 +56,9 @@ namespace Drelanium.Lists
 
         contextmenu,
 
+        /// <summary>
+        /// 
+        /// </summary>
         dblclick,
 
         DOMActivate,
@@ -69,6 +75,9 @@ namespace Drelanium.Lists
 
         mouseover,
 
+        /// <summary>
+        /// 
+        /// </summary>
         mouseup,
 
         webkitmouseforcechanged,

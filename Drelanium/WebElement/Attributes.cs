@@ -239,9 +239,10 @@ namespace Drelanium.WebElement
             return Get(elementAttributeName.AttributeName);
         }
 
-        /// <summary>
-        ///To be added...</summary>
-        /// <param name="attributeName">Name of the attribute of the element.</param>
+        ///  <summary>
+        /// To be added...</summary>
+        ///  <param name="attributeName">Name of the attribute of the element.</param>
+        ///  <param name="attributeValue"></param>
         public void Set(string attributeName, object attributeValue)
         {
             Element.ExecuteJavaScript("arguments[0].setAttribute(arguments[1], arguments[2]); ", Element, attributeName,

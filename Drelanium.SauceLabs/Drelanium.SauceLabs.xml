@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+
+<doc>
+  <assembly>
+    <name>Drelanium.SauceLabs</name>
+  </assembly>
+  <members>
+    <member name="T:Drelanium.SauceLabs.IWebDriverExtensionMethods">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.IWebDriverExtensionMethods.SauceLabsScripts(OpenQA.Selenium.IWebDriver)">
+      <summary>
+
+      </summary>
+      <param name="driver"></param>
+      <returns></returns>
+    </member>
+    <member name="T:Drelanium.SauceLabs.SauceJobResult">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="F:Drelanium.SauceLabs.SauceJobResult.Passed">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="F:Drelanium.SauceLabs.SauceJobResult.Failed">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="T:Drelanium.SauceLabs.SauceLabsScripts">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.#ctor(OpenQA.Selenium.IWebDriver)">
+      <summary>
+
+      </summary>
+      <param name="driver"></param>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(System.String)">
+      <summary>
+
+      </summary>
+      <param name="jobResult"></param>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(Drelanium.SauceLabs.SauceJobResult)">
+      <summary>
+
+      </summary>
+      <param name="jobResult"></param>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobName(System.String)">
+      <summary>
+
+      </summary>
+      <param name="jobName"></param>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobTags(System.String)">
+      <summary>
+
+      </summary>
+      <param name="tags"></param>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobBuild(System.String)">
+      <summary>
+
+      </summary>
+      <param name="buildName"></param>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StopNetwork">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StartNetwork">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetSauceBreakPoint">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.Log(System.String)">
+      <summary>
+
+      </summary>
+      <param name="text"></param>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobInfo(System.String)">
+      <summary>
+
+      </summary>
+      <param name="jobInfo"></param>
+    </member>
+    <member name="T:Drelanium.SauceLabs.SauceOptions">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceOptions.#ctor">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Options">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceOptions.AddToDriverOptions(OpenQA.Selenium.DriverOptions)">
+      <summary>
+
+      </summary>
+      <param name="driverOptions"></param>
+      <exception cref="T:System.ArgumentException"></exception>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.AccessKey">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.AppiumVersion">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.AvoidProxy">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Build">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.CaptureHtml">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.ChromedriverVersion">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.CrmuxdriverVersion">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.CustomData">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.DisablePopupHandler">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.ExtendedDebugging">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.FirefoxAdapterVersion">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.FirefoxProfileUrl">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.IdleTimeout">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.IedriverVersion">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.MaxDuration">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Name">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.ParentTunnel">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Passed">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Prerun">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.PreserveRequeue">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Priority">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.ProxyHost">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Public">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.RecordLogs">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.RecordScreenshots">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.RestrictedPublicInfo">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.ScreenResolution">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.SeleniumVersion">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Source">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Tags">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.TimeZone">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.TunnelIdentifier">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Username">
+      <summary>
+
+      </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.VideoUploadOnPass">
+      <summary>
+
+      </summary>
+    </member>
+  </members>
+</doc>

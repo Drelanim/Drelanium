@@ -4,6 +4,8 @@
 using System;
 using OpenQA.Selenium;
 
+#pragma warning disable 1591
+
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
@@ -13,6 +15,9 @@ namespace Drelanium.WebDriverSetup
     {
         CHROME,
 
+        /// <summary>
+        /// 
+        /// </summary>
         EDGE,
 
         FIREFOX,

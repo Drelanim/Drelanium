@@ -3,6 +3,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using OpenQA.Selenium;
 
+#pragma warning disable 1591
+
 namespace Drelanium.WebDriver
 {
     /// <summary>

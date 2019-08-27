@@ -2,6 +2,8 @@
 using System.Drawing;
 using OpenQA.Selenium;
 
+#pragma warning disable 1591
+
 namespace Drelanium.WebElement
 {
     /// <summary>
@@ -13,6 +15,7 @@ namespace Drelanium.WebElement
         MiddleLeftPoint,
 
         BottomLeftPoint,
+
 
         TopMiddlePoint,
 

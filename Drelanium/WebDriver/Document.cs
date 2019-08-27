@@ -4,6 +4,8 @@ using System.ComponentModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
+#pragma warning disable 1591
+
 namespace Drelanium.WebDriver
 {
     // ReSharper disable InconsistentNaming
@@ -12,6 +14,9 @@ namespace Drelanium.WebDriver
     ///</summary>
     public enum DocumentReadyState
     {
+        /// <summary>
+        /// 
+        /// </summary>
         loading,
 
         interactive,

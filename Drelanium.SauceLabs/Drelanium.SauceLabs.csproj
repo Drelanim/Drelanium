@@ -8,11 +8,11 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.4.1</PackageVersion>
-    <PackageId>Drelanium</PackageId>
+    <PackageVersion>1.1.0</PackageVersion>
+    <PackageId>Drelanium.SauceLabs</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
-    <PackageDescription>Extensions for Selenium.</PackageDescription>
+    <PackageDescription>Support of SauceLabs usage.</PackageDescription>
     <Description></Description>
     <Copyright></Copyright>
     <PackageRequireLicenseAcceptance></PackageRequireLicenseAcceptance>
@@ -20,8 +20,8 @@
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
-    <PackageReleaseNotes>Added summaries to methods</PackageReleaseNotes>
-    <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
+    <PackageReleaseNotes>Fixed SauceLabsScripts.</PackageReleaseNotes>
+    <PackageTags>SauceLabs, Selenium, WebDriver, Test, Automation</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols></IncludeSymbols>
     <SymbolPackageFormat></SymbolPackageFormat>
@@ -42,14 +42,12 @@
 
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Nyiri_Attila\source\nyiriattila88\Drelanium\Drelanium\Drelanium.xml</DocumentationFile>
+    <DocumentationFile>C:\Nyiri_Attila\source\nyiriattila88\Drelanium\Drelanium.SauceLabs\Drelanium.SauceLabs.xml</DocumentationFile>
   </PropertyGroup>
 
 
   <ItemGroup>
-    <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Serilog" Version="2.8.0" />
   </ItemGroup>
 
 </Project>
