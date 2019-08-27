@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drelanium", "Drelanium\Drelanium.csproj", "{785C7C75-EB48-4826-9BFB-111E9CA5DF51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{9C2DC87A-F5E0-4BD7-AAF1-91E1DBFB4B14}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drelanium.SauceLabs", "Drelanium.SauceLabs\Drelanium.SauceLabs.csproj", "{6FB9A33B-84F5-4F65-BD6B-4796A2DBB249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drelanium.SauceLabs", "Drelanium.SauceLabs\Drelanium.SauceLabs.csproj", "{6FB9A33B-84F5-4F65-BD6B-4796A2DBB249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{785C7C75-EB48-4826-9BFB-111E9CA5DF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{785C7C75-EB48-4826-9BFB-111E9CA5DF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{785C7C75-EB48-4826-9BFB-111E9CA5DF51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C2DC87A-F5E0-4BD7-AAF1-91E1DBFB4B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C2DC87A-F5E0-4BD7-AAF1-91E1DBFB4B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C2DC87A-F5E0-4BD7-AAF1-91E1DBFB4B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C2DC87A-F5E0-4BD7-AAF1-91E1DBFB4B14}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6FB9A33B-84F5-4F65-BD6B-4796A2DBB249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6FB9A33B-84F5-4F65-BD6B-4796A2DBB249}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FB9A33B-84F5-4F65-BD6B-4796A2DBB249}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -7,7 +8,10 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
 
+
+// ReSharper disable InconsistentNaming
 #pragma warning disable 1591
+
 
 namespace Drelanium.SauceLabs
 {
@@ -16,18 +20,11 @@ namespace Drelanium.SauceLabs
     /// </summary>
     public class SauceOptions
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public SauceOptions()
+        private Dictionary<string, object> GetDictionary()
         {
-            Options = new Dictionary<string, object>();
+            var json = JsonConvert.SerializeObject(this);
+            return JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Dictionary<string, object> Options { get; }
 
 
         /// <summary>
@@ -37,32 +34,35 @@ namespace Drelanium.SauceLabs
         /// <exception cref="ArgumentException"></exception>
         public void AddToDriverOptions(DriverOptions driverOptions)
         {
+            var sauceOptionsDictionary = GetDictionary();
+
+
             switch (driverOptions)
             {
                 case ChromeOptions chromeOptions:
                 {
-                    chromeOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    chromeOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
                     break;
                 }
 
 
                 case FirefoxOptions firefoxOptions:
                 {
-                    firefoxOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    firefoxOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
                     break;
                 }
 
 
                 case InternetExplorerOptions internetExplorerOptions:
                 {
-                    internetExplorerOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    internetExplorerOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
                     break;
                 }
 
 
                 case OperaOptions operaOptions:
                 {
-                    operaOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    operaOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
                     break;
                 }
 
@@ -81,263 +81,85 @@ namespace Drelanium.SauceLabs
         }
 
 
-        private object GetValue(string key)
-        {
-            if (!Options.ContainsKey(key))
-            {
-                Options.Add(key, null);
-            }
+        public object accessKey;
 
-            return Options[key];
-        }
 
+        public object appiumVersion;
 
-        private void SetValue(string key, object value)
-        {
-            if (!Options.ContainsKey(key))
-            {
-                Options.Add(key, null);
-            }
 
-            Options[key] = value;
-        }
+        public object avoidProxy;
 
 
-        public object AccessKey
-        {
-            get => GetValue("accessKey");
-            set => SetValue("accessKey", value);
-        }
+        public object build;
 
+        public object captureHtml;
 
-        public object AppiumVersion
-        {
-            get => GetValue("appiumVersion");
-            set => SetValue("appiumVersion", value);
-        }
 
+        public object chromedriverVersion;
 
-        public object AvoidProxy
-        {
-            get => GetValue("avoidProxy");
-            set => SetValue("avoidProxy", value);
-        }
+        public object crmuxdriverVersion;
 
 
-        public object Build
-        {
-            get => GetValue("build");
-            set => SetValue("build", value);
-        }
+        public object customData;
 
 
-        public object CaptureHtml
-        {
-            get => GetValue("captureHtml");
-            set => SetValue("captureHtml", value);
-        }
+        public object disablePopupHandler;
 
+        public object extendedDebugging;
 
-        public object ChromedriverVersion
-        {
-            get => GetValue("chromedriverVersion");
-            set => SetValue("chromedriverVersion", value);
-        }
+        public object firefoxAdapterVersion;
 
+        public object firefoxProfileUrl;
 
-        public object CrmuxdriverVersion
-        {
-            get => GetValue("crmuxdriverVersion");
-            set => SetValue("crmuxdriverVersion", value);
-        }
 
+        public object idleTimeout;
 
-        public object CustomData
-        {
-            get => GetValue("customData");
-            set => SetValue("customData", value);
-        }
+        public object iedriverVersion;
 
 
-        public object DisablePopupHandler
-        {
-            get => GetValue("disablePopupHandler");
-            set => SetValue("disablePopupHandler", value);
-        }
+        public object maxDuration;
 
+        public object name;
 
-        public object ExtendedDebugging
-        {
-            get => GetValue("extendedDebugging");
-            set => SetValue("extendedDebugging", value);
-        }
+        public object parentTunnel;
 
 
-        public object FirefoxAdapterVersion
-        {
-            get => GetValue("firefoxAdapterVersion");
-            set => SetValue("firefoxAdapterVersion", value);
-        }
+        public object passed;
 
+        public object prerun;
 
-        public object FirefoxProfileUrl
-        {
-            get => GetValue("firefoxProfileUrl");
-            set => SetValue("firefoxProfileUrl", value);
-        }
 
+        public object preserveRequeue;
 
-        public object IdleTimeout
-        {
-            get => GetValue("idleTimeout");
-            set => SetValue("idleTimeout", value);
-        }
+        public object priority;
 
 
-        public object IedriverVersion
-        {
-            get => GetValue("iedriverVersion");
-            set => SetValue("iedriverVersion", value);
-        }
+        public object proxyHost;
 
+        public object @public;
 
-        public object MaxDuration
-        {
-            get => GetValue("maxDuration");
-            set => SetValue("maxDuration", value);
-        }
+        public object recordLogs;
 
+        public object recordScreenshots;
 
-        public object Name
-        {
-            get => GetValue("name");
-            set => SetValue("name", value);
-        }
 
+        public object restrictedPublicInfo;
 
-        public object ParentTunnel
-        {
-            get => GetValue("parentTunnel");
-            set => SetValue("parentTunnel", value);
-        }
+        public object screenResolution;
+        public object seleniumVersion;
 
+        public object source;
 
-        public object Passed
-        {
-            get => GetValue("passed");
-            set => SetValue("passed", value);
-        }
+        public object tags;
 
 
-        public object Prerun
-        {
-            get => GetValue("prerun");
-            set => SetValue("prerun", value);
-        }
+        public object timeZone;
 
+        public object tunnelIdentifier;
 
-        public object PreserveRequeue
-        {
-            get => GetValue("preserveRequeue");
-            set => SetValue("preserveRequeue", value);
-        }
 
+        public object username;
 
-        public object Priority
-        {
-            get => GetValue("priority");
-            set => SetValue("priority", value);
-        }
-
-
-        public object ProxyHost
-        {
-            get => GetValue("proxyHost");
-            set => SetValue("proxyHost", value);
-        }
-
-
-        public object Public
-        {
-            get => GetValue("public");
-            set => SetValue("public", value);
-        }
-
-
-        public object RecordLogs
-        {
-            get => GetValue("recordLogs");
-            set => SetValue("recordLogs", value);
-        }
-
-
-        public object RecordScreenshots
-        {
-            get => GetValue("recordScreenshots");
-            set => SetValue("recordScreenshots", value);
-        }
-
-
-        public object RestrictedPublicInfo
-        {
-            get => GetValue("restrictedPublicInfo");
-            set => SetValue("restrictedPublicInfo", value);
-        }
-
-
-        public object ScreenResolution
-        {
-            get => GetValue("screenResolution");
-            set => SetValue("screenResolution", value);
-        }
-
-
-        public object SeleniumVersion
-        {
-            get => GetValue("seleniumVersion");
-            set => SetValue("seleniumVersion", value);
-        }
-
-
-        public object Source
-        {
-            get => GetValue("source");
-            set => SetValue("source", value);
-        }
-
-
-        public object Tags
-        {
-            get => GetValue("tags");
-            set => SetValue("tags", value);
-        }
-
-
-        public object TimeZone
-        {
-            get => GetValue("timeZone");
-            set => SetValue("timeZone", value);
-        }
-
-
-        public object TunnelIdentifier
-        {
-            get => GetValue("tunnelIdentifier");
-            set => SetValue("tunnelIdentifier", value);
-        }
-
-
-        public object Username
-        {
-            get => GetValue("username");
-            set => SetValue("username", value);
-        }
-
-
-        public object VideoUploadOnPass
-        {
-            get => GetValue("videoUploadOnPass");
-            set => SetValue("videoUploadOnPass", value);
-        }
+        public object videoUploadOnPass;
     }
 }
