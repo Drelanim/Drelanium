@@ -14,6 +14,28 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
+        /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
+        public static void AddEventListener(this IWebDriver driver, string eventType, string functionName)
+        {
+            driver.AddEventListenerToElement("document", eventType, functionName);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        /// <param name="eventType">The type of the event.</param>
+        /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
+        public static void AddEventListener(this IWebDriver driver, EventType eventType, string functionName)
+        {
+            AddEventListener(driver, eventType.ToString(), functionName);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        /// <param name="eventType">The type of the event.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
         /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
         public static void AddEventListenerToElement(this IWebDriver driver, string elementName, string eventType,
@@ -67,9 +89,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
-        public static void AddEventListener(this IWebDriver driver, string eventType, string functionName)
+        public static void RemoveEventListener(this IWebDriver driver, string eventType, string functionName)
         {
-            driver.AddEventListenerToElement("document", eventType, functionName);
+            driver.RemoveEventListenerToElement("document", eventType, functionName);
         }
 
         /// <summary>
@@ -78,9 +100,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
-        public static void AddEventListener(this IWebDriver driver, EventType eventType, string functionName)
+        public static void RemoveEventListener(this IWebDriver driver, EventType eventType, string functionName)
         {
-            AddEventListener(driver, eventType.ToString(), functionName);
+            RemoveEventListener(driver, eventType.ToString(), functionName);
         }
 
         /// <summary>
@@ -133,28 +155,6 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
             EventType eventType, string functionName)
         {
             RemoveEventListenerToElement(driver, element, eventType.ToString(), functionName);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        /// <param name="eventType">The type of the event.</param>
-        /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
-        public static void RemoveEventListener(this IWebDriver driver, string eventType, string functionName)
-        {
-            driver.RemoveEventListenerToElement("document", eventType, functionName);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        /// <param name="eventType">The type of the event.</param>
-        /// <param name="functionName">The variable name for the function that can be used in the window global object.</param>
-        public static void RemoveEventListener(this IWebDriver driver, EventType eventType, string functionName)
-        {
-            RemoveEventListener(driver, eventType.ToString(), functionName);
         }
     }
 }

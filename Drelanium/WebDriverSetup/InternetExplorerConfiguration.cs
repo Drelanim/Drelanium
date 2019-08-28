@@ -19,22 +19,6 @@ namespace Drelanium.WebDriverSetup
         /// </summary>
         public string InternetExplorerDriverDirectory { get; set; }
 
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        public InternetExplorerOptions BuildOptions()
-        {
-            var options = InitialOptions;
-
-            options.SetLoggingPreference(LogType.Driver, LogLevel.All);
-            options.SetLoggingPreference(LogType.Browser, LogLevel.All);
-            options.SetLoggingPreference(LogType.Client, LogLevel.All);
-            options.SetLoggingPreference(LogType.Profiler, LogLevel.All);
-            options.SetLoggingPreference(LogType.Server, LogLevel.All);
-
-            return options;
-        }
-
 
         /// <summary>
         /// </summary>
@@ -55,6 +39,22 @@ namespace Drelanium.WebDriverSetup
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
             return this;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        public InternetExplorerOptions BuildOptions()
+        {
+            var options = InitialOptions;
+
+            options.SetLoggingPreference(LogType.Driver, LogLevel.All);
+            options.SetLoggingPreference(LogType.Browser, LogLevel.All);
+            options.SetLoggingPreference(LogType.Client, LogLevel.All);
+            options.SetLoggingPreference(LogType.Profiler, LogLevel.All);
+            options.SetLoggingPreference(LogType.Server, LogLevel.All);
+
+            return options;
         }
     }
 }

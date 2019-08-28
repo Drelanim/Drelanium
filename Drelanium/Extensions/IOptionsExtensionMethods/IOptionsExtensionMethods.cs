@@ -23,34 +23,12 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
 
 
         /// <summary>
-        ///     <see cref="WebDriver.Timeouts" />
-        /// </summary>
-        /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Timeouts Timeouts(this IOptions options, IWebDriver driver)
-        {
-            return new Timeouts(driver);
-        }
-
-
-        /// <summary>
         ///     <see cref="WebDriver.LogsManager" />
         /// </summary>
         /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
         public static LogsManager Logs(this IOptions options)
         {
             return new LogsManager(options);
-        }
-
-
-        /// <summary>
-        ///     <see cref="WebDriver.Window" />
-        /// </summary>
-        /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Window Window(this IOptions options, IWebDriver driver)
-        {
-            return new Window(driver);
         }
 
 
@@ -62,6 +40,28 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
         public static MouseMoveFollower MouseMoveFollower(this IOptions options, IWebDriver driver)
         {
             return new MouseMoveFollower(driver);
+        }
+
+
+        /// <summary>
+        ///     <see cref="WebDriver.Timeouts" />
+        /// </summary>
+        /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Timeouts Timeouts(this IOptions options, IWebDriver driver)
+        {
+            return new Timeouts(driver);
+        }
+
+
+        /// <summary>
+        ///     <see cref="WebDriver.Window" />
+        /// </summary>
+        /// <param name="options">The IOptions instance, that  allows the user to set options on the browser.</param>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Window Window(this IOptions options, IWebDriver driver)
+        {
+            return new Window(driver);
         }
     }
 }

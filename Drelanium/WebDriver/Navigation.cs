@@ -153,26 +153,6 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         /// </summary>
-        /// <inheritdoc cref="Refresh()" />
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public void Refresh(Logger logger)
-        {
-            {
-                logger?.Information($"Refreshing the current page ({Driver.Url})");
-            }
-
-            Refresh();
-
-            {
-                logger?.Information($"The current page ({Driver.Url}) has been refreshed");
-            }
-        }
-
-        /// <summary>
-        /// </summary>
         /// <inheritdoc cref="GoToUrl(string)" />
         /// <param name="url">To be added...</param>
         /// <param name="checkHttpResponse">To be added...</param>
@@ -214,6 +194,26 @@ namespace Drelanium.WebDriver
             }
 
             Driver.Wait(timeout).UntilPageHasLoaded(url, matchingUriPartial, logger);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="Refresh()" />
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public void Refresh(Logger logger)
+        {
+            {
+                logger?.Information($"Refreshing the current page ({Driver.Url})");
+            }
+
+            Refresh();
+
+            {
+                logger?.Information($"The current page ({Driver.Url}) has been refreshed");
+            }
         }
     }
 }

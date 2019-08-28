@@ -21,6 +21,22 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         ///     To be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <param name="offsetX">To be added...</param>
+        /// <param name="offsetY">To be added...</param>
+        public static IWebElement DragAndDropToOffset(this IWebElement element, int offsetX, int offsetY)
+        {
+            element
+                .Actions()
+                .DragAndDropToOffset(element, offsetX, offsetY)
+                .BuildAndPerform();
+
+            return element;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="theKey">To be added...</param>
         public static void KeyDownAndUp(this IWebElement element, string theKey)
         {
@@ -106,22 +122,6 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
                 .Actions()
                 .MoveToElement(element)
                 .ContextClick()
-                .BuildAndPerform();
-
-            return element;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
-        public static IWebElement DragAndDropToOffset(this IWebElement element, int offsetX, int offsetY)
-        {
-            element
-                .Actions()
-                .DragAndDropToOffset(element, offsetX, offsetY)
                 .BuildAndPerform();
 
             return element;

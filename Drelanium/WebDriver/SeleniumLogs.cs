@@ -35,6 +35,33 @@ namespace Drelanium.WebDriver
         /// <summary>
         ///     To be added...
         /// </summary>
+        private LogEventLevel DefineLogEventLevel(LogLevel logLevel)
+        {
+            switch (logLevel)
+            {
+                case LogLevel.All:
+                    return LogEventLevel.Verbose;
+
+                case LogLevel.Debug:
+                    return LogEventLevel.Debug;
+
+                case LogLevel.Info:
+                    return LogEventLevel.Information;
+
+                case LogLevel.Warning:
+                    return LogEventLevel.Warning;
+
+                case LogLevel.Severe:
+                    return LogEventLevel.Error;
+
+                default:
+                    throw new InvalidEnumArgumentException();
+            }
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="logTimeFilter">
         ///     The <see cref="Func{TResult}" />, that is applied to filter the LogEntries by their TimeStamp
         ///     property.
@@ -64,33 +91,6 @@ namespace Drelanium.WebDriver
         public IEnumerable<LogEntry> Get()
         {
             return Logs;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        private LogEventLevel DefineLogEventLevel(LogLevel logLevel)
-        {
-            switch (logLevel)
-            {
-                case LogLevel.All:
-                    return LogEventLevel.Verbose;
-
-                case LogLevel.Debug:
-                    return LogEventLevel.Debug;
-
-                case LogLevel.Info:
-                    return LogEventLevel.Information;
-
-                case LogLevel.Warning:
-                    return LogEventLevel.Warning;
-
-                case LogLevel.Severe:
-                    return LogEventLevel.Error;
-
-                default:
-                    throw new InvalidEnumArgumentException();
-            }
         }
 
         /// <summary>

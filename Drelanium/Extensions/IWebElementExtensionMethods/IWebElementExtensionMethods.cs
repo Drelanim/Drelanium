@@ -27,39 +27,20 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     Loose focus from the element. The body element will get the focus.
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static Properties Properties(this IWebElement element)
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public static void Blur(this IWebElement element, Logger logger = null)
         {
-            return new Properties(element);
-        }
+            logger?.Information($"Attempting to Blur on element ({element})");
 
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static Style Style(this IWebElement element)
-        {
-            return new Style(element);
-        }
+            element.ExecuteJavaScript("arguments[0].blur(); ", element);
 
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static SelectElement Select(this IWebElement element)
-        {
-            return new SelectElement(element);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static Location Location(this IWebElement element)
-        {
-            return new Location(element);
+            logger?.Information("Blur on element was successful");
         }
 
         /// <summary>
@@ -106,6 +87,24 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
+        ///     Dispatches a HTMLEvent from the global window object on an element.
+        /// </summary>
+        /// <param name="element">The event will be dispatched on this element.</param>
+        /// <param name="eventName">To be added...</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public static void DispatchEvent(this IWebElement element, string eventName, Logger logger = null)
+        {
+            logger?.Information($"Attempting to Dispatch event ({eventName}) on element ({element})");
+
+            element.ExecuteJavaScript($"arguments[0].dispatchEvent({eventName}); ", element);
+
+            logger?.Information("Dispatch event on element was successful");
+        }
+
+        /// <summary>
         ///     Put focus on the element.
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -123,20 +122,12 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     Loose focus from the element. The body element will get the focus.
+        ///     To be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public static void Blur(this IWebElement element, Logger logger = null)
+        public static string GetWebElementID(this IWebElement element)
         {
-            logger?.Information($"Attempting to Blur on element ({element})");
-
-            element.ExecuteJavaScript("arguments[0].blur(); ", element);
-
-            logger?.Information("Blur on element was successful");
+            return new Regex("\\d{2,}").Match(element.ToString()).Value;
         }
 
         /// <summary>
@@ -160,27 +151,36 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         ///     To be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static string GetWebElementID(this IWebElement element)
+        public static Location Location(this IWebElement element)
         {
-            return new Regex("\\d{2,}").Match(element.ToString()).Value;
+            return new Location(element);
         }
 
         /// <summary>
-        ///     Dispatches a HTMLEvent from the global window object on an element.
+        ///     To be added...
         /// </summary>
-        /// <param name="element">The event will be dispatched on this element.</param>
-        /// <param name="eventName">To be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public static void DispatchEvent(this IWebElement element, string eventName, Logger logger = null)
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static Properties Properties(this IWebElement element)
         {
-            logger?.Information($"Attempting to Dispatch event ({eventName}) on element ({element})");
+            return new Properties(element);
+        }
 
-            element.ExecuteJavaScript($"arguments[0].dispatchEvent({eventName}); ", element);
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static SelectElement Select(this IWebElement element)
+        {
+            return new SelectElement(element);
+        }
 
-            logger?.Information("Dispatch event on element was successful");
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static Style Style(this IWebElement element)
+        {
+            return new Style(element);
         }
     }
 }

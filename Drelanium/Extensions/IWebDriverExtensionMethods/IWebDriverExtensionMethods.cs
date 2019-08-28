@@ -18,49 +18,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         ///     To be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Uri Url(this IWebDriver driver)
+        public static IWebElement Body(this IWebDriver driver)
         {
-            return new Uri(driver.Url);
-        }
-
-
-        /// <summary>
-        ///     Extended implementation of <see cref="IOptions" />
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Options Options(this IWebDriver driver)
-        {
-            return new Options(driver);
-        }
-
-
-        /// <summary>
-        ///     Extended implementation of <see cref="INavigation" />
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Navigation Navigation(this IWebDriver driver)
-        {
-            return new Navigation(driver);
-        }
-
-
-        /// <summary>
-        ///     Extended implementation of <see cref="ITargetLocator" />
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static TargetLocator Switch(this IWebDriver driver)
-        {
-            return new TargetLocator(driver);
-        }
-
-
-        /// <summary>
-        ///     Methods to perform scroll in the browser.
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Scroll Scroll(this IWebDriver driver)
-        {
-            return new Scroll(driver);
+            return driver.FindElement(By.TagName("body"));
         }
 
         /// <summary>
@@ -70,51 +30,6 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         public static Capabilities Capabilities(this IWebDriver driver)
         {
             return new Capabilities(driver);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Create Create(this IWebDriver driver)
-        {
-            return new Create(driver);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Mouse Mouse(this IWebDriver driver)
-        {
-            return new Mouse(driver);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Document Document(this IWebDriver driver)
-        {
-            return new Document(driver);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static JQuery JQuery(this IWebDriver driver)
-        {
-            return new JQuery(driver);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static IWebElement Body(this IWebDriver driver)
-        {
-            return driver.FindElement(By.TagName("body"));
         }
 
         /// <summary>
@@ -147,6 +62,62 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Create Create(this IWebDriver driver)
+        {
+            return new Create(driver);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Document Document(this IWebDriver driver)
+        {
+            return new Document(driver);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static JQuery JQuery(this IWebDriver driver)
+        {
+            return new JQuery(driver);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Mouse Mouse(this IWebDriver driver)
+        {
+            return new Mouse(driver);
+        }
+
+
+        /// <summary>
+        ///     Extended implementation of <see cref="INavigation" />
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Navigation Navigation(this IWebDriver driver)
+        {
+            return new Navigation(driver);
+        }
+
+
+        /// <summary>
+        ///     Extended implementation of <see cref="IOptions" />
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Options Options(this IWebDriver driver)
+        {
+            return new Options(driver);
+        }
+
+        /// <summary>
         ///     <inheritdoc cref="IWebDriver.Quit()" /> Logs the action.
         /// </summary>
         /// <param name="logger">
@@ -158,6 +129,35 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         {
             driver.Quit();
             logger?.Information("Quitting WebDriver.");
+        }
+
+
+        /// <summary>
+        ///     Methods to perform scroll in the browser.
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Scroll Scroll(this IWebDriver driver)
+        {
+            return new Scroll(driver);
+        }
+
+
+        /// <summary>
+        ///     Extended implementation of <see cref="ITargetLocator" />
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static TargetLocator Switch(this IWebDriver driver)
+        {
+            return new TargetLocator(driver);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        public static Uri Url(this IWebDriver driver)
+        {
+            return new Uri(driver.Url);
         }
     }
 }

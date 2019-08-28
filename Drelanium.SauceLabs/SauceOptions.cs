@@ -13,7 +13,7 @@ using OpenQA.Selenium.Safari;
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
 // ReSharper disable InconsistentNaming
-#pragma warning disable 1591
+
 #pragma warning disable IDE1006 // Naming Styles
 
 
@@ -35,6 +35,142 @@ namespace Drelanium.SauceLabs
         public Dictionary<string, object> Options { get; }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "firefox" </para>
+        /// </summary>
+        public object browserName
+        {
+            get => GetValue("browserName");
+            set => SetValue("browserName", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "Google Nexus 7 HD Emulator" </para>
+        /// </summary>
+        public object deviceName
+        {
+            get => GetValue("deviceName");
+            set => SetValue("deviceName", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "tablet" </para>
+        /// </summary>
+        public object deviceType
+        {
+            get => GetValue("deviceType");
+            set => SetValue("deviceType", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "portrait" </para>
+        /// </summary>
+        public object deviceOrientation
+        {
+            get => GetValue("deviceOrientation");
+            set => SetValue("deviceOrientation", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "UiAutomator2" </para>
+        /// </summary>
+        public object automationName
+        {
+            get => GetValue("automationName");
+            set => SetValue("automationName", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "com.example.android.myApp, com.android.settings" </para>
+        /// </summary>
+        public object appPackage
+        {
+            get => GetValue("appPackage");
+            set => SetValue("appPackage", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: ".MainActivity" </para>
+        /// </summary>
+        public object appActivity
+        {
+            get => GetValue("appActivity");
+            set => SetValue("appActivity", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: true </para>
+        /// </summary>
+        public object autoAcceptAlerts
+        {
+            get => GetValue("autoAcceptAlerts");
+            set => SetValue("autoAcceptAlerts", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "66.0" </para>
+        /// </summary>
+        public object version
+        {
+            get => GetValue("version");
+            set => SetValue("version", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "macOS 10.13" </para>
+        /// </summary>
+        public object platform
+        {
+            get => GetValue("platform");
+            set => SetValue("platform", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "9.1" </para>
+        /// </summary>
+        public object platformVersion
+        {
+            get => GetValue("platformVersion");
+            set => SetValue("platformVersion", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "iOS" </para>
+        /// </summary>
+        public object platformName
+        {
+            get => GetValue("platformName");
+            set => SetValue("platformName", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "12345678-1234-1234-1234-123456789012" </para>
+        /// </summary>
         public object accessKey
         {
             get => GetValue("accessKey");
@@ -42,6 +178,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "1.5.3" </para>
+        /// </summary>
         public object appiumVersion
         {
             get => GetValue("appiumVersion");
@@ -49,6 +189,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: true </para>
+        /// </summary>
         public object avoidProxy
         {
             get => GetValue("avoidProxy");
@@ -56,6 +200,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "build-1234" </para>
+        /// </summary>
         public object build
         {
             get => GetValue("build");
@@ -63,6 +211,8 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        /// </summary>
         public object captureHtml
         {
             get => GetValue("captureHtml");
@@ -70,6 +220,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "chromedriverVersion": "2.45" </para>
+        /// </summary>
         public object chromedriverVersion
         {
             get => GetValue("chromedriverVersion");
@@ -77,6 +231,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "2.45" </para>
+        /// </summary>
         public object crmuxdriverVersion
         {
             get => GetValue("crmuxdriverVersion");
@@ -84,6 +242,13 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="object" /> </para>
+        ///     <para>
+        ///         example: {"release": "1.0", "commit": "0k392a9dkjr", "staging": true, "execution_number": 5, "server":
+        ///         "test.customer.com"}
+        ///     </para>
+        /// </summary>
         public object customData
         {
             get => GetValue("customData");
@@ -91,6 +256,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: true </para>
+        /// </summary>
         public object disablePopupHandler
         {
             get => GetValue("disablePopupHandler");
@@ -98,6 +267,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: true </para>
+        /// </summary>
         public object extendedDebugging
         {
             get => GetValue("extendedDebugging");
@@ -105,6 +278,21 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: true </para>
+        /// </summary>
+        public object capturePerformance
+        {
+            get => GetValue("capturePerformance");
+            set => SetValue("capturePerformance", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "1.0" </para>
+        /// </summary>
         public object firefoxAdapterVersion
         {
             get => GetValue("firefoxAdapterVersion");
@@ -112,12 +300,19 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        /// </summary>
         public object firefoxProfileUrl
         {
             get => GetValue("firefoxProfileUrl");
             set => SetValue("firefoxProfileUrl", value);
         }
 
+        /// <summary>
+        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> example: 90 </para>
+        /// </summary>
 
         public object idleTimeout
         {
@@ -126,11 +321,35 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> example: 300 </para>
+        /// </summary>
+
+        public object commandTimeout
+        {
+            get => GetValue("commandTimeout");
+            set => SetValue("commandTimeout", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "3.141.0" </para>
+        /// </summary>
+
+
         public object iedriverVersion
         {
             get => GetValue("iedriverVersion");
             set => SetValue("iedriverVersion", value);
         }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> example: 1800 </para>
+        /// </summary>
 
         public object maxDuration
         {
@@ -139,6 +358,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "my example name" </para>
+        /// </summary>
         public object name
         {
             get => GetValue("name");
@@ -146,12 +369,20 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "MyTunnel01" </para>
+        /// </summary>
         public object parentTunnel
         {
             get => GetValue("parentTunnel");
             set => SetValue("parentTunnel", value);
         }
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: true </para>
+        /// </summary>
 
         public object passed
         {
@@ -160,6 +391,8 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        /// </summary>
         public object prerun
         {
             get => GetValue("prerun");
@@ -167,6 +400,8 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        /// </summary>
         public object preserveRequeue
         {
             get => GetValue("preserveRequeue");
@@ -174,6 +409,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> example: 0 </para>
+        /// </summary>
         public object priority
         {
             get => GetValue("priority");
@@ -181,12 +420,29 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: false </para>
+        /// </summary>
+        public object webdriverRemoteQuietExceptions
+        {
+            get => GetValue("webdriver.remote.quietExceptions");
+            set => SetValue("webdriver.remote.quietExceptions", value);
+        }
+
+
+        /// <summary>
+        /// </summary>
         public object proxyHost
         {
             get => GetValue("proxyHost");
             set => SetValue("proxyHost", value);
         }
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "public" </para>
+        /// </summary>
         public object @public
         {
             get => GetValue("public");
@@ -194,6 +450,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: false </para>
+        /// </summary>
         public object recordLogs
         {
             get => GetValue("recordLogs");
@@ -201,6 +461,21 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: false </para>
+        /// </summary>
+        public object recordVideo
+        {
+            get => GetValue("recordVideo");
+            set => SetValue("recordVideo", value);
+        }
+
+
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: false </para>
+        /// </summary>
         public object recordScreenshots
         {
             get => GetValue("recordScreenshots");
@@ -208,6 +483,8 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        /// </summary>
         public object restrictedPublicInfo
         {
             get => GetValue("restrictedPublicInfo");
@@ -215,24 +492,39 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "1280x1024" </para>
+        /// </summary>
         public object screenResolution
         {
             get => GetValue("screenResolution");
             set => SetValue("screenResolution", value);
         }
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "seleniumVersion": "2.46.0" </para>
+        /// </summary>
         public object seleniumVersion
         {
             get => GetValue("seleniumVersion");
             set => SetValue("seleniumVersion", value);
         }
 
+
+        /// <summary>
+        /// </summary>
         public object source
         {
             get => GetValue("source");
             set => SetValue("source", value);
         }
 
+        /// <summary>
+        ///     <para> type = <see cref="List{T}" /> </para>
+        ///     <para> example: ["tag1","tag2","tag3"] </para>
+        /// </summary>
 
         public object tags
         {
@@ -241,6 +533,10 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "Los_Angeles"  </para>
+        /// </summary>
         public object timeZone
         {
             get => GetValue("timeZone");
@@ -248,12 +544,21 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: "MyTunnel01" </para>
+        /// </summary>
         public object tunnelIdentifier
         {
             get => GetValue("tunnelIdentifier");
             set => SetValue("tunnelIdentifier", value);
         }
 
+
+        /// <summary>
+        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> example: Drelanim </para>
+        /// </summary>
 
         public object username
         {
@@ -262,32 +567,14 @@ namespace Drelanium.SauceLabs
         }
 
 
+        /// <summary>
+        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> example: false </para>
+        /// </summary>
         public object videoUploadOnPass
         {
             get => GetValue("videoUploadOnPass");
             set => SetValue("videoUploadOnPass", value);
-        }
-
-
-        /// <summary>
-        /// </summary>
-        /// <param name="configurationRoot"></param>
-        /// <returns></returns>
-        public SauceOptions Bind(IConfigurationRoot configurationRoot)
-        {
-            configurationRoot.Bind(this);
-            return this;
-        }
-
-
-        /// <summary>
-        /// </summary>
-        /// <param name="jsonPath"></param>
-        /// <returns></returns>
-        public SauceOptions Bind(string jsonPath)
-        {
-            new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
-            return this;
         }
 
 
@@ -338,6 +625,28 @@ namespace Drelanium.SauceLabs
                     throw new ArgumentException("SauceOptions cannot be added as a capability");
                 }
             }
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="configurationRoot"></param>
+        /// <returns></returns>
+        public SauceOptions Bind(IConfigurationRoot configurationRoot)
+        {
+            configurationRoot.Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="jsonPath"></param>
+        /// <returns></returns>
+        public SauceOptions Bind(string jsonPath)
+        {
+            new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
+            return this;
         }
 
 

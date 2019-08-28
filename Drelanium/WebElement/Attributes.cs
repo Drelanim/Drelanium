@@ -264,6 +264,23 @@ namespace Drelanium.WebElement
         ///     To be added...
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
+        public void Remove(string attributeName)
+        {
+            Element.ExecuteJavaScript("arguments[0].removeAttribute(arguments[1]); ", Element, attributeName);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        public void Remove(ElementAttributeName elementAttributeName)
+        {
+            Remove(elementAttributeName.AttributeName);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="attributeName">Name of the attribute of the element.</param>
         /// <param name="attributeValue"></param>
         public void Set(string attributeName, object attributeValue)
         {
@@ -277,23 +294,6 @@ namespace Drelanium.WebElement
         public void Set(ElementAttributeName elementAttributeName, object attributeValue)
         {
             Set(elementAttributeName.AttributeName, attributeValue);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="attributeName">Name of the attribute of the element.</param>
-        public void Remove(string attributeName)
-        {
-            Element.ExecuteJavaScript("arguments[0].removeAttribute(arguments[1]); ", Element, attributeName);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        public void Remove(ElementAttributeName elementAttributeName)
-        {
-            Remove(elementAttributeName.AttributeName);
         }
     }
 }

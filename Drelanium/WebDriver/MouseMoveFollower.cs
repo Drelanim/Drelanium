@@ -60,6 +60,25 @@ namespace Drelanium.WebDriver
         /// <summary>
         ///     To be added...
         /// </summary>
+        public void TurnOFF(Logger logger = null)
+        {
+            if (!IsTurnedON)
+            {
+                return;
+            }
+
+            {
+                logger?.Information("Turning off the MouseMoveFollower feature");
+            }
+
+            Driver.RemoveEventListener(EventType.mousemove, MouseMoveFollowerFunctionName);
+
+            Driver.FindElement(By.Id(SeleniumMouseMoveFollowerID)).Remove();
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
         public void TurnON(Logger logger = null)
         {
             if (IsTurnedON)
@@ -82,25 +101,6 @@ namespace Drelanium.WebDriver
             seleniumMouseMoveFollower.Attributes().ID = "SeleniumMouseMoveFollower";
             seleniumMouseMoveFollower.Attributes().Style = "position: absolute; z-index: 65535; pointer-events: none;";
             seleniumMouseMoveFollower.Attributes().Src = pictureInBase64;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        public void TurnOFF(Logger logger = null)
-        {
-            if (!IsTurnedON)
-            {
-                return;
-            }
-
-            {
-                logger?.Information("Turning off the MouseMoveFollower feature");
-            }
-
-            Driver.RemoveEventListener(EventType.mousemove, MouseMoveFollowerFunctionName);
-
-            Driver.FindElement(By.Id(SeleniumMouseMoveFollowerID)).Remove();
         }
     }
 }

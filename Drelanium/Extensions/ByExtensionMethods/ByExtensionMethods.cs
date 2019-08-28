@@ -9,16 +9,6 @@ namespace Drelanium.Extensions.ByExtensionMethods
     public static class ByExtensionMethods
     {
         /// <summary>
-        ///     <inheritdoc cref="Drelanium.SearchContext.Search" />
-        /// </summary>
-        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
-        public static Search Search(this By locator, ISearchContext searchContext)
-        {
-            return new Search(searchContext);
-        }
-
-        /// <summary>
         ///     The By method that was used to create the By object.
         /// </summary>
         /// <param name="locator">The locating mechanism to use.</param>
@@ -36,6 +26,16 @@ namespace Drelanium.Extensions.ByExtensionMethods
         public static string ByValue(this By locator)
         {
             return locator.ToString().Substring(locator.ToString().IndexOf(":") + 2);
+        }
+
+        /// <summary>
+        ///     <inheritdoc cref="Drelanium.SearchContext.Search" />
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">The locating mechanism to use.</param>
+        public static Search Search(this By locator, ISearchContext searchContext)
+        {
+            return new Search(searchContext);
         }
     }
 }

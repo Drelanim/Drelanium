@@ -9,12 +9,21 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class SendKeysMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     To be added..
+        ///     .
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static void SendTabKey(this IWebElement element)
+        /// <param name="numberOfCharactersToBeDeleted">To be added...</param>
+        public static void DeleteFromEndOfTextbox(this IWebElement element, int numberOfCharactersToBeDeleted)
         {
-            element.SendKeys(Keys.Tab);
+            var backspaces = new StringBuilder();
+
+            for (var i = 0; i < numberOfCharactersToBeDeleted; i++)
+            {
+                backspaces.Append(Keys.Backspace);
+            }
+
+            TypeToTextbox(element, backspaces.ToString());
         }
 
         /// <summary>
@@ -24,6 +33,32 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         public static void SendEnterKey(this IWebElement element)
         {
             element.SendKeys(Keys.Enter);
+        }
+
+        /// <summary>
+        ///     To be added..
+        ///     .
+        /// </summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <param name="text">To be added...</param>
+        /// <param name="clearFirst">To be added...</param>
+        public static void SendKeys(this IWebElement element, string text, bool clearFirst)
+        {
+            if (clearFirst)
+            {
+                element.Clear();
+            }
+
+            element.SendKeys(text);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static void SendTabKey(this IWebElement element)
+        {
+            element.SendKeys(Keys.Tab);
         }
 
         /// <summary>
@@ -58,41 +93,6 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         {
             element.TypeToTextbox(content);
             element.SendTabKey();
-        }
-
-        /// <summary>
-        ///     To be added..
-        ///     .
-        /// </summary>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="numberOfCharactersToBeDeleted">To be added...</param>
-        public static void DeleteFromEndOfTextbox(this IWebElement element, int numberOfCharactersToBeDeleted)
-        {
-            var backspaces = new StringBuilder();
-
-            for (var i = 0; i < numberOfCharactersToBeDeleted; i++)
-            {
-                backspaces.Append(Keys.Backspace);
-            }
-
-            TypeToTextbox(element, backspaces.ToString());
-        }
-
-        /// <summary>
-        ///     To be added..
-        ///     .
-        /// </summary>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="text">To be added...</param>
-        /// <param name="clearFirst">To be added...</param>
-        public static void SendKeys(this IWebElement element, string text, bool clearFirst)
-        {
-            if (clearFirst)
-            {
-                element.Clear();
-            }
-
-            element.SendKeys(text);
         }
     }
 }

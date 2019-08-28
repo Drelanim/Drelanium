@@ -131,6 +131,36 @@ namespace Drelanium.WebDriver
             }
         }
 
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="seleniumLogType">The log for which to retrieve the log entries.</param>
+        public ReadOnlyCollection<LogEntry> GetLog(SeleniumLogType seleniumLogType)
+        {
+            return GetLog(LogKind(seleniumLogType));
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logKind">
+        ///     The log for which to retrieve the log entries. Log types can be found in the
+        ///     <see cref="T:OpenQA.Selenium.LogType" /> class.
+        /// </param>
+        public bool HasLog(string logKind)
+        {
+            return AvailableLogTypes != null && AvailableLogTypes.Contains(logKind);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="seleniumLogType">The log for which to retrieve the log entries.</param>
+        public bool HasLog(SeleniumLogType seleniumLogType)
+        {
+            return HasLog(LogKind(seleniumLogType));
+        }
+
 
         /// <summary>
         ///     To be added...
@@ -158,36 +188,6 @@ namespace Drelanium.WebDriver
                 default:
                     throw new InvalidEnumArgumentException();
             }
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logKind">
-        ///     The log for which to retrieve the log entries. Log types can be found in the
-        ///     <see cref="T:OpenQA.Selenium.LogType" /> class.
-        /// </param>
-        public bool HasLog(string logKind)
-        {
-            return AvailableLogTypes != null && AvailableLogTypes.Contains(logKind);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="seleniumLogType">The log for which to retrieve the log entries.</param>
-        public bool HasLog(SeleniumLogType seleniumLogType)
-        {
-            return HasLog(LogKind(seleniumLogType));
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="seleniumLogType">The log for which to retrieve the log entries.</param>
-        public ReadOnlyCollection<LogEntry> GetLog(SeleniumLogType seleniumLogType)
-        {
-            return GetLog(LogKind(seleniumLogType));
         }
     }
 }

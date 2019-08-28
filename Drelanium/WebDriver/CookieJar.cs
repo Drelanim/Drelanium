@@ -88,52 +88,6 @@ namespace Drelanium.WebDriver
             AddCookie(cookie);
         }
 
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="GetCookieNamed(string)" />
-        public Cookie GetCookieNamed(string name, Logger logger)
-        {
-            logger?.Information($"Getting cookie named {name}");
-
-            return GetCookieNamed(name);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="DeleteCookie(Cookie)" />
-        public void DeleteCookie(Cookie cookie, Logger logger)
-        {
-            logger?.Information($"Deleting cookie {cookie}");
-
-            DeleteCookie(cookie);
-
-            logger?.Information($"Deleted cookie {cookie}");
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="DeleteCookieNamed(string)" />
-        public void DeleteCookieNamed(string name, Logger logger)
-        {
-            logger?.Information($"Deleting cookie named {name}");
-
-            DeleteCookieNamed(name);
-
-            logger?.Information($"Deleted cookie named {name}");
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="DeleteAllCookies()" />
-        public void DeleteAllCookies(Logger logger)
-        {
-            logger?.Information($"Deleting all available cookies in current domain: ({Driver.Url().Host})");
-
-            DeleteAllCookies();
-
-            logger?.Information($"Deleted all available cookies in current domain: ({Driver.Url().Host})");
-        }
-
 
         /// <summary>
         ///     To be added...
@@ -154,12 +108,36 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="DeleteAllCookies()" />
+        public void DeleteAllCookies(Logger logger)
+        {
+            logger?.Information($"Deleting all available cookies in current domain: ({Driver.Url().Host})");
+
+            DeleteAllCookies();
+
+            logger?.Information($"Deleted all available cookies in current domain: ({Driver.Url().Host})");
+        }
+
+        /// <summary>
         ///     To be added...
         /// </summary>
-        public Cookie GetCookieNamed(string domainName, string name, Logger logger = null)
+        public void DeleteAllCookies(string domainName, Logger logger = null)
         {
             CheckDomain(domainName, logger);
-            return GetCookieNamed(name, logger);
+            DeleteAllCookies(logger);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="DeleteCookie(Cookie)" />
+        public void DeleteCookie(Cookie cookie, Logger logger)
+        {
+            logger?.Information($"Deleting cookie {cookie}");
+
+            DeleteCookie(cookie);
+
+            logger?.Information($"Deleted cookie {cookie}");
         }
 
         /// <summary>
@@ -169,6 +147,18 @@ namespace Drelanium.WebDriver
         {
             CheckDomain(domainName, logger);
             DeleteCookie(cookie, logger);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="DeleteCookieNamed(string)" />
+        public void DeleteCookieNamed(string name, Logger logger)
+        {
+            logger?.Information($"Deleting cookie named {name}");
+
+            DeleteCookieNamed(name);
+
+            logger?.Information($"Deleted cookie named {name}");
         }
 
         /// <summary>
@@ -183,15 +173,6 @@ namespace Drelanium.WebDriver
         /// <summary>
         ///     To be added...
         /// </summary>
-        public void DeleteAllCookies(string domainName, Logger logger = null)
-        {
-            CheckDomain(domainName, logger);
-            DeleteAllCookies(logger);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
         public IEnumerable<Cookie> DomainCookies(string domainName, Logger logger = null)
         {
             CheckDomain(domainName, logger);
@@ -199,6 +180,25 @@ namespace Drelanium.WebDriver
             logger?.Information($"Getting cookies from domain ({domainName})");
 
             return AllCookies.Where(cookie => cookie.Domain == domainName);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="GetCookieNamed(string)" />
+        public Cookie GetCookieNamed(string name, Logger logger)
+        {
+            logger?.Information($"Getting cookie named {name}");
+
+            return GetCookieNamed(name);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        public Cookie GetCookieNamed(string domainName, string name, Logger logger = null)
+        {
+            CheckDomain(domainName, logger);
+            return GetCookieNamed(name, logger);
         }
     }
 }

@@ -19,187 +19,6 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     the method exeuction.
         /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsDisplayed(this WebDriverWait wait, IWebElement element, Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({element}) element to become displayed");
-
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is displayed";
-            var result = wait.Until(driver => element.Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
-        public static bool UntilElementIsDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({locator}) element to become displayed");
-
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is displayed";
-            var result = wait.Until(driver => searchContext.FindElement(locator).Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, IWebElement element,
-            Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({element}) element to become not displayed");
-
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is not displayed";
-            var result = wait.Until(driver => !element.Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
-        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({locator}) element to become not displayed");
-
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is not displayed";
-            var result = wait.Until(driver => !searchContext.FindElement(locator).Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({element}) element to become enabled");
-
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is enabled";
-            var result = wait.Until(driver => element.Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
-        public static bool UntilElementIsEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({locator}) element to become not displayed");
-
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is enabled";
-            var result = wait.Until(driver => searchContext.FindElement(locator).Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({element}) element to become disabled");
-
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is not enabled";
-            var result = wait.Until(driver => !element.Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
-        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({locator}) element to become disabled");
-
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is not enabled";
-            var result = wait.Until(driver => !searchContext.FindElement(locator).Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -293,29 +112,6 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
         ///     the method exeuction.
         /// </param>
-        public static IWebElement UntilElementExists(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({locator}) element to exists");
-
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) exists";
-            var result = wait.Until(driver => searchContext.FindElement(locator));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
         public static void UntilElementDisappears(this WebDriverWait wait, ISearchContext searchContext, By locator,
             Logger logger = null)
         {
@@ -336,6 +132,210 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             });
 
             logger?.Information("Wait is finished, condition is met!");
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public static IWebElement UntilElementExists(this WebDriverWait wait, ISearchContext searchContext, By locator,
+            Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({locator}) element to exists");
+
+            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) exists";
+            var result = wait.Until(driver => searchContext.FindElement(locator));
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static bool UntilElementIsDisplayed(this WebDriverWait wait, IWebElement element, Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({element}) element to become displayed");
+
+            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is displayed";
+            var result = wait.Until(driver => element.Displayed);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">The locating mechanism to use.</param>
+        public static bool UntilElementIsDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
+            Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({locator}) element to become displayed");
+
+            wait.Message +=
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is displayed";
+            var result = wait.Until(driver => searchContext.FindElement(locator).Displayed);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static bool UntilElementIsEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({element}) element to become enabled");
+
+            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is enabled";
+            var result = wait.Until(driver => element.Enabled);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">The locating mechanism to use.</param>
+        public static bool UntilElementIsEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
+            Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({locator}) element to become not displayed");
+
+            wait.Message +=
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is enabled";
+            var result = wait.Until(driver => searchContext.FindElement(locator).Enabled);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, IWebElement element,
+            Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({element}) element to become not displayed");
+
+            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is not displayed";
+            var result = wait.Until(driver => !element.Displayed);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">The locating mechanism to use.</param>
+        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
+            Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({locator}) element to become not displayed");
+
+            wait.Message +=
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is not displayed";
+            var result = wait.Until(driver => !searchContext.FindElement(locator).Displayed);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({element}) element to become disabled");
+
+            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is not enabled";
+            var result = wait.Until(driver => !element.Enabled);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">The locating mechanism to use.</param>
+        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
+            Logger logger = null)
+        {
+            logger?.Information($"Waiting for ({locator}) element to become disabled");
+
+            wait.Message +=
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is not enabled";
+            var result = wait.Until(driver => !searchContext.FindElement(locator).Enabled);
+
+            logger?.Information("Wait is finished, condition is met!");
+
+            return result;
         }
     }
 }

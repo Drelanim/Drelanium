@@ -30,6 +30,34 @@ namespace Drelanium.WebDriver
         ///     To be added...
         /// </summary>
         /// <param name="y"></param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        /// <param name="x"></param>
+        public void MoveBy(int x, int y, Logger logger = null)
+        {
+            Driver.Actions().MoveByOffset(x, y).BuildAndPerform(logger);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
+        /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="y"></param>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="x"></param>
+        public void MoveByAndWaitUntilCondition(int x, int y, WebDriverWait wait, Func<IWebDriver, bool> condition,
+            Logger logger = null)
+        {
+            Driver.Actions().MoveByOffset(x, y).BuildAndPerform(wait, condition, logger);
+        }
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="y"></param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="x"></param>
         public void MoveTo(int x, int y, Logger logger = null)
@@ -72,34 +100,6 @@ namespace Drelanium.WebDriver
             Logger logger = null)
         {
             MoveToAndWaitUntilCondition(point.X, point.Y, wait, condition, logger);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="y"></param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="x"></param>
-        public void MoveBy(int x, int y, Logger logger = null)
-        {
-            Driver.Actions().MoveByOffset(x, y).BuildAndPerform(logger);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
-        /// <param name="y"></param>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="x"></param>
-        public void MoveByAndWaitUntilCondition(int x, int y, WebDriverWait wait, Func<IWebDriver, bool> condition,
-            Logger logger = null)
-        {
-            Driver.Actions().MoveByOffset(x, y).BuildAndPerform(wait, condition, logger);
         }
     }
 }

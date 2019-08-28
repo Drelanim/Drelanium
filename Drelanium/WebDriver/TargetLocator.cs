@@ -102,6 +102,65 @@ namespace Drelanium.WebDriver
             return TargetLocatorImplementation.Alert();
         }
 
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="ActiveElement()" />
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public IWebElement ActiveElement(Logger logger)
+        {
+            logger?.Information("Switching to Active element");
+
+            return ActiveElement();
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="Alert()" />
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public IAlert Alert(Logger logger)
+        {
+            logger?.Information("Switching to Alert");
+
+            return Alert();
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="DefaultContent()" />
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public IWebDriver DefaultContent(Logger logger)
+        {
+            logger?.Information("Switching to default content");
+
+            return DefaultContent();
+        }
+
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public IWebDriver FirstWindow(Logger logger = null)
+        {
+            {
+                logger?.Information("Switching to the 1st window");
+            }
+
+            return Window(Driver.WindowHandles[0]);
+        }
+
 
         /// <inheritdoc cref="Frame(int)" />
         /// <param name="frameIndex"></param>
@@ -144,6 +203,22 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public IWebDriver LastWindow(Logger logger = null)
+        {
+            {
+                logger?.Information("Switching to the last window");
+            }
+
+            return Window(Driver.WindowHandles[Driver.WindowHandles.Count - 1]);
+        }
+
+        /// <summary>
         /// </summary>
         /// <inheritdoc cref="ParentFrame()" />
         /// <param name="logger">
@@ -176,48 +251,6 @@ namespace Drelanium.WebDriver
             return Window(windowName);
         }
 
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="DefaultContent()" />
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public IWebDriver DefaultContent(Logger logger)
-        {
-            logger?.Information("Switching to default content");
-
-            return DefaultContent();
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="ActiveElement()" />
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public IWebElement ActiveElement(Logger logger)
-        {
-            logger?.Information("Switching to Active element");
-
-            return ActiveElement();
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="Alert()" />
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public IAlert Alert(Logger logger)
-        {
-            logger?.Information("Switching to Alert");
-
-            return Alert();
-        }
-
 
         /// <summary>
         ///     To be added...
@@ -233,39 +266,6 @@ namespace Drelanium.WebDriver
             while (numberOfWindow > Driver.WindowHandles.Count) Driver.ExecuteJavaScript("window.open();");
 
             return Window(Driver.WindowHandles[indexOfWindow], logger);
-        }
-
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public IWebDriver FirstWindow(Logger logger = null)
-        {
-            {
-                logger?.Information("Switching to the 1st window");
-            }
-
-            return Window(Driver.WindowHandles[0]);
-        }
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public IWebDriver LastWindow(Logger logger = null)
-        {
-            {
-                logger?.Information("Switching to the last window");
-            }
-
-            return Window(Driver.WindowHandles[Driver.WindowHandles.Count - 1]);
         }
     }
 }

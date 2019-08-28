@@ -43,6 +43,26 @@ namespace Drelanium.SearchContext
             return SearchContextImplementation.FindElements(by);
         }
 
+        /// <summary>
+        /// </summary>
+        /// <inheritdoc cref="FindElements(By)" />
+        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
+        public IWebElement FindDisplayedElement(By locator, TimeSpan timeout, Logger logger = null)
+        {
+            SearchContextImplementation
+                .Wait(timeout,
+                    ignoredExceptionTypes: new[]
+                        {typeof(NoSuchElementException), typeof(StaleElementReferenceException)})
+                .UntilElementIsDisplayed(SearchContextImplementation, locator);
+
+            return FindElement(locator);
+        }
+
 
         /// <inheritdoc cref="FindElement(By)" />
         /// <param name="by">To be added...</param>
@@ -59,35 +79,6 @@ namespace Drelanium.SearchContext
             logger?.Information($"Element ({by}) has been found");
 
             return result;
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="FindElements(By)" />
-        /// <param name="by">To be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
-        ///     the method exeuction.
-        /// </param>
-        public ReadOnlyCollection<IWebElement> FindElements(By by, Logger logger)
-        {
-            logger?.Information($"Attempting to Find element By ({by})");
-
-            var result = FindElements(by);
-
-            logger?.Information($"Found ({result.Count}) number of elements");
-
-            return result;
-        }
-
-
-        /// <summary>
-        ///     To be added...
-        /// </summary>
-        /// <param name="locator">The locating mechanism to use.</param>
-        public bool HasElement(By locator)
-        {
-            return FindElements(locator).Count > 0;
         }
 
         /// <summary>
@@ -144,21 +135,30 @@ namespace Drelanium.SearchContext
         /// <summary>
         /// </summary>
         /// <inheritdoc cref="FindElements(By)" />
-        /// <param name="locator">The locating mechanism to use.</param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="by">To be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
         ///     the method exeuction.
         /// </param>
-        public IWebElement FindDisplayedElement(By locator, TimeSpan timeout, Logger logger = null)
+        public ReadOnlyCollection<IWebElement> FindElements(By by, Logger logger)
         {
-            SearchContextImplementation
-                .Wait(timeout,
-                    ignoredExceptionTypes: new[]
-                        {typeof(NoSuchElementException), typeof(StaleElementReferenceException)})
-                .UntilElementIsDisplayed(SearchContextImplementation, locator);
+            logger?.Information($"Attempting to Find element By ({by})");
 
-            return FindElement(locator);
+            var result = FindElements(by);
+
+            logger?.Information($"Found ({result.Count}) number of elements");
+
+            return result;
+        }
+
+
+        /// <summary>
+        ///     To be added...
+        /// </summary>
+        /// <param name="locator">The locating mechanism to use.</param>
+        public bool HasElement(By locator)
+        {
+            return FindElements(locator).Count > 0;
         }
     }
 }

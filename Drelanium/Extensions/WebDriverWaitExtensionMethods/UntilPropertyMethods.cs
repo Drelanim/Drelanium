@@ -12,10 +12,10 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     To be added...
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="message">To be added...</param>
-        public static WebDriverWait AddTimeoutMessage(this WebDriverWait wait, string message)
+        /// <param name="exceptionTypes">To be added...</param>
+        public static WebDriverWait AddIgnoreExceptionTypes(this WebDriverWait wait, params Type[] exceptionTypes)
         {
-            wait.Message = message;
+            wait.IgnoreExceptionTypes(exceptionTypes);
             return wait;
         }
 
@@ -34,10 +34,10 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     To be added...
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="exceptionTypes">To be added...</param>
-        public static WebDriverWait AddIgnoreExceptionTypes(this WebDriverWait wait, params Type[] exceptionTypes)
+        /// <param name="message">To be added...</param>
+        public static WebDriverWait AddTimeoutMessage(this WebDriverWait wait, string message)
         {
-            wait.IgnoreExceptionTypes(exceptionTypes);
+            wait.Message = message;
             return wait;
         }
     }
