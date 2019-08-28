@@ -46,6 +46,16 @@
   </PropertyGroup>
 
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Nyiri_Attila\source\nyiriattila88\Drelanium\Drelanium\Drelanium.xml</DocumentationFile>
+  </PropertyGroup>
+
+
+
+
+
+
+
   <ItemGroup>
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />

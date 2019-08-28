@@ -1,5 +1,4 @@
 using Microsoft.Extensions.Configuration;
-using System;
 using Xunit;
 
 namespace XUnitTestProject1
@@ -9,24 +8,19 @@ namespace XUnitTestProject1
         [Fact]
         public void Test1()
         {
-
             var configroot = new ConfigurationBuilder()
-                .AddJsonFile(@"C:\Repos\Drelanium\XUnitTestProject1\json1.json").Build();
-                
+                .AddJsonFile(@"C:\Nyiri_Attila\source\nyiriattila88\Drelanium\XUnitTestProject1\json1.json")
+                .Build();
+
+
+            var sauceconfig = new SauceLabsConfiguration();
 
 
             var config = new Config();
 
-                      
-
 
             configroot.Bind(config);
-
-
-
-
-
-
+            configroot.Bind(sauceconfig);
         }
     }
 }

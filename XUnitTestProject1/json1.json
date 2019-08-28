@@ -1,27 +1,40 @@
 {
-
-
-  "MyProperty": 0,
-
-
-
-
-  "SauceOptionsToBind": {
-
-    "Prop1": "sdada-sdadasd",
-    "Prop2": null,
-    "Prop3": 1,
-    "Prop4": null
-
-
-  }
-
-
-
-
-
-
-
+    "SauceOptions": {
+        "accessKey": "SOMEVALUEhere",
+        "appiumVersion": null,
+        "avoidProxy": null,
+        "build": "somevaluethere",
+        "captureHtml": null,
+        "chromedriverVersion": null,
+        "crmuxdriverVersion": null,
+        "customData": null,
+        "disablePopupHandler": null,
+        "extendedDebugging": null,
+        "firefoxAdapterVersion": null,
+        "firefoxProfileUrl": null,
+        "idleTimeout": null,
+        "iedriverVersion": null,
+        "maxDuration": null,
+        "name": null,
+        "parentTunnel": null,
+        "passed": "haha",
+        "prerun": null,
+        "preserveRequeue": null,
+        "priority": null,
+        "proxyHost": null,
+        "public": "hihihi",
+        "recordLogs": null,
+        "recordScreenshots": null,
+        "restrictedPublicInfo": null,
+        "screenResolution": null,
+        "seleniumVersion": null,
+        "source": null,
+        "tags": null,
+        "timeZone": null,
+        "tunnelIdentifier": null,
+        "username": null,
+        "videoUploadOnPass": null
+    }
 
 
 }

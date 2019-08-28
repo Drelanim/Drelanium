@@ -8,7 +8,7 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.3.0</PackageVersion>
+    <PackageVersion>1.6.0</PackageVersion>
     <PackageId>Drelanium.SauceLabs</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
@@ -41,7 +41,15 @@
   </PropertyGroup>
 
 
+ 
+
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Nyiri_Attila\source\nyiriattila88\Drelanium\Drelanium.SauceLabs\Drelanium.SauceLabs.xml</DocumentationFile>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Nyiri_Attila\source\nyiriattila88\Drelanium\Drelanium.SauceLabs\Drelanium.SauceLabs.xml</DocumentationFile>
   </PropertyGroup>
 

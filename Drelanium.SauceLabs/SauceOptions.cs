@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -9,9 +8,14 @@ using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
 
 
+// ReSharper disable UnusedMember.Global
+// ReSharper disable IdentifierTypo
+// ReSharper disable StringLiteralTypo
+
+
 // ReSharper disable InconsistentNaming
 #pragma warning disable 1591
-
+#pragma warning disable IDE1006 // Naming Styles
 
 namespace Drelanium.SauceLabs
 {
@@ -20,10 +24,14 @@ namespace Drelanium.SauceLabs
     /// </summary>
     public class SauceOptions
     {
-        private Dictionary<string, object> GetDictionary()
+        public Dictionary<string, object> Options { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SauceOptions()
         {
-            var json = JsonConvert.SerializeObject(this);
-            return JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+            Options = new Dictionary<string, object>();
         }
 
 
@@ -34,35 +42,32 @@ namespace Drelanium.SauceLabs
         /// <exception cref="ArgumentException"></exception>
         public void AddToDriverOptions(DriverOptions driverOptions)
         {
-            var sauceOptionsDictionary = GetDictionary();
-
-
             switch (driverOptions)
             {
                 case ChromeOptions chromeOptions:
                 {
-                    chromeOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
+                    chromeOptions.AddAdditionalCapability("sauce:options", Options, true);
                     break;
                 }
 
 
                 case FirefoxOptions firefoxOptions:
                 {
-                    firefoxOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
+                    firefoxOptions.AddAdditionalCapability("sauce:options", Options, true);
                     break;
                 }
 
 
                 case InternetExplorerOptions internetExplorerOptions:
                 {
-                    internetExplorerOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
+                    internetExplorerOptions.AddAdditionalCapability("sauce:options", Options, true);
                     break;
                 }
 
 
                 case OperaOptions operaOptions:
                 {
-                    operaOptions.AddAdditionalCapability("sauce:options", sauceOptionsDictionary, true);
+                    operaOptions.AddAdditionalCapability("sauce:options", Options, true);
                     break;
                 }
 
@@ -81,85 +86,260 @@ namespace Drelanium.SauceLabs
         }
 
 
-        public object accessKey;
+        private object GetValue(string key)
+        {
+            if (!Options.ContainsKey(key))
+            {
+                Options.Add(key, null);
+            }
 
 
-        public object appiumVersion;
+            return Options[key];
+        }
 
 
-        public object avoidProxy;
+        private void SetValue(string key, object value)
+        {
+            if (!Options.ContainsKey(key))
+            {
+                Options.Add(key, null);
+            }
+
+            Options[key] = value;
+        }
 
 
-        public object build;
-
-        public object captureHtml;
-
-
-        public object chromedriverVersion;
-
-        public object crmuxdriverVersion;
+        public string accessKey
+        {
+            get => GetValue("accessKey")?.ToString();
+            set => SetValue("accessKey", value);
+        }
 
 
-        public object customData;
+        public string appiumVersion
+        {
+            get => GetValue("appiumVersion")?.ToString();
+            set => SetValue("appiumVersion", value);
+        }
 
 
-        public object disablePopupHandler;
-
-        public object extendedDebugging;
-
-        public object firefoxAdapterVersion;
-
-        public object firefoxProfileUrl;
+        public bool avoidProxy
+        {
+            get => GetValue("avoidProxy")?.ToString()?.ToLower() == "true";
+            set => SetValue("avoidProxy", value);
+        }
 
 
-        public object idleTimeout;
-
-        public object iedriverVersion;
-
-
-        public object maxDuration;
-
-        public object name;
-
-        public object parentTunnel;
+        public string build
+        {
+            get => GetValue("build")?.ToString();
+            set => SetValue("build", value);
+        }
 
 
-        public object passed;
-
-        public object prerun;
-
-
-        public object preserveRequeue;
-
-        public object priority;
+        public object captureHtml
+        {
+            get => GetValue("captureHtml");
+            set => SetValue("captureHtml", value);
+        }
 
 
-        public object proxyHost;
-
-        public object @public;
-
-        public object recordLogs;
-
-        public object recordScreenshots;
+        public string chromedriverVersion
+        {
+            get => GetValue("chromedriverVersion")?.ToString();
+            set => SetValue("chromedriverVersion", value);
+        }
 
 
-        public object restrictedPublicInfo;
-
-        public object screenResolution;
-        public object seleniumVersion;
-
-        public object source;
-
-        public object tags;
+        public string crmuxdriverVersion
+        {
+            get => GetValue("crmuxdriverVersion")?.ToString();
+            set => SetValue("crmuxdriverVersion", value);
+        }
 
 
-        public object timeZone;
+        public object customData
+        {
+            get => GetValue("customData");
+            set => SetValue("customData", value);
+        }
 
-        public object tunnelIdentifier;
+
+        public bool disablePopupHandler
+        {
+            get => GetValue("disablePopupHandler")?.ToString()?.ToLower() == "true";
+            set => SetValue("disablePopupHandler", value);
+        }
 
 
-        public object username;
+        public bool extendedDebugging
+        {
+            get => GetValue("extendedDebugging")?.ToString()?.ToLower() == "true";
+            set => SetValue("extendedDebugging", value);
+        }
 
-        public object videoUploadOnPass;
+
+        public string firefoxAdapterVersion
+        {
+            get => GetValue("firefoxAdapterVersion")?.ToString();
+            set => SetValue("firefoxAdapterVersion", value);
+        }
+
+
+        public string firefoxProfileUrl
+        {
+            get => GetValue("firefoxProfileUrl")?.ToString();
+            set => SetValue("firefoxProfileUrl", value);
+        }
+
+
+        public int idleTimeout
+        {
+            get => int.Parse(GetValue("idleTimeout")?.ToString() ?? throw new InvalidOperationException());
+            set => SetValue("idleTimeout", value);
+        }
+
+
+        public string iedriverVersion
+        {
+            get => GetValue("iedriverVersion")?.ToString();
+            set => SetValue("iedriverVersion", value);
+        }
+
+        public int maxDuration
+        {
+            get => int.Parse(GetValue("maxDuration")?.ToString() ?? throw new InvalidOperationException());
+            set => SetValue("maxDuration", value);
+        }
+
+
+        public string name
+        {
+            get => GetValue("name")?.ToString();
+            set => SetValue("name", value);
+        }
+
+
+        public string parentTunnel
+        {
+            get => GetValue("parentTunnel")?.ToString();
+            set => SetValue("parentTunnel", value);
+        }
+
+
+        public bool passed
+        {
+            get => GetValue("passed")?.ToString()?.ToLower() == "true";
+            set => SetValue("passed", value);
+        }
+
+
+        public object prerun
+        {
+            get => GetValue("prerun");
+            set => SetValue("prerun", value);
+        }
+
+
+        public object preserveRequeue
+        {
+            get => GetValue("preserveRequeue");
+            set => SetValue("preserveRequeue", value);
+        }
+
+
+        public int priority
+        {
+            get => int.Parse(GetValue("priority")?.ToString() ?? throw new InvalidOperationException());
+            set => SetValue("priority", value);
+        }
+
+
+        public object proxyHost
+        {
+            get => GetValue("proxyHost");
+            set => SetValue("proxyHost", value);
+        }
+
+        public string @public
+        {
+            get => GetValue("public")?.ToString();
+            set => SetValue("public", value);
+        }
+
+
+        public bool recordLogs
+        {
+            get => GetValue("recordLogs")?.ToString()?.ToLower() == "true";
+            set => SetValue("recordLogs", value);
+        }
+
+
+        public bool recordScreenshots
+        {
+            get => GetValue("recordScreenshots")?.ToString()?.ToLower() == "true";
+            set => SetValue("recordScreenshots", value);
+        }
+
+
+        public object restrictedPublicInfo
+        {
+            get => GetValue("restrictedPublicInfo");
+            set => SetValue("restrictedPublicInfo", value);
+        }
+
+
+        public string screenResolution
+        {
+            get => GetValue("screenResolution")?.ToString();
+            set => SetValue("screenResolution", value);
+        }
+
+        public string seleniumVersion
+        {
+            get => GetValue("seleniumVersion")?.ToString();
+            set => SetValue("seleniumVersion", value);
+        }
+
+        public object source
+        {
+            get => GetValue("source");
+            set => SetValue("source", value);
+        }
+
+
+        public object tags
+        {
+            get => GetValue("tags");
+            set => SetValue("tags", value);
+        }
+
+
+        public string timeZone
+        {
+            get => GetValue("timeZone")?.ToString();
+            set => SetValue("timeZone", value);
+        }
+
+
+        public string tunnelIdentifier
+        {
+            get => GetValue("tunnelIdentifier")?.ToString();
+            set => SetValue("tunnelIdentifier", value);
+        }
+
+
+        public string username
+        {
+            get => GetValue("username")?.ToString();
+            set => SetValue("username", value);
+        }
+
+
+        public bool videoUploadOnPass
+        {
+            get => GetValue("videoUploadOnPass")?.ToString()?.ToLower() == "true";
+            set => SetValue("videoUploadOnPass", value);
+        }
     }
 }
