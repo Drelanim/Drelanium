@@ -20,7 +20,10 @@
       <summary>
         Ends all WebDriver processes, that has been stuck longer, than the given timespan.
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="processLifeSpan">The lifespan of the webdriver processes, that should be killed.</param>
     </member>
     <member name="T:Drelanium.Extensions.ByExtensionMethods.ByExtensionMethods">
@@ -61,7 +64,10 @@
       <param name="action">The <see cref="T:OpenQA.Selenium.Interactions.IAction" /> chain, that should be performed on the browser.</param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="condition">The <see cref="T:System.Func`1" />, that defines the condition until the browser must wait.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.Extensions.IOptionsExtensionMethods.IOptionsExtensionMethods">
       <summary>
@@ -203,7 +209,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="indexOfWindow">Index of the window that should be closed.</param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
@@ -212,7 +221,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member
@@ -220,7 +232,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member name="T:Drelanium.Extensions.IWebDriverExtensionMethods.CreateActions">
@@ -240,7 +255,10 @@
         To be added...
       </summary>
       <param name="theKey">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member
@@ -249,7 +267,10 @@
         To be added...
       </summary>
       <param name="textToSend">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member name="T:Drelanium.Extensions.IWebDriverExtensionMethods.EventListenerMethods">
@@ -261,7 +282,6 @@
       name="M:Drelanium.Extensions.IWebDriverExtensionMethods.EventListenerMethods.AddEventListenerToElement(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String)">
       <summary>
         To be added...
-
       </summary>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
       <param name="eventType">The type of the event.</param>
@@ -272,7 +292,6 @@
       name="M:Drelanium.Extensions.IWebDriverExtensionMethods.EventListenerMethods.AddEventListenerToElement(OpenQA.Selenium.IWebDriver,System.String,Drelanium.Lists.EventType,System.String)">
       <summary>
         To be added...
-
       </summary>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
       <param name="eventType">The type of the event.</param>
@@ -373,7 +392,6 @@
       name="M:Drelanium.Extensions.IWebDriverExtensionMethods.EventListenerMethods.RemoveEventListener(OpenQA.Selenium.IWebDriver,System.String,System.String)">
       <summary>
         To be added...
-
       </summary>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
       <param name="eventType">The type of the event.</param>
@@ -398,7 +416,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="url">The URL to load.</param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
@@ -407,7 +428,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member name="T:Drelanium.Extensions.IWebDriverExtensionMethods.HttpWebResponseMethods">
@@ -418,20 +442,24 @@
     <member
       name="M:Drelanium.Extensions.IWebDriverExtensionMethods.HttpWebResponseMethods.HttpWebResponse(OpenQA.Selenium.IWebDriver,System.Uri,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="T:System.Net.HttpWebResponse" />
       <param name="url">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member
       name="M:Drelanium.Extensions.IWebDriverExtensionMethods.HttpWebResponseMethods.HttpWebResponse(OpenQA.Selenium.IWebDriver,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="T:System.Net.HttpWebResponse" />
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member name="T:Drelanium.Extensions.IWebDriverExtensionMethods.IWebDriverExtensionMethods">
@@ -522,7 +550,10 @@
         Moves the cursor to a given x-y point and performs a click.
       </summary>
       <param name="y">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
       <param name="x">To be added...</param>
     </member>
@@ -532,7 +563,10 @@
         Moves the cursor to a given point and performs a click.
       </summary>
       <param name="point">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member
@@ -540,7 +574,10 @@
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.IWebDriver.Quit" /> Logs the action.
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
     </member>
     <member name="T:Drelanium.Extensions.IWebElementExtensionMethods.ActionMethods">
@@ -745,7 +782,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
@@ -756,7 +796,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
@@ -772,7 +815,10 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.IWebElementExtensionMethods.IWebElementExtensionMethods.Blur(OpenQA.Selenium.IWebElement,Serilog.Core.Logger)">
@@ -783,7 +829,10 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.IWebElementExtensionMethods.IWebElementExtensionMethods.JSClick(OpenQA.Selenium.IWebElement,Serilog.Core.Logger)">
@@ -794,7 +843,10 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.IWebElementExtensionMethods.IWebElementExtensionMethods.GetWebElementID(OpenQA.Selenium.IWebElement)">
@@ -813,7 +865,10 @@
       </summary>
       <param name="element">The event will be dispatched on this element.</param>
       <param name="eventName">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.Extensions.IWebElementExtensionMethods.RemoveMethods">
       <summary>
@@ -960,7 +1015,10 @@
       <param name="url">
         To be added...
       </param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.Extensions.UriExtensionMethods.HttpWebResponseMethods">
       <summary>
@@ -973,7 +1031,10 @@
         To be added...
       </summary>
       <param name="suppressExceptions">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="url">To be added...</param>
     </member>
     <member name="T:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilDocumentMethods">
@@ -987,7 +1048,10 @@
         To be added...
       </summary>
       <param name="documentReadyState">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
     </member>
     <member name="T:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilElementMethods">
@@ -1000,7 +1064,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -1012,7 +1079,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
       <param name="locator">The locating mechanism to use.</param>
@@ -1022,7 +1092,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -1034,7 +1107,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
       <param name="locator">The locating mechanism to use.</param>
@@ -1044,7 +1120,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -1056,7 +1135,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
       <param name="locator">The locating mechanism to use.</param>
@@ -1066,7 +1148,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -1078,7 +1163,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
       <param name="locator">The locating mechanism to use.</param>
@@ -1088,7 +1176,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="condition">The <see cref="T:System.Func`1" />, that defines the condition until the browser must wait.</param>
       <param name="attributeName">Name of the attribute of the element.</param>
@@ -1102,7 +1193,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="webElementAttributeName">To be added...</param>
       <param name="condition">The <see cref="T:System.Func`1" />, that defines the condition until the browser must wait.</param>
@@ -1116,7 +1210,10 @@
       <summary>
         To be added..
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="condition">The <see cref="T:System.Func`1" />, that defines the condition until the browser must wait.</param>
       <param name="attributeName">Name of the attribute of the element.</param>
@@ -1133,7 +1230,10 @@
       <param name="condition">The <see cref="T:System.Func`1" />, that defines the condition until the browser must wait.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
       <param name="locator">The locating mechanism to use.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilElementMethods.UntilElementExists(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,Serilog.Core.Logger)">
@@ -1143,7 +1243,10 @@
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
       <param name="locator">The locating mechanism to use.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilElementMethods.UntilElementDisappears(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,Serilog.Core.Logger)">
@@ -1153,7 +1256,10 @@
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
       <param name="locator">The locating mechanism to use.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilPageMethods">
       <summary>
@@ -1166,7 +1272,10 @@
         To be added...
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="url">To be added...</param>
       <param name="matchingUriPartial">
         One of the <see cref="T:System.UriPartial" /> values that specifies the end of the URI portion,
@@ -1184,7 +1293,10 @@
         One of the <see cref="T:System.UriPartial" /> values that specifies the end of the URI portion,
         that should be matching.
       </param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilPageMethods.UntilPageHasLoadedWithoutCookies(OpenQA.Selenium.Support.UI.WebDriverWait,System.Uri,System.UriPartial,Serilog.Core.Logger)">
@@ -1197,7 +1309,10 @@
         One of the <see cref="T:System.UriPartial" /> values that specifies the end of the URI portion,
         that should be matching.
       </param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilPageMethods.UntilPageHasLoadedWithoutCookies(OpenQA.Selenium.Support.UI.WebDriverWait,System.UriBuilder,System.UriPartial,Serilog.Core.Logger)">
@@ -1209,7 +1324,10 @@
         One of the <see cref="T:System.UriPartial" /> values that specifies the end of the URI portion,
         that should be matching.
       </param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="url">To be added...</param>
     </member>
     <member name="T:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilPropertyMethods">
@@ -1253,7 +1371,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="url">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlNotToBe(OpenQA.Selenium.Support.UI.WebDriverWait,System.Uri,Serilog.Core.Logger)">
@@ -1262,7 +1383,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="url">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlContains(OpenQA.Selenium.Support.UI.WebDriverWait,System.String,Serilog.Core.Logger)">
@@ -1271,7 +1395,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="fraction">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlContains(OpenQA.Selenium.Support.UI.WebDriverWait,System.Uri,Serilog.Core.Logger)">
@@ -1280,7 +1407,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="fraction">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlNotContains(OpenQA.Selenium.Support.UI.WebDriverWait,System.String,Serilog.Core.Logger)">
@@ -1289,7 +1419,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="fraction">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlNotContains(OpenQA.Selenium.Support.UI.WebDriverWait,System.Uri,Serilog.Core.Logger)">
@@ -1298,7 +1431,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="fraction">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlMatches(OpenQA.Selenium.Support.UI.WebDriverWait,System.String,Serilog.Core.Logger)">
@@ -1307,7 +1443,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="regex">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlNotMatches(OpenQA.Selenium.Support.UI.WebDriverWait,System.String,Serilog.Core.Logger)">
@@ -1316,7 +1455,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="regex">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.Extensions.WebDriverWaitExtensionMethods.UntilUrlMethods.UntilUrlComponentsToBe(OpenQA.Selenium.Support.UI.WebDriverWait,System.UriComponents,System.UriFormat,System.String,Serilog.Core.Logger)">
@@ -1325,7 +1467,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriComponents">To be added...</param>
       <param name="uriFormat">To be added...</param>
     </member>
@@ -1336,7 +1481,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriComponents">To be added...</param>
       <param name="uriFormat">To be added...</param>
     </member>
@@ -1347,7 +1495,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriComponents">To be added...</param>
       <param name="uriFormat">To be added...</param>
     </member>
@@ -1358,7 +1509,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriComponents">To be added...</param>
       <param name="uriFormat">To be added...</param>
     </member>
@@ -1369,7 +1523,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriPartial">To be added...</param>
     </member>
     <member
@@ -1379,7 +1536,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriPartial">To be added...</param>
     </member>
     <member
@@ -1389,7 +1549,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriPartial">To be added...</param>
     </member>
     <member
@@ -1399,7 +1562,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="expected">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="uriPartial">To be added...</param>
     </member>
     <member name="T:Drelanium.Highlighter.Highlighter">
@@ -1528,12 +1694,10 @@
     </member>
     <member name="F:Drelanium.Lists.EventType.dblclick">
       <summary>
-
       </summary>
     </member>
     <member name="F:Drelanium.Lists.EventType.mouseup">
       <summary>
-
       </summary>
     </member>
     <member name="T:Drelanium.SearchContext.Search">
@@ -1549,7 +1713,6 @@
     </member>
     <member name="P:Drelanium.SearchContext.Search.SearchContextImplementation">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.ISearchContext" />
     </member>
@@ -1566,15 +1729,20 @@
     <member name="M:Drelanium.SearchContext.Search.FindElement(OpenQA.Selenium.By,Serilog.Core.Logger)">
       <inheritdoc cref="M:Drelanium.SearchContext.Search.FindElement(OpenQA.Selenium.By)" />
       <param name="by">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.SearchContext.Search.FindElements(OpenQA.Selenium.By,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.SearchContext.Search.FindElements(OpenQA.Selenium.By)" />
       <param name="by">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.SearchContext.Search.HasElement(OpenQA.Selenium.By)">
       <summary>
@@ -1584,35 +1752,44 @@
     </member>
     <member name="M:Drelanium.SearchContext.Search.FindElement(OpenQA.Selenium.By,System.TimeSpan,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.SearchContext.Search.FindElement(OpenQA.Selenium.By)" />
       <param name="locator">The locating mechanism to use.</param>
       <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.SearchContext.Search.FindElement(OpenQA.Selenium.By,System.TimeSpan,System.Func{OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement},System.String,System.Type[],Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.SearchContext.Search.FindElements(OpenQA.Selenium.By)" />
       <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
       <param name="timeoutMessage">The message that appears on timeout.</param>
-      <param name="condition">The <see cref="T:System.Func`2" />, that defines the condition until the browser must wait.</param>
+      <param name="condition">
+        The <see cref="T:System.Func`2" />, that defines the condition until the browser
+        must wait.
+      </param>
       <param name="locator">The locating mechanism to use.</param>
       <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.SearchContext.Search.FindDisplayedElement(OpenQA.Selenium.By,System.TimeSpan,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.SearchContext.Search.FindElements(OpenQA.Selenium.By)" />
       <param name="locator">The locating mechanism to use.</param>
       <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.WebDriverSetup.ChromeConfiguration">
       <summary>
@@ -1651,7 +1828,6 @@
     </member>
     <member name="F:Drelanium.WebDriverSetup.BrowserType.EDGE">
       <summary>
-
       </summary>
     </member>
     <member name="T:Drelanium.WebDriverSetup.ExecutionMode">
@@ -1728,8 +1904,14 @@
       <param name="browserType">  The type of the selected browser to be automated.</param>
       <param name="driverOptions">An <see cref="T:OpenQA.Selenium.DriverOptions" /> object containing the desired capabilities of the browser.</param>
       <param name="localDriverDirectory">The full path to the directory containing ***driver.exe.</param>
-      <param name="seleniumGridHubUrl">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4444/wd/hub).</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="seleniumGridHubUrl">
+        URI containing the address of the WebDriver remote server (e.g.
+        http://127.0.0.1:4444/wd/hub).
+      </param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.WebDriverSetup.EdgeConfiguration">
       <summary>
@@ -1854,13 +2036,11 @@
     </member>
     <member name="P:Drelanium.WebDriver.Alert.AlertImplementation">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IAlert" />
     </member>
     <member name="P:Drelanium.WebDriver.Alert.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -1902,13 +2082,11 @@
     </member>
     <member name="P:Drelanium.WebDriver.Capabilities.CapabilitiesImplementation">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.ICapabilities" />
     </member>
     <member name="P:Drelanium.WebDriver.Capabilities.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2060,13 +2238,11 @@
     </member>
     <member name="P:Drelanium.WebDriver.CookieJar.CookieJarImplementation">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.ICookieJar" />
     </member>
     <member name="P:Drelanium.WebDriver.CookieJar.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2102,31 +2278,26 @@
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.AddCookie(OpenQA.Selenium.Cookie,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.CookieJar.AddCookie(OpenQA.Selenium.Cookie)" />
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.GetCookieNamed(System.String,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.CookieJar.GetCookieNamed(System.String)" />
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.DeleteCookie(OpenQA.Selenium.Cookie,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.CookieJar.DeleteCookie(OpenQA.Selenium.Cookie)" />
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.DeleteCookieNamed(System.String,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.CookieJar.DeleteCookieNamed(System.String)" />
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.DeleteAllCookies(Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.CookieJar.DeleteAllCookies" />
     </member>
@@ -2174,7 +2345,6 @@
     </member>
     <member name="P:Drelanium.WebDriver.Create.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2227,7 +2397,6 @@
     </member>
     <member name="F:Drelanium.WebDriver.DocumentReadyState.loading">
       <summary>
-
       </summary>
     </member>
     <member name="T:Drelanium.WebDriver.Document">
@@ -2243,7 +2412,6 @@
     </member>
     <member name="P:Drelanium.WebDriver.Document.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2319,13 +2487,11 @@
     </member>
     <member name="P:Drelanium.WebDriver.ExtendedActions.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
     <member name="P:Drelanium.WebDriver.ExtendedActions.Actions">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.Interactions.Actions" />
     </member>
@@ -2514,7 +2680,10 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.WebDriver.ExtendedActions.BuildAndPerform``1(OpenQA.Selenium.Support.UI.WebDriverWait,System.Func{OpenQA.Selenium.IWebDriver,``0},Serilog.Core.Logger)">
@@ -2523,7 +2692,10 @@
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="condition">The <see cref="T:System.Func`1" />, that defines the condition until the browser must wait.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.WebDriver.JQuery">
       <summary>
@@ -2538,7 +2710,6 @@
     </member>
     <member name="P:Drelanium.WebDriver.JQuery.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2564,37 +2735,31 @@
     </member>
     <member name="P:Drelanium.WebDriver.LogsManager.LogsImplementation">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.ILogs" />
     </member>
     <member name="P:Drelanium.WebDriver.LogsManager.BrowserLogs">
       <summary>
-
       </summary>
       <inheritdoc cref="F:OpenQA.Selenium.LogType.Browser" />
     </member>
     <member name="P:Drelanium.WebDriver.LogsManager.ClientLogs">
       <summary>
-
       </summary>
       <inheritdoc cref="F:OpenQA.Selenium.LogType.Client" />
     </member>
     <member name="P:Drelanium.WebDriver.LogsManager.DriverLogs">
       <summary>
-
       </summary>
       <inheritdoc cref="F:OpenQA.Selenium.LogType.Driver" />
     </member>
     <member name="P:Drelanium.WebDriver.LogsManager.ProfilerLogs">
       <summary>
-
       </summary>
       <inheritdoc cref="F:OpenQA.Selenium.LogType.Profiler" />
     </member>
     <member name="P:Drelanium.WebDriver.LogsManager.ServerLogs">
       <summary>
-
       </summary>
       <inheritdoc cref="F:OpenQA.Selenium.LogType.Server" />
     </member>
@@ -2673,7 +2838,6 @@
     </member>
     <member name="P:Drelanium.WebDriver.Mouse.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2718,7 +2882,10 @@
         To be added...
       </summary>
       <param name="y"></param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
       <param name="x"></param>
     </member>
     <member
@@ -2765,7 +2932,6 @@
     </member>
     <member name="P:Drelanium.WebDriver.MouseMoveFollower.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2829,51 +2995,63 @@
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.INavigation.Back" />
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Navigation.Forward(Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.Navigation.Forward" />
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Navigation.GoToUrl(System.String,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.Navigation.GoToUrl(System.String)" />
       <param name="url"></param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Navigation.GoToUrl(System.Uri,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.Navigation.GoToUrl(System.String)" />
       <param name="url"></param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Navigation.Refresh(Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.Navigation.Refresh" />
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Navigation.GoToUrl(System.UriBuilder,System.Boolean,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.Navigation.GoToUrl(System.String)" />
       <param name="url">To be added...</param>
       <param name="checkHttpResponse">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member
       name="M:Drelanium.WebDriver.Navigation.GoToUrl(System.UriBuilder,System.Boolean,System.Boolean,System.TimeSpan,System.UriPartial,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.Navigation.GoToUrl(System.String)" />
       <param name="url">The URL to load.</param>
@@ -2881,7 +3059,10 @@
       <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
       <param name="matchingUriPartial">Part of the URL that should match after navigation.</param>
       <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.WebDriver.Options">
       <summary>
@@ -2942,7 +3123,6 @@
     </member>
     <member name="P:Drelanium.WebDriver.Scroll.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -2953,21 +3133,30 @@
       <param name="x">The x coordinate in pixel along the horizontal axis of the document.</param>
       <param name="y">The y coordinate in pixel along the vertical axis of the document.</param>
       <param name="behaviour">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Scroll.ToBodyBottom(System.String,Serilog.Core.Logger)">
       <summary>
         To be added...
       </summary>
       <param name="behaviour">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Scroll.ToBodyTop(System.String,Serilog.Core.Logger)">
       <summary>
         To be added...
       </summary>
       <param name="behaviour">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.Scroll.By(System.Int32,System.Int32,System.String,Serilog.Core.Logger)">
       <summary>
@@ -2976,7 +3165,10 @@
       <param name="x">The x coordinate in pixel along the horizontal axis of the document.</param>
       <param name="y">The y coordinate in pixel along the vertical axis of the document.</param>
       <param name="behaviour">To be added...</param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.WebDriver.SeleniumLogs">
       <summary>
@@ -3044,13 +3236,11 @@
     </member>
     <member name="P:Drelanium.WebDriver.TargetLocator.TargetLocatorImplementation">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.ITargetLocator" />
     </member>
     <member name="P:Drelanium.WebDriver.TargetLocator.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>
@@ -3101,7 +3291,6 @@
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.Frame(System.String,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.TargetLocator.Frame(System.String)" />
       <param name="frameName"></param>
@@ -3109,7 +3298,6 @@
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.Frame(OpenQA.Selenium.IWebElement,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.TargetLocator.Frame(OpenQA.Selenium.IWebElement)" />
       <param name="frameElement"></param>
@@ -3117,39 +3305,49 @@
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.ParentFrame(Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.TargetLocator.ParentFrame" />
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.Window(System.String,Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.TargetLocator.Window(System.String)" />
       <param name="windowName"></param>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.DefaultContent(Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.TargetLocator.DefaultContent" />
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.ActiveElement(Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.TargetLocator.ActiveElement" />
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.Alert(Serilog.Core.Logger)">
       <summary>
-
       </summary>
       <inheritdoc cref="M:Drelanium.WebDriver.TargetLocator.Alert" />
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.Window(System.Int32,Serilog.Core.Logger)">
       <summary>
@@ -3162,13 +3360,19 @@
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="M:Drelanium.WebDriver.TargetLocator.LastWindow(Serilog.Core.Logger)">
       <summary>
         To be added...
       </summary>
-      <param name="logger">The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (level = Information) during
+        the method exeuction.
+      </param>
     </member>
     <member name="T:Drelanium.WebDriver.Timeouts">
       <summary>
@@ -3219,13 +3423,11 @@
     </member>
     <member name="P:Drelanium.WebDriver.Window.WindowImplementation">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWindow" />
     </member>
     <member name="P:Drelanium.WebDriver.Window.Driver">
       <summary>
-
       </summary>
       <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
     </member>

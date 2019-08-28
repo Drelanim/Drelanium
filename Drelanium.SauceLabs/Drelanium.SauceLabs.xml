@@ -7,112 +7,102 @@
   <members>
     <member name="T:Drelanium.SauceLabs.IWebDriverExtensionMethods">
       <summary>
-
       </summary>
     </member>
     <member name="M:Drelanium.SauceLabs.IWebDriverExtensionMethods.SauceLabsScripts(OpenQA.Selenium.IWebDriver)">
       <summary>
-
       </summary>
       <param name="driver"></param>
       <returns></returns>
     </member>
     <member name="T:Drelanium.SauceLabs.SauceJobResult">
       <summary>
-
       </summary>
     </member>
     <member name="F:Drelanium.SauceLabs.SauceJobResult.Passed">
       <summary>
-
       </summary>
     </member>
     <member name="F:Drelanium.SauceLabs.SauceJobResult.Failed">
       <summary>
-
       </summary>
     </member>
     <member name="T:Drelanium.SauceLabs.SauceLabsScripts">
       <summary>
-
       </summary>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.#ctor(OpenQA.Selenium.IWebDriver)">
       <summary>
-
       </summary>
       <param name="driver"></param>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(System.String)">
       <summary>
-
       </summary>
       <param name="jobResult"></param>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(Drelanium.SauceLabs.SauceJobResult)">
       <summary>
-
       </summary>
       <param name="jobResult"></param>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobName(System.String)">
       <summary>
-
       </summary>
       <param name="jobName"></param>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobTags(System.String)">
       <summary>
-
       </summary>
       <param name="tags"></param>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobBuild(System.String)">
       <summary>
-
       </summary>
       <param name="buildName"></param>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StopNetwork">
       <summary>
-
       </summary>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StartNetwork">
       <summary>
-
       </summary>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetSauceBreakPoint">
       <summary>
-
       </summary>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.Log(System.String)">
       <summary>
-
       </summary>
       <param name="text"></param>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobInfo(System.String)">
       <summary>
-
       </summary>
       <param name="jobInfo"></param>
     </member>
     <member name="T:Drelanium.SauceLabs.SauceOptions">
       <summary>
-
       </summary>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceOptions.#ctor">
       <summary>
-
       </summary>
+    </member>
+    <member name="P:Drelanium.SauceLabs.SauceOptions.Options">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:Drelanium.SauceLabs.SauceOptions.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
     </member>
     <member name="M:Drelanium.SauceLabs.SauceOptions.AddToDriverOptions(OpenQA.Selenium.DriverOptions)">
       <summary>
-
       </summary>
       <param name="driverOptions"></param>
       <exception cref="T:System.ArgumentException"></exception>
