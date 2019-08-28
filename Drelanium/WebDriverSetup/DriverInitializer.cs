@@ -41,7 +41,6 @@ namespace Drelanium.WebDriverSetup
         {
             IWebDriver driver;
 
-
             switch (executionMode)
             {
                 case ExecutionMode.LOCAL:
@@ -51,7 +50,6 @@ namespace Drelanium.WebDriverSetup
                                         $"using local driver directory ({localDriverDirectory}) " +
                                         $"with the following DriverOptions: ({driverOptions})");
 
-
                     if (localDriverDirectory == null)
                     {
                         var errorMessage =
@@ -59,10 +57,8 @@ namespace Drelanium.WebDriverSetup
 
                         logger?.Error(errorMessage);
 
-
                         throw new ArgumentException(errorMessage);
                     }
-
 
                     switch (browserType)
                     {
@@ -119,19 +115,15 @@ namespace Drelanium.WebDriverSetup
                                         $"using SeleniumGrid Hub Url ({seleniumGridHubUrl?.AbsoluteUri}) " +
                                         $"with the following DriverOptions: ({driverOptions})");
 
-
                     if (seleniumGridHubUrl == null)
                     {
                         var errorMessage =
                             $"Using WebDriver in ({ExecutionMode.REMOTE}) mode requires a valid url to connect to a SeleniumGrid Hub.";
 
-
                         logger?.Error(errorMessage);
-
 
                         throw new ArgumentException(errorMessage);
                     }
-
 
                     switch (browserType)
                     {

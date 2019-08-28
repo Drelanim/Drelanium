@@ -43,7 +43,6 @@ namespace Drelanium.DriverProcessManager
         {
             logger?.Information("Attempting to end all WebDriver processes");
 
-
             var processes = Process.GetProcesses();
 
             foreach (var process in processes)

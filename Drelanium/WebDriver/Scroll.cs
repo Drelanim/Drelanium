@@ -85,7 +85,6 @@ namespace Drelanium.WebDriver
         {
             logger?.Information("Scrolling to the top of the body");
 
-
             Driver.ExecuteJavaScript(
                 $"window.scrollTo({{top: -document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
         }

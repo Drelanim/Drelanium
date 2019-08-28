@@ -36,7 +36,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Required Selenium Test Configuration Setting </para>
+        ///     <para> group: Required Appium Test Configuration Setting </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "firefox" </para>
         /// </summary>
         public object browserName
@@ -47,7 +49,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Required Appium Test Configuration Settings </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "Google Nexus 7 HD Emulator" </para>
         /// </summary>
         public object deviceName
@@ -58,7 +61,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Appium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "tablet" </para>
         /// </summary>
         public object deviceType
@@ -69,7 +73,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Appium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "portrait" </para>
         /// </summary>
         public object deviceOrientation
@@ -80,7 +85,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Appium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "UiAutomator2" </para>
         /// </summary>
         public object automationName
@@ -91,7 +97,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Appium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "com.example.android.myApp, com.android.settings" </para>
         /// </summary>
         public object appPackage
@@ -102,7 +109,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Appium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: ".MainActivity" </para>
         /// </summary>
         public object appActivity
@@ -113,7 +121,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: General Options - Alerts </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: true </para>
         /// </summary>
         public object autoAcceptAlerts
@@ -124,7 +133,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Required Selenium Test Configuration Setting </para>
+        ///     <para> group: SauceTesting Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "66.0" </para>
         /// </summary>
         public object version
@@ -135,7 +146,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Required Selenium Test Configuration Setting </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "macOS 10.13" </para>
         /// </summary>
         public object platform
@@ -146,7 +158,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Required Appium Test Configuration Setting </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "9.1" </para>
         /// </summary>
         public object platformVersion
@@ -157,7 +170,20 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Required Appium Test Configuration Setting </para>
+        ///     <para> type: <see cref="string" /> </para>
+        ///     <para> example: "sauce-storage:my_app.zip" </para>
+        /// </summary>
+        public object app
+        {
+            get => GetValue("app");
+            set => SetValue("app", value);
+        }
+
+
+        /// <summary>
+        ///     <para> group: Required Appium Test Configuration Setting </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "iOS" </para>
         /// </summary>
         public object platformName
@@ -168,7 +194,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "12345678-1234-1234-1234-123456789012" </para>
         /// </summary>
         public object accessKey
@@ -179,7 +205,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Required Appium Test Configuration Settings </para>
+        ///     <para> group: Other Appium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "1.5.3" </para>
         /// </summary>
         public object appiumVersion
@@ -190,7 +218,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: SauceTesting Options </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: true </para>
         /// </summary>
         public object avoidProxy
@@ -201,7 +230,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: General Options - Test Annotation </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "build-1234" </para>
         /// </summary>
         public object build
@@ -221,7 +251,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Selenium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "chromedriverVersion": "2.45" </para>
         /// </summary>
         public object chromedriverVersion
@@ -232,7 +263,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "2.45" </para>
         /// </summary>
         public object crmuxdriverVersion
@@ -243,7 +274,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="object" /> </para>
+        ///     <para> group: General Options - Test Annotation </para>
+        ///     <para> type: <see cref="object" /> </para>
         ///     <para>
         ///         example: {"release": "1.0", "commit": "0k392a9dkjr", "staging": true, "execution_number": 5, "server":
         ///         "test.customer.com"}
@@ -257,7 +289,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: true </para>
         /// </summary>
         public object disablePopupHandler
@@ -268,7 +300,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: Other SauceTesting Features </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: true </para>
         /// </summary>
         public object extendedDebugging
@@ -279,7 +312,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: Other SauceTesting Features </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: true </para>
         /// </summary>
         public object capturePerformance
@@ -290,7 +324,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "1.0" </para>
         /// </summary>
         public object firefoxAdapterVersion
@@ -301,7 +335,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> type: <see cref="string" /> </para>
         /// </summary>
         public object firefoxProfileUrl
         {
@@ -310,10 +344,10 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
-        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> General Options: Timeouts </para>
+        ///     <para> type: <see cref="int" /> </para>
         ///     <para> example: 90 </para>
         /// </summary>
-
         public object idleTimeout
         {
             get => GetValue("idleTimeout");
@@ -322,10 +356,10 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> General Options: Timeouts </para>
+        ///     <para> type: <see cref="int" /> </para>
         ///     <para> example: 300 </para>
         /// </summary>
-
         public object commandTimeout
         {
             get => GetValue("commandTimeout");
@@ -334,11 +368,10 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Selenium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "3.141.0" </para>
         /// </summary>
-
-
         public object iedriverVersion
         {
             get => GetValue("iedriverVersion");
@@ -347,7 +380,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> General Options: Timeouts </para>
+        ///     <para> type: <see cref="int" /> </para>
         ///     <para> example: 1800 </para>
         /// </summary>
 
@@ -359,7 +393,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: General Options - Test Annotation </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "my example name" </para>
         /// </summary>
         public object name
@@ -370,7 +405,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: SauceTesting Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "MyTunnel01" </para>
         /// </summary>
         public object parentTunnel
@@ -380,7 +416,8 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: General Options - Test Annotation </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: true </para>
         /// </summary>
 
@@ -392,6 +429,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
+        ///     <para> group: SauceTesting Options </para>
         /// </summary>
         public object prerun
         {
@@ -410,7 +448,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="int" /> </para>
+        ///     <para> group: Other SauceTesting Features </para>
+        ///     <para> type: <see cref="int" /> </para>
         ///     <para> example: 0 </para>
         /// </summary>
         public object priority
@@ -421,7 +460,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: Other SauceTesting Features </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: false </para>
         /// </summary>
         public object webdriverRemoteQuietExceptions
@@ -440,7 +480,8 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: SauceTesting Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "public" </para>
         /// </summary>
         public object @public
@@ -451,7 +492,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: Other SauceTesting Features </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: false </para>
         /// </summary>
         public object recordLogs
@@ -462,7 +504,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: Other SauceTesting Features </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: false </para>
         /// </summary>
         public object recordVideo
@@ -473,7 +516,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: false </para>
         /// </summary>
         public object recordScreenshots
@@ -493,7 +536,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: SauceTesting Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "1280x1024" </para>
         /// </summary>
         public object screenResolution
@@ -503,7 +547,8 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: Other Selenium Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "seleniumVersion": "2.46.0" </para>
         /// </summary>
         public object seleniumVersion
@@ -522,7 +567,8 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
-        ///     <para> type = <see cref="List{T}" /> </para>
+        ///     <para> group: General Options - Test Annotation </para>
+        ///     <para> type: <see cref="List{T}" /> </para>
         ///     <para> example: ["tag1","tag2","tag3"] </para>
         /// </summary>
 
@@ -534,7 +580,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: SauceTesting Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "Los_Angeles"  </para>
         /// </summary>
         public object timeZone
@@ -545,7 +592,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> group: SauceTesting Options </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "MyTunnel01" </para>
         /// </summary>
         public object tunnelIdentifier
@@ -556,7 +604,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="string" /> </para>
+        ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: Drelanim </para>
         /// </summary>
 
@@ -568,7 +616,8 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     <para> type = <see cref="bool" /> </para>
+        ///     <para> group: Other SauceTesting Features </para>
+        ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: false </para>
         /// </summary>
         public object videoUploadOnPass
@@ -592,13 +641,11 @@ namespace Drelanium.SauceLabs
                     break;
                 }
 
-
                 case FirefoxOptions firefoxOptions:
                 {
                     firefoxOptions.AddAdditionalCapability("sauce:options", Options, true);
                     break;
                 }
-
 
                 case InternetExplorerOptions internetExplorerOptions:
                 {
@@ -606,19 +653,16 @@ namespace Drelanium.SauceLabs
                     break;
                 }
 
-
                 case OperaOptions operaOptions:
                 {
                     operaOptions.AddAdditionalCapability("sauce:options", Options, true);
                     break;
                 }
 
-
                 case SafariOptions _:
                 {
                     throw new ArgumentException("SauceOptions cannot be added as a capability to a SafariOptions");
                 }
-
 
                 default:
                 {
