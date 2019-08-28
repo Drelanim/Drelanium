@@ -349,9 +349,15 @@ namespace Drelanium.SauceLabs
 
         private void SetValue(string key, object value)
         {
+            if (value == null)
+            {
+                return;
+            }
+
+
             if (!Options.ContainsKey(key))
             {
-                Options.Add(key, null);
+                Options.Add(key, value);
             }
 
             Options[key] = value;

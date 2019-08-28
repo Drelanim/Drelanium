@@ -1,17 +1,15 @@
 ﻿using OpenQA.Selenium;
 
+#pragma warning disable 1591
+
 namespace Drelanium.SauceLabs
 {
     /// <summary>
     /// </summary>
     public enum SauceJobResult
     {
-        /// <summary>
-        /// </summary>
         Passed,
 
-        /// <summary>
-        /// </summary>
         Failed
     }
 
