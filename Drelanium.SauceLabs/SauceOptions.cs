@@ -35,30 +35,30 @@ namespace Drelanium.SauceLabs
         public Dictionary<string, object> Options { get; }
 
 
-        public string accessKey
+        public object accessKey
         {
-            get => GetValue("accessKey")?.ToString();
+            get => GetValue("accessKey");
             set => SetValue("accessKey", value);
         }
 
 
-        public string appiumVersion
+        public object appiumVersion
         {
-            get => GetValue("appiumVersion")?.ToString();
+            get => GetValue("appiumVersion");
             set => SetValue("appiumVersion", value);
         }
 
 
-        public bool avoidProxy
+        public object avoidProxy
         {
-            get => GetValue("avoidProxy")?.ToString()?.ToLower() == "true";
+            get => GetValue("avoidProxy");
             set => SetValue("avoidProxy", value);
         }
 
 
-        public string build
+        public object build
         {
-            get => GetValue("build")?.ToString();
+            get => GetValue("build");
             set => SetValue("build", value);
         }
 
@@ -70,16 +70,16 @@ namespace Drelanium.SauceLabs
         }
 
 
-        public string chromedriverVersion
+        public object chromedriverVersion
         {
-            get => GetValue("chromedriverVersion")?.ToString();
+            get => GetValue("chromedriverVersion");
             set => SetValue("chromedriverVersion", value);
         }
 
 
-        public string crmuxdriverVersion
+        public object crmuxdriverVersion
         {
-            get => GetValue("crmuxdriverVersion")?.ToString();
+            get => GetValue("crmuxdriverVersion");
             set => SetValue("crmuxdriverVersion", value);
         }
 
@@ -91,71 +91,71 @@ namespace Drelanium.SauceLabs
         }
 
 
-        public bool disablePopupHandler
+        public object disablePopupHandler
         {
-            get => GetValue("disablePopupHandler")?.ToString()?.ToLower() == "true";
+            get => GetValue("disablePopupHandler");
             set => SetValue("disablePopupHandler", value);
         }
 
 
-        public bool extendedDebugging
+        public object extendedDebugging
         {
-            get => GetValue("extendedDebugging")?.ToString()?.ToLower() == "true";
+            get => GetValue("extendedDebugging");
             set => SetValue("extendedDebugging", value);
         }
 
 
-        public string firefoxAdapterVersion
+        public object firefoxAdapterVersion
         {
-            get => GetValue("firefoxAdapterVersion")?.ToString();
+            get => GetValue("firefoxAdapterVersion");
             set => SetValue("firefoxAdapterVersion", value);
         }
 
 
-        public string firefoxProfileUrl
+        public object firefoxProfileUrl
         {
-            get => GetValue("firefoxProfileUrl")?.ToString();
+            get => GetValue("firefoxProfileUrl");
             set => SetValue("firefoxProfileUrl", value);
         }
 
 
-        public int idleTimeout
+        public object idleTimeout
         {
-            get => GetValue("idleTimeout") == null ? 0 : int.Parse(GetValue("idleTimeout").ToString());
+            get => GetValue("idleTimeout");
             set => SetValue("idleTimeout", value);
         }
 
 
-        public string iedriverVersion
+        public object iedriverVersion
         {
-            get => GetValue("iedriverVersion")?.ToString();
+            get => GetValue("iedriverVersion");
             set => SetValue("iedriverVersion", value);
         }
 
-        public int maxDuration
+        public object maxDuration
         {
-            get => GetValue("maxDuration") == null ? 0 : int.Parse(GetValue("maxDuration").ToString());
+            get => GetValue("maxDuration");
             set => SetValue("maxDuration", value);
         }
 
 
-        public string name
+        public object name
         {
-            get => GetValue("name")?.ToString();
+            get => GetValue("name");
             set => SetValue("name", value);
         }
 
 
-        public string parentTunnel
+        public object parentTunnel
         {
-            get => GetValue("parentTunnel")?.ToString();
+            get => GetValue("parentTunnel");
             set => SetValue("parentTunnel", value);
         }
 
 
-        public bool passed
+        public object passed
         {
-            get => GetValue("passed")?.ToString()?.ToLower() == "true";
+            get => GetValue("passed");
             set => SetValue("passed", value);
         }
 
@@ -174,9 +174,9 @@ namespace Drelanium.SauceLabs
         }
 
 
-        public int priority
+        public object priority
         {
-            get => GetValue("priority") == null ? 0 : int.Parse(GetValue("priority").ToString());
+            get => GetValue("priority");
             set => SetValue("priority", value);
         }
 
@@ -187,23 +187,23 @@ namespace Drelanium.SauceLabs
             set => SetValue("proxyHost", value);
         }
 
-        public string @public
+        public object @public
         {
-            get => GetValue("public")?.ToString();
+            get => GetValue("public");
             set => SetValue("public", value);
         }
 
 
-        public bool recordLogs
+        public object recordLogs
         {
-            get => GetValue("recordLogs")?.ToString()?.ToLower() == "true";
+            get => GetValue("recordLogs");
             set => SetValue("recordLogs", value);
         }
 
 
-        public bool recordScreenshots
+        public object recordScreenshots
         {
-            get => GetValue("recordScreenshots")?.ToString()?.ToLower() == "true";
+            get => GetValue("recordScreenshots");
             set => SetValue("recordScreenshots", value);
         }
 
@@ -215,15 +215,15 @@ namespace Drelanium.SauceLabs
         }
 
 
-        public string screenResolution
+        public object screenResolution
         {
-            get => GetValue("screenResolution")?.ToString();
+            get => GetValue("screenResolution");
             set => SetValue("screenResolution", value);
         }
 
-        public string seleniumVersion
+        public object seleniumVersion
         {
-            get => GetValue("seleniumVersion")?.ToString();
+            get => GetValue("seleniumVersion");
             set => SetValue("seleniumVersion", value);
         }
 
@@ -241,30 +241,30 @@ namespace Drelanium.SauceLabs
         }
 
 
-        public string timeZone
+        public object timeZone
         {
-            get => GetValue("timeZone")?.ToString();
+            get => GetValue("timeZone");
             set => SetValue("timeZone", value);
         }
 
 
-        public string tunnelIdentifier
+        public object tunnelIdentifier
         {
-            get => GetValue("tunnelIdentifier")?.ToString();
+            get => GetValue("tunnelIdentifier");
             set => SetValue("tunnelIdentifier", value);
         }
 
 
-        public string username
+        public object username
         {
-            get => GetValue("username")?.ToString();
+            get => GetValue("username");
             set => SetValue("username", value);
         }
 
 
-        public bool videoUploadOnPass
+        public object videoUploadOnPass
         {
-            get => GetValue("videoUploadOnPass")?.ToString()?.ToLower() == "true";
+            get => GetValue("videoUploadOnPass");
             set => SetValue("videoUploadOnPass", value);
         }
 
@@ -343,7 +343,7 @@ namespace Drelanium.SauceLabs
 
         private object GetValue(string key)
         {
-            return !Options.ContainsKey(key) ? null : Options[key];
+            return Options.ContainsKey(key) ? Options[key] : null;
         }
 
 
@@ -353,7 +353,6 @@ namespace Drelanium.SauceLabs
             {
                 return;
             }
-
 
             if (!Options.ContainsKey(key))
             {

@@ -19,14 +19,6 @@
       <summary>
       </summary>
     </member>
-    <member name="F:Drelanium.SauceLabs.SauceJobResult.Passed">
-      <summary>
-      </summary>
-    </member>
-    <member name="F:Drelanium.SauceLabs.SauceJobResult.Failed">
-      <summary>
-      </summary>
-    </member>
     <member name="T:Drelanium.SauceLabs.SauceLabsScripts">
       <summary>
       </summary>
