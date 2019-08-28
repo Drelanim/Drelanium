@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.Extensions.Configuration;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 
 namespace Drelanium.WebDriverSetup
@@ -18,9 +19,32 @@ namespace Drelanium.WebDriverSetup
         /// </summary>
         public string EdgeDriverDirectory { get; set; }
 
+
         /// <summary>
-        ///     To be added...
         /// </summary>
+        /// <param name="configurationRoot"></param>
+        /// <returns></returns>
+        public EdgeConfiguration Bind(IConfigurationRoot configurationRoot)
+        {
+            configurationRoot.Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="jsonPath"></param>
+        /// <returns></returns>
+        public EdgeConfiguration Bind(string jsonPath)
+        {
+            new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
         public EdgeOptions BuildOptions()
         {
             var options = InitialOptions;

@@ -101,6 +101,12 @@
       <param name="configurationRoot"></param>
       <returns></returns>
     </member>
+    <member name="M:Drelanium.SauceLabs.SauceOptions.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
+    </member>
     <member name="M:Drelanium.SauceLabs.SauceOptions.AddToDriverOptions(OpenQA.Selenium.DriverOptions)">
       <summary>
       </summary>

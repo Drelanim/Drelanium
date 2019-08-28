@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.Extensions.Configuration;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Opera;
 
 namespace Drelanium.WebDriverSetup
@@ -42,6 +43,28 @@ namespace Drelanium.WebDriverSetup
             }
 
             return options;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="configurationRoot"></param>
+        /// <returns></returns>
+        public OperaConfiguration Bind(IConfigurationRoot configurationRoot)
+        {
+            configurationRoot.Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="jsonPath"></param>
+        /// <returns></returns>
+        public OperaConfiguration Bind(string jsonPath)
+        {
+            new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
+            return this;
         }
     }
 }

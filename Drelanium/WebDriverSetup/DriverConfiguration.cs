@@ -2,6 +2,7 @@
 // ReSharper disable IdentifierTypo
 
 using System;
+using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
 
 #pragma warning disable 1591
@@ -44,6 +45,18 @@ namespace Drelanium.WebDriverSetup
     /// </summary>
     public class DriverConfiguration
     {
+        public DriverConfiguration()
+        {
+            ChromeConfiguration = new ChromeConfiguration();
+            SeleniumGridHubUrl = new UriBuilder();
+            EdgeConfiguration = new EdgeConfiguration();
+            FirefoxConfiguration = new FirefoxConfiguration();
+            InternetExplorerConfiguration = new InternetExplorerConfiguration();
+            SafariConfiguration = new SafariConfiguration();
+            OperaConfiguration = new OperaConfiguration();
+        }
+
+
         /// <summary>
         ///     The type of the selected browser to be automated.
         /// </summary>
@@ -88,6 +101,28 @@ namespace Drelanium.WebDriverSetup
         ///     To be added...
         /// </summary>
         public OperaConfiguration OperaConfiguration { get; set; }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="configurationRoot"></param>
+        /// <returns></returns>
+        public DriverConfiguration Bind(IConfigurationRoot configurationRoot)
+        {
+            configurationRoot.Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="jsonPath"></param>
+        /// <returns></returns>
+        public DriverConfiguration Bind(string jsonPath)
+        {
+            new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
+            return this;
+        }
 
         /// <summary>
         ///     To be added...

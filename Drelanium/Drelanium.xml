@@ -1816,6 +1816,19 @@
         To be added...
       </summary>
     </member>
+    <member
+      name="M:Drelanium.WebDriverSetup.ChromeConfiguration.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Drelanium.WebDriverSetup.ChromeConfiguration.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
+    </member>
     <member name="M:Drelanium.WebDriverSetup.ChromeConfiguration.BuildOptions">
       <summary>
         To be added...
@@ -1885,6 +1898,19 @@
         To be added...
       </summary>
     </member>
+    <member
+      name="M:Drelanium.WebDriverSetup.DriverConfiguration.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Drelanium.WebDriverSetup.DriverConfiguration.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
+    </member>
     <member name="M:Drelanium.WebDriverSetup.DriverConfiguration.BuildDriverOptions">
       <summary>
         To be added...
@@ -1928,10 +1954,23 @@
         To be added...
       </summary>
     </member>
+    <member
+      name="M:Drelanium.WebDriverSetup.EdgeConfiguration.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Drelanium.WebDriverSetup.EdgeConfiguration.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
+    </member>
     <member name="M:Drelanium.WebDriverSetup.EdgeConfiguration.BuildOptions">
       <summary>
-        To be added...
       </summary>
+      <returns></returns>
     </member>
     <member name="T:Drelanium.WebDriverSetup.FirefoxConfiguration">
       <summary>
@@ -1958,6 +1997,19 @@
         To be added...
       </summary>
     </member>
+    <member
+      name="M:Drelanium.WebDriverSetup.FirefoxConfiguration.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Drelanium.WebDriverSetup.FirefoxConfiguration.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
+    </member>
     <member name="T:Drelanium.WebDriverSetup.InternetExplorerConfiguration">
       <summary>
         To be added...
@@ -1977,6 +2029,19 @@
       <summary>
         To be added...
       </summary>
+    </member>
+    <member
+      name="M:Drelanium.WebDriverSetup.InternetExplorerConfiguration.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Drelanium.WebDriverSetup.InternetExplorerConfiguration.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
     </member>
     <member name="T:Drelanium.WebDriverSetup.OperaConfiguration">
       <summary>
@@ -2003,6 +2068,19 @@
         To be added...
       </summary>
     </member>
+    <member
+      name="M:Drelanium.WebDriverSetup.OperaConfiguration.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Drelanium.WebDriverSetup.OperaConfiguration.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
+    </member>
     <member name="T:Drelanium.WebDriverSetup.SafariConfiguration">
       <summary>
         To be added...
@@ -2022,6 +2100,19 @@
       <summary>
         To be added...
       </summary>
+    </member>
+    <member
+      name="M:Drelanium.WebDriverSetup.SafariConfiguration.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+      <summary>
+      </summary>
+      <param name="configurationRoot"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Drelanium.WebDriverSetup.SafariConfiguration.Bind(System.String)">
+      <summary>
+      </summary>
+      <param name="jsonPath"></param>
+      <returns></returns>
     </member>
     <member name="T:Drelanium.WebDriver.Alert">
       <summary>

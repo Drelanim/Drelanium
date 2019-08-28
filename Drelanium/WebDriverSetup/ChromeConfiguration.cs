@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.Extensions.Configuration;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace Drelanium.WebDriverSetup
@@ -27,6 +28,29 @@ namespace Drelanium.WebDriverSetup
         ///     To be added...
         /// </summary>
         public string ChromeDriverDirectory { get; set; }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="configurationRoot"></param>
+        /// <returns></returns>
+        public ChromeConfiguration Bind(IConfigurationRoot configurationRoot)
+        {
+            configurationRoot.Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="jsonPath"></param>
+        /// <returns></returns>
+        public ChromeConfiguration Bind(string jsonPath)
+        {
+            new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
+            return this;
+        }
+
 
         /// <summary>
         ///     To be added...

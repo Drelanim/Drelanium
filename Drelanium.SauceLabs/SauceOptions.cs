@@ -282,6 +282,17 @@ namespace Drelanium.SauceLabs
 
         /// <summary>
         /// </summary>
+        /// <param name="jsonPath"></param>
+        /// <returns></returns>
+        public SauceOptions Bind(string jsonPath)
+        {
+            new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
         /// <param name="driverOptions"></param>
         /// <exception cref="ArgumentException"></exception>
         public void AddToDriverOptions(DriverOptions driverOptions)
