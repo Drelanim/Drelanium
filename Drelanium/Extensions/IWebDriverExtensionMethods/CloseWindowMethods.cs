@@ -4,14 +4,17 @@ using Serilog.Core;
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="IWebDriver"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="IWebDriver" /> types.
+    /// </summary>
     public static class CloseWindowMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="indexOfWindow">Index of the window that should be closed.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static IWebDriver CloseWindow(this IWebDriver driver, int indexOfWindow, Logger logger = null)
@@ -25,9 +28,12 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static IWebDriver CloseFirstWindow(this IWebDriver driver, Logger logger = null)
         {
@@ -37,9 +43,12 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static IWebDriver CloseLastWindow(this IWebDriver driver, Logger logger = null)
         {

@@ -8,13 +8,13 @@ using Serilog.Core;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    /// Extended implementation of <see cref="ICookieJar"/>
-    ///</summary>
+    ///     Extended implementation of <see cref="ICookieJar" />
+    /// </summary>
     public class CookieJar : ICookieJar
     {
         /// <summary>
-        /// <see cref="CookieJar"/>
-        ///</summary>
+        ///     <see cref="CookieJar" />
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public CookieJar(IWebDriver driver)
         {
@@ -23,20 +23,18 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="ICookieJar"/>
+        /// <inheritdoc cref="ICookieJar" />
         private ICookieJar CookieJarImplementation { get; }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="IWebDriver"/>
+        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public void AddCookie(Cookie cookie)
         {
@@ -44,7 +42,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public Cookie GetCookieNamed(string name)
         {
@@ -52,7 +50,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public void DeleteCookie(Cookie cookie)
         {
@@ -60,7 +58,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public void DeleteCookieNamed(string name)
         {
@@ -68,7 +66,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public void DeleteAllCookies()
         {
@@ -76,14 +74,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public ReadOnlyCollection<Cookie> AllCookies => CookieJarImplementation.AllCookies;
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="AddCookie(Cookie)"/>
+        /// <inheritdoc cref="AddCookie(Cookie)" />
         public void AddCookie(Cookie cookie, Logger logger)
         {
             logger?.Information($"Adding cookie {cookie}");
@@ -92,9 +89,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="GetCookieNamed(string)"/>
+        /// <inheritdoc cref="GetCookieNamed(string)" />
         public Cookie GetCookieNamed(string name, Logger logger)
         {
             logger?.Information($"Getting cookie named {name}");
@@ -103,9 +99,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="DeleteCookie(Cookie)"/>
+        /// <inheritdoc cref="DeleteCookie(Cookie)" />
         public void DeleteCookie(Cookie cookie, Logger logger)
         {
             logger?.Information($"Deleting cookie {cookie}");
@@ -116,9 +111,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="DeleteCookieNamed(string)"/>
+        /// <inheritdoc cref="DeleteCookieNamed(string)" />
         public void DeleteCookieNamed(string name, Logger logger)
         {
             logger?.Information($"Deleting cookie named {name}");
@@ -129,9 +123,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="DeleteAllCookies()"/>
+        /// <inheritdoc cref="DeleteAllCookies()" />
         public void DeleteAllCookies(Logger logger)
         {
             logger?.Information($"Deleting all available cookies in current domain: ({Driver.Url().Host})");
@@ -143,8 +136,8 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         private void CheckDomain(string domainName, Logger logger = null)
         {
             var actualDomain = Driver.Url().Host;
@@ -161,8 +154,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         public Cookie GetCookieNamed(string domainName, string name, Logger logger = null)
         {
             CheckDomain(domainName, logger);
@@ -170,8 +163,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         public void DeleteCookie(string domainName, Cookie cookie, Logger logger = null)
         {
             CheckDomain(domainName, logger);
@@ -179,8 +172,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         public void DeleteCookieNamed(string domainName, string name, Logger logger = null)
         {
             CheckDomain(domainName, logger);
@@ -188,8 +181,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         public void DeleteAllCookies(string domainName, Logger logger = null)
         {
             CheckDomain(domainName, logger);
@@ -197,8 +190,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         public IEnumerable<Cookie> DomainCookies(string domainName, Logger logger = null)
         {
             CheckDomain(domainName, logger);

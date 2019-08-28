@@ -4,13 +4,13 @@ using OpenQA.Selenium;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    /// Extended implementation of <see cref="ITimeouts"/>
+    ///     Extended implementation of <see cref="ITimeouts" />
     /// </summary>
     public class Timeouts : ITimeouts
     {
         /// <summary>
-        /// <see cref="Timeouts"/>
-        ///</summary>
+        ///     <see cref="Timeouts" />
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Timeouts(IWebDriver driver)
         {
@@ -20,19 +20,19 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        /// <inheritdoc cref="ITimeouts"/>
+        ///     <inheritdoc cref="ITimeouts" />
         /// </summary>
         private ITimeouts TimeoutsImplementation { get; }
 
 
         /// <summary>
-        /// <inheritdoc cref="IWebDriver"/>
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
         private IWebDriver Driver { get; }
 
 
         /// <summary>
-        /// <inheritdoc cref="ITimeouts.ImplicitWait"/>
+        ///     <inheritdoc cref="ITimeouts.ImplicitWait" />
         /// </summary>
         public TimeSpan ImplicitWait
         {
@@ -42,7 +42,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        /// <inheritdoc cref="ITimeouts.AsynchronousJavaScript"/>
+        ///     <inheritdoc cref="ITimeouts.AsynchronousJavaScript" />
         /// </summary>
         public TimeSpan AsynchronousJavaScript
         {
@@ -52,7 +52,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        /// <inheritdoc cref="ITimeouts.PageLoad"/>
+        ///     <inheritdoc cref="ITimeouts.PageLoad" />
         /// </summary>
         public TimeSpan PageLoad
         {

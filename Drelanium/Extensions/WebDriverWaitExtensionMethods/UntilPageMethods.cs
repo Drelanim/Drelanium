@@ -7,15 +7,18 @@ using Serilog.Core;
 namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="WebDriverWait"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="WebDriverWait" /> types.
+    /// </summary>
     public static class UntilPageMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="url">To be added...</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
@@ -38,15 +41,18 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
         ///     that should be matching.
         /// </param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static bool UntilPageHasLoaded(this WebDriverWait wait, UriBuilder url, UriPartial matchingUriPartial,
             Logger logger = null)
         {
@@ -54,15 +60,18 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
         ///     that should be matching.
         /// </param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, Uri url,
             UriPartial matchingUriPartial, Logger logger = null)
         {
@@ -90,14 +99,17 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
         ///     that should be matching.
         /// </param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="url">To be added...</param>
         public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, UriBuilder url,
             UriPartial matchingUriPartial, Logger logger = null)

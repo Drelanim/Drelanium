@@ -7,13 +7,13 @@ using OpenQA.Selenium;
 namespace Drelanium.Highlighter
 {
     /// <summary>
-    ///To be added...
-    ///</summary>
+    ///     To be added...
+    /// </summary>
     public static class Highlighter
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="circleName">To be added...</param>
         /// <param name="text">To be added...</param>
@@ -33,8 +33,8 @@ namespace Drelanium.Highlighter
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="circleName">To be added...</param>
         /// <param name="text">To be added...</param>
@@ -45,8 +45,8 @@ namespace Drelanium.Highlighter
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param>To be added...</param>
         /// <param name="circle">To be added...</param>
         /// <param name="xPosCenter">To be added...</param>
@@ -58,8 +58,8 @@ namespace Drelanium.Highlighter
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param>To be added...</param>
         /// <param name="circle">To be added...</param>
         /// <param name="centerPoint">To be added...</param>
@@ -69,8 +69,8 @@ namespace Drelanium.Highlighter
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param>To be added...</param>
         /// <param name="circle">To be added...</param>
         /// <param name="text">To be added...</param>
@@ -80,8 +80,8 @@ namespace Drelanium.Highlighter
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param>To be added...</param>
         /// <param name="circle">To be added...</param>
         public static void RemoveCircle(IWebElement circle)

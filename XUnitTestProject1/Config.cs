@@ -4,12 +4,12 @@ namespace XUnitTestProject1
 {
     public class Config
     {
-        public int MyProperty { get; set; }
-
         public Config()
         {
             SauceOptionsToBind = new SauceOptions();
         }
+
+        public int MyProperty { get; set; }
 
 
         public SauceOptions SauceOptionsToBind { get; set; }
@@ -25,29 +25,6 @@ namespace XUnitTestProject1
 
 
         public Dictionary<string, object> MyDic { get; }
-
-
-        private object GetValue(string key)
-        {
-            if (!MyDic.ContainsKey(key))
-            {
-                MyDic.Add(key, null);
-            }
-
-
-            return MyDic[key];
-        }
-
-
-        private void SetValue(string key, object value)
-        {
-            if (!MyDic.ContainsKey(key))
-            {
-                MyDic.Add(key, null);
-            }
-
-            MyDic[key] = value;
-        }
 
 
         public object Prop1
@@ -73,6 +50,29 @@ namespace XUnitTestProject1
         {
             get => GetValue("Prop4");
             set => SetValue("Prop4", value);
+        }
+
+
+        private object GetValue(string key)
+        {
+            if (!MyDic.ContainsKey(key))
+            {
+                MyDic.Add(key, null);
+            }
+
+
+            return MyDic[key];
+        }
+
+
+        private void SetValue(string key, object value)
+        {
+            if (!MyDic.ContainsKey(key))
+            {
+                MyDic.Add(key, null);
+            }
+
+            MyDic[key] = value;
         }
     }
 }

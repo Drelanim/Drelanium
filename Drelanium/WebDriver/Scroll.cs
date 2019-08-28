@@ -5,13 +5,13 @@ using Serilog.Core;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    /// Methods to perform scroll in the browser.
-    ///</summary>
+    ///     Methods to perform scroll in the browser.
+    /// </summary>
     public class Scroll
     {
         /// <summary>
-        /// Methods to perform scroll in the browser.
-        ///</summary>
+        ///     Methods to perform scroll in the browser.
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Scroll(IWebDriver driver)
         {
@@ -19,18 +19,20 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="IWebDriver"/>
+        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
         /// <summary>
-        /// The method scrolls to a particular set of pixel coordinates in the document.
-        ///</summary>
+        ///     The method scrolls to a particular set of pixel coordinates in the document.
+        /// </summary>
         /// <param name="x">The x coordinate in pixel along the horizontal axis of the document.</param>
         /// <param name="y">The y coordinate in pixel along the vertical axis of the document.</param>
         /// <param name="behaviour">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public void To(int x, int y, string behaviour = "smooth", Logger logger = null)
         {
             logger?.Information($"Scrolling To({x},{y})");
@@ -39,10 +41,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="behaviour">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public void ToBodyBottom(string behaviour = "smooth", Logger logger = null)
         {
             logger?.Information("Scrolling to the bottom of the body");
@@ -52,10 +57,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="behaviour">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public void ToBodyTop(string behaviour = "smooth", Logger logger = null)
         {
             logger?.Information("Scrolling to the top of the body");
@@ -66,12 +74,15 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// The method scrolls the document in the window by the given amount of pixels.
-        ///</summary>
+        ///     The method scrolls the document in the window by the given amount of pixels.
+        /// </summary>
         /// <param name="x">The x coordinate in pixel along the horizontal axis of the document.</param>
         /// <param name="y">The y coordinate in pixel along the vertical axis of the document.</param>
         /// <param name="behaviour">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public void By(int x, int y, string behaviour = "smooth", Logger logger = null)
         {
             logger?.Information($"Scrolling By({x},{y})");

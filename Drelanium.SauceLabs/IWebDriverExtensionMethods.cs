@@ -3,12 +3,10 @@
 namespace Drelanium.SauceLabs
 {
     /// <summary>
-    /// 
     /// </summary>
     public static class IWebDriverExtensionMethods
     {
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="driver"></param>
         /// <returns></returns>

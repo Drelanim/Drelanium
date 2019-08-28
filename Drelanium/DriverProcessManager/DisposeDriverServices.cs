@@ -10,12 +10,12 @@ using Serilog.Core;
 namespace Drelanium.DriverProcessManager
 {
     /// <summary>
-    /// Methods to dispose stuck WebDriver processes
+    ///     Methods to dispose stuck WebDriver processes
     /// </summary>
     public static class DisposeDriverServices
     {
         /// <summary>
-        /// List of WebDriver process names
+        ///     List of WebDriver process names
         /// </summary>
         private static readonly List<string> _processesToCheck =
             new List<string>
@@ -32,9 +32,12 @@ namespace Drelanium.DriverProcessManager
             };
 
         /// <summary>
-        /// Ends all WebDriver processes, that has been stuck longer, than the given timespan.
+        ///     Ends all WebDriver processes, that has been stuck longer, than the given timespan.
         /// </summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="processLifeSpan">The lifespan of the webdriver processes, that should be killed.</param>
         public static void EndAllWebDriverProcess(TimeSpan processLifeSpan, Logger logger = null)
         {

@@ -5,13 +5,13 @@ using Serilog.Core;
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="IWebDriver"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="IWebDriver" /> types.
+    /// </summary>
     public static class CreateActions
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static ExtendedActions Actions(this IWebDriver driver)
         {
@@ -19,10 +19,13 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="theKey">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static void KeyDownAndUp(this IWebDriver driver, string theKey, Logger logger = null)
         {
@@ -36,10 +39,13 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="textToSend">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static void SendKeys(this IWebDriver driver, string textToSend, Logger logger = null)
         {

@@ -4,13 +4,13 @@ using OpenQA.Selenium.Support.Extensions;
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="IWebElement"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="IWebElement" /> types.
+    /// </summary>
     public static class ExecuteScriptMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="script">To be added...</param>
         /// <param name="args">To be added...</param>
@@ -20,8 +20,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="script">To be added...</param>
         /// <param name="args">To be added...</param>

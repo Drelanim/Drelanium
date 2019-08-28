@@ -6,13 +6,13 @@ using OpenQA.Selenium.Support.Extensions;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///To be added...
-    ///</summary>
+    ///     To be added...
+    /// </summary>
     public class Create
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Create(IWebDriver driver)
         {
@@ -20,14 +20,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="IWebDriver"/>
+        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="tagType">The used html tag.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
         public string CreateElement(string elementName, string tagType)
@@ -38,8 +37,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="tagType">The used html tag.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
@@ -53,8 +52,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///Creates a HTMLEvent on the global window object.
-        ///</summary>
+        ///     Creates a HTMLEvent on the global window object.
+        /// </summary>
         /// <param name="eventName">The name of the event.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="bubbles">The bubbles parameter of the event.</param>
@@ -69,8 +68,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///Creates a HTMLEvent on the global window object.
-        ///</summary>
+        ///     Creates a HTMLEvent on the global window object.
+        /// </summary>
         /// <param name="eventName">The name of the event.</param>
         /// <param name="eventType">The type of the event.</param>
         /// <param name="bubbles">The bubbles parameter of the event.</param>
@@ -81,8 +80,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///Creates a new function and adds it to the window global object.
-        ///</summary>
+        ///     Creates a new function and adds it to the window global object.
+        /// </summary>
         /// <param name="functionName">The name that is used to save the function to the window.</param>
         /// <param name="functionArguments">The arguments of the function.</param>
         /// <param name="functionImplementation">The implementation of the function.</param>

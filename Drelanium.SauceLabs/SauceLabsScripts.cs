@@ -3,29 +3,24 @@
 namespace Drelanium.SauceLabs
 {
     /// <summary>
-    /// 
     /// </summary>
     public enum SauceJobResult
     {
         /// <summary>
-        /// 
         /// </summary>
         Passed,
 
         /// <summary>
-        /// 
         /// </summary>
         Failed
     }
 
 
     /// <summary>
-    /// 
     /// </summary>
     public class SauceLabsScripts
     {
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="driver"></param>
         public SauceLabsScripts(IWebDriver driver)
@@ -37,7 +32,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="jobResult"></param>
         public void SetJobResult(string jobResult)
@@ -47,7 +41,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="jobResult"></param>
         public void SetJobResult(SauceJobResult jobResult)
@@ -57,7 +50,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="jobName"></param>
         public void SetJobName(string jobName)
@@ -67,7 +59,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="tags"></param>
         public void SetJobTags(string tags)
@@ -77,7 +68,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="buildName"></param>
         public void SetJobBuild(string buildName)
@@ -87,7 +77,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         public void StopNetwork()
         {
@@ -96,7 +85,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         public void StartNetwork()
         {
@@ -104,7 +92,6 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
-        /// 
         /// </summary>
         public void SetSauceBreakPoint()
         {
@@ -113,7 +100,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="text"></param>
         public void Log(string text)
@@ -123,7 +109,6 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="jobInfo"></param>
         public void SetJobInfo(string jobInfo)

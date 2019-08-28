@@ -4,22 +4,22 @@ using OpenQA.Selenium.Safari;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
-    ///To be added...
+    ///     To be added...
     /// </summary>
     public class SafariConfiguration
     {
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public SafariOptions InitialOptions { get; set; }
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public string SafariDriverDirectory { get; set; }
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public SafariOptions BuildOptions()
         {

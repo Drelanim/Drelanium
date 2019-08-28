@@ -4,22 +4,22 @@ using OpenQA.Selenium.IE;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
-    ///To be added...
+    ///     To be added...
     /// </summary>
     public class InternetExplorerConfiguration
     {
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public InternetExplorerOptions InitialOptions { get; set; }
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public string InternetExplorerDriverDirectory { get; set; }
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public InternetExplorerOptions BuildOptions()
         {

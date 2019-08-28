@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -11,102 +12,27 @@ using OpenQA.Selenium.Safari;
 // ReSharper disable UnusedMember.Global
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
-
-
 // ReSharper disable InconsistentNaming
 #pragma warning disable 1591
 #pragma warning disable IDE1006 // Naming Styles
 
+
 namespace Drelanium.SauceLabs
 {
     /// <summary>
-    /// 
     /// </summary>
     public class SauceOptions
     {
-        public Dictionary<string, object> Options { get; }
-
         /// <summary>
-        /// 
         /// </summary>
         public SauceOptions()
         {
             Options = new Dictionary<string, object>();
         }
 
-
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="driverOptions"></param>
-        /// <exception cref="ArgumentException"></exception>
-        public void AddToDriverOptions(DriverOptions driverOptions)
-        {
-            switch (driverOptions)
-            {
-                case ChromeOptions chromeOptions:
-                {
-                    chromeOptions.AddAdditionalCapability("sauce:options", Options, true);
-                    break;
-                }
-
-
-                case FirefoxOptions firefoxOptions:
-                {
-                    firefoxOptions.AddAdditionalCapability("sauce:options", Options, true);
-                    break;
-                }
-
-
-                case InternetExplorerOptions internetExplorerOptions:
-                {
-                    internetExplorerOptions.AddAdditionalCapability("sauce:options", Options, true);
-                    break;
-                }
-
-
-                case OperaOptions operaOptions:
-                {
-                    operaOptions.AddAdditionalCapability("sauce:options", Options, true);
-                    break;
-                }
-
-
-                case SafariOptions _:
-                {
-                    throw new ArgumentException("SauceOptions cannot be added as a capability to a SafariOptions");
-                }
-
-
-                default:
-                {
-                    throw new ArgumentException("SauceOptions cannot be added as a capability");
-                }
-            }
-        }
-
-
-        private object GetValue(string key)
-        {
-            if (!Options.ContainsKey(key))
-            {
-                Options.Add(key, null);
-            }
-
-
-            return Options[key];
-        }
-
-
-        private void SetValue(string key, object value)
-        {
-            if (!Options.ContainsKey(key))
-            {
-                Options.Add(key, null);
-            }
-
-            Options[key] = value;
-        }
+        public Dictionary<string, object> Options { get; }
 
 
         public string accessKey
@@ -195,7 +121,7 @@ namespace Drelanium.SauceLabs
 
         public int idleTimeout
         {
-            get => int.Parse(GetValue("idleTimeout")?.ToString() ?? throw new InvalidOperationException());
+            get => GetValue("idleTimeout") == null ? 0 : int.Parse(GetValue("idleTimeout").ToString());
             set => SetValue("idleTimeout", value);
         }
 
@@ -208,7 +134,7 @@ namespace Drelanium.SauceLabs
 
         public int maxDuration
         {
-            get => int.Parse(GetValue("maxDuration")?.ToString() ?? throw new InvalidOperationException());
+            get => GetValue("maxDuration") == null ? 0 : int.Parse(GetValue("maxDuration").ToString());
             set => SetValue("maxDuration", value);
         }
 
@@ -250,7 +176,7 @@ namespace Drelanium.SauceLabs
 
         public int priority
         {
-            get => int.Parse(GetValue("priority")?.ToString() ?? throw new InvalidOperationException());
+            get => GetValue("priority") == null ? 0 : int.Parse(GetValue("priority").ToString());
             set => SetValue("priority", value);
         }
 
@@ -340,6 +266,84 @@ namespace Drelanium.SauceLabs
         {
             get => GetValue("videoUploadOnPass")?.ToString()?.ToLower() == "true";
             set => SetValue("videoUploadOnPass", value);
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="configurationRoot"></param>
+        /// <returns></returns>
+        public SauceOptions Bind(IConfigurationRoot configurationRoot)
+        {
+            configurationRoot.Bind(this);
+            return this;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        /// <param name="driverOptions"></param>
+        /// <exception cref="ArgumentException"></exception>
+        public void AddToDriverOptions(DriverOptions driverOptions)
+        {
+            switch (driverOptions)
+            {
+                case ChromeOptions chromeOptions:
+                {
+                    chromeOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    break;
+                }
+
+
+                case FirefoxOptions firefoxOptions:
+                {
+                    firefoxOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    break;
+                }
+
+
+                case InternetExplorerOptions internetExplorerOptions:
+                {
+                    internetExplorerOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    break;
+                }
+
+
+                case OperaOptions operaOptions:
+                {
+                    operaOptions.AddAdditionalCapability("sauce:options", Options, true);
+                    break;
+                }
+
+
+                case SafariOptions _:
+                {
+                    throw new ArgumentException("SauceOptions cannot be added as a capability to a SafariOptions");
+                }
+
+
+                default:
+                {
+                    throw new ArgumentException("SauceOptions cannot be added as a capability");
+                }
+            }
+        }
+
+
+        private object GetValue(string key)
+        {
+            return !Options.ContainsKey(key) ? null : Options[key];
+        }
+
+
+        private void SetValue(string key, object value)
+        {
+            if (!Options.ContainsKey(key))
+            {
+                Options.Add(key, null);
+            }
+
+            Options[key] = value;
         }
     }
 }

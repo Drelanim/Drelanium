@@ -4,13 +4,13 @@ using OpenQA.Selenium;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    /// Extended implementation of <see cref="IWindow"/>
+    ///     Extended implementation of <see cref="IWindow" />
     /// </summary>
     public class Window : IWindow
     {
         /// <summary>
-        /// <see cref="Window"/>
-        ///</summary>
+        ///     <see cref="Window" />
+        /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Window(IWebDriver driver)
         {
@@ -19,19 +19,17 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="IWindow"/>
+        /// <inheritdoc cref="IWindow" />
         private IWindow WindowImplementation { get; }
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="IWebDriver"/>
+        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public void Maximize()
         {
@@ -39,7 +37,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public void Minimize()
         {
@@ -47,7 +45,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public void FullScreen()
         {
@@ -55,7 +53,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public Point Position
         {
@@ -64,7 +62,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        /// <inheritdoc></inheritdoc>
+        ///     <inheritdoc></inheritdoc>
         /// </summary>
         public Size Size
         {

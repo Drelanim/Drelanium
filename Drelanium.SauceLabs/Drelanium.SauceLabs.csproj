@@ -8,7 +8,7 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.6.0</PackageVersion>
+    <PackageVersion>1.7.0</PackageVersion>
     <PackageId>Drelanium.SauceLabs</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
@@ -41,9 +41,6 @@
   </PropertyGroup>
 
 
- 
-
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>C:\Nyiri_Attila\source\nyiriattila88\Drelanium\Drelanium.SauceLabs\Drelanium.SauceLabs.xml</DocumentationFile>
   </PropertyGroup>
@@ -55,6 +52,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
   </ItemGroup>
 

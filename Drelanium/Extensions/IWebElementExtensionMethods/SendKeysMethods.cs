@@ -4,13 +4,13 @@ using OpenQA.Selenium;
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="IWebElement"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="IWebElement" /> types.
+    /// </summary>
     public static class SendKeysMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static void SendTabKey(this IWebElement element)
         {
@@ -18,8 +18,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static void SendEnterKey(this IWebElement element)
         {
@@ -27,8 +27,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="content">To be added...</param>
         public static void TypeToTextbox(this IWebElement element, string content)
@@ -37,8 +37,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added..
-        ///.</summary>
+        ///     To be added..
+        ///     .
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="content">To be added...</param>
         public static void TypeToTextboxThenEnter(this IWebElement element, string content)
@@ -48,8 +49,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added..
-        ///.</summary>
+        ///     To be added..
+        ///     .
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="content">To be added...</param>
         public static void TypeToTextboxThenTab(this IWebElement element, string content)
@@ -59,8 +61,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added..
-        ///.</summary>
+        ///     To be added..
+        ///     .
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="numberOfCharactersToBeDeleted">To be added...</param>
         public static void DeleteFromEndOfTextbox(this IWebElement element, int numberOfCharactersToBeDeleted)
@@ -76,8 +79,9 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added..
-        ///.</summary>
+        ///     To be added..
+        ///     .
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="text">To be added...</param>
         /// <param name="clearFirst">To be added...</param>

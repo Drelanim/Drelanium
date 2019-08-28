@@ -8,13 +8,13 @@ using OpenQA.Selenium.Support.UI;
 namespace Drelanium.Extensions.ISearchContextExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="ISearchContext"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="ISearchContext" /> types.
+    /// </summary>
     public static class ISearchContextExtensionMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         private static IWebDriver GetDriver(ISearchContext searchContext)
         {
@@ -32,8 +32,8 @@ namespace Drelanium.Extensions.ISearchContextExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         public static Search Search(this ISearchContext searchContext)
         {
@@ -41,8 +41,8 @@ namespace Drelanium.Extensions.ISearchContextExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="timeoutMessage">The message that appears on timeout.</param>
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
@@ -68,8 +68,8 @@ namespace Drelanium.Extensions.ISearchContextExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="timeoutMessage">The message that appears on timeout.</param>
         /// <param name="clock">An object used to determine when time has passed.</param>
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>

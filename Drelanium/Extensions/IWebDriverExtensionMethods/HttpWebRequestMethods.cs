@@ -7,14 +7,17 @@ using Serilog.Core;
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="IWebDriver"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="IWebDriver" /> types.
+    /// </summary>
     public static class HttpWebRequestMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="url">The URL to load.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static HttpWebRequest HttpWebRequest(this IWebDriver driver, Uri url, Logger logger = null)
@@ -25,9 +28,12 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static HttpWebRequest HttpWebRequest(this IWebDriver driver, Logger logger = null)
         {

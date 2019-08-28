@@ -7,14 +7,17 @@ using Serilog.Core;
 namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="WebDriverWait"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="WebDriverWait" /> types.
+    /// </summary>
     public static class UntilElementMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static bool UntilElementIsDisplayed(this WebDriverWait wait, IWebElement element, Logger logger = null)
@@ -30,9 +33,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
@@ -51,9 +57,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, IWebElement element,
@@ -70,9 +79,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
@@ -91,9 +103,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static bool UntilElementIsEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
@@ -109,9 +124,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
@@ -130,9 +148,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static bool UntilElementIsNotEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
@@ -148,9 +169,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
@@ -169,9 +193,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
         /// <param name="attributeName">Name of the attribute of the element.</param>
@@ -192,9 +219,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="webElementAttributeName">To be added...</param>
         /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
@@ -206,9 +236,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added..
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added..
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
         /// <param name="attributeName">Name of the attribute of the element.</param>
@@ -231,14 +264,17 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="webElementAttributeName">To be added...</param>
         /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static bool UntilElementAttribute(this WebDriverWait wait, ISearchContext searchContext, By locator,
             ElementAttributeName webElementAttributeName, Func<string, bool> condition,
             Logger logger = null)
@@ -248,12 +284,15 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static IWebElement UntilElementExists(this WebDriverWait wait, ISearchContext searchContext, By locator,
             Logger logger = null)
         {
@@ -268,12 +307,15 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">The locating mechanism to use.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static void UntilElementDisappears(this WebDriverWait wait, ISearchContext searchContext, By locator,
             Logger logger = null)
         {

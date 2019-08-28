@@ -13,13 +13,13 @@ using Serilog.Core;
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
     /// <summary>
-    /// Extension methods for <see cref="IWebElement"/> types.
-    ///</summary>
+    ///     Extension methods for <see cref="IWebElement" /> types.
+    /// </summary>
     public static class IWebElementExtensionMethods
     {
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Attributes Attributes(this IWebElement element)
         {
@@ -27,8 +27,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Properties Properties(this IWebElement element)
         {
@@ -36,8 +36,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Style Style(this IWebElement element)
         {
@@ -45,8 +45,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static SelectElement Select(this IWebElement element)
         {
@@ -54,8 +54,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Location Location(this IWebElement element)
         {
@@ -63,9 +63,12 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static void Click(this IWebElement element, Logger logger = null)
         {
@@ -77,9 +80,12 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        ///     To be added...
+        /// </summary>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         public static void Click(this IWebElement element, TimeSpan timeout, Logger logger = null)
@@ -100,10 +106,13 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///Put focus on the element.
-        ///</summary>
+        ///     Put focus on the element.
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static void Focus(this IWebElement element, Logger logger = null)
         {
             logger?.Information($"Attempting to Focus on element ({element})");
@@ -114,10 +123,13 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///Loose focus from the element. The body element will get the focus.
-        ///</summary>
+        ///     Loose focus from the element. The body element will get the focus.
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static void Blur(this IWebElement element, Logger logger = null)
         {
             logger?.Information($"Attempting to Blur on element ({element})");
@@ -128,10 +140,13 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///Performs a JavaScript click() on the element.
-        ///</summary>
+        ///     Performs a JavaScript click() on the element.
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static void JSClick(this IWebElement element, Logger logger = null)
         {
             logger?.Information($"Attempting to JavaScript-Click on element ({element})");
@@ -142,8 +157,8 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///To be added...
-        ///</summary>
+        ///     To be added...
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static string GetWebElementID(this IWebElement element)
         {
@@ -151,11 +166,14 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///Dispatches a HTMLEvent from the global window object on an element.
-        ///</summary>
+        ///     Dispatches a HTMLEvent from the global window object on an element.
+        /// </summary>
         /// <param name="element">The event will be dispatched on this element.</param>
         /// <param name="eventName">To be added...</param>
-        /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages (level = Information) during the method exeuction.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     the method exeuction.
+        /// </param>
         public static void DispatchEvent(this IWebElement element, string eventName, Logger logger = null)
         {
             logger?.Information($"Attempting to Dispatch event ({eventName}) on element ({element})");

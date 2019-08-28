@@ -10,12 +10,12 @@ using Serilog.Core;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///To be added...
+    ///     To be added...
     /// </summary>
     public class MouseMoveFollower
     {
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         private const string pictureInBase64 =
             "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAQAAACGG/bgAAAAAmJLR0QA" +
@@ -29,17 +29,17 @@ namespace Drelanium.WebDriver
             "2YxqkDdAAAAABJRU5ErkJggg==";
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         private const string SeleniumMouseMoveFollowerID = "SeleniumMouseMoveFollower";
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         private const string MouseMoveFollowerFunctionName = "MouseMoveFollower";
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public MouseMoveFollower(IWebDriver driver)
@@ -48,18 +48,17 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public bool IsTurnedON => Driver.Search().HasElement(By.Id(SeleniumMouseMoveFollowerID));
 
         /// <summary>
-        ///
         /// </summary>
-        /// <inheritdoc cref="IWebDriver"/>
+        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public void TurnON(Logger logger = null)
         {
@@ -86,7 +85,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///To be added...
+        ///     To be added...
         /// </summary>
         public void TurnOFF(Logger logger = null)
         {

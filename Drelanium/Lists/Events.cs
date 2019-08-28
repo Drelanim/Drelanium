@@ -57,7 +57,6 @@ namespace Drelanium.Lists
         contextmenu,
 
         /// <summary>
-        /// 
         /// </summary>
         dblclick,
 
@@ -76,7 +75,6 @@ namespace Drelanium.Lists
         mouseover,
 
         /// <summary>
-        /// 
         /// </summary>
         mouseup,
 
