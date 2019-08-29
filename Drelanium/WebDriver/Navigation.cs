@@ -4,6 +4,7 @@ using Drelanium.Extensions.UriExtensionMethods;
 using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace Drelanium.WebDriver
 {
@@ -42,7 +43,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void Forward()
         {
@@ -79,71 +80,82 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.Back()" />
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void Back(Logger logger)
         {
             {
-                logger?.Information("Attempting to navigate back");
+                logger?.Information("Attempting to navigate back.");
             }
 
             Back();
 
             {
-                logger?.Information("Navigated back");
+                logger?.Information("Navigated back.");
             }
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="Forward()" />
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void Forward(Logger logger)
         {
             {
-                logger?.Information("Attempting to navigate forward");
+                logger?.Information("Attempting to navigate forward.");
             }
 
             Forward();
 
             {
-                logger?.Information("Navigated forward");
+                logger?.Information("Navigated forward.");
             }
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="GoToUrl(string)" />
-        /// <param name="url"></param>
+        /// <param name="url">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void GoToUrl(string url, Logger logger)
         {
             {
-                logger?.Information($"Attempting to navigate to url ({url})");
+                logger?.Information($"Attempting to navigate to url ({url}).");
             }
 
             GoToUrl(url);
 
             {
-                logger?.Information($"Navigated to url ({url})");
+                logger?.Information($"Navigated to url ({url}).");
             }
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="GoToUrl(string)" />
-        /// <param name="url"></param>
+        /// <param name="url">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void GoToUrl(Uri url, Logger logger)
@@ -152,12 +164,15 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="GoToUrl(string)" />
         /// <param name="url">To be added...</param>
         /// <param name="checkHttpResponse">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void GoToUrl(UriBuilder url, bool checkHttpResponse, Logger logger = null)
@@ -171,6 +186,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="GoToUrl(string)" />
         /// <param name="url">The URL to load.</param>
@@ -179,7 +196,8 @@ namespace Drelanium.WebDriver
         /// <param name="matchingUriPartial">Part of the URL that should match after navigation.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void GoToUrl(UriBuilder url, bool checkHttpResponse, bool loadWithoutCookies, TimeSpan timeout,
@@ -197,22 +215,25 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="Refresh()" />
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void Refresh(Logger logger)
         {
             {
-                logger?.Information($"Refreshing the current page ({Driver.Url})");
+                logger?.Information($"Refreshing the current page ({Driver.Url}).");
             }
 
             Refresh();
 
             {
-                logger?.Information($"The current page ({Driver.Url}) has been refreshed");
+                logger?.Information($"The current page ({Driver.Url}) has been refreshed.");
             }
         }
     }

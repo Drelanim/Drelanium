@@ -1,6 +1,7 @@
 ﻿// ReSharper disable InconsistentNaming
 // ReSharper disable IdentifierTypo
 
+
 using System;
 using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
@@ -105,8 +106,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="configurationRoot"></param>
-        /// <returns></returns>
+        /// <param name="configurationRoot">To be added...</param>
+        /// <returns>To be added...</returns>
         public DriverConfiguration Bind(IConfigurationRoot configurationRoot)
         {
             configurationRoot.Bind(this);
@@ -116,8 +117,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="jsonPath"></param>
-        /// <returns></returns>
+        /// <param name="jsonPath">To be added...</param>
+        /// <returns>To be added...</returns>
         public DriverConfiguration Bind(string jsonPath)
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);

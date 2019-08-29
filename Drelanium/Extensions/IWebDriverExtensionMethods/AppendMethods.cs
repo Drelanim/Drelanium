@@ -17,7 +17,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         public static void AppendElementToParent(this IWebDriver driver, string parentElementName,
             string childElementName)
         {
-            driver.ExecuteJavaScript($"window['{parentElementName}'].appendChild({childElementName}); ");
+            driver.ExecuteJavaScript($"window['{parentElementName}'].appendChild({childElementName}); .");
         }
 
         /// <summary>

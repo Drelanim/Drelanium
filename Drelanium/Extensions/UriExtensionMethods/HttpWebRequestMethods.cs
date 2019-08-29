@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace Drelanium.Extensions.UriExtensionMethods
 {
@@ -12,17 +13,17 @@ namespace Drelanium.Extensions.UriExtensionMethods
     {
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="url">
-        ///     To be added...
-        /// </param>
+        /// <param name="url">     To be added... </param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static HttpWebRequest HttpWebRequest(this Uri url, Logger logger = null)
         {
-            logger?.Information($"Getting HttpWebRequest on url ({url.AbsoluteUri})");
+            logger?.Information($"Getting HttpWebRequest on url ({url.AbsoluteUri}).");
 
             return (HttpWebRequest) WebRequest.Create(url);
         }

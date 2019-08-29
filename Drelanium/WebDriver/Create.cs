@@ -31,7 +31,7 @@ namespace Drelanium.WebDriver
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
         public string CreateElement(string elementName, string tagType)
         {
-            Driver.ExecuteJavaScript($"window['{elementName}'] = document.createElement('{tagType}'); ");
+            Driver.ExecuteJavaScript($"window['{elementName}'] = document.createElement('{tagType}'); .");
 
             return elementName;
         }
@@ -48,7 +48,7 @@ namespace Drelanium.WebDriver
 
             Driver.AppendElementToParent(parentElement, elementName);
 
-            return Driver.ExecuteJavaScript<IWebElement>($"return {elementName}; ");
+            return Driver.ExecuteJavaScript<IWebElement>($"return {elementName}; .");
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace Drelanium.WebDriver
         /// <param name="cancelable">The cancelable parameter of the event.</param>
         public string CreateEvent(string eventName, string eventType, bool bubbles = true, bool cancelable = false)
         {
-            Driver.ExecuteJavaScript($"window['{eventName}'] = document.createEvent('HTMLEvents'); ");
+            Driver.ExecuteJavaScript($"window['{eventName}'] = document.createEvent('HTMLEvents'); .");
             Driver.ExecuteJavaScript(
-                $"{eventName}.initEvent('{eventType}', {bubbles.ToString().ToLower()}, {cancelable.ToString().ToLower()}); ");
+                $"{eventName}.initEvent('{eventType}', {bubbles.ToString().ToLower()}, {cancelable.ToString().ToLower()}); .");
 
             return eventName;
         }
@@ -89,7 +89,7 @@ namespace Drelanium.WebDriver
             string functionImplementation = "{}")
         {
             Driver.ExecuteJavaScript(
-                $"window['{functionName}'] = function{functionArguments} {functionImplementation}; ");
+                $"window['{functionName}'] = function{functionArguments} {functionImplementation}; .");
 
             return functionName;
         }

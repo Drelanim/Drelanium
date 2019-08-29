@@ -8,6 +8,7 @@ using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Safari;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace Drelanium.WebDriverSetup
 {
@@ -18,6 +19,7 @@ namespace Drelanium.WebDriverSetup
     {
         /// <summary>
         ///     Method, that initializes an <see cref="IWebDriver" /> type, depending on the given attributes.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="executionMode">Switch between local and remote execution.</param>
         /// <param name="browserType">  The type of the selected browser to be automated.</param>
@@ -28,7 +30,8 @@ namespace Drelanium.WebDriverSetup
         ///     http://127.0.0.1:4444/wd/hub).
         /// </param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static IWebDriver StartWebDriver(
@@ -48,7 +51,7 @@ namespace Drelanium.WebDriverSetup
                     logger?.Information($"Attempting to start a ({browserType}) WebDriver on " +
                                         $"({executionMode}) ExecutionMode, " +
                                         $"using local driver directory ({localDriverDirectory}) " +
-                                        $"with the following DriverOptions: ({driverOptions})");
+                                        $"with the following DriverOptions: ({driverOptions}).");
 
                     if (localDriverDirectory == null)
                     {
@@ -113,7 +116,7 @@ namespace Drelanium.WebDriverSetup
                     logger?.Information($"Attempting to start a ({browserType}) WebDriver on " +
                                         $"({executionMode}) ExecutionMode, " +
                                         $"using SeleniumGrid Hub Url ({seleniumGridHubUrl?.AbsoluteUri}) " +
-                                        $"with the following DriverOptions: ({driverOptions})");
+                                        $"with the following DriverOptions: ({driverOptions}).");
 
                     if (seleniumGridHubUrl == null)
                     {
@@ -178,7 +181,7 @@ namespace Drelanium.WebDriverSetup
                 }
             }
 
-            logger?.Information("WebDriver has been started successfully");
+            logger?.Information("WebDriver has been started successfully.");
 
             return driver;
         }

@@ -172,7 +172,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public bool HasCapability(string capability)
         {
@@ -180,7 +180,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public object GetCapability(string capability)
         {
@@ -189,12 +189,12 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public object this[string capabilityName] => CapabilitiesImplementation[capabilityName];
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public override string ToString()
         {

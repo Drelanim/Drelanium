@@ -28,11 +28,14 @@ namespace Drelanium.Extensions.ByExtensionMethods
             return locator.ToString().Substring(locator.ToString().IndexOf(":") + 2);
         }
 
+
         /// <summary>
         ///     <inheritdoc cref="Drelanium.SearchContext.Search" />
         /// </summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="By" />
+        /// </param>
         public static Search Search(this By locator, ISearchContext searchContext)
         {
             return new Search(searchContext);

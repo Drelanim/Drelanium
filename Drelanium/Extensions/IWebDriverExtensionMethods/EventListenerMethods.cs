@@ -41,7 +41,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         public static void AddEventListenerToElement(this IWebDriver driver, string elementName, string eventType,
             string functionName)
         {
-            driver.ExecuteJavaScript($"{elementName}.addEventListener('{eventType}', {functionName}); ");
+            driver.ExecuteJavaScript($"{elementName}.addEventListener('{eventType}', {functionName}); .");
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         public static void RemoveEventListenerToElement(this IWebDriver driver, string elementName, string eventType,
             string functionName)
         {
-            driver.ExecuteJavaScript($"{elementName}.removeEventListener('{eventType}', {functionName}); ");
+            driver.ExecuteJavaScript($"{elementName}.removeEventListener('{eventType}', {functionName}); .");
         }
 
         /// <summary>

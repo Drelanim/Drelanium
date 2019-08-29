@@ -20,8 +20,8 @@ namespace Drelanium.Highlighter
         /// <param name="yPosCenter">To be added...</param>
         public static void ChangePositionForCircle(IWebElement circle, int xPosCenter, int yPosCenter)
         {
-            circle.Style().Set(ElementStylePropertyName.Left, $"{xPosCenter - 15}px");
-            circle.Style().Set(ElementStylePropertyName.Top, $"{yPosCenter - 15}px");
+            circle.Style().Set(ElementStylePropertyName.Left, $"{xPosCenter - 15}px.");
+            circle.Style().Set(ElementStylePropertyName.Top, $"{yPosCenter - 15}px.");
         }
 
         /// <summary>

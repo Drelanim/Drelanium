@@ -10,34 +10,34 @@
   <PropertyGroup>
     <PackageVersion>1.5.0</PackageVersion>
     <PackageId>Drelanium</PackageId>
-    <Title></Title>
+    <Title>To be added...</Title>
     <Authors>Drelanim</Authors>
     <PackageDescription>Extensions for Selenium.</PackageDescription>
-    <Description></Description>
-    <Copyright></Copyright>
-    <PackageRequireLicenseAcceptance></PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageLicenseFile></PackageLicenseFile>
-    <PackageLicenseUrl></PackageLicenseUrl>
+    <Description>To be added...</Description>
+    <Copyright>To be added...</Copyright>
+    <PackageRequireLicenseAcceptance>To be added...</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>To be added...</PackageLicenseExpression>
+    <PackageLicenseFile>To be added...</PackageLicenseFile>
+    <PackageLicenseUrl>To be added...</PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
     <PackageReleaseNotes>Added Microsoft Binder and Json</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
-    <IncludeSymbols></IncludeSymbols>
-    <SymbolPackageFormat></SymbolPackageFormat>
-    <IncludeSource></IncludeSource>
-    <IsTool></IsTool>
-    <RepositoryUrl></RepositoryUrl>
-    <RepositoryType></RepositoryType>
-    <NoPackageAnalysis></NoPackageAnalysis>
-    <MinClientVersion></MinClientVersion>
-    <IncludeBuildOutput></IncludeBuildOutput>
-    <IncludeContentInPack></IncludeContentInPack>
-    <BuildOutputTargetFolder></BuildOutputTargetFolder>
-    <ContentTargetFolders></ContentTargetFolders>
-    <NuspecFile></NuspecFile>
-    <NuspecBasePath></NuspecBasePath>
-    <NuspecProperties></NuspecProperties>
+    <IncludeSymbols>To be added...</IncludeSymbols>
+    <SymbolPackageFormat>To be added...</SymbolPackageFormat>
+    <IncludeSource>To be added...</IncludeSource>
+    <IsTool>To be added...</IsTool>
+    <RepositoryUrl>To be added...</RepositoryUrl>
+    <RepositoryType>To be added...</RepositoryType>
+    <NoPackageAnalysis>To be added...</NoPackageAnalysis>
+    <MinClientVersion>To be added...</MinClientVersion>
+    <IncludeBuildOutput>To be added...</IncludeBuildOutput>
+    <IncludeContentInPack>To be added...</IncludeContentInPack>
+    <BuildOutputTargetFolder>To be added...</BuildOutputTargetFolder>
+    <ContentTargetFolders>To be added...</ContentTargetFolders>
+    <NuspecFile>To be added...</NuspecFile>
+    <NuspecBasePath>To be added...</NuspecBasePath>
+    <NuspecProperties>To be added...</NuspecProperties>
   </PropertyGroup>
 
 

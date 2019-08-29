@@ -3,6 +3,7 @@ using System.Drawing;
 using Drelanium.WebDriver;
 using OpenQA.Selenium;
 using Serilog.Core;
+using Serilog.Events;
 
 
 // ReSharper disable InconsistentNaming
@@ -34,10 +35,12 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
         /// <summary>
         ///     Moves the cursor to a given x-y point and performs a click.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="y">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -49,10 +52,12 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
         /// <summary>
         ///     Moves the cursor to a given point and performs a click.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="point">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -119,9 +124,11 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
         /// <summary>
         ///     <inheritdoc cref="IWebDriver.Quit()" /> Logs the action.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>

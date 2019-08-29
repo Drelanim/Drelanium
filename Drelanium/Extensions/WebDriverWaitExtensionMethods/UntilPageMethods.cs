@@ -3,6 +3,7 @@ using Drelanium.Extensions.IWebDriverExtensionMethods;
 using Drelanium.WebDriver;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 {
@@ -13,10 +14,12 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     {
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="url">To be added...</param>
@@ -27,7 +30,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         public static bool UntilPageHasLoaded(this WebDriverWait wait, Uri url, UriPartial matchingUriPartial,
             Logger logger = null)
         {
-            logger?.Information($"Waiting for ({url.AbsoluteUri}) page to be loaded");
+            logger?.Information($"Waiting for ({url.AbsoluteUri}) page to be loaded.");
 
             wait.Message +=
                 $"Waited ({wait.Timeout.TotalSeconds}) seconds until page on ({url.AbsoluteUri}) has been successfully loaded";
@@ -42,6 +45,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
@@ -50,7 +54,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     that should be matching.
         /// </param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static bool UntilPageHasLoaded(this WebDriverWait wait, UriBuilder url, UriPartial matchingUriPartial,
@@ -61,6 +66,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">To be added...</param>
@@ -69,13 +75,14 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     that should be matching.
         /// </param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, Uri url,
             UriPartial matchingUriPartial, Logger logger = null)
         {
-            logger?.Information($"Waiting for ({url.AbsoluteUri}) page to be loaded without cookies");
+            logger?.Information($"Waiting for ({url.AbsoluteUri}) page to be loaded without cookies.");
 
             wait.Message +=
                 $"Waited ({wait.Timeout.TotalSeconds}) seconds until page on ({url.AbsoluteUri}) has been successfully loaded without cookies";
@@ -100,6 +107,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="matchingUriPartial">
@@ -107,7 +115,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     that should be matching.
         /// </param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="url">To be added...</param>

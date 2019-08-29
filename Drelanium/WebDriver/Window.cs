@@ -29,7 +29,7 @@ namespace Drelanium.WebDriver
         private IWebDriver Driver { get; }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void Maximize()
         {
@@ -37,7 +37,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void Minimize()
         {
@@ -45,7 +45,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void FullScreen()
         {
@@ -53,7 +53,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public Point Position
         {
@@ -62,7 +62,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public Size Size
         {

@@ -34,7 +34,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void AddCookie(Cookie cookie)
         {
@@ -42,7 +42,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public Cookie GetCookieNamed(string name)
         {
@@ -50,7 +50,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void DeleteCookie(Cookie cookie)
         {
@@ -58,7 +58,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void DeleteCookieNamed(string name)
         {
@@ -66,7 +66,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void DeleteAllCookies()
         {
@@ -74,7 +74,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public ReadOnlyCollection<Cookie> AllCookies => CookieJarImplementation.AllCookies;
 
@@ -83,7 +83,7 @@ namespace Drelanium.WebDriver
         /// <inheritdoc cref="AddCookie(Cookie)" />
         public void AddCookie(Cookie cookie, Logger logger)
         {
-            logger?.Information($"Adding cookie {cookie}");
+            logger?.Information($"Adding cookie {cookie}.");
 
             AddCookie(cookie);
         }
@@ -96,15 +96,15 @@ namespace Drelanium.WebDriver
         {
             var actualDomain = Driver.Url().Host;
 
-            logger?.Information($"Comparing actual domain ({actualDomain}) to expected ({domainName})");
+            logger?.Information($"Comparing actual domain ({actualDomain}) to expected ({domainName}).");
 
             if (actualDomain != domainName)
             {
                 throw new InvalidCookieDomainException(
-                    $"Actual domain ({actualDomain}) is not equal to the expected ({domainName}) domain");
+                    $"Actual domain ({actualDomain}) is not equal to the expected ({domainName}) domain.");
             }
 
-            logger?.Information("Domain compare passed");
+            logger?.Information("Domain compare passed.");
         }
 
         /// <summary>
@@ -112,11 +112,11 @@ namespace Drelanium.WebDriver
         /// <inheritdoc cref="DeleteAllCookies()" />
         public void DeleteAllCookies(Logger logger)
         {
-            logger?.Information($"Deleting all available cookies in current domain: ({Driver.Url().Host})");
+            logger?.Information($"Deleting all available cookies in current domain: ({Driver.Url().Host}).");
 
             DeleteAllCookies();
 
-            logger?.Information($"Deleted all available cookies in current domain: ({Driver.Url().Host})");
+            logger?.Information($"Deleted all available cookies in current domain: ({Driver.Url().Host}).");
         }
 
         /// <summary>
@@ -133,11 +133,11 @@ namespace Drelanium.WebDriver
         /// <inheritdoc cref="DeleteCookie(Cookie)" />
         public void DeleteCookie(Cookie cookie, Logger logger)
         {
-            logger?.Information($"Deleting cookie {cookie}");
+            logger?.Information($"Deleting cookie {cookie}.");
 
             DeleteCookie(cookie);
 
-            logger?.Information($"Deleted cookie {cookie}");
+            logger?.Information($"Deleted cookie {cookie}.");
         }
 
         /// <summary>
@@ -154,11 +154,11 @@ namespace Drelanium.WebDriver
         /// <inheritdoc cref="DeleteCookieNamed(string)" />
         public void DeleteCookieNamed(string name, Logger logger)
         {
-            logger?.Information($"Deleting cookie named {name}");
+            logger?.Information($"Deleting cookie named {name}.");
 
             DeleteCookieNamed(name);
 
-            logger?.Information($"Deleted cookie named {name}");
+            logger?.Information($"Deleted cookie named {name}.");
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Drelanium.WebDriver
         {
             CheckDomain(domainName, logger);
 
-            logger?.Information($"Getting cookies from domain ({domainName})");
+            logger?.Information($"Getting cookies from domain ({domainName}).");
 
             return AllCookies.Where(cookie => cookie.Domain == domainName);
         }
@@ -187,7 +187,7 @@ namespace Drelanium.WebDriver
         /// <inheritdoc cref="GetCookieNamed(string)" />
         public Cookie GetCookieNamed(string name, Logger logger)
         {
-            logger?.Information($"Getting cookie named {name}");
+            logger?.Information($"Getting cookie named {name}.");
 
             return GetCookieNamed(name);
         }

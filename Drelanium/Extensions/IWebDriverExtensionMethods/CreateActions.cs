@@ -1,6 +1,7 @@
 ﻿using Drelanium.WebDriver;
 using OpenQA.Selenium;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace Drelanium.Extensions.IWebDriverExtensionMethods
 {
@@ -20,10 +21,12 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="theKey">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -40,16 +43,18 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="textToSend">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static void SendKeys(this IWebDriver driver, string textToSend, Logger logger = null)
         {
-            logger?.Information($"Executing a SendKeys action with text {textToSend}");
+            logger?.Information($"Executing a SendKeys action with text {textToSend}.");
 
             driver
                 .Actions()

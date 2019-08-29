@@ -27,8 +27,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="configurationRoot"></param>
-        /// <returns></returns>
+        /// <param name="configurationRoot">To be added...</param>
+        /// <returns>To be added...</returns>
         public OperaConfiguration Bind(IConfigurationRoot configurationRoot)
         {
             configurationRoot.Bind(this);
@@ -38,8 +38,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="jsonPath"></param>
-        /// <returns></returns>
+        /// <param name="jsonPath">To be added...</param>
+        /// <returns>To be added...</returns>
         public OperaConfiguration Bind(string jsonPath)
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);

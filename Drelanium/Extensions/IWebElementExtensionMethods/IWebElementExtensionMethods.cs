@@ -5,6 +5,7 @@ using Drelanium.WebElement;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
+using Serilog.Events;
 
 
 // ReSharper disable InconsistentNaming
@@ -28,50 +29,57 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
 
         /// <summary>
         ///     Loose focus from the element. The body element will get the focus.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static void Blur(this IWebElement element, Logger logger = null)
         {
-            logger?.Information($"Attempting to Blur on element ({element})");
+            logger?.Information($"Attempting to Blur on element ({element}).");
 
             element.ExecuteJavaScript("arguments[0].blur(); ", element);
 
-            logger?.Information("Blur on element was successful");
+            logger?.Information("Blur on element was successful.");
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWebElement.Click()" />
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static void Click(this IWebElement element, Logger logger = null)
         {
-            logger?.Information($"Attempting to Click on element ({element})");
+            logger?.Information($"Attempting to Click on element ({element}).");
 
             element.Click();
 
-            logger?.Information("Click on element was successful");
+            logger?.Information("Click on element was successful.");
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWebElement.Click()" />
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         public static void Click(this IWebElement element, TimeSpan timeout, Logger logger = null)
         {
-            logger?.Information($"Attempting to Click on element ({element})");
+            logger?.Information($"Attempting to Click on element ({element}).");
 
             element
                 .Wait(timeout,
@@ -83,42 +91,75 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
                     return true;
                 });
 
-            logger?.Information("Click on element was successful");
+            logger?.Information("Click on element was successful.");
         }
+
+
+        /// <summary>
+        ///     <para>Logs the event optionally.</para>
+        /// </summary>
+        /// <param name="element">To be added...</param>
+        /// <param name="timeoutForClick">To be added...</param>
+        /// <param name="timeoutForAfterClickCondition">To be added...</param>
+        /// <param name="afterClickCondition">To be added...</param>
+        /// <param name="ignoredExceptionTypes">To be added...</param>
+        /// <param name="logger">To be added...</param>
+        /// <typeparam name="TResult">To be added...</typeparam>
+        public static void Click<TResult>(this IWebElement element, TimeSpan timeoutForClick,
+            TimeSpan timeoutForAfterClickCondition, Func<IWebDriver, TResult> afterClickCondition,
+            Type[] ignoredExceptionTypes = null, Logger logger = null)
+        {
+            element.Click(timeoutForClick, logger);
+
+            logger?.Information("Waiting for after-click condition to meet.");
+
+            element.Wait(
+                    timeoutForAfterClickCondition,
+                    $"Waited ({timeoutForAfterClickCondition.TotalSeconds}) seconds for after-click condition to meet!",
+                    ignoredExceptionTypes)
+                .Until(afterClickCondition);
+
+            logger?.Information("After-click condition is met.");
+        }
+
 
         /// <summary>
         ///     Dispatches a HTMLEvent from the global window object on an element.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="element">The event will be dispatched on this element.</param>
         /// <param name="eventName">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static void DispatchEvent(this IWebElement element, string eventName, Logger logger = null)
         {
-            logger?.Information($"Attempting to Dispatch event ({eventName}) on element ({element})");
+            logger?.Information($"Attempting to Dispatch event ({eventName}) on element ({element}).");
 
             element.ExecuteJavaScript($"arguments[0].dispatchEvent({eventName}); ", element);
 
-            logger?.Information("Dispatch event on element was successful");
+            logger?.Information("Dispatch event on element was successful.");
         }
 
         /// <summary>
         ///     Put focus on the element.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static void Focus(this IWebElement element, Logger logger = null)
         {
-            logger?.Information($"Attempting to Focus on element ({element})");
+            logger?.Information($"Attempting to Focus on element ({element}).");
 
             element.ExecuteJavaScript("arguments[0].focus(); ", element);
 
-            logger?.Information("Focus on element was successful");
+            logger?.Information("Focus on element was successful.");
         }
 
         /// <summary>
@@ -132,19 +173,21 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
 
         /// <summary>
         ///     Performs a JavaScript click() on the element.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public static void JSClick(this IWebElement element, Logger logger = null)
         {
-            logger?.Information($"Attempting to JavaScript-Click on element ({element})");
+            logger?.Information($"Attempting to JavaScript-Click on element ({element}).");
 
             element.ExecuteJavaScript("arguments[0].click(); ", element);
 
-            logger?.Information("JavaScript-Click on element was successful");
+            logger?.Information("JavaScript-Click on element was successful.");
         }
 
         /// <summary>

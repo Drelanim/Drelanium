@@ -8,8 +8,8 @@ namespace Drelanium.SauceLabs
     {
         /// <summary>
         /// </summary>
-        /// <param name="driver"></param>
-        /// <returns></returns>
+        /// <param name="driver">To be added...</param>
+        /// <returns>To be added...</returns>
         public static SauceLabsScripts SauceLabsScripts(this IWebDriver driver)
         {
             return new SauceLabsScripts(driver);

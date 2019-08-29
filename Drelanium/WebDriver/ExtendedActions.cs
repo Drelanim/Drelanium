@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace Drelanium.WebDriver
 {
@@ -43,9 +44,11 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void BuildAndPerform(Logger logger = null)
@@ -61,11 +64,16 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     Performs this action on the browser, and then waits until the condition is met.
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="condition">The <see cref="Func{TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public void BuildAndPerform<T>(WebDriverWait wait, Func<IWebDriver, T> condition, Logger logger = null)

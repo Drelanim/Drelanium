@@ -68,7 +68,7 @@ namespace Drelanium.WebDriver
             }
 
             {
-                logger?.Information("Turning off the MouseMoveFollower feature");
+                logger?.Information("Turning off the MouseMoveFollower feature.");
             }
 
             Driver.RemoveEventListener(EventType.mousemove, MouseMoveFollowerFunctionName);
@@ -87,14 +87,14 @@ namespace Drelanium.WebDriver
             }
 
             {
-                logger?.Information("Turning on the MouseMoveFollower feature");
+                logger?.Information("Turning on the MouseMoveFollower feature.");
             }
 
             var seleniumMouseMoveFollower =
                 Driver.Create().CreateElement(SeleniumMouseMoveFollowerID, "img", Driver.Body());
 
             Driver.Create().CreateFunction(MouseMoveFollowerFunctionName, "(event)",
-                $"{{{SeleniumMouseMoveFollowerID}.style.left = event.pageX + 'px'; {SeleniumMouseMoveFollowerID}.style.top = event.pageY + 'px';}}");
+                $"{{{SeleniumMouseMoveFollowerID}.style.left = event.pageX + 'px'; {SeleniumMouseMoveFollowerID}.style.top = event.pageY + 'px';}}.");
 
             Driver.AddEventListener(EventType.mousemove, MouseMoveFollowerFunctionName);
 

@@ -29,7 +29,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void Dismiss()
         {
@@ -38,7 +38,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void Accept()
         {
@@ -47,7 +47,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void SendKeys(string keysToSend)
         {
@@ -56,7 +56,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public void SetAuthenticationCredentials(string userName, string password)
         {
@@ -65,7 +65,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public string Text => AlertImplementation.Text;
     }

@@ -4,6 +4,7 @@ using Drelanium.Extensions.ISearchContextExtensionMethods;
 using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace Drelanium.SearchContext
 {
@@ -28,7 +29,7 @@ namespace Drelanium.SearchContext
 
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public IWebElement FindElement(By by)
         {
@@ -36,7 +37,7 @@ namespace Drelanium.SearchContext
         }
 
         /// <summary>
-        ///     <inheritdoc></inheritdoc>
+        ///     <inheritdoc>To be added...</inheritdoc>
         /// </summary>
         public ReadOnlyCollection<IWebElement> FindElements(By by)
         {
@@ -44,12 +45,15 @@ namespace Drelanium.SearchContext
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="FindElements(By)" />
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public IWebElement FindDisplayedElement(By locator, TimeSpan timeout, Logger logger = null)
@@ -63,47 +67,55 @@ namespace Drelanium.SearchContext
             return FindElement(locator);
         }
 
-
-        /// <inheritdoc cref="FindElement(By)" />
+        /// <summary>
+        ///     To Be added...
+        ///     <para>Logs the event optionally.</para>
+        /// </summary>
         /// <param name="by">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public IWebElement FindElement(By by, Logger logger)
         {
-            logger?.Information($"Attempting to Find element By ({by})");
+            logger?.Information($"Attempting to Find element By ({by}).");
 
             var result = FindElement(by);
 
-            logger?.Information($"Element ({by}) has been found");
+            logger?.Information($"Element ({by}) has been found.");
 
             return result;
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="FindElement(By)" />
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public IWebElement FindElement(By locator, TimeSpan timeout, Logger logger = null)
         {
-            logger?.Information($"Attempting to Find element By ({locator})");
+            logger?.Information($"Attempting to Find element By ({locator}).");
 
             var result = SearchContextImplementation
                 .Wait(timeout, ignoredExceptionTypes: new[] {typeof(NoSuchElementException)})
                 .UntilElementExists(SearchContextImplementation, locator, logger);
 
-            logger?.Information($"Element ({locator}) has been found");
+            logger?.Information($"Element ({locator}) has been found.");
 
             return result;
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="FindElements(By)" />
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
@@ -115,38 +127,42 @@ namespace Drelanium.SearchContext
         /// <param name="locator">The locating mechanism to use.</param>
         /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public IWebElement FindElement(By locator, TimeSpan timeout, Func<IWebDriver, IWebElement> condition,
             string timeoutMessage = "", Type[] ignoredExceptionTypes = null, Logger logger = null)
         {
-            logger?.Information($"Attempting to Find element By ({locator})");
+            logger?.Information($"Attempting to Find element By ({locator}).");
 
             var result = SearchContextImplementation
                 .Wait(timeout, timeoutMessage, ignoredExceptionTypes)
                 .Until(condition);
 
-            logger?.Information($"Element ({locator}) has been found");
+            logger?.Information($"Element ({locator}) has been found.");
 
             return result;
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <inheritdoc cref="FindElements(By)" />
         /// <param name="by">To be added...</param>
         /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (level = Information) during
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
         public ReadOnlyCollection<IWebElement> FindElements(By by, Logger logger)
         {
-            logger?.Information($"Attempting to Find element By ({by})");
+            logger?.Information($"Attempting to Find element By ({by}).");
 
             var result = FindElements(by);
 
-            logger?.Information($"Found ({result.Count}) number of elements");
+            logger?.Information($"Found ({result.Count}) number of elements.");
 
             return result;
         }
