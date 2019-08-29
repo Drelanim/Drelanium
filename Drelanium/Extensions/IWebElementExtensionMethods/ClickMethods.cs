@@ -7,7 +7,7 @@ using Serilog.Events;
 namespace Drelanium.Extensions.IWebElementExtensionMethods
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public static class ClickMethods
     {
@@ -63,13 +63,13 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         /// <summary>
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="element">To be added...</param>
-        /// <param name="timeoutForClick">To be added...</param>
-        /// <param name="timeoutForAfterClickCondition">To be added...</param>
-        /// <param name="afterClickCondition">To be added...</param>
-        /// <param name="ignoredExceptionTypes">To be added...</param>
-        /// <param name="logger">To be added...</param>
-        /// <typeparam name="TResult">To be added...</typeparam>
+        /// <param name="element">...Description to be added...</param>
+        /// <param name="timeoutForClick">...Description to be added...</param>
+        /// <param name="timeoutForAfterClickCondition">...Description to be added...</param>
+        /// <param name="afterClickCondition">...Description to be added...</param>
+        /// <param name="ignoredExceptionTypes">...Description to be added...</param>
+        /// <param name="logger">...Description to be added...</param>
+        /// <typeparam name="TResult">...Description to be added...</typeparam>
         public static void Click<TResult>(this IWebElement element, TimeSpan timeoutForClick,
             TimeSpan timeoutForAfterClickCondition, Func<IWebDriver, TResult> afterClickCondition,
             Type[] ignoredExceptionTypes = null, Logger logger = null)

@@ -6,12 +6,12 @@ using OpenQA.Selenium.Support.Extensions;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class Create
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Create(IWebDriver driver)
@@ -20,12 +20,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
-        /// <inheritdoc cref="IWebDriver" />
+
         private IWebDriver Driver { get; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="tagType">The used html tag.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
@@ -37,7 +38,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="tagType">The used html tag.</param>

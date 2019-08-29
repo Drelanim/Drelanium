@@ -5,25 +5,25 @@ using OpenQA.Selenium.Edge;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class EdgeConfiguration
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public EdgeOptions InitialOptions { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string EdgeDriverDirectory { get; set; }
 
 
         /// <summary>
         /// </summary>
-        /// <param name="configurationRoot">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="configurationRoot">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public EdgeConfiguration Bind(IConfigurationRoot configurationRoot)
         {
             configurationRoot.Bind(this);
@@ -33,8 +33,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="jsonPath">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="jsonPath">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public EdgeConfiguration Bind(string jsonPath)
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
@@ -44,7 +44,7 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <returns>To be added...</returns>
+        /// <returns>...Description to be added...</returns>
         public EdgeOptions BuildOptions()
         {
             var options = InitialOptions;

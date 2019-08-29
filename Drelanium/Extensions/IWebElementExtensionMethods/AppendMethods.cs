@@ -9,7 +9,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class AppendMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="childElement">The child element.</param>
@@ -19,7 +19,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="childElement">The child element.</param>

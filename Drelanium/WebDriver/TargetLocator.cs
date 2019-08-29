@@ -12,7 +12,7 @@ namespace Drelanium.WebDriver
     public class TargetLocator : ITargetLocator
     {
         /// <summary>
-        ///     <see cref="TargetLocator" />
+        ///     <inheritdoc cref="TargetLocator" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public TargetLocator(IWebDriver driver)
@@ -22,13 +22,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     <inheritdoc cref="ITargetLocator" />
         /// </summary>
-        /// <inheritdoc cref="ITargetLocator" />
         private ITargetLocator TargetLocatorImplementation { get; }
 
         /// <summary>
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
-        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
 
@@ -104,10 +104,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="ITargetLocator.ActiveElement()" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="ActiveElement()" />
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -121,10 +120,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added..
+        ///     <inheritdoc cref="ITargetLocator.Alert()" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="Alert()" />
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -138,10 +136,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="ITargetLocator.DefaultContent()" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="DefaultContent()" />
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -156,7 +153,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -172,11 +169,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     to be added...
+        ///     <inheritdoc cref="ITargetLocator.Frame(int)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="Frame(int)" />
-        /// <param name="frameIndex">To be added...</param>
+        /// <param name="frameIndex">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(int frameIndex, Logger logger)
         {
@@ -186,11 +182,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="ITargetLocator.Frame(string)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="Frame(string)" />
-        /// <param name="frameName">To be added...</param>
+        /// <param name="frameName">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(string frameName, Logger logger)
         {
@@ -200,11 +195,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="ITargetLocator.Frame(IWebElement)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="Frame(IWebElement)" />
-        /// <param name="frameElement">To be added...</param>
+        /// <param name="frameElement">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(IWebElement frameElement, Logger logger)
         {
@@ -214,7 +208,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -230,10 +224,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="ITargetLocator.ParentFrame()" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="ParentFrame()" />
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -247,11 +240,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="ITargetLocator.Window(string)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="Window(string)" />
-        /// <param name="windowName">To be added...</param>
+        /// <param name="windowName">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -266,10 +258,10 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="indexOfWindow">To be added...</param>
+        /// <param name="indexOfWindow">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Window(int indexOfWindow, Logger logger = null)
         {

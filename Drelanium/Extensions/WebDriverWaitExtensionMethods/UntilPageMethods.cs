@@ -13,7 +13,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     public static class UntilPageMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the browser's loaded url partial is matching with the given url partial.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
@@ -22,7 +22,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
         ///     that should be matching.
@@ -43,12 +43,13 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the browser's loaded url partial is matching with the given url partial.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
         ///     that should be matching.
@@ -64,12 +65,13 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return UntilPageHasLoaded(wait, url.Uri, matchingUriPartial, logger);
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the browser's loaded url partial is matching with the given url partial without any cookies present.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="matchingUriPartial">
         ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
         ///     that should be matching.
@@ -105,8 +107,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return UntilPageHasLoaded(wait, url, matchingUriPartial);
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the browser's loaded url partial is matching with the given url partial without any cookies present.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
@@ -119,7 +122,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, UriBuilder url,
             UriPartial matchingUriPartial, Logger logger = null)
         {

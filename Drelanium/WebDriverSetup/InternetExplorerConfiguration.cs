@@ -5,25 +5,25 @@ using OpenQA.Selenium.IE;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class InternetExplorerConfiguration
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public InternetExplorerOptions InitialOptions { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string InternetExplorerDriverDirectory { get; set; }
 
 
         /// <summary>
         /// </summary>
-        /// <param name="configurationRoot">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="configurationRoot">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public InternetExplorerConfiguration Bind(IConfigurationRoot configurationRoot)
         {
             configurationRoot.Bind(this);
@@ -33,8 +33,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="jsonPath">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="jsonPath">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public InternetExplorerConfiguration Bind(string jsonPath)
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
@@ -42,7 +42,7 @@ namespace Drelanium.WebDriverSetup
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public InternetExplorerOptions BuildOptions()
         {

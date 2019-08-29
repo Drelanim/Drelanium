@@ -8,7 +8,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class RemoveMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static void Remove(this IWebElement element)

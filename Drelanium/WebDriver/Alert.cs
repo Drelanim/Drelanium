@@ -8,7 +8,7 @@ namespace Drelanium.WebDriver
     public class Alert : IAlert
     {
         /// <summary>
-        ///     <see cref="Alert" />
+        ///     <inheritdoc cref="Alert" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Alert(IWebDriver driver)
@@ -18,18 +18,20 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     <inheritdoc cref="IAlert" />
         /// </summary>
-        /// <inheritdoc cref="IAlert" />
+
         private IAlert AlertImplementation { get; }
 
         /// <summary>
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
-        /// <inheritdoc cref="IWebDriver" />
+
         private IWebDriver Driver { get; }
 
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IAlert.Dismiss()" />
         /// </summary>
         public void Dismiss()
         {
@@ -38,7 +40,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IAlert.Accept()" />
         /// </summary>
         public void Accept()
         {
@@ -47,7 +49,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IAlert.SendKeys(string)" />
         /// </summary>
         public void SendKeys(string keysToSend)
         {
@@ -56,7 +58,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IAlert.SetAuthenticationCredentials(string,string)" />
         /// </summary>
         public void SetAuthenticationCredentials(string userName, string password)
         {
@@ -65,7 +67,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IAlert.Text" />
         /// </summary>
         public string Text => AlertImplementation.Text;
     }

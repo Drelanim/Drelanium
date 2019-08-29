@@ -8,36 +8,36 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.5.0</PackageVersion>
+    <PackageVersion>1.6.0</PackageVersion>
     <PackageId>Drelanium</PackageId>
-    <Title>To be added...</Title>
+    <Title></Title>
     <Authors>Drelanim</Authors>
     <PackageDescription>Extensions for Selenium.</PackageDescription>
-    <Description>To be added...</Description>
-    <Copyright>To be added...</Copyright>
-    <PackageRequireLicenseAcceptance>To be added...</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>To be added...</PackageLicenseExpression>
-    <PackageLicenseFile>To be added...</PackageLicenseFile>
-    <PackageLicenseUrl>To be added...</PackageLicenseUrl>
+    <Description></Description>
+    <Copyright></Copyright>
+    <PackageRequireLicenseAcceptance></PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
     <PackageReleaseNotes>Added Microsoft Binder and Json</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
-    <IncludeSymbols>To be added...</IncludeSymbols>
-    <SymbolPackageFormat>To be added...</SymbolPackageFormat>
-    <IncludeSource>To be added...</IncludeSource>
-    <IsTool>To be added...</IsTool>
-    <RepositoryUrl>To be added...</RepositoryUrl>
-    <RepositoryType>To be added...</RepositoryType>
-    <NoPackageAnalysis>To be added...</NoPackageAnalysis>
-    <MinClientVersion>To be added...</MinClientVersion>
-    <IncludeBuildOutput>To be added...</IncludeBuildOutput>
-    <IncludeContentInPack>To be added...</IncludeContentInPack>
-    <BuildOutputTargetFolder>To be added...</BuildOutputTargetFolder>
-    <ContentTargetFolders>To be added...</ContentTargetFolders>
-    <NuspecFile>To be added...</NuspecFile>
-    <NuspecBasePath>To be added...</NuspecBasePath>
-    <NuspecProperties>To be added...</NuspecProperties>
+    <IncludeSymbols></IncludeSymbols>
+    <SymbolPackageFormat></SymbolPackageFormat>
+    <IncludeSource></IncludeSource>
+    <IsTool></IsTool>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType></RepositoryType>
+    <NoPackageAnalysis></NoPackageAnalysis>
+    <MinClientVersion></MinClientVersion>
+    <IncludeBuildOutput></IncludeBuildOutput>
+    <IncludeContentInPack></IncludeContentInPack>
+    <BuildOutputTargetFolder></BuildOutputTargetFolder>
+    <ContentTargetFolders></ContentTargetFolders>
+    <NuspecFile></NuspecFile>
+    <NuspecBasePath></NuspecBasePath>
+    <NuspecProperties></NuspecProperties>
   </PropertyGroup>
 
 
@@ -52,11 +52,22 @@
 
 
   <ItemGroup>
+
+    <!--Selenium packages-->
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core.Linq" Version="1.0.0" />
+
+    <!--Microsoft Configuration packages-->
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Selenium.Support" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+
+    <!--Serilog packages-->
     <PackageReference Include="Serilog" Version="2.8.0" />
+
   </ItemGroup>
 
 </Project>

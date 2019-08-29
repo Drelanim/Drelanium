@@ -11,7 +11,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
     public static class CreateActions
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static ExtendedActions Actions(this IWebDriver driver)
@@ -20,10 +20,10 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="theKey">To be added...</param>
+        /// <param name="theKey">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -42,10 +42,10 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="textToSend">To be added...</param>
+        /// <param name="textToSend">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during

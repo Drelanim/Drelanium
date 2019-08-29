@@ -8,12 +8,12 @@ using OpenQA.Selenium;
 namespace Drelanium.WebElement
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class Attributes
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Attributes(IWebElement element)
@@ -22,12 +22,12 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         private IWebElement Element { get; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Accesskey
         {
@@ -36,7 +36,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Contenteditable
         {
@@ -45,7 +45,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Contextmenu
         {
@@ -54,7 +54,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Dir
         {
@@ -63,7 +63,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Draggable
         {
@@ -72,7 +72,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Hidden
         {
@@ -81,7 +81,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Lang
         {
@@ -90,7 +90,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Spellcheck
         {
@@ -99,7 +99,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Tabindex
         {
@@ -108,7 +108,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Title
         {
@@ -117,7 +117,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Class
         {
@@ -126,7 +126,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Value
         {
@@ -135,7 +135,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Name
         {
@@ -144,7 +144,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Type
         {
@@ -153,7 +153,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string TagName
         {
@@ -162,7 +162,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Checked
         {
@@ -171,7 +171,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Selected
         {
@@ -180,7 +180,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string SelectedIndex
         {
@@ -189,7 +189,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Href
         {
@@ -198,7 +198,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Src
         {
@@ -207,7 +207,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string ReadOnly
         {
@@ -216,7 +216,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Disabled
         {
@@ -225,7 +225,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Style
         {
@@ -234,7 +234,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string ID
         {
@@ -243,7 +243,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public string Get(string attributeName)
@@ -253,7 +253,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Get(ElementAttributeName elementAttributeName)
         {
@@ -261,7 +261,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         public void Remove(string attributeName)
@@ -270,7 +270,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Remove(ElementAttributeName elementAttributeName)
         {
@@ -278,10 +278,10 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
-        /// <param name="attributeValue">To be added...</param>
+        /// <param name="attributeValue">...Description to be added...</param>
         public void Set(string attributeName, object attributeValue)
         {
             Element.ExecuteJavaScript("arguments[0].setAttribute(arguments[1], arguments[2]); ", Element, attributeName,
@@ -289,7 +289,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Set(ElementAttributeName elementAttributeName, object attributeValue)
         {

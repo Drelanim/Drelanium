@@ -9,12 +9,12 @@ using Serilog.Events;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class SeleniumLogs
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public SeleniumLogs(LogsManager logsManager, string logKind)
         {
@@ -23,17 +23,17 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         private string LogKind { get; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         private IEnumerable<LogEntry> Logs { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         private LogEventLevel DefineLogEventLevel(LogLevel logLevel)
         {
@@ -60,7 +60,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="logTimeFilter">
         ///     The <see cref="Func{IWebDriver,TResult}" />, that is applied to filter the LogEntries by their TimeStamp
@@ -86,7 +86,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public IEnumerable<LogEntry> Get()
         {
@@ -94,7 +94,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void PrintToLogger(Logger logger = null)
         {

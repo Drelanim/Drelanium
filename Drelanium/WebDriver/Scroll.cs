@@ -20,9 +20,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
-        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
         /// <summary>
@@ -31,7 +30,7 @@ namespace Drelanium.WebDriver
         /// </summary>
         /// <param name="x">The x coordinate in pixel along the horizontal axis of the document.</param>
         /// <param name="y">The y coordinate in pixel along the vertical axis of the document.</param>
-        /// <param name="behaviour">To be added...</param>
+        /// <param name="behaviour">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -50,7 +49,7 @@ namespace Drelanium.WebDriver
         /// </summary>
         /// <param name="x">The x coordinate in pixel along the horizontal axis of the document.</param>
         /// <param name="y">The y coordinate in pixel along the vertical axis of the document.</param>
-        /// <param name="behaviour">To be added...</param>
+        /// <param name="behaviour">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -64,10 +63,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="behaviour">To be added...</param>
+        /// <param name="behaviour">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -82,10 +81,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="behaviour">To be added...</param>
+        /// <param name="behaviour">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during

@@ -17,7 +17,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class IWebElementExtensionMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Attributes Attributes(this IWebElement element)
@@ -50,7 +50,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="element">The event will be dispatched on this element.</param>
-        /// <param name="eventName">To be added...</param>
+        /// <param name="eventName">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -85,7 +85,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static string GetWebElementID(this IWebElement element)
@@ -113,7 +113,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Location Location(this IWebElement element)
@@ -122,7 +122,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Properties Properties(this IWebElement element)
@@ -131,7 +131,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static SelectElement Select(this IWebElement element)
@@ -140,7 +140,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static Style Style(this IWebElement element)

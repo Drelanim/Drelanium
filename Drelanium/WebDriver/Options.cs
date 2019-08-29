@@ -8,7 +8,7 @@ namespace Drelanium.WebDriver
     public class Options : IOptions
     {
         /// <summary>
-        ///     <see cref="Options" />
+        ///     <inheritdoc cref="Options" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Options(IWebDriver driver)
@@ -56,7 +56,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public MouseMoveFollower MouseMoveFollower()
         {

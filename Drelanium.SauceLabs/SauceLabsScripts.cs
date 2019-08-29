@@ -5,7 +5,7 @@
 namespace Drelanium.SauceLabs
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public enum SauceJobResult
     {
@@ -16,25 +16,29 @@ namespace Drelanium.SauceLabs
 
 
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class SauceLabsScripts
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="driver">To be added...</param>
+        /// <param name="driver">...Description to be added...</param>
         public SauceLabsScripts(IWebDriver driver)
         {
             Driver = driver;
         }
 
+
+        /// <summary>
+        ///     <inheritdoc cref="IWebDriver" />
+        /// </summary>
         private IWebDriver Driver { get; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="text">To be added...</param>
+        /// <param name="text">...Description to be added...</param>
         public void Log(string text)
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:context={text}.");
@@ -42,9 +46,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="buildName">To be added...</param>
+        /// <param name="buildName">...Description to be added...</param>
         public void SetJobBuild(string buildName)
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-build={buildName}.");
@@ -52,9 +56,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="jobInfo">To be added...</param>
+        /// <param name="jobInfo">...Description to be added...</param>
         public void SetJobInfo(string jobInfo)
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce: job-info={jobInfo}.");
@@ -62,9 +66,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="jobName">To be added...</param>
+        /// <param name="jobName">...Description to be added...</param>
         public void SetJobName(string jobName)
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-name={jobName}.");
@@ -72,9 +76,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="jobResult">To be added...</param>
+        /// <param name="jobResult">...Description to be added...</param>
         public void SetJobResult(string jobResult)
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-result={jobResult}.");
@@ -82,9 +86,9 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="jobResult">To be added...</param>
+        /// <param name="jobResult">...Description to be added...</param>
         public void SetJobResult(SauceJobResult jobResult)
         {
             SetJobResult(jobResult.ToString().ToLower());
@@ -92,16 +96,16 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="tags">To be added...</param>
+        /// <param name="tags">...Description to be added...</param>
         public void SetJobTags(string tags)
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-tags={tags}.");
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void SetSauceBreakPoint()
         {
@@ -109,7 +113,7 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void StartNetwork()
         {
@@ -118,7 +122,7 @@ namespace Drelanium.SauceLabs
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void StopNetwork()
         {

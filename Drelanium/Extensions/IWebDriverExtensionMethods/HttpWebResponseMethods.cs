@@ -13,11 +13,10 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
     public static class HttpWebResponseMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="System.Net.HttpWebResponse" />
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <inheritdoc cref="System.Net.HttpWebResponse" />
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -33,10 +32,9 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
 
         /// <summary>
-        ///     To Be added...
+        ///     <inheritdoc cref="System.Net.HttpWebResponse" />
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <inheritdoc cref="System.Net.HttpWebResponse" />
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during

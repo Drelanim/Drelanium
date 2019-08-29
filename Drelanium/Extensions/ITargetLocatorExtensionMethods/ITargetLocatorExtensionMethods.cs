@@ -9,9 +9,9 @@ namespace Drelanium.Extensions.ITargetLocatorExtensionMethods
     public static class ITargetLocatorExtensionMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="Drelanium.WebDriver.Alert" />
         /// </summary>
-        /// <param name="targetLocator">To be added...</param>
+        /// <param name="targetLocator">   ...Description to be added...</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public static Alert Alert(this ITargetLocator targetLocator, IWebDriver driver)
         {

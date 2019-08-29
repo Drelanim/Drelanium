@@ -13,25 +13,25 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     public static class UntilUrlMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriComponents">To be added...</param>
-        /// <param name="uriFormat">To be added...</param>
+        /// <param name="uriComponents">...Description to be added...</param>
+        /// <param name="uriFormat">...Description to be added...</param>
         public static bool UntilUrlComponentsNotToBe(this WebDriverWait wait, UriComponents uriComponents,
             UriFormat uriFormat, string expected, Logger logger = null)
         {
             logger?.Information($"Waiting for url ({uriComponents}) components not to be ({expected}).");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriComponents.ToString()} components not to be {expected}";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriComponents.ToString()} components not to be {expected}.";
             var result = wait.Until(driver => driver.Url().GetComponents(uriComponents, uriFormat) != expected);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -40,18 +40,18 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriComponents">To be added...</param>
-        /// <param name="uriFormat">To be added...</param>
+        /// <param name="uriComponents">...Description to be added...</param>
+        /// <param name="uriFormat">...Description to be added...</param>
         public static bool UntilUrlComponentsNotToBe(this WebDriverWait wait, UriComponents uriComponents,
             UriFormat uriFormat, Uri expected, Logger logger = null)
         {
@@ -59,25 +59,25 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriComponents">To be added...</param>
-        /// <param name="uriFormat">To be added...</param>
+        /// <param name="uriComponents">...Description to be added...</param>
+        /// <param name="uriFormat">...Description to be added...</param>
         public static bool UntilUrlComponentsToBe(this WebDriverWait wait, UriComponents uriComponents,
             UriFormat uriFormat, string expected, Logger logger = null)
         {
             logger?.Information($"Waiting for url ({uriComponents}) components to be ({expected}).");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriComponents.ToString()} components to be {expected}";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriComponents.ToString()} components to be {expected}.";
             var result = wait.Until(driver => driver.Url().GetComponents(uriComponents, uriFormat) == expected);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -86,18 +86,18 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriComponents">To be added...</param>
-        /// <param name="uriFormat">To be added...</param>
+        /// <param name="uriComponents">...Description to be added...</param>
+        /// <param name="uriFormat">...Description to be added...</param>
         public static bool UntilUrlComponentsToBe(this WebDriverWait wait, UriComponents uriComponents,
             UriFormat uriFormat, Uri expected, Logger logger = null)
         {
@@ -105,11 +105,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">To be added...</param>
+        /// <param name="fraction">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -128,11 +128,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">To be added...</param>
+        /// <param name="fraction">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -144,24 +144,24 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriPartial">To be added...</param>
+        /// <param name="uriPartial">...Description to be added...</param>
         public static bool UntilUrlLeftPartNotToBe(this WebDriverWait wait, UriPartial uriPartial, string expected,
             Logger logger = null)
         {
             logger?.Information($"Waiting for url ({uriPartial}) left part not to be ({expected}).");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriPartial.ToString()} partial not to be {expected}";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriPartial.ToString()} partial not to be {expected}.";
             var result = wait.Until(driver => driver.Url().GetLeftPart(uriPartial) != expected);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -170,17 +170,17 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriPartial">To be added...</param>
+        /// <param name="uriPartial">...Description to be added...</param>
         public static bool UntilUrlLeftPartNotToBe(this WebDriverWait wait, UriPartial uriPartial, Uri expected,
             Logger logger = null)
         {
@@ -188,24 +188,24 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriPartial">To be added...</param>
+        /// <param name="uriPartial">...Description to be added...</param>
         public static bool UntilUrlLeftPartToBe(this WebDriverWait wait, UriPartial uriPartial, string expected,
             Logger logger = null)
         {
             logger?.Information($"Waiting for url ({uriPartial}) left part to be ({expected}).");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriPartial.ToString()} partial to be {expected}";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriPartial.ToString()} partial to be {expected}.";
             var result = wait.Until(driver => driver.Url().GetLeftPart(uriPartial) == expected);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -214,17 +214,17 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">To be added...</param>
+        /// <param name="expected">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="uriPartial">To be added...</param>
+        /// <param name="uriPartial">...Description to be added...</param>
         public static bool UntilUrlLeftPartToBe(this WebDriverWait wait, UriPartial uriPartial, Uri expected,
             Logger logger = null)
         {
@@ -232,11 +232,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="regex">To be added...</param>
+        /// <param name="regex">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -256,11 +256,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">To be added...</param>
+        /// <param name="fraction">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -279,11 +279,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">To be added...</param>
+        /// <param name="fraction">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -295,11 +295,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="regex">To be added...</param>
+        /// <param name="regex">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -319,11 +319,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -342,11 +342,11 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during

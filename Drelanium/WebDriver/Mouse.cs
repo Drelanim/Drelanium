@@ -9,12 +9,12 @@ using Serilog.Events;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class Mouse
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Mouse(IWebDriver driver)
@@ -23,28 +23,28 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
-        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="y">To be added...</param>
+        /// <param name="y">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="x">To be added...</param>
+        /// <param name="x">...Description to be added...</param>
         public void MoveBy(int x, int y, Logger logger = null)
         {
             Driver.Actions().MoveByOffset(x, y).BuildAndPerform(logger);
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -52,9 +52,9 @@ namespace Drelanium.WebDriver
         ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
-        /// <param name="y">To be added...</param>
+        /// <param name="y">...Description to be added...</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="x">To be added...</param>
+        /// <param name="x">...Description to be added...</param>
         public void MoveByAndWaitUntilCondition<TResult>(int x, int y, WebDriverWait wait,
             Func<IWebDriver, TResult> condition,
             Logger logger = null)
@@ -63,22 +63,22 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="y">To be added...</param>
+        /// <param name="y">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        /// <param name="x">To be added...</param>
+        /// <param name="x">...Description to be added...</param>
         public void MoveTo(int x, int y, Logger logger = null)
         {
             Driver.Actions().MoveTo(x, y).BuildAndPerform(logger);
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="point">To be added...</param>
+        /// <param name="point">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public void MoveTo(Point point, Logger logger = null)
         {
@@ -86,7 +86,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -94,9 +94,9 @@ namespace Drelanium.WebDriver
         ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
-        /// <param name="y">To be added...</param>
+        /// <param name="y">...Description to be added...</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="x">To be added...</param>
+        /// <param name="x">...Description to be added...</param>
         public void MoveToAndWaitUntilCondition<TResult>(int x, int y, WebDriverWait wait,
             Func<IWebDriver, TResult> condition,
             Logger logger = null)
@@ -105,7 +105,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
@@ -113,7 +113,7 @@ namespace Drelanium.WebDriver
         ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
-        /// <param name="point">To be added...</param>
+        /// <param name="point">...Description to be added...</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         public void MoveToAndWaitUntilCondition<TResult>(Point point, WebDriverWait wait,
             Func<IWebDriver, TResult> condition,

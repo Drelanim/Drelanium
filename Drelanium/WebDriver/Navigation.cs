@@ -14,7 +14,7 @@ namespace Drelanium.WebDriver
     public class Navigation : INavigation
     {
         /// <summary>
-        ///     <see cref="Navigation" />
+        ///     <inheritdoc cref="Navigation" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Navigation(IWebDriver driver)
@@ -43,7 +43,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="INavigation.Forward()" />
         /// </summary>
         public void Forward()
         {
@@ -97,10 +97,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="INavigation.Forward()" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="Forward()" />
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -116,11 +115,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="GoToUrl(string)" />
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -136,11 +134,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="GoToUrl(string)" />
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -152,12 +149,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <inheritdoc cref="GoToUrl(string)" />
-        /// <param name="url">To be added...</param>
-        /// <param name="checkHttpResponse">To be added...</param>
+        /// <param name="url">
+        ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
+        /// </param>
+        /// <param name="checkHttpResponse">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -174,10 +172,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <inheritdoc cref="GoToUrl(string)" />
         /// <param name="url">The URL to load.</param>
         /// <param name="loadWithoutCookies">To visit the url without cookies.</param>
         /// <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
@@ -203,10 +200,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="INavigation.Refresh()" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        /// <inheritdoc cref="Refresh()" />
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during

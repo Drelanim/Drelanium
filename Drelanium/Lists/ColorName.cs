@@ -6,21 +6,21 @@
 namespace Drelanium.Lists
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class ColorName
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="name">To be added...</param>
+        /// <param name="name">...Description to be added...</param>
         public ColorName(string name)
         {
             Name = name;
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Name { get; }
 

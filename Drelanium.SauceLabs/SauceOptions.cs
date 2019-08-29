@@ -20,10 +20,12 @@ using OpenQA.Selenium.Safari;
 namespace Drelanium.SauceLabs
 {
     /// <summary>
+    ///     TO be addedd..
     /// </summary>
     public class SauceOptions
     {
         /// <summary>
+        ///     ...Description to be added...
         /// </summary>
         public SauceOptions()
         {
@@ -31,6 +33,7 @@ namespace Drelanium.SauceLabs
         }
 
         /// <summary>
+        ///     To be addedd...
         /// </summary>
         public Dictionary<string, object> Options { get; }
 
@@ -629,8 +632,8 @@ namespace Drelanium.SauceLabs
 
         /// <summary>
         /// </summary>
-        /// <param name="driverOptions">To be added...</param>
-        /// <exception cref="ArgumentException">To be added...</exception>
+        /// <param name="driverOptions">...Description to be added...</param>
+        /// <exception cref="ArgumentException">...Description to be added...</exception>
         public void AddToDriverOptions(DriverOptions driverOptions)
         {
             switch (driverOptions)
@@ -674,8 +677,8 @@ namespace Drelanium.SauceLabs
 
         /// <summary>
         /// </summary>
-        /// <param name="configurationRoot">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="configurationRoot">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public SauceOptions Bind(IConfigurationRoot configurationRoot)
         {
             configurationRoot.Bind(this);
@@ -685,8 +688,8 @@ namespace Drelanium.SauceLabs
 
         /// <summary>
         /// </summary>
-        /// <param name="jsonPath">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="jsonPath">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public SauceOptions Bind(string jsonPath)
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);

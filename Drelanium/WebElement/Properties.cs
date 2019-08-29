@@ -5,12 +5,12 @@ using OpenQA.Selenium;
 namespace Drelanium.WebElement
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class Properties
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Properties(IWebElement element)
@@ -19,7 +19,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public bool Disabled
         {
@@ -28,7 +28,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string InnerText
         {
@@ -37,7 +37,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public object Value
         {
@@ -46,12 +46,12 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         private IWebElement Element { get; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public object Get(string propertyName)
         {
@@ -59,7 +59,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public object Get(ElementPropertyName elementPropertyName)
         {
@@ -67,7 +67,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Set(string propertyName, object propertyValue)
         {
@@ -76,7 +76,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Set(ElementPropertyName elementPropertyName, object propertyValue)
         {

@@ -9,7 +9,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class ActionMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static ExtendedActions Actions(this IWebElement element)
@@ -18,11 +18,11 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
+        /// <param name="offsetX">...Description to be added...</param>
+        /// <param name="offsetY">...Description to be added...</param>
         public static IWebElement DragAndDropToOffset(this IWebElement element, int offsetX, int offsetY)
         {
             element
@@ -34,10 +34,10 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="theKey">To be added...</param>
+        /// <param name="theKey">...Description to be added...</param>
         public static void KeyDownAndUp(this IWebElement element, string theKey)
         {
             element
@@ -48,7 +48,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement MoveMouseOver(this IWebElement element)
@@ -62,7 +62,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement MoveMouseOverAndClick(this IWebElement element)
@@ -77,11 +77,11 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
+        /// <param name="offsetX">...Description to be added...</param>
+        /// <param name="offsetY">...Description to be added...</param>
         public static IWebElement RelativeClick(this IWebElement element, int offsetX, int offsetY)
         {
             element
@@ -95,11 +95,11 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
+        /// <param name="offsetX">...Description to be added...</param>
+        /// <param name="offsetY">...Description to be added...</param>
         public static IWebElement RelativeRightClick(this IWebElement element, int offsetX, int offsetY)
         {
             element
@@ -113,7 +113,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebElement RightClick(this IWebElement element)

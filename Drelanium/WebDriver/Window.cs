@@ -9,7 +9,7 @@ namespace Drelanium.WebDriver
     public class Window : IWindow
     {
         /// <summary>
-        ///     <see cref="Window" />
+        ///     <inheritdoc cref="Window" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Window(IWebDriver driver)
@@ -19,41 +19,45 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     <inheritdoc cref="IWindow" />
         /// </summary>
-        /// <inheritdoc cref="IWindow" />
         private IWindow WindowImplementation { get; }
 
         /// <summary>
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
-        /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
+
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWindow.Maximize()" />
         /// </summary>
         public void Maximize()
         {
             WindowImplementation.Maximize();
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWindow.Minimize()" />
         /// </summary>
         public void Minimize()
         {
             WindowImplementation.Minimize();
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWindow.FullScreen()" />
         /// </summary>
         public void FullScreen()
         {
             WindowImplementation.FullScreen();
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWindow.Position" />
         /// </summary>
         public Point Position
         {
@@ -62,7 +66,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="IWindow.Size" />
         /// </summary>
         public Size Size
         {

@@ -42,7 +42,7 @@ namespace Drelanium.WebDriverSetup
     }
 
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class DriverConfiguration
     {
@@ -69,45 +69,45 @@ namespace Drelanium.WebDriverSetup
         public ExecutionMode ExecutionMode { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public UriBuilder SeleniumGridHubUrl { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ChromeConfiguration ChromeConfiguration { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public EdgeConfiguration EdgeConfiguration { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public FirefoxConfiguration FirefoxConfiguration { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public InternetExplorerConfiguration InternetExplorerConfiguration { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public SafariConfiguration SafariConfiguration { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public OperaConfiguration OperaConfiguration { get; set; }
 
 
         /// <summary>
         /// </summary>
-        /// <param name="configurationRoot">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="configurationRoot">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public DriverConfiguration Bind(IConfigurationRoot configurationRoot)
         {
             configurationRoot.Bind(this);
@@ -117,8 +117,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="jsonPath">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="jsonPath">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public DriverConfiguration Bind(string jsonPath)
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
@@ -126,7 +126,7 @@ namespace Drelanium.WebDriverSetup
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public DriverOptions BuildDriverOptions()
         {

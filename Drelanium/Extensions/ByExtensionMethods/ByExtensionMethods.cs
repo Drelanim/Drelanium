@@ -11,7 +11,9 @@ namespace Drelanium.Extensions.ByExtensionMethods
         /// <summary>
         ///     The By method that was used to create the By object.
         /// </summary>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         public static string ByType(this By locator)
         {
             var s = locator.ToString().Remove(locator.ToString().IndexOf(":"));
@@ -22,7 +24,9 @@ namespace Drelanium.Extensions.ByExtensionMethods
         /// <summary>
         ///     The string value that was used to create the By object.
         /// </summary>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         public static string ByValue(this By locator)
         {
             return locator.ToString().Substring(locator.ToString().IndexOf(":") + 2);

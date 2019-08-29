@@ -13,7 +13,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
     public static class HttpWebRequestMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -31,7 +31,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">

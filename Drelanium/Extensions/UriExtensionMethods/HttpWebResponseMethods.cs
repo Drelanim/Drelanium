@@ -11,16 +11,16 @@ namespace Drelanium.Extensions.UriExtensionMethods
     public static class HttpWebResponseMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="suppressExceptions">To be added...</param>
+        /// <param name="suppressExceptions">...Description to be added...</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        /// <param name="url">To be added...</param>
+        /// <param name="url">...Description to be added...</param>
         public static HttpWebResponse HttpWebResponse(this Uri url, bool suppressExceptions = false,
             Logger logger = null)
         {

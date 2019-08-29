@@ -5,30 +5,30 @@ using OpenQA.Selenium.Opera;
 namespace Drelanium.WebDriverSetup
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class OperaConfiguration
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public OperaOptions InitialOptions { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string[] Arguments { get; set; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string OperaDriverDirectory { get; set; }
 
 
         /// <summary>
         /// </summary>
-        /// <param name="configurationRoot">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="configurationRoot">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public OperaConfiguration Bind(IConfigurationRoot configurationRoot)
         {
             configurationRoot.Bind(this);
@@ -38,8 +38,8 @@ namespace Drelanium.WebDriverSetup
 
         /// <summary>
         /// </summary>
-        /// <param name="jsonPath">To be added...</param>
-        /// <returns>To be added...</returns>
+        /// <param name="jsonPath">...Description to be added...</param>
+        /// <returns>...Description to be added...</returns>
         public OperaConfiguration Bind(string jsonPath)
         {
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
@@ -47,7 +47,7 @@ namespace Drelanium.WebDriverSetup
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public OperaOptions BuildOptions()
         {

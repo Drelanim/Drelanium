@@ -13,7 +13,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     public static class UntilElementMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -44,7 +44,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         }
 
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -53,7 +53,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     the method exeuction.
         /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="webElementAttributeName">To be added...</param>
+        /// <param name="webElementAttributeName">...Description to be added...</param>
         /// <param name="condition">
         ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
         ///     wait.
@@ -65,8 +65,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return wait.UntilElementAttribute(element, webElementAttributeName.AttributeName, condition, logger);
         }
 
+
         /// <summary>
-        ///     To be added..
+        ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -81,7 +82,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// </param>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         public static bool UntilElementAttribute(this WebDriverWait wait, ISearchContext searchContext, By locator,
             string attributeName, Func<string, bool> condition, Logger logger = null)
         {
@@ -89,7 +92,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
                 $"Waiting for ({locator}) element's ({attributeName}) attribute to be changed according to condition.");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) ({attributeName}) attribute to be changed according to condition";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) ({attributeName}) attribute to be changed according to condition";
             var result = wait.Until(driver =>
                 condition(searchContext.FindElement(locator).GetAttribute(attributeName)));
 
@@ -98,18 +101,21 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="webElementAttributeName">To be added...</param>
+        /// <param name="webElementAttributeName">...Description to be added...</param>
         /// <param name="condition">
         ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -123,13 +129,16 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
                 logger);
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> is not displayed or does not exist anymore.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -141,7 +150,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             logger?.Information($"Waiting for ({locator}) element to disappear.");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) disappears";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) disappears";
             wait.Until(driver =>
             {
                 try
@@ -157,13 +166,16 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             logger?.Information("Wait is finished, condition is met!");
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> does not exist anymore.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -174,7 +186,8 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         {
             logger?.Information($"Waiting for ({locator}) element to exists.");
 
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) exists";
+            wait.Message +=
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) exists";
             var result = wait.Until(driver => searchContext.FindElement(locator));
 
             logger?.Information("Wait is finished, condition is met!");
@@ -182,8 +195,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become displayed.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -205,8 +219,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become displayed.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -216,14 +231,16 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         public static bool UntilElementIsDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
             Logger logger = null)
         {
             logger?.Information($"Waiting for ({locator}) element to become displayed.");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is displayed";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is displayed";
             var result = wait.Until(driver => searchContext.FindElement(locator).Displayed);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -231,8 +248,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become enabled.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -254,8 +272,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become displayed.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -265,14 +284,16 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         public static bool UntilElementIsEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
             Logger logger = null)
         {
             logger?.Information($"Waiting for ({locator}) element to become not displayed.");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is enabled";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is enabled";
             var result = wait.Until(driver => searchContext.FindElement(locator).Enabled);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -280,8 +301,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become not displayed.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -304,8 +326,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become not displayed.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -315,14 +338,16 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
             Logger logger = null)
         {
             logger?.Information($"Waiting for ({locator}) element to become not displayed.");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is not displayed";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is not displayed";
             var result = wait.Until(driver => !searchContext.FindElement(locator).Displayed);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -330,8 +355,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become not enabled.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -353,8 +379,9 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
             return result;
         }
 
+
         /// <summary>
-        ///     To be added...
+        ///     Waits, until the <see cref="IWebElement" /> has become not enabled.
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -364,14 +391,16 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        /// <param name="locator">The locating mechanism to use.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
         public static bool UntilElementIsNotEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
             Logger logger = null)
         {
             logger?.Information($"Waiting for ({locator}) element to become disabled.");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located by ({locator}) is not enabled";
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is not enabled";
             var result = wait.Until(driver => !searchContext.FindElement(locator).Enabled);
 
             logger?.Information("Wait is finished, condition is met!");

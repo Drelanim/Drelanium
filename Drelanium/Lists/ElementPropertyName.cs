@@ -4,21 +4,21 @@
 namespace Drelanium.Lists
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class ElementPropertyName
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="propertyName">To be added...</param>
+        /// <param name="propertyName">...Description to be added...</param>
         public ElementPropertyName(string propertyName)
         {
             PropertyName = propertyName;
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string PropertyName { get; }
 

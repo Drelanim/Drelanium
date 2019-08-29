@@ -12,10 +12,10 @@ namespace Drelanium.Extensions.UriExtensionMethods
     public static class HttpWebRequestMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        /// <param name="url">     To be added... </param>
+        /// <param name="url">     ...Description to be added... </param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during

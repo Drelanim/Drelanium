@@ -8,7 +8,7 @@ using OpenQA.Selenium;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public enum SeleniumLogType
     {
@@ -30,7 +30,7 @@ namespace Drelanium.WebDriver
     public class LogsManager : ILogs
     {
         /// <summary>
-        ///     <see cref="LogsManager" />
+        ///     <inheritdoc cref="LogsManager" />
         /// </summary>
         public LogsManager(IOptions options)
         {
@@ -38,33 +38,37 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     <inheritdoc cref="ILogs" />
         /// </summary>
-        /// <inheritdoc cref="ILogs" />
         private ILogs LogsImplementation { get; }
 
+
         /// <summary>
+        ///     <inheritdoc cref="LogType.Browser" />
         /// </summary>
-        /// <inheritdoc cref="LogType.Browser" />
         public SeleniumLogs BrowserLogs => new SeleniumLogs(this, LogType.Browser);
 
         /// <summary>
+        ///     <inheritdoc cref="LogType.Client" />
         /// </summary>
-        /// <inheritdoc cref="LogType.Client" />
         public SeleniumLogs ClientLogs => new SeleniumLogs(this, LogType.Client);
 
+
         /// <summary>
+        ///     <inheritdoc cref="LogType.Driver" />
         /// </summary>
-        /// <inheritdoc cref="LogType.Driver" />
         public SeleniumLogs DriverLogs => new SeleniumLogs(this, LogType.Driver);
 
-        /// <summary>
-        /// </summary>
-        /// <inheritdoc cref="LogType.Profiler" />
-        public SeleniumLogs ProfilerLogs => new SeleniumLogs(this, LogType.Profiler);
 
         /// <summary>
+        ///     <inheritdoc cref="LogType.Profiler" />
         /// </summary>
-        /// <inheritdoc cref="LogType.Server" />
+        public SeleniumLogs ProfilerLogs => new SeleniumLogs(this, LogType.Profiler);
+
+
+        /// <summary>
+        ///     <inheritdoc cref="LogType.Server" />
+        /// </summary>
         public SeleniumLogs ServerLogs => new SeleniumLogs(this, LogType.Server);
 
 
@@ -99,7 +103,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ReadOnlyCollection<LogEntry> GetLog(string logKind)
         {
@@ -114,7 +118,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ReadOnlyCollection<string> AvailableLogTypes
         {
@@ -132,7 +136,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="seleniumLogType">The log for which to retrieve the log entries.</param>
         public ReadOnlyCollection<LogEntry> GetLog(SeleniumLogType seleniumLogType)
@@ -141,7 +145,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="logKind">
         ///     The log for which to retrieve the log entries. Log types can be found in the
@@ -153,7 +157,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="seleniumLogType">The log for which to retrieve the log entries.</param>
         public bool HasLog(SeleniumLogType seleniumLogType)
@@ -163,7 +167,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="seleniumLogType">The log for which to retrieve the log entries.</param>
         private static string LogKind(SeleniumLogType seleniumLogType)

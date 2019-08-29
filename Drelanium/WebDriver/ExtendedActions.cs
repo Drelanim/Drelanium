@@ -12,12 +12,12 @@ using Serilog.Events;
 namespace Drelanium.WebDriver
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class ExtendedActions
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ExtendedActions(IWebDriver driver)
         {
@@ -26,24 +26,26 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
-        /// <inheritdoc cref="IWebDriver" />
+
         private IWebDriver Driver { get; }
 
         /// <summary>
+        ///     <inheritdoc cref="OpenQA.Selenium.Interactions.Actions" />
         /// </summary>
-        /// <inheritdoc cref="OpenQA.Selenium.Interactions.Actions" />
+
         private Actions Actions { get; set; }
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         private string ChainedActions { get; set; }
 
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="logger">
@@ -88,9 +90,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="onElement">To be added...</param>
+        /// <param name="onElement">...Description to be added...</param>
         public ExtendedActions Click(IWebElement onElement)
         {
             ChainedActions += $"Click(onElement: {onElement}), ";
@@ -99,10 +101,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="onElement">To be added...</param>
-        /// <param name="elementPoint">To be added...</param>
+        /// <param name="onElement">...Description to be added...</param>
+        /// <param name="elementPoint">...Description to be added...</param>
         public ExtendedActions Click(IWebElement onElement, ElementPoint elementPoint)
         {
             MoveToElement(onElement, elementPoint);
@@ -111,7 +113,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ExtendedActions Click()
         {
@@ -121,9 +123,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="onElement">To be added...</param>
+        /// <param name="onElement">...Description to be added...</param>
         public ExtendedActions ClickAndHold(IWebElement onElement)
         {
             ChainedActions += $"ClickAndHold(onElement: {onElement}), ";
@@ -132,7 +134,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ExtendedActions ClickAndHold()
         {
@@ -142,9 +144,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="onElement">To be added...</param>
+        /// <param name="onElement">...Description to be added...</param>
         public ExtendedActions ContextClick(IWebElement onElement)
         {
             ChainedActions += $"ContextClick(onElement: {onElement}), ";
@@ -153,7 +155,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ExtendedActions ContextClick()
         {
@@ -163,10 +165,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="onElement">
-        ///     To be added...
+        ///     ...Description to be added...
         /// </param>
         public ExtendedActions DoubleClick(IWebElement onElement)
         {
@@ -176,7 +178,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ExtendedActions DoubleClick()
         {
@@ -186,10 +188,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="source">To be added...</param>
-        /// <param name="target">To be added...</param>
+        /// <param name="source">...Description to be added...</param>
+        /// <param name="target">...Description to be added...</param>
         public ExtendedActions DragAndDrop(IWebElement source, IWebElement target)
         {
             ChainedActions += $"DragAndDrop(source: {source}, target: {target}), ";
@@ -198,11 +200,11 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="source">To be added...</param>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
+        /// <param name="source">...Description to be added...</param>
+        /// <param name="offsetX">...Description to be added...</param>
+        /// <param name="offsetY">...Description to be added...</param>
         public ExtendedActions DragAndDropToOffset(IWebElement source, int offsetX, int offsetY)
         {
             ChainedActions += $"DragAndDropToOffset(source: {source}, offsetX: {offsetX}, offsetY: {offsetY}), ";
@@ -211,9 +213,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="theKey">To be added...</param>
+        /// <param name="theKey">...Description to be added...</param>
         public ExtendedActions KeyDown(string theKey)
         {
             ChainedActions += $"KeyDown(theKey: \"{theKey}\"), ";
@@ -222,10 +224,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="element">To be added...</param>
-        /// <param name="theKey">To be added...</param>
+        /// <param name="element">...Description to be added...</param>
+        /// <param name="theKey">...Description to be added...</param>
         public ExtendedActions KeyDown(IWebElement element, string theKey)
         {
             ChainedActions += $"KeyDown(element: {element}, theKey: \"{theKey}\"";
@@ -234,9 +236,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="theKey">To be added...</param>
+        /// <param name="theKey">...Description to be added...</param>
         public ExtendedActions KeyUp(string theKey)
         {
             ChainedActions += $"KeyDown(theKey: \"{theKey}\"), ";
@@ -245,10 +247,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="element">To be added...</param>
-        /// <param name="theKey">To be added...</param>
+        /// <param name="element">...Description to be added...</param>
+        /// <param name="theKey">...Description to be added...</param>
         public ExtendedActions KeyUp(IWebElement element, string theKey)
         {
             ChainedActions += $"KeyUp(element: {element}, theKey: \"{theKey}\"), ";
@@ -257,10 +259,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
+        /// <param name="offsetX">...Description to be added...</param>
+        /// <param name="offsetY">...Description to be added...</param>
         public ExtendedActions MoveByOffset(int offsetX, int offsetY)
         {
             ChainedActions += $"MoveByOffset(offsetX: {offsetX}, offsetY: {offsetY}), ";
@@ -269,10 +271,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="x">To be added...</param>
-        /// <param name="y">To be added...</param>
+        /// <param name="x">...Description to be added...</param>
+        /// <param name="y">...Description to be added...</param>
         public ExtendedActions MoveTo(int x, int y)
         {
             ChainedActions += $"MoveTo(x: {x}, y: {y}), ";
@@ -281,19 +283,19 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="point">To be added...</param>
+        /// <param name="point">...Description to be added...</param>
         public ExtendedActions MoveTo(Point point)
         {
             return MoveTo(point.X, point.Y);
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="toElement">
-        ///     To be added...
+        ///     ...Description to be added...
         /// </param>
         public ExtendedActions MoveToElement(IWebElement toElement)
         {
@@ -303,11 +305,11 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="toElement">To be added...</param>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
+        /// <param name="toElement">...Description to be added...</param>
+        /// <param name="offsetX">...Description to be added...</param>
+        /// <param name="offsetY">...Description to be added...</param>
         public ExtendedActions MoveToElement(IWebElement toElement, int offsetX, int offsetY)
         {
             ChainedActions += $"MoveToElement(toElement: {toElement}, offsetX: {offsetX}, offsetY: {offsetY}), ";
@@ -316,12 +318,12 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="toElement">To be added...</param>
-        /// <param name="offsetX">To be added...</param>
-        /// <param name="offsetY">To be added...</param>
-        /// <param name="offsetOrigin">To be added...</param>
+        /// <param name="toElement">...Description to be added...</param>
+        /// <param name="offsetX">...Description to be added...</param>
+        /// <param name="offsetY">...Description to be added...</param>
+        /// <param name="offsetOrigin">...Description to be added...</param>
         public ExtendedActions MoveToElement(IWebElement toElement, int offsetX, int offsetY,
             MoveToElementOffsetOrigin offsetOrigin)
         {
@@ -332,19 +334,19 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="toElement">To be added...</param>
-        /// <param name="toElementPoint">To be added...</param>
+        /// <param name="toElement">...Description to be added...</param>
+        /// <param name="toElementPoint">...Description to be added...</param>
         public ExtendedActions MoveToElement(IWebElement toElement, ElementPoint toElementPoint)
         {
             return MoveTo(toElement.Location().Point(toElementPoint));
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="onElement">To be added...</param>
+        /// <param name="onElement">...Description to be added...</param>
         public ExtendedActions Release(IWebElement onElement)
         {
             ChainedActions += $"Release(onElement: {onElement}), ";
@@ -353,7 +355,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public ExtendedActions Release()
         {
@@ -363,9 +365,9 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="keysToSend">To be added...</param>
+        /// <param name="keysToSend">...Description to be added...</param>
         public ExtendedActions SendKeys(string keysToSend)
         {
             ChainedActions += $"SendKeys(keysToSend: \"{keysToSend}\"), ";
@@ -374,10 +376,10 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
-        /// <param name="element">To be added...</param>
-        /// <param name="keysToSend">To be added...</param>
+        /// <param name="element">...Description to be added...</param>
+        /// <param name="keysToSend">...Description to be added...</param>
         public ExtendedActions SendKeys(IWebElement element, string keysToSend)
         {
             ChainedActions += $"SendKeys(element: {element}, keysToSend: \"{keysToSend}\"), ";

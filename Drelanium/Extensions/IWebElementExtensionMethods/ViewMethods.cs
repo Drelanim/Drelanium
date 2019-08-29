@@ -8,12 +8,12 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class ViewMethods
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="behavior">To be added...</param>
-        /// <param name="block">To be added...</param>
-        /// <param name="inline">To be added...</param>
+        /// <param name="behavior">...Description to be added...</param>
+        /// <param name="block">...Description to be added...</param>
+        /// <param name="inline">...Description to be added...</param>
         public static IWebElement ScrollIntoView(this IWebElement element, string behavior = "auto",
             string block = "center", string inline = "center")
         {

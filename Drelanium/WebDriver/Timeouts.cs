@@ -9,7 +9,7 @@ namespace Drelanium.WebDriver
     public class Timeouts : ITimeouts
     {
         /// <summary>
-        ///     <see cref="Timeouts" />
+        ///     <inheritdoc cref="Timeouts" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         public Timeouts(IWebDriver driver)

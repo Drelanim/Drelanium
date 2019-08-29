@@ -5,12 +5,12 @@ using OpenQA.Selenium;
 namespace Drelanium.WebElement
 {
     /// <summary>
-    ///     To be added...
+    ///     ...Description to be added...
     /// </summary>
     public class Style
     {
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Style(IWebElement element)
@@ -19,12 +19,12 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         private IWebElement Element { get; }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Get(string stylePropertyName)
         {
@@ -33,7 +33,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string Get(ElementStylePropertyName elementStylePropertyName)
         {
@@ -41,7 +41,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string GetValue(string stylePropertyName)
         {
@@ -49,7 +49,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public string GetValue(ElementStylePropertyName elementStylePropertyName)
         {
@@ -57,7 +57,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Remove(string stylePropertyName)
         {
@@ -65,7 +65,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Remove(ElementStylePropertyName elementStylePropertyName)
         {
@@ -73,7 +73,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Set(string stylePropertyName, object stylePropertyValue)
         {
@@ -82,7 +82,7 @@ namespace Drelanium.WebElement
         }
 
         /// <summary>
-        ///     To be added...
+        ///     ...Description to be added...
         /// </summary>
         public void Set(ElementStylePropertyName elementStylePropertyName, object stylePropertyValue)
         {
