@@ -76,6 +76,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
             return element;
         }
 
+
         /// <summary>
         ///     ...Description to be added...
         /// </summary>

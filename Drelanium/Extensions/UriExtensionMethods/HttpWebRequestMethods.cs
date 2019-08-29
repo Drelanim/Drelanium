@@ -7,7 +7,6 @@ namespace Drelanium.Extensions.UriExtensionMethods
 {
     /// <summary>
     ///     Extension methods for <see cref="Uri" /> types.
-    ///     ///
     /// </summary>
     public static class HttpWebRequestMethods
     {

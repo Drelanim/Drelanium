@@ -8,7 +8,7 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.6.0</PackageVersion>
+    <PackageVersion>1.7.0</PackageVersion>
     <PackageId>Drelanium</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
@@ -20,7 +20,7 @@
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
-    <PackageReleaseNotes>Added Microsoft Binder and Json</PackageReleaseNotes>
+    <PackageReleaseNotes>Additional methods for Submit and Click</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols></IncludeSymbols>

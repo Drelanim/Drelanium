@@ -54,7 +54,7 @@ namespace Drelanium.SearchContext
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -104,7 +104,7 @@ namespace Drelanium.SearchContext
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
@@ -126,7 +126,7 @@ namespace Drelanium.SearchContext
 
         /// <summary>
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
-        ///     <para>Method is repeated until the element is successfully found and the condition is met.</para>
+        ///     <para>Method is repeated until the element is successfully found and the given condition is met.</para>
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
@@ -138,13 +138,13 @@ namespace Drelanium.SearchContext
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebElement FindElement(By locator, TimeSpan timeout, Func<IWebDriver, IWebElement> condition,
+        public IWebElement FindElement<TResult>(By locator, TimeSpan timeout, Func<IWebDriver, TResult> condition,
             string timeoutMessage = "", Type[] ignoredExceptionTypes = null, Logger logger = null)
         {
             var result = FindElement(locator, timeout, logger);
