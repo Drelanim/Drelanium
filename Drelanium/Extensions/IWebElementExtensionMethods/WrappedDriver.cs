@@ -9,7 +9,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
     public static class WrappedDriver
     {
         /// <summary>
-        ///     To be added...
+        ///     <inheritdoc cref="RemoteWebElement.WrappedDriver" />
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static IWebDriver Driver(this IWebElement element)

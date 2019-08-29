@@ -124,7 +124,7 @@ namespace Drelanium.Extensions.IWebDriverExtensionMethods
 
         /// <summary>
         ///     <inheritdoc cref="IWebDriver.Quit()" /> Logs the action.
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =

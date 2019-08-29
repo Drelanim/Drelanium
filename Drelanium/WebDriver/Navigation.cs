@@ -43,7 +43,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public void Forward()
         {
@@ -80,7 +80,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.Back()" />
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
@@ -89,20 +89,16 @@ namespace Drelanium.WebDriver
         /// </param>
         public void Back(Logger logger)
         {
-            {
-                logger?.Information("Attempting to navigate back.");
-            }
+            logger?.Information("Attempting to navigate back.");
 
             Back();
 
-            {
-                logger?.Information("Navigated back.");
-            }
+            logger?.Information("Navigated back.");
         }
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="Forward()" />
         /// <param name="logger">
@@ -112,20 +108,16 @@ namespace Drelanium.WebDriver
         /// </param>
         public void Forward(Logger logger)
         {
-            {
-                logger?.Information("Attempting to navigate forward.");
-            }
+            logger?.Information("Attempting to navigate forward.");
 
             Forward();
 
-            {
-                logger?.Information("Navigated forward.");
-            }
+            logger?.Information("Navigated forward.");
         }
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="GoToUrl(string)" />
         /// <param name="url">To be added...</param>
@@ -136,20 +128,16 @@ namespace Drelanium.WebDriver
         /// </param>
         public void GoToUrl(string url, Logger logger)
         {
-            {
-                logger?.Information($"Attempting to navigate to url ({url}).");
-            }
+            logger?.Information($"Attempting to navigate to url ({url}).");
 
             GoToUrl(url);
 
-            {
-                logger?.Information($"Navigated to url ({url}).");
-            }
+            logger?.Information($"Navigated to url ({url}).");
         }
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="GoToUrl(string)" />
         /// <param name="url">To be added...</param>
@@ -216,7 +204,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="Refresh()" />
         /// <param name="logger">
@@ -226,15 +214,11 @@ namespace Drelanium.WebDriver
         /// </param>
         public void Refresh(Logger logger)
         {
-            {
-                logger?.Information($"Refreshing the current page ({Driver.Url}).");
-            }
+            logger?.Information($"Refreshing the current page ({Driver.Url}).");
 
             Refresh();
 
-            {
-                logger?.Information($"The current page ({Driver.Url}) has been refreshed.");
-            }
+            logger?.Information($"The current page ({Driver.Url}) has been refreshed.");
         }
     }
 }

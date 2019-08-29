@@ -1919,12 +1919,12 @@
     </member>
     <member name="M:Drelanium.SearchContext.Search.FindElement(OpenQA.Selenium.By)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.SearchContext.Search.FindElements(OpenQA.Selenium.By)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member
@@ -2362,27 +2362,27 @@
     </member>
     <member name="M:Drelanium.WebDriver.Alert.Dismiss">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Alert.Accept">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Alert.SendKeys(System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Alert.SetAuthenticationCredentials(System.String,System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="P:Drelanium.WebDriver.Alert.Text">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="T:Drelanium.WebDriver.Capabilities">
@@ -2523,22 +2523,22 @@
     </member>
     <member name="M:Drelanium.WebDriver.Capabilities.HasCapability(System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Capabilities.GetCapability(System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="P:Drelanium.WebDriver.Capabilities.Item(System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Capabilities.ToString">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="T:Drelanium.WebDriver.CookieJar">
@@ -2564,32 +2564,32 @@
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.AddCookie(OpenQA.Selenium.Cookie)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.GetCookieNamed(System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.DeleteCookie(OpenQA.Selenium.Cookie)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.DeleteCookieNamed(System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.DeleteAllCookies">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="P:Drelanium.WebDriver.CookieJar.AllCookies">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.CookieJar.AddCookie(OpenQA.Selenium.Cookie,Serilog.Core.Logger)">
@@ -3115,12 +3115,12 @@
     </member>
     <member name="M:Drelanium.WebDriver.LogsManager.GetLog(System.String)">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="P:Drelanium.WebDriver.LogsManager.AvailableLogTypes">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.LogsManager.GetLog(Drelanium.WebDriver.SeleniumLogType)">
@@ -3315,7 +3315,7 @@
     </member>
     <member name="M:Drelanium.WebDriver.Navigation.Forward">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Navigation.GoToUrl(System.String)">
@@ -3850,27 +3850,27 @@
     </member>
     <member name="M:Drelanium.WebDriver.Window.Maximize">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Window.Minimize">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="M:Drelanium.WebDriver.Window.FullScreen">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="P:Drelanium.WebDriver.Window.Position">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="P:Drelanium.WebDriver.Window.Size">
       <summary>
-        <inheritdoc>To be added...</inheritdoc>
+        To be added...
       </summary>
     </member>
     <member name="T:Drelanium.WebElement.Attributes">

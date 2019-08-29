@@ -29,7 +29,7 @@ namespace Drelanium.SearchContext
 
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public IWebElement FindElement(By by)
         {
@@ -37,7 +37,7 @@ namespace Drelanium.SearchContext
         }
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public ReadOnlyCollection<IWebElement> FindElements(By by)
         {
@@ -69,7 +69,7 @@ namespace Drelanium.SearchContext
 
         /// <summary>
         ///     To Be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <param name="by">To be added...</param>
         /// <param name="logger">
@@ -147,7 +147,7 @@ namespace Drelanium.SearchContext
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="FindElements(By)" />
         /// <param name="by">To be added...</param>

@@ -105,7 +105,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="ActiveElement()" />
         /// <param name="logger">
@@ -122,7 +122,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     To be added..
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="Alert()" />
         /// <param name="logger">
@@ -139,7 +139,7 @@ namespace Drelanium.WebDriver
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="DefaultContent()" />
         /// <param name="logger">
@@ -166,57 +166,49 @@ namespace Drelanium.WebDriver
         /// </param>
         public IWebDriver FirstWindow(Logger logger = null)
         {
-            {
-                logger?.Information("Switching to the 1st window.");
-            }
+            logger?.Information("Switching to the 1st window.");
 
             return Window(Driver.WindowHandles[0]);
         }
 
         /// <summary>
         ///     to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="Frame(int)" />
         /// <param name="frameIndex">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(int frameIndex, Logger logger)
         {
-            {
-                logger?.Information($"Switching to Frame({frameIndex}).");
-            }
+            logger?.Information($"Switching to Frame({frameIndex}).");
 
             return Frame(frameIndex);
         }
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="Frame(string)" />
         /// <param name="frameName">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(string frameName, Logger logger)
         {
-            {
-                logger?.Information($"Switching to Frame({frameName}).");
-            }
+            logger?.Information($"Switching to Frame({frameName}).");
 
             return Frame(frameName);
         }
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="Frame(IWebElement)" />
         /// <param name="frameElement">To be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         public IWebDriver Frame(IWebElement frameElement, Logger logger)
         {
-            {
-                logger?.Information($"Switching to Frame({frameElement}).");
-            }
+            logger?.Information($"Switching to Frame({frameElement}).");
 
             return Frame(frameElement);
         }
@@ -232,16 +224,14 @@ namespace Drelanium.WebDriver
         /// </param>
         public IWebDriver LastWindow(Logger logger = null)
         {
-            {
-                logger?.Information("Switching to the last window.");
-            }
+            logger?.Information("Switching to the last window.");
 
             return Window(Driver.WindowHandles[Driver.WindowHandles.Count - 1]);
         }
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="ParentFrame()" />
         /// <param name="logger">
@@ -251,16 +241,14 @@ namespace Drelanium.WebDriver
         /// </param>
         public IWebDriver ParentFrame(Logger logger)
         {
-            {
-                logger?.Information("Switching to ParentFrame.");
-            }
+            logger?.Information("Switching to ParentFrame.");
 
             return ParentFrame();
         }
 
         /// <summary>
         ///     To be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="Window(string)" />
         /// <param name="windowName">To be added...</param>
@@ -271,9 +259,7 @@ namespace Drelanium.WebDriver
         /// </param>
         public IWebDriver Window(string windowName, Logger logger)
         {
-            {
-                logger?.Information($"Switching to Window({windowName}).");
-            }
+            logger?.Information($"Switching to Window({windowName}).");
 
             return Window(windowName);
         }

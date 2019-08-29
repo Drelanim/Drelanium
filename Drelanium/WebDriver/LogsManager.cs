@@ -99,7 +99,7 @@ namespace Drelanium.WebDriver
 
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public ReadOnlyCollection<LogEntry> GetLog(string logKind)
         {
@@ -114,7 +114,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public ReadOnlyCollection<string> AvailableLogTypes
         {

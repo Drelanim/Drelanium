@@ -23,18 +23,20 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
         /// </summary>
         /// <inheritdoc cref="ICookieJar" />
         private ICookieJar CookieJarImplementation { get; }
 
         /// <summary>
+        ///     To be added...
         /// </summary>
         /// <inheritdoc cref="IWebDriver" />
         private IWebDriver Driver { get; }
 
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public void AddCookie(Cookie cookie)
         {
@@ -42,7 +44,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public Cookie GetCookieNamed(string name)
         {
@@ -50,7 +52,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public void DeleteCookie(Cookie cookie)
         {
@@ -58,7 +60,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public void DeleteCookieNamed(string name)
         {
@@ -66,7 +68,7 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public void DeleteAllCookies()
         {
@@ -74,11 +76,13 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
-        ///     <inheritdoc>To be added...</inheritdoc>
+        ///     To be added...
         /// </summary>
         public ReadOnlyCollection<Cookie> AllCookies => CookieJarImplementation.AllCookies;
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="AddCookie(Cookie)" />
         public void AddCookie(Cookie cookie, Logger logger)
@@ -108,6 +112,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="DeleteAllCookies()" />
         public void DeleteAllCookies(Logger logger)
@@ -129,6 +135,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="DeleteCookie(Cookie)" />
         public void DeleteCookie(Cookie cookie, Logger logger)
@@ -150,6 +158,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="DeleteCookieNamed(string)" />
         public void DeleteCookieNamed(string name, Logger logger)
@@ -183,6 +193,8 @@ namespace Drelanium.WebDriver
         }
 
         /// <summary>
+        ///     To be added...
+        ///     <para>Logs the event.</para>
         /// </summary>
         /// <inheritdoc cref="GetCookieNamed(string)" />
         public Cookie GetCookieNamed(string name, Logger logger)
