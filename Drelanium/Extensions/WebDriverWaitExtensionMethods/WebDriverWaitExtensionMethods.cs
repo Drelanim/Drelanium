@@ -11,7 +11,7 @@ using Serilog.Events;
 namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
 {
     /// <summary>
-    ///     to be added...
+    ///     ...Description to be added...
     /// </summary>
     public static class WebDriverWaitExtensionMethods
     {
@@ -33,6 +33,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// <returns></returns>
         public static TResult Until<TResult>(this WebDriverWait wait, Func<IWebDriver, TResult> condition,
             Logger logger)
+
         {
             logger?.Information("Commanded browser to wait for certain condition.");
 

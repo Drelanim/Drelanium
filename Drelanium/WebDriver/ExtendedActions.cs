@@ -70,7 +70,7 @@ namespace Drelanium.WebDriver
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">
-        ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
         /// <param name="logger">

@@ -49,7 +49,7 @@ namespace Drelanium.WebDriver
         /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="condition">
-        ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
         /// <param name="y">...Description to be added...</param>
@@ -91,7 +91,7 @@ namespace Drelanium.WebDriver
         /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="condition">
-        ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
         /// <param name="y">...Description to be added...</param>
@@ -110,7 +110,7 @@ namespace Drelanium.WebDriver
         /// </summary>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="condition">
-        ///     The <see cref="Func{IWebDriver,TResult}" />, that defines the condition until the browser must
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
         /// <param name="point">...Description to be added...</param>

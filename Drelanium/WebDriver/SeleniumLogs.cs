@@ -63,15 +63,15 @@ namespace Drelanium.WebDriver
         ///     ...Description to be added...
         /// </summary>
         /// <param name="logTimeFilter">
-        ///     The <see cref="Func{IWebDriver,TResult}" />, that is applied to filter the LogEntries by their TimeStamp
+        ///     The <see cref="Func{T,TResult}" />, that is applied to filter the LogEntries by their TimeStamp
         ///     property.
         /// </param>
         /// <param name="logLevelFilter">
-        ///     The <see cref="Func{IWebDriver,TResult}" />, that is applied to filter the LogEntries by their LogLevel
+        ///     The <see cref="Func{T,TResult}" />, that is applied to filter the LogEntries by their LogLevel
         ///     property.
         /// </param>
         /// <param name="logMessageFilter">
-        ///     The <see cref="Func{IWebDriver,TResult}" />, that is applied to filter the LogEntries by their Message
+        ///     The <see cref="Func{T,TResult}" />, that is applied to filter the LogEntries by their Message
         ///     property.
         /// </param>
         public SeleniumLogs Filter(Func<DateTime, bool> logTimeFilter = null,

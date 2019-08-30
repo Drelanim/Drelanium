@@ -8,6 +8,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
 
+// ReSharper disable CommentTypo
+// ReSharper disable IdentifierTypo
 // ReSharper disable UnusedMember.Global
 
 namespace Drelanium.WaitConditions
@@ -16,7 +18,7 @@ namespace Drelanium.WaitConditions
     ///     Collection of methods, that provides exit condition for the <see cref="WebDriverWait" /> type's Until(
     ///     <see cref="Func{T,TResult}" />) method.
     /// </summary>
-    public static class WebDriverWaitConditions
+    public static class WebDriverWaitCondition
     {
         /// <summary>
         ///     The Document.readyState property should be equal to the given value.
@@ -39,6 +41,75 @@ namespace Drelanium.WaitConditions
             Func<IWebElement, TResult> condition)
         {
             return driver => condition(element);
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, TResult> Element<TResult>(By locator, Func<IWebElement, TResult> condition)
+        {
+            return driver => condition(driver.FindElement(locator));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, TResult> Element<TResult>(ISearchContext searchContext, By locator,
+            Func<IWebElement, TResult> condition)
+        {
+            return driver => condition(searchContext.FindElement(locator));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given attribute should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(By locator, string attributeName,
+            Func<string, TResult> condition)
+        {
+            return driver => condition(driver.FindElement(locator).Attributes().Get(attributeName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given attribute should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(ISearchContext searchContext, By locator,
+            string attributeName, Func<string, TResult> condition)
+        {
+            return driver => condition(searchContext.FindElement(locator).Attributes().Get(attributeName));
         }
 
 
@@ -73,6 +144,43 @@ namespace Drelanium.WaitConditions
 
 
         /// <summary>
+        ///     The <see cref="IWebElement" />'s given attribute should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(By locator,
+            ElementAttributeName attributeName, Func<string, TResult> condition)
+        {
+            return driver => condition(driver.FindElement(locator).Attributes().Get(attributeName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given attribute should meet the given condition.
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(ISearchContext searchContext, By locator,
+            ElementAttributeName attributeName, Func<string, TResult> condition)
+        {
+            return driver => condition(searchContext.FindElement(locator).Attributes().Get(attributeName));
+        }
+
+
+        /// <summary>
         ///     The <see cref="IWebElement" />'s given property should meet the given condition.
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -90,6 +198,44 @@ namespace Drelanium.WaitConditions
         /// <summary>
         ///     The <see cref="IWebElement" />'s given property should meet the given condition.
         /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementProperty<TResult>(By locator, string propertyName,
+            Func<object, TResult> condition)
+        {
+            return driver => condition(driver.FindElement(locator).Properties().Get(propertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given property should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementProperty<TResult>(ISearchContext searchContext, By locator,
+            string propertyName,
+            Func<object, TResult> condition)
+        {
+            return driver => condition(searchContext.FindElement(locator).Properties().Get(propertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given property should meet the given condition.
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
@@ -99,6 +245,43 @@ namespace Drelanium.WaitConditions
             ElementPropertyName propertyName, Func<object, TResult> condition)
         {
             return driver => condition(element.Properties().Get(propertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given property should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementProperty<TResult>(By locator,
+            ElementPropertyName propertyName, Func<object, TResult> condition)
+        {
+            return driver => condition(driver.FindElement(locator).Properties().Get(propertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given property should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementProperty<TResult>(ISearchContext searchContext, By locator,
+            ElementPropertyName propertyName, Func<object, TResult> condition)
+        {
+            return driver => condition(searchContext.FindElement(locator).Properties().Get(propertyName));
         }
 
 
@@ -120,6 +303,43 @@ namespace Drelanium.WaitConditions
         /// <summary>
         ///     The <see cref="IWebElement" />'s given style property should meet the given condition.
         /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(By locator,
+            string stylePropertyName, Func<string, TResult> condition)
+        {
+            return driver => condition(driver.FindElement(locator).Style().Get(stylePropertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given style property should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(ISearchContext searchContext, By locator,
+            string stylePropertyName, Func<string, TResult> condition)
+        {
+            return driver => condition(searchContext.FindElement(locator).Style().Get(stylePropertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given style property should meet the given condition.
+        /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
@@ -129,6 +349,43 @@ namespace Drelanium.WaitConditions
             ElementStylePropertyName stylePropertyName, Func<string, TResult> condition)
         {
             return driver => condition(element.Style().Get(stylePropertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given style property should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(By locator,
+            ElementStylePropertyName stylePropertyName, Func<string, TResult> condition)
+        {
+            return driver => condition(driver.FindElement(locator).Style().Get(stylePropertyName));
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" />'s given style property should meet the given condition.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(ISearchContext searchContext, By locator,
+            ElementStylePropertyName stylePropertyName, Func<string, TResult> condition)
+        {
+            return driver => condition(searchContext.FindElement(locator).Style().Get(stylePropertyName));
         }
 
 
@@ -144,6 +401,35 @@ namespace Drelanium.WaitConditions
 
 
         /// <summary>
+        ///     The <see cref="IWebElement" /> should become Clickable(Displayed and Enabled).
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeClickable(By locator)
+        {
+            return driver => driver.FindElement(locator).Displayed && driver.FindElement(locator).Enabled;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become Clickable(Displayed and Enabled).
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeClickable(ISearchContext searchContext, By locator)
+        {
+            return driver => searchContext.FindElement(locator).Displayed && searchContext.FindElement(locator).Enabled;
+        }
+
+
+        /// <summary>
         ///     The <see cref="IWebElement" /> should become Displayed.
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -151,6 +437,35 @@ namespace Drelanium.WaitConditions
         public static Func<IWebDriver, bool> ElementToBecomeDisplayed(IWebElement element)
         {
             return driver => element.Displayed;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become Displayed.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeDisplayed(By locator)
+        {
+            return driver => driver.FindElement(locator).Displayed;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become Displayed.
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeDisplayed(ISearchContext searchContext, By locator)
+        {
+            return driver => searchContext.FindElement(locator).Displayed;
         }
 
 
@@ -166,6 +481,35 @@ namespace Drelanium.WaitConditions
 
 
         /// <summary>
+        ///     The <see cref="IWebElement" /> should become Enabled.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeEnabled(By locator)
+        {
+            return driver => driver.FindElement(locator).Enabled;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become Enabled.
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeEnabled(ISearchContext searchContext, By locator)
+        {
+            return driver => searchContext.FindElement(locator).Enabled;
+        }
+
+
+        /// <summary>
         ///     The <see cref="IWebElement" /> should become not Clickable(not Displayed or not Enabled).
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -173,6 +517,36 @@ namespace Drelanium.WaitConditions
         public static Func<IWebDriver, bool> ElementToBecomeNotClickable(IWebElement element)
         {
             return driver => !element.Displayed || !element.Enabled;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Clickable(not Displayed or not Enabled).
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotClickable(By locator)
+        {
+            return driver => !driver.FindElement(locator).Displayed || !driver.FindElement(locator).Enabled;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Clickable(not Displayed or not Enabled).
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotClickable(ISearchContext searchContext, By locator)
+        {
+            return driver =>
+                !searchContext.FindElement(locator).Displayed || !searchContext.FindElement(locator).Enabled;
         }
 
 
@@ -188,6 +562,35 @@ namespace Drelanium.WaitConditions
 
 
         /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Displayed.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed(By locator)
+        {
+            return driver => !driver.FindElement(locator).Displayed;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Displayed.
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed(ISearchContext searchContext, By locator)
+        {
+            return driver => !searchContext.FindElement(locator).Displayed;
+        }
+
+
+        /// <summary>
         ///     The <see cref="IWebElement" /> should become not Enabled.
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -195,6 +598,35 @@ namespace Drelanium.WaitConditions
         public static Func<IWebDriver, bool> ElementToBecomeNotEnabled(IWebElement element)
         {
             return driver => !element.Enabled;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Enabled.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotEnabled(By locator)
+        {
+            return driver => !driver.FindElement(locator).Enabled;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Enabled.
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotEnabled(ISearchContext searchContext, By locator)
+        {
+            return driver => !searchContext.FindElement(locator).Enabled;
         }
 
 
@@ -210,6 +642,35 @@ namespace Drelanium.WaitConditions
 
 
         /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Selected.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotSelected(By locator)
+        {
+            return driver => !driver.FindElement(locator).Selected;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become not Selected.
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeNotSelected(ISearchContext searchContext, By locator)
+        {
+            return driver => !searchContext.FindElement(locator).Selected;
+        }
+
+
+        /// <summary>
         ///     The <see cref="IWebElement" /> should become Selected.
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
@@ -217,6 +678,61 @@ namespace Drelanium.WaitConditions
         public static Func<IWebDriver, bool> ElementToBecomeSelected(IWebElement element)
         {
             return driver => element.Selected;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become Selected.
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeSelected(By locator)
+        {
+            return driver => driver.FindElement(locator).Selected;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should become Selected.
+        /// </summary>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static Func<IWebDriver, bool> ElementToBecomeSelected(ISearchContext searchContext, By locator)
+        {
+            return driver => searchContext.FindElement(locator).Selected;
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should disappear(not existing or not Displayed).
+        /// </summary>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        public static Func<IWebDriver, bool> ElementToDisappear(By locator)
+        {
+            return driver =>
+            {
+                try
+                {
+                    return driver.FindElement(locator) == null;
+                }
+                catch (NoSuchElementException)
+                {
+                    return true;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    return true;
+                }
+            };
         }
 
 
@@ -248,38 +764,13 @@ namespace Drelanium.WaitConditions
 
 
         /// <summary>
-        ///     The <see cref="IWebElement" /> should disappear(not existing or not Displayed).
-        /// </summary>
-        /// <param name="locator">
-        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
-        /// </param>
-        public static Func<IWebDriver, bool> ElementToDisappear(By locator)
-        {
-            return driver =>
-            {
-                try
-                {
-                    return driver.FindElement(locator) == null;
-                }
-                catch (NoSuchElementException)
-                {
-                    return true;
-                }
-                catch (StaleElementReferenceException)
-                {
-                    return true;
-                }
-            };
-        }
-
-
-        /// <summary>
         ///     The <see cref="IWebElement" /> should exist.
         /// </summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         public static Func<IWebDriver, IWebElement> ElementToExist(ISearchContext searchContext, By locator)
         {
@@ -293,6 +784,7 @@ namespace Drelanium.WaitConditions
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         public static Func<IWebDriver, IWebElement> ElementToExist(By locator)
         {

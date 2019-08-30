@@ -10,6 +10,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.
     /// </summary>
+    /// F
     public static class UntilUrlMethods
     {
         /// <summary>
@@ -119,7 +120,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         {
             logger?.Information($"Waiting for url to contain ({fraction}).");
 
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until url contains ({fraction})";
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url contains ({fraction})";
             var result = wait.Until(driver => driver.Url.Contains(fraction));
 
             logger?.Information("Wait is finished, condition is met!");
@@ -270,7 +271,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         {
             logger?.Information($"Waiting for url not to contain ({fraction}).");
 
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until url does not contain ({fraction})";
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url does not contain ({fraction})";
             var result = wait.Until(driver => !driver.Url.Contains(fraction));
 
             logger?.Information("Wait is finished, condition is met!");
@@ -333,7 +334,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         {
             logger?.Information($"Waiting for url not to be ({url.AbsoluteUri}).");
 
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until url not to be ({url})";
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url not to be ({url})";
             var result = wait.Until(driver => driver.Url != url.AbsoluteUri);
 
             logger?.Information("Wait is finished, condition is met!");
@@ -356,7 +357,7 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         {
             logger?.Information($"Waiting for url to be ({url.AbsoluteUri}).");
 
-            wait.Message += $"Waited ({wait.Timeout.TotalSeconds}) seconds until url to be ({url})";
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url to be ({url})";
             var result = wait.Until(driver => driver.Url == url.AbsoluteUri);
 
             logger?.Information("Wait is finished, condition is met!");

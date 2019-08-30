@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Support.Extensions;
+﻿using Drelanium.WebDriver;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
@@ -21,16 +22,18 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         ///     the method exeuction.
         /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        public static bool UntilDocumentReadyState(this WebDriverWait wait, string expectedDocumentReadyState,
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static bool UntilDocumentReadyState(this WebDriverWait wait,
+            DocumentReadyState expectedDocumentReadyState,
             Logger logger = null)
         {
             logger?.Information($"Waiting for document's readyState to be equal to ({expectedDocumentReadyState}).");
 
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({expectedDocumentReadyState.ToLower()}) document readyState to be ({expectedDocumentReadyState})";
-            var result = wait.Until(driver =>
-                driver.ExecuteJavaScript<object>("return document.readyState").ToString() ==
-                expectedDocumentReadyState);
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({expectedDocumentReadyState.ToString().ToLower()}) document readyState to be ({expectedDocumentReadyState})";
+
+            var result = wait.Until(WebDriverWaitConditions.DocumentReadyStateToBe(expectedDocumentReadyState));
 
             logger?.Information("Wait is finished, condition is met!");
 
