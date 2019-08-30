@@ -20,7 +20,7 @@
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
-    <PackageReleaseNotes>Additional methods for Submit and Click</PackageReleaseNotes>
+    <PackageReleaseNotes>Added WaitConditions and changed existing wait conditions to use it.</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols></IncludeSymbols>
@@ -56,10 +56,6 @@
     <!--Selenium packages-->
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
-    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
-    <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
-    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
-    <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core.Linq" Version="1.0.0" />
 
     <!--Microsoft Configuration packages-->
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
