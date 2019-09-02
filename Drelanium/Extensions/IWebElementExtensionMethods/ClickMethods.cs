@@ -43,14 +43,14 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        public static void Click(this IWebElement element, TimeSpan timeout, Logger logger = null)
+        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
+        public static void Click(this IWebElement element, double timeoutInSeconds, Logger logger = null)
         {
             logger?.Information($"Attempting to Click on element ({element}).");
 
             element
-                .Wait(timeout,
-                    $"Waited ({timeout.TotalSeconds}) seconds until ({element}) element is successfully clicked.",
+                .Wait(timeoutInSeconds,
+                    $"Waited ({timeoutInSeconds}) seconds until ({element}) element is successfully clicked.",
                     new[] {typeof(WebDriverException)})
                 .Until(webDriver =>
                 {
@@ -69,8 +69,8 @@ namespace Drelanium
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="timeoutForClick">The timeout value indicating how long to wait for the successful click.</param>
-        /// <param name="timeoutForAfterClickCondition">
+        /// <param name="timeoutInSecondsForClick">The timeout value indicating how long to wait for the successful click.</param>
+        /// <param name="timeoutInSecondsForAfterClickCondition">
         ///     The timeout value indicating how long to wait for the after-click
         ///     condition.
         /// </param>
@@ -85,15 +85,14 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <typeparam name="TResult">...Description to be added...</typeparam>
-        public static void Click<TResult>(this IWebElement element, TimeSpan timeoutForClick,
-            TimeSpan timeoutForAfterClickCondition, Func<IWebDriver, TResult> afterClickCondition,
+        public static void Click<TResult>(this IWebElement element, double timeoutInSecondsForClick,
+            double timeoutInSecondsForAfterClickCondition, Func<IWebDriver, TResult> afterClickCondition,
             Type[] ignoredExceptionTypes = null, Logger logger = null)
         {
-            element.Click(timeoutForClick, logger);
+            element.Click(timeoutInSecondsForClick, logger);
 
-            element.Wait(
-                    timeoutForAfterClickCondition,
-                    $"Waited ({timeoutForAfterClickCondition.TotalSeconds}) seconds for after-click condition to meet!",
+            element.Wait(timeoutInSecondsForAfterClickCondition,
+                    $"Waited ({timeoutInSecondsForAfterClickCondition}) seconds for after-click condition to meet!",
                     ignoredExceptionTypes)
                 .Until(afterClickCondition);
         }

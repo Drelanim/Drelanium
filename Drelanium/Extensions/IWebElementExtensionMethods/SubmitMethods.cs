@@ -43,14 +43,14 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-        public static void Submit(this IWebElement element, TimeSpan timeout, Logger logger = null)
+        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
+        public static void Submit(this IWebElement element, double timeoutInSeconds, Logger logger = null)
         {
             logger?.Information($"Attempting to Submit on element ({element}).");
 
             element
-                .Wait(timeout,
-                    $"Waited ({timeout.TotalSeconds}) seconds until ({element}) element is successfully submitted to the web server.",
+                .Wait(timeoutInSeconds,
+                    $"Waited ({timeoutInSeconds}) seconds until ({element}) element is successfully submitted to the web server.",
                     new[] {typeof(WebDriverException)})
                 .Until(webDriver =>
                 {
@@ -68,8 +68,8 @@ namespace Drelanium
         ///     <para>Logs the event optionally.</para>
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        /// <param name="timeoutForSubmit">The timeout value indicating how long to wait for the successful submit.</param>
-        /// <param name="timeoutForAfterSubmitCondition">
+        /// <param name="timeoutInSecondsForSubmit">The timeout value indicating how long to wait for the successful submit.</param>
+        /// <param name="timeoutInSecondsForAfterSubmitCondition">
         ///     The timeout value indicating how long to wait for the after-submit
         ///     condition.
         /// </param>
@@ -84,15 +84,15 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <typeparam name="TResult">...Description to be added...</typeparam>
-        public static void Submit<TResult>(this IWebElement element, TimeSpan timeoutForSubmit,
-            TimeSpan timeoutForAfterSubmitCondition, Func<IWebDriver, TResult> afterSubmitCondition,
+        public static void Submit<TResult>(this IWebElement element, double timeoutInSecondsForSubmit,
+            double timeoutInSecondsForAfterSubmitCondition, Func<IWebDriver, TResult> afterSubmitCondition,
             Type[] ignoredExceptionTypes = null, Logger logger = null)
         {
-            element.Submit(timeoutForSubmit, logger);
+            element.Submit(timeoutInSecondsForSubmit, logger);
 
             element.Wait(
-                    timeoutForAfterSubmitCondition,
-                    $"Waited ({timeoutForAfterSubmitCondition.TotalSeconds}) seconds for after-submit condition to meet!",
+                    timeoutInSecondsForAfterSubmitCondition,
+                    $"Waited ({timeoutInSecondsForAfterSubmitCondition}) seconds for after-submit condition to meet!",
                     ignoredExceptionTypes)
                 .Until(afterSubmitCondition);
         }

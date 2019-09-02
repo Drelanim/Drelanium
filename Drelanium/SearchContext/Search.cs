@@ -52,16 +52,16 @@ namespace Drelanium
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
+        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the given condition.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebElement FindDisplayedElement(By locator, TimeSpan timeout, Logger logger = null)
+        public IWebElement FindDisplayedElement(By locator, double timeoutInSeconds, Logger logger = null)
         {
             SearchContextImplementation
-                .Wait(timeout,
+                .Wait(timeoutInSeconds,
                     ignoredExceptionTypes: new[]
                         {typeof(NoSuchElementException), typeof(StaleElementReferenceException)})
                 .UntilElementIsDisplayed(SearchContextImplementation, locator);
@@ -102,18 +102,18 @@ namespace Drelanium
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
+        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the given condition.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebElement FindElement(By locator, TimeSpan timeout, Logger logger = null)
+        public IWebElement FindElement(By locator, double timeoutInSeconds, Logger logger = null)
         {
             logger?.Information($"Attempting to Find element with ({locator}).");
 
             var result = SearchContextImplementation
-                .Wait(timeout, ignoredExceptionTypes: new[] {typeof(NoSuchElementException)})
+                .Wait(timeoutInSeconds, ignoredExceptionTypes: new[] {typeof(NoSuchElementException)})
                 .UntilElementExists(SearchContextImplementation, locator);
 
             logger?.Information($"Element ({locator}) has been found.");
@@ -136,19 +136,20 @@ namespace Drelanium
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
+        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the given condition.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebElement FindElement<TResult>(By locator, TimeSpan timeout, Func<IWebDriver, TResult> condition,
-            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, Logger logger = null)
+        public IWebElement FindElement<TResult>(By locator, double timeoutInSeconds,
+            Func<IWebDriver, TResult> condition, string timeoutMessage = "", Type[] ignoredExceptionTypes = null,
+            Logger logger = null)
         {
-            var result = FindElement(locator, timeout, logger);
+            var result = FindElement(locator, timeoutInSeconds, logger);
 
             SearchContextImplementation
-                .Wait(timeout, timeoutMessage, ignoredExceptionTypes)
+                .Wait(timeoutInSeconds, timeoutMessage, ignoredExceptionTypes)
                 .Until(condition);
 
             return result;

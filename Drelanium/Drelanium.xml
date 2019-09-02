@@ -142,6 +142,8 @@
         Gets the <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.
       </summary>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
+      <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"></exception>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member name="M:Drelanium.ISearchContextExtensionMethods.Search(OpenQA.Selenium.ISearchContext)">
       <summary>
@@ -150,26 +152,17 @@
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
     </member>
     <member
-      name="M:Drelanium.ISearchContextExtensionMethods.Wait(OpenQA.Selenium.ISearchContext,System.TimeSpan,System.String,System.Type[])">
+      name="M:Drelanium.ISearchContextExtensionMethods.Wait(OpenQA.Selenium.ISearchContext,System.Double,System.String,System.Type[],System.Double,OpenQA.Selenium.Support.UI.IClock)">
       <summary>
         <inheritdoc cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" />
       </summary>
+      <param name="clock">An object implementing the <see cref="T:OpenQA.Selenium.Support.UI.IClock" /> interface used to determine when time has passed.</param>
+      <param name="sleepIntervalInSeconds">A <see cref="T:System.TimeSpan" /> value indicating how often to check for the condition to be true.</param>
       <param name="timeoutMessage">The message that appears on timeout.</param>
       <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
       <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
-      <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-    </member>
-    <member
-      name="M:Drelanium.ISearchContextExtensionMethods.Wait(OpenQA.Selenium.ISearchContext,System.TimeSpan,OpenQA.Selenium.Support.UI.IClock,System.TimeSpan,System.String,System.Type[])">
-      <summary>
-        <inheritdoc cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" />
-      </summary>
-      <param name="timeoutMessage">The message that appears on timeout.</param>
-      <param name="clock">An object used to determine when time has passed.</param>
-      <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
-      <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
-      <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
-      <param name="sleepInterval">A value indicating how often to check for the condition to be true.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member name="T:Drelanium.ITargetLocatorExtensionMethods">
       <summary>
@@ -720,7 +713,7 @@
         instance.
       </param>
     </member>
-    <member name="M:Drelanium.ClickMethods.Click(OpenQA.Selenium.IWebElement,System.TimeSpan,Serilog.Core.Logger)">
+    <member name="M:Drelanium.ClickMethods.Click(OpenQA.Selenium.IWebElement,System.Double,Serilog.Core.Logger)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.IWebElement.Click" />
         <para>Method is repeated until the element is successfully clicked.</para>
@@ -736,10 +729,10 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
-      <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
     </member>
     <member
-      name="M:Drelanium.ClickMethods.Click``1(OpenQA.Selenium.IWebElement,System.TimeSpan,System.TimeSpan,System.Func{OpenQA.Selenium.IWebDriver,``0},System.Type[],Serilog.Core.Logger)">
+      name="M:Drelanium.ClickMethods.Click``1(OpenQA.Selenium.IWebElement,System.Double,System.Double,System.Func{OpenQA.Selenium.IWebDriver,``0},System.Type[],Serilog.Core.Logger)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.IWebElement.Click" />
         <para>Method is repeated until the element is successfully clicked.</para>
@@ -750,8 +743,8 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
-      <param name="timeoutForClick">The timeout value indicating how long to wait for the successful click.</param>
-      <param name="timeoutForAfterClickCondition">
+      <param name="timeoutInSecondsForClick">The timeout value indicating how long to wait for the successful click.</param>
+      <param name="timeoutInSecondsForAfterClickCondition">
         The timeout value indicating how long to wait for the after-click
         condition.
       </param>
@@ -1053,7 +1046,7 @@
         instance.
       </param>
     </member>
-    <member name="M:Drelanium.SubmitMethods.Submit(OpenQA.Selenium.IWebElement,System.TimeSpan,Serilog.Core.Logger)">
+    <member name="M:Drelanium.SubmitMethods.Submit(OpenQA.Selenium.IWebElement,System.Double,Serilog.Core.Logger)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.IWebElement.Submit" />
         <para>Method is repeated until the element is successfully submitted to the web server.</para>
@@ -1069,10 +1062,10 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
-      <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
     </member>
     <member
-      name="M:Drelanium.SubmitMethods.Submit``1(OpenQA.Selenium.IWebElement,System.TimeSpan,System.TimeSpan,System.Func{OpenQA.Selenium.IWebDriver,``0},System.Type[],Serilog.Core.Logger)">
+      name="M:Drelanium.SubmitMethods.Submit``1(OpenQA.Selenium.IWebElement,System.Double,System.Double,System.Func{OpenQA.Selenium.IWebDriver,``0},System.Type[],Serilog.Core.Logger)">
       <summary>
         <para>Method is repeated until the element is successfully submitted.</para>
         <para>After the successful submit, the browser waits until the given after-submit condition is met.</para>
@@ -1082,8 +1075,8 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
-      <param name="timeoutForSubmit">The timeout value indicating how long to wait for the successful submit.</param>
-      <param name="timeoutForAfterSubmitCondition">
+      <param name="timeoutInSecondsForSubmit">The timeout value indicating how long to wait for the successful submit.</param>
+      <param name="timeoutInSecondsForAfterSubmitCondition">
         The timeout value indicating how long to wait for the after-submit
         condition.
       </param>
@@ -2380,7 +2373,7 @@
         <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElements(OpenQA.Selenium.By)" />
       </summary>
     </member>
-    <member name="M:Drelanium.Search.FindDisplayedElement(OpenQA.Selenium.By,System.TimeSpan,Serilog.Core.Logger)">
+    <member name="M:Drelanium.Search.FindDisplayedElement(OpenQA.Selenium.By,System.Double,Serilog.Core.Logger)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
         <para>Waits until the element gets displayed.</para>
@@ -2389,7 +2382,7 @@
       <param name="locator">
         <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
       </param>
-      <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the given condition.</param>
       <param name="logger">
         The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (
         <see cref="T:Serilog.Events.LogEventLevel" /> =
@@ -2412,7 +2405,7 @@
         the method exeuction.
       </param>
     </member>
-    <member name="M:Drelanium.Search.FindElement(OpenQA.Selenium.By,System.TimeSpan,Serilog.Core.Logger)">
+    <member name="M:Drelanium.Search.FindElement(OpenQA.Selenium.By,System.Double,Serilog.Core.Logger)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
         <para>Method is repeated until the element is successfully found within the timeout.</para>
@@ -2421,7 +2414,7 @@
       <param name="locator">
         <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
       </param>
-      <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the given condition.</param>
       <param name="logger">
         The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (
         <see cref="T:Serilog.Events.LogEventLevel" /> =
@@ -2430,7 +2423,7 @@
       </param>
     </member>
     <member
-      name="M:Drelanium.Search.FindElement``1(OpenQA.Selenium.By,System.TimeSpan,System.Func{OpenQA.Selenium.IWebDriver,``0},System.String,System.Type[],Serilog.Core.Logger)">
+      name="M:Drelanium.Search.FindElement``1(OpenQA.Selenium.By,System.Double,System.Func{OpenQA.Selenium.IWebDriver,``0},System.String,System.Type[],Serilog.Core.Logger)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
         <para>Method is repeated until the element is successfully found and the given condition is met.</para>
@@ -2445,7 +2438,7 @@
       <param name="locator">
         <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
       </param>
-      <param name="timeout">The timeout value indicating how long to wait for the given condition.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the given condition.</param>
       <param name="logger">
         The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (
         <see cref="T:Serilog.Events.LogEventLevel" /> =
@@ -3166,8 +3159,27 @@
       <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"></exception>
       <exception cref="T:OpenQA.Selenium.WebDriverException"></exception>
     </member>
+    <member name="M:Drelanium.WebDriverWaitConditions.PageHasLoaded(System.Func{System.String,System.Boolean})">
+      <summary>
+        The browser's loaded the page and the Url has met the given condition.
+      </summary>
+      <param name="condition">The <see cref="T:System.Func`2" />, that defines the condition until the browser must wait.</param>
+      <exception cref="T:System.ArgumentNullException"></exception>
+      <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"></exception>
+      <exception cref="T:OpenQA.Selenium.WebDriverException"></exception>
+    </member>
     <member
       name="M:Drelanium.WebDriverWaitConditions.PageHasLoadedWithoutDomainCookies(System.Func{System.Uri,System.Boolean})">
+      <summary>
+        The browser's loaded the page without cookies and the Url has met the given condition.
+      </summary>
+      <param name="condition">The <see cref="T:System.Func`2" />, that defines the condition until the browser must wait.</param>
+      <exception cref="T:System.ArgumentNullException"></exception>
+      <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"></exception>
+      <exception cref="T:OpenQA.Selenium.WebDriverException"></exception>
+    </member>
+    <member
+      name="M:Drelanium.WebDriverWaitConditions.PageHasLoadedWithoutDomainCookies(System.Func{System.String,System.Boolean})">
       <summary>
         The browser's loaded the page without cookies and the Url has met the given condition.
       </summary>
@@ -4616,11 +4628,13 @@
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
       </summary>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member name="M:Drelanium.Navigation.GoToUrl(System.Uri)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
       </summary>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member name="M:Drelanium.Navigation.Refresh">
       <summary>
@@ -4663,6 +4677,7 @@
         <see cref="F:Serilog.Events.LogEventLevel.Information" />) during
         the method exeuction.
       </param>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member name="M:Drelanium.Navigation.GoToUrl(System.Uri,Serilog.Core.Logger)">
       <summary>
@@ -4676,6 +4691,7 @@
         <see cref="F:Serilog.Events.LogEventLevel.Information" />) during
         the method exeuction.
       </param>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member name="M:Drelanium.Navigation.GoToUrl(System.Uri,System.Boolean,Serilog.Core.Logger)">
       <summary>
@@ -4692,9 +4708,10 @@
         <see cref="F:Serilog.Events.LogEventLevel.Information" />) during
         the method exeuction.
       </param>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member
-      name="M:Drelanium.Navigation.GoToUrl(System.Uri,System.Boolean,System.Boolean,System.TimeSpan,System.UriPartial,Serilog.Core.Logger)">
+      name="M:Drelanium.Navigation.GoToUrl(System.Uri,System.Boolean,System.Boolean,System.Double,System.Func{System.Uri,System.Boolean},Serilog.Core.Logger)">
       <summary>
         <inheritdoc cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
         <para>Logs the event optionally.</para>
@@ -4702,14 +4719,34 @@
       <param name="url">The URL to load.</param>
       <param name="loadWithoutCookies">To visit the url without cookies.</param>
       <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
-      <param name="matchingUriPartial">Part of the URL that should match after navigation.</param>
-      <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
+      <param name="urlCondition">The <see cref="T:System.Func`2" />, that defines the condition until the browser must wait.</param>
       <param name="logger">
         The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (
         <see cref="T:Serilog.Events.LogEventLevel" /> =
         <see cref="F:Serilog.Events.LogEventLevel.Information" />) during
         the method exeuction.
       </param>
+      <exception cref="T:System.ArgumentNullException"></exception>
+    </member>
+    <member
+      name="M:Drelanium.Navigation.GoToUrl(System.Uri,System.Boolean,System.Boolean,System.Double,System.Func{System.String,System.Boolean},Serilog.Core.Logger)">
+      <summary>
+        <inheritdoc cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+        <para>Logs the event optionally.</para>
+      </summary>
+      <param name="url">The URL to load.</param>
+      <param name="loadWithoutCookies">To visit the url without cookies.</param>
+      <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
+      <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
+      <param name="urlCondition">The <see cref="T:System.Func`2" />, that defines the condition until the browser must wait.</param>
+      <param name="logger">
+        The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (
+        <see cref="T:Serilog.Events.LogEventLevel" /> =
+        <see cref="F:Serilog.Events.LogEventLevel.Information" />) during
+        the method exeuction.
+      </param>
+      <exception cref="T:System.ArgumentNullException"></exception>
     </member>
     <member name="M:Drelanium.Navigation.Refresh(Serilog.Core.Logger)">
       <summary>

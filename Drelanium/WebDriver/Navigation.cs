@@ -54,8 +54,11 @@ namespace Drelanium
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         /// </summary>
+        /// <exception cref="ArgumentNullException"></exception>
         public void GoToUrl(string url)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             NavigationImplementation.GoToUrl(url);
         }
 
@@ -63,8 +66,11 @@ namespace Drelanium
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(Uri)" />
         /// </summary>
+        /// <exception cref="ArgumentNullException"></exception>
         public void GoToUrl(Uri url)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             NavigationImplementation.GoToUrl(url);
         }
 
@@ -126,8 +132,11 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
+        /// <exception cref="ArgumentNullException"></exception>
         public void GoToUrl(string url, Logger logger)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             logger?.Information($"Attempting to navigate to url ({url}).");
 
             GoToUrl(url);
@@ -146,8 +155,11 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
+        /// <exception cref="ArgumentNullException"></exception>
         public void GoToUrl(Uri url, Logger logger)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             GoToUrl(url.AbsoluteUri, logger);
         }
 
@@ -165,8 +177,11 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
+        /// <exception cref="ArgumentNullException"></exception>
         public void GoToUrl(Uri url, bool checkHttpResponse, Logger logger = null)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             if (checkHttpResponse)
             {
                 url.HttpWebResponse(logger: logger);
@@ -183,28 +198,56 @@ namespace Drelanium
         /// <param name="url">The URL to load.</param>
         /// <param name="loadWithoutCookies">To visit the url without cookies.</param>
         /// <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
-        /// <param name="matchingUriPartial">Part of the URL that should match after navigation.</param>
-        /// <param name="timeout">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="urlCondition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void GoToUrl(Uri url, bool checkHttpResponse, bool loadWithoutCookies, TimeSpan timeout,
-            UriPartial matchingUriPartial, Logger logger = null)
+        /// <exception cref="ArgumentNullException"></exception>
+        public void GoToUrl(Uri url, bool checkHttpResponse, bool loadWithoutCookies, double timeoutInSeconds,
+            Func<Uri, bool> urlCondition, Logger logger = null)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+            if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
+
             GoToUrl(url, checkHttpResponse, logger);
 
             if (loadWithoutCookies)
             {
-                Driver.Wait(timeout).UntilPageHasLoadedWithoutCookies(loadedUrl =>
-                    loadedUrl.GetLeftPart(matchingUriPartial) == url.GetLeftPart(matchingUriPartial));
-                return;
+                Driver.Wait(timeoutInSeconds).UntilPageHasLoadedWithoutCookies(urlCondition);
             }
 
-            Driver.Wait(timeout).UntilPageHasLoaded(loadedUrl =>
-                loadedUrl.GetLeftPart(matchingUriPartial) == url.GetLeftPart(matchingUriPartial));
+            Driver.Wait(timeoutInSeconds).UntilPageHasLoaded(urlCondition);
         }
+
+
+        /// <summary>
+        ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
+        ///     <para>Logs the event optionally.</para>
+        /// </summary>
+        /// <param name="url">The URL to load.</param>
+        /// <param name="loadWithoutCookies">To visit the url without cookies.</param>
+        /// <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
+        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
+        /// <param name="urlCondition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during
+        ///     the method exeuction.
+        /// </param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public void GoToUrl(Uri url, bool checkHttpResponse, bool loadWithoutCookies, double timeoutInSeconds,
+            Func<string, bool> urlCondition, Logger logger = null)
+        {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+            if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
+
+            GoToUrl(url, checkHttpResponse, loadWithoutCookies, timeoutInSeconds, uri => urlCondition(uri.AbsoluteUri),
+                logger);
+        }
+
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.Refresh()" />

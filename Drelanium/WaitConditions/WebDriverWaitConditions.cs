@@ -1086,6 +1086,21 @@ namespace Drelanium
 
 
         /// <summary>
+        ///     The browser's loaded the page and the Url has met the given condition.
+        /// </summary>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="InvalidEnumArgumentException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, bool> PageHasLoaded(Func<string, bool> condition)
+        {
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
+            return PageHasLoaded(uri => condition(uri.AbsoluteUri));
+        }
+
+
+        /// <summary>
         ///     The browser's loaded the page without cookies and the Url has met the given condition.
         /// </summary>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
@@ -1110,6 +1125,21 @@ namespace Drelanium
 
                 return false;
             };
+        }
+
+
+        /// <summary>
+        ///     The browser's loaded the page without cookies and the Url has met the given condition.
+        /// </summary>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="InvalidEnumArgumentException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static Func<IWebDriver, bool> PageHasLoadedWithoutDomainCookies(Func<string, bool> condition)
+        {
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
+            return PageHasLoadedWithoutDomainCookies(uri => condition(uri.AbsoluteUri));
         }
 
 
