@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

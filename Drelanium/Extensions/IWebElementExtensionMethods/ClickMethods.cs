@@ -1,11 +1,11 @@
 ﻿using System;
-using Drelanium.Extensions.ISearchContextExtensionMethods;
-using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.Extensions.IWebElementExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebElement" /> types.
@@ -95,7 +95,7 @@ namespace Drelanium.Extensions.IWebElementExtensionMethods
                     timeoutForAfterClickCondition,
                     $"Waited ({timeoutForAfterClickCondition.TotalSeconds}) seconds for after-click condition to meet!",
                     ignoredExceptionTypes)
-                .Until(afterClickCondition, logger);
+                .Until(afterClickCondition);
         }
     }
 }

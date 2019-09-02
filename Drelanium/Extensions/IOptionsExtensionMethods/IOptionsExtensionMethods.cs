@@ -1,10 +1,12 @@
-﻿using Drelanium.WebDriver;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 
 // ReSharper disable InconsistentNaming
 
-namespace Drelanium.Extensions.IOptionsExtensionMethods
+
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IOptions" /> types.
@@ -23,7 +25,7 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
 
 
         /// <summary>
-        ///     <see cref="WebDriver.LogsManager" />
+        ///     <see cref="LogsManager" />
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         public static LogsManager Logs(this IOptions options)
@@ -33,7 +35,7 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
 
 
         /// <summary>
-        ///     <see cref="WebDriver.MouseMoveFollower" />
+        ///     <see cref="Drelanium.MouseMoveFollower" />
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -44,7 +46,7 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
 
 
         /// <summary>
-        ///     <see cref="WebDriver.Timeouts" />
+        ///     <see cref="Drelanium.Timeouts" />
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
@@ -55,7 +57,7 @@ namespace Drelanium.Extensions.IOptionsExtensionMethods
 
 
         /// <summary>
-        ///     <see cref="WebDriver.Window" />
+        ///     <see cref="Drelanium.Window" />
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>

@@ -1,5 +1,4 @@
 ﻿using System;
-using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -9,7 +8,10 @@ using Serilog.Events;
 
 // ReSharper disable InconsistentNaming
 
-namespace Drelanium.Extensions.IActionExtensionMethods
+
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IAction" /> types.
@@ -53,7 +55,7 @@ namespace Drelanium.Extensions.IActionExtensionMethods
         {
             action.Perform(logger);
 
-            wait.Until(condition, logger);
+            wait.Until(condition);
         }
     }
 }

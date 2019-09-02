@@ -1,12 +1,12 @@
 ﻿using System;
-using Drelanium.Extensions.ISearchContextExtensionMethods;
-using Drelanium.Extensions.UriExtensionMethods;
-using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.WebDriver
+
+// ReSharper disable CommentTypo
+
+namespace Drelanium
 {
     /// <summary>
     ///     Extended implementation of <see cref="INavigation" />
@@ -96,6 +96,7 @@ namespace Drelanium.WebDriver
             logger?.Information("Navigated back.");
         }
 
+
         /// <summary>
         ///     <inheritdoc cref="INavigation.Forward()" />
         ///     <para>Logs the event.</para>
@@ -113,6 +114,7 @@ namespace Drelanium.WebDriver
 
             logger?.Information("Navigated forward.");
         }
+
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
@@ -133,6 +135,7 @@ namespace Drelanium.WebDriver
             logger?.Information($"Navigated to url ({url}).");
         }
 
+
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event.</para>
@@ -148,6 +151,7 @@ namespace Drelanium.WebDriver
             GoToUrl(url.AbsoluteUri, logger);
         }
 
+
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event optionally.</para>
@@ -161,15 +165,16 @@ namespace Drelanium.WebDriver
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void GoToUrl(UriBuilder url, bool checkHttpResponse, Logger logger = null)
+        public void GoToUrl(Uri url, bool checkHttpResponse, Logger logger = null)
         {
             if (checkHttpResponse)
             {
-                url.Uri.HttpWebResponse(logger: logger);
+                url.HttpWebResponse(logger: logger);
             }
 
-            GoToUrl(url.Uri, logger);
+            GoToUrl(url, logger);
         }
+
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
@@ -185,18 +190,20 @@ namespace Drelanium.WebDriver
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void GoToUrl(UriBuilder url, bool checkHttpResponse, bool loadWithoutCookies, TimeSpan timeout,
+        public void GoToUrl(Uri url, bool checkHttpResponse, bool loadWithoutCookies, TimeSpan timeout,
             UriPartial matchingUriPartial, Logger logger = null)
         {
             GoToUrl(url, checkHttpResponse, logger);
 
             if (loadWithoutCookies)
             {
-                Driver.Wait(timeout).UntilPageHasLoadedWithoutCookies(url, matchingUriPartial, logger);
+                Driver.Wait(timeout).UntilPageHasLoadedWithoutCookies(loadedUrl =>
+                    loadedUrl.GetLeftPart(matchingUriPartial) == url.GetLeftPart(matchingUriPartial));
                 return;
             }
 
-            Driver.Wait(timeout).UntilPageHasLoaded(url, matchingUriPartial, logger);
+            Driver.Wait(timeout).UntilPageHasLoaded(loadedUrl =>
+                loadedUrl.GetLeftPart(matchingUriPartial) == url.GetLeftPart(matchingUriPartial));
         }
 
         /// <summary>

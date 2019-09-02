@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Drawing;
-using Drelanium.Extensions.IWebDriverExtensionMethods;
-using Drelanium.Extensions.IWebElementExtensionMethods;
-using Drelanium.WebElement;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

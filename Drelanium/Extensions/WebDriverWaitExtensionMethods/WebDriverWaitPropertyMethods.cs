@@ -1,12 +1,14 @@
 ﻿using System;
 using OpenQA.Selenium.Support.UI;
 
-namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.
     /// </summary>
-    public static class UntilPropertyMethods
+    public static class WebDriverWaitPropertyMethods
     {
         /// <summary>
         ///     Adding IgnoreExceptionTypes to the <see cref="WebDriverWait" /> instance.

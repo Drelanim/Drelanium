@@ -1,11 +1,11 @@
 ﻿using System;
-using Drelanium.Extensions.IWebDriverExtensionMethods;
-using Drelanium.WebDriver;
+using System.ComponentModel;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Serilog.Core;
-using Serilog.Events;
 
-namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.
@@ -13,120 +13,34 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     public static class UntilPageMethods
     {
         /// <summary>
-        ///     Waits, until the browser's loaded url partial is matching with the given url partial.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits until the browser's loaded the page and the Url has met the given condition.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="url">...Description to be added...</param>
-        /// <param name="matchingUriPartial">
-        ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
-        ///     that should be matching.
-        /// </param>
-        public static bool UntilPageHasLoaded(this WebDriverWait wait, Uri url, UriPartial matchingUriPartial,
-            Logger logger = null)
+        /// <param name="urlCondition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="InvalidEnumArgumentException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static bool UntilPageHasLoaded(this WebDriverWait wait, Func<Uri, bool> urlCondition)
         {
-            logger?.Information($"Waiting for ({url.AbsoluteUri}) page to be loaded.");
-
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until page on ({url.AbsoluteUri}) has been successfully loaded";
-            var result = wait.Until(driver =>
-                driver.Document().URL.GetLeftPart(matchingUriPartial) == url.GetLeftPart(matchingUriPartial)
-                && driver.Document().ReadyState == DocumentReadyState.complete);
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until page has been successfully loaded and the url has met the given condition.";
 
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.PageHasLoaded(urlCondition));
         }
 
 
         /// <summary>
-        ///     Waits, until the browser's loaded url partial is matching with the given url partial.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits until the browser's loaded the page without domain cookies and the Url has met the given condition.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">...Description to be added...</param>
-        /// <param name="matchingUriPartial">
-        ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
-        ///     that should be matching.
-        /// </param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilPageHasLoaded(this WebDriverWait wait, UriBuilder url, UriPartial matchingUriPartial,
-            Logger logger = null)
+        /// <param name="urlCondition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="InvalidEnumArgumentException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, Func<Uri, bool> urlCondition)
         {
-            return UntilPageHasLoaded(wait, url.Uri, matchingUriPartial, logger);
-        }
-
-
-        /// <summary>
-        ///     Waits, until the browser's loaded url partial is matching with the given url partial without any cookies present.
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">...Description to be added...</param>
-        /// <param name="matchingUriPartial">
-        ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
-        ///     that should be matching.
-        /// </param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, Uri url,
-            UriPartial matchingUriPartial, Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({url.AbsoluteUri}) page to be loaded without cookies.");
-
             wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until page on ({url.AbsoluteUri}) has been successfully loaded without cookies";
-            wait.Until(driver =>
-            {
-                driver.Manage().Cookies.DeleteAllCookies();
+                $"Waited ({wait.Timeout.TotalSeconds}) seconds until page has been successfully loaded without cookies and the url has met the given condition.";
 
-                if (driver.Document().Domain == url.Host
-                    && driver.Document().ReadyState == DocumentReadyState.complete
-                    && driver.Manage().Cookies.AllCookies.Count == 0)
-
-                {
-                    driver.Navigate().Refresh();
-                    return true;
-                }
-
-                return false;
-            });
-
-            return UntilPageHasLoaded(wait, url, matchingUriPartial);
-        }
-
-
-        /// <summary>
-        ///     Waits, until the browser's loaded url partial is matching with the given url partial without any cookies present.
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="matchingUriPartial">
-        ///     One of the <see cref="UriPartial" /> values that specifies the end of the URI portion,
-        ///     that should be matching.
-        /// </param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="url">...Description to be added...</param>
-        public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, UriBuilder url,
-            UriPartial matchingUriPartial, Logger logger = null)
-        {
-            return UntilPageHasLoadedWithoutCookies(wait, url.Uri, matchingUriPartial, logger);
+            return wait.Until(WebDriverWaitConditions.PageHasLoadedWithoutDomainCookies(urlCondition));
         }
     }
 }

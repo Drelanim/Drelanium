@@ -2,7 +2,9 @@
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.Extensions.IWebDriverExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebDriver" /> types.

@@ -8,7 +8,7 @@ using Serilog.Events;
 // ReSharper disable EmptyGeneralCatchClause
 // ReSharper disable StringLiteralTypo
 // ReSharper disable InconsistentNaming
-namespace Drelanium.DriverProcessManager
+namespace Drelanium
 {
     /// <summary>
     ///     Methods to dispose stuck WebDriver processes

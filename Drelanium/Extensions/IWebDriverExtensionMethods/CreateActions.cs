@@ -1,9 +1,10 @@
-﻿using Drelanium.WebDriver;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.Extensions.IWebDriverExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebDriver" /> types.

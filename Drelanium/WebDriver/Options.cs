@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     Extended implementation of <see cref="IOptions" />

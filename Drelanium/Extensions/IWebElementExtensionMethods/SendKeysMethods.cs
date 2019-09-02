@@ -1,7 +1,9 @@
 ﻿using System.Text;
 using OpenQA.Selenium;
 
-namespace Drelanium.Extensions.IWebElementExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebElement" /> types.

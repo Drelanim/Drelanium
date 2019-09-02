@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     Extended implementation of <see cref="ICapabilities" />

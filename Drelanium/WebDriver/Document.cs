@@ -6,7 +6,7 @@ using OpenQA.Selenium.Support.Extensions;
 
 #pragma warning disable 1591
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     // ReSharper disable InconsistentNaming
     /// <summary>
@@ -93,6 +93,8 @@ namespace Drelanium.WebDriver
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
+        /// <exception cref="WebDriverException"></exception>
+        /// <exception cref="InvalidEnumArgumentException"></exception>
         public DocumentReadyState ReadyState
         {
             get

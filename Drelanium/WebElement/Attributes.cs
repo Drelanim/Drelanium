@@ -1,11 +1,9 @@
-﻿using Drelanium.Extensions.IWebElementExtensionMethods;
-using Drelanium.Lists;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 
 // ReSharper disable IdentifierTypo
 // ReSharper disable InconsistentNaming
-namespace Drelanium.WebElement
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

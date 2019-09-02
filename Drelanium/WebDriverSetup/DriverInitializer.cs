@@ -10,7 +10,7 @@ using OpenQA.Selenium.Safari;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.WebDriverSetup
+namespace Drelanium
 {
     /// <summary>
     ///     Static class, that contains the StartWebDriver method.

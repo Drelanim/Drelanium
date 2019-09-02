@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using Drelanium.Extensions.ISearchContextExtensionMethods;
-using Drelanium.Extensions.WebDriverWaitExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.SearchContext
+namespace Drelanium
 {
     /// <summary>
     ///     Extended implementation of <see cref="ISearchContext" />
@@ -66,7 +64,7 @@ namespace Drelanium.SearchContext
                 .Wait(timeout,
                     ignoredExceptionTypes: new[]
                         {typeof(NoSuchElementException), typeof(StaleElementReferenceException)})
-                .UntilElementIsDisplayed(SearchContextImplementation, locator, logger);
+                .UntilElementIsDisplayed(SearchContextImplementation, locator);
 
             return FindElement(locator);
         }
@@ -116,7 +114,7 @@ namespace Drelanium.SearchContext
 
             var result = SearchContextImplementation
                 .Wait(timeout, ignoredExceptionTypes: new[] {typeof(NoSuchElementException)})
-                .UntilElementExists(SearchContextImplementation, locator, logger);
+                .UntilElementExists(SearchContextImplementation, locator);
 
             logger?.Information($"Element ({locator}) has been found.");
 
@@ -151,7 +149,7 @@ namespace Drelanium.SearchContext
 
             SearchContextImplementation
                 .Wait(timeout, timeoutMessage, ignoredExceptionTypes)
-                .Until(condition, logger);
+                .Until(condition);
 
             return result;
         }

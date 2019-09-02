@@ -1,7 +1,8 @@
-﻿using Drelanium.SearchContext;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
-namespace Drelanium.Extensions.ByExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="By" /> types.
@@ -34,7 +35,7 @@ namespace Drelanium.Extensions.ByExtensionMethods
 
 
         /// <summary>
-        ///     <inheritdoc cref="Drelanium.SearchContext.Search" />
+        ///     <inheritdoc cref="Drelanium.Search" />
         /// </summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">

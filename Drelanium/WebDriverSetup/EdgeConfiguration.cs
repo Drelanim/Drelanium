@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 
-namespace Drelanium.WebDriverSetup
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

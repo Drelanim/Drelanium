@@ -1,368 +1,175 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Drelanium.Extensions.IWebDriverExtensionMethods;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Serilog.Core;
-using Serilog.Events;
 
-namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
+// ReSharper disable StringLiteralTypo
+
+
+// ReSharper disable UnusedMember.Global
+
+
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.
     /// </summary>
-    /// F
     public static class UntilUrlMethods
     {
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should meet the given condition.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="uriComponents">...Description to be added...</param>
-        /// <param name="uriFormat">...Description to be added...</param>
-        public static bool UntilUrlComponentsNotToBe(this WebDriverWait wait, UriComponents uriComponents,
-            UriFormat uriFormat, string expected, Logger logger = null)
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        public static TResult UntilUrl<TResult>(this WebDriverWait wait, Func<string, TResult> condition)
         {
-            logger?.Information($"Waiting for url ({uriComponents}) components not to be ({expected}).");
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            "to meet the given condition.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriComponents.ToString()} components not to be {expected}.";
-            var result = wait.Until(driver => driver.Url().GetComponents(uriComponents, uriFormat) != expected);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.Url(condition));
         }
 
+
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should meet the given condition.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="uriComponents">...Description to be added...</param>
-        /// <param name="uriFormat">...Description to be added...</param>
-        public static bool UntilUrlComponentsNotToBe(this WebDriverWait wait, UriComponents uriComponents,
-            UriFormat uriFormat, Uri expected, Logger logger = null)
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        public static TResult UntilUrl<TResult>(this WebDriverWait wait, Func<Uri, TResult> condition)
         {
-            return wait.UntilUrlComponentsNotToBe(uriComponents, uriFormat, expected.AbsoluteUri, logger);
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.Url(condition));
         }
 
+
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should contain the given value.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="uriComponents">...Description to be added...</param>
-        /// <param name="uriFormat">...Description to be added...</param>
-        public static bool UntilUrlComponentsToBe(this WebDriverWait wait, UriComponents uriComponents,
-            UriFormat uriFormat, string expected, Logger logger = null)
+        /// <param name="urlPart">The URL part the browser is currently displaying.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        public static bool UntilUrlContains(this WebDriverWait wait, string urlPart)
         {
-            logger?.Information($"Waiting for url ({uriComponents}) components to be ({expected}).");
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            $"to contain ({urlPart})";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriComponents.ToString()} components to be {expected}.";
-            var result = wait.Until(driver => driver.Url().GetComponents(uriComponents, uriFormat) == expected);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.UrlToContain(urlPart));
         }
 
+
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should not contain the given value.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
+        /// <param name="uriPartial">
+        ///     <inheritdoc cref="Uri.GetLeftPart(UriPartial)" />
         /// </param>
-        /// <param name="uriComponents">...Description to be added...</param>
-        /// <param name="uriFormat">...Description to be added...</param>
-        public static bool UntilUrlComponentsToBe(this WebDriverWait wait, UriComponents uriComponents,
-            UriFormat uriFormat, Uri expected, Logger logger = null)
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        public static TResult UntilUrlLeftPart<TResult>(this WebDriverWait wait, UriPartial uriPartial,
+            Func<string, TResult> condition)
         {
-            return wait.UntilUrlComponentsToBe(uriComponents, uriFormat, expected.AbsoluteUri, logger);
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url's left part " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.UrlLeftPart(uriPartial, condition));
         }
 
+
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should match the regular expression.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlContains(this WebDriverWait wait, string fraction, Logger logger = null)
+        /// <param name="regexPattern">The regular expression pattern.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="RegexMatchTimeoutException"></exception>
+        public static bool UntilUrlMatches(this WebDriverWait wait, string regexPattern)
         {
-            logger?.Information($"Waiting for url to contain ({fraction}).");
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            $"to match with the regular expression ({regexPattern}).";
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url contains ({fraction})";
-            var result = wait.Until(driver => driver.Url.Contains(fraction));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.UrlMatches(regexPattern));
         }
 
+
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should not contain the given value.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlContains(this WebDriverWait wait, Uri fraction, Logger logger = null)
+        /// <param name="urlPart">The URL part the browser is currently displaying.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        public static bool UntilUrlNotContains(this WebDriverWait wait, string urlPart)
         {
-            return wait.UntilUrlContains(fraction.AbsoluteUri, logger);
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            $"not to contain ({urlPart})";
+
+            return wait.Until(WebDriverWaitConditions.UrlNotToContain(urlPart));
         }
 
+
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should not match the regular expression.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="uriPartial">...Description to be added...</param>
-        public static bool UntilUrlLeftPartNotToBe(this WebDriverWait wait, UriPartial uriPartial, string expected,
-            Logger logger = null)
+        /// <param name="regexPattern">The regular expression pattern.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="RegexMatchTimeoutException"></exception>
+        public static bool UntilUrlNotMatches(this WebDriverWait wait, string regexPattern)
         {
-            logger?.Information($"Waiting for url ({uriPartial}) left part not to be ({expected}).");
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            $"to not match with the regular expression ({regexPattern}).";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriPartial.ToString()} partial not to be {expected}.";
-            var result = wait.Until(driver => driver.Url().GetLeftPart(uriPartial) != expected);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.UrlNotMatches(regexPattern));
         }
 
+
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should not be the given value.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="uriPartial">...Description to be added...</param>
-        public static bool UntilUrlLeftPartNotToBe(this WebDriverWait wait, UriPartial uriPartial, Uri expected,
-            Logger logger = null)
+        /// <param name="url">The URL the browser is currently displaying.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        public static bool UntilUrlNotToBe(this WebDriverWait wait, string url)
         {
-            return wait.UntilUrlLeftPartNotToBe(uriPartial, expected.AbsoluteUri, logger);
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            $"not to be ({url})";
+
+            return wait.Until(WebDriverWaitConditions.UrlNotToBe(url));
         }
 
-        /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="uriPartial">...Description to be added...</param>
-        public static bool UntilUrlLeftPartToBe(this WebDriverWait wait, UriPartial uriPartial, string expected,
-            Logger logger = null)
-        {
-            logger?.Information($"Waiting for url ({uriPartial}) left part to be ({expected}).");
-
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url {uriPartial.ToString()} partial to be {expected}.";
-            var result = wait.Until(driver => driver.Url().GetLeftPart(uriPartial) == expected);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
 
         /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the browser's loaded Url should to be the given value.
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="expected">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <param name="uriPartial">...Description to be added...</param>
-        public static bool UntilUrlLeftPartToBe(this WebDriverWait wait, UriPartial uriPartial, Uri expected,
-            Logger logger = null)
+        /// <param name="url">The URL the browser is currently displaying.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        public static bool UntilUrlToBe(this WebDriverWait wait, string url)
         {
-            return wait.UntilUrlLeftPartToBe(uriPartial, expected.AbsoluteUri, logger);
-        }
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "loaded url " +
+                            $"to be ({url})";
 
-        /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="regex">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlMatches(this WebDriverWait wait, string regex, Logger logger = null)
-        {
-            logger?.Information($"Waiting for url to match regex ({regex}).");
-
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url matches ({regex}) regular expression";
-            var result = wait.Until(driver => new Regex(regex).IsMatch(driver.Url));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlNotContains(this WebDriverWait wait, string fraction, Logger logger = null)
-        {
-            logger?.Information($"Waiting for url not to contain ({fraction}).");
-
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url does not contain ({fraction})";
-            var result = wait.Until(driver => !driver.Url.Contains(fraction));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="fraction">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlNotContains(this WebDriverWait wait, Uri fraction, Logger logger = null)
-        {
-            return wait.UntilUrlNotContains(fraction.AbsoluteUri, logger);
-        }
-
-        /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="regex">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlNotMatches(this WebDriverWait wait, string regex, Logger logger = null)
-        {
-            logger?.Information($"Waiting for url not to match regex ({regex}).");
-
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until url not matches ({regex}) regular expression";
-            var result = wait.Until(driver => !new Regex(regex).IsMatch(driver.Url));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlNotToBe(this WebDriverWait wait, Uri url, Logger logger = null)
-        {
-            logger?.Information($"Waiting for url not to be ({url.AbsoluteUri}).");
-
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url not to be ({url})";
-            var result = wait.Until(driver => driver.Url != url.AbsoluteUri);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-        /// <summary>
-        ///     ...Description to be added...
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="url">...Description to be added...</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static bool UntilUrlToBe(this WebDriverWait wait, Uri url, Logger logger = null)
-        {
-            logger?.Information($"Waiting for url to be ({url.AbsoluteUri}).");
-
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until url to be ({url})";
-            var result = wait.Until(driver => driver.Url == url.AbsoluteUri);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.UrlToBe(url));
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using Drelanium.WebDriver;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
@@ -8,7 +7,10 @@ using Serilog.Events;
 
 // ReSharper disable InconsistentNaming
 
-namespace Drelanium.Extensions.IWebDriverExtensionMethods
+
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebDriver" /> types.

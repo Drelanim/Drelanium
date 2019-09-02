@@ -3,7 +3,7 @@
 #pragma warning disable 1591
 
 
-namespace Drelanium.Lists
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

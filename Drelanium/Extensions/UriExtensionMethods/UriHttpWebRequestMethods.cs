@@ -3,12 +3,14 @@ using System.Net;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.Extensions.UriExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="Uri" /> types.
     /// </summary>
-    public static class HttpWebRequestMethods
+    public static class UriHttpWebRequestMethods
     {
         /// <summary>
         ///     ...Description to be added...

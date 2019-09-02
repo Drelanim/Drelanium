@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace Drelanium.WebDriverSetup
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

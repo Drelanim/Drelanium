@@ -1,7 +1,8 @@
-﻿using Drelanium.WebDriver;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
-namespace Drelanium.Extensions.ITargetLocatorExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="ITargetLocator" /> types.
@@ -9,7 +10,7 @@ namespace Drelanium.Extensions.ITargetLocatorExtensionMethods
     public static class ITargetLocatorExtensionMethods
     {
         /// <summary>
-        ///     <inheritdoc cref="Drelanium.WebDriver.Alert" />
+        ///     <inheritdoc cref="Drelanium.Alert" />
         /// </summary>
         /// <param name="targetLocator">   ...Description to be added...</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>

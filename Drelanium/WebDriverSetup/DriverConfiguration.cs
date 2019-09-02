@@ -8,7 +8,7 @@ using OpenQA.Selenium;
 
 #pragma warning disable 1591
 
-namespace Drelanium.WebDriverSetup
+namespace Drelanium
 {
     /// <summary>
     ///     The type of the selected browser to be automated.

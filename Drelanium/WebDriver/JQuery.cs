@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

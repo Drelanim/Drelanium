@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using Drelanium.WebElement;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
@@ -9,7 +8,9 @@ using Serilog.Events;
 // ReSharper disable InconsistentNaming
 
 
-namespace Drelanium.Extensions.IWebElementExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebElement" /> types.

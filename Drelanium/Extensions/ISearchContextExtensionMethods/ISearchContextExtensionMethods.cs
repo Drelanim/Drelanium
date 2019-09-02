@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
-using Drelanium.Extensions.IWebElementExtensionMethods;
-using Drelanium.SearchContext;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace Drelanium.Extensions.ISearchContextExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="ISearchContext" /> types.
@@ -33,7 +33,7 @@ namespace Drelanium.Extensions.ISearchContextExtensionMethods
 
 
         /// <summary>
-        ///     <inheritdoc cref="Drelanium.SearchContext.Search" />
+        ///     <inheritdoc cref="Drelanium.Search" />
         /// </summary>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         public static Search Search(this ISearchContext searchContext)

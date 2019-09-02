@@ -4,7 +4,7 @@
 #pragma warning disable 1591
 
 
-namespace Drelanium.Lists
+namespace Drelanium
 {
     public enum EventType
     {

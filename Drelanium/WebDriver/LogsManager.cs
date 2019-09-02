@@ -5,7 +5,7 @@ using OpenQA.Selenium;
 
 #pragma warning disable 1591
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

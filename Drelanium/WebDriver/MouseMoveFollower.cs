@@ -1,13 +1,9 @@
-﻿using Drelanium.Extensions.ISearchContextExtensionMethods;
-using Drelanium.Extensions.IWebDriverExtensionMethods;
-using Drelanium.Extensions.IWebElementExtensionMethods;
-using Drelanium.Lists;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Serilog.Core;
 
 
 // ReSharper disable InconsistentNaming
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

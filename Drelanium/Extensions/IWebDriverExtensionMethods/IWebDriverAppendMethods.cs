@@ -1,12 +1,14 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
-namespace Drelanium.Extensions.IWebDriverExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebDriver" /> types.
     /// </summary>
-    public static class AppendMethods
+    public static class IWebDriverAppendMethods
     {
         /// <summary>
         ///     ...Description to be added...

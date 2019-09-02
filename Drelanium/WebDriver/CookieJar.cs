@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Drelanium.Extensions.IWebDriverExtensionMethods;
 using OpenQA.Selenium;
 using Serilog.Core;
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     Extended implementation of <see cref="ICookieJar" />

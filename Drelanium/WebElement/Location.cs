@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 #pragma warning disable 1591
 
-namespace Drelanium.WebElement
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

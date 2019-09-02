@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.Extensions;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Drelanium.WebDriver
+namespace Drelanium
 {
     /// <summary>
     ///     Extended implementation of <see cref="ITargetLocator" />

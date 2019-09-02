@@ -1,15 +1,18 @@
 ﻿using System;
-using Drelanium.Lists;
-using Drelanium.WaitConditions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Serilog.Core;
-using Serilog.Events;
+
+// ReSharper disable StringLiteralTypo
+// ReSharper disable UnusedMember.Global
+// ReSharper disable IdentifierTypo
 
 
 // ReSharper disable CommentTypo
 
-namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
+
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.
@@ -18,81 +21,60 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
     {
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has met the given condition.
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="condition">
         ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
-        /// </param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
         /// </param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         public static TResult UntilElement<TResult>(this WebDriverWait wait, IWebElement element,
-            Func<IWebElement, TResult> condition, Logger logger = null)
+            Func<IWebElement, TResult> condition)
         {
-            logger?.Information($"Waiting for ({element}) element to meet the given condition.");
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to meet the given condition.";
 
-            var result = wait.Until(WebDriverWaitConditions.Element(element, condition));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.Element(element, condition));
         }
 
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">
         ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
-        /// <param name="attributeName">Name of the attribute of the element.</param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="WebDriverException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         public static TResult UntilElementAttribute<TResult>(this WebDriverWait wait, IWebElement element,
-            string attributeName, Func<string, TResult> condition, Logger logger = null)
+            string attributeName, Func<string, TResult> condition)
         {
-            logger?.Information(
-                $"Waiting for ({element}) element's ({attributeName}) attribute to be changed according to condition.");
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's attribute " +
+                            "to meet the given condition.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element's ({attributeName}) attribute to be changed according to condition";
-
-            var result = wait.Until(WebDriverWaitCondition.ElementAttribute(element, attributeName, condition));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementAttribute(element, attributeName, condition));
         }
 
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="webElementAttributeName">...Description to be added...</param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
         /// <param name="condition">
         ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
@@ -102,55 +84,83 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// <exception cref="WebDriverException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         public static TResult UntilElementAttribute<TResult>(this WebDriverWait wait, IWebElement element,
-            ElementAttributeName webElementAttributeName, Func<string, TResult> condition, Logger logger = null)
+            ElementAttributeName attributeName, Func<string, TResult> condition)
         {
-            return wait.UntilElementAttribute(element, webElementAttributeName.AttributeName, condition, logger);
+            return wait.UntilElementAttribute(element, attributeName.AttributeName, condition);
         }
 
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">
         ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
         /// </param>
-        /// <param name="attributeName">Name of the attribute of the element.</param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
         public static TResult UntilElementAttribute<TResult>(this WebDriverWait wait, ISearchContext searchContext,
-            By locator, string attributeName, Func<string, TResult> condition, Logger logger = null)
+            By locator, string attributeName, Func<string, TResult> condition)
         {
-            logger?.Information(
-                $"Waiting for ({locator}) element's ({attributeName}) attribute to be changed according to condition.");
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's attribute " +
+                            "to meet the given condition.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) ({attributeName}) attribute to be changed according to condition";
-
-            var result =
-                wait.Until(WebDriverWaitCondition.ElementAttribute(searchContext, locator, attributeName, condition));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(
+                WebDriverWaitConditions.ElementAttribute(searchContext, locator, attributeName, condition));
         }
 
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
-        ///     <para>Logs the event optionally.</para>
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="webElementAttributeName">...Description to be added...</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementAttribute<TResult>(this WebDriverWait wait, By locator, string attributeName,
+            Func<string, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's attribute " +
+                            "to meet the given condition.";
+
+            return wait.Until(
+                WebDriverWaitConditions.ElementAttribute(locator, attributeName, condition));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
         /// <param name="condition">
         ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
         ///     wait.
@@ -159,363 +169,1035 @@ namespace Drelanium.Extensions.WebDriverWaitExtensionMethods
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
         public static TResult UntilElementAttribute<TResult>(this WebDriverWait wait, ISearchContext searchContext,
-            By locator,
-            ElementAttributeName webElementAttributeName, Func<string, TResult> condition,
-            Logger logger = null)
+            By locator, ElementAttributeName attributeName, Func<string, TResult> condition)
         {
-            return wait.UntilElementAttribute(searchContext, locator, webElementAttributeName.AttributeName, condition,
-                logger);
+            return wait.UntilElementAttribute(searchContext, locator, attributeName.AttributeName, condition);
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> is not displayed or does not exist anymore.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementAttribute<TResult>(this WebDriverWait wait, By locator,
+            ElementAttributeName attributeName, Func<string, TResult> condition)
+        {
+            return wait.UntilElementAttribute(locator, attributeName.AttributeName, condition);
+        }
+
+
+        /// <summary>
+        ///     The <see cref="IWebElement" /> should Disappear(not exists or not Displayed).
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static void UntilElementDisappears(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementDisappeared(this WebDriverWait wait, ISearchContext searchContext, By locator)
         {
-            logger?.Information($"Waiting for ({locator}) element to disappear.");
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "disappeared.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) disappears";
-
-            wait.Until(driver =>
-            {
-                try
-                {
-                    return !searchContext.FindElement(locator).Displayed;
-                }
-                catch (NoSuchElementException)
-                {
-                    return true;
-                }
-            });
-
-            logger?.Information("Wait is finished, condition is met!");
+            return wait.Until(WebDriverWaitConditions.ElementToNotExist(searchContext, locator));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> does not exist anymore.
-        ///     <para>Logs the event optionally.</para>
+        ///     The <see cref="IWebElement" /> should Disappear(not exists or not Displayed).
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementDisappeared(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "disappeared.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToNotExist(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> exists.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        public static IWebElement UntilElementExists(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static IWebElement UntilElementExists(this WebDriverWait wait, ISearchContext searchContext, By locator)
         {
-            logger?.Information($"Waiting for ({locator}) element to exists.");
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "exists.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) exists";
-
-            var result = wait.Until(driver => searchContext.FindElement(locator));
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-
-        public static bool UntilElementIsClickable(this WebDriverWait wait, IWebElement element, Logger logger = null)
-        {
-            logger?.Information($"Waiting for ({element}) element to become clickable.");
-
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is clickable";
-
-            var result = wait.Until(driver => element.Displayed && element.Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-
-        public static bool UntilElementIsClickable(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
-        {
+            return wait.Until(WebDriverWaitConditions.ElementToExist(searchContext, locator));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become displayed.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> exists.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static IWebElement UntilElementExists(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "exists.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToExist(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become Clickable(Displayed and Enabled).
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsDisplayed(this WebDriverWait wait, IWebElement element, Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsClickable(this WebDriverWait wait, IWebElement element)
         {
-            logger?.Information($"Waiting for ({element}) element to become displayed.");
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Clickable(Displayed and Enabled).";
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is displayed";
-
-            var result = wait.Until(driver => element.Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(element));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become displayed.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> has become Clickable(Displayed and Enabled).
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        public static bool UntilElementIsDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsClickable(this WebDriverWait wait, ISearchContext searchContext, By locator)
         {
-            logger?.Information($"Waiting for ({locator}) element to become displayed.");
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Clickable(Displayed and Enabled).";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is displayed";
-
-            var result = wait.Until(driver => searchContext.FindElement(locator).Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(searchContext, locator));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become enabled.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> has become Clickable(Displayed and Enabled).
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsClickable(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Clickable(Displayed and Enabled).";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become Displayed.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsDisplayed(this WebDriverWait wait, IWebElement element)
         {
-            logger?.Information($"Waiting for ({element}) element to become enabled.");
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Displayed.";
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is enabled";
-
-            var result = wait.Until(driver => element.Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeDisplayed(element));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become displayed.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> has become Displayed.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        public static bool UntilElementIsEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator)
         {
-            logger?.Information($"Waiting for ({locator}) element to become not displayed.");
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Displayed.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is enabled";
-
-            var result = wait.Until(driver => searchContext.FindElement(locator).Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
-        }
-
-
-        public static bool UntilElementIsNotClickable(this WebDriverWait wait, IWebElement element,
-            Logger logger = null)
-        {
-        }
-
-
-        public static bool UntilElementIsNotClickable(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
-        {
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeDisplayed(searchContext, locator));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become not displayed.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> has become Displayed.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsDisplayed(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Displayed.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeDisplayed(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become Enabled.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, IWebElement element,
-            Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsEnabled(this WebDriverWait wait, IWebElement element)
         {
-            logger?.Information($"Waiting for ({element}) element to become not displayed.");
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Enabled.";
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is not displayed";
-
-            var result = wait.Until(driver => !element.Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeEnabled(element));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become not displayed.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> has become Enabled.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator)
         {
-            logger?.Information($"Waiting for ({locator}) element to become not displayed.");
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Enabled.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is not displayed";
-
-            var result = wait.Until(driver => !searchContext.FindElement(locator).Displayed);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeEnabled(searchContext, locator));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become not enabled.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> has become Enabled.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsEnabled(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Enabled.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeEnabled(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Clickable(Displayed and Enabled).
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element"></param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotClickable(this WebDriverWait wait, IWebElement element)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Clickable(Displayed and Enabled).";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(element));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Clickable(Displayed and Enabled).
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotClickable(this WebDriverWait wait, ISearchContext searchContext, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Clickable(Displayed and Enabled).";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(searchContext, locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Clickable(Displayed and Enabled).
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotClickable(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Clickable(Displayed and Enabled).";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Displayed.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, IWebElement element, Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, IWebElement element)
         {
-            logger?.Information($"Waiting for ({element}) element to become disabled.");
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Displayed.";
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds until ({element}) element is not enabled";
-
-            var result = wait.Until(driver => !element.Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotDisplayed(element));
         }
 
 
         /// <summary>
-        ///     Waits, until the <see cref="IWebElement" /> has become not enabled.
-        ///     <para>Logs the event optionally.</para>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Displayed.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, ISearchContext searchContext, By locator)
         {
-            logger?.Information($"Waiting for ({locator}) element to become disabled.");
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Displayed.";
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until element located with ({locator}) is not enabled";
-
-            var result = wait.Until(driver => !searchContext.FindElement(locator).Enabled);
-
-            logger?.Information("Wait is finished, condition is met!");
-
-            return result;
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotDisplayed(searchContext, locator));
         }
 
 
-        public static bool UntilElementIsNotSelected(this WebDriverWait wait, IWebElement element,
-            Logger logger = null)
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Displayed.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotDisplayed(this WebDriverWait wait, By locator)
         {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Displayed.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotDisplayed(locator));
         }
 
 
-        public static bool UntilElementIsNotSelected(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Enabled.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, IWebElement element)
         {
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Enabled.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotEnabled(element));
         }
 
 
-        public static bool UntilElementIsSelected(this WebDriverWait wait, IWebElement element,
-            Logger logger = null)
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Enabled.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, ISearchContext searchContext, By locator)
         {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Enabled.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotEnabled(searchContext, locator));
         }
 
 
-        public static bool UntilElementIsSelected(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Logger logger = null)
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Enabled.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotEnabled(this WebDriverWait wait, By locator)
         {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Enabled.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotEnabled(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Selected.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotSelected(this WebDriverWait wait, IWebElement element)
+        {
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Selected.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotSelected(element));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Selected.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotSelected(this WebDriverWait wait, ISearchContext searchContext, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Selected.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotSelected(searchContext, locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become not Selected.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsNotSelected(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become not Selected.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeNotSelected(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become Selected.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsSelected(this WebDriverWait wait, IWebElement element)
+        {
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Selected.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeSelected(element));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become Selected.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsSelected(this WebDriverWait wait, ISearchContext searchContext, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Selected.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeSelected(searchContext, locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has become Selected.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementIsSelected(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to become Selected.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToBecomeSelected(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> not exists.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementNotExists(this WebDriverWait wait, ISearchContext searchContext, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "not exists.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToNotExist(searchContext, locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> not exists.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static bool UntilElementNotExists(this WebDriverWait wait, By locator)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "not exists.";
+
+            return wait.Until(WebDriverWaitConditions.ElementToNotExist(locator));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, IWebElement element,
+            string propertyName, Func<object, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's property " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.ElementProperty(element, propertyName, condition));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, IWebElement element,
+            ElementPropertyName propertyName, Func<object, TResult> condition)
+        {
+            return wait.UntilElementProperty(element, propertyName.PropertyName, condition);
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
+            By locator, string propertyName, Func<object, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's property " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.ElementProperty(searchContext, locator, propertyName, condition));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, By locator, string propertyName,
+            Func<object, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's property " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.ElementProperty(locator, propertyName, condition));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
+            By locator, ElementPropertyName propertyName, Func<object, TResult> condition)
+        {
+            return wait.UntilElementProperty(searchContext, locator, propertyName.PropertyName, condition);
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, By locator,
+            ElementPropertyName propertyName, Func<object, TResult> condition)
+        {
+            return wait.UntilElementProperty(locator, propertyName.PropertyName, condition);
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, IWebElement element,
+            string stylePropertyName, Func<string, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's style property " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.ElementStyleProperty(element, stylePropertyName, condition));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="WebDriverException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, IWebElement element,
+            ElementPropertyName stylePropertyName, Func<string, TResult> condition)
+        {
+            return wait.UntilElementStyleProperty(element, stylePropertyName.PropertyName, condition);
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
+            By locator, string stylePropertyName, Func<string, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's style property " +
+                            "to meet the given condition.";
+
+            return wait.Until(
+                WebDriverWaitConditions.ElementStyleProperty(searchContext, locator, stylePropertyName, condition));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, By locator,
+            string stylePropertyName, Func<string, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element's style property " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.ElementStyleProperty(locator, stylePropertyName, condition));
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
+            By locator, ElementPropertyName stylePropertyName, Func<string, TResult> condition)
+        {
+            return wait.UntilElementStyleProperty(searchContext, locator, stylePropertyName.PropertyName, condition);
+        }
+
+
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="stylePropertyName">The style property's name of the <see cref="IWebElement" />.</param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, By locator,
+            ElementPropertyName stylePropertyName, Func<string, TResult> condition)
+        {
+            return wait.UntilElementStyleProperty(locator, stylePropertyName.PropertyName, condition);
         }
     }
 }

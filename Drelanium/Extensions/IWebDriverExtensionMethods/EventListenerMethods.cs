@@ -1,8 +1,9 @@
-﻿using Drelanium.Lists;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
-namespace Drelanium.Extensions.IWebDriverExtensionMethods
+namespace Drelanium
+
+
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebDriver" /> types.

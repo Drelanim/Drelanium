@@ -1,10 +1,7 @@
 ﻿using System.Drawing;
-using Drelanium.Extensions.IWebDriverExtensionMethods;
-using Drelanium.Extensions.IWebElementExtensionMethods;
-using Drelanium.Lists;
 using OpenQA.Selenium;
 
-namespace Drelanium.Highlighter
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...

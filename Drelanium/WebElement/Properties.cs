@@ -1,8 +1,6 @@
-﻿using Drelanium.Extensions.IWebElementExtensionMethods;
-using Drelanium.Lists;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
-namespace Drelanium.WebElement
+namespace Drelanium
 {
     /// <summary>
     ///     ...Description to be added...
