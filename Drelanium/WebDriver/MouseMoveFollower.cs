@@ -45,7 +45,7 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public bool IsTurnedON => Driver.Search().HasElement(By.Id(SeleniumMouseMoveFollowerID));
+        public bool IsTurnedON => Driver.HasElement(By.Id(SeleniumMouseMoveFollowerID));
 
         /// <summary>
         ///     <inheritdoc cref="IWebDriver" />

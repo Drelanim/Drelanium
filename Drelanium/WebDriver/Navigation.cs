@@ -212,31 +212,6 @@ namespace Drelanium
         }
 
         /// <summary>
-        ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
-        ///     <para>Logs the event optionally.</para>
-        /// </summary>
-        /// <param name="url">The URL to load.</param>
-        /// <param name="loadWithoutCookies">To visit the url without cookies.</param>
-        /// <param name="checkHttpResponse">To get a HTTPWebResponse before visit.</param>
-        /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
-        /// <param name="urlCondition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
-        /// <param name="logger">
-        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
-        ///     <see cref="LogEventLevel.Information" />) during
-        ///     the method exeuction.
-        /// </param>
-        /// <exception cref="ArgumentNullException"></exception>
-        public void GoToUrl(Uri url, bool checkHttpResponse, bool loadWithoutCookies, double timeoutInSeconds,
-            Func<string, bool> urlCondition, Logger logger = null)
-        {
-            if (url == null) throw new ArgumentNullException(nameof(url));
-            if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
-
-            GoToUrl(url, checkHttpResponse, loadWithoutCookies, timeoutInSeconds, uri => urlCondition(uri.AbsoluteUri),
-                logger);
-        }
-
-        /// <summary>
         ///     <inheritdoc cref="INavigation.Refresh()" />
         ///     <para>Logs the event.</para>
         /// </summary>
