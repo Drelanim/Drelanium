@@ -1834,55 +1834,6 @@
       </summary>
     </member>
     <member
-      name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsNotEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.IWebElement)">
-      <summary>
-        Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become not Enabled.
-        <para>Ignored Exceptions: <see cref="T:OpenQA.Selenium.StaleElementReferenceException" /></para>
-      </summary>
-      <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-      <param name="element">
-        The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
-        instance.
-      </param>
-      <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException"></exception>
-      <exception cref="T:OpenQA.Selenium.StaleElementReferenceException"></exception>
-    </member>
-    <member
-      name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsNotEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By)">
-      <summary>
-        Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become not Enabled.
-        <para>
-          Ignored Exceptions: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
-          <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
-        </para>
-      </summary>
-      <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-      <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
-      <param name="locator">
-        <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
-      </param>
-      <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException"></exception>
-      <exception cref="T:OpenQA.Selenium.NoSuchElementException"></exception>
-      <exception cref="T:OpenQA.Selenium.StaleElementReferenceException"></exception>
-    </member>
-    <member
-      name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsNotEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.By)">
-      <summary>
-        Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become not Enabled.
-        <para>
-          Ignored Exceptions: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
-          <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
-        </para>
-      </summary>
-      <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-      <param name="locator">
-        <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
-      </param>
-      <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException"></exception>
-      <exception cref="T:OpenQA.Selenium.NoSuchElementException"></exception>
-      <exception cref="T:OpenQA.Selenium.StaleElementReferenceException"></exception>
-    </member>
-    <member
       name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.IWebElement)">
       <summary>
         Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become Enabled.
@@ -1918,6 +1869,55 @@
       name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.By)">
       <summary>
         Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become Enabled.
+        <para>
+          Ignored Exceptions: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
+          <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+        </para>
+      </summary>
+      <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+      <param name="locator">
+        <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
+      </param>
+      <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException"></exception>
+      <exception cref="T:OpenQA.Selenium.NoSuchElementException"></exception>
+      <exception cref="T:OpenQA.Selenium.StaleElementReferenceException"></exception>
+    </member>
+    <member
+      name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsNotEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.IWebElement)">
+      <summary>
+        Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become not Enabled.
+        <para>Ignored Exceptions: <see cref="T:OpenQA.Selenium.StaleElementReferenceException" /></para>
+      </summary>
+      <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+      <param name="element">
+        The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
+        instance.
+      </param>
+      <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException"></exception>
+      <exception cref="T:OpenQA.Selenium.StaleElementReferenceException"></exception>
+    </member>
+    <member
+      name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsNotEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By)">
+      <summary>
+        Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become not Enabled.
+        <para>
+          Ignored Exceptions: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
+          <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+        </para>
+      </summary>
+      <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+      <param name="searchContext">The <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the element.</param>
+      <param name="locator">
+        <inheritdoc cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
+      </param>
+      <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException"></exception>
+      <exception cref="T:OpenQA.Selenium.NoSuchElementException"></exception>
+      <exception cref="T:OpenQA.Selenium.StaleElementReferenceException"></exception>
+    </member>
+    <member
+      name="M:Drelanium.UntilElementEnabledConditions.UntilElementIsNotEnabled(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.By)">
+      <summary>
+        Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has become not Enabled.
         <para>
           Ignored Exceptions: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
           <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />

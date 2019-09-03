@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -8,11 +7,17 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.7.0</PackageVersion>
+    <PackageVersion>1.8.0</PackageVersion>
     <PackageId>Drelanium</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
-    <PackageDescription>Extensions for Selenium.</PackageDescription>
+    <PackageDescription>
+      Test Automation Framework based on Selenium.WebDriver to write browser automated tests with ease.
+      Using:
+       - Microsoft.Extensions.Configuration for an easy way browser configuration,
+       - Serilog as a .NET logger
+       - FluentAssertions to write assertions in an extremely readable way.
+    </PackageDescription>
     <Description></Description>
     <Copyright></Copyright>
     <PackageRequireLicenseAcceptance></PackageRequireLicenseAcceptance>
@@ -21,7 +26,7 @@
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
     <PackageReleaseNotes>Added WaitConditions and changed existing wait conditions to use it.</PackageReleaseNotes>
-    <PackageTags>Selenium, WebDriver, Test, Automation</PackageTags>
+    <PackageTags>Selenium, WebDriver, Test, Automation, Framework</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols></IncludeSymbols>
     <SymbolPackageFormat></SymbolPackageFormat>
@@ -63,6 +68,9 @@
 
     <!--Serilog packages-->
     <PackageReference Include="Serilog" Version="2.8.0" />
+
+    <!--FluentAssertions packages-->
+    <PackageReference Include="FluentAssertions" Version="5.9.0" />
 
   </ItemGroup>
 
