@@ -22,7 +22,7 @@ namespace Drelanium
 
             var s = locator.ToString().Remove(locator.ToString().IndexOf(":"));
 
-            return s.Substring(s.IndexOf("By.") + 3);
+            return s.Substring(s.IndexOf("By") + 3);
         }
 
         /// <summary>

@@ -48,7 +48,7 @@ namespace Drelanium
         ///     The <see cref="IWebElement" /> that is currently focused.
         /// </summary>
         public IWebElement ActiveElement =>
-            Driver.ExecuteJavaScript<IWebElement>("return document['activeElement']; .");
+            Driver.ExecuteJavaScript<IWebElement>("return document['activeElement']; ");
 
         /// <summary>
         ///     ...Description to be added...
@@ -58,13 +58,13 @@ namespace Drelanium
         /// <summary>
         ///     The body <see cref="IWebElement" /> of the html.
         /// </summary>
-        public IWebElement Body => Driver.ExecuteJavaScript<IWebElement>("return document['body']; .");
+        public IWebElement Body => Driver.ExecuteJavaScript<IWebElement>("return document['body']; ");
 
         /// <summary>
         ///     The document <see cref="IWebElement" /> of the html.
         /// </summary>
         public IWebElement DocumentElement =>
-            Driver.ExecuteJavaScript<IWebElement>("return document['documentElement']; .");
+            Driver.ExecuteJavaScript<IWebElement>("return document['documentElement']; ");
 
         /// <summary>
         ///     ...Description to be added...
@@ -80,13 +80,13 @@ namespace Drelanium
         /// <summary>
         ///     The head <see cref="IWebElement" /> of the html.
         /// </summary>
-        public IWebElement Head => Driver.ExecuteJavaScript<IWebElement>("return document['head']; .");
+        public IWebElement Head => Driver.ExecuteJavaScript<IWebElement>("return document['head']; ");
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
         public ReadOnlyCollection<IWebElement> Links =>
-            Driver.ExecuteJavaScript<ReadOnlyCollection<IWebElement>>("return document['links']; .");
+            Driver.ExecuteJavaScript<ReadOnlyCollection<IWebElement>>("return document['links']; ");
 
         /// <summary>
         ///     ...Description to be added...

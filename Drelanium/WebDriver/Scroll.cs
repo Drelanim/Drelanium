@@ -50,7 +50,7 @@ namespace Drelanium
 
             logger?.Information($"Scrolling By({x},{y}).");
 
-            Driver.ExecuteJavaScript($"window.scrollBy({{top: {x}, left: {y}, behaviour: '{behaviour}'}});.");
+            Driver.ExecuteJavaScript($"window.scrollBy({{top: {x}, left: {y}, behaviour: '{behaviour}'}});");
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Drelanium
 
             logger?.Information($"Scrolling To({x},{y}).");
 
-            Driver.ExecuteJavaScript($"window.scrollTo({{top: {x}, left: {y}, behaviour: '{behaviour}'}});.");
+            Driver.ExecuteJavaScript($"window.scrollTo({{top: {x}, left: {y}, behaviour: '{behaviour}'}});");
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Drelanium
             logger?.Information("Scrolling to the bottom of the body.");
 
             Driver.ExecuteJavaScript(
-                $"window.scrollTo({{top: document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});.");
+                $"window.scrollTo({{top: document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Drelanium
             logger?.Information("Scrolling to the top of the body.");
 
             Driver.ExecuteJavaScript(
-                $"window.scrollTo({{top: -document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});.");
+                $"window.scrollTo({{top: -document.body.scrollHeight, left: 0, behaviour: '{behaviour}'}});");
         }
     }
 }

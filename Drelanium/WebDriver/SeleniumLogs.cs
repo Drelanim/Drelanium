@@ -110,7 +110,7 @@ namespace Drelanium
             foreach (var logEntry in Logs)
             {
                 logger?.Write(DefineLogEventLevel(logEntry.Level),
-                    $"[Source: {LogKind.ToUpper()}] [OriginTime: {logEntry.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")}]: {logEntry.Message.Trim()}.");
+                    $"[Source: {LogKind.ToUpper()}] [OriginTime: {logEntry.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")}]: {logEntry.Message.Trim()}");
             }
         }
     }

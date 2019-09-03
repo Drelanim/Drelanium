@@ -58,7 +58,7 @@ namespace Drelanium
             if (eventType == null) throw new ArgumentNullException(nameof(eventType));
             if (functionName == null) throw new ArgumentNullException(nameof(functionName));
 
-            driver.ExecuteJavaScript($"{elementName}.addEventListener('{eventType}', {functionName}); .");
+            driver.ExecuteJavaScript($"{elementName}.addEventListener('{eventType}', {functionName}); ");
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Drelanium
             if (eventType == null) throw new ArgumentNullException(nameof(eventType));
             if (functionName == null) throw new ArgumentNullException(nameof(functionName));
 
-            driver.ExecuteJavaScript($"{elementName}.removeEventListener('{eventType}', {functionName}); .");
+            driver.ExecuteJavaScript($"{elementName}.removeEventListener('{eventType}', {functionName}); ");
         }
 
         /// <summary>

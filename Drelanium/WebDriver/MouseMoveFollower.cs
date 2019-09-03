@@ -87,7 +87,7 @@ namespace Drelanium
                 Driver.Create().CreateElement(SeleniumMouseMoveFollowerID, "img", Driver.Body());
 
             Driver.Create().CreateFunction(MouseMoveFollowerFunctionName, "(event)",
-                $"{{{SeleniumMouseMoveFollowerID}.style.left = event.pageX + 'px'; {SeleniumMouseMoveFollowerID}.style.top = event.pageY + 'px';}}.");
+                $"{{{SeleniumMouseMoveFollowerID}.style.left = event.pageX + 'px'; {SeleniumMouseMoveFollowerID}.style.top = event.pageY + 'px';}}");
 
             Driver.AddEventListener(EventType.mousemove, MouseMoveFollowerFunctionName);
 

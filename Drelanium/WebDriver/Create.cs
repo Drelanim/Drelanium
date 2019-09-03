@@ -35,7 +35,7 @@ namespace Drelanium
             if (elementName == null) throw new ArgumentNullException(nameof(elementName));
             if (tagType == null) throw new ArgumentNullException(nameof(tagType));
 
-            Driver.ExecuteJavaScript($"window['{elementName}'] = document.createElement('{tagType}'); .");
+            Driver.ExecuteJavaScript($"window['{elementName}'] = document.createElement('{tagType}'); ");
 
             return elementName;
         }
@@ -57,7 +57,7 @@ namespace Drelanium
 
             Driver.AppendElementToParent(parentElement, elementName);
 
-            return Driver.ExecuteJavaScript<IWebElement>($"return {elementName}; .");
+            return Driver.ExecuteJavaScript<IWebElement>($"return {elementName}; ");
         }
 
         /// <summary>
@@ -73,9 +73,9 @@ namespace Drelanium
             if (eventName == null) throw new ArgumentNullException(nameof(eventName));
             if (eventType == null) throw new ArgumentNullException(nameof(eventType));
 
-            Driver.ExecuteJavaScript($"window['{eventName}'] = document.createEvent('HTMLEvents'); .");
+            Driver.ExecuteJavaScript($"window['{eventName}'] = document.createEvent('HTMLEvents'); ");
             Driver.ExecuteJavaScript(
-                $"{eventName}.initEvent('{eventType}', {bubbles.ToString().ToLower()}, {cancelable.ToString().ToLower()}); .");
+                $"{eventName}.initEvent('{eventType}', {bubbles.ToString().ToLower()}, {cancelable.ToString().ToLower()}); ");
 
             return eventName;
         }
@@ -109,7 +109,7 @@ namespace Drelanium
             if (functionImplementation == null) throw new ArgumentNullException(nameof(functionImplementation));
 
             Driver.ExecuteJavaScript(
-                $"window['{functionName}'] = function{functionArguments} {functionImplementation}; .");
+                $"window['{functionName}'] = function{functionArguments} {functionImplementation}; ");
 
             return functionName;
         }

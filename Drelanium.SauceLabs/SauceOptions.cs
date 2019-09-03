@@ -44,7 +44,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object browserName
         {
-            get => GetValue("browserName.");
+            get => GetValue("browserName");
             set => SetValue("browserName", value);
         }
 
@@ -55,7 +55,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object deviceName
         {
-            get => GetValue("deviceName.");
+            get => GetValue("deviceName");
             set => SetValue("deviceName", value);
         }
 
@@ -66,7 +66,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object deviceType
         {
-            get => GetValue("deviceType.");
+            get => GetValue("deviceType");
             set => SetValue("deviceType", value);
         }
 
@@ -77,7 +77,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object deviceOrientation
         {
-            get => GetValue("deviceOrientation.");
+            get => GetValue("deviceOrientation");
             set => SetValue("deviceOrientation", value);
         }
 
@@ -88,7 +88,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object automationName
         {
-            get => GetValue("automationName.");
+            get => GetValue("automationName");
             set => SetValue("automationName", value);
         }
 
@@ -99,7 +99,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object appPackage
         {
-            get => GetValue("appPackage.");
+            get => GetValue("appPackage");
             set => SetValue("appPackage", value);
         }
 
@@ -110,7 +110,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object appActivity
         {
-            get => GetValue("appActivity.");
+            get => GetValue("appActivity");
             set => SetValue("appActivity", value);
         }
 
@@ -121,7 +121,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object autoAcceptAlerts
         {
-            get => GetValue("autoAcceptAlerts.");
+            get => GetValue("autoAcceptAlerts");
             set => SetValue("autoAcceptAlerts", value);
         }
 
@@ -133,7 +133,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object version
         {
-            get => GetValue("version.");
+            get => GetValue("version");
             set => SetValue("version", value);
         }
 
@@ -144,7 +144,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object platform
         {
-            get => GetValue("platform.");
+            get => GetValue("platform");
             set => SetValue("platform", value);
         }
 
@@ -155,7 +155,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object platformVersion
         {
-            get => GetValue("platformVersion.");
+            get => GetValue("platformVersion");
             set => SetValue("platformVersion", value);
         }
 
@@ -166,7 +166,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object app
         {
-            get => GetValue("app.");
+            get => GetValue("app");
             set => SetValue("app", value);
         }
 
@@ -177,7 +177,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object platformName
         {
-            get => GetValue("platformName.");
+            get => GetValue("platformName");
             set => SetValue("platformName", value);
         }
 
@@ -187,7 +187,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object accessKey
         {
-            get => GetValue("accessKey.");
+            get => GetValue("accessKey");
             set => SetValue("accessKey", value);
         }
 
@@ -199,7 +199,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object appiumVersion
         {
-            get => GetValue("appiumVersion.");
+            get => GetValue("appiumVersion");
             set => SetValue("appiumVersion", value);
         }
 
@@ -210,7 +210,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object avoidProxy
         {
-            get => GetValue("avoidProxy.");
+            get => GetValue("avoidProxy");
             set => SetValue("avoidProxy", value);
         }
 
@@ -221,7 +221,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object build
         {
-            get => GetValue("build.");
+            get => GetValue("build");
             set => SetValue("build", value);
         }
 
@@ -229,7 +229,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object captureHtml
         {
-            get => GetValue("captureHtml.");
+            get => GetValue("captureHtml");
             set => SetValue("captureHtml", value);
         }
 
@@ -240,7 +240,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object chromedriverVersion
         {
-            get => GetValue("chromedriverVersion.");
+            get => GetValue("chromedriverVersion");
             set => SetValue("chromedriverVersion", value);
         }
 
@@ -250,7 +250,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object crmuxdriverVersion
         {
-            get => GetValue("crmuxdriverVersion.");
+            get => GetValue("crmuxdriverVersion");
             set => SetValue("crmuxdriverVersion", value);
         }
 
@@ -264,7 +264,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object customData
         {
-            get => GetValue("customData.");
+            get => GetValue("customData");
             set => SetValue("customData", value);
         }
 
@@ -274,7 +274,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object disablePopupHandler
         {
-            get => GetValue("disablePopupHandler.");
+            get => GetValue("disablePopupHandler");
             set => SetValue("disablePopupHandler", value);
         }
 
@@ -285,7 +285,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object extendedDebugging
         {
-            get => GetValue("extendedDebugging.");
+            get => GetValue("extendedDebugging");
             set => SetValue("extendedDebugging", value);
         }
 
@@ -296,7 +296,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object capturePerformance
         {
-            get => GetValue("capturePerformance.");
+            get => GetValue("capturePerformance");
             set => SetValue("capturePerformance", value);
         }
 
@@ -306,7 +306,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object firefoxAdapterVersion
         {
-            get => GetValue("firefoxAdapterVersion.");
+            get => GetValue("firefoxAdapterVersion");
             set => SetValue("firefoxAdapterVersion", value);
         }
 
@@ -315,7 +315,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object firefoxProfileUrl
         {
-            get => GetValue("firefoxProfileUrl.");
+            get => GetValue("firefoxProfileUrl");
             set => SetValue("firefoxProfileUrl", value);
         }
 
@@ -326,7 +326,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object idleTimeout
         {
-            get => GetValue("idleTimeout.");
+            get => GetValue("idleTimeout");
             set => SetValue("idleTimeout", value);
         }
 
@@ -337,7 +337,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object commandTimeout
         {
-            get => GetValue("commandTimeout.");
+            get => GetValue("commandTimeout");
             set => SetValue("commandTimeout", value);
         }
 
@@ -348,7 +348,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object iedriverVersion
         {
-            get => GetValue("iedriverVersion.");
+            get => GetValue("iedriverVersion");
             set => SetValue("iedriverVersion", value);
         }
 
@@ -360,7 +360,7 @@ namespace Drelanium.SauceLabs
 
         public object maxDuration
         {
-            get => GetValue("maxDuration.");
+            get => GetValue("maxDuration");
             set => SetValue("maxDuration", value);
         }
 
@@ -371,7 +371,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object name
         {
-            get => GetValue("name.");
+            get => GetValue("name");
             set => SetValue("name", value);
         }
 
@@ -382,7 +382,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object parentTunnel
         {
-            get => GetValue("parentTunnel.");
+            get => GetValue("parentTunnel");
             set => SetValue("parentTunnel", value);
         }
 
@@ -394,7 +394,7 @@ namespace Drelanium.SauceLabs
 
         public object passed
         {
-            get => GetValue("passed.");
+            get => GetValue("passed");
             set => SetValue("passed", value);
         }
 
@@ -403,7 +403,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object prerun
         {
-            get => GetValue("prerun.");
+            get => GetValue("prerun");
             set => SetValue("prerun", value);
         }
 
@@ -411,7 +411,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object preserveRequeue
         {
-            get => GetValue("preserveRequeue.");
+            get => GetValue("preserveRequeue");
             set => SetValue("preserveRequeue", value);
         }
 
@@ -422,7 +422,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object priority
         {
-            get => GetValue("priority.");
+            get => GetValue("priority");
             set => SetValue("priority", value);
         }
 
@@ -433,7 +433,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object webdriverRemoteQuietExceptions
         {
-            get => GetValue("webdriver.remote.quietExceptions.");
+            get => GetValue("webdriver.remote.quietExceptions");
             set => SetValue("webdriver.remote.quietExceptions", value);
         }
 
@@ -441,7 +441,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object proxyHost
         {
-            get => GetValue("proxyHost.");
+            get => GetValue("proxyHost");
             set => SetValue("proxyHost", value);
         }
 
@@ -452,7 +452,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object @public
         {
-            get => GetValue("public.");
+            get => GetValue("public");
             set => SetValue("public", value);
         }
 
@@ -463,7 +463,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object recordLogs
         {
-            get => GetValue("recordLogs.");
+            get => GetValue("recordLogs");
             set => SetValue("recordLogs", value);
         }
 
@@ -474,7 +474,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object recordVideo
         {
-            get => GetValue("recordVideo.");
+            get => GetValue("recordVideo");
             set => SetValue("recordVideo", value);
         }
 
@@ -484,7 +484,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object recordScreenshots
         {
-            get => GetValue("recordScreenshots.");
+            get => GetValue("recordScreenshots");
             set => SetValue("recordScreenshots", value);
         }
 
@@ -492,7 +492,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object restrictedPublicInfo
         {
-            get => GetValue("restrictedPublicInfo.");
+            get => GetValue("restrictedPublicInfo");
             set => SetValue("restrictedPublicInfo", value);
         }
 
@@ -503,7 +503,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object screenResolution
         {
-            get => GetValue("screenResolution.");
+            get => GetValue("screenResolution");
             set => SetValue("screenResolution", value);
         }
 
@@ -514,7 +514,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object seleniumVersion
         {
-            get => GetValue("seleniumVersion.");
+            get => GetValue("seleniumVersion");
             set => SetValue("seleniumVersion", value);
         }
 
@@ -522,7 +522,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object source
         {
-            get => GetValue("source.");
+            get => GetValue("source");
             set => SetValue("source", value);
         }
 
@@ -534,7 +534,7 @@ namespace Drelanium.SauceLabs
 
         public object tags
         {
-            get => GetValue("tags.");
+            get => GetValue("tags");
             set => SetValue("tags", value);
         }
 
@@ -545,7 +545,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object timeZone
         {
-            get => GetValue("timeZone.");
+            get => GetValue("timeZone");
             set => SetValue("timeZone", value);
         }
 
@@ -556,7 +556,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object tunnelIdentifier
         {
-            get => GetValue("tunnelIdentifier.");
+            get => GetValue("tunnelIdentifier");
             set => SetValue("tunnelIdentifier", value);
         }
 
@@ -567,7 +567,7 @@ namespace Drelanium.SauceLabs
 
         public object username
         {
-            get => GetValue("username.");
+            get => GetValue("username");
             set => SetValue("username", value);
         }
 
@@ -578,7 +578,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public object videoUploadOnPass
         {
-            get => GetValue("videoUploadOnPass.");
+            get => GetValue("videoUploadOnPass");
             set => SetValue("videoUploadOnPass", value);
         }
 

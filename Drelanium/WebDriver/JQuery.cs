@@ -28,6 +28,6 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public bool Active => Driver.ExecuteJavaScript<bool>("return jQuery.active == 0.");
+        public bool Active => Driver.ExecuteJavaScript<bool>("return jQuery.active == 0");
     }
 }

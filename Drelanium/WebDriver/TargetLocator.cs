@@ -275,7 +275,7 @@ namespace Drelanium
 
             if (indexOfWindow < 0) throw new InvalidEnumArgumentException();
 
-            while (numberOfWindow > Driver.WindowHandles.Count) Driver.ExecuteJavaScript("window.open();.");
+            while (numberOfWindow > Driver.WindowHandles.Count) Driver.ExecuteJavaScript("window.open();");
 
             return Window(Driver.WindowHandles[indexOfWindow], logger);
         }

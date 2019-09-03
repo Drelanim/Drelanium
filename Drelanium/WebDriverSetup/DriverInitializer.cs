@@ -56,7 +56,7 @@ namespace Drelanium
                     logger?.Information($"Attempting to start a ({browserType}) WebDriver on " +
                                         $"({executionMode}) ExecutionMode, " +
                                         $"using local driver directory ({localDriverDirectory}) " +
-                                        $"with the following DriverOptions: ({driverOptions}).");
+                                        $"with the following DriverOptions: ({driverOptions})");
 
                     if (localDriverDirectory == null)
                     {
@@ -121,7 +121,7 @@ namespace Drelanium
                     logger?.Information($"Attempting to start a ({browserType}) WebDriver on " +
                                         $"({executionMode}) ExecutionMode, " +
                                         $"using SeleniumGrid Hub Url ({seleniumGridHubUrl?.AbsoluteUri}) " +
-                                        $"with the following DriverOptions: ({driverOptions}).");
+                                        $"with the following DriverOptions: ({driverOptions})");
 
                     if (seleniumGridHubUrl == null)
                     {

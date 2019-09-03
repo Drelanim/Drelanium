@@ -26,7 +26,7 @@ namespace Drelanium
             if (parentElementName == null) throw new ArgumentNullException(nameof(parentElementName));
             if (childElementName == null) throw new ArgumentNullException(nameof(childElementName));
 
-            driver.ExecuteJavaScript($"window['{parentElementName}'].appendChild({childElementName}); .");
+            driver.ExecuteJavaScript($"window['{parentElementName}'].appendChild({childElementName}); ");
         }
 
         /// <summary>

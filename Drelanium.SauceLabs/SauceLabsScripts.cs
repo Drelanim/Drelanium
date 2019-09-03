@@ -43,7 +43,7 @@ namespace Drelanium.SauceLabs
         {
             if (text == null) throw new ArgumentNullException(nameof(text));
 
-            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:context={text}.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:context={text}");
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Drelanium.SauceLabs
         {
             if (buildName == null) throw new ArgumentNullException(nameof(buildName));
 
-            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-build={buildName}.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-build={buildName}");
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Drelanium.SauceLabs
         {
             if (jobInfo == null) throw new ArgumentNullException(nameof(jobInfo));
 
-            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce: job-info={jobInfo}.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce: job-info={jobInfo}");
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Drelanium.SauceLabs
         {
             if (jobName == null) throw new ArgumentNullException(nameof(jobName));
 
-            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-name={jobName}.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-name={jobName}");
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Drelanium.SauceLabs
         {
             if (jobResult == null) throw new ArgumentNullException(nameof(jobResult));
 
-            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-result={jobResult}.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-result={jobResult}");
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Drelanium.SauceLabs
         {
             if (tags == null) throw new ArgumentNullException(nameof(tags));
 
-            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-tags={tags}.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-tags={tags}");
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public void SetSauceBreakPoint()
         {
-            ((IJavaScriptExecutor) Driver).ExecuteScript("sauce: break.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript("sauce: break");
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public void StartNetwork()
         {
-            ((IJavaScriptExecutor) Driver).ExecuteScript("sauce: start network.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript("sauce: start network");
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public void StopNetwork()
         {
-            ((IJavaScriptExecutor) Driver).ExecuteScript("sauce: stop network.");
+            ((IJavaScriptExecutor) Driver).ExecuteScript("sauce: stop network");
         }
     }
 }

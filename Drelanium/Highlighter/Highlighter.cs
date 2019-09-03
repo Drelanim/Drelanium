@@ -21,8 +21,8 @@ namespace Drelanium
         {
             if (circle == null) throw new ArgumentNullException(nameof(circle));
 
-            circle.Style().Set(ElementStylePropertyName.Left, $"{xPosCenter - 15}px.");
-            circle.Style().Set(ElementStylePropertyName.Top, $"{yPosCenter - 15}px.");
+            circle.Style().Set(ElementStylePropertyName.Left, $"{xPosCenter - 15}px");
+            circle.Style().Set(ElementStylePropertyName.Top, $"{yPosCenter - 15}px");
         }
 
         /// <summary>
