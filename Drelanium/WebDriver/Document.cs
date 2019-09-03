@@ -43,19 +43,16 @@ namespace Drelanium
 
         private IWebDriver Driver { get; }
 
-
         /// <summary>
         ///     The <see cref="IWebElement" /> that is currently focused.
         /// </summary>
         public IWebElement ActiveElement =>
             Driver.ExecuteJavaScript<IWebElement>("return document['activeElement']; .");
 
-
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
         public Uri BaseURI => new Uri(Driver.ExecuteJavaScript<object>("return document['baseURI']; ").ToString());
-
 
         /// <summary>
         ///     The body <see cref="IWebElement" /> of the html.

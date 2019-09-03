@@ -24,7 +24,6 @@ namespace Drelanium
         /// </summary>
         public string OperaDriverDirectory { get; set; }
 
-
         /// <summary>
         /// </summary>
         /// <param name="configurationRoot">...Description to be added...</param>
@@ -34,7 +33,6 @@ namespace Drelanium
             configurationRoot.Bind(this);
             return this;
         }
-
 
         /// <summary>
         /// </summary>

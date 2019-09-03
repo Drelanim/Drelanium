@@ -1,8 +1,6 @@
 ﻿// ReSharper disable IdentifierTypo
 
-
 #pragma warning disable 1591
-
 
 namespace Drelanium
 {

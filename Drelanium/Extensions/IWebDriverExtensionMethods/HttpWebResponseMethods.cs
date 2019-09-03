@@ -6,7 +6,6 @@ using Serilog.Events;
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebDriver" /> types.
@@ -30,7 +29,6 @@ namespace Drelanium
 
             return url.HttpWebResponse();
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="System.Net.HttpWebResponse" />

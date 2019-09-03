@@ -5,12 +5,9 @@ using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
 
-
 // ReSharper disable InconsistentNaming
 
-
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -23,7 +20,10 @@ namespace Drelanium
         ///     <para>Logs the event.</para>
         /// </summary>
         /// <param name="action"></param>
-        /// <param name="logger"></param>
+        /// <param name="logger">
+        ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
+        ///     <see cref="LogEventLevel.Information" />) during the method exeuction.
+        /// </param>
         public static void Perform(this IAction action, Logger logger)
         {
             logger?.Information("Attempting to perform chained actions");
@@ -32,7 +32,6 @@ namespace Drelanium
 
             logger?.Information("Performing chained actions has been finished successfully!");
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IAction.Perform()" />

@@ -172,7 +172,6 @@ namespace Drelanium
         /// </summary>
         public string Environment => HasCapability("environment") ? GetCapability("environment").ToString() : null;
 
-
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
@@ -188,7 +187,6 @@ namespace Drelanium
         {
             return CapabilitiesImplementation.GetCapability(capability);
         }
-
 
         /// <summary>
         ///     ...Description to be added...

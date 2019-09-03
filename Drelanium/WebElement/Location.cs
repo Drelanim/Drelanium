@@ -17,7 +17,6 @@ namespace Drelanium
 
         BottomLeftPoint,
 
-
         TopMiddlePoint,
 
         MiddlePoint,

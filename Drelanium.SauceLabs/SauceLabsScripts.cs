@@ -14,7 +14,6 @@ namespace Drelanium.SauceLabs
         Failed
     }
 
-
     /// <summary>
     ///     ...Description to be added...
     /// </summary>
@@ -28,7 +27,6 @@ namespace Drelanium.SauceLabs
         {
             Driver = driver;
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IWebDriver" />
@@ -44,7 +42,6 @@ namespace Drelanium.SauceLabs
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:context={text}.");
         }
 
-
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
@@ -53,7 +50,6 @@ namespace Drelanium.SauceLabs
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-build={buildName}.");
         }
-
 
         /// <summary>
         ///     ...Description to be added...
@@ -64,7 +60,6 @@ namespace Drelanium.SauceLabs
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce: job-info={jobInfo}.");
         }
 
-
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
@@ -73,7 +68,6 @@ namespace Drelanium.SauceLabs
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-name={jobName}.");
         }
-
 
         /// <summary>
         ///     ...Description to be added...
@@ -84,7 +78,6 @@ namespace Drelanium.SauceLabs
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-result={jobResult}.");
         }
 
-
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
@@ -93,7 +86,6 @@ namespace Drelanium.SauceLabs
         {
             SetJobResult(jobResult.ToString().ToLower());
         }
-
 
         /// <summary>
         ///     ...Description to be added...
@@ -119,7 +111,6 @@ namespace Drelanium.SauceLabs
         {
             ((IJavaScriptExecutor) Driver).ExecuteScript("sauce: start network.");
         }
-
 
         /// <summary>
         ///     ...Description to be added...

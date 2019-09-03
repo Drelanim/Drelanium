@@ -5,7 +5,6 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="ISearchContext" /> types.
@@ -35,17 +34,6 @@ namespace Drelanium
                         "The given ISearchContext was neither IWebDriver, neither IWebElement");
             }
         }
-
-
-        /// <summary>
-        ///     <inheritdoc cref="Drelanium.Search" />
-        /// </summary>
-        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
-        public static Search Search(this ISearchContext searchContext)
-        {
-            return new Search(searchContext);
-        }
-
 
         /// <summary>
         ///     <inheritdoc cref="WebDriverWait" />

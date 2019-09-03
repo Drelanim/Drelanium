@@ -4,7 +4,6 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.

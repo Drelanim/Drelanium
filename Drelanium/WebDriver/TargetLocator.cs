@@ -31,7 +31,6 @@ namespace Drelanium
         /// </summary>
         private IWebDriver Driver { get; }
 
-
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Frame(int)" />
         /// </summary>
@@ -39,7 +38,6 @@ namespace Drelanium
         {
             return TargetLocatorImplementation.Frame(frameIndex);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Frame(string)" />
@@ -49,7 +47,6 @@ namespace Drelanium
             return TargetLocatorImplementation.Frame(frameName);
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Frame(IWebElement)" />
         /// </summary>
@@ -57,7 +54,6 @@ namespace Drelanium
         {
             return TargetLocatorImplementation.Frame(frameElement);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.ParentFrame()" />
@@ -67,7 +63,6 @@ namespace Drelanium
             return TargetLocatorImplementation.ParentFrame();
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Window(string)" />
         /// </summary>
@@ -75,7 +70,6 @@ namespace Drelanium
         {
             return TargetLocatorImplementation.Window(windowName);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.DefaultContent()" />
@@ -85,7 +79,6 @@ namespace Drelanium
             return TargetLocatorImplementation.DefaultContent();
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.ActiveElement()" />
         /// </summary>
@@ -93,7 +86,6 @@ namespace Drelanium
         {
             return TargetLocatorImplementation.ActiveElement();
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Alert()" />
@@ -150,7 +142,6 @@ namespace Drelanium
 
             return DefaultContent();
         }
-
 
         /// <summary>
         ///     ...Description to be added...
@@ -255,7 +246,6 @@ namespace Drelanium
 
             return Window(windowName);
         }
-
 
         /// <summary>
         ///     ...Description to be added...

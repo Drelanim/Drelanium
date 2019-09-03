@@ -8,14 +8,12 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
 
-
 // ReSharper disable UnusedMember.Global
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
 // ReSharper disable InconsistentNaming
 
 #pragma warning disable IDE1006 // Naming Styles
-
 
 namespace Drelanium.SauceLabs
 {
@@ -37,7 +35,6 @@ namespace Drelanium.SauceLabs
         /// </summary>
         public Dictionary<string, object> Options { get; }
 
-
         /// <summary>
         ///     <para> group: Required Selenium Test Configuration Setting </para>
         ///     <para> group: Required Appium Test Configuration Setting </para>
@@ -50,7 +47,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("browserName", value);
         }
 
-
         /// <summary>
         ///     <para> group: Required Appium Test Configuration Settings </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -61,7 +57,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("deviceName.");
             set => SetValue("deviceName", value);
         }
-
 
         /// <summary>
         ///     <para> group: Other Appium Options </para>
@@ -74,7 +69,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("deviceType", value);
         }
 
-
         /// <summary>
         ///     <para> group: Other Appium Options </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -85,7 +79,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("deviceOrientation.");
             set => SetValue("deviceOrientation", value);
         }
-
 
         /// <summary>
         ///     <para> group: Other Appium Options </para>
@@ -98,7 +91,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("automationName", value);
         }
 
-
         /// <summary>
         ///     <para> group: Other Appium Options </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -109,7 +101,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("appPackage.");
             set => SetValue("appPackage", value);
         }
-
 
         /// <summary>
         ///     <para> group: Other Appium Options </para>
@@ -122,7 +113,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("appActivity", value);
         }
 
-
         /// <summary>
         ///     <para> group: General Options - Alerts </para>
         ///     <para> type: <see cref="bool" /> </para>
@@ -133,7 +123,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("autoAcceptAlerts.");
             set => SetValue("autoAcceptAlerts", value);
         }
-
 
         /// <summary>
         ///     <para> group: Required Selenium Test Configuration Setting </para>
@@ -147,7 +136,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("version", value);
         }
 
-
         /// <summary>
         ///     <para> group: Required Selenium Test Configuration Setting </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -158,7 +146,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("platform.");
             set => SetValue("platform", value);
         }
-
 
         /// <summary>
         ///     <para> group: Required Appium Test Configuration Setting </para>
@@ -171,7 +158,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("platformVersion", value);
         }
 
-
         /// <summary>
         ///     <para> group: Required Appium Test Configuration Setting </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -182,7 +168,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("app.");
             set => SetValue("app", value);
         }
-
 
         /// <summary>
         ///     <para> group: Required Appium Test Configuration Setting </para>
@@ -195,7 +180,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("platformName", value);
         }
 
-
         /// <summary>
         ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "12345678-1234-1234-1234-123456789012" </para>
@@ -205,7 +189,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("accessKey.");
             set => SetValue("accessKey", value);
         }
-
 
         /// <summary>
         ///     <para> group: Required Appium Test Configuration Settings </para>
@@ -219,7 +202,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("appiumVersion", value);
         }
 
-
         /// <summary>
         ///     <para> group: SauceTesting Options </para>
         ///     <para> type: <see cref="bool" /> </para>
@@ -230,7 +212,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("avoidProxy.");
             set => SetValue("avoidProxy", value);
         }
-
 
         /// <summary>
         ///     <para> group: General Options - Test Annotation </para>
@@ -243,7 +224,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("build", value);
         }
 
-
         /// <summary>
         /// </summary>
         public object captureHtml
@@ -251,7 +231,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("captureHtml.");
             set => SetValue("captureHtml", value);
         }
-
 
         /// <summary>
         ///     <para> group: Other Selenium Options </para>
@@ -264,7 +243,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("chromedriverVersion", value);
         }
 
-
         /// <summary>
         ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "2.45" </para>
@@ -274,7 +252,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("crmuxdriverVersion.");
             set => SetValue("crmuxdriverVersion", value);
         }
-
 
         /// <summary>
         ///     <para> group: General Options - Test Annotation </para>
@@ -290,7 +267,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("customData", value);
         }
 
-
         /// <summary>
         ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: true </para>
@@ -300,7 +276,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("disablePopupHandler.");
             set => SetValue("disablePopupHandler", value);
         }
-
 
         /// <summary>
         ///     <para> group: Other SauceTesting Features </para>
@@ -313,7 +288,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("extendedDebugging", value);
         }
 
-
         /// <summary>
         ///     <para> group: Other SauceTesting Features </para>
         ///     <para> type: <see cref="bool" /> </para>
@@ -325,7 +299,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("capturePerformance", value);
         }
 
-
         /// <summary>
         ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: "1.0" </para>
@@ -335,7 +308,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("firefoxAdapterVersion.");
             set => SetValue("firefoxAdapterVersion", value);
         }
-
 
         /// <summary>
         ///     <para> type: <see cref="string" /> </para>
@@ -357,7 +329,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("idleTimeout", value);
         }
 
-
         /// <summary>
         ///     <para> General Options: Timeouts </para>
         ///     <para> type: <see cref="int" /> </para>
@@ -369,7 +340,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("commandTimeout", value);
         }
 
-
         /// <summary>
         ///     <para> group: Other Selenium Options </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -380,7 +350,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("iedriverVersion.");
             set => SetValue("iedriverVersion", value);
         }
-
 
         /// <summary>
         ///     <para> General Options: Timeouts </para>
@@ -394,7 +363,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("maxDuration", value);
         }
 
-
         /// <summary>
         ///     <para> group: General Options - Test Annotation </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -405,7 +373,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("name.");
             set => SetValue("name", value);
         }
-
 
         /// <summary>
         ///     <para> group: SauceTesting Options </para>
@@ -430,7 +397,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("passed", value);
         }
 
-
         /// <summary>
         ///     <para> group: SauceTesting Options </para>
         /// </summary>
@@ -440,7 +406,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("prerun", value);
         }
 
-
         /// <summary>
         /// </summary>
         public object preserveRequeue
@@ -448,7 +413,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("preserveRequeue.");
             set => SetValue("preserveRequeue", value);
         }
-
 
         /// <summary>
         ///     <para> group: Other SauceTesting Features </para>
@@ -461,7 +425,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("priority", value);
         }
 
-
         /// <summary>
         ///     <para> group: Other SauceTesting Features </para>
         ///     <para> type: <see cref="bool" /> </para>
@@ -472,7 +435,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("webdriver.remote.quietExceptions.");
             set => SetValue("webdriver.remote.quietExceptions", value);
         }
-
 
         /// <summary>
         /// </summary>
@@ -493,7 +455,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("public", value);
         }
 
-
         /// <summary>
         ///     <para> group: Other SauceTesting Features </para>
         ///     <para> type: <see cref="bool" /> </para>
@@ -504,7 +465,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("recordLogs.");
             set => SetValue("recordLogs", value);
         }
-
 
         /// <summary>
         ///     <para> group: Other SauceTesting Features </para>
@@ -517,7 +477,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("recordVideo", value);
         }
 
-
         /// <summary>
         ///     <para> type: <see cref="bool" /> </para>
         ///     <para> example: false </para>
@@ -528,7 +487,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("recordScreenshots", value);
         }
 
-
         /// <summary>
         /// </summary>
         public object restrictedPublicInfo
@@ -536,7 +494,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("restrictedPublicInfo.");
             set => SetValue("restrictedPublicInfo", value);
         }
-
 
         /// <summary>
         ///     <para> group: SauceTesting Options </para>
@@ -560,7 +517,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("seleniumVersion", value);
         }
 
-
         /// <summary>
         /// </summary>
         public object source
@@ -581,7 +537,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("tags", value);
         }
 
-
         /// <summary>
         ///     <para> group: SauceTesting Options </para>
         ///     <para> type: <see cref="string" /> </para>
@@ -592,7 +547,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("timeZone.");
             set => SetValue("timeZone", value);
         }
-
 
         /// <summary>
         ///     <para> group: SauceTesting Options </para>
@@ -605,7 +559,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("tunnelIdentifier", value);
         }
 
-
         /// <summary>
         ///     <para> type: <see cref="string" /> </para>
         ///     <para> example: Drelanim </para>
@@ -617,7 +570,6 @@ namespace Drelanium.SauceLabs
             set => SetValue("username", value);
         }
 
-
         /// <summary>
         ///     <para> group: Other SauceTesting Features </para>
         ///     <para> type: <see cref="bool" /> </para>
@@ -628,7 +580,6 @@ namespace Drelanium.SauceLabs
             get => GetValue("videoUploadOnPass.");
             set => SetValue("videoUploadOnPass", value);
         }
-
 
         /// <summary>
         /// </summary>
@@ -674,7 +625,6 @@ namespace Drelanium.SauceLabs
             }
         }
 
-
         /// <summary>
         /// </summary>
         /// <param name="configurationRoot">...Description to be added...</param>
@@ -684,7 +634,6 @@ namespace Drelanium.SauceLabs
             configurationRoot.Bind(this);
             return this;
         }
-
 
         /// <summary>
         /// </summary>
@@ -696,12 +645,10 @@ namespace Drelanium.SauceLabs
             return this;
         }
 
-
         private object GetValue(string key)
         {
             return Options.ContainsKey(key) ? Options[key] : null;
         }
-
 
         private void SetValue(string key, object value)
         {

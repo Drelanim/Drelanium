@@ -1,10 +1,10 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
 
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -30,7 +30,6 @@ namespace Drelanium
 
             logger?.Information("Click on element was successful.");
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IWebElement.Click()" />
@@ -61,7 +60,6 @@ namespace Drelanium
             logger?.Information("Click on element was successful.");
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="IWebElement.Click()" />
         ///     <para>Method is repeated until the element is successfully clicked.</para>
@@ -78,22 +76,32 @@ namespace Drelanium
         ///     The <see cref="Func{IWebDriver, TResult}" />, that defines the condition until the browser
         ///     must wait after the click has been successfully executed.
         /// </param>
+        /// <param name="timeoutMessage">The message that appears on timeout.</param>
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
+        /// <param name="clock">An object implementing the <see cref="IClock" /> interface used to determine when time has passed.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
+        /// <param name="sleepIntervalInSeconds">
+        ///     A <see cref="TimeSpan" /> value indicating how often to check for the condition to
+        ///     be true.
+        /// </param>
         /// <typeparam name="TResult">...Description to be added...</typeparam>
-        public static void Click<TResult>(this IWebElement element, double timeoutInSecondsForClick,
+        public static void Click<TResult>(this IWebElement element,
+            double timeoutInSecondsForClick,
             double timeoutInSecondsForAfterClickCondition, Func<IWebDriver, TResult> afterClickCondition,
-            Type[] ignoredExceptionTypes = null, Logger logger = null)
+            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
+            IClock clock = null,
+            Logger logger = null)
         {
             element.Click(timeoutInSecondsForClick, logger);
 
-            element.Wait(timeoutInSecondsForAfterClickCondition,
+            element
+                .Wait(timeoutInSecondsForAfterClickCondition,
                     $"Waited ({timeoutInSecondsForAfterClickCondition}) seconds for after-click condition to meet!",
-                    ignoredExceptionTypes)
+                    ignoredExceptionTypes, sleepIntervalInSeconds, clock)
                 .Until(afterClickCondition);
         }
     }

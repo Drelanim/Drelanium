@@ -5,7 +5,6 @@ using Serilog.Events;
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="Uri" /> types.

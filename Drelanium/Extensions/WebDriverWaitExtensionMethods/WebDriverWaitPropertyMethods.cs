@@ -3,7 +3,6 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.
@@ -24,7 +23,6 @@ namespace Drelanium
             return wait;
         }
 
-
         /// <summary>
         ///     Adding AddPollingInterval to the <see cref="WebDriverWait" /> instance.
         /// </summary>
@@ -35,7 +33,6 @@ namespace Drelanium
             wait.PollingInterval = pollingInterval;
             return wait;
         }
-
 
         /// <summary>
         ///     Adding AddTimeoutMessage to the <see cref="WebDriverWait" /> instance.

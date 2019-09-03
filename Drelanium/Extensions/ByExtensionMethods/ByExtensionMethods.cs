@@ -2,7 +2,6 @@
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="By" /> types.
@@ -32,7 +31,6 @@ namespace Drelanium
         {
             return locator.ToString().Substring(locator.ToString().IndexOf(":") + 2);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="Drelanium.Search" />

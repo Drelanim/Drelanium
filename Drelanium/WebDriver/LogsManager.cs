@@ -23,7 +23,6 @@ namespace Drelanium
         ServerLogs
     }
 
-
     /// <summary>
     ///     Extended implementation of <see cref="ILogs" />
     /// </summary>
@@ -42,7 +41,6 @@ namespace Drelanium
         /// </summary>
         private ILogs LogsImplementation { get; }
 
-
         /// <summary>
         ///     <inheritdoc cref="LogType.Browser" />
         /// </summary>
@@ -53,54 +51,45 @@ namespace Drelanium
         /// </summary>
         public SeleniumLogs ClientLogs => new SeleniumLogs(this, LogType.Client);
 
-
         /// <summary>
         ///     <inheritdoc cref="LogType.Driver" />
         /// </summary>
         public SeleniumLogs DriverLogs => new SeleniumLogs(this, LogType.Driver);
-
 
         /// <summary>
         ///     <inheritdoc cref="LogType.Profiler" />
         /// </summary>
         public SeleniumLogs ProfilerLogs => new SeleniumLogs(this, LogType.Profiler);
 
-
         /// <summary>
         ///     <inheritdoc cref="LogType.Server" />
         /// </summary>
         public SeleniumLogs ServerLogs => new SeleniumLogs(this, LogType.Server);
-
 
         /// <summary>
         ///     Determines if there is any <see cref="LogType.Browser" /> logs.
         /// </summary>
         public bool HasBrowserLogs => HasLog(LogType.Browser);
 
-
         /// <summary>
         ///     Determines if there is any <see cref="LogType.Client" /> logs.
         /// </summary>
         public bool HasClientLogs => HasLog(LogType.Client);
-
 
         /// <summary>
         ///     Determines if there is any <see cref="LogType.Driver" /> logs.
         /// </summary>
         public bool HasDriverLogs => HasLog(LogType.Driver);
 
-
         /// <summary>
         ///     Determines if there is any <see cref="LogType.Profiler" /> logs.
         /// </summary>
         public bool HasProfilerLogs => HasLog(LogType.Profiler);
 
-
         /// <summary>
         ///     Determines if there is any <see cref="LogType.Server" /> logs.
         /// </summary>
         public bool HasServerLogs => HasLog(LogType.Server);
-
 
         /// <summary>
         ///     ...Description to be added...
@@ -164,7 +153,6 @@ namespace Drelanium
         {
             return HasLog(LogKind(seleniumLogType));
         }
-
 
         /// <summary>
         ///     ...Description to be added...

@@ -5,12 +5,9 @@ using OpenQA.Selenium.Support.UI;
 
 // ReSharper disable StringLiteralTypo
 
-
 // ReSharper disable UnusedMember.Global
 
-
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -33,7 +30,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.Url(condition));
         }
 
-
         /// <summary>
         ///     Waits, until the browser's loaded Url should meet the given condition.
         /// </summary>
@@ -48,7 +44,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.Url(condition));
         }
-
 
         /// <summary>
         ///     Waits, until the browser's loaded Url should contain the given value.
@@ -65,7 +60,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.UrlToContain(urlPart));
         }
-
 
         /// <summary>
         ///     Waits, until the browser's loaded Url should not contain the given value.
@@ -86,7 +80,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.UrlLeftPart(uriPartial, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the browser's loaded Url should match the regular expression.
         /// </summary>
@@ -105,7 +98,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.UrlMatches(regexPattern));
         }
 
-
         /// <summary>
         ///     Waits, until the browser's loaded Url should not contain the given value.
         /// </summary>
@@ -120,7 +112,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.UrlNotToContain(urlPart));
         }
-
 
         /// <summary>
         ///     Waits, until the browser's loaded Url should not match the regular expression.
@@ -140,7 +131,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.UrlNotMatches(regexPattern));
         }
 
-
         /// <summary>
         ///     Waits, until the browser's loaded Url should not be the given value.
         /// </summary>
@@ -155,7 +145,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.UrlNotToBe(url));
         }
-
 
         /// <summary>
         ///     Waits, until the browser's loaded Url should to be the given value.

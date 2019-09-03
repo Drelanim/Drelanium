@@ -3,7 +3,6 @@
 
 #pragma warning disable 1591
 
-
 namespace Drelanium
 {
     public enum EventType

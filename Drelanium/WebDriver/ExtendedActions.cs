@@ -34,12 +34,10 @@ namespace Drelanium
 
         private Actions Actions { get; set; }
 
-
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
         private string ChainedActions { get; set; }
-
 
         /// <summary>
         ///     ...Description to be added...

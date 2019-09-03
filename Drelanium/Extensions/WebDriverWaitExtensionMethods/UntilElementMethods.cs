@@ -6,12 +6,9 @@ using OpenQA.Selenium.Support.UI;
 // ReSharper disable UnusedMember.Global
 // ReSharper disable IdentifierTypo
 
-
 // ReSharper disable CommentTypo
 
-
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -42,6 +39,31 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.Element(element, condition));
         }
 
+        /// <summary>
+        ///     Waits, until the <see cref="IWebElement" /> has met the given condition.
+        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        /// </summary>
+        /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
+        /// <param name="locator">
+        ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
+        /// </param>
+        /// <param name="condition">
+        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
+        ///     wait.
+        /// </param>
+        /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
+        public static TResult UntilElement<TResult>(this WebDriverWait wait, ISearchContext searchContext, By locator,
+            Func<IWebElement, TResult> condition)
+        {
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+                            "element " +
+                            "to meet the given condition.";
+
+            return wait.Until(WebDriverWaitConditions.Element(searchContext, locator, condition));
+        }
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
@@ -68,7 +90,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementAttribute(element, attributeName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -88,7 +109,6 @@ namespace Drelanium
         {
             return wait.UntilElementAttribute(element, attributeName.AttributeName, condition);
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
@@ -122,7 +142,6 @@ namespace Drelanium
                 WebDriverWaitConditions.ElementAttribute(searchContext, locator, attributeName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>
@@ -154,7 +173,6 @@ namespace Drelanium
                 WebDriverWaitConditions.ElementAttribute(locator, attributeName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -177,7 +195,6 @@ namespace Drelanium
             return wait.UntilElementAttribute(searchContext, locator, attributeName.AttributeName, condition);
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -198,7 +215,6 @@ namespace Drelanium
         {
             return wait.UntilElementAttribute(locator, attributeName.AttributeName, condition);
         }
-
 
         /// <summary>
         ///     The <see cref="IWebElement" /> should Disappear(not exists or not Displayed).
@@ -224,7 +240,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToNotExist(searchContext, locator));
         }
 
-
         /// <summary>
         ///     The <see cref="IWebElement" /> should Disappear(not exists or not Displayed).
         ///     <para>
@@ -247,7 +262,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToNotExist(locator));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> exists.
@@ -273,7 +287,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToExist(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> exists.
         ///     <para>
@@ -297,7 +310,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToExist(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Clickable(Displayed and Enabled).
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -315,7 +327,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Clickable(Displayed and Enabled).
@@ -341,7 +352,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Clickable(Displayed and Enabled).
         ///     <para>
@@ -365,7 +375,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Displayed.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -383,7 +392,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeDisplayed(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Displayed.
@@ -409,7 +417,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeDisplayed(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Displayed.
         ///     <para>
@@ -433,7 +440,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeDisplayed(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Enabled.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -451,7 +457,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeEnabled(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Enabled.
@@ -477,7 +482,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeEnabled(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Enabled.
         ///     <para>
@@ -501,7 +505,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeEnabled(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Clickable(Displayed and Enabled).
         ///     <para>
@@ -522,7 +525,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Clickable(Displayed and Enabled).
@@ -548,7 +550,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Clickable(Displayed and Enabled).
         ///     <para>
@@ -572,7 +573,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Displayed.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -590,7 +590,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotDisplayed(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Displayed.
@@ -616,7 +615,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotDisplayed(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Displayed.
         ///     <para>
@@ -640,7 +638,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotDisplayed(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Enabled.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -658,7 +655,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotEnabled(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Enabled.
@@ -684,7 +680,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotEnabled(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Enabled.
         ///     <para>
@@ -708,7 +703,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotEnabled(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Selected.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -726,7 +720,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotSelected(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Selected.
@@ -752,7 +745,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotSelected(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become not Selected.
         ///     <para>
@@ -776,7 +768,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotSelected(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Selected.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -794,7 +785,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeSelected(element));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Selected.
@@ -820,7 +810,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToBecomeSelected(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has become Selected.
         ///     <para>
@@ -843,7 +832,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeSelected(locator));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> not exists.
@@ -869,7 +857,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToNotExist(searchContext, locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> not exists.
         ///     <para>
@@ -893,16 +880,12 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementToNotExist(locator));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        /// <param name="condition">
-        ///     The <see cref="Func{T,TResult}" />, that defines the condition until the browser must
-        ///     wait.
-        /// </param>
+        /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <param name="propertyName">The property's name of the <see cref="IWebElement" />.</param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
@@ -918,7 +901,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.ElementProperty(element, propertyName, condition));
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
@@ -939,7 +921,6 @@ namespace Drelanium
         {
             return wait.UntilElementProperty(element, propertyName.PropertyName, condition);
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
@@ -971,7 +952,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementProperty(searchContext, locator, propertyName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
         ///     <para>
@@ -1001,7 +981,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementProperty(locator, propertyName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -1024,7 +1003,6 @@ namespace Drelanium
             return wait.UntilElementProperty(searchContext, locator, propertyName.PropertyName, condition);
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -1045,7 +1023,6 @@ namespace Drelanium
         {
             return wait.UntilElementProperty(locator, propertyName.PropertyName, condition);
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
@@ -1072,7 +1049,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementStyleProperty(element, stylePropertyName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -1092,7 +1068,6 @@ namespace Drelanium
         {
             return wait.UntilElementStyleProperty(element, stylePropertyName.PropertyName, condition);
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
@@ -1125,7 +1100,6 @@ namespace Drelanium
                 WebDriverWaitConditions.ElementStyleProperty(searchContext, locator, stylePropertyName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
         ///     <para>
@@ -1155,7 +1129,6 @@ namespace Drelanium
             return wait.Until(WebDriverWaitConditions.ElementStyleProperty(locator, stylePropertyName, condition));
         }
 
-
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.
         ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
@@ -1177,7 +1150,6 @@ namespace Drelanium
         {
             return wait.UntilElementStyleProperty(searchContext, locator, stylePropertyName.PropertyName, condition);
         }
-
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given style property has met the given condition.

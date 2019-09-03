@@ -1,10 +1,10 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
 
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -30,7 +30,6 @@ namespace Drelanium
 
             logger?.Information("Submit on element was successful.");
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IWebElement.Submit()" />
@@ -61,7 +60,6 @@ namespace Drelanium
             logger?.Information("Submit on element was successful.");
         }
 
-
         /// <summary>
         ///     <para>Method is repeated until the element is successfully submitted.</para>
         ///     <para>After the successful submit, the browser waits until the given after-submit condition is met.</para>
@@ -77,23 +75,33 @@ namespace Drelanium
         ///     The <see cref="Func{IWebDriver, TResult}" />, that defines the condition until the browser
         ///     must wait after the submit has been successfully executed.
         /// </param>
+        /// <param name="timeoutMessage">The message that appears on timeout.</param>
         /// <param name="ignoredExceptionTypes">The Exception types, that are suppressed until until waiting.</param>
+        /// <param name="clock">An object implementing the <see cref="IClock" /> interface used to determine when time has passed.</param>
         /// <param name="logger">
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
+        /// <param name="sleepIntervalInSeconds">
+        ///     A <see cref="TimeSpan" /> value indicating how often to check for the condition to
+        ///     be true.
+        /// </param>
         /// <typeparam name="TResult">...Description to be added...</typeparam>
-        public static void Submit<TResult>(this IWebElement element, double timeoutInSecondsForSubmit,
+        public static void Submit<TResult>(this IWebElement element,
+            double timeoutInSecondsForSubmit,
             double timeoutInSecondsForAfterSubmitCondition, Func<IWebDriver, TResult> afterSubmitCondition,
-            Type[] ignoredExceptionTypes = null, Logger logger = null)
+            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
+            IClock clock = null,
+            Logger logger = null
+        )
         {
             element.Submit(timeoutInSecondsForSubmit, logger);
 
-            element.Wait(
-                    timeoutInSecondsForAfterSubmitCondition,
+            element
+                .Wait(timeoutInSecondsForAfterSubmitCondition,
                     $"Waited ({timeoutInSecondsForAfterSubmitCondition}) seconds for after-submit condition to meet!",
-                    ignoredExceptionTypes)
+                    ignoredExceptionTypes, sleepIntervalInSeconds, clock)
                 .Until(afterSubmitCondition);
         }
     }

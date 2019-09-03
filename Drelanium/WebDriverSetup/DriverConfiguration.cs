@@ -1,7 +1,6 @@
 ﻿// ReSharper disable InconsistentNaming
 // ReSharper disable IdentifierTypo
 
-
 using System;
 using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
@@ -30,7 +29,6 @@ namespace Drelanium
         OPERA
     }
 
-
     /// <summary>
     ///     Switch between local and remote execution.
     /// </summary>
@@ -56,7 +54,6 @@ namespace Drelanium
             SafariConfiguration = new SafariConfiguration();
             OperaConfiguration = new OperaConfiguration();
         }
-
 
         /// <summary>
         ///     The type of the selected browser to be automated.
@@ -103,7 +100,6 @@ namespace Drelanium
         /// </summary>
         public OperaConfiguration OperaConfiguration { get; set; }
 
-
         /// <summary>
         /// </summary>
         /// <param name="configurationRoot">...Description to be added...</param>
@@ -113,7 +109,6 @@ namespace Drelanium
             configurationRoot.Bind(this);
             return this;
         }
-
 
         /// <summary>
         /// </summary>

@@ -4,12 +4,9 @@ using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-
 // ReSharper disable InconsistentNaming
 
-
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -104,7 +101,6 @@ namespace Drelanium
             return new Mouse(driver);
         }
 
-
         /// <summary>
         ///     Extended implementation of <see cref="INavigation" />
         /// </summary>
@@ -113,7 +109,6 @@ namespace Drelanium
         {
             return new Navigation(driver);
         }
-
 
         /// <summary>
         ///     Extended implementation of <see cref="IOptions" />
@@ -140,7 +135,6 @@ namespace Drelanium
             logger?.Information("Quitting WebDriver.");
         }
 
-
         /// <summary>
         ///     Methods to perform scroll in the browser.
         /// </summary>
@@ -149,7 +143,6 @@ namespace Drelanium
         {
             return new Scroll(driver);
         }
-
 
         /// <summary>
         ///     Extended implementation of <see cref="ITargetLocator" />

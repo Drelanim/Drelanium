@@ -29,7 +29,6 @@ namespace Drelanium
         /// </summary>
         public string ChromeDriverDirectory { get; set; }
 
-
         /// <summary>
         /// </summary>
         /// <param name="configurationRoot">...Description to be added...</param>
@@ -40,7 +39,6 @@ namespace Drelanium
             return this;
         }
 
-
         /// <summary>
         /// </summary>
         /// <param name="jsonPath">...Description to be added...</param>
@@ -50,7 +48,6 @@ namespace Drelanium
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
             return this;
         }
-
 
         /// <summary>
         ///     ...Description to be added...

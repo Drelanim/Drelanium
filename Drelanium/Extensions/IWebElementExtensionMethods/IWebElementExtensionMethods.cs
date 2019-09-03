@@ -4,12 +4,9 @@ using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
 
-
 // ReSharper disable InconsistentNaming
 
-
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -44,7 +41,6 @@ namespace Drelanium
 
             logger?.Information("Blur on element was successful.");
         }
-
 
         /// <summary>
         ///     Dispatches a HTMLEvent from the global window object on an element.

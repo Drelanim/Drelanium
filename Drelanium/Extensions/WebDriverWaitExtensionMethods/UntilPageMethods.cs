@@ -5,7 +5,6 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="WebDriverWait" /> types.
@@ -26,7 +25,6 @@ namespace Drelanium
 
             return wait.Until(WebDriverWaitConditions.PageHasLoaded(urlCondition));
         }
-
 
         /// <summary>
         ///     Waits until the browser's loaded the page without domain cookies and the Url has met the given condition.

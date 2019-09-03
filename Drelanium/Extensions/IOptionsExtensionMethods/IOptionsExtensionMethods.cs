@@ -1,11 +1,8 @@
 ﻿using OpenQA.Selenium;
 
-
 // ReSharper disable InconsistentNaming
 
-
 namespace Drelanium
-
 
 {
     /// <summary>
@@ -23,7 +20,6 @@ namespace Drelanium
             return new CookieJar(driver);
         }
 
-
         /// <summary>
         ///     <see cref="LogsManager" />
         /// </summary>
@@ -32,7 +28,6 @@ namespace Drelanium
         {
             return new LogsManager(options);
         }
-
 
         /// <summary>
         ///     <see cref="Drelanium.MouseMoveFollower" />
@@ -44,7 +39,6 @@ namespace Drelanium
             return new MouseMoveFollower(driver);
         }
 
-
         /// <summary>
         ///     <see cref="Drelanium.Timeouts" />
         /// </summary>
@@ -54,7 +48,6 @@ namespace Drelanium
         {
             return new Timeouts(driver);
         }
-
 
         /// <summary>
         ///     <see cref="Drelanium.Window" />

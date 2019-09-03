@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using Serilog.Core;
 
-
 // ReSharper disable InconsistentNaming
 namespace Drelanium
 {
@@ -47,7 +46,6 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         public bool IsTurnedON => Driver.Search().HasElement(By.Id(SeleniumMouseMoveFollowerID));
-
 
         /// <summary>
         ///     <inheritdoc cref="IWebDriver" />

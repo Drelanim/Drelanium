@@ -18,18 +18,15 @@ namespace Drelanium
             TimeoutsImplementation = driver.Manage().Timeouts();
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ITimeouts" />
         /// </summary>
         private ITimeouts TimeoutsImplementation { get; }
 
-
         /// <summary>
         ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
         private IWebDriver Driver { get; }
-
 
         /// <summary>
         ///     <inheritdoc cref="ITimeouts.ImplicitWait" />
@@ -40,7 +37,6 @@ namespace Drelanium
             set => TimeoutsImplementation.ImplicitWait = value;
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ITimeouts.AsynchronousJavaScript" />
         /// </summary>
@@ -49,7 +45,6 @@ namespace Drelanium
             get => TimeoutsImplementation.AsynchronousJavaScript;
             set => TimeoutsImplementation.AsynchronousJavaScript = value;
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="ITimeouts.PageLoad" />

@@ -29,7 +29,6 @@ namespace Drelanium
 
         private IWebDriver Driver { get; }
 
-
         /// <summary>
         ///     <inheritdoc cref="IAlert.Dismiss()" />
         /// </summary>
@@ -37,7 +36,6 @@ namespace Drelanium
         {
             AlertImplementation.Dismiss();
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IAlert.Accept()" />
@@ -47,7 +45,6 @@ namespace Drelanium
             AlertImplementation.Accept();
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="IAlert.SendKeys(string)" />
         /// </summary>
@@ -56,7 +53,6 @@ namespace Drelanium
             AlertImplementation.SendKeys(keysToSend);
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="IAlert.SetAuthenticationCredentials(string,string)" />
         /// </summary>
@@ -64,7 +60,6 @@ namespace Drelanium
         {
             AlertImplementation.SetAuthenticationCredentials(userName, password);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IAlert.Text" />

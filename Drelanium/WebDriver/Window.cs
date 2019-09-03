@@ -28,7 +28,6 @@ namespace Drelanium
         /// </summary>
         private IWebDriver Driver { get; }
 
-
         /// <summary>
         ///     <inheritdoc cref="IWindow.Maximize()" />
         /// </summary>
@@ -36,7 +35,6 @@ namespace Drelanium
         {
             WindowImplementation.Maximize();
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IWindow.Minimize()" />
@@ -46,7 +44,6 @@ namespace Drelanium
             WindowImplementation.Minimize();
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="IWindow.FullScreen()" />
         /// </summary>
@@ -54,7 +51,6 @@ namespace Drelanium
         {
             WindowImplementation.FullScreen();
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="IWindow.Position" />

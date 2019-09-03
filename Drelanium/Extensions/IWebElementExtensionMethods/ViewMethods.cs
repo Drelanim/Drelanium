@@ -2,7 +2,6 @@
 
 namespace Drelanium
 
-
 {
     /// <summary>
     ///     Extension methods for <see cref="IWebElement" /> types.

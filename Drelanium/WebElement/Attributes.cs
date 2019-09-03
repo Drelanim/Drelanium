@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 
-
 // ReSharper disable IdentifierTypo
 // ReSharper disable InconsistentNaming
 namespace Drelanium

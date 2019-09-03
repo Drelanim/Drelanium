@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
-
 // ReSharper disable CommentTypo
 
 namespace Drelanium
@@ -41,7 +40,6 @@ namespace Drelanium
             NavigationImplementation.Back();
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="INavigation.Forward()" />
         /// </summary>
@@ -49,7 +47,6 @@ namespace Drelanium
         {
             NavigationImplementation.Forward();
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
@@ -62,7 +59,6 @@ namespace Drelanium
             NavigationImplementation.GoToUrl(url);
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(Uri)" />
         /// </summary>
@@ -74,7 +70,6 @@ namespace Drelanium
             NavigationImplementation.GoToUrl(url);
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="INavigation.Refresh()" />
         /// </summary>
@@ -82,7 +77,6 @@ namespace Drelanium
         {
             NavigationImplementation.Refresh();
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.Back()" />
@@ -102,7 +96,6 @@ namespace Drelanium
             logger?.Information("Navigated back.");
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="INavigation.Forward()" />
         ///     <para>Logs the event.</para>
@@ -120,7 +113,6 @@ namespace Drelanium
 
             logger?.Information("Navigated forward.");
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
@@ -144,7 +136,6 @@ namespace Drelanium
             logger?.Information($"Navigated to url ({url}).");
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event.</para>
@@ -162,7 +153,6 @@ namespace Drelanium
 
             GoToUrl(url.AbsoluteUri, logger);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
@@ -189,7 +179,6 @@ namespace Drelanium
 
             GoToUrl(url, logger);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
@@ -222,7 +211,6 @@ namespace Drelanium
             Driver.Wait(timeoutInSeconds).UntilPageHasLoaded(urlCondition);
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         ///     <para>Logs the event optionally.</para>
@@ -247,7 +235,6 @@ namespace Drelanium
             GoToUrl(url, checkHttpResponse, loadWithoutCookies, timeoutInSeconds, uri => urlCondition(uri.AbsoluteUri),
                 logger);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="INavigation.Refresh()" />

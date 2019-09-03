@@ -27,12 +27,10 @@ namespace Drelanium
 
         private ICookieJar CookieJarImplementation { get; }
 
-
         /// <summary>
         ///     <inheritdoc cref="IWebDriver" />
         /// </summary>
         private IWebDriver Driver { get; }
-
 
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.AddCookie(Cookie)" />
@@ -50,7 +48,6 @@ namespace Drelanium
             return CookieJarImplementation.GetCookieNamed(name);
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.DeleteCookie(Cookie)" />
         /// </summary>
@@ -58,7 +55,6 @@ namespace Drelanium
         {
             CookieJarImplementation.DeleteCookie(cookie);
         }
-
 
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.DeleteCookieNamed(string)" />
@@ -68,7 +64,6 @@ namespace Drelanium
             CookieJarImplementation.DeleteCookieNamed(name);
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.DeleteAllCookies()" />
         /// </summary>
@@ -77,12 +72,10 @@ namespace Drelanium
             CookieJarImplementation.DeleteAllCookies();
         }
 
-
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.AllCookies" />
         /// </summary>
         public ReadOnlyCollection<Cookie> AllCookies => CookieJarImplementation.AllCookies;
-
 
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.AddCookie(Cookie)" />
@@ -94,7 +87,6 @@ namespace Drelanium
 
             AddCookie(cookie);
         }
-
 
         /// <summary>
         ///     ...Description to be added...

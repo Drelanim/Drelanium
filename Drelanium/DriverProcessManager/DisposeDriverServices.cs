@@ -4,7 +4,6 @@ using System.Diagnostics;
 using Serilog.Core;
 using Serilog.Events;
 
-
 // ReSharper disable EmptyGeneralCatchClause
 // ReSharper disable StringLiteralTypo
 // ReSharper disable InconsistentNaming
