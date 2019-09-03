@@ -39,7 +39,9 @@ namespace Drelanium
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" /> has met the given condition.
-        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="locator">
@@ -61,7 +63,7 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
-            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException),typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
                             "to meet the given condition.";

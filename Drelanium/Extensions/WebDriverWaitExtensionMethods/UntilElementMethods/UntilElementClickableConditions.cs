@@ -106,7 +106,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (element == null) throw new ArgumentNullException(nameof(element));
 
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
                             "to become not Clickable(Displayed and Enabled).";

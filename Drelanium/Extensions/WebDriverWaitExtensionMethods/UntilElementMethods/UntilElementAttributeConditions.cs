@@ -70,9 +70,7 @@ namespace Drelanium
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
-        ///     <para>
-        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
-        ///     </para>
+        ///     <para>Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" /></para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">
@@ -146,8 +144,9 @@ namespace Drelanium
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
-        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
-        /// </summary>
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
         /// <param name="condition">
@@ -176,8 +175,9 @@ namespace Drelanium
 
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given attribute has met the given condition.
-        ///     <para>Ignored Exceptions: <see cref="StaleElementReferenceException" /></para>
-        /// </summary>
+        ///     <para>
+        ///         Ignored Exceptions: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///     </para>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="attributeName">The attribute's name of the <see cref="IWebElement" />.</param>
         /// <param name="condition">

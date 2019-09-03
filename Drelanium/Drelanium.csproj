@@ -7,7 +7,7 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.8.1</PackageVersion>
+    <PackageVersion>1.8.2</PackageVersion>
     <PackageId>Drelanium</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
@@ -25,7 +25,7 @@
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
-    <PackageReleaseNotes>Added JetBrains.Annotations.</PackageReleaseNotes>
+    <PackageReleaseNotes>Edited XML comments.</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation, Framework</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols></IncludeSymbols>
