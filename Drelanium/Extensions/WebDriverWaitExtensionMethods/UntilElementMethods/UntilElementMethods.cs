@@ -5,7 +5,6 @@ using OpenQA.Selenium.Support.UI;
 // ReSharper disable StringLiteralTypo
 // ReSharper disable UnusedMember.Global
 // ReSharper disable IdentifierTypo
-
 // ReSharper disable CommentTypo
 
 namespace Drelanium

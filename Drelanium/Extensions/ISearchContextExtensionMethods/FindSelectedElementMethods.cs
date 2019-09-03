@@ -31,7 +31,9 @@ namespace Drelanium
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during the method exeuction.
         /// </param>
-        /// <returns></returns>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
         public static IWebElement FindSelectedElement(
             this ISearchContext searchContext,
             By locator,
@@ -39,6 +41,9 @@ namespace Drelanium
             Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5, IClock clock = null,
             Logger logger = null)
         {
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             logger?.Information($"Attempting to Find Selected element with ({locator}).");
 
             var timeBeforeElement = DateTime.Now;

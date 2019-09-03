@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 
 namespace Drelanium
 {
@@ -18,6 +19,9 @@ namespace Drelanium
             this ISearchContext searchContext,
             By locator)
         {
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             return searchContext.FindElements(locator).Count > 0;
         }
     }

@@ -48,7 +48,9 @@ namespace Drelanium
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static WebDriverWait Wait(this ISearchContext searchContext, double timeoutInSeconds,
+        public static WebDriverWait Wait(
+            this ISearchContext searchContext,
+            double timeoutInSeconds,
             string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
             IClock clock = null)
         {

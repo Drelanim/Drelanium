@@ -27,11 +27,15 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
+        /// <exception cref="NoSuchElementException"></exception>
         public static IWebElement FindElement(
             this ISearchContext searchContext,
             By locator,
             Logger logger)
         {
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             logger?.Information($"Attempting to Find element with ({locator}).");
 
             var element = searchContext.FindElement(locator);
@@ -64,6 +68,9 @@ namespace Drelanium
         ///     A <see cref="TimeSpan" /> value indicating how often to check for the condition to
         ///     be true.
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
         public static IWebElement FindElement<TResult>(
             this ISearchContext searchContext,
             By locator,
@@ -72,7 +79,12 @@ namespace Drelanium
             string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
             IClock clock = null,
             Logger logger = null)
+
         {
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             logger?.Information($"Attempting to Find element with ({locator}).");
 
             var timeBeforeElement = DateTime.Now;
@@ -114,6 +126,9 @@ namespace Drelanium
         ///     A <see cref="TimeSpan" /> value indicating how often to check for the condition to
         ///     be true.
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
         public static IWebElement FindElement(
             this ISearchContext searchContext,
             By locator,
@@ -122,6 +137,9 @@ namespace Drelanium
             IClock clock = null,
             Logger logger = null)
         {
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             logger?.Information($"Attempting to Find element with ({locator}).");
 
             var element = searchContext

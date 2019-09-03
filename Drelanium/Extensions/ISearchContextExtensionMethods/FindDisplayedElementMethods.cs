@@ -35,6 +35,9 @@ namespace Drelanium
         ///     A <see cref="TimeSpan" /> value indicating how often to check for the condition to
         ///     be true.
         /// </param>
+        /// <exception cref="WebDriverTimeoutException"></exception>
+        /// <exception cref="NoSuchElementException"></exception>
+        /// <exception cref="StaleElementReferenceException"></exception>
         public static IWebElement FindDisplayedElement(
             this ISearchContext searchContext,
             By locator,
@@ -42,6 +45,9 @@ namespace Drelanium
             Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5, IClock clock = null,
             Logger logger = null)
         {
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             logger?.Information($"Attempting to Find Displayed element with ({locator}).");
 
             var timeBeforeElement = DateTime.Now;

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
@@ -29,6 +30,9 @@ namespace Drelanium
             By locator,
             Logger logger)
         {
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             logger?.Information($"Attempting to Find element with ({locator}).");
 
             var elements = searchContext.FindElements(locator);
