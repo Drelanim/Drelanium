@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 namespace Drelanium
 
@@ -12,8 +14,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static void Remove(this IWebElement element)
+        public static void Remove([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             element.ExecuteJavaScript("arguments[0].remove();", element);
         }
     }

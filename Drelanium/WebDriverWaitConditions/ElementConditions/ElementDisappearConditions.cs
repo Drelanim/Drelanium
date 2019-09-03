@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -17,7 +18,8 @@ namespace Drelanium
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> ElementToDisappear(By locator)
+        public static Func<IWebDriver, bool> ElementToDisappear(
+            [NotNull] By locator)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
@@ -46,7 +48,9 @@ namespace Drelanium
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> ElementToDisappear(ISearchContext searchContext, By locator)
+        public static Func<IWebDriver, bool> ElementToDisappear(
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

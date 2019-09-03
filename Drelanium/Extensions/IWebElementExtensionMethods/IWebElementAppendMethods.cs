@@ -1,4 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
+
+// ReSharper disable InconsistentNaming
 
 namespace Drelanium
 
@@ -13,8 +17,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="childElement">The child element.</param>
-        public static void AppendChild(this IWebElement parentElement, IWebElement childElement)
+        public static void AppendChild([NotNull] this IWebElement parentElement, [NotNull] IWebElement childElement)
         {
+            if (parentElement == null) throw new ArgumentNullException(nameof(parentElement));
+            if (childElement == null) throw new ArgumentNullException(nameof(childElement));
+
             parentElement.Driver().AppendElementToParent(parentElement, childElement);
         }
 
@@ -23,8 +30,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="parentElement">The parent element.</param>
         /// <param name="childElement">The child element.</param>
-        public static void AppendTo(this IWebElement childElement, IWebElement parentElement)
+        public static void AppendTo([NotNull] this IWebElement childElement, [NotNull] IWebElement parentElement)
         {
+            if (childElement == null) throw new ArgumentNullException(nameof(childElement));
+            if (parentElement == null) throw new ArgumentNullException(nameof(parentElement));
+
             AppendChild(parentElement, childElement);
         }
     }

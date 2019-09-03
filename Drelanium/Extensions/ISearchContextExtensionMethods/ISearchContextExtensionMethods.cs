@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -17,7 +18,7 @@ namespace Drelanium
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        private static IWebDriver GetDriver(ISearchContext searchContext)
+        private static IWebDriver GetDriver([NotNull] ISearchContext searchContext)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
 
@@ -49,9 +50,10 @@ namespace Drelanium
         /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
         /// <exception cref="ArgumentNullException"></exception>
         public static WebDriverWait Wait(
-            this ISearchContext searchContext,
+            [NotNull] this ISearchContext searchContext,
             double timeoutInSeconds,
-            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
+            [CanBeNull] string timeoutMessage = "", [CanBeNull] Type[] ignoredExceptionTypes = null,
+            double sleepIntervalInSeconds = 0.5,
             IClock clock = null)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));

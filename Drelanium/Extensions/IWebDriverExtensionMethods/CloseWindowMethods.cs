@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
@@ -20,8 +22,10 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static IWebDriver CloseFirstWindow(this IWebDriver driver, Logger logger = null)
+        public static IWebDriver CloseFirstWindow([NotNull] this IWebDriver driver, [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             logger?.Information("Closing the first browser window tab.");
 
             return driver.CloseWindow(0);
@@ -37,8 +41,10 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static IWebDriver CloseLastWindow(this IWebDriver driver, Logger logger = null)
+        public static IWebDriver CloseLastWindow([NotNull] this IWebDriver driver, [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             logger?.Information("Closing the last browser window tab.");
 
             return driver.CloseWindow(driver.WindowHandles.Count - 1);
@@ -55,8 +61,11 @@ namespace Drelanium
         /// </param>
         /// <param name="indexOfWindow">Index of the window that should be closed.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static IWebDriver CloseWindow(this IWebDriver driver, int indexOfWindow, Logger logger = null)
+        public static IWebDriver CloseWindow([NotNull] this IWebDriver driver, int indexOfWindow,
+            [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             logger?.Information($"Closing browser window tab #{indexOfWindow}.");
 
             var currentWindowHandle = driver.CurrentWindowHandle;

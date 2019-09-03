@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
 
@@ -14,8 +16,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static ExtendedActions Actions(this IWebDriver driver)
+        public static ExtendedActions Actions([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new ExtendedActions(driver);
         }
 
@@ -30,8 +34,12 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static void KeyDownAndUp(this IWebDriver driver, string theKey, Logger logger = null)
+        public static void KeyDownAndUp([NotNull] this IWebDriver driver, [NotNull] string theKey,
+            [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+            if (theKey == null) throw new ArgumentNullException(nameof(theKey));
+
             logger?.Information($"Executing a KeyDown and then a KeyUp action using the {theKey}.");
 
             driver
@@ -52,8 +60,12 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static void SendKeys(this IWebDriver driver, string textToSend, Logger logger = null)
+        public static void SendKeys([NotNull] this IWebDriver driver, [NotNull] string textToSend,
+            [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+            if (textToSend == null) throw new ArgumentNullException(nameof(textToSend));
+
             logger?.Information($"Executing a SendKeys action with text {textToSend}.");
 
             driver

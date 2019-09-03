@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 namespace Drelanium
 {
@@ -11,9 +13,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public Style(IWebElement element)
+        public Style([NotNull] IWebElement element)
         {
-            Element = element;
+            Element = element ?? throw new ArgumentNullException(nameof(element));
         }
 
         /// <summary>
@@ -24,8 +26,10 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public string Get(string stylePropertyName)
+        public string Get([NotNull] string stylePropertyName)
         {
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+
             return Element.ExecuteJavaScript<object>("return arguments[0].style.getPropertyValue(arguments[1]);",
                 Element, stylePropertyName).ToString();
         }
@@ -33,48 +37,60 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public string Get(ElementStylePropertyName elementStylePropertyName)
+        public string Get([NotNull] ElementStylePropertyName elementStylePropertyName)
         {
+            if (elementStylePropertyName == null) throw new ArgumentNullException(nameof(elementStylePropertyName));
+
             return Get(elementStylePropertyName.PropertyName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public string GetValue(string stylePropertyName)
+        public string GetValue([NotNull] string stylePropertyName)
         {
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+
             return Element.GetCssValue(stylePropertyName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public string GetValue(ElementStylePropertyName elementStylePropertyName)
+        public string GetValue([NotNull] ElementStylePropertyName elementStylePropertyName)
         {
+            if (elementStylePropertyName == null) throw new ArgumentNullException(nameof(elementStylePropertyName));
+
             return Element.GetCssValue(elementStylePropertyName.PropertyName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Remove(string stylePropertyName)
+        public void Remove([NotNull] string stylePropertyName)
         {
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+
             Element.ExecuteJavaScript("arguments[0].style.removeProperty(arguments[1]);", Element, stylePropertyName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Remove(ElementStylePropertyName elementStylePropertyName)
+        public void Remove([NotNull] ElementStylePropertyName elementStylePropertyName)
         {
+            if (elementStylePropertyName == null) throw new ArgumentNullException(nameof(elementStylePropertyName));
+
             Remove(elementStylePropertyName.PropertyName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Set(string stylePropertyName, object stylePropertyValue)
+        public void Set([NotNull] string stylePropertyName, [CanBeNull] object stylePropertyValue)
         {
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+
             Element.ExecuteJavaScript("arguments[0].style.setProperty(arguments[1], arguments[2]);", Element,
                 stylePropertyName, stylePropertyValue);
         }
@@ -82,8 +98,11 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Set(ElementStylePropertyName elementStylePropertyName, object stylePropertyValue)
+        public void Set([NotNull] ElementStylePropertyName elementStylePropertyName,
+            [CanBeNull] object stylePropertyValue)
         {
+            if (elementStylePropertyName == null) throw new ArgumentNullException(nameof(elementStylePropertyName));
+
             Set(elementStylePropertyName.PropertyName, stylePropertyValue);
         }
     }

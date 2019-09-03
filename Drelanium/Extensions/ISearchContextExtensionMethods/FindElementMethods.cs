@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
@@ -29,9 +30,9 @@ namespace Drelanium
         /// </param>
         /// <exception cref="NoSuchElementException"></exception>
         public static IWebElement FindElement(
-            this ISearchContext searchContext,
-            By locator,
-            Logger logger)
+            [NotNull] this ISearchContext searchContext,
+            [NotNull] By locator,
+            [CanBeNull] Logger logger)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));
@@ -72,13 +73,14 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         public static IWebElement FindElement<TResult>(
-            this ISearchContext searchContext,
-            By locator,
+            [NotNull] this ISearchContext searchContext,
+            [NotNull] By locator,
             double timeoutInSeconds,
-            Func<IWebElement, TResult> condition,
-            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
-            IClock clock = null,
-            Logger logger = null)
+            [NotNull] Func<IWebElement, TResult> condition,
+            [CanBeNull] string timeoutMessage = "", [CanBeNull] Type[] ignoredExceptionTypes = null,
+            double sleepIntervalInSeconds = 0.5,
+            [CanBeNull] IClock clock = null,
+            [CanBeNull] Logger logger = null)
 
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
@@ -130,12 +132,13 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         public static IWebElement FindElement(
-            this ISearchContext searchContext,
-            By locator,
+            [NotNull] this ISearchContext searchContext,
+            [NotNull] By locator,
             double timeoutInSeconds,
-            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
-            IClock clock = null,
-            Logger logger = null)
+            [CanBeNull] string timeoutMessage = "", [CanBeNull] Type[] ignoredExceptionTypes = null,
+            double sleepIntervalInSeconds = 0.5,
+            [CanBeNull] IClock clock = null,
+            [CanBeNull] Logger logger = null)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

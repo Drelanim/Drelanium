@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 
 #pragma warning disable 1591
@@ -31,8 +32,9 @@ namespace Drelanium
         /// <summary>
         ///     <inheritdoc cref="LogsManager" />
         /// </summary>
-        public LogsManager(IOptions options)
+        public LogsManager([NotNull] IOptions options)
         {
+            if (options == null) throw new ArgumentNullException(nameof(options));
             LogsImplementation = options.Logs;
         }
 
@@ -94,8 +96,10 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public ReadOnlyCollection<LogEntry> GetLog(string logKind)
+        public ReadOnlyCollection<LogEntry> GetLog([NotNull] string logKind)
         {
+            if (logKind == null) throw new ArgumentNullException(nameof(logKind));
+
             try
             {
                 return LogsImplementation.GetLog(logKind);
@@ -140,8 +144,10 @@ namespace Drelanium
         ///     The log for which to retrieve the log entries. Log types can be found in the
         ///     <see cref="T:OpenQA.Selenium.LogType" /> class.
         /// </param>
-        public bool HasLog(string logKind)
+        public bool HasLog([NotNull] string logKind)
         {
+            if (logKind == null) throw new ArgumentNullException(nameof(logKind));
+
             return AvailableLogTypes != null && AvailableLogTypes.Contains(logKind);
         }
 

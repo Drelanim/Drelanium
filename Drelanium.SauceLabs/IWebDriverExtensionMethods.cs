@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 namespace Drelanium.SauceLabs
 {
@@ -11,8 +13,10 @@ namespace Drelanium.SauceLabs
         ///     To be added..
         /// </summary>
         /// <param name="driver">...Description to be added...</param>
-        public static SauceLabsScripts SauceLabsScripts(this IWebDriver driver)
+        public static SauceLabsScripts SauceLabsScripts([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new SauceLabsScripts(driver);
         }
     }

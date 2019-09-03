@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -585,8 +586,10 @@ namespace Drelanium.SauceLabs
         /// </summary>
         /// <param name="driverOptions">...Description to be added...</param>
         /// <exception cref="ArgumentException">...Description to be added...</exception>
-        public void AddToDriverOptions(DriverOptions driverOptions)
+        public void AddToDriverOptions([NotNull] DriverOptions driverOptions)
         {
+            if (driverOptions == null) throw new ArgumentNullException(nameof(driverOptions));
+
             switch (driverOptions)
             {
                 case ChromeOptions chromeOptions:
@@ -629,8 +632,10 @@ namespace Drelanium.SauceLabs
         /// </summary>
         /// <param name="configurationRoot">...Description to be added...</param>
         /// <returns>...Description to be added...</returns>
-        public SauceOptions Bind(IConfigurationRoot configurationRoot)
+        public SauceOptions Bind([NotNull] IConfigurationRoot configurationRoot)
         {
+            if (configurationRoot == null) throw new ArgumentNullException(nameof(configurationRoot));
+
             configurationRoot.Bind(this);
             return this;
         }
@@ -639,18 +644,22 @@ namespace Drelanium.SauceLabs
         /// </summary>
         /// <param name="jsonPath">...Description to be added...</param>
         /// <returns>...Description to be added...</returns>
-        public SauceOptions Bind(string jsonPath)
+        public SauceOptions Bind([NotNull] string jsonPath)
         {
+            if (jsonPath == null) throw new ArgumentNullException(nameof(jsonPath));
+
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
             return this;
         }
 
-        private object GetValue(string key)
+        private object GetValue([NotNull] string key)
         {
+            if (key == null) throw new ArgumentNullException(nameof(key));
+
             return Options.ContainsKey(key) ? Options[key] : null;
         }
 
-        private void SetValue(string key, object value)
+        private void SetValue([CanBeNull] string key, [CanBeNull] object value)
         {
             if (value == null)
             {

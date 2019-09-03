@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Drawing;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 {
@@ -16,9 +19,9 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public ExtendedActions(IWebDriver driver)
+        public ExtendedActions([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Actions = new Actions(driver);
         }
 
@@ -48,7 +51,8 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void BuildAndPerform(Logger logger = null)
+        public void BuildAndPerform(
+            [CanBeNull] Logger logger = null)
         {
             ChainedActions = ChainedActions.Trim().Trim(',');
 
@@ -73,8 +77,14 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void BuildAndPerform<T>(WebDriverWait wait, Func<IWebDriver, T> condition, Logger logger = null)
+        public void BuildAndPerform<T>(
+            [NotNull] WebDriverWait wait,
+            [NotNull] Func<IWebDriver, T> condition,
+            [CanBeNull] Logger logger = null)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             BuildAndPerform(logger);
 
             logger?.Information("Waiting until a condition.");
@@ -88,8 +98,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="onElement">...Description to be added...</param>
-        public ExtendedActions Click(IWebElement onElement)
+        public ExtendedActions Click([NotNull] IWebElement onElement)
         {
+            if (onElement == null) throw new ArgumentNullException(nameof(onElement));
+
             ChainedActions += $"Click(onElement: {onElement}), ";
             Actions = Actions.Click(onElement);
             return this;
@@ -100,8 +112,10 @@ namespace Drelanium
         /// </summary>
         /// <param name="onElement">...Description to be added...</param>
         /// <param name="elementPoint">...Description to be added...</param>
-        public ExtendedActions Click(IWebElement onElement, ElementPoint elementPoint)
+        public ExtendedActions Click([NotNull] IWebElement onElement, ElementPoint elementPoint)
         {
+            if (onElement == null) throw new ArgumentNullException(nameof(onElement));
+
             MoveToElement(onElement, elementPoint);
             Click(onElement);
             return this;
@@ -121,8 +135,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="onElement">...Description to be added...</param>
-        public ExtendedActions ClickAndHold(IWebElement onElement)
+        public ExtendedActions ClickAndHold([NotNull] IWebElement onElement)
         {
+            if (onElement == null) throw new ArgumentNullException(nameof(onElement));
+
             ChainedActions += $"ClickAndHold(onElement: {onElement}), ";
             Actions = Actions.ClickAndHold(onElement);
             return this;
@@ -142,8 +158,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="onElement">...Description to be added...</param>
-        public ExtendedActions ContextClick(IWebElement onElement)
+        public ExtendedActions ContextClick([NotNull] IWebElement onElement)
         {
+            if (onElement == null) throw new ArgumentNullException(nameof(onElement));
+
             ChainedActions += $"ContextClick(onElement: {onElement}), ";
             Actions = Actions.ContextClick(onElement);
             return this;
@@ -165,8 +183,10 @@ namespace Drelanium
         /// <param name="onElement">
         ///     ...Description to be added...
         /// </param>
-        public ExtendedActions DoubleClick(IWebElement onElement)
+        public ExtendedActions DoubleClick([NotNull] IWebElement onElement)
         {
+            if (onElement == null) throw new ArgumentNullException(nameof(onElement));
+
             ChainedActions += $"DoubleClick(onElement: {onElement}), ";
             Actions = Actions.DoubleClick(onElement);
             return this;
@@ -187,8 +207,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="source">...Description to be added...</param>
         /// <param name="target">...Description to be added...</param>
-        public ExtendedActions DragAndDrop(IWebElement source, IWebElement target)
+        public ExtendedActions DragAndDrop([NotNull] IWebElement source, [NotNull] IWebElement target)
         {
+            if (source == null) throw new ArgumentNullException(nameof(source));
+            if (target == null) throw new ArgumentNullException(nameof(target));
+
             ChainedActions += $"DragAndDrop(source: {source}, target: {target}), ";
             Actions = Actions.DragAndDrop(source, target);
             return this;
@@ -200,8 +223,10 @@ namespace Drelanium
         /// <param name="source">...Description to be added...</param>
         /// <param name="offsetX">...Description to be added...</param>
         /// <param name="offsetY">...Description to be added...</param>
-        public ExtendedActions DragAndDropToOffset(IWebElement source, int offsetX, int offsetY)
+        public ExtendedActions DragAndDropToOffset([NotNull] IWebElement source, int offsetX, int offsetY)
         {
+            if (source == null) throw new ArgumentNullException(nameof(source));
+
             ChainedActions += $"DragAndDropToOffset(source: {source}, offsetX: {offsetX}, offsetY: {offsetY}), ";
             Actions = Actions.DragAndDropToOffset(source, offsetX, offsetY);
             return this;
@@ -211,8 +236,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="theKey">...Description to be added...</param>
-        public ExtendedActions KeyDown(string theKey)
+        public ExtendedActions KeyDown([NotNull] string theKey)
         {
+            if (theKey == null) throw new ArgumentNullException(nameof(theKey));
+
             ChainedActions += $"KeyDown(theKey: \"{theKey}\"), ";
             Actions = Actions.KeyDown(theKey);
             return this;
@@ -223,8 +250,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="element">...Description to be added...</param>
         /// <param name="theKey">...Description to be added...</param>
-        public ExtendedActions KeyDown(IWebElement element, string theKey)
+        public ExtendedActions KeyDown([NotNull] IWebElement element, [NotNull] string theKey)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (theKey == null) throw new ArgumentNullException(nameof(theKey));
+
             ChainedActions += $"KeyDown(element: {element}, theKey: \"{theKey}\"";
             Actions = Actions.KeyDown(element, theKey);
             return this;
@@ -234,8 +264,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="theKey">...Description to be added...</param>
-        public ExtendedActions KeyUp(string theKey)
+        public ExtendedActions KeyUp([NotNull] string theKey)
         {
+            if (theKey == null) throw new ArgumentNullException(nameof(theKey));
+
             ChainedActions += $"KeyDown(theKey: \"{theKey}\"), ";
             Actions = Actions.KeyUp(theKey);
             return this;
@@ -246,8 +278,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="element">...Description to be added...</param>
         /// <param name="theKey">...Description to be added...</param>
-        public ExtendedActions KeyUp(IWebElement element, string theKey)
+        public ExtendedActions KeyUp([NotNull] IWebElement element, [NotNull] string theKey)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (theKey == null) throw new ArgumentNullException(nameof(theKey));
+
             ChainedActions += $"KeyUp(element: {element}, theKey: \"{theKey}\"), ";
             Actions = Actions.KeyUp(element, theKey);
             return this;
@@ -292,8 +327,10 @@ namespace Drelanium
         /// <param name="toElement">
         ///     ...Description to be added...
         /// </param>
-        public ExtendedActions MoveToElement(IWebElement toElement)
+        public ExtendedActions MoveToElement([NotNull] IWebElement toElement)
         {
+            if (toElement == null) throw new ArgumentNullException(nameof(toElement));
+
             ChainedActions += $"MoveToElement(toElement: {toElement}), ";
             Actions = Actions.MoveToElement(toElement);
             return this;
@@ -305,8 +342,10 @@ namespace Drelanium
         /// <param name="toElement">...Description to be added...</param>
         /// <param name="offsetX">...Description to be added...</param>
         /// <param name="offsetY">...Description to be added...</param>
-        public ExtendedActions MoveToElement(IWebElement toElement, int offsetX, int offsetY)
+        public ExtendedActions MoveToElement([NotNull] IWebElement toElement, int offsetX, int offsetY)
         {
+            if (toElement == null) throw new ArgumentNullException(nameof(toElement));
+
             ChainedActions += $"MoveToElement(toElement: {toElement}, offsetX: {offsetX}, offsetY: {offsetY}), ";
             Actions = Actions.MoveToElement(toElement, offsetX, offsetY);
             return this;
@@ -319,9 +358,11 @@ namespace Drelanium
         /// <param name="offsetX">...Description to be added...</param>
         /// <param name="offsetY">...Description to be added...</param>
         /// <param name="offsetOrigin">...Description to be added...</param>
-        public ExtendedActions MoveToElement(IWebElement toElement, int offsetX, int offsetY,
+        public ExtendedActions MoveToElement([NotNull] IWebElement toElement, int offsetX, int offsetY,
             MoveToElementOffsetOrigin offsetOrigin)
         {
+            if (toElement == null) throw new ArgumentNullException(nameof(toElement));
+
             ChainedActions +=
                 $"MoveToElement(toElement: {toElement}, offsetX: {offsetX}, offsetY: {offsetY}, offsetOrigin: {offsetOrigin}), ";
             Actions = Actions.MoveToElement(toElement, offsetX, offsetY, offsetOrigin);
@@ -333,8 +374,10 @@ namespace Drelanium
         /// </summary>
         /// <param name="toElement">...Description to be added...</param>
         /// <param name="toElementPoint">...Description to be added...</param>
-        public ExtendedActions MoveToElement(IWebElement toElement, ElementPoint toElementPoint)
+        public ExtendedActions MoveToElement([NotNull] IWebElement toElement, ElementPoint toElementPoint)
         {
+            if (toElement == null) throw new ArgumentNullException(nameof(toElement));
+
             return MoveTo(toElement.Location().Point(toElementPoint));
         }
 
@@ -342,8 +385,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="onElement">...Description to be added...</param>
-        public ExtendedActions Release(IWebElement onElement)
+        public ExtendedActions Release([NotNull] IWebElement onElement)
         {
+            if (onElement == null) throw new ArgumentNullException(nameof(onElement));
+
             ChainedActions += $"Release(onElement: {onElement}), ";
             Actions = Actions.Release(onElement);
             return this;
@@ -363,8 +408,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="keysToSend">...Description to be added...</param>
-        public ExtendedActions SendKeys(string keysToSend)
+        public ExtendedActions SendKeys([NotNull] string keysToSend)
         {
+            if (keysToSend == null) throw new ArgumentNullException(nameof(keysToSend));
+
             ChainedActions += $"SendKeys(keysToSend: \"{keysToSend}\"), ";
             Actions = Actions.SendKeys(keysToSend);
             return this;
@@ -375,8 +422,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="element">...Description to be added...</param>
         /// <param name="keysToSend">...Description to be added...</param>
-        public ExtendedActions SendKeys(IWebElement element, string keysToSend)
+        public ExtendedActions SendKeys([NotNull] IWebElement element, [NotNull] string keysToSend)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (keysToSend == null) throw new ArgumentNullException(nameof(keysToSend));
+
             ChainedActions += $"SendKeys(element: {element}, keysToSend: \"{keysToSend}\"), ";
             Actions = Actions.SendKeys(element, keysToSend);
             return this;

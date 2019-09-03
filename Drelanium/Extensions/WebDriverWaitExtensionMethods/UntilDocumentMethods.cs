@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -18,9 +19,12 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static bool UntilDocumentReadyState(this WebDriverWait wait,
+        public static bool UntilDocumentReadyState(
+            [NotNull] this WebDriverWait wait,
             DocumentReadyState expectedDocumentReadyState)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+
             wait.Message +=
                 $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({expectedDocumentReadyState.ToString().ToLower()}) document readyState to be ({expectedDocumentReadyState})";
 

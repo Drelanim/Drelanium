@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 namespace Drelanium
 
@@ -14,8 +16,10 @@ namespace Drelanium
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        public static string ByType(this By locator)
+        public static string ByType([NotNull] this By locator)
         {
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             var s = locator.ToString().Remove(locator.ToString().IndexOf(":"));
 
             return s.Substring(s.IndexOf("By.") + 3);
@@ -27,8 +31,10 @@ namespace Drelanium
         /// <param name="locator">
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
-        public static string ByValue(this By locator)
+        public static string ByValue([NotNull] this By locator)
         {
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             return locator.ToString().Substring(locator.ToString().IndexOf(":") + 2);
         }
     }

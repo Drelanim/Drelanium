@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 
 namespace Drelanium
@@ -12,9 +14,9 @@ namespace Drelanium
         ///     <inheritdoc cref="Window" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Window(IWebDriver driver)
+        public Window([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             WindowImplementation = driver.Manage().Window;
         }
 

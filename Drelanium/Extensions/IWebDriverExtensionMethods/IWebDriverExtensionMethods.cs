@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 // ReSharper disable InconsistentNaming
 
@@ -18,8 +21,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static IWebElement Body(this IWebDriver driver)
+        public static IWebElement Body([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return driver.FindElement(By.TagName("body"));
         }
 
@@ -27,8 +32,10 @@ namespace Drelanium
         ///     Extended implementation of <see cref="ICapabilities" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Capabilities Capabilities(this IWebDriver driver)
+        public static Capabilities Capabilities([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Capabilities(driver);
         }
 
@@ -44,8 +51,10 @@ namespace Drelanium
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         /// <param name="x">...Description to be added...</param>
-        public static void Click(this IWebDriver driver, int x, int y, Logger logger = null)
+        public static void Click([NotNull] this IWebDriver driver, int x, int y, [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             driver.Actions().MoveTo(x, y).Click().BuildAndPerform(logger);
         }
 
@@ -60,8 +69,10 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static void Click(this IWebDriver driver, Point point, Logger logger = null)
+        public static void Click([NotNull] this IWebDriver driver, Point point, [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             driver.Click(point.X, point.Y, logger);
         }
 
@@ -69,8 +80,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Create Create(this IWebDriver driver)
+        public static Create Create([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Create(driver);
         }
 
@@ -78,8 +91,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Document Document(this IWebDriver driver)
+        public static Document Document([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Document(driver);
         }
 
@@ -87,8 +102,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static JQuery JQuery(this IWebDriver driver)
+        public static JQuery JQuery([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new JQuery(driver);
         }
 
@@ -96,8 +113,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Mouse Mouse(this IWebDriver driver)
+        public static Mouse Mouse([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Mouse(driver);
         }
 
@@ -105,8 +124,10 @@ namespace Drelanium
         ///     Extended implementation of <see cref="INavigation" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Navigation Navigation(this IWebDriver driver)
+        public static Navigation Navigation([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Navigation(driver);
         }
 
@@ -114,8 +135,10 @@ namespace Drelanium
         ///     Extended implementation of <see cref="IOptions" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Options Options(this IWebDriver driver)
+        public static Options Options([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Options(driver);
         }
 
@@ -129,8 +152,10 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static void Quit(this IWebDriver driver, Logger logger)
+        public static void Quit([NotNull] this IWebDriver driver, [CanBeNull] Logger logger)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             driver.Quit();
             logger?.Information("Quitting WebDriver.");
         }
@@ -139,8 +164,10 @@ namespace Drelanium
         ///     Methods to perform scroll in the browser.
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Scroll Scroll(this IWebDriver driver)
+        public static Scroll Scroll([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Scroll(driver);
         }
 
@@ -148,8 +175,10 @@ namespace Drelanium
         ///     Extended implementation of <see cref="ITargetLocator" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static TargetLocator Switch(this IWebDriver driver)
+        public static TargetLocator Switch([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new TargetLocator(driver);
         }
 
@@ -157,8 +186,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Uri Url(this IWebDriver driver)
+        public static Uri Url([NotNull] this IWebDriver driver)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Uri(driver.Url);
         }
     }

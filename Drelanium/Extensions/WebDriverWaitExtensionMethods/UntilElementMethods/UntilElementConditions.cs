@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -21,9 +22,13 @@ namespace Drelanium
         /// </param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElement<TResult>(this WebDriverWait wait, IWebElement element,
-            Func<IWebElement, TResult> condition)
+        public static TResult UntilElement<TResult>([NotNull] this WebDriverWait wait, [NotNull] IWebElement element,
+            [NotNull] Func<IWebElement, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
@@ -47,9 +52,15 @@ namespace Drelanium
         /// <param name="searchContext">The <see cref="ISearchContext" /> within we search for the element.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElement<TResult>(this WebDriverWait wait, ISearchContext searchContext, By locator,
-            Func<IWebElement, TResult> condition)
+        public static TResult UntilElement<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] ISearchContext searchContext, [NotNull] By locator,
+            [NotNull] Func<IWebElement, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +

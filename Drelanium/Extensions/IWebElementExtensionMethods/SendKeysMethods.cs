@@ -1,5 +1,9 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
+
+// ReSharper disable IdentifierTypo
 
 namespace Drelanium
 
@@ -10,13 +14,14 @@ namespace Drelanium
     public static class SendKeysMethods
     {
         /// <summary>
-        ///     To be added..
-        ///     .
+        ///     To be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="numberOfCharactersToBeDeleted">...Description to be added...</param>
-        public static void DeleteFromEndOfTextbox(this IWebElement element, int numberOfCharactersToBeDeleted)
+        public static void DeleteFromEndOfTextbox([NotNull] this IWebElement element, int numberOfCharactersToBeDeleted)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             var backspaces = new StringBuilder();
 
             for (var i = 0; i < numberOfCharactersToBeDeleted; i++)
@@ -31,8 +36,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static void SendEnterKey(this IWebElement element)
+        public static void SendEnterKey([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             element.SendKeys(Keys.Enter);
         }
 
@@ -43,8 +50,11 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="text">...Description to be added...</param>
         /// <param name="clearFirst">...Description to be added...</param>
-        public static void SendKeys(this IWebElement element, string text, bool clearFirst)
+        public static void SendKeys([NotNull] this IWebElement element, [NotNull] string text, bool clearFirst)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (text == null) throw new ArgumentNullException(nameof(text));
+
             if (clearFirst)
             {
                 element.Clear();
@@ -57,8 +67,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static void SendTabKey(this IWebElement element)
+        public static void SendTabKey([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             element.SendKeys(Keys.Tab);
         }
 
@@ -67,31 +79,38 @@ namespace Drelanium
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="content">...Description to be added...</param>
-        public static void TypeToTextbox(this IWebElement element, string content)
+        public static void TypeToTextbox([NotNull] this IWebElement element, [NotNull] string content)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (content == null) throw new ArgumentNullException(nameof(content));
+
             element.SendKeys(Keys.End + content);
         }
 
         /// <summary>
         ///     To be added..
-        ///     .
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="content">...Description to be added...</param>
-        public static void TypeToTextboxThenEnter(this IWebElement element, string content)
+        public static void TypeToTextboxThenEnter([NotNull] this IWebElement element, [NotNull] string content)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (content == null) throw new ArgumentNullException(nameof(content));
+
             element.TypeToTextbox(content);
             element.SendEnterKey();
         }
 
         /// <summary>
         ///     To be added..
-        ///     .
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="content">...Description to be added...</param>
-        public static void TypeToTextboxThenTab(this IWebElement element, string content)
+        public static void TypeToTextboxThenTab([NotNull] this IWebElement element, [NotNull] string content)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (content == null) throw new ArgumentNullException(nameof(content));
+
             element.TypeToTextbox(content);
             element.SendTabKey();
         }

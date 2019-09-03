@@ -1,7 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 {
@@ -14,9 +18,9 @@ namespace Drelanium
         ///     Methods to perform scroll in the browser.
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Scroll(IWebDriver driver)
+        public Scroll([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }
 
         /// <summary>
@@ -36,8 +40,14 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void By(int x, int y, string behaviour = "smooth", Logger logger = null)
+        public void By(
+            int x,
+            int y,
+            [NotNull] string behaviour = "smooth",
+            [CanBeNull] Logger logger = null)
         {
+            if (behaviour == null) throw new ArgumentNullException(nameof(behaviour));
+
             logger?.Information($"Scrolling By({x},{y}).");
 
             Driver.ExecuteJavaScript($"window.scrollBy({{top: {x}, left: {y}, behaviour: '{behaviour}'}});.");
@@ -55,8 +65,14 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void To(int x, int y, string behaviour = "smooth", Logger logger = null)
+        public void To(
+            int x,
+            int y,
+            [NotNull] string behaviour = "smooth",
+            [CanBeNull] Logger logger = null)
         {
+            if (behaviour == null) throw new ArgumentNullException(nameof(behaviour));
+
             logger?.Information($"Scrolling To({x},{y}).");
 
             Driver.ExecuteJavaScript($"window.scrollTo({{top: {x}, left: {y}, behaviour: '{behaviour}'}});.");
@@ -72,8 +88,12 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void ToBodyBottom(string behaviour = "smooth", Logger logger = null)
+        public void ToBodyBottom(
+            [NotNull] string behaviour = "smooth",
+            [CanBeNull] Logger logger = null)
         {
+            if (behaviour == null) throw new ArgumentNullException(nameof(behaviour));
+
             logger?.Information("Scrolling to the bottom of the body.");
 
             Driver.ExecuteJavaScript(
@@ -90,8 +110,12 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void ToBodyTop(string behaviour = "smooth", Logger logger = null)
+        public void ToBodyTop(
+            [NotNull] string behaviour = "smooth",
+            [CanBeNull] Logger logger = null)
         {
+            if (behaviour == null) throw new ArgumentNullException(nameof(behaviour));
+
             logger?.Information("Scrolling to the top of the body.");
 
             Driver.ExecuteJavaScript(

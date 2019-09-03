@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -16,7 +17,8 @@ namespace Drelanium
         /// </summary>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, TResult> Cookies<TResult>(Func<ReadOnlyCollection<Cookie>, TResult> condition)
+        public static Func<IWebDriver, TResult> Cookies<TResult>(
+            [NotNull] Func<ReadOnlyCollection<Cookie>, TResult> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 

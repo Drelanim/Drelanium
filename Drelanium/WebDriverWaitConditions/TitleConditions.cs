@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -16,7 +17,8 @@ namespace Drelanium
         /// </summary>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, TResult> Title<TResult>(Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> Title<TResult>(
+            [NotNull] Func<string, TResult> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
@@ -30,7 +32,7 @@ namespace Drelanium
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RegexMatchTimeoutException"></exception>
-        public static Func<IWebDriver, bool> TitleMatches(string regexPattern)
+        public static Func<IWebDriver, bool> TitleMatches([NotNull] string regexPattern)
         {
             if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
 
@@ -44,7 +46,7 @@ namespace Drelanium
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RegexMatchTimeoutException"></exception>
-        public static Func<IWebDriver, bool> TitleNotMatches(string regexPattern)
+        public static Func<IWebDriver, bool> TitleNotMatches([NotNull] string regexPattern)
         {
             if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
 
@@ -56,7 +58,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="title">The title of the current browser window.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> TitleNotToBe(string title)
+        public static Func<IWebDriver, bool> TitleNotToBe([NotNull] string title)
         {
             if (title == null) throw new ArgumentNullException(nameof(title));
 
@@ -69,7 +71,7 @@ namespace Drelanium
         /// <param name="titlePart">The title part of the current browser window.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public static Func<IWebDriver, bool> TitleNotToContain(string titlePart)
+        public static Func<IWebDriver, bool> TitleNotToContain([NotNull] string titlePart)
         {
             if (titlePart == null) throw new ArgumentNullException(nameof(titlePart));
 
@@ -81,7 +83,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="title">The title of the current browser window.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> TitleToBe(string title)
+        public static Func<IWebDriver, bool> TitleToBe([NotNull] string title)
         {
             if (title == null) throw new ArgumentNullException(nameof(title));
 
@@ -94,7 +96,7 @@ namespace Drelanium
         /// <param name="titlePart">The title part of the current browser window.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public static Func<IWebDriver, bool> TitleToContain(string titlePart)
+        public static Func<IWebDriver, bool> TitleToContain([NotNull] string titlePart)
         {
             if (titlePart == null) throw new ArgumentNullException(nameof(titlePart));
 

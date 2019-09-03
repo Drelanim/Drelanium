@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 
 namespace Drelanium
@@ -12,9 +13,9 @@ namespace Drelanium
         ///     <inheritdoc cref="Timeouts" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Timeouts(IWebDriver driver)
+        public Timeouts([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             TimeoutsImplementation = driver.Manage().Timeouts();
         }
 

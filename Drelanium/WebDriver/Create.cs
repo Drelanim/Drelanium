@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
 namespace Drelanium
@@ -12,9 +14,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Create(IWebDriver driver)
+        public Create([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }
 
         /// <summary>
@@ -28,8 +30,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="tagType">The used html tag.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
-        public string CreateElement(string elementName, string tagType)
+        public string CreateElement([NotNull] string elementName, [NotNull] string tagType)
         {
+            if (elementName == null) throw new ArgumentNullException(nameof(elementName));
+            if (tagType == null) throw new ArgumentNullException(nameof(tagType));
+
             Driver.ExecuteJavaScript($"window['{elementName}'] = document.createElement('{tagType}'); .");
 
             return elementName;
@@ -41,8 +46,13 @@ namespace Drelanium
         /// <param name="parentElement">The parent element.</param>
         /// <param name="tagType">The used html tag.</param>
         /// <param name="elementName">The variable name for the element that can be used in the window global object.</param>
-        public IWebElement CreateElement(string elementName, string tagType, IWebElement parentElement)
+        public IWebElement CreateElement([NotNull] string elementName, [NotNull] string tagType,
+            [NotNull] IWebElement parentElement)
         {
+            if (elementName == null) throw new ArgumentNullException(nameof(elementName));
+            if (tagType == null) throw new ArgumentNullException(nameof(tagType));
+            if (parentElement == null) throw new ArgumentNullException(nameof(parentElement));
+
             CreateElement(elementName, tagType);
 
             Driver.AppendElementToParent(parentElement, elementName);
@@ -57,8 +67,12 @@ namespace Drelanium
         /// <param name="eventType">The type of the event.</param>
         /// <param name="bubbles">The bubbles parameter of the event.</param>
         /// <param name="cancelable">The cancelable parameter of the event.</param>
-        public string CreateEvent(string eventName, string eventType, bool bubbles = true, bool cancelable = false)
+        public string CreateEvent([NotNull] string eventName, [NotNull] string eventType, bool bubbles = true,
+            bool cancelable = false)
         {
+            if (eventName == null) throw new ArgumentNullException(nameof(eventName));
+            if (eventType == null) throw new ArgumentNullException(nameof(eventType));
+
             Driver.ExecuteJavaScript($"window['{eventName}'] = document.createEvent('HTMLEvents'); .");
             Driver.ExecuteJavaScript(
                 $"{eventName}.initEvent('{eventType}', {bubbles.ToString().ToLower()}, {cancelable.ToString().ToLower()}); .");
@@ -73,8 +87,11 @@ namespace Drelanium
         /// <param name="eventType">The type of the event.</param>
         /// <param name="bubbles">The bubbles parameter of the event.</param>
         /// <param name="cancelable">The cancelable parameter of the event.</param>
-        public string CreateEvent(string eventName, EventType eventType, bool bubbles = true, bool cancelable = false)
+        public string CreateEvent([NotNull] string eventName, EventType eventType, bool bubbles = true,
+            bool cancelable = false)
         {
+            if (eventName == null) throw new ArgumentNullException(nameof(eventName));
+
             return CreateEvent(eventName, eventType.ToString(), bubbles, cancelable);
         }
 
@@ -84,9 +101,13 @@ namespace Drelanium
         /// <param name="functionName">The name that is used to save the function to the window.</param>
         /// <param name="functionArguments">The arguments of the function.</param>
         /// <param name="functionImplementation">The implementation of the function.</param>
-        public string CreateFunction(string functionName, string functionArguments = "()",
-            string functionImplementation = "{}")
+        public string CreateFunction([NotNull] string functionName, [NotNull] string functionArguments = "()",
+            [NotNull] string functionImplementation = "{}")
         {
+            if (functionName == null) throw new ArgumentNullException(nameof(functionName));
+            if (functionArguments == null) throw new ArgumentNullException(nameof(functionArguments));
+            if (functionImplementation == null) throw new ArgumentNullException(nameof(functionImplementation));
+
             Driver.ExecuteJavaScript(
                 $"window['{functionName}'] = function{functionArguments} {functionImplementation}; .");
 

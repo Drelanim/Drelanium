@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 namespace Drelanium
 {
@@ -11,9 +13,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public Properties(IWebElement element)
+        public Properties([NotNull] IWebElement element)
         {
-            Element = element;
+            Element = element ?? throw new ArgumentNullException(nameof(element));
         }
 
         /// <summary>
@@ -51,24 +53,30 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public object Get(string propertyName)
+        public object Get([NotNull] string propertyName)
         {
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+
             return Element.ExecuteJavaScript<object>("return arguments[0][arguments[1]]; ", Element, propertyName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public object Get(ElementPropertyName elementPropertyName)
+        public object Get([NotNull] ElementPropertyName elementPropertyName)
         {
+            if (elementPropertyName == null) throw new ArgumentNullException(nameof(elementPropertyName));
+
             return Get(elementPropertyName.PropertyName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Set(string propertyName, object propertyValue)
+        public void Set([NotNull] string propertyName, [CanBeNull] object propertyValue)
         {
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+
             Element.ExecuteJavaScript("arguments[0][arguments[1]] = arguments[2]; ", Element, propertyName,
                 propertyValue);
         }
@@ -76,8 +84,10 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Set(ElementPropertyName elementPropertyName, object propertyValue)
+        public void Set([NotNull] ElementPropertyName elementPropertyName, [CanBeNull] object propertyValue)
         {
+            if (elementPropertyName == null) throw new ArgumentNullException(nameof(elementPropertyName));
+
             Set(elementPropertyName.PropertyName, propertyValue);
         }
     }

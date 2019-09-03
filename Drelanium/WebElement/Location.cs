@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Drawing;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 
 #pragma warning disable 1591
@@ -36,9 +38,9 @@ namespace Drelanium
     public class Location
     {
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public Location(IWebElement element)
+        public Location([NotNull] IWebElement element)
         {
-            Element = element;
+            Element = element ?? throw new ArgumentNullException(nameof(element));
         }
 
         /// <summary>

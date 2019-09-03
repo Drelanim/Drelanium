@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
 namespace Drelanium
@@ -15,8 +17,12 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="script">...Description to be added...</param>
         /// <param name="args">...Description to be added...</param>
-        public static void ExecuteJavaScript(this IWebElement element, string script, params object[] args)
+        public static void ExecuteJavaScript([NotNull] this IWebElement element, [NotNull] string script,
+            params object[] args)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (script == null) throw new ArgumentNullException(nameof(script));
+
             element.Driver().ExecuteJavaScript(script, args);
         }
 
@@ -26,8 +32,12 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="script">...Description to be added...</param>
         /// <param name="args">...Description to be added...</param>
-        public static T ExecuteJavaScript<T>(this IWebElement element, string script, params object[] args)
+        public static T ExecuteJavaScript<T>([NotNull] this IWebElement element, [NotNull] string script,
+            params object[] args)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (script == null) throw new ArgumentNullException(nameof(script));
+
             return element.Driver().ExecuteJavaScript<T>(script, args);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -23,9 +24,15 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="WebDriverException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, IWebElement element,
-            string stylePropertyName, Func<string, TResult> condition)
+        public static TResult UntilElementStyleProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] IWebElement element,
+            [NotNull] string stylePropertyName, [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element's style property " +
@@ -48,9 +55,15 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="WebDriverException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, IWebElement element,
-            ElementPropertyName stylePropertyName, Func<string, TResult> condition)
+        public static TResult UntilElementStyleProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] IWebElement element,
+            [NotNull] ElementPropertyName stylePropertyName, [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             return wait.UntilElementStyleProperty(element, stylePropertyName.PropertyName, condition);
         }
 
@@ -73,9 +86,16 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
-            By locator, string stylePropertyName, Func<string, TResult> condition)
+        public static TResult UntilElementStyleProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator, [NotNull] string stylePropertyName, [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element's style property " +
@@ -103,9 +123,15 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, By locator,
-            string stylePropertyName, Func<string, TResult> condition)
+        public static TResult UntilElementStyleProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] By locator,
+            [NotNull] string stylePropertyName, [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element's style property " +
@@ -130,9 +156,18 @@ namespace Drelanium
         /// </param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
-            By locator, ElementPropertyName stylePropertyName, Func<string, TResult> condition)
+        public static TResult UntilElementStyleProperty<TResult>(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator, [NotNull] ElementPropertyName stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             return wait.UntilElementStyleProperty(searchContext, locator, stylePropertyName.PropertyName, condition);
         }
 
@@ -151,9 +186,17 @@ namespace Drelanium
         /// </param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementStyleProperty<TResult>(this WebDriverWait wait, By locator,
-            ElementPropertyName stylePropertyName, Func<string, TResult> condition)
+        public static TResult UntilElementStyleProperty<TResult>(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] By locator,
+            [NotNull] ElementPropertyName stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             return wait.UntilElementStyleProperty(locator, stylePropertyName.PropertyName, condition);
         }
     }

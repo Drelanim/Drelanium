@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
 namespace Drelanium
@@ -16,8 +18,11 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static bool UntilElementIsNotSelected(this WebDriverWait wait, IWebElement element)
+        public static bool UntilElementIsNotSelected([NotNull] this WebDriverWait wait, [NotNull] IWebElement element)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
@@ -40,8 +45,13 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static bool UntilElementIsNotSelected(this WebDriverWait wait, ISearchContext searchContext, By locator)
+        public static bool UntilElementIsNotSelected([NotNull] this WebDriverWait wait,
+            [NotNull] ISearchContext searchContext, [NotNull] By locator)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
@@ -63,8 +73,11 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static bool UntilElementIsNotSelected(this WebDriverWait wait, By locator)
+        public static bool UntilElementIsNotSelected([NotNull] this WebDriverWait wait, [NotNull] By locator)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
@@ -81,8 +94,11 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static bool UntilElementIsSelected(this WebDriverWait wait, IWebElement element)
+        public static bool UntilElementIsSelected([NotNull] this WebDriverWait wait, [NotNull] IWebElement element)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
@@ -105,8 +121,13 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static bool UntilElementIsSelected(this WebDriverWait wait, ISearchContext searchContext, By locator)
+        public static bool UntilElementIsSelected([NotNull] this WebDriverWait wait,
+            [NotNull] ISearchContext searchContext, [NotNull] By locator)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +
@@ -128,8 +149,11 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static bool UntilElementIsSelected(this WebDriverWait wait, By locator)
+        public static bool UntilElementIsSelected([NotNull] this WebDriverWait wait, [NotNull] By locator)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element " +

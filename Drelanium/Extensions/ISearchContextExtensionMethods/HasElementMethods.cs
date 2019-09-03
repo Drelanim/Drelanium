@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 
 namespace Drelanium
@@ -16,8 +17,8 @@ namespace Drelanium
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
         public static bool HasElement(
-            this ISearchContext searchContext,
-            By locator)
+            [NotNull] this ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

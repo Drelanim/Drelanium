@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
@@ -26,9 +27,9 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during the method exeuction.
         /// </param>
         public static ReadOnlyCollection<IWebElement> FindElements(
-            this ISearchContext searchContext,
-            By locator,
-            Logger logger)
+            [NotNull] this ISearchContext searchContext,
+            [NotNull] By locator,
+            [CanBeNull] Logger logger)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -24,8 +25,10 @@ namespace Drelanium
         ///     The used <see cref="Logger" /> instance to display logged messages (<see cref="LogEventLevel" /> =
         ///     <see cref="LogEventLevel.Information" />) during the method exeuction.
         /// </param>
-        public static void Perform(this IAction action, Logger logger)
+        public static void Perform([NotNull] this IAction action, [CanBeNull] Logger logger)
         {
+            if (action == null) throw new ArgumentNullException(nameof(action));
+
             logger?.Information("Attempting to perform chained actions");
 
             action.Perform();
@@ -49,9 +52,13 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public static void Perform<TResult>(this IAction action, WebDriverWait wait,
-            Func<IWebDriver, TResult> condition, Logger logger = null)
+        public static void Perform<TResult>([NotNull] this IAction action, [NotNull] WebDriverWait wait,
+            [NotNull] Func<IWebDriver, TResult> condition, [CanBeNull] Logger logger = null)
         {
+            if (action == null) throw new ArgumentNullException(nameof(action));
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             action.Perform(logger);
 
             wait.Until(condition);

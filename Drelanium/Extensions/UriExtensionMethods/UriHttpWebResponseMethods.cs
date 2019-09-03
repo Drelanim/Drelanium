@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Net;
+using JetBrains.Annotations;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 
@@ -22,9 +25,11 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="url">...Description to be added...</param>
-        public static HttpWebResponse HttpWebResponse(this Uri url, bool suppressExceptions = false,
-            Logger logger = null)
+        public static HttpWebResponse HttpWebResponse([NotNull] this Uri url, bool suppressExceptions = false,
+            [CanBeNull] Logger logger = null)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             logger?.Information($"Getting HttpWebResponse on url ({url.AbsoluteUri}).");
 
             try
@@ -38,7 +43,7 @@ namespace Drelanium
                     return (HttpWebResponse) webException.Response;
                 }
 
-                throw webException;
+                throw;
             }
 
             return (HttpWebResponse) url.HttpWebRequest().GetResponse();

@@ -1,8 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 {
@@ -15,9 +19,9 @@ namespace Drelanium
         ///     <inheritdoc cref="TargetLocator" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public TargetLocator(IWebDriver driver)
+        public TargetLocator([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             TargetLocatorImplementation = driver.SwitchTo();
         }
 
@@ -42,16 +46,20 @@ namespace Drelanium
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Frame(string)" />
         /// </summary>
-        public IWebDriver Frame(string frameName)
+        public IWebDriver Frame([NotNull] string frameName)
         {
+            if (frameName == null) throw new ArgumentNullException(nameof(frameName));
+
             return TargetLocatorImplementation.Frame(frameName);
         }
 
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Frame(IWebElement)" />
         /// </summary>
-        public IWebDriver Frame(IWebElement frameElement)
+        public IWebDriver Frame([NotNull] IWebElement frameElement)
         {
+            if (frameElement == null) throw new ArgumentNullException(nameof(frameElement));
+
             return TargetLocatorImplementation.Frame(frameElement);
         }
 
@@ -66,8 +74,10 @@ namespace Drelanium
         /// <summary>
         ///     <inheritdoc cref="ITargetLocator.Window(string)" />
         /// </summary>
-        public IWebDriver Window(string windowName)
+        public IWebDriver Window([NotNull] string windowName)
         {
+            if (windowName == null) throw new ArgumentNullException(nameof(windowName));
+
             return TargetLocatorImplementation.Window(windowName);
         }
 
@@ -104,7 +114,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebElement ActiveElement(Logger logger)
+        public IWebElement ActiveElement([CanBeNull] Logger logger)
         {
             logger?.Information("Switching to Active element.");
 
@@ -120,7 +130,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IAlert Alert(Logger logger)
+        public IAlert Alert([CanBeNull] Logger logger)
         {
             logger?.Information("Switching to Alert.");
 
@@ -136,7 +146,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebDriver DefaultContent(Logger logger)
+        public IWebDriver DefaultContent([CanBeNull] Logger logger)
         {
             logger?.Information("Switching to default content.");
 
@@ -152,7 +162,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebDriver FirstWindow(Logger logger = null)
+        public IWebDriver FirstWindow([CanBeNull] Logger logger = null)
         {
             logger?.Information("Switching to the 1st window.");
 
@@ -165,7 +175,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="frameIndex">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        public IWebDriver Frame(int frameIndex, Logger logger)
+        public IWebDriver Frame(int frameIndex, [CanBeNull] Logger logger)
         {
             logger?.Information($"Switching to Frame({frameIndex}).");
 
@@ -178,8 +188,10 @@ namespace Drelanium
         /// </summary>
         /// <param name="frameName">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        public IWebDriver Frame(string frameName, Logger logger)
+        public IWebDriver Frame([NotNull] string frameName, [CanBeNull] Logger logger)
         {
+            if (frameName == null) throw new ArgumentNullException(nameof(frameName));
+
             logger?.Information($"Switching to Frame({frameName}).");
 
             return Frame(frameName);
@@ -191,8 +203,10 @@ namespace Drelanium
         /// </summary>
         /// <param name="frameElement">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        public IWebDriver Frame(IWebElement frameElement, Logger logger)
+        public IWebDriver Frame([NotNull] IWebElement frameElement, [CanBeNull] Logger logger)
         {
+            if (frameElement == null) throw new ArgumentNullException(nameof(frameElement));
+
             logger?.Information($"Switching to Frame({frameElement}).");
 
             return Frame(frameElement);
@@ -207,7 +221,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebDriver LastWindow(Logger logger = null)
+        public IWebDriver LastWindow([CanBeNull] Logger logger = null)
         {
             logger?.Information("Switching to the last window.");
 
@@ -223,7 +237,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebDriver ParentFrame(Logger logger)
+        public IWebDriver ParentFrame([CanBeNull] Logger logger)
         {
             logger?.Information("Switching to ParentFrame.");
 
@@ -240,8 +254,10 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public IWebDriver Window(string windowName, Logger logger)
+        public IWebDriver Window([NotNull] string windowName, [CanBeNull] Logger logger)
         {
+            if (windowName == null) throw new ArgumentNullException(nameof(windowName));
+
             logger?.Information($"Switching to Window({windowName}).");
 
             return Window(windowName);
@@ -253,7 +269,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="indexOfWindow">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        public IWebDriver Window(int indexOfWindow, Logger logger = null)
+        public IWebDriver Window(int indexOfWindow, [CanBeNull] Logger logger = null)
         {
             var numberOfWindow = indexOfWindow + 1;
 

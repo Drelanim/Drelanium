@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
@@ -25,9 +26,11 @@ namespace Drelanium
         /// </param>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public static void Submit(
-            this IWebElement element,
-            Logger logger)
+            [NotNull] this IWebElement element,
+            [CanBeNull] Logger logger)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             logger?.Information($"Attempting to Submit on element ({element}).");
 
             element.Submit();
@@ -48,10 +51,12 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <param name="timeoutInSeconds">The timeout value indicating how long to wait for the condition.</param>
         public static void Submit(
-            this IWebElement element,
+            [NotNull] this IWebElement element,
             double timeoutInSeconds,
-            Logger logger = null)
+            [CanBeNull] Logger logger = null)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             logger?.Information($"Attempting to Submit on element ({element}).");
 
             element
@@ -87,14 +92,16 @@ namespace Drelanium
         /// </param>
         /// <param name="timeoutInSeconds"></param>
         public static void Submit<TResult>(
-            this IWebElement element,
+            [NotNull] this IWebElement element,
             double timeoutInSeconds,
-            Func<IWebDriver, TResult> condition,
-            string timeoutMessage = "", Type[] ignoredExceptionTypes = null, double sleepIntervalInSeconds = 0.5,
-            IClock clock = null,
-            Logger logger = null)
+            [NotNull] Func<IWebDriver, TResult> condition,
+            [CanBeNull] string timeoutMessage = "", [CanBeNull] Type[] ignoredExceptionTypes = null,
+            double sleepIntervalInSeconds = 0.5,
+            [CanBeNull] IClock clock = null,
+            [CanBeNull] Logger logger = null)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
 
             var timeBeforeClick = DateTime.Now;
 

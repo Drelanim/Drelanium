@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -20,7 +21,7 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, bool> PageHasLoaded(Func<Uri, bool> condition)
+        public static Func<IWebDriver, bool> PageHasLoaded([NotNull] Func<Uri, bool> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
@@ -49,7 +50,7 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, bool> PageHasLoadedWithoutDomainCookies(Func<Uri, bool> condition)
+        public static Func<IWebDriver, bool> PageHasLoadedWithoutDomainCookies([NotNull] Func<Uri, bool> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
@@ -76,7 +77,7 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, bool> PageHasLoadedWithoutDomainCookies(Func<string, bool> condition)
+        public static Func<IWebDriver, bool> PageHasLoadedWithoutDomainCookies([NotNull] Func<string, bool> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
@@ -88,7 +89,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, TResult> Url<TResult>(Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> Url<TResult>([NotNull] Func<string, TResult> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
@@ -100,7 +101,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, TResult> Url<TResult>(Func<Uri, TResult> condition)
+        public static Func<IWebDriver, TResult> Url<TResult>([NotNull] Func<Uri, TResult> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
@@ -118,8 +119,9 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public static Func<IWebDriver, TResult> UrlLeftPart<TResult>(UriPartial uriPartial,
-            Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> UrlLeftPart<TResult>(
+            UriPartial uriPartial,
+            [NotNull] Func<string, TResult> condition)
         {
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
@@ -136,7 +138,7 @@ namespace Drelanium
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RegexMatchTimeoutException"></exception>
-        public static Func<IWebDriver, bool> UrlMatches(string regexPattern)
+        public static Func<IWebDriver, bool> UrlMatches([NotNull] string regexPattern)
         {
             if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
 
@@ -150,7 +152,7 @@ namespace Drelanium
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RegexMatchTimeoutException"></exception>
-        public static Func<IWebDriver, bool> UrlNotMatches(string regexPattern)
+        public static Func<IWebDriver, bool> UrlNotMatches([NotNull] string regexPattern)
         {
             if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
 
@@ -162,7 +164,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="url">The URL the browser is currently displaying.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> UrlNotToBe(string url)
+        public static Func<IWebDriver, bool> UrlNotToBe([NotNull] string url)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
 
@@ -175,7 +177,7 @@ namespace Drelanium
         /// <param name="urlPart">The URL part the browser is currently displaying.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public static Func<IWebDriver, bool> UrlNotToContain(string urlPart)
+        public static Func<IWebDriver, bool> UrlNotToContain([NotNull] string urlPart)
         {
             if (urlPart == null) throw new ArgumentNullException(nameof(urlPart));
 
@@ -187,7 +189,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="url">The URL the browser is currently displaying.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> UrlToBe(string url)
+        public static Func<IWebDriver, bool> UrlToBe([NotNull] string url)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
 
@@ -200,7 +202,7 @@ namespace Drelanium
         /// <param name="urlPart">The URL part the browser is currently displaying.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public static Func<IWebDriver, bool> UrlToContain(string urlPart)
+        public static Func<IWebDriver, bool> UrlToContain([NotNull] string urlPart)
         {
             if (urlPart == null) throw new ArgumentNullException(nameof(urlPart));
 

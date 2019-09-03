@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Net;
+using JetBrains.Annotations;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 
@@ -21,8 +24,10 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public static HttpWebRequest HttpWebRequest(this Uri url, Logger logger = null)
+        public static HttpWebRequest HttpWebRequest([NotNull] this Uri url, [CanBeNull] Logger logger = null)
         {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             logger?.Information($"Getting HttpWebRequest on url ({url.AbsoluteUri}).");
 
             return (HttpWebRequest) WebRequest.Create(url);

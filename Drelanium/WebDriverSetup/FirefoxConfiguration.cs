@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using JetBrains.Annotations;
+using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
@@ -28,8 +30,10 @@ namespace Drelanium
         /// </summary>
         /// <param name="configurationRoot">...Description to be added...</param>
         /// <returns>...Description to be added...</returns>
-        public FirefoxConfiguration Bind(IConfigurationRoot configurationRoot)
+        public FirefoxConfiguration Bind([NotNull] IConfigurationRoot configurationRoot)
         {
+            if (configurationRoot == null) throw new ArgumentNullException(nameof(configurationRoot));
+
             configurationRoot.Bind(this);
             return this;
         }
@@ -38,8 +42,10 @@ namespace Drelanium
         /// </summary>
         /// <param name="jsonPath">...Description to be added...</param>
         /// <returns>...Description to be added...</returns>
-        public FirefoxConfiguration Bind(string jsonPath)
+        public FirefoxConfiguration Bind([NotNull] string jsonPath)
         {
+            if (jsonPath == null) throw new ArgumentNullException(nameof(jsonPath));
+
             new ConfigurationBuilder().AddJsonFile(jsonPath).Build().Bind(this);
             return this;
         }

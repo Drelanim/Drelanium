@@ -1190,8 +1190,7 @@
     </member>
     <member name="M:Drelanium.SendKeysMethods.DeleteFromEndOfTextbox(OpenQA.Selenium.IWebElement,System.Int32)">
       <summary>
-        To be added..
-        .
+        To be added...
       </summary>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -1242,7 +1241,6 @@
     <member name="M:Drelanium.SendKeysMethods.TypeToTextboxThenEnter(OpenQA.Selenium.IWebElement,System.String)">
       <summary>
         To be added..
-        .
       </summary>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -1253,7 +1251,6 @@
     <member name="M:Drelanium.SendKeysMethods.TypeToTextboxThenTab(OpenQA.Selenium.IWebElement,System.String)">
       <summary>
         To be added..
-        .
       </summary>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -1741,6 +1738,7 @@
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
         instance.
       </param>
+      <exception cref="T:System.ArgumentNullException"></exception>
       <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException"></exception>
       <exception cref="T:OpenQA.Selenium.StaleElementReferenceException"></exception>
     </member>

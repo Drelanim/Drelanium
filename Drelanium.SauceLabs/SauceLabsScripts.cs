@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 #pragma warning disable 1591
 
@@ -23,9 +25,9 @@ namespace Drelanium.SauceLabs
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">...Description to be added...</param>
-        public SauceLabsScripts(IWebDriver driver)
+        public SauceLabsScripts([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }
 
         /// <summary>
@@ -37,8 +39,10 @@ namespace Drelanium.SauceLabs
         ///     ...Description to be added...
         /// </summary>
         /// <param name="text">...Description to be added...</param>
-        public void Log(string text)
+        public void Log([NotNull] string text)
         {
+            if (text == null) throw new ArgumentNullException(nameof(text));
+
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:context={text}.");
         }
 
@@ -46,8 +50,10 @@ namespace Drelanium.SauceLabs
         ///     ...Description to be added...
         /// </summary>
         /// <param name="buildName">...Description to be added...</param>
-        public void SetJobBuild(string buildName)
+        public void SetJobBuild([NotNull] string buildName)
         {
+            if (buildName == null) throw new ArgumentNullException(nameof(buildName));
+
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-build={buildName}.");
         }
 
@@ -55,8 +61,10 @@ namespace Drelanium.SauceLabs
         ///     ...Description to be added...
         /// </summary>
         /// <param name="jobInfo">...Description to be added...</param>
-        public void SetJobInfo(string jobInfo)
+        public void SetJobInfo([NotNull] string jobInfo)
         {
+            if (jobInfo == null) throw new ArgumentNullException(nameof(jobInfo));
+
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce: job-info={jobInfo}.");
         }
 
@@ -64,8 +72,10 @@ namespace Drelanium.SauceLabs
         ///     ...Description to be added...
         /// </summary>
         /// <param name="jobName">...Description to be added...</param>
-        public void SetJobName(string jobName)
+        public void SetJobName([NotNull] string jobName)
         {
+            if (jobName == null) throw new ArgumentNullException(nameof(jobName));
+
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-name={jobName}.");
         }
 
@@ -73,8 +83,10 @@ namespace Drelanium.SauceLabs
         ///     ...Description to be added...
         /// </summary>
         /// <param name="jobResult">...Description to be added...</param>
-        public void SetJobResult(string jobResult)
+        public void SetJobResult([NotNull] string jobResult)
         {
+            if (jobResult == null) throw new ArgumentNullException(nameof(jobResult));
+
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-result={jobResult}.");
         }
 
@@ -91,8 +103,10 @@ namespace Drelanium.SauceLabs
         ///     ...Description to be added...
         /// </summary>
         /// <param name="tags">...Description to be added...</param>
-        public void SetJobTags(string tags)
+        public void SetJobTags([NotNull] string tags)
         {
+            if (tags == null) throw new ArgumentNullException(nameof(tags));
+
             ((IJavaScriptExecutor) Driver).ExecuteScript($"sauce:job-tags={tags}.");
         }
 

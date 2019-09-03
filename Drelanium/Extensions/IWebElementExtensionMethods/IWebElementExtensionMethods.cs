@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
@@ -18,8 +20,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static Attributes Attributes(this IWebElement element)
+        public static Attributes Attributes([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             return new Attributes(element);
         }
 
@@ -33,8 +37,10 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public static void Blur(this IWebElement element, Logger logger = null)
+        public static void Blur([NotNull] this IWebElement element, [CanBeNull] Logger logger = null)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             logger?.Information($"Attempting to Blur on element ({element}).");
 
             element.ExecuteJavaScript("arguments[0].blur(); ", element);
@@ -53,8 +59,12 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public static void DispatchEvent(this IWebElement element, string eventName, Logger logger = null)
+        public static void DispatchEvent([NotNull] this IWebElement element, [NotNull] string eventName,
+            [CanBeNull] Logger logger = null)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (eventName == null) throw new ArgumentNullException(nameof(eventName));
+
             logger?.Information($"Attempting to Dispatch event ({eventName}) on element ({element}).");
 
             element.ExecuteJavaScript($"arguments[0].dispatchEvent({eventName}); ", element);
@@ -72,8 +82,10 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public static void Focus(this IWebElement element, Logger logger = null)
+        public static void Focus([NotNull] this IWebElement element, [CanBeNull] Logger logger = null)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             logger?.Information($"Attempting to Focus on element ({element}).");
 
             element.ExecuteJavaScript("arguments[0].focus(); ", element);
@@ -85,8 +97,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static string GetWebElementID(this IWebElement element)
+        public static string GetWebElementID([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             return new Regex("\\d{2,}").Match(element.ToString()).Value;
         }
 
@@ -100,8 +114,10 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public static void JSClick(this IWebElement element, Logger logger = null)
+        public static void JSClick([NotNull] this IWebElement element, [CanBeNull] Logger logger = null)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             logger?.Information($"Attempting to JavaScript-Click on element ({element}).");
 
             element.ExecuteJavaScript("arguments[0].click(); ", element);
@@ -113,8 +129,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static Location Location(this IWebElement element)
+        public static Location Location([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             return new Location(element);
         }
 
@@ -122,8 +140,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static Properties Properties(this IWebElement element)
+        public static Properties Properties([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             return new Properties(element);
         }
 
@@ -131,8 +151,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static SelectElement Select(this IWebElement element)
+        public static SelectElement Select([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             return new SelectElement(element);
         }
 
@@ -140,8 +162,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public static Style Style(this IWebElement element)
+        public static Style Style([NotNull] this IWebElement element)
         {
+            if (element == null) throw new ArgumentNullException(nameof(element));
+
             return new Style(element);
         }
     }

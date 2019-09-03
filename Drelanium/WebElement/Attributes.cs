@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 // ReSharper disable IdentifierTypo
 // ReSharper disable InconsistentNaming
@@ -13,9 +15,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
-        public Attributes(IWebElement element)
+        public Attributes([NotNull] IWebElement element)
         {
-            Element = element;
+            Element = element ?? throw new ArgumentNullException(nameof(element));
         }
 
         /// <summary>
@@ -243,8 +245,10 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
-        public string Get(string attributeName)
+        public string Get([NotNull] string attributeName)
         {
+            if (attributeName == null) throw new ArgumentNullException(nameof(attributeName));
+
             return Element.ExecuteJavaScript<string>("return arguments[0].getAttribute(arguments[1]); ", Element,
                 attributeName);
         }
@@ -252,8 +256,10 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public string Get(ElementAttributeName elementAttributeName)
+        public string Get([NotNull] ElementAttributeName elementAttributeName)
         {
+            if (elementAttributeName == null) throw new ArgumentNullException(nameof(elementAttributeName));
+
             return Get(elementAttributeName.AttributeName);
         }
 
@@ -261,16 +267,20 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
-        public void Remove(string attributeName)
+        public void Remove([NotNull] string attributeName)
         {
+            if (attributeName == null) throw new ArgumentNullException(nameof(attributeName));
+
             Element.ExecuteJavaScript("arguments[0].removeAttribute(arguments[1]); ", Element, attributeName);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Remove(ElementAttributeName elementAttributeName)
+        public void Remove([NotNull] ElementAttributeName elementAttributeName)
         {
+            if (elementAttributeName == null) throw new ArgumentNullException(nameof(elementAttributeName));
+
             Remove(elementAttributeName.AttributeName);
         }
 
@@ -279,8 +289,10 @@ namespace Drelanium
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
         /// <param name="attributeValue">...Description to be added...</param>
-        public void Set(string attributeName, object attributeValue)
+        public void Set([NotNull] string attributeName, [CanBeNull] object attributeValue)
         {
+            if (attributeName == null) throw new ArgumentNullException(nameof(attributeName));
+
             Element.ExecuteJavaScript("arguments[0].setAttribute(arguments[1], arguments[2]); ", Element, attributeName,
                 attributeValue);
         }
@@ -288,8 +300,10 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void Set(ElementAttributeName elementAttributeName, object attributeValue)
+        public void Set([NotNull] ElementAttributeName elementAttributeName, [CanBeNull] object attributeValue)
         {
+            if (elementAttributeName == null) throw new ArgumentNullException(nameof(elementAttributeName));
+
             Set(elementAttributeName.AttributeName, attributeValue);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -22,8 +23,10 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(By locator, string attributeName,
-            Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(
+            [NotNull] By locator,
+            [NotNull] string attributeName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
             if (attributeName == null) throw new ArgumentNullException(nameof(attributeName));
@@ -45,8 +48,11 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(ISearchContext searchContext, By locator,
-            string attributeName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator,
+            [NotNull] string attributeName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));
@@ -65,8 +71,10 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(IWebElement element, string attributeName,
-            Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(
+            [NotNull] IWebElement element,
+            [NotNull] string attributeName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
             if (attributeName == null) throw new ArgumentNullException(nameof(attributeName));
@@ -84,8 +92,10 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(IWebElement element,
-            ElementAttributeName attributeName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(
+            [NotNull] IWebElement element,
+            [NotNull] ElementAttributeName attributeName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
             if (attributeName == null) throw new ArgumentNullException(nameof(attributeName));
@@ -106,8 +116,10 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(By locator,
-            ElementAttributeName attributeName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(
+            [NotNull] By locator,
+            [NotNull] ElementAttributeName attributeName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
             if (attributeName == null) throw new ArgumentNullException(nameof(attributeName));
@@ -129,8 +141,11 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(ISearchContext searchContext, By locator,
-            ElementAttributeName attributeName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementAttribute<TResult>(
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator,
+            [NotNull] ElementAttributeName attributeName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

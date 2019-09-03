@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
@@ -9,6 +10,8 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Safari;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 {
@@ -37,11 +40,13 @@ namespace Drelanium
         public static IWebDriver StartWebDriver(
             ExecutionMode executionMode,
             BrowserType browserType,
-            DriverOptions driverOptions,
-            string localDriverDirectory = null,
-            Uri seleniumGridHubUrl = null,
-            Logger logger = null)
+            [NotNull] DriverOptions driverOptions,
+            [CanBeNull] string localDriverDirectory = null,
+            [CanBeNull] Uri seleniumGridHubUrl = null,
+            [CanBeNull] Logger logger = null)
         {
+            if (driverOptions == null) throw new ArgumentNullException(nameof(driverOptions));
+
             IWebDriver driver;
 
             switch (executionMode)

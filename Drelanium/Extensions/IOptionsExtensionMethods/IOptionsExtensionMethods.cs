@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 // ReSharper disable InconsistentNaming
 
@@ -15,8 +17,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static CookieJar Cookies(this IOptions options, IWebDriver driver)
+        public static CookieJar Cookies([NotNull] this IOptions options, [NotNull] IWebDriver driver)
         {
+            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new CookieJar(driver);
         }
 
@@ -24,8 +29,10 @@ namespace Drelanium
         ///     <see cref="LogsManager" />
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
-        public static LogsManager Logs(this IOptions options)
+        public static LogsManager Logs([NotNull] this IOptions options)
         {
+            if (options == null) throw new ArgumentNullException(nameof(options));
+
             return new LogsManager(options);
         }
 
@@ -34,8 +41,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static MouseMoveFollower MouseMoveFollower(this IOptions options, IWebDriver driver)
+        public static MouseMoveFollower MouseMoveFollower([NotNull] this IOptions options, [NotNull] IWebDriver driver)
         {
+            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new MouseMoveFollower(driver);
         }
 
@@ -44,8 +54,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Timeouts Timeouts(this IOptions options, IWebDriver driver)
+        public static Timeouts Timeouts([NotNull] this IOptions options, [NotNull] IWebDriver driver)
         {
+            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Timeouts(driver);
         }
 
@@ -54,8 +67,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="options">The <see cref="IOptions" /> instance, that  allows the user to set options on the browser.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Window Window(this IOptions options, IWebDriver driver)
+        public static Window Window([NotNull] this IOptions options, [NotNull] IWebDriver driver)
         {
+            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Window(driver);
         }
     }

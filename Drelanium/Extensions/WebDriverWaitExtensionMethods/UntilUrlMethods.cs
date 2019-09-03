@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -21,8 +22,13 @@ namespace Drelanium
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
-        public static TResult UntilUrl<TResult>(this WebDriverWait wait, Func<string, TResult> condition)
+        public static TResult UntilUrl<TResult>(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             "to meet the given condition.";
@@ -36,8 +42,13 @@ namespace Drelanium
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
-        public static TResult UntilUrl<TResult>(this WebDriverWait wait, Func<Uri, TResult> condition)
+        public static TResult UntilUrl<TResult>(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] Func<Uri, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             "to meet the given condition.";
@@ -52,8 +63,14 @@ namespace Drelanium
         /// <param name="urlPart">The URL part the browser is currently displaying.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public static bool UntilUrlContains(this WebDriverWait wait, string urlPart)
+        public static bool UntilUrlContains(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] string urlPart)
+
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (urlPart == null) throw new ArgumentNullException(nameof(urlPart));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             $"to contain ({urlPart})";
@@ -70,9 +87,14 @@ namespace Drelanium
         /// </param>
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
-        public static TResult UntilUrlLeftPart<TResult>(this WebDriverWait wait, UriPartial uriPartial,
-            Func<string, TResult> condition)
+        public static TResult UntilUrlLeftPart<TResult>(
+            [NotNull] this WebDriverWait wait,
+            UriPartial uriPartial,
+            [NotNull] Func<string, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url's left part " +
                             "to meet the given condition.";
@@ -89,8 +111,14 @@ namespace Drelanium
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RegexMatchTimeoutException"></exception>
-        public static bool UntilUrlMatches(this WebDriverWait wait, string regexPattern)
+        public static bool UntilUrlMatches(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] string regexPattern)
+
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             $"to match with the regular expression ({regexPattern}).";
@@ -104,8 +132,13 @@ namespace Drelanium
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="urlPart">The URL part the browser is currently displaying.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
-        public static bool UntilUrlNotContains(this WebDriverWait wait, string urlPart)
+        public static bool UntilUrlNotContains(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] string urlPart)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (urlPart == null) throw new ArgumentNullException(nameof(urlPart));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             $"not to contain ({urlPart})";
@@ -122,8 +155,13 @@ namespace Drelanium
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RegexMatchTimeoutException"></exception>
-        public static bool UntilUrlNotMatches(this WebDriverWait wait, string regexPattern)
+        public static bool UntilUrlNotMatches(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] string regexPattern)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             $"to not match with the regular expression ({regexPattern}).";
@@ -137,8 +175,13 @@ namespace Drelanium
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">The URL the browser is currently displaying.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
-        public static bool UntilUrlNotToBe(this WebDriverWait wait, string url)
+        public static bool UntilUrlNotToBe(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] string url)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             $"not to be ({url})";
@@ -152,8 +195,13 @@ namespace Drelanium
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="url">The URL the browser is currently displaying.</param>
         /// <exception cref="WebDriverTimeoutException"></exception>
-        public static bool UntilUrlToBe(this WebDriverWait wait, string url)
+        public static bool UntilUrlToBe(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] string url)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "loaded url " +
                             $"to be ({url})";

@@ -1,5 +1,8 @@
 ﻿// ReSharper disable IdentifierTypo
 
+using System;
+using JetBrains.Annotations;
+
 #pragma warning disable 1591
 
 namespace Drelanium
@@ -13,9 +16,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="propertyName">...Description to be added...</param>
-        public ElementStylePropertyName(string propertyName)
+        public ElementStylePropertyName([NotNull] string propertyName)
         {
-            PropertyName = propertyName;
+            PropertyName = propertyName ?? throw new ArgumentNullException(nameof(propertyName));
         }
 
         /// <summary>

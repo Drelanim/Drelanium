@@ -1,4 +1,7 @@
-﻿#pragma warning disable 1591
+﻿using System;
+using JetBrains.Annotations;
+
+#pragma warning disable 1591
 
 namespace Drelanium
 {
@@ -11,9 +14,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="attributeName">Name of the attribute of the element.</param>
-        public ElementAttributeName(string attributeName)
+        public ElementAttributeName([NotNull] string attributeName)
         {
-            AttributeName = attributeName;
+            AttributeName = attributeName ?? throw new ArgumentNullException(nameof(attributeName));
         }
 
         /// <summary>

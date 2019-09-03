@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Net;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 
@@ -23,8 +26,12 @@ namespace Drelanium
         /// </param>
         /// <param name="url">The URL to load.</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static HttpWebRequest HttpWebRequest(this IWebDriver driver, Uri url, Logger logger = null)
+        public static HttpWebRequest HttpWebRequest([NotNull] this IWebDriver driver, [NotNull] Uri url,
+            [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+            if (url == null) throw new ArgumentNullException(nameof(url));
+
             logger?.Information($"Getting HttWebRequest using url: ({url.AbsoluteUri}).");
 
             return url.HttpWebRequest();
@@ -40,8 +47,10 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static HttpWebRequest HttpWebRequest(this IWebDriver driver, Logger logger = null)
+        public static HttpWebRequest HttpWebRequest([NotNull] this IWebDriver driver, [CanBeNull] Logger logger = null)
         {
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             logger?.Information("Getting HttWebRequest on the WebDriver's current url.");
 
             return driver.Url().HttpWebRequest();

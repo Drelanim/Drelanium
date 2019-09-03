@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
@@ -16,9 +17,9 @@ namespace Drelanium
         ///     <inheritdoc cref="Navigation" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Navigation(IWebDriver driver)
+        public Navigation([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             NavigationImplementation = driver.Navigate();
         }
 
@@ -52,7 +53,7 @@ namespace Drelanium
         ///     <inheritdoc cref="INavigation.GoToUrl(string)" />
         /// </summary>
         /// <exception cref="ArgumentNullException"></exception>
-        public void GoToUrl(string url)
+        public void GoToUrl([NotNull] string url)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
 
@@ -63,7 +64,7 @@ namespace Drelanium
         ///     <inheritdoc cref="INavigation.GoToUrl(Uri)" />
         /// </summary>
         /// <exception cref="ArgumentNullException"></exception>
-        public void GoToUrl(Uri url)
+        public void GoToUrl([NotNull] Uri url)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
 
@@ -87,7 +88,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void Back(Logger logger)
+        public void Back([CanBeNull] Logger logger)
         {
             logger?.Information("Attempting to navigate back.");
 
@@ -105,7 +106,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void Forward(Logger logger)
+        public void Forward([CanBeNull] Logger logger)
         {
             logger?.Information("Attempting to navigate forward.");
 
@@ -125,7 +126,9 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public void GoToUrl(string url, Logger logger)
+        public void GoToUrl(
+            [NotNull] string url,
+            [CanBeNull] Logger logger)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
 
@@ -147,7 +150,7 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public void GoToUrl(Uri url, Logger logger)
+        public void GoToUrl([NotNull] Uri url, [CanBeNull] Logger logger)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
 
@@ -168,7 +171,7 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public void GoToUrl(Uri url, bool checkHttpResponse, Logger logger = null)
+        public void GoToUrl([NotNull] Uri url, bool checkHttpResponse, [CanBeNull] Logger logger = null)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
 
@@ -195,8 +198,13 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public void GoToUrl(Uri url, bool checkHttpResponse, bool loadWithoutCookies, double timeoutInSeconds,
-            Func<Uri, bool> urlCondition, Logger logger = null)
+        public void GoToUrl(
+            [NotNull] Uri url,
+            bool checkHttpResponse,
+            bool loadWithoutCookies,
+            double timeoutInSeconds,
+            [NotNull] Func<Uri, bool> urlCondition,
+            [CanBeNull] Logger logger = null)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
             if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
@@ -220,7 +228,7 @@ namespace Drelanium
         ///     <see cref="LogEventLevel.Information" />) during
         ///     the method exeuction.
         /// </param>
-        public void Refresh(Logger logger)
+        public void Refresh([CanBeNull] Logger logger)
         {
             logger?.Information($"Refreshing the current page ({Driver.Url}).");
 

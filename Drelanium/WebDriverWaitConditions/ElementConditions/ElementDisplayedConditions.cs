@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -16,7 +17,7 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeDisplayed(IWebElement element)
+        public static Func<IWebDriver, bool> ElementToBecomeDisplayed([NotNull] IWebElement element)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
 
@@ -32,7 +33,7 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeDisplayed(By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeDisplayed([NotNull] By locator)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
@@ -49,7 +50,8 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeDisplayed(ISearchContext searchContext, By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeDisplayed([NotNull] ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));
@@ -63,7 +65,7 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed(IWebElement element)
+        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed([NotNull] IWebElement element)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
 
@@ -79,7 +81,7 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed(By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed([NotNull] By locator)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
@@ -96,7 +98,8 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed(ISearchContext searchContext, By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeNotDisplayed([NotNull] ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using Serilog.Core;
 
 // ReSharper disable InconsistentNaming
@@ -37,9 +39,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public MouseMoveFollower(IWebDriver driver)
+        public MouseMoveFollower([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }
 
         /// <summary>
@@ -55,7 +57,7 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void TurnOFF(Logger logger = null)
+        public void TurnOFF([CanBeNull] Logger logger = null)
         {
             if (!IsTurnedON)
             {
@@ -72,7 +74,7 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void TurnON(Logger logger = null)
+        public void TurnON([CanBeNull] Logger logger = null)
         {
             if (IsTurnedON)
             {

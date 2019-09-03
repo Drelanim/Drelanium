@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -20,9 +21,15 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="WebDriverException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, IWebElement element,
-            string propertyName, Func<object, TResult> condition)
+        public static TResult UntilElementProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] IWebElement element,
+            [NotNull] string propertyName, [NotNull] Func<object, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element's property " +
@@ -45,9 +52,15 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="WebDriverException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, IWebElement element,
-            ElementPropertyName propertyName, Func<object, TResult> condition)
+        public static TResult UntilElementProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] IWebElement element,
+            [NotNull] ElementPropertyName propertyName, [NotNull] Func<object, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (element == null) throw new ArgumentNullException(nameof(element));
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             return wait.UntilElementProperty(element, propertyName.PropertyName, condition);
         }
 
@@ -70,9 +83,16 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
-            By locator, string propertyName, Func<object, TResult> condition)
+        public static TResult UntilElementProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator, [NotNull] string propertyName, [NotNull] Func<object, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element's property " +
@@ -99,9 +119,15 @@ namespace Drelanium
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, By locator, string propertyName,
-            Func<object, TResult> condition)
+        public static TResult UntilElementProperty<TResult>([NotNull] this WebDriverWait wait, [NotNull] By locator,
+            [NotNull] string propertyName,
+            [NotNull] Func<object, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
             wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
                             "element's property " +
@@ -126,9 +152,16 @@ namespace Drelanium
         /// </param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, ISearchContext searchContext,
-            By locator, ElementPropertyName propertyName, Func<object, TResult> condition)
+        public static TResult UntilElementProperty<TResult>([NotNull] this WebDriverWait wait,
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator, [NotNull] ElementPropertyName propertyName, [NotNull] Func<object, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             return wait.UntilElementProperty(searchContext, locator, propertyName.PropertyName, condition);
         }
 
@@ -147,9 +180,14 @@ namespace Drelanium
         /// </param>
         /// <exception cref="WebDriverTimeoutException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static TResult UntilElementProperty<TResult>(this WebDriverWait wait, By locator,
-            ElementPropertyName propertyName, Func<object, TResult> condition)
+        public static TResult UntilElementProperty<TResult>([NotNull] this WebDriverWait wait, [NotNull] By locator,
+            [NotNull] ElementPropertyName propertyName, [NotNull] Func<object, TResult> condition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (locator == null) throw new ArgumentNullException(nameof(locator));
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             return wait.UntilElementProperty(locator, propertyName.PropertyName, condition);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -19,7 +20,8 @@ namespace Drelanium
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
-        public static Func<IWebDriver, IWebElement> ElementToExist(ISearchContext searchContext, By locator)
+        public static Func<IWebDriver, IWebElement> ElementToExist([NotNull] ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));
@@ -35,7 +37,7 @@ namespace Drelanium
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
-        public static Func<IWebDriver, IWebElement> ElementToExist(By locator)
+        public static Func<IWebDriver, IWebElement> ElementToExist([NotNull] By locator)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
@@ -49,7 +51,7 @@ namespace Drelanium
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> ElementToNotExist(By locator)
+        public static Func<IWebDriver, bool> ElementToNotExist([NotNull] By locator)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
@@ -78,7 +80,8 @@ namespace Drelanium
         ///     <inheritdoc cref="ISearchContext.FindElement(By)" />
         /// </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Func<IWebDriver, bool> ElementToNotExist(ISearchContext searchContext, By locator)
+        public static Func<IWebDriver, bool> ElementToNotExist([NotNull] ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

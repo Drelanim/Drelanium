@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 namespace Drelanium
 {
@@ -11,9 +13,9 @@ namespace Drelanium
         ///     <inheritdoc cref="Alert" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Alert(IWebDriver driver)
+        public Alert([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             AlertImplementation = driver.SwitchTo().Alert();
         }
 
@@ -48,16 +50,21 @@ namespace Drelanium
         /// <summary>
         ///     <inheritdoc cref="IAlert.SendKeys(string)" />
         /// </summary>
-        public void SendKeys(string keysToSend)
+        public void SendKeys([NotNull] string keysToSend)
         {
+            if (keysToSend == null) throw new ArgumentNullException(nameof(keysToSend));
+
             AlertImplementation.SendKeys(keysToSend);
         }
 
         /// <summary>
         ///     <inheritdoc cref="IAlert.SetAuthenticationCredentials(string,string)" />
         /// </summary>
-        public void SetAuthenticationCredentials(string userName, string password)
+        public void SetAuthenticationCredentials([NotNull] string userName, [NotNull] string password)
         {
+            if (userName == null) throw new ArgumentNullException(nameof(userName));
+            if (password == null) throw new ArgumentNullException(nameof(password));
+
             AlertImplementation.SetAuthenticationCredentials(userName, password);
         }
 

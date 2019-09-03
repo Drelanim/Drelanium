@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
 
@@ -15,9 +17,9 @@ namespace Drelanium
         ///     <inheritdoc cref="CookieJar" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public CookieJar(IWebDriver driver)
+        public CookieJar([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             CookieJarImplementation = driver.Manage().Cookies;
         }
 
@@ -35,32 +37,40 @@ namespace Drelanium
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.AddCookie(Cookie)" />
         /// </summary>
-        public void AddCookie(Cookie cookie)
+        public void AddCookie([NotNull] Cookie cookie)
         {
+            if (cookie == null) throw new ArgumentNullException(nameof(cookie));
+
             CookieJarImplementation.AddCookie(cookie);
         }
 
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.GetCookieNamed(string)" />
         /// </summary>
-        public Cookie GetCookieNamed(string name)
+        public Cookie GetCookieNamed([NotNull] string name)
         {
+            if (name == null) throw new ArgumentNullException(nameof(name));
+
             return CookieJarImplementation.GetCookieNamed(name);
         }
 
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.DeleteCookie(Cookie)" />
         /// </summary>
-        public void DeleteCookie(Cookie cookie)
+        public void DeleteCookie([NotNull] Cookie cookie)
         {
+            if (cookie == null) throw new ArgumentNullException(nameof(cookie));
+
             CookieJarImplementation.DeleteCookie(cookie);
         }
 
         /// <summary>
         ///     <inheritdoc cref="ICookieJar.DeleteCookieNamed(string)" />
         /// </summary>
-        public void DeleteCookieNamed(string name)
+        public void DeleteCookieNamed([NotNull] string name)
         {
+            if (name == null) throw new ArgumentNullException(nameof(name));
+
             CookieJarImplementation.DeleteCookieNamed(name);
         }
 
@@ -81,8 +91,10 @@ namespace Drelanium
         ///     <inheritdoc cref="ICookieJar.AddCookie(Cookie)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        public void AddCookie(Cookie cookie, Logger logger)
+        public void AddCookie([NotNull] Cookie cookie, [CanBeNull] Logger logger)
         {
+            if (cookie == null) throw new ArgumentNullException(nameof(cookie));
+
             logger?.Information($"Adding cookie {cookie}.");
 
             AddCookie(cookie);
@@ -92,8 +104,10 @@ namespace Drelanium
         ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        private void CheckDomain(string domainName, Logger logger = null)
+        private void CheckDomain([NotNull] string domainName, [CanBeNull] Logger logger = null)
         {
+            if (domainName == null) throw new ArgumentNullException(nameof(domainName));
+
             var actualDomain = Driver.Url().Host;
 
             logger?.Information($"Comparing actual domain ({actualDomain}) to expected ({domainName}).");
@@ -111,7 +125,7 @@ namespace Drelanium
         ///     <inheritdoc cref="ICookieJar.DeleteAllCookies()" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        public void DeleteAllCookies(Logger logger)
+        public void DeleteAllCookies([CanBeNull] Logger logger)
         {
             logger?.Information($"Deleting all available cookies in current domain: ({Driver.Url().Host}).");
 
@@ -124,8 +138,10 @@ namespace Drelanium
         ///     <inheritdoc cref="ICookieJar.DeleteAllCookies()" />
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        public void DeleteAllCookies(string domainName, Logger logger = null)
+        public void DeleteAllCookies([NotNull] string domainName, [CanBeNull] Logger logger = null)
         {
+            if (domainName == null) throw new ArgumentNullException(nameof(domainName));
+
             CheckDomain(domainName, logger);
             DeleteAllCookies(logger);
         }
@@ -134,8 +150,10 @@ namespace Drelanium
         ///     <inheritdoc cref="ICookieJar.DeleteCookie(Cookie)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        public void DeleteCookie(Cookie cookie, Logger logger)
+        public void DeleteCookie([NotNull] Cookie cookie, [CanBeNull] Logger logger)
         {
+            if (cookie == null) throw new ArgumentNullException(nameof(cookie));
+
             logger?.Information($"Deleting cookie {cookie}.");
 
             DeleteCookie(cookie);
@@ -147,8 +165,11 @@ namespace Drelanium
         ///     <inheritdoc cref="ICookieJar.DeleteCookie(Cookie)" />
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        public void DeleteCookie(string domainName, Cookie cookie, Logger logger = null)
+        public void DeleteCookie([NotNull] string domainName, [NotNull] Cookie cookie, [CanBeNull] Logger logger = null)
         {
+            if (domainName == null) throw new ArgumentNullException(nameof(domainName));
+            if (cookie == null) throw new ArgumentNullException(nameof(cookie));
+
             CheckDomain(domainName, logger);
             DeleteCookie(cookie, logger);
         }
@@ -157,8 +178,10 @@ namespace Drelanium
         ///     <inheritdoc cref="DeleteCookieNamed(string)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        public void DeleteCookieNamed(string name, Logger logger)
+        public void DeleteCookieNamed([NotNull] string name, [CanBeNull] Logger logger)
         {
+            if (name == null) throw new ArgumentNullException(nameof(name));
+
             logger?.Information($"Deleting cookie named {name}.");
 
             DeleteCookieNamed(name);
@@ -170,8 +193,12 @@ namespace Drelanium
         ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        public void DeleteCookieNamed(string domainName, string name, Logger logger = null)
+        public void DeleteCookieNamed([NotNull] string domainName, [NotNull] string name,
+            [CanBeNull] Logger logger = null)
         {
+            if (domainName == null) throw new ArgumentNullException(nameof(domainName));
+            if (name == null) throw new ArgumentNullException(nameof(name));
+
             CheckDomain(domainName, logger);
             DeleteCookieNamed(name, logger);
         }
@@ -180,8 +207,10 @@ namespace Drelanium
         ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        public IEnumerable<Cookie> DomainCookies(string domainName, Logger logger = null)
+        public IEnumerable<Cookie> DomainCookies([NotNull] string domainName, [CanBeNull] Logger logger = null)
         {
+            if (domainName == null) throw new ArgumentNullException(nameof(domainName));
+
             CheckDomain(domainName, logger);
 
             logger?.Information($"Getting cookies from domain ({domainName}).");
@@ -193,8 +222,10 @@ namespace Drelanium
         ///     <inheritdoc cref="GetCookieNamed(string)" />
         ///     <para>Logs the event.</para>
         /// </summary>
-        public Cookie GetCookieNamed(string name, Logger logger)
+        public Cookie GetCookieNamed([NotNull] string name, [CanBeNull] Logger logger)
         {
+            if (name == null) throw new ArgumentNullException(nameof(name));
+
             logger?.Information($"Getting cookie named {name}.");
 
             return GetCookieNamed(name);
@@ -204,8 +235,12 @@ namespace Drelanium
         ///     ...Description to be added...
         ///     <para>Logs the event optionally.</para>
         /// </summary>
-        public Cookie GetCookieNamed(string domainName, string name, Logger logger = null)
+        public Cookie GetCookieNamed([NotNull] string domainName, [NotNull] string name,
+            [CanBeNull] Logger logger = null)
         {
+            if (domainName == null) throw new ArgumentNullException(nameof(domainName));
+            if (name == null) throw new ArgumentNullException(nameof(name));
+
             CheckDomain(domainName, logger);
             return GetCookieNamed(name, logger);
         }

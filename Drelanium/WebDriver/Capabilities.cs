@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 
 namespace Drelanium
@@ -12,9 +14,9 @@ namespace Drelanium
         ///     <inheritdoc cref="Capabilities" />
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Capabilities(IWebDriver driver)
+        public Capabilities([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             CapabilitiesImplementation = ((RemoteWebDriver) driver).Capabilities;
         }
 
@@ -175,16 +177,20 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public bool HasCapability(string capability)
+        public bool HasCapability([NotNull] string capability)
         {
+            if (capability == null) throw new ArgumentNullException(nameof(capability));
+
             return CapabilitiesImplementation.HasCapability(capability);
         }
 
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public object GetCapability(string capability)
+        public object GetCapability([NotNull] string capability)
         {
+            if (capability == null) throw new ArgumentNullException(nameof(capability));
+
             return CapabilitiesImplementation.GetCapability(capability);
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -19,8 +20,10 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(IWebElement element,
-            string stylePropertyName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(
+            [NotNull] IWebElement element,
+            [NotNull] string stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
             if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
@@ -41,8 +44,10 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(By locator, string stylePropertyName,
-            Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(
+            [NotNull] By locator,
+            [NotNull] string stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
             if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
@@ -64,8 +69,11 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(ISearchContext searchContext, By locator,
-            string stylePropertyName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator,
+            [NotNull] string stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));
@@ -84,8 +92,10 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(IWebElement element,
-            ElementStylePropertyName stylePropertyName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(
+            [NotNull] IWebElement element,
+            [NotNull] ElementStylePropertyName stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
             if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
@@ -106,8 +116,10 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(By locator,
-            ElementStylePropertyName stylePropertyName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(
+            [NotNull] By locator,
+            [NotNull] ElementStylePropertyName stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
             if (stylePropertyName == null) throw new ArgumentNullException(nameof(stylePropertyName));
@@ -129,8 +141,11 @@ namespace Drelanium
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(ISearchContext searchContext, By locator,
-            ElementStylePropertyName stylePropertyName, Func<string, TResult> condition)
+        public static Func<IWebDriver, TResult> ElementStyleProperty<TResult>(
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator,
+            [NotNull] ElementStylePropertyName stylePropertyName,
+            [NotNull] Func<string, TResult> condition)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
 using Serilog.Events;
@@ -16,9 +17,10 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public SeleniumLogs(LogsManager logsManager, string logKind)
+        public SeleniumLogs([NotNull] LogsManager logsManager, [NotNull] string logKind)
         {
-            LogKind = logKind;
+            if (logsManager == null) throw new ArgumentNullException(nameof(logsManager));
+            LogKind = logKind ?? throw new ArgumentNullException(nameof(logKind));
             Logs = logsManager.GetLog(logKind);
         }
 
@@ -74,8 +76,10 @@ namespace Drelanium
         ///     The <see cref="Func{T,TResult}" />, that is applied to filter the LogEntries by their Message
         ///     property.
         /// </param>
-        public SeleniumLogs Filter(Func<DateTime, bool> logTimeFilter = null,
-            Func<LogLevel, bool> logLevelFilter = null, Func<string, bool> logMessageFilter = null)
+        public SeleniumLogs Filter(
+            [CanBeNull] Func<DateTime, bool> logTimeFilter = null,
+            [CanBeNull] Func<LogLevel, bool> logLevelFilter = null,
+            [CanBeNull] Func<string, bool> logMessageFilter = null)
         {
             Logs = Logs
                 ?.Where(logEntry => logTimeFilter == null || logTimeFilter(logEntry.Timestamp))
@@ -96,7 +100,7 @@ namespace Drelanium
         /// <summary>
         ///     ...Description to be added...
         /// </summary>
-        public void PrintToLogger(Logger logger = null)
+        public void PrintToLogger([CanBeNull] Logger logger = null)
         {
             if (Logs == null)
             {

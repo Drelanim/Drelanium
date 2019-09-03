@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -18,8 +19,14 @@ namespace Drelanium
         /// <param name="urlCondition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static bool UntilPageHasLoaded(this WebDriverWait wait, Func<Uri, bool> urlCondition)
+        public static bool UntilPageHasLoaded(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] Func<Uri,
+                bool> urlCondition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
+
             wait.Message +=
                 $"Waited ({wait.Timeout.TotalSeconds}) seconds until page has been successfully loaded and the url has met the given condition.";
 
@@ -33,8 +40,13 @@ namespace Drelanium
         /// <param name="urlCondition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         /// <exception cref="WebDriverException"></exception>
-        public static bool UntilPageHasLoadedWithoutCookies(this WebDriverWait wait, Func<Uri, bool> urlCondition)
+        public static bool UntilPageHasLoadedWithoutCookies(
+            [NotNull] this WebDriverWait wait,
+            [NotNull] Func<Uri, bool> urlCondition)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
+
             wait.Message +=
                 $"Waited ({wait.Timeout.TotalSeconds}) seconds until page has been successfully loaded without cookies and the url has met the given condition.";
 

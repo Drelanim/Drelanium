@@ -1,5 +1,8 @@
 ﻿// ReSharper disable UnusedMember.Global
 
+using System;
+using JetBrains.Annotations;
+
 #pragma warning disable 1591
 
 namespace Drelanium
@@ -13,9 +16,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="name">...Description to be added...</param>
-        public ColorName(string name)
+        public ColorName([NotNull] string name)
         {
-            Name = name;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
         }
 
         /// <summary>

@@ -8,7 +8,7 @@
 
 
   <PropertyGroup>
-    <PackageVersion>1.12.1</PackageVersion>
+    <PackageVersion>1.12.2</PackageVersion>
     <PackageId>Drelanium.SauceLabs</PackageId>
     <Title></Title>
     <Authors>Drelanim</Authors>
@@ -20,7 +20,7 @@
     <PackageLicenseFile></PackageLicenseFile>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
-    <PackageReleaseNotes>Added Microsoft Binder and Json</PackageReleaseNotes>
+    <PackageReleaseNotes>Added JetBrains.Annotations.</PackageReleaseNotes>
     <PackageTags>SauceLabs, Selenium, WebDriver, Test, Automation</PackageTags>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols></IncludeSymbols>
@@ -59,6 +59,9 @@
     <!--Microsoft Configuration packages-->
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+
+    <!--JetBrains packages-->
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
 
   </ItemGroup>
 

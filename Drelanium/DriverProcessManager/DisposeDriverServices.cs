@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using JetBrains.Annotations;
 using Serilog.Core;
 using Serilog.Events;
 
@@ -41,7 +42,7 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="processLifeSpan">The lifespan of the webdriver processes, that should be killed.</param>
-        public static void EndAllWebDriverProcess(TimeSpan processLifeSpan, Logger logger = null)
+        public static void EndAllWebDriverProcess(TimeSpan processLifeSpan, [CanBeNull] Logger logger = null)
         {
             logger?.Information("Attempting to end all WebDriver processes.");
 

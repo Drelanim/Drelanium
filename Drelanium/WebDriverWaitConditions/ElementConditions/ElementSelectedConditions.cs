@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -16,7 +17,7 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeNotSelected(IWebElement element)
+        public static Func<IWebDriver, bool> ElementToBecomeNotSelected([NotNull] IWebElement element)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
 
@@ -32,7 +33,7 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeNotSelected(By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeNotSelected([NotNull] By locator)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
@@ -49,7 +50,8 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeNotSelected(ISearchContext searchContext, By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeNotSelected([NotNull] ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));
@@ -63,7 +65,7 @@ namespace Drelanium
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeSelected(IWebElement element)
+        public static Func<IWebDriver, bool> ElementToBecomeSelected([NotNull] IWebElement element)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
 
@@ -79,7 +81,7 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeSelected(By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeSelected([NotNull] By locator)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
@@ -96,7 +98,8 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, bool> ElementToBecomeSelected(ISearchContext searchContext, By locator)
+        public static Func<IWebDriver, bool> ElementToBecomeSelected([NotNull] ISearchContext searchContext,
+            [NotNull] By locator)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

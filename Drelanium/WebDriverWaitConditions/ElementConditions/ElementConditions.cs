@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -17,8 +18,9 @@ namespace Drelanium
         /// <param name="condition">The <see cref="Func{T,TResult}" />, that defines the condition until the browser must wait.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, TResult> Element<TResult>(IWebElement element,
-            Func<IWebElement, TResult> condition)
+        public static Func<IWebDriver, TResult> Element<TResult>(
+            [NotNull] IWebElement element,
+            [NotNull] Func<IWebElement, TResult> condition)
         {
             if (element == null) throw new ArgumentNullException(nameof(element));
             if (condition == null) throw new ArgumentNullException(nameof(condition));
@@ -36,7 +38,9 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, TResult> Element<TResult>(By locator, Func<IWebElement, TResult> condition)
+        public static Func<IWebDriver, TResult> Element<TResult>(
+            [NotNull] By locator,
+            [NotNull] Func<IWebElement, TResult> condition)
         {
             if (locator == null) throw new ArgumentNullException(nameof(locator));
             if (condition == null) throw new ArgumentNullException(nameof(condition));
@@ -55,8 +59,10 @@ namespace Drelanium
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="NoSuchElementException"></exception>
         /// <exception cref="StaleElementReferenceException"></exception>
-        public static Func<IWebDriver, TResult> Element<TResult>(ISearchContext searchContext, By locator,
-            Func<IWebElement, TResult> condition)
+        public static Func<IWebDriver, TResult> Element<TResult>(
+            [NotNull] ISearchContext searchContext,
+            [NotNull] By locator,
+            [NotNull] Func<IWebElement, TResult> condition)
         {
             if (searchContext == null) throw new ArgumentNullException(nameof(searchContext));
             if (locator == null) throw new ArgumentNullException(nameof(locator));

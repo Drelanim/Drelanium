@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Drawing;
+using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
+
+// ReSharper disable CommentTypo
 
 namespace Drelanium
 {
@@ -16,9 +19,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public Mouse(IWebDriver driver)
+        public Mouse([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }
 
         /// <summary>
@@ -37,7 +40,7 @@ namespace Drelanium
         ///     the method exeuction.
         /// </param>
         /// <param name="x">...Description to be added...</param>
-        public void MoveBy(int x, int y, Logger logger = null)
+        public void MoveBy(int x, int y, [CanBeNull] Logger logger = null)
         {
             Driver.Actions().MoveByOffset(x, y).BuildAndPerform(logger);
         }
@@ -54,10 +57,15 @@ namespace Drelanium
         /// <param name="y">...Description to be added...</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="x">...Description to be added...</param>
-        public void MoveByAndWaitUntilCondition<TResult>(int x, int y, WebDriverWait wait,
-            Func<IWebDriver, TResult> condition,
-            Logger logger = null)
+        public void MoveByAndWaitUntilCondition<TResult>(
+            int x, int y,
+            [NotNull] WebDriverWait wait,
+            [NotNull] Func<IWebDriver, TResult> condition,
+            [CanBeNull] Logger logger = null)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             Driver.Actions().MoveByOffset(x, y).BuildAndPerform(wait, condition, logger);
         }
 
@@ -68,7 +76,7 @@ namespace Drelanium
         /// <param name="y">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
         /// <param name="x">...Description to be added...</param>
-        public void MoveTo(int x, int y, Logger logger = null)
+        public void MoveTo(int x, int y, [CanBeNull] Logger logger = null)
         {
             Driver.Actions().MoveTo(x, y).BuildAndPerform(logger);
         }
@@ -79,7 +87,7 @@ namespace Drelanium
         /// </summary>
         /// <param name="point">...Description to be added...</param>
         /// <param name="logger">The used <see cref="Logger" /> instance to display logged messages during the method exeuction.</param>
-        public void MoveTo(Point point, Logger logger = null)
+        public void MoveTo(Point point, [CanBeNull] Logger logger = null)
         {
             MoveTo(point.X, point.Y, logger);
         }
@@ -96,10 +104,16 @@ namespace Drelanium
         /// <param name="y">...Description to be added...</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
         /// <param name="x">...Description to be added...</param>
-        public void MoveToAndWaitUntilCondition<TResult>(int x, int y, WebDriverWait wait,
-            Func<IWebDriver, TResult> condition,
-            Logger logger = null)
+        public void MoveToAndWaitUntilCondition<TResult>(
+            int x,
+            int y,
+            [NotNull] WebDriverWait wait,
+            [NotNull] Func<IWebDriver, TResult> condition,
+            [CanBeNull] Logger logger = null)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             Driver.Actions().MoveTo(x, y).BuildAndPerform(wait, condition, logger);
         }
 
@@ -114,10 +128,15 @@ namespace Drelanium
         /// </param>
         /// <param name="point">...Description to be added...</param>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
-        public void MoveToAndWaitUntilCondition<TResult>(Point point, WebDriverWait wait,
-            Func<IWebDriver, TResult> condition,
-            Logger logger = null)
+        public void MoveToAndWaitUntilCondition<TResult>(
+            Point point,
+            [NotNull] WebDriverWait wait,
+            [NotNull] Func<IWebDriver, TResult> condition,
+            [CanBeNull] Logger logger = null)
         {
+            if (wait == null) throw new ArgumentNullException(nameof(wait));
+            if (condition == null) throw new ArgumentNullException(nameof(condition));
+
             MoveToAndWaitUntilCondition(point.X, point.Y, wait, condition, logger);
         }
     }

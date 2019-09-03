@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 
 namespace Drelanium
 
@@ -13,8 +15,11 @@ namespace Drelanium
         /// </summary>
         /// <param name="targetLocator">   ...Description to be added...</param>
         /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
-        public static Alert Alert(this ITargetLocator targetLocator, IWebDriver driver)
+        public static Alert Alert([NotNull] this ITargetLocator targetLocator, [NotNull] IWebDriver driver)
         {
+            if (targetLocator == null) throw new ArgumentNullException(nameof(targetLocator));
+            if (driver == null) throw new ArgumentNullException(nameof(driver));
+
             return new Alert(driver);
         }
     }
