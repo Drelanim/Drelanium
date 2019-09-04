@@ -2,18 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <IsPackable>true</IsPackable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <!--Package Properties-->
   <PropertyGroup>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <PackageVersion>1.10.0</PackageVersion>
     <PackageId>Drelanium</PackageId>
-    <Title></Title>
     <Authors>Drelanim</Authors>
     <PackageDescription>
       Test Automation Framework based on Selenium.WebDriver to write browser automated tests with ease.
@@ -22,45 +15,44 @@
       - Serilog as a .NET logger,
       - FluentAssertions to write assertions in an extremely readable way.
     </PackageDescription>
-    <Description></Description>
-    <Copyright></Copyright>
-    <PackageRequireLicenseAcceptance></PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageLicenseFile></PackageLicenseFile>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
-    <PackageReleaseNotes>Shared GitHub Repository</PackageReleaseNotes>
     <PackageTags>Selenium, WebDriver, Test, Automation, Framework</PackageTags>
+    <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  
+  <!--Package Version Properties-->
+  <PropertyGroup>
+    <PackageVersion>1.10.1</PackageVersion>
+    <PackageReleaseNotes>Added SourceLink to the package.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  
+  <!--Package Generation Properties-->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <IncludeSource>true</IncludeSource>
-    <IsTool></IsTool>
-    <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <NoPackageAnalysis></NoPackageAnalysis>
-    <MinClientVersion></MinClientVersion>
-    <IncludeBuildOutput></IncludeBuildOutput>
-    <IncludeContentInPack></IncludeContentInPack>
-    <BuildOutputTargetFolder></BuildOutputTargetFolder>
-    <ContentTargetFolders></ContentTargetFolders>
-    <NuspecFile></NuspecFile>
-    <NuspecBasePath></NuspecBasePath>
-    <NuspecProperties></NuspecProperties>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-
+  
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium.xml</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\Drelanium.SauceLabs\Drelanium</DocumentationFile>
   </PropertyGroup>
 
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium.xml</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\Drelanium.SauceLabs\Drelanium</DocumentationFile>
   </PropertyGroup>
 
-
+  
+  <!--Dependencies-->
   <ItemGroup>
     <!--Selenium packages-->
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />

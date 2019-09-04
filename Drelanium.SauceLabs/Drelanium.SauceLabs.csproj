@@ -1,50 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-
+  
+  
+  <!--Package Properties-->
   <PropertyGroup>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <PackageVersion>1.13.0</PackageVersion>
     <PackageId>Drelanium.SauceLabs</PackageId>
-    <Title></Title>
     <Authors>Drelanim</Authors>
     <PackageDescription>Support of SauceLabs usage.</PackageDescription>
-    <Description></Description>
-    <Copyright></Copyright>
-    <PackageRequireLicenseAcceptance></PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageLicenseFile></PackageLicenseFile>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
-    <PackageReleaseNotes>Included Symbols</PackageReleaseNotes>
     <PackageTags>SauceLabs, Selenium, WebDriver, Test, Automation</PackageTags>
+    <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  
+  <!--Package Version Properties-->
+  <PropertyGroup>
+    <PackageVersion>1.13.1</PackageVersion>
+    <PackageReleaseNotes>Added SourceLink to the package.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  
+  <!--Package Generation Properties-->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>..\builtPackages\</PackageOutputPath>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <IncludeSource></IncludeSource>
-    <IsTool></IsTool>
-    <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <NoPackageAnalysis></NoPackageAnalysis>
-    <MinClientVersion></MinClientVersion>
-    <IncludeBuildOutput></IncludeBuildOutput>
-    <IncludeContentInPack></IncludeContentInPack>
-    <BuildOutputTargetFolder></BuildOutputTargetFolder>
-    <ContentTargetFolders></ContentTargetFolders>
-    <NuspecFile></NuspecFile>
-    <NuspecBasePath></NuspecBasePath>
-    <NuspecProperties></NuspecProperties>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-
+  
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <DocumentationFile>$(SolutionDir)\Drelanium.SauceLabs\Drelanium.SauceLabs.xml</DocumentationFile>
   </PropertyGroup>
@@ -54,7 +46,8 @@
     <DocumentationFile>$(SolutionDir)\Drelanium.SauceLabs\Drelanium.SauceLabs.xml</DocumentationFile>
   </PropertyGroup>
 
-
+  
+  <!--Dependencies-->
   <ItemGroup>
     <!--Selenium packages-->
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
@@ -67,4 +60,5 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All" />
   </ItemGroup>
 
+  
 </Project>
