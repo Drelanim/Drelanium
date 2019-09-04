@@ -2649,12 +2649,12 @@
     </member>
     <member name="T:Drelanium.ChromeConfiguration">
       <summary>
-        ...Description to be added...
+        Class to initialize and setup a <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.ChromeConfiguration.InitialOptions">
       <summary>
-        ...Description to be added...
+        The initial <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.ChromeConfiguration.Arguments">
@@ -2798,12 +2798,12 @@
     </member>
     <member name="T:Drelanium.EdgeConfiguration">
       <summary>
-        ...Description to be added...
+        Class to initialize and setup a <see cref="T:OpenQA.Selenium.Edge.EdgeOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.EdgeConfiguration.InitialOptions">
       <summary>
-        ...Description to be added...
+        The initial <see cref="T:OpenQA.Selenium.Edge.EdgeOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.EdgeConfiguration.EdgeDriverDirectory">
@@ -2830,12 +2830,12 @@
     </member>
     <member name="T:Drelanium.FirefoxConfiguration">
       <summary>
-        ...Description to be added...
+        Class to initialize and setup a <see cref="T:OpenQA.Selenium.Firefox.FirefoxOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.FirefoxConfiguration.InitialOptions">
       <summary>
-        ...Description to be added...
+        The initial <see cref="T:OpenQA.Selenium.Firefox.FirefoxOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.FirefoxConfiguration.Arguments">
@@ -2867,12 +2867,12 @@
     </member>
     <member name="T:Drelanium.InternetExplorerConfiguration">
       <summary>
-        ...Description to be added...
+        Class to initialize and setup a <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.InternetExplorerConfiguration.InitialOptions">
       <summary>
-        ...Description to be added...
+        The initial <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.InternetExplorerConfiguration.InternetExplorerDriverDirectory">
@@ -2900,12 +2900,12 @@
     </member>
     <member name="T:Drelanium.OperaConfiguration">
       <summary>
-        ...Description to be added...
+        Class to initialize and setup a <see cref="T:OpenQA.Selenium.Opera.OperaOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.OperaConfiguration.InitialOptions">
       <summary>
-        ...Description to be added...
+        The initial <see cref="T:OpenQA.Selenium.Opera.OperaOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.OperaConfiguration.Arguments">
@@ -2937,12 +2937,12 @@
     </member>
     <member name="T:Drelanium.SafariConfiguration">
       <summary>
-        ...Description to be added...
+        Class to initialize and setup a <see cref="T:OpenQA.Selenium.Safari.SafariOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.SafariConfiguration.InitialOptions">
       <summary>
-        ...Description to be added...
+        The initial <see cref="T:OpenQA.Selenium.Safari.SafariOptions" /> object.
       </summary>
     </member>
     <member name="P:Drelanium.SafariConfiguration.SafariDriverDirectory">
@@ -5417,12 +5417,12 @@
     </member>
     <member name="T:Drelanium.Attributes">
       <summary>
-        ...Description to be added...
+        Represents the HTMLElement's attributes
       </summary>
     </member>
     <member name="M:Drelanium.Attributes.#ctor(OpenQA.Selenium.IWebElement)">
       <summary>
-        ...Description to be added...
+        Represents the HTMLElement's attributes
       </summary>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -5590,7 +5590,7 @@
     </member>
     <member name="T:Drelanium.ElementPoint">
       <summary>
-        ...Description to be added...
+        Represents the HTMLElement's Location
       </summary>
     </member>
     <member name="T:Drelanium.Location">
@@ -5671,12 +5671,12 @@
     </member>
     <member name="T:Drelanium.Properties">
       <summary>
-        ...Description to be added...
+        Represents the HTMLElement's properties
       </summary>
     </member>
     <member name="M:Drelanium.Properties.#ctor(OpenQA.Selenium.IWebElement)">
       <summary>
-        ...Description to be added...
+        Represents the HTMLElement's properties
       </summary>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
@@ -5725,12 +5725,12 @@
     </member>
     <member name="T:Drelanium.Style">
       <summary>
-        ...Description to be added...
+        Represents the HTMLElement's style properties
       </summary>
     </member>
     <member name="M:Drelanium.Style.#ctor(OpenQA.Selenium.IWebElement)">
       <summary>
-        ...Description to be added...
+        Represents the HTMLElement's style properties
       </summary>
       <param name="element">
         The HTMLElement, that is represented by an <see cref="T:OpenQA.Selenium.IWebElement" />
