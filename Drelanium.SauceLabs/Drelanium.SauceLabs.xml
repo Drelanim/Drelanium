@@ -1,469 +1,468 @@
 <?xml version="1.0"?>
-
 <doc>
-  <assembly>
-    <name>Drelanium.SauceLabs</name>
-  </assembly>
-  <members>
-    <member name="T:Drelanium.SauceLabs.IWebDriverExtensionMethods">
-      <summary>
-        ...Description to be added...
-      </summary>
-    </member>
-    <member name="M:Drelanium.SauceLabs.IWebDriverExtensionMethods.SauceLabsScripts(OpenQA.Selenium.IWebDriver)">
-      <summary>
-        To be added..
-      </summary>
-      <param name="driver">...Description to be added...</param>
-    </member>
-    <member name="T:Drelanium.SauceLabs.SauceJobResult">
-      <summary>
-        ...Description to be added...
-      </summary>
-    </member>
-    <member name="T:Drelanium.SauceLabs.SauceLabsScripts">
-      <summary>
-        ...Description to be added...
-      </summary>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.#ctor(OpenQA.Selenium.IWebDriver)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="driver">...Description to be added...</param>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceLabsScripts.Driver">
-      <summary>
-        <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
-      </summary>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.Log(System.String)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="text">...Description to be added...</param>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobBuild(System.String)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="buildName">...Description to be added...</param>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobInfo(System.String)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="jobInfo">...Description to be added...</param>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobName(System.String)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="jobName">...Description to be added...</param>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(System.String)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="jobResult">...Description to be added...</param>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(Drelanium.SauceLabs.SauceJobResult)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="jobResult">...Description to be added...</param>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobTags(System.String)">
-      <summary>
-        ...Description to be added...
-      </summary>
-      <param name="tags">...Description to be added...</param>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetSauceBreakPoint">
-      <summary>
-        ...Description to be added...
-      </summary>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StartNetwork">
-      <summary>
-        ...Description to be added...
-      </summary>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StopNetwork">
-      <summary>
-        ...Description to be added...
-      </summary>
-    </member>
-    <member name="T:Drelanium.SauceLabs.SauceOptions">
-      <summary>
-        TO be addedd..
-      </summary>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceOptions.#ctor">
-      <summary>
-        ...Description to be added...
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.Options">
-      <summary>
-        To be addedd...
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.browserName">
-      <summary>
-        <para> group: Required Selenium Test Configuration Setting </para>
-        <para> group: Required Appium Test Configuration Setting </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "firefox" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.deviceName">
-      <summary>
-        <para> group: Required Appium Test Configuration Settings </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "Google Nexus 7 HD Emulator" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.deviceType">
-      <summary>
-        <para> group: Other Appium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "tablet" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.deviceOrientation">
-      <summary>
-        <para> group: Other Appium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "portrait" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.automationName">
-      <summary>
-        <para> group: Other Appium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "UiAutomator2" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.appPackage">
-      <summary>
-        <para> group: Other Appium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "com.example.android.myApp, com.android.settings" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.appActivity">
-      <summary>
-        <para> group: Other Appium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: ".MainActivity" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.autoAcceptAlerts">
-      <summary>
-        <para> group: General Options - Alerts </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: true </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.version">
-      <summary>
-        <para> group: Required Selenium Test Configuration Setting </para>
-        <para> group: SauceTesting Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "66.0" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.platform">
-      <summary>
-        <para> group: Required Selenium Test Configuration Setting </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "macOS 10.13" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.platformVersion">
-      <summary>
-        <para> group: Required Appium Test Configuration Setting </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "9.1" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.app">
-      <summary>
-        <para> group: Required Appium Test Configuration Setting </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "sauce-storage:my_app.zip" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.platformName">
-      <summary>
-        <para> group: Required Appium Test Configuration Setting </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "iOS" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.accessKey">
-      <summary>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "12345678-1234-1234-1234-123456789012" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.appiumVersion">
-      <summary>
-        <para> group: Required Appium Test Configuration Settings </para>
-        <para> group: Other Appium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "1.5.3" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.avoidProxy">
-      <summary>
-        <para> group: SauceTesting Options </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: true </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.build">
-      <summary>
-        <para> group: General Options - Test Annotation </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "build-1234" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.captureHtml">
-      <summary>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.chromedriverVersion">
-      <summary>
-        <para> group: Other Selenium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "chromedriverVersion": "2.45" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.crmuxdriverVersion">
-      <summary>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "2.45" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.customData">
-      <summary>
-        <para> group: General Options - Test Annotation </para>
-        <para> type: <see cref="T:System.Object" /> </para>
-        <para>
-          example: {"release": "1.0", "commit": "0k392a9dkjr", "staging": true, "execution_number": 5, "server":
-          "test.customer.com"}
-        </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.disablePopupHandler">
-      <summary>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: true </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.extendedDebugging">
-      <summary>
-        <para> group: Other SauceTesting Features </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: true </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.capturePerformance">
-      <summary>
-        <para> group: Other SauceTesting Features </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: true </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.firefoxAdapterVersion">
-      <summary>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "1.0" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.firefoxProfileUrl">
-      <summary>
-        <para> type: <see cref="T:System.String" /> </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.idleTimeout">
-      <summary>
-        <para> General Options: Timeouts </para>
-        <para> type: <see cref="T:System.Int32" /> </para>
-        <para> example: 90 </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.commandTimeout">
-      <summary>
-        <para> General Options: Timeouts </para>
-        <para> type: <see cref="T:System.Int32" /> </para>
-        <para> example: 300 </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.iedriverVersion">
-      <summary>
-        <para> group: Other Selenium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "3.141.0" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.maxDuration">
-      <summary>
-        <para> General Options: Timeouts </para>
-        <para> type: <see cref="T:System.Int32" /> </para>
-        <para> example: 1800 </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.name">
-      <summary>
-        <para> group: General Options - Test Annotation </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "my example name" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.parentTunnel">
-      <summary>
-        <para> group: SauceTesting Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "MyTunnel01" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.passed">
-      <summary>
-        <para> group: General Options - Test Annotation </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: true </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.prerun">
-      <summary>
-        <para> group: SauceTesting Options </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.preserveRequeue">
-      <summary>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.priority">
-      <summary>
-        <para> group: Other SauceTesting Features </para>
-        <para> type: <see cref="T:System.Int32" /> </para>
-        <para> example: 0 </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.webdriverRemoteQuietExceptions">
-      <summary>
-        <para> group: Other SauceTesting Features </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: false </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.proxyHost">
-      <summary>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.public">
-      <summary>
-        <para> group: SauceTesting Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "public" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.recordLogs">
-      <summary>
-        <para> group: Other SauceTesting Features </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: false </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.recordVideo">
-      <summary>
-        <para> group: Other SauceTesting Features </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: false </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.recordScreenshots">
-      <summary>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: false </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.restrictedPublicInfo">
-      <summary>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.screenResolution">
-      <summary>
-        <para> group: SauceTesting Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "1280x1024" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.seleniumVersion">
-      <summary>
-        <para> group: Other Selenium Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "seleniumVersion": "2.46.0" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.source">
-      <summary>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.tags">
-      <summary>
-        <para> group: General Options - Test Annotation </para>
-        <para> type: <see cref="T:System.Collections.Generic.List`1" /> </para>
-        <para> example: ["tag1","tag2","tag3"] </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.timeZone">
-      <summary>
-        <para> group: SauceTesting Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "Los_Angeles"  </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.tunnelIdentifier">
-      <summary>
-        <para> group: SauceTesting Options </para>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: "MyTunnel01" </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.username">
-      <summary>
-        <para> type: <see cref="T:System.String" /> </para>
-        <para> example: Drelanim </para>
-      </summary>
-    </member>
-    <member name="P:Drelanium.SauceLabs.SauceOptions.videoUploadOnPass">
-      <summary>
-        <para> group: Other SauceTesting Features </para>
-        <para> type: <see cref="T:System.Boolean" /> </para>
-        <para> example: false </para>
-      </summary>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceOptions.AddToDriverOptions(OpenQA.Selenium.DriverOptions)">
-      <summary>
-      </summary>
-      <param name="driverOptions">...Description to be added...</param>
-      <exception cref="T:System.ArgumentException">...Description to be added...</exception>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceOptions.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
-      <summary>
-      </summary>
-      <param name="configurationRoot">...Description to be added...</param>
-      <returns>...Description to be added...</returns>
-    </member>
-    <member name="M:Drelanium.SauceLabs.SauceOptions.Bind(System.String)">
-      <summary>
-      </summary>
-      <param name="jsonPath">...Description to be added...</param>
-      <returns>...Description to be added...</returns>
-    </member>
-  </members>
+    <assembly>
+        <name>Drelanium.SauceLabs</name>
+    </assembly>
+    <members>
+        <member name="T:Drelanium.SauceLabs.IWebDriverExtensionMethods">
+            <summary>
+                ...Description to be added...
+            </summary>
+        </member>
+        <member name="M:Drelanium.SauceLabs.IWebDriverExtensionMethods.SauceLabsScripts(OpenQA.Selenium.IWebDriver)">
+            <summary>
+                To be added..
+            </summary>
+            <param name="driver">...Description to be added...</param>
+        </member>
+        <member name="T:Drelanium.SauceLabs.SauceJobResult">
+            <summary>
+                ...Description to be added...
+            </summary>
+        </member>
+        <member name="T:Drelanium.SauceLabs.SauceLabsScripts">
+            <summary>
+                ...Description to be added...
+            </summary>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.#ctor(OpenQA.Selenium.IWebDriver)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="driver">...Description to be added...</param>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceLabsScripts.Driver">
+            <summary>
+                <inheritdoc cref="T:OpenQA.Selenium.IWebDriver" />
+            </summary>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.Log(System.String)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="text">...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobBuild(System.String)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="buildName">...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobInfo(System.String)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="jobInfo">...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobName(System.String)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="jobName">...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(System.String)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="jobResult">...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobResult(Drelanium.SauceLabs.SauceJobResult)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="jobResult">...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetJobTags(System.String)">
+            <summary>
+                ...Description to be added...
+            </summary>
+            <param name="tags">...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.SetSauceBreakPoint">
+            <summary>
+                ...Description to be added...
+            </summary>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StartNetwork">
+            <summary>
+                ...Description to be added...
+            </summary>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceLabsScripts.StopNetwork">
+            <summary>
+                ...Description to be added...
+            </summary>
+        </member>
+        <member name="T:Drelanium.SauceLabs.SauceOptions">
+            <summary>
+                TO be addedd..
+            </summary>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceOptions.#ctor">
+            <summary>
+                ...Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.Options">
+            <summary>
+                To be addedd...
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.browserName">
+            <summary>
+                <para> group: Required Selenium Test Configuration Setting </para>
+                <para> group: Required Appium Test Configuration Setting </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "firefox" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.deviceName">
+            <summary>
+                <para> group: Required Appium Test Configuration Settings </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "Google Nexus 7 HD Emulator" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.deviceType">
+            <summary>
+                <para> group: Other Appium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "tablet" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.deviceOrientation">
+            <summary>
+                <para> group: Other Appium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "portrait" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.automationName">
+            <summary>
+                <para> group: Other Appium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "UiAutomator2" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.appPackage">
+            <summary>
+                <para> group: Other Appium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "com.example.android.myApp, com.android.settings" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.appActivity">
+            <summary>
+                <para> group: Other Appium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: ".MainActivity" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.autoAcceptAlerts">
+            <summary>
+                <para> group: General Options - Alerts </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: true </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.version">
+            <summary>
+                <para> group: Required Selenium Test Configuration Setting </para>
+                <para> group: SauceTesting Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "66.0" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.platform">
+            <summary>
+                <para> group: Required Selenium Test Configuration Setting </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "macOS 10.13" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.platformVersion">
+            <summary>
+                <para> group: Required Appium Test Configuration Setting </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "9.1" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.app">
+            <summary>
+                <para> group: Required Appium Test Configuration Setting </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "sauce-storage:my_app.zip" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.platformName">
+            <summary>
+                <para> group: Required Appium Test Configuration Setting </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "iOS" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.accessKey">
+            <summary>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "12345678-1234-1234-1234-123456789012" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.appiumVersion">
+            <summary>
+                <para> group: Required Appium Test Configuration Settings </para>
+                <para> group: Other Appium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "1.5.3" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.avoidProxy">
+            <summary>
+                <para> group: SauceTesting Options </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: true </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.build">
+            <summary>
+                <para> group: General Options - Test Annotation </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "build-1234" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.captureHtml">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.chromedriverVersion">
+            <summary>
+                <para> group: Other Selenium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "chromedriverVersion": "2.45" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.crmuxdriverVersion">
+            <summary>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "2.45" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.customData">
+            <summary>
+                <para> group: General Options - Test Annotation </para>
+                <para> type: <see cref="T:System.Object" /> </para>
+                <para>
+                    example: {"release": "1.0", "commit": "0k392a9dkjr", "staging": true, "execution_number": 5, "server":
+                    "test.customer.com"}
+                </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.disablePopupHandler">
+            <summary>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: true </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.extendedDebugging">
+            <summary>
+                <para> group: Other SauceTesting Features </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: true </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.capturePerformance">
+            <summary>
+                <para> group: Other SauceTesting Features </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: true </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.firefoxAdapterVersion">
+            <summary>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "1.0" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.firefoxProfileUrl">
+            <summary>
+                <para> type: <see cref="T:System.String" /> </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.idleTimeout">
+            <summary>
+                <para> General Options: Timeouts </para>
+                <para> type: <see cref="T:System.Int32" /> </para>
+                <para> example: 90 </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.commandTimeout">
+            <summary>
+                <para> General Options: Timeouts </para>
+                <para> type: <see cref="T:System.Int32" /> </para>
+                <para> example: 300 </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.iedriverVersion">
+            <summary>
+                <para> group: Other Selenium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "3.141.0" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.maxDuration">
+            <summary>
+                <para> General Options: Timeouts </para>
+                <para> type: <see cref="T:System.Int32" /> </para>
+                <para> example: 1800 </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.name">
+            <summary>
+                <para> group: General Options - Test Annotation </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "my example name" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.parentTunnel">
+            <summary>
+                <para> group: SauceTesting Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "MyTunnel01" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.passed">
+            <summary>
+                <para> group: General Options - Test Annotation </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: true </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.prerun">
+            <summary>
+                <para> group: SauceTesting Options </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.preserveRequeue">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.priority">
+            <summary>
+                <para> group: Other SauceTesting Features </para>
+                <para> type: <see cref="T:System.Int32" /> </para>
+                <para> example: 0 </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.webdriverRemoteQuietExceptions">
+            <summary>
+                <para> group: Other SauceTesting Features </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: false </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.proxyHost">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.public">
+            <summary>
+                <para> group: SauceTesting Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "public" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.recordLogs">
+            <summary>
+                <para> group: Other SauceTesting Features </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: false </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.recordVideo">
+            <summary>
+                <para> group: Other SauceTesting Features </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: false </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.recordScreenshots">
+            <summary>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: false </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.restrictedPublicInfo">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.screenResolution">
+            <summary>
+                <para> group: SauceTesting Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "1280x1024" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.seleniumVersion">
+            <summary>
+                <para> group: Other Selenium Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "seleniumVersion": "2.46.0" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.source">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.tags">
+            <summary>
+                <para> group: General Options - Test Annotation </para>
+                <para> type: <see cref="T:System.Collections.Generic.List`1" /> </para>
+                <para> example: ["tag1","tag2","tag3"] </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.timeZone">
+            <summary>
+                <para> group: SauceTesting Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "Los_Angeles"  </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.tunnelIdentifier">
+            <summary>
+                <para> group: SauceTesting Options </para>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: "MyTunnel01" </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.username">
+            <summary>
+                <para> type: <see cref="T:System.String" /> </para>
+                <para> example: Drelanim </para>
+            </summary>
+        </member>
+        <member name="P:Drelanium.SauceLabs.SauceOptions.videoUploadOnPass">
+            <summary>
+                <para> group: Other SauceTesting Features </para>
+                <para> type: <see cref="T:System.Boolean" /> </para>
+                <para> example: false </para>
+            </summary>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceOptions.AddToDriverOptions(OpenQA.Selenium.DriverOptions)">
+            <summary>
+            </summary>
+            <param name="driverOptions">...Description to be added...</param>
+            <exception cref="T:System.ArgumentException">...Description to be added...</exception>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceOptions.Bind(Microsoft.Extensions.Configuration.IConfigurationRoot)">
+            <summary>
+            </summary>
+            <param name="configurationRoot">...Description to be added...</param>
+            <returns>...Description to be added...</returns>
+        </member>
+        <member name="M:Drelanium.SauceLabs.SauceOptions.Bind(System.String)">
+            <summary>
+            </summary>
+            <param name="jsonPath">...Description to be added...</param>
+            <returns>...Description to be added...</returns>
+        </member>
+    </members>
 </doc>

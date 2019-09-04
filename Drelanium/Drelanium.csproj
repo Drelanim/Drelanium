@@ -37,6 +37,7 @@
     <IncludeSource>true</IncludeSource>
     <IsTool></IsTool>
     <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <NoPackageAnalysis></NoPackageAnalysis>
     <MinClientVersion></MinClientVersion>
