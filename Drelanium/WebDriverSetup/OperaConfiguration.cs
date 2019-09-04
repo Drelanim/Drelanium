@@ -7,12 +7,12 @@ using OpenQA.Selenium.Opera;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Class to initialize and setup a <see cref="OperaOptions" /> object.
     /// </summary>
     public class OperaConfiguration
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     The initial <see cref="OperaOptions" /> object.
         /// </summary>
         public OperaOptions InitialOptions { get; set; }
 

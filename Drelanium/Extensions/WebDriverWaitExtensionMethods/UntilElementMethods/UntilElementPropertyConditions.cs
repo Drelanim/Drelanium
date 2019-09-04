@@ -67,7 +67,8 @@ namespace Drelanium
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
         ///     <para>
-        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />,
+        ///         <see cref="StaleElementReferenceException" />
         ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
@@ -104,7 +105,8 @@ namespace Drelanium
         /// <summary>
         ///     Waits, until the <see cref="IWebElement" />'s given property has met the given condition.
         ///     <para>
-        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />,
+        ///         <see cref="StaleElementReferenceException" />
         ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>

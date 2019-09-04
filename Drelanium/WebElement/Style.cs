@@ -5,12 +5,12 @@ using OpenQA.Selenium;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Represents the HTMLElement's style properties
     /// </summary>
     public class Style
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     Represents the HTMLElement's style properties
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Style([NotNull] IWebElement element)

@@ -7,12 +7,12 @@ using OpenQA.Selenium.Safari;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Class to initialize and setup a <see cref="SafariOptions" /> object.
     /// </summary>
     public class SafariConfiguration
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     The initial <see cref="SafariOptions" /> object.
         /// </summary>
         public SafariOptions InitialOptions { get; set; }
 

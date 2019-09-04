@@ -13,7 +13,8 @@ namespace Drelanium
         /// <summary>
         ///     The <see cref="IWebElement" /> should Disappear(not exists or not Displayed).
         ///     <para>
-        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />,
+        ///         <see cref="StaleElementReferenceException" />
         ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>
@@ -42,7 +43,8 @@ namespace Drelanium
         /// <summary>
         ///     The <see cref="IWebElement" /> should Disappear(not exists or not Displayed).
         ///     <para>
-        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />, <see cref="StaleElementReferenceException" />
+        ///         Exceptions ignored until timeout: <see cref="NoSuchElementException" />,
+        ///         <see cref="StaleElementReferenceException" />
         ///     </para>
         /// </summary>
         /// <param name="wait">The <see cref="WebDriverWait" /> instance, that is used to command the browser for wait.</param>

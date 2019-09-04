@@ -7,12 +7,12 @@ using OpenQA.Selenium.IE;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Class to initialize and setup a <see cref="InternetExplorerOptions" /> object.
     /// </summary>
     public class InternetExplorerConfiguration
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     The initial <see cref="InternetExplorerOptions" /> object.
         /// </summary>
         public InternetExplorerOptions InitialOptions { get; set; }
 

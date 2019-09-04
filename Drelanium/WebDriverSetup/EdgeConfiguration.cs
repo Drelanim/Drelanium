@@ -7,12 +7,12 @@ using OpenQA.Selenium.Edge;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Class to initialize and setup a <see cref="EdgeOptions" /> object.
     /// </summary>
     public class EdgeConfiguration
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     The initial <see cref="EdgeOptions" /> object.
         /// </summary>
         public EdgeOptions InitialOptions { get; set; }
 

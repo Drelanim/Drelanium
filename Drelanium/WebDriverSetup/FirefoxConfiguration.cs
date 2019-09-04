@@ -7,12 +7,12 @@ using OpenQA.Selenium.Firefox;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Class to initialize and setup a <see cref="FirefoxOptions" /> object.
     /// </summary>
     public class FirefoxConfiguration
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     The initial <see cref="FirefoxOptions" /> object.
         /// </summary>
         public FirefoxOptions InitialOptions { get; set; }
 

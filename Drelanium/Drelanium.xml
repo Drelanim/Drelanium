@@ -1504,7 +1504,10 @@
       name="M:Drelanium.UntilElementAttributeConditions.UntilElementAttribute``1(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,Drelanium.ElementAttributeName,System.Func{System.String,``0})">
       <summary>
         Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" />'s given attribute has met the given condition.
-        <para>Exceptions ignored until timeout: <see cref="T:OpenQA.Selenium.StaleElementReferenceException" /></para>
+        <para>
+          Exceptions ignored until timeout: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
+          <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+        </para>
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="attributeName">The attribute's name of the <see cref="T:OpenQA.Selenium.IWebElement" />.</param>
@@ -1523,7 +1526,10 @@
       name="M:Drelanium.UntilElementAttributeConditions.UntilElementAttribute``1(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.By,Drelanium.ElementAttributeName,System.Func{System.String,``0})">
       <summary>
         Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" />'s given attribute has met the given condition.
-        <para>Exceptions ignored until timeout: <see cref="T:OpenQA.Selenium.StaleElementReferenceException" /></para>
+        <para>
+          Exceptions ignored until timeout: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
+          <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+        </para>
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="attributeName">The attribute's name of the <see cref="T:OpenQA.Selenium.IWebElement" />.</param>
@@ -1668,7 +1674,10 @@
       name="M:Drelanium.UntilElementConditions.UntilElement``1(OpenQA.Selenium.Support.UI.WebDriverWait,OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.Func{OpenQA.Selenium.IWebElement,``0})">
       <summary>
         Waits, until the <see cref="T:OpenQA.Selenium.IWebElement" /> has met the given condition.
-        <para>Exceptions ignored until timeout: <see cref="T:OpenQA.Selenium.StaleElementReferenceException" /></para>
+        <para>
+          Exceptions ignored until timeout: <see cref="T:OpenQA.Selenium.NoSuchElementException" />,
+          <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+        </para>
       </summary>
       <param name="wait">The <see cref="T:OpenQA.Selenium.Support.UI.WebDriverWait" /> instance, that is used to command the browser for wait.</param>
       <param name="locator">

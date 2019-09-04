@@ -9,7 +9,7 @@ using OpenQA.Selenium;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Represents the HTMLElement's Location
     /// </summary>
     public enum ElementPoint
     {

@@ -7,12 +7,12 @@ using OpenQA.Selenium;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Represents the HTMLElement's attributes
     /// </summary>
     public class Attributes
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     Represents the HTMLElement's attributes
         /// </summary>
         /// <param name="element">The HTMLElement, that is represented by an <see cref="IWebElement" /> instance.</param>
         public Attributes([NotNull] IWebElement element)

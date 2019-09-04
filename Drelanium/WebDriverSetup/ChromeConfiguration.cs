@@ -7,12 +7,12 @@ using OpenQA.Selenium.Chrome;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     Class to initialize and setup a <see cref="ChromeOptions" /> object.
     /// </summary>
     public class ChromeConfiguration
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     The initial <see cref="ChromeOptions" /> object.
         /// </summary>
         public ChromeOptions InitialOptions { get; set; }
 
