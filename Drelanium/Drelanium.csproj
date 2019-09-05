@@ -9,7 +9,7 @@
     <PackageId>Drelanium</PackageId>
     <Authors>Drelanim</Authors>
     <PackageDescription>
-      Test Automation Framework based on Selenium.WebDriver to write browser automated tests with ease.
+      C# Test Automation Framework based on Selenium.WebDriver to write browser automated tests with ease.
       Using:
       - Microsoft.Extensions.Configuration for an easy way browser configuration,
       - Serilog as a .NET logger,
