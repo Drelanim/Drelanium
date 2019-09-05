@@ -21,8 +21,9 @@
 </Project>
 ```
 
-#### 2) Optionally convert it to a Test Project, using the preferred Test Framework
+#### 2) Choose a Test Framework
 
+If the purpose of the project is to execute tests, then it should contain a Test Framework.   
 Open a cmd in the directory of the .NET Core project and use the following dotnet commands
 
 ###### 2.1 Using MSTest Test framework:
