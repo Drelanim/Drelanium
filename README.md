@@ -18,7 +18,7 @@ dotnet add package Drelanium
 
 ## Local Execution
 
-Use the following WebDriver NuGet packages, to use your local browsers for test execution.
+Use the following WebDriver NuGet packages, to use your local browsers for test execution.  
 WebDrivers requires certain browser versions.
 ```
 dotnet add package Selenium.Chrome.WebDriver
@@ -30,6 +30,12 @@ dotnet add package Selenium.PhantomJS.WebDriver
 ```
 ## Remote Execution
 
-Setup [Selenium Grid](https://www.seleniumhq.org/docs/07_selenium_grid.jsp) for remote execution.
+Setup your network [Selenium Grid](https://www.seleniumhq.org/docs/07_selenium_grid.jsp) for remote execution according to the tutorial.
 
 ### SauceLabs
+
+Executing remote tests using [SauceLabs](https://saucelabs.com/) is supported by the [Drelanium.SauceLabs](https://www.nuget.org/packages/Drelanium.SauceLabs/) NuGet package
+```
+dotnet add package Drelanium.SauceLabs
+```
+
