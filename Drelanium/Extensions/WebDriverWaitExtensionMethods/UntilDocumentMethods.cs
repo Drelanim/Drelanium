@@ -25,8 +25,9 @@ namespace Drelanium
         {
             if (wait == null) throw new ArgumentNullException(nameof(wait));
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until ({expectedDocumentReadyState.ToString().ToLower()}) document readyState to be ({expectedDocumentReadyState})";
+            wait.Message += " Waited for " +
+                            $"({expectedDocumentReadyState.ToString().ToLower()}) document readyState " +
+                            $"to be ({expectedDocumentReadyState})";
 
             return wait.Until(WebDriverWaitConditions.DocumentReadyStateToBe(expectedDocumentReadyState));
         }

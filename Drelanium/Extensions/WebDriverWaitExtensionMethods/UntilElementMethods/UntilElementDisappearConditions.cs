@@ -33,11 +33,11 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
-                            "disappeared.";
+            wait.Message += " Waited for " +
+                            $"({locator} in {searchContext}) element " +
+                            "to become Disappeared(not existing or not Displayed).";
 
-            return wait.Until(WebDriverWaitConditions.ElementToNotExist(searchContext, locator));
+            return wait.Until(WebDriverWaitConditions.ElementToDisappear(searchContext, locator));
         }
 
         /// <summary>
@@ -60,11 +60,11 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
-                            "disappeared.";
+            wait.Message += " Waited for " +
+                            $"({locator} in the Document) element " +
+                            "to become Disappeared(not existing or not Displayed).";
 
-            return wait.Until(WebDriverWaitConditions.ElementToNotExist(locator));
+            return wait.Until(WebDriverWaitConditions.ElementToDisappear(locator));
         }
     }
 }

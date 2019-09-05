@@ -33,9 +33,9 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
-                            "exists.";
+            wait.Message += " Waited for " +
+                            $"({locator} in {searchContext}) element " +
+                            "to exist.";
 
             return wait.Until(WebDriverWaitConditions.ElementToExist(searchContext, locator));
         }
@@ -60,9 +60,9 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
-                            "exists.";
+            wait.Message += " Waited for " +
+                            $"({locator} in the Document) element " +
+                            "to exist.";
 
             return wait.Until(WebDriverWaitConditions.ElementToExist(locator));
         }
@@ -90,9 +90,9 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
-                            "not exists.";
+            wait.Message += " Waited for " +
+                            $"({locator} in {searchContext}) element " +
+                            "to not exist.";
 
             return wait.Until(WebDriverWaitConditions.ElementToNotExist(searchContext, locator));
         }
@@ -117,9 +117,9 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
-                            "not exists.";
+            wait.Message += " Waited for " +
+                            $"({locator} in the Document) element " +
+                            "to not exist.";
 
             return wait.Until(WebDriverWaitConditions.ElementToNotExist(locator));
         }

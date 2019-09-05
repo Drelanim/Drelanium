@@ -27,8 +27,9 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until page has been successfully loaded and the url has met the given condition.";
+            wait.Message += " Waited for " +
+                            "page has been successfully loaded " +
+                            "and the url has met the given condition.";
 
             return wait.Until(WebDriverWaitConditions.PageHasLoaded(urlCondition));
         }
@@ -47,8 +48,9 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (urlCondition == null) throw new ArgumentNullException(nameof(urlCondition));
 
-            wait.Message +=
-                $"Waited ({wait.Timeout.TotalSeconds}) seconds until page has been successfully loaded without cookies and the url has met the given condition.";
+            wait.Message += " Waited for " +
+                            "page has been successfully loaded without cookies " +
+                            "and the url has met the given condition.";
 
             return wait.Until(WebDriverWaitConditions.PageHasLoadedWithoutDomainCookies(urlCondition));
         }

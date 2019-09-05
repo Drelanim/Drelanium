@@ -35,8 +35,8 @@ namespace Drelanium
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element's attribute " +
+            wait.Message += " Waited for " +
+                            $"({element}) element's ({attributeName}) attribute " +
                             "to meet the given condition.";
 
             return wait.Until(WebDriverWaitConditions.ElementAttribute(element, attributeName, condition));
@@ -100,8 +100,8 @@ namespace Drelanium
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element's attribute " +
+            wait.Message += " Waited for " +
+                            $"({locator} in {searchContext}) element's ({attributeName}) attribute " +
                             "to meet the given condition.";
 
             return wait.Until(
@@ -138,8 +138,8 @@ namespace Drelanium
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element's attribute " +
+            wait.Message += " Waited for " +
+                            $"({locator} in the Document) element's ({attributeName}) attribute " +
                             "to meet the given condition.";
 
             return wait.Until(

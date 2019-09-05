@@ -28,8 +28,8 @@ namespace Drelanium
             if (element == null) throw new ArgumentNullException(nameof(element));
 
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
+            wait.Message += " Waited for " +
+                            $"({element}) element " +
                             "to become Clickable(Displayed and Enabled).";
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(element));
@@ -58,8 +58,8 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
+            wait.Message += " Waited for " +
+                            $"({locator} in {searchContext}) element " +
                             "to become Clickable(Displayed and Enabled).";
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(searchContext, locator));
@@ -85,8 +85,8 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
+            wait.Message += " Waited for " +
+                            $"({locator} in the Document) element " +
                             "to become Clickable(Displayed and Enabled).";
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeClickable(locator));
@@ -110,8 +110,8 @@ namespace Drelanium
             if (element == null) throw new ArgumentNullException(nameof(element));
 
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
+            wait.Message += " Waited for " +
+                            $"({element}) element " +
                             "to become not Clickable(Displayed and Enabled).";
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(element));
@@ -140,8 +140,8 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
+            wait.Message += " Waited for " +
+                            $"({locator} in {searchContext}) element " +
                             "to become not Clickable(Displayed and Enabled).";
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(searchContext, locator));
@@ -167,8 +167,8 @@ namespace Drelanium
             if (locator == null) throw new ArgumentNullException(nameof(locator));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element " +
+            wait.Message += " Waited for " +
+                            $"({locator} in the Document) element " +
                             "to become not Clickable(Displayed and Enabled).";
 
             return wait.Until(WebDriverWaitConditions.ElementToBecomeNotClickable(locator));

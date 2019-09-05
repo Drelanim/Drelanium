@@ -29,7 +29,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             "to meet the given condition.";
 
@@ -49,7 +49,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             "to meet the given condition.";
 
@@ -71,7 +71,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (urlPart == null) throw new ArgumentNullException(nameof(urlPart));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             $"to contain ({urlPart})";
 
@@ -95,7 +95,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url's left part " +
                             "to meet the given condition.";
 
@@ -119,7 +119,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             $"to match with the regular expression ({regexPattern}).";
 
@@ -139,7 +139,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (urlPart == null) throw new ArgumentNullException(nameof(urlPart));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             $"not to contain ({urlPart})";
 
@@ -162,7 +162,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (regexPattern == null) throw new ArgumentNullException(nameof(regexPattern));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             $"to not match with the regular expression ({regexPattern}).";
 
@@ -182,7 +182,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (url == null) throw new ArgumentNullException(nameof(url));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             $"not to be ({url})";
 
@@ -202,7 +202,7 @@ namespace Drelanium
             if (wait == null) throw new ArgumentNullException(nameof(wait));
             if (url == null) throw new ArgumentNullException(nameof(url));
 
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
+            wait.Message += " Waited for " +
                             "loaded url " +
                             $"to be ({url})";
 

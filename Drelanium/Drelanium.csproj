@@ -23,14 +23,14 @@
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
-  
+
   <!--Package Version Properties-->
   <PropertyGroup>
-    <PackageVersion>1.10.1</PackageVersion>
-    <PackageReleaseNotes>Added SourceLink to the package.</PackageReleaseNotes>
+    <PackageVersion>1.11.0</PackageVersion>
+    <PackageReleaseNotes>Hotfix for WebDriverWaitExtensionMethods.</PackageReleaseNotes>
   </PropertyGroup>
 
-  
+
   <!--Package Generation Properties-->
   <PropertyGroup>
     <IsPackable>true</IsPackable>
@@ -41,7 +41,7 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-  
+
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium</DocumentationFile>
   </PropertyGroup>
@@ -51,7 +51,7 @@
     <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium</DocumentationFile>
   </PropertyGroup>
 
-  
+
   <!--Dependencies-->
   <ItemGroup>
     <!--Selenium packages-->

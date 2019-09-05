@@ -34,8 +34,8 @@ namespace Drelanium
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
             wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element's style property " +
+            wait.Message += " Waited for " +
+                            $"({element}) element's ({stylePropertyName}) style property " +
                             "to meet the given condition.";
 
             return wait.Until(WebDriverWaitConditions.ElementStyleProperty(element, stylePropertyName, condition));
@@ -98,8 +98,8 @@ namespace Drelanium
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element's style property " +
+            wait.Message += " Waited for " +
+                            $"({locator} in {searchContext}) element's ({stylePropertyName}) style property " +
                             "to meet the given condition.";
 
             return wait.Until(
@@ -135,8 +135,8 @@ namespace Drelanium
             if (condition == null) throw new ArgumentNullException(nameof(condition));
 
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            wait.Message += $" Waited ({wait.Timeout.TotalSeconds}) seconds for " +
-                            "element's style property " +
+            wait.Message += " Waited for " +
+                            $"({locator} in the Document) element's ({stylePropertyName}) style property " +
                             "to meet the given condition.";
 
             return wait.Until(WebDriverWaitConditions.ElementStyleProperty(locator, stylePropertyName, condition));
