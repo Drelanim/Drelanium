@@ -7,17 +7,27 @@ C# Test Automation Framework based on Selenium.WebDriver
 - Serilog as a .NET logger,
 - FluentAssertions to write assertions in an extremely readable way.
 
-## Usage examples
+## Drelanium NuGet package
 
-### Using xUnit
-
-```xml
-<PropertyGroup>
-...
-  <ProductVersion>10.0.11107</ProductVersion>
-  <SchemaVersion>2.0</SchemaVersion>
-  <ProjectGuid>{30E3C9D5-FD86-4691-A331-80EA5BA7E571}</ProjectGuid>
-  <OutputType>WinExe</OutputType>
-...
-</PropertyGroup>
+Drelanium is available as a [NuGet package](https://www.nuget.org/packages/Drelanium/)
 ```
+PM> Install-Package Drelanium
+```
+
+## Local Execution
+
+Use the following WebDriver NuGet packages, to use your local browsers for test execution.
+WebDrivers requires certain browser versions.
+```
+PM> Install-Package Selenium.Chrome.WebDriver
+PM> Install-Package Selenium.Firefox.WebDriver
+PM> Install-Package Selenium.InternetExplorer.WebDriver
+PM> Install-Package Selenium.WebDriver.MicrosoftDriver
+PM> Install-Package Selenium.Opera.WebDriver
+PM> Install-Package Selenium.PhantomJS.WebDriver
+```
+## Remote Execution
+
+Setup [Selenium Grid](https://www.seleniumhq.org/docs/07_selenium_grid.jsp) for remote execution.
+
+
