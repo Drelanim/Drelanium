@@ -12,9 +12,9 @@
     <PackageDescription>Support of SauceLabs usage.</PackageDescription>
     <PackageIconUrl>http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif</PackageIconUrl>
     <PackageTags>SauceLabs, Selenium, WebDriver, Test, Automation</PackageTags>
+    <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
