@@ -12,12 +12,3 @@
 ## Topics
 
 * [Getting started](docs/GettingStarted.md)
-
-
-
-
-
-
-
-
-
