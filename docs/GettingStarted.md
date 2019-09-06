@@ -1,6 +1,6 @@
-## Getting started
+# Getting started
 
-#### 1) Create any kind of.NET Core project, and change the .csproj to the following
+### 1) Create any kind of.NET Core project, and change the .csproj to the following
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -10,7 +10,7 @@
 </Project>
 ```
 
-#### 2) Convert to Test Project
+### 2) Convert to Test Project
 
 Decisions needed on the followings:
 * Which Test Framework to use?
@@ -19,13 +19,13 @@ Decisions needed on the followings:
 [SpecFlow](https://specflow.org) is a .NET version of Cucumber, that supports BDD.
 
 
-###### 2.1) Using MSTest Framework
+##### 2.1) Using MSTest Framework
 ```console
 dotnet add package Microsoft.NET.Test.Sdk
 dotnet add package MSTest.TestFramework
 dotnet add package MSTest.TestAdapter
 ```
-###### + SpecFlow
+##### + SpecFlow
 ```console
 dotnet add package SpecFlow
 dotnet add package SpecFlow.Tools.MsBuild.Generation
@@ -33,13 +33,13 @@ dotnet add package SpecFlow.MsTest
 ```
 
 
-###### 2.2) Using NUnit Test framework:
+##### 2.2) Using NUnit Test framework:
 ```console
 dotnet add package Microsoft.NET.Test.Sdk
 dotnet add package nunit
 dotnet add package NUnit3TestAdapter
 ```
-###### + SpecFlow
+##### + SpecFlow
 ```console
 dotnet add package SpecFlow
 dotnet add package SpecFlow.Tools.MsBuild.Generation
@@ -47,13 +47,13 @@ dotnet add package SpecFlow.NUnit
 ```
 
 
-###### 2.3) Using xUnit Test framework:
+##### 2.3) Using xUnit Test framework:
 ```console
 dotnet add package Microsoft.NET.Test.Sdk
 dotnet add package xunit
 dotnet add package xunit.runner.visualstudio
 ```
-###### + SpecFlow
+##### + SpecFlow
 ```console
 dotnet add package SpecFlow
 dotnet add package SpecFlow.Tools.MsBuild.Generation
@@ -61,7 +61,7 @@ dotnet add package SpecFlow.xUnit
 ```
 
 
-#### 3) Selenium Local execution
+### 3) Selenium Local execution
 
 To automate the locally installed browsers, the browser webdrivers should be added as packages.   
 
