@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <!--dotnet test package-->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    
+    <!--xUnit packages-->
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    
+    <!--SpecFlow packages-->
+    <PackageReference Include="SpecFlow" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
+   
+    <!--SpecFlow with xUnit packages-->
+    <PackageReference Include="SpecFlow.xUnit" Version="3.0.225" />
+
+    <!--Local Selenium WebDriver packages-->
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="76.0.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.24.0" />
+    <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.141.5" />
+    <PackageReference Include="Selenium.Opera.WebDriver" Version="2.30.0" />
+    <PackageReference Include="Selenium.PhantomJS.WebDriver" Version="2.1.1" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftDriver" Version="17.17134.0" />
+
+    <!--Serilog Sinks packages-->
+    <PackageReference Include="Serilog.Sinks.XUnit" Version="1.0.21" />
+
+    <!--Pickles packages-->
+    <PackageReference Include="Pickles" Version="2.20.1" />
+    <PackageReference Include="Pickles.MSBuild" Version="2.20.1" />
+
+  </ItemGroup>
+
+
+</Project>
