@@ -8,7 +8,7 @@ C# Test Automation Framework based on Selenium.WebDriver
 dotnet add package Drelanium
 ```
 #### Used packages:
-* [Selenium](https://www.nuget.org/packages/Selenium.WebDriver/), to automate browser   
+* [Selenium](https://www.seleniumhq.org/), to automate browser   
 ```console
 dotnet add package Selenium.WebDriver
 dotnet add package Selenium.Support
@@ -20,12 +20,12 @@ dotnet add package Microsoft.Extensions.Configuration.Binder
 dotnet add package Microsoft.Extensions.Configuration.Json
 ```
 
-* [Serilog](https://www.nuget.org/packages/Serilog/), as a .NET logger   
+* [Serilog](https://serilog.net/), as a .NET logger   
 ```console
 dotnet add package Serilog
 ```
 
-* [FluentAssertions](https://www.nuget.org/packages/FluentAssertions/), to write assertions in an extremely readable way   
+* [FluentAssertions](https://fluentassertions.com/), to write assertions in an extremely readable way   
 ```console
 dotnet add package FluentAssertions
 ```
