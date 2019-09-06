@@ -10,29 +10,53 @@
 </Project>
 ```
 
-#### 2) Choose a Test Framework
+#### 2) Convert to Test Project
 
-If the purpose of the project is to execute tests, then it should contain a Test Framework.   
-Open a cmd in the directory of the .NET Core project and use the following dotnet commands
+Decisions needed on the followings:
+* Which Test Framework to use?
+* Should we write our tests in BDD?
 
-###### 2.1 Using MSTest Test framework:
+[SpecFlow](https://specflow.org) is a .NET version of Cucumber, that supports BDD.
+
+
+###### 2.1) Using MSTest Framework
 ```console
 dotnet add package Microsoft.NET.Test.Sdk
 dotnet add package MSTest.TestFramework
 dotnet add package MSTest.TestAdapter
 ```
+###### + SpecFlow
+```console
+dotnet add package SpecFlow
+dotnet add package SpecFlow.Tools.MsBuild.Generation
+dotnet add package SpecFlow.MsTest
+```
 
-###### 2.2 Using NUnit Test framework:
+
+###### 2.2) Using NUnit Test framework:
 ```console
 dotnet add package Microsoft.NET.Test.Sdk
 dotnet add package nunit
 dotnet add package NUnit3TestAdapter
 ```
+###### + SpecFlow
+```console
+dotnet add package SpecFlow
+dotnet add package SpecFlow.Tools.MsBuild.Generation
+dotnet add package SpecFlow.NUnit
+```
 
-###### 2.3 Using xUnit Test framework:
+
+###### 2.3) Using xUnit Test framework:
 ```console
 dotnet add package Microsoft.NET.Test.Sdk
 dotnet add package xunit
 dotnet add package xunit.runner.visualstudio
+```
+###### + SpecFlow
+```console
+dotnet add package SpecFlow
+dotnet add package SpecFlow.Tools.MsBuild.Generation
+dotnet add package SpecFlow.xUnit
 ```
 
