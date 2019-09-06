@@ -63,7 +63,7 @@ dotnet add package SpecFlow.xUnit
 
 #### 3) Selenium Local execution
 
-To automate the locally installed browsers, the browser webdrivers should be added as package.   
+To automate the locally installed browsers, the browser webdrivers should be added as packages.   
 
 ```console
 dotnet add package Selenium.Chrome.WebDriver
