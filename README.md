@@ -30,6 +30,8 @@ dotnet add package Serilog
 dotnet add package FluentAssertions
 ```
 
+---
+
 ### [Drelanium.SauceLabs](https://www.nuget.org/packages/Drelanium.SauceLabs/)
 Provides support for executing remote Selenium tests on [SauceLabs](https://saucelabs.com/) 
 ```console
@@ -38,6 +40,7 @@ dotnet add package Drelanium.SauceLabs
 
 
 
+---
 
 ## Topics
 
