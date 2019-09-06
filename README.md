@@ -16,8 +16,8 @@ dotnet add package Selenium.Support
 
 * [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/), to create and bind configurations
 ```console
-dotnet add package Microsoft.Extensions.Configuration.Binder
 dotnet add package Microsoft.Extensions.Configuration.Json
+dotnet add package Microsoft.Extensions.Configuration.Binder
 ```
 
 * [Serilog](https://serilog.net/), as a .NET logger   
