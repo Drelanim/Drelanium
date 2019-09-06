@@ -7,9 +7,9 @@ using OpenQA.Selenium;
 
 namespace Drelanium.ExampleSolution.PageObjects.Pages
 {
-    public class GooglePage : BasePage
+    public class GoogleMainPage : BasePage
     {
-        public GooglePage([NotNull] IWebDriver driver) : base(driver)
+        public GoogleMainPage([NotNull] IWebDriver driver) : base(driver)
         {
         }
 
@@ -24,6 +24,11 @@ namespace Drelanium.ExampleSolution.PageObjects.Pages
 
         public void SearchForContent(string content)
         {
+
+
+            throw new NotImplementedException();
+
+
         }
     }
 }

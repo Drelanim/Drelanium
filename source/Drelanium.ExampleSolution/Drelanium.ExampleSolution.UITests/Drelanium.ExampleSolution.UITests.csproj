@@ -45,5 +45,20 @@
     <ProjectReference Include="..\Drelanium.ExampleSolution.PageObjects\Drelanium.ExampleSolution.PageObjects.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Features\GoogleSearch.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GoogleSearch.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\GoogleSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GoogleSearch.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+
 
 </Project>

@@ -1,11 +1,14 @@
 ﻿using System;
 using TechTalk.SpecFlow;
+using Drelanium.ExampleSolution.PageObjects.Pages;
 
 // ReSharper disable IdentifierTypo
 
 namespace Drelanium.ExampleSolution.UITests.StepDefinitions
 {
-    public class GoogleSearchStepDefinitions : BaseStepDefinition
+
+    [Binding]
+    public class GoogleSearchStepDefinitions : BaseBindingClass
     {
         public GoogleSearchStepDefinitions(
             TestThreadContext testThreadContext,
@@ -18,19 +21,46 @@ namespace Drelanium.ExampleSolution.UITests.StepDefinitions
         [Given(@"I am visiting Google")]
         public void GivenIAmVisitingGoogle()
         {
+
+            Driver.Navigation().GoToUrl(new Uri("https://www.google.com/"));
+
+            CurrentPage = new GoogleMainPage(Driver);
+
+
+
+
+
+        }
+
+        [When(@"I search for ""([^\""]*)""")]
+        public void WhenISearchFor(string parameter)
+        {
+            ((GoogleMainPage)CurrentPage).SearchForContent(parameter);
+
+            CurrentPage = new GoogleSearchResultsPage(Driver);
+
+        }
+
+
+
+        [Then(@"the word ""([^\""]*)"" can be found in every search result")]
+        public void ThenTheWordCanBeFoundInEverySearchResult(string parameter)
+        {
+
+
+
+
             throw new NotImplementedException();
         }
 
-        [Then(@"the word ""(.*)"" can be found in every search result")]
-        public void ThenTheWordCanBeFoundInEverySearchResult(string p0)
-        {
-            throw new NotImplementedException();
-        }
+      
 
-        [When(@"I search for ""(.*)""")]
-        public void WhenISearchFor(string p0)
-        {
-            throw new NotImplementedException();
-        }
+
+
+
     }
+
+
+
+
 }
