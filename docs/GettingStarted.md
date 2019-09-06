@@ -60,3 +60,25 @@ dotnet add package SpecFlow.Tools.MsBuild.Generation
 dotnet add package SpecFlow.xUnit
 ```
 
+
+#### 3) Selenium Local execution
+
+To automate the locally installed browsers, the browser webdrivers should be added as package.   
+
+```console
+dotnet add package Selenium.Chrome.WebDriver
+dotnet add package Selenium.Firefox.WebDriver
+dotnet add package Selenium.InternetExplorer.WebDriver
+dotnet add package Selenium.WebDriver.MicrosoftDriver
+dotnet add package Selenium.Opera.WebDriver
+dotnet add package Selenium.PhantomJS.WebDriver
+```
+:warning: Certain WebDriver versions only supports certain browser versions. If you can't/not allowed to update your browser to the latest version, then you will probably need to downgrade your WebDriver's version, according to it's documentation.
+
+ChromeDriver example:
+```c#
+var chromeDriverDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+var driver = new ChromeDriver(chromeDriverDirectory);
+```
+
+
