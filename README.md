@@ -1,6 +1,6 @@
 # Drelanium
 
-![alt tag](http://classic.battle.net/war3/images/nightelf/spells/shadowstrike.gif)
+![alt tag](https://github.com/Drelanim/Drelanium/blob/master/docs/icons/Drelanium.gif)
 
 ***C# Test Automation Framework based on Selenium.WebDriver***
 
