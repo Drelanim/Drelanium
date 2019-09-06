@@ -2,7 +2,7 @@
 
 Web Test Automation with Selenium.WebDriver (see: [Getting started](docs/GettingStarted.md))
 
-## Drelanium NuGets
+## NuGets
 
 ### [Drelanium](https://www.nuget.org/packages/Drelanium/)
 C# Test Automation Framework based on Selenium.WebDriver  
@@ -23,9 +23,6 @@ Provides support for executing remote Selenium tests on [SauceLabs](https://sauc
 ```console
 dotnet add package Drelanium.SauceLabs
 ```
-
-
-
 ---
 
 ## Topics
