@@ -44,4 +44,4 @@ dotnet add package Drelanium.SauceLabs
 
 ## Topics
 
-* [Getting started with Web Test Automation](docs/GettingStarted.md)
+* [Getting started](docs/GettingStarted.md)
