@@ -5,10 +5,12 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  
   <ItemGroup>
 
     <!--dotnet test package-->
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+
 
     <!--xUnit packages-->
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -16,7 +18,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-
+    
     <!--SpecFlow packages-->
     <PackageReference Include="SpecFlow" Version="3.0.225" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
@@ -45,20 +47,9 @@
     <ProjectReference Include="..\Drelanium.ExampleSolution.PageObjects\Drelanium.ExampleSolution.PageObjects.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Features\GoogleSearch.feature.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>GoogleSearch.feature</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\GoogleSearch.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GoogleSearch.feature.cs</LastGenOutput>
-    </SpecFlowFeatureFiles>
-  </ItemGroup>
+  
+  
+  
 
 
 </Project>

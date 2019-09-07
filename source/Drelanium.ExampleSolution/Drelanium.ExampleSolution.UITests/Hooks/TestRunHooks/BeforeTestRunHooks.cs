@@ -5,6 +5,7 @@ using TechTalk.SpecFlow;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 {
+    [Binding]
     public class BeforeTestRunHooks : BaseBindingClass
     {
         public BeforeTestRunHooks(
@@ -18,9 +19,7 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 
 
         [BeforeTestRun(Order = 1)]
-        public static void BeforeTestRun1(
-            TestThreadContext testThreadContext,
-            FeatureContext featureContext)
+        public static void BeforeTestRun1()
         {
 
 

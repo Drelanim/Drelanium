@@ -9,6 +9,7 @@ using System.IO;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 {
+    [Binding]
     public class BeforeFeatureHooks : BaseBindingClass
     {
         public BeforeFeatureHooks(

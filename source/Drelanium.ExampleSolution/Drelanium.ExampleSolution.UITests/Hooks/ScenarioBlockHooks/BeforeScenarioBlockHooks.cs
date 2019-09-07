@@ -5,6 +5,7 @@ using TechTalk.SpecFlow;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 {
+    [Binding]
     public class BeforeScenarioBlockHooks : BaseBindingClass
     {
         public BeforeScenarioBlockHooks(

@@ -7,6 +7,7 @@ using Drelanium;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 {
+    [Binding]
   public class AfterFeatureHooks : BaseBindingClass
     {
         public AfterFeatureHooks(
@@ -17,20 +18,12 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
         {
         }
 
-
-
         [AfterFeature(Order = 1)]
         public static void AfterFeature1(
              TestThreadContext testThreadContext,
             FeatureContext featureContext)
         {
-
-
-
             testThreadContext.Get<IWebDriver>().Quit();
-
-
-
         }
 
 
