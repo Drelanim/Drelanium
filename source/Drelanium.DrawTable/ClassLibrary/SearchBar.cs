@@ -5,18 +5,12 @@ using OpenQA.Selenium;
 
 namespace ClassLibrary
 {
-    public class SearchBar : BasePageWidget
+    public class SearchBar : BaseWidget
     {
-        public SearchBar(IWebElement element) : base(element)
+        public SearchBar(IWebElement parentElement) : base(parentElement)
         {
-            
-            
-
         }
 
-
-
-        public IWebElement Item => this.FindElement(By.Name("q"));
 
 
     }

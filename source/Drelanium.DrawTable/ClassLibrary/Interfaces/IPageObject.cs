@@ -5,10 +5,13 @@ using System.Text;
 
 namespace ClassLibrary
 {
-  public  interface IPageObject : ISearchContext
+  public  interface IPageObject 
     {
 
-         IWebDriver Driver { get;  }
+
+
+
+         ISearchContext SearchContext { get;  }
 
 
 

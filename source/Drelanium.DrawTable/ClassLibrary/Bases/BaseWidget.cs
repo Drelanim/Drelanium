@@ -7,16 +7,18 @@ using OpenQA.Selenium.Remote;
 
 namespace ClassLibrary
 {
-
-
-    public class BasePage : BasePageObject, IPage
+    public class BaseWidget : BasePageObject
     {
-        public BasePage(IWebDriver driver, Uri url) : base(driver)
+
+
+        public BaseWidget(IWebElement parentElement) : base(parentElement)
         {
-            Url = url;
+           
+         
+        
         }
 
-        public Uri Url {get;}
+
 
 
 

@@ -8,20 +8,13 @@ namespace ClassLibrary
 {
     public class GooglePage : BasePage
     {
-
-
-        public GooglePage(IWebDriver driver) :base(driver)
+        public GooglePage(IWebDriver driver, Uri url) : base(driver, url)
         {
+
         }
 
-
-        public IWebElement Logo => FindElement(By.Id("hplogo"));
-
-
-        public SearchBar SearchBar => new SearchBar(this.FindElement(By.ClassName("RNNXgb")));
+        public SearchBar SearchBar => S
 
 
-
-
-    }
+   }
 }

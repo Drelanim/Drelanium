@@ -8,6 +8,9 @@ namespace ClassLibrary
   public  interface IPage : IPageObject
     {
 
+
+
+
          Uri Url { get;  }
 
 
