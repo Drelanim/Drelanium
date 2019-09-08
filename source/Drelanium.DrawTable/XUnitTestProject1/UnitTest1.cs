@@ -24,7 +24,7 @@ namespace XUnitTestProject1
             var googlePage = new GooglePage(driver);
 
 
-            var element = googlePage.Logo2;
+            var element = googlePage.SearchBar.Item;
 
             
 

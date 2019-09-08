@@ -5,12 +5,10 @@ using System.Text;
 
 namespace ClassLibrary
 {
-  public  interface IPageWidgetObject : IPageObject
+  public  interface IPage : IPageObject
     {
 
-
-
-         IWebElement WrappedElement { get;  }
+         Uri Url { get;  }
 
 
 

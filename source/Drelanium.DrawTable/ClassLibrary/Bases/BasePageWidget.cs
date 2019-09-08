@@ -7,11 +7,11 @@ using OpenQA.Selenium.Remote;
 
 namespace ClassLibrary
 {
-    public class BasePageWidgetObject : IPageWidgetObject
+    public class BasePageWidget : IPageWidget
     {
 
 
-        public BasePageWidgetObject(IWebElement element)
+        public BasePageWidget(IWebElement element)
         {
             WrappedElement = element;
         }

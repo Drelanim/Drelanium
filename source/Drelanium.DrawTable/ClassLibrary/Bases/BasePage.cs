@@ -6,10 +6,11 @@ using OpenQA.Selenium;
 
 namespace ClassLibrary
 {
-    public class BasePageObject : IPageObject
+
+    public class BasePage : IPage
     {
      
-        public BasePageObject(IWebDriver driver)
+        public BasePage(IWebDriver driver)
         {
             Driver = driver;
         }
