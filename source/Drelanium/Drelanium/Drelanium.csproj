@@ -35,7 +35,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageOutputPath>..\builtPackages\</PackageOutputPath>
+    <PackageOutputPath>$(SolutionDir)\..\..\..\BuiltPackages</PackageOutputPath>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
