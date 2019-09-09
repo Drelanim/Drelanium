@@ -2347,6 +2347,75 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Drelanium.BasePageObject">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="M:Drelanium.BasePageObject.#ctor(OpenQA.Selenium.IWebDriver)">
+            <summary>
+             ...Description to be added...
+            </summary>
+            <param name="driver"></param>
+        </member>
+        <member name="M:Drelanium.BasePageObject.#ctor(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By)">
+            <summary>
+             ...Description to be added...
+            </summary>
+            <param name="driver"> ...Description to be added...</param>
+            <param name="wrapperElementLocator"> ...Description to be added...</param>
+        </member>
+        <member name="M:Drelanium.BasePageObject.#ctor(OpenQA.Selenium.IWebElement)">
+            <summary>
+             ...Description to be added...
+            </summary>
+            <param name="wrapperElement"> ...Description to be added...</param>
+        </member>
+        <member name="P:Drelanium.BasePageObject.Driver">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.BasePageObject.PageObjectSearchContext">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="T:Drelanium.IPage">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.IPage.Url">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="T:Drelanium.IPageObject">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.IPageObject.Driver">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.IPageObject.PageObjectSearchContext">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="T:Drelanium.IPageWidget">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.IPageWidget.WidgetLocator">
+            <summary>
+             ...Description to be added...
+            </summary>
+        </member>
         <member name="T:Drelanium.ChromeConfiguration">
             <summary>
                 Class to initialize and setup a <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" /> object.
