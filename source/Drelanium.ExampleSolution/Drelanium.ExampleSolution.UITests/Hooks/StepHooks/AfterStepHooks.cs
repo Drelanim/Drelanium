@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 {
@@ -9,9 +6,9 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
     public class AfterStepHooks : BaseBindingClass
     {
         public AfterStepHooks(
-               TestThreadContext testThreadContext,
-               FeatureContext featureContext,
-               ScenarioContext scenarioContext)
+            TestThreadContext testThreadContext,
+            FeatureContext featureContext,
+            ScenarioContext scenarioContext)
             : base(testThreadContext, featureContext, scenarioContext)
         {
         }
@@ -19,12 +16,6 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
         [AfterStep(Order = 1)]
         public void AfterStep1()
         {
-
-
         }
-
-
-
-
     }
 }

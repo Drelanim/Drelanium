@@ -1,7 +1,5 @@
-﻿using TechTalk.SpecFlow;
-using Drelanium;
-using OpenQA.Selenium;
-using Drelanium.ExampleSolution.PageObjects;
+﻿using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
 // ReSharper disable IdentifierTypo
 
@@ -23,26 +21,16 @@ namespace Drelanium.ExampleSolution.UITests
         public FeatureContext FeatureContext { get; }
         public ScenarioContext ScenarioContext { get; }
 
-
         public IWebDriver Driver
         {
             get => TestThreadContext.Get<IWebDriver>();
             set => TestThreadContext.Set(value);
         }
 
-
-        public BasePage CurrentPage
+        public BasePageObject CurrentPage
         {
-            get => TestThreadContext.Get<BasePage>();
+            get => TestThreadContext.Get<BasePageObject>();
             set => TestThreadContext.Set(value);
         }
-
-
-
-
-
-
-
-
     }
 }

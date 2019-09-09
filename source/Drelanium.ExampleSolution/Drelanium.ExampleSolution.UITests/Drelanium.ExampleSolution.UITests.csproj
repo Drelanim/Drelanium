@@ -20,11 +20,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <!--SpecFlow packages-->
-    <PackageReference Include="SpecFlow" Version="3.0.225" />
-    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
-    <!--SpecFlow with xUnit packages-->
-    <PackageReference Include="SpecFlow.xUnit" Version="3.0.225" />
     <!--Local Selenium WebDriver packages-->
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="76.0.0" />
     <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.24.0" />
@@ -32,6 +27,11 @@
     <PackageReference Include="Selenium.Opera.WebDriver" Version="2.30.0" />
     <PackageReference Include="Selenium.PhantomJS.WebDriver" Version="2.1.1" />
     <PackageReference Include="Selenium.WebDriver.MicrosoftDriver" Version="17.17134.0" />
+    <!--SpecFlow packages-->
+    <PackageReference Include="SpecFlow" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
+    <!--SpecFlow with xUnit packages-->
+    <PackageReference Include="SpecFlow.xUnit" Version="3.0.225" />
     <!--Serilog Sinks packages-->
     <PackageReference Include="Serilog.Sinks.XUnit" Version="1.0.21" />
     <!--Pickles packages-->

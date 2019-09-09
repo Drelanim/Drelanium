@@ -6,17 +6,12 @@
 
   <!--Package Properties-->
   <PropertyGroup>
-    <PackageId>Drelanium</PackageId>
+    <PackageId>Drelanium.BDD</PackageId>
     <Authors>Drelanim</Authors>
     <PackageDescription>
-      C# Test Automation Framework based on Selenium.WebDriver to write browser automated tests with ease.
-      Using:
-      - Microsoft.Extensions.Configuration for an easy way browser configuration,
-      - Serilog as a .NET logger,
-      - FluentAssertions to write assertions in an extremely readable way.
     </PackageDescription>
     <PackageIconUrl>https://github.com/Drelanim/Drelanium/blob/master/docs/icons/Drelanium.gif</PackageIconUrl>
-    <PackageTags>selenium, webdriver, browser, test, automation, testautomation, framework, drelanium</PackageTags>
+    <PackageTags>selenium, webdriver, browser, test, automation, testautomation, framework, drelanium, specflow, bdd</PackageTags>
     <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -26,8 +21,8 @@
 
   <!--Package Version Properties-->
   <PropertyGroup>
-    <PackageVersion>1.11.1</PackageVersion>
-    <PackageReleaseNotes>BasePageObject to support POM.</PackageReleaseNotes>
+    <PackageVersion>1.11.0</PackageVersion>
+    <PackageReleaseNotes>Initial release for BDD.</PackageReleaseNotes>
   </PropertyGroup>
 
 
@@ -43,37 +38,34 @@
 
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium.xml</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\Drelanium.BDD\Drelanium.BDD.xml</DocumentationFile>
   </PropertyGroup>
 
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium.xml</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\Drelanium.BDD\Drelanium.BDD.xml</DocumentationFile>
   </PropertyGroup>
 
 
   <ItemGroup>
-    <None Remove="Drelanium.xml" />
-    <None Remove="Drelanium.csproj.DotSettings" />
+    <None Remove="Drelanium.BDD.xml" />
+    <None Remove="Drelanium.BDD.csproj.DotSettings" />
   </ItemGroup>
 
 
   <!--Dependencies-->
   <ItemGroup>
-    <!--Selenium packages-->
-    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.Support" Version="3.141.0" />
-    <!--Microsoft Configuration packages-->
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <!--Serilog packages-->
-    <PackageReference Include="Serilog" Version="2.8.0" />
-    <!--FluentAssertions packages-->
-    <PackageReference Include="FluentAssertions" Version="5.9.0" />
-    <!--JetBrains packages-->
-    <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
+    <!--Drelanium packages-->
+    <PackageReference Include="Drelanium" Version="1.11.0" />
+    <!--Specflow packages-->
+    <PackageReference Include="SpecFlow" Version="3.0.225" />
+    <!--Pickles packages-->
+    <PackageReference Include="Pickles" Version="2.20.1" />
+    <PackageReference Include="Pickles.CommandLine" Version="2.20.1" />
+    <PackageReference Include="Pickles.MSBuild" Version="2.20.1" />
     <!--SourceLink packages-->
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All" />
+
   </ItemGroup>
 
 

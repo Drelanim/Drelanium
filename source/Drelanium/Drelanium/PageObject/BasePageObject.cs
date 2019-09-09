@@ -29,10 +29,8 @@ namespace Drelanium
         {
             Driver = driver ?? throw new ArgumentNullException(nameof(driver));
 
-
             if (wrapperElementLocator == null) throw new ArgumentNullException(nameof(wrapperElementLocator));
 
-          
             PageObjectSearchContext = driver.FindElement(wrapperElementLocator);
         }
 
