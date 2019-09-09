@@ -9,10 +9,23 @@
     <PackageId>Drelanium.BDD</PackageId>
     <Authors>Drelanim</Authors>
     <PackageDescription>
-      BDD version of Drelanium.
-      Additional packages required to be installed:
-      - SpecFlow.MsTest or SpecFlow.NUnit or SpecFlow.xUnit
-      - SpecFlow.Tools.MsBuild.Generation
+      C# Test Automation Framework based on Selenium.WebDriver and SpecFlow to write browser automated tests with ease, following Behaviour Driven Development.
+      Extends the usage of numerous Selenium types, and provides new useful features. Supports Page Object Model design pattern.
+
+      Notes:
+      This package does not include any test framework or runner (MSTest / NUnit / xUnit). Those should be added additionally to the project.
+      Exeucting tests against local browser requires browser specific Selenium WebDriver NuGets (e.g. Selenium.Chrome.WebDriver). See more on https://www.seleniumhq.org/
+      Specflow requires additional NuGet packages aswell, to enable test generation and execution, depending on the chosen test framework(e.g. SpecFlow.Tools.MsBuild.Generation and SpecFlow.xUnit). See more on https://specflow.org/
+
+      Included packages:
+      - Selenium.WebDriver as the core of the framework
+      - SpecFlow to enable writing test in BDD
+      - FluentAssertions to write assertions in an extremely readable way
+      - Microsoft.Extensions.Configuration for managing the browser configurations,
+      - Serilog as a .NET logging tool
+      - Pickles as a BDD reporting tool
+      - JetBrains.Annotations for ReSharper support
+      - Microsoft.SourceLink to provide source code link during debugging
     </PackageDescription>
     <PackageIconUrl>https://github.com/Drelanim/Drelanium/blob/master/docs/icons/Drelanium.gif</PackageIconUrl>
     <PackageTags>selenium, webdriver, browser, test, automation, testautomation, framework, drelanium, specflow, bdd</PackageTags>
@@ -25,8 +38,8 @@
 
   <!--Package Version Properties-->
   <PropertyGroup>
-    <PackageVersion>1.11.0</PackageVersion>
-    <PackageReleaseNotes>Initial release for BDD.</PackageReleaseNotes>
+    <PackageVersion>1.12.0</PackageVersion>
+    <PackageReleaseNotes>Initial release for Drelanium.BDD</PackageReleaseNotes>
   </PropertyGroup>
 
 
@@ -60,7 +73,7 @@
   <!--Dependencies-->
   <ItemGroup>
     <!--Drelanium packages-->
-    <PackageReference Include="Drelanium" Version="1.11.0" />
+    <PackageReference Include="Drelanium" Version="1.12.0" />
     <!--Specflow packages-->
     <PackageReference Include="SpecFlow" Version="3.0.225" />
     <!--Pickles packages-->

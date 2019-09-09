@@ -10,10 +10,19 @@
     <Authors>Drelanim</Authors>
     <PackageDescription>
       C# Test Automation Framework based on Selenium.WebDriver to write browser automated tests with ease.
-      Using:
-      - Microsoft.Extensions.Configuration for an easy way browser configuration,
-      - Serilog as a .NET logger,
-      - FluentAssertions to write assertions in an extremely readable way.
+      Extends the usage of numerous Selenium types, and provides new useful features. Supports Page Object Model design pattern.
+
+      Notes:
+      This package does not include any test framework or runner (MSTest / NUnit / xUnit). Those should be added additionally to the project.
+      Exeucting tests against local browser requires browser specific Selenium WebDriver NuGets (e.g. Selenium.Chrome.WebDriver). See more on https://www.seleniumhq.org/
+
+      Included packages:
+      - Selenium.WebDriver as the core of the framework
+      - FluentAssertions to write assertions in an extremely readable way
+      - Microsoft.Extensions.Configuration for managing the browser configurations,
+      - Serilog as a .NET logging tool
+      - JetBrains.Annotations for ReSharper support
+      - Microsoft.SourceLink to provide source code link during debugging
     </PackageDescription>
     <PackageIconUrl>https://github.com/Drelanim/Drelanium/blob/master/docs/icons/Drelanium.gif</PackageIconUrl>
     <PackageTags>selenium, webdriver, browser, test, automation, testautomation, framework, drelanium</PackageTags>
@@ -26,7 +35,7 @@
 
   <!--Package Version Properties-->
   <PropertyGroup>
-    <PackageVersion>1.11.1</PackageVersion>
+    <PackageVersion>1.12.0</PackageVersion>
     <PackageReleaseNotes>BasePageObject to support POM.</PackageReleaseNotes>
   </PropertyGroup>
 
