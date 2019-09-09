@@ -5,8 +5,16 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <None Remove="Drelanium.ExampleSolution.PageObjects.csproj.DotSettings" />
+  </ItemGroup>
+
+
+  <!--Dependencies-->
   <ItemGroup>
     <PackageReference Include="Drelanium" Version="1.11.0" />
   </ItemGroup>
+
 
 </Project>

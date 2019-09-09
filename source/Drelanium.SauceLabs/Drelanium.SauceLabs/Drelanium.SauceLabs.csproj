@@ -46,6 +46,12 @@
     <DocumentationFile>$(SolutionDir)\Drelanium.SauceLabs\Drelanium.SauceLabs.xml</DocumentationFile>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <None Remove="Drelanium.SauceLabs.csproj.DotSettings" />
+    <None Remove="Drelanium.SauceLabs.xml" />
+  </ItemGroup>
+
   
   <!--Dependencies-->
   <ItemGroup>

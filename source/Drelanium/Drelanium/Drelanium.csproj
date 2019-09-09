@@ -26,8 +26,8 @@
 
   <!--Package Version Properties-->
   <PropertyGroup>
-    <PackageVersion>1.11.0</PackageVersion>
-    <PackageReleaseNotes>Hotfix for WebDriverWaitExtensionMethods.</PackageReleaseNotes>
+    <PackageVersion>1.11.1</PackageVersion>
+    <PackageReleaseNotes>BasePageObject to support POM.</PackageReleaseNotes>
   </PropertyGroup>
 
 
@@ -43,13 +43,19 @@
 
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium.xml</DocumentationFile>
   </PropertyGroup>
 
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\Drelanium\Drelanium.xml</DocumentationFile>
   </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Remove="Drelanium.xml" />
+    <None Remove="Drelanium.csproj.DotSettings" />
+  </ItemGroup>
 
 
   <!--Dependencies-->

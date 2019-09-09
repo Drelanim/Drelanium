@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 
 namespace Drelanium
@@ -12,9 +14,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="driver"></param>
-        protected BasePageObject(IWebDriver driver)
+        protected BasePageObject([NotNull] IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
             PageObjectSearchContext = driver;
         }
 
@@ -23,9 +25,14 @@ namespace Drelanium
         /// </summary>
         /// <param name="driver"> ...Description to be added...</param>
         /// <param name="wrapperElementLocator"> ...Description to be added...</param>
-        protected BasePageObject(IWebDriver driver, By wrapperElementLocator)
+        protected BasePageObject([NotNull] IWebDriver driver, [NotNull] By wrapperElementLocator)
         {
-            Driver = driver;
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
+
+
+            if (wrapperElementLocator == null) throw new ArgumentNullException(nameof(wrapperElementLocator));
+
+          
             PageObjectSearchContext = driver.FindElement(wrapperElementLocator);
         }
 
@@ -33,8 +40,9 @@ namespace Drelanium
         ///     ...Description to be added...
         /// </summary>
         /// <param name="wrapperElement"> ...Description to be added...</param>
-        protected BasePageObject(IWebElement wrapperElement)
+        protected BasePageObject([NotNull] IWebElement wrapperElement)
         {
+            if (wrapperElement == null) throw new ArgumentNullException(nameof(wrapperElement));
             Driver = ((RemoteWebElement) wrapperElement).WrappedDriver;
             PageObjectSearchContext = wrapperElement;
         }
