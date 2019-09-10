@@ -41,6 +41,7 @@ namespace Drelanium
         protected BasePageObject([NotNull] IWebElement wrapperElement)
         {
             if (wrapperElement == null) throw new ArgumentNullException(nameof(wrapperElement));
+
             Driver = ((RemoteWebElement) wrapperElement).WrappedDriver;
             PageObjectSearchContext = wrapperElement;
         }
