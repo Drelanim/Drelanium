@@ -14,18 +14,18 @@
 
       Notes:
       This package does not include any test framework or runner (MSTest / NUnit / xUnit). Those should be added additionally to the project.
-      Exeucting tests against local browser requires browser specific Selenium WebDriver NuGets (e.g. Selenium.Chrome.WebDriver). See more on https://www.seleniumhq.org/
+      Executing tests against local browser requires browser specific Selenium WebDriver NuGets (e.g. Selenium.Chrome.WebDriver). See more on https://www.seleniumhq.org/
       Specflow requires additional NuGet packages aswell, to enable test generation and execution, depending on the chosen test framework(e.g. SpecFlow.Tools.MsBuild.Generation and SpecFlow.xUnit). See more on https://specflow.org/
 
       Included packages:
-      - Selenium.WebDriver as the core of the framework
-      - SpecFlow to enable writing test in BDD
-      - FluentAssertions to write assertions in an extremely readable way
+      - Selenium.WebDriver as the core of the framework,
+      - SpecFlow to enable writing test in BDD,
+      - FluentAssertions to write assertions in an extremely readable way,
       - Microsoft.Extensions.Configuration for managing the browser configurations,
-      - Serilog as a .NET logging tool
-      - Pickles as a BDD reporting tool
-      - JetBrains.Annotations for ReSharper support
-      - Microsoft.SourceLink to provide source code link during debugging
+      - Serilog as a .NET logging tool,
+      - Pickles as a BDD reporting tool,
+      - JetBrains.Annotations for ReSharper support,
+      - Microsoft.SourceLink to provide source code link during debugging.
     </PackageDescription>
     <PackageIconUrl>https://raw.githubusercontent.com/Drelanim/Drelanium/master/docs/icons/Drelanium.jpg</PackageIconUrl>
     <PackageTags>selenium, webdriver, browser, test, automation, testautomation, framework, drelanium, specflow, bdd</PackageTags>
