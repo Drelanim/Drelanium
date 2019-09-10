@@ -10,7 +10,7 @@
     <PackageId>Drelanium.SauceLabs</PackageId>
     <Authors>Drelanim</Authors>
     <PackageDescription>Support of SauceLabs usage.</PackageDescription>
-    <PackageIconUrl>https://github.com/Drelanim/Drelanium/blob/master/docs/icons/Drelanium.gif</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Drelanim/Drelanium/master/docs/icons/Drelanium.jpg</PackageIconUrl>
     <PackageTags>saucelabs, selenium, webdriver, browser, test, automation, testautomation, framework, drelanium</PackageTags>
     <PackageProjectUrl>https://github.com/Drelanim/Drelanium</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Drelanim/Drelanium.git</RepositoryUrl>
