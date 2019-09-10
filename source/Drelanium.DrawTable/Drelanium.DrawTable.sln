@@ -1,14 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{D2FC5FB9-3FF6-4757-A764-050F6306AC37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{26943C42-F99A-423F-ADAA-D53F6ACF35AD}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D2FC5FB9-3FF6-4757-A764-050F6306AC37} = {D2FC5FB9-3FF6-4757-A764-050F6306AC37}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject", "XUnitTestProject\XUnitTestProject.csproj", "{387A5445-8BB8-4D12-99DA-127C6F7400EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +17,10 @@ Global
 		{D2FC5FB9-3FF6-4757-A764-050F6306AC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2FC5FB9-3FF6-4757-A764-050F6306AC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2FC5FB9-3FF6-4757-A764-050F6306AC37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26943C42-F99A-423F-ADAA-D53F6ACF35AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26943C42-F99A-423F-ADAA-D53F6ACF35AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26943C42-F99A-423F-ADAA-D53F6ACF35AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26943C42-F99A-423F-ADAA-D53F6ACF35AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387A5445-8BB8-4D12-99DA-127C6F7400EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387A5445-8BB8-4D12-99DA-127C6F7400EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387A5445-8BB8-4D12-99DA-127C6F7400EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387A5445-8BB8-4D12-99DA-127C6F7400EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
