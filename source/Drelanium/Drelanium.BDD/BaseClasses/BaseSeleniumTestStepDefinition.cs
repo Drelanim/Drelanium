@@ -7,11 +7,9 @@ using TechTalk.SpecFlow;
 namespace Drelanium.BDD
 {
     /// <summary>
-    ///     Base for classes, that has <see cref="BindingAttribute" /> on it, and holds methods with
-    ///     <see cref="GivenAttribute" /> | <see cref="WhenAttribute" /> | <see cref="ThenAttribute" /> attributes.
-    ///     <para>Also contains properties, to support Selenium tests.</para>
+    /// To be added...
     /// </summary>
-    public abstract class BaseSeleniumTestStepDefinition : BaseStepDefinition
+    public abstract class BaseSeleniumTestStepDefinition : BaseBindingClass
     {
         /// <summary>
         ///     <inheritdoc cref="BaseSeleniumTestStepDefinition" />
@@ -25,6 +23,8 @@ namespace Drelanium.BDD
             [NotNull] ScenarioContext scenarioContext)
             : base(testThreadContext, featureContext, scenarioContext)
         {
+
+
             if (testThreadContext == null) throw new ArgumentNullException(nameof(testThreadContext));
             if (featureContext == null) throw new ArgumentNullException(nameof(featureContext));
             if (scenarioContext == null) throw new ArgumentNullException(nameof(scenarioContext));

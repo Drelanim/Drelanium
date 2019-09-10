@@ -11,10 +11,12 @@
   </ItemGroup>
 
 
-  <!--Dependencies-->
   <ItemGroup>
-    <PackageReference Include="Drelanium" Version="1.11.1" />
+    <PackageReference Include="Drelanium.BDD" Version="1.13.0" />
   </ItemGroup>
+
+
+  <!--Dependencies-->
 
 
 </Project>

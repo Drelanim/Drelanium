@@ -2,6 +2,8 @@
 using System.Reflection;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
+using Drelanium.BDD;
+using Xunit.Abstractions;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 {
@@ -14,6 +16,8 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
             ScenarioContext scenarioContext)
             : base(testThreadContext, featureContext, scenarioContext)
         {
+           
+
         }
 
         [BeforeFeature(Order = 1)]
@@ -21,13 +25,22 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
             TestThreadContext testThreadContext,
             FeatureContext featureContext)
         {
+
+
+
             var driver = DriverInitializer.StartWebDriver(
                 ExecutionMode.LOCAL,
                 BrowserType.CHROME,
                 new ChromeOptions(),
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
-            testThreadContext.Set(driver);
+
+            testThreadContext.SetDriver(driver);
+
+        
+
+
+
         }
     }
 }

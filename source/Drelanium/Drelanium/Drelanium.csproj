@@ -35,8 +35,8 @@
 
   <!--Package Version Properties-->
   <PropertyGroup>
-    <PackageVersion>1.12.0</PackageVersion>
-    <PackageReleaseNotes>BasePageObject to support POM.</PackageReleaseNotes>
+    <PackageVersion>1.13.0</PackageVersion>
+    <PackageReleaseNotes>Updated code documentations.</PackageReleaseNotes>
   </PropertyGroup>
 
 
