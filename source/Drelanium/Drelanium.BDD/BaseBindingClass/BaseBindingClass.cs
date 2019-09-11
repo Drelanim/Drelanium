@@ -3,12 +3,8 @@ using JetBrains.Annotations;
 using TechTalk.SpecFlow;
 using BoDi;
 using TechTalk.SpecFlow.Bindings.Reflection;
-using System;
-using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
-using TechTalk.SpecFlow;
-using Drelanium;
 
 
 
@@ -27,7 +23,7 @@ namespace Drelanium.BDD
     ///     <para>Use <see cref="BeforeScenarioBlockAttribute" /> | <see cref="AfterScenarioBlockAttribute" /> for ScenarioBlock SetUp and TearDowns.</para>
     ///     <para>Use <see cref="BeforeStepAttribute" /> | <see cref="AfterStepAttribute" /> for Step SetUp and TearDowns.</para>
     /// </summary>
-    public abstract class BaseBindingClass : BaseTestClass,   ISpecFlowContextContainer
+    public abstract class BaseBindingClass :    ISpecFlowContextContainer
     {
         /// <summary>
         ///     <inheritdoc cref="BaseBindingClass" />
@@ -140,7 +136,7 @@ namespace Drelanium.BDD
         /// <summary>
         ///     The StepDefinition method, that has been bound to the currently executed Step.
         /// </summary>
-        public IBindingMethod StepDefinitionMethod => StepInfo.BindingMatch.StepBinding.Method;
+        public IBindingMethod BindingStepDefinitionMethod => StepInfo.BindingMatch.StepBinding.Method;
 
         /// <summary>
         ///     The execution status of the currently executed Scenario.
@@ -152,6 +148,9 @@ namespace Drelanium.BDD
         /// </summary>
         public Exception ScenarioError => ScenarioContext.TestError;
 
+
+
+
         /// <summary>
         ///     Method, that marks the StepDefinition method as incomplete by throwing a <see cref="NotImplementedException" />.
         /// </summary>
@@ -159,7 +158,7 @@ namespace Drelanium.BDD
         public void NotImplementedStepDefinition()
         {
             throw new NotImplementedException(
-                $"StepDefinition implementation in method {StepDefinitionMethod} is incomplete for \n" +
+                $"StepDefinition implementation in method {BindingStepDefinitionMethod} is incomplete for \n" +
                 $"Feature: {FeatureInfo.Title} \n" +
                 $"Scenario: {ScenarioInfo.Title} \n" +
                 $"Step: {StepName}",
@@ -187,7 +186,7 @@ namespace Drelanium.BDD
         /// <summary>
         ///     Gets or sets the currently used <see cref="Serilog.Core.Logger" />, using a <see cref="SpecFlowContext" />.
         /// </summary>
-        public Logger Logger
+        public virtual Logger Logger
         {
             get => TestThreadContext.Get<Logger>();
             set => TestThreadContext.Set(value);
