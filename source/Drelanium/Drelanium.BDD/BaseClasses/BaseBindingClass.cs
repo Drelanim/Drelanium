@@ -3,6 +3,15 @@ using JetBrains.Annotations;
 using TechTalk.SpecFlow;
 using BoDi;
 using TechTalk.SpecFlow.Bindings.Reflection;
+using System;
+using JetBrains.Annotations;
+using OpenQA.Selenium;
+using Serilog.Core;
+using TechTalk.SpecFlow;
+using Drelanium;
+
+
+
 
 namespace Drelanium.BDD
 {
@@ -18,7 +27,7 @@ namespace Drelanium.BDD
     ///     <para>Use <see cref="BeforeScenarioBlockAttribute" /> | <see cref="AfterScenarioBlockAttribute" /> for ScenarioBlock SetUp and TearDowns.</para>
     ///     <para>Use <see cref="BeforeStepAttribute" /> | <see cref="AfterStepAttribute" /> for Step SetUp and TearDowns.</para>
     /// </summary>
-    public abstract class BaseBindingClass : ISpecFlowContextContainer
+    public abstract class BaseBindingClass : BaseTestClass,   ISpecFlowContextContainer
     {
         /// <summary>
         ///     <inheritdoc cref="BaseBindingClass" />
@@ -156,6 +165,46 @@ namespace Drelanium.BDD
                 $"Step: {StepName}",
                 new PendingStepException());
         }
+
+
+
+
+
+
+
+
+        /// <summary>
+        ///     Gets or sets the currently used <see cref="IWebDriver" />, using a <see cref="SpecFlowContext" />.
+        /// </summary>
+        public virtual IWebDriver Driver
+        {
+            get => TestThreadContext.Get<IWebDriver>();
+            set => TestThreadContext.Set(value);
+        }
+
+
+
+        /// <summary>
+        ///     Gets or sets the currently used <see cref="Serilog.Core.Logger" />, using a <see cref="SpecFlowContext" />.
+        /// </summary>
+        public Logger Logger
+        {
+            get => TestThreadContext.Get<Logger>();
+            set => TestThreadContext.Set(value);
+        }
+
+        /// <summary>
+        ///     Gets or sets the currently used <see cref="IPageObject" />, using a <see cref="SpecFlowContext" />.
+        /// </summary>
+        public virtual IPageObject CurrentPage
+        {
+            get => ScenarioContext.Get<IPageObject>();
+            set => ScenarioContext.Set(value);
+        }
+
+
+
+
 
 
 

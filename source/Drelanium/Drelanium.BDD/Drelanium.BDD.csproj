@@ -38,7 +38,7 @@
 
   <!--Package Version Properties-->
   <PropertyGroup>
-    <PackageVersion>1.13.0</PackageVersion>
+    <PackageVersion>1.13.0-beta1.0</PackageVersion>
     <PackageReleaseNotes>Added Base classes for Binding classes.</PackageReleaseNotes>
   </PropertyGroup>
 
@@ -73,7 +73,7 @@
   <!--Dependencies-->
   <ItemGroup>
     <!--Drelanium packages-->
-    <PackageReference Include="Drelanium" Version="1.13.0" />
+    <PackageReference Include="Drelanium" Version="1.13.0-beta1.0" />
     <!--Specflow packages-->
     <PackageReference Include="SpecFlow" Version="3.0.225" />
     <!--Pickles packages-->
