@@ -3,9 +3,6 @@ using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-// ReSharper disable CommentTypo
-// ReSharper disable IdentifierTypo
-
 namespace Drelanium
 {
     /// <summary>

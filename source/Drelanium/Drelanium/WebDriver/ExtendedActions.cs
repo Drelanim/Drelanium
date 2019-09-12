@@ -7,8 +7,6 @@ using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
 
-// ReSharper disable CommentTypo
-
 namespace Drelanium
 {
     /// <summary>

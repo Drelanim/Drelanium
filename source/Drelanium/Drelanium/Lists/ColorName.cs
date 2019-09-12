@@ -1,6 +1,4 @@
-﻿// ReSharper disable UnusedMember.Global
-
-using System;
+﻿using System;
 using JetBrains.Annotations;
 
 #pragma warning disable 1591

@@ -4,10 +4,6 @@ using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-// ReSharper disable StringLiteralTypo
-
-// ReSharper disable UnusedMember.Global
-
 namespace Drelanium
 
 {

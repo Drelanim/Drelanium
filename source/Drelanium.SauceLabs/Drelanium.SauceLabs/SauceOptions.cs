@@ -9,11 +9,6 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
 
-// ReSharper disable UnusedMember.Global
-// ReSharper disable IdentifierTypo
-// ReSharper disable StringLiteralTypo
-// ReSharper disable InconsistentNaming
-
 #pragma warning disable IDE1006 // Naming Styles
 
 namespace Drelanium.SauceLabs

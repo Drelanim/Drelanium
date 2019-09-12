@@ -3,8 +3,6 @@ using System.Text;
 using JetBrains.Annotations;
 using OpenQA.Selenium;
 
-// ReSharper disable IdentifierTypo
-
 namespace Drelanium
 
 {

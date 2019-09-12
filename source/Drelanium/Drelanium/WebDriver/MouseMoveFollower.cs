@@ -3,7 +3,6 @@ using JetBrains.Annotations;
 using OpenQA.Selenium;
 using Serilog.Core;
 
-// ReSharper disable InconsistentNaming
 namespace Drelanium
 {
     /// <summary>

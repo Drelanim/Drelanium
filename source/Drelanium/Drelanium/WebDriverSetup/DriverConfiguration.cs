@@ -1,7 +1,4 @@
-﻿// ReSharper disable InconsistentNaming
-// ReSharper disable IdentifierTypo
-
-using System;
+﻿using System;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;

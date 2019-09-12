@@ -3,8 +3,6 @@ using JetBrains.Annotations;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
-// ReSharper disable InconsistentNaming
-
 namespace Drelanium
 
 {

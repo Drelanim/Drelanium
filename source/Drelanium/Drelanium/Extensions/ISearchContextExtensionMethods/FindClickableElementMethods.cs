@@ -5,10 +5,6 @@ using OpenQA.Selenium.Support.UI;
 using Serilog.Core;
 using Serilog.Events;
 
-// ReSharper disable CommentTypo
-// ReSharper disable StringLiteralTypo
-// ReSharper disable IdentifierTypo
-
 namespace Drelanium
 {
     /// <summary>

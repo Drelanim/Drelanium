@@ -9,7 +9,6 @@ using OpenQA.Selenium.Support.Extensions;
 
 namespace Drelanium
 {
-    // ReSharper disable InconsistentNaming
     /// <summary>
     ///     ...Description to be added...
     /// </summary>

@@ -4,6 +4,32 @@
         <name>Drelanium</name>
     </assembly>
     <members>
+        <member name="T:Drelanium.BaseTestClass">
+            <summary>
+                Description to be added...
+            </summary>
+        </member>
+        <member name="M:Drelanium.BaseTestClass.NotImplementedTest">
+            <summary>
+                Method, that marks the Test method as incomplete by throwing a <see cref="T:System.NotImplementedException" />.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Drelanium.BaseTestClass.Driver">
+            <summary>
+                Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.BaseTestClass.CurrentPageObject">
+            <summary>
+                Description to be added...
+            </summary>
+        </member>
+        <member name="P:Drelanium.BaseTestClass.Logger">
+            <summary>
+                Description to be added...
+            </summary>
+        </member>
         <member name="T:Drelanium.DisposeDriverServices">
             <summary>
                 Methods to dispose stuck WebDriver processes

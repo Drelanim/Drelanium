@@ -6,7 +6,7 @@
     <members>
         <member name="T:Drelanium.BDD.BaseBindingClass">
             <summary>
-                Baseclass for StepDefinition and Hooks SpecFlow classes.
+                BaseClass for StepDefinition and Hooks SpecFlow classes.
                 <para>Apply <see cref="T:TechTalk.SpecFlow.BindingAttribute"/> on the inherited classes to make it visible for SpecFlow.</para>
                 <para>Use <see cref="T:TechTalk.SpecFlow.GivenAttribute" /> | <see cref="T:TechTalk.SpecFlow.WhenAttribute" /> | <see cref="T:TechTalk.SpecFlow.ThenAttribute" /> attributes for StepDefinition methods.</para>
                 <para>Use <see cref="T:TechTalk.SpecFlow.BeforeTestRunAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterTestRunAttribute" /> for TestRun SetUp and TearDowns.</para>
@@ -92,7 +92,7 @@
                 The full name of the currently executed Step.
             </summary>
         </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.StepDefinitionMethod">
+        <member name="P:Drelanium.BDD.BaseBindingClass.BindingStepDefinitionMethod">
             <summary>
                 The StepDefinition method, that has been bound to the currently executed Step.
             </summary>
@@ -127,54 +127,6 @@
             <summary>
                 Gets or sets the currently used <see cref="T:Drelanium.IPageObject" />, using a <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />.
             </summary>
-        </member>
-        <member name="T:Drelanium.BDD.SpecFlowContextExtensionMethods">
-            <summary>
-                Extension methods for <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> types.
-            </summary>
-        </member>
-        <member name="M:Drelanium.BDD.SpecFlowContextExtensionMethods.GetCurrentPageObject(TechTalk.SpecFlow.SpecFlowContext)">
-            <summary>
-                Gets the stored <see cref="T:Drelanium.IPageObject" /> from the <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> using it's type as key.
-            </summary>
-            <param name="specFlowContext">A Context object, which serves as a <see cref="T:System.Collections.Generic.Dictionary`2" />.</param>
-        </member>
-        <member name="M:Drelanium.BDD.SpecFlowContextExtensionMethods.GetDriver(TechTalk.SpecFlow.SpecFlowContext)">
-            <summary>
-                Gets the stored <see cref="T:OpenQA.Selenium.IWebDriver" /> from the <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> using it's type as key.
-            </summary>
-            <param name="specFlowContext">A Context object, which serves as a <see cref="T:System.Collections.Generic.Dictionary`2" />.</param>
-        </member>
-        <member name="M:Drelanium.BDD.SpecFlowContextExtensionMethods.GetLogger(TechTalk.SpecFlow.SpecFlowContext)">
-            <summary>
-                Gets the stored <see cref="T:Serilog.Core.Logger" /> from the <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> using it's type as key.
-            </summary>
-            <param name="specFlowContext">A Context object, which serves as a <see cref="T:System.Collections.Generic.Dictionary`2" />.</param>
-        </member>
-        <member name="M:Drelanium.BDD.SpecFlowContextExtensionMethods.SetCurrentPageObject(TechTalk.SpecFlow.SpecFlowContext,Drelanium.IPageObject)">
-            <summary>
-                Sets the given <see cref="T:Drelanium.IPageObject" /> to the <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> using it's type as key.
-            </summary>
-            <param name="specFlowContext">A Context object, which serves as a <see cref="T:System.Collections.Generic.Dictionary`2" />.</param>
-            <param name="pageObject">The <see cref="T:Drelanium.IPageObject" /> object, that is currently in use.</param>
-        </member>
-        <member name="M:Drelanium.BDD.SpecFlowContextExtensionMethods.SetDriver(TechTalk.SpecFlow.SpecFlowContext,OpenQA.Selenium.IWebDriver)">
-            <summary>
-                Sets the given <see cref="T:OpenQA.Selenium.IWebDriver" /> to the <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> using it's type as key.
-            </summary>
-            <param name="specFlowContext">A Context object, which serves as a <see cref="T:System.Collections.Generic.Dictionary`2" />.</param>
-            <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
-        </member>
-        <member name="M:Drelanium.BDD.SpecFlowContextExtensionMethods.SetLogger(TechTalk.SpecFlow.SpecFlowContext,Serilog.Core.Logger)">
-            <summary>
-                Sets the given <see cref="T:Serilog.Core.Logger" /> to the <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> using it's type as key.
-            </summary>
-            <param name="specFlowContext">A Context object, which serves as a <see cref="T:System.Collections.Generic.Dictionary`2" />.</param>
-            <param name="logger">
-                The used <see cref="T:Serilog.Core.Logger" /> instance to display logged messages (<see cref="T:Serilog.Events.LogEventLevel" /> =
-                <see cref="F:Serilog.Events.LogEventLevel.Information" />) during
-                the method exeuction.
-            </param>
         </member>
         <member name="T:Drelanium.BDD.ISpecFlowContextContainer">
             <summary>
