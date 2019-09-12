@@ -37,7 +37,7 @@ namespace XUnitTestProject.BaseClasses
 
         public Exception ScenarioError => ScenarioContext.TestError;
 
-        public void NotImplementedStepDefinition( )
+        public void NotImplementedStepDefinition()
         {
             throw new NotImplementedException(
                 $"StepDefinition implementation in method {StepDefinitionMethod} is incomplete for \n" +

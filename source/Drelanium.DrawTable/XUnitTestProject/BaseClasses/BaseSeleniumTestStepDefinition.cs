@@ -5,8 +5,6 @@ using TechTalk.SpecFlow;
 
 namespace XUnitTestProject.BaseClasses
 {
-
-
     public class BaseSeleniumTestStepDefinition : BaseStepDefinition
     {
         public BaseSeleniumTestStepDefinition(
@@ -15,22 +13,13 @@ namespace XUnitTestProject.BaseClasses
             ScenarioContext scenarioContext)
             : base(testThreadContext, featureContext, scenarioContext)
         {
-
-
         }
-
-      
-
-
-
 
         public IWebDriver Driver
         {
-
             get => TestThreadContext.Get<IWebDriver>();
             set => TestThreadContext.Set(value);
         }
-
 
         public IPageObject CurrentPage
         {
@@ -38,19 +27,12 @@ namespace XUnitTestProject.BaseClasses
             set => ScenarioContext.Set(value);
         }
 
-
         public IWebElement FocusedWebElement => Driver.SwitchTo().ActiveElement();
-
-
-
-
 
         public Logger Logger
         {
             get => TestThreadContext.Get<Logger>();
             set => TestThreadContext.Set(value);
         }
-
-   
     }
 }

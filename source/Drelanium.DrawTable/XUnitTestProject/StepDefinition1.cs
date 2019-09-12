@@ -6,12 +6,11 @@ namespace XUnitTestProject
     [Binding]
     public sealed class StepDefinition1 : BaseStepDefinition
     {
+        public StepDefinition1(TestThreadContext testThreadContext, FeatureContext featureContext,
+            ScenarioContext scenarioContext) : base(testThreadContext, featureContext, scenarioContext)
+        {
+        }
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
-
-
-
-
-
 
         [Given("I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
@@ -22,9 +21,7 @@ namespace XUnitTestProject
             // additional string/Table parameters can be defined on the step definition
             // method. 
 
-
             NotImplementedStepDefinition();
-
 
             ScenarioContext.Pending();
         }
@@ -43,10 +40,6 @@ namespace XUnitTestProject
             //TODO: implement act (action) logic
 
             ScenarioContext.Pending();
-        }
-
-        public StepDefinition1(TestThreadContext testThreadContext, FeatureContext featureContext, ScenarioContext scenarioContext) : base(testThreadContext, featureContext, scenarioContext)
-        {
         }
     }
 }
