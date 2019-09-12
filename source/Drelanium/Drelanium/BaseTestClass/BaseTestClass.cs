@@ -5,22 +5,22 @@ using Serilog.Core;
 namespace Drelanium
 {
     /// <summary>
-    ///     Description to be added...
+    ///     BaseClass for Selenium TestClasses.
     /// </summary>
     public abstract class BaseTestClass
     {
         /// <summary>
-        ///     Description to be added...
+        ///     Gets or sets the currently used <see cref="IWebDriver" />.
         /// </summary>
         public IWebDriver Driver { get; set; }
 
         /// <summary>
-        ///     Description to be added...
+        ///     Gets or sets the currently used <see cref="IPageObject" />.
         /// </summary>
         public IPageObject CurrentPageObject { get; set; }
 
         /// <summary>
-        ///     Description to be added...
+        ///     Gets or sets the currently used <see cref="Serilog.Core.Logger" />.
         /// </summary>
         public Logger Logger { get; set; }
 

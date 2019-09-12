@@ -7,13 +7,37 @@
         <member name="T:Drelanium.BDD.BaseBindingClass">
             <summary>
                 BaseClass for StepDefinition and Hooks SpecFlow classes.
-                <para>Apply <see cref="T:TechTalk.SpecFlow.BindingAttribute"/> on the inherited classes to make it visible for SpecFlow.</para>
-                <para>Use <see cref="T:TechTalk.SpecFlow.GivenAttribute" /> | <see cref="T:TechTalk.SpecFlow.WhenAttribute" /> | <see cref="T:TechTalk.SpecFlow.ThenAttribute" /> attributes for StepDefinition methods.</para>
-                <para>Use <see cref="T:TechTalk.SpecFlow.BeforeTestRunAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterTestRunAttribute" /> for TestRun SetUp and TearDowns.</para>
-                <para>Use <see cref="T:TechTalk.SpecFlow.BeforeFeatureAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterFeatureAttribute" /> for Feature SetUp and TearDowns.</para>
-                <para>Use <see cref="T:TechTalk.SpecFlow.BeforeScenarioAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterScenarioAttribute" /> for Scenario SetUp and TearDowns.</para>
-                <para>Use <see cref="T:TechTalk.SpecFlow.BeforeScenarioBlockAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterScenarioBlockAttribute" /> for ScenarioBlock SetUp and TearDowns.</para>
-                <para>Use <see cref="T:TechTalk.SpecFlow.BeforeStepAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterStepAttribute" /> for Step SetUp and TearDowns.</para>
+                <para>Apply <see cref="T:TechTalk.SpecFlow.BindingAttribute" /> on the inherited classes to make it visible for SpecFlow.</para>
+                <para>
+                    Use <see cref="T:TechTalk.SpecFlow.GivenAttribute" /> | <see cref="T:TechTalk.SpecFlow.WhenAttribute" /> | <see cref="T:TechTalk.SpecFlow.ThenAttribute" /> method
+                    attributes
+                    for StepDefinition non-static methods.
+                </para>
+                <para>
+                    Use <see cref="T:TechTalk.SpecFlow.BeforeTestRunAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterTestRunAttribute" /> method attributes to implement
+                    TestRun SetUp
+                    and TearDown static methods.
+                </para>
+                <para>
+                    Use <see cref="T:TechTalk.SpecFlow.BeforeFeatureAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterFeatureAttribute" /> method attributes to implement
+                    Feature SetUp
+                    and TearDown static methods.
+                </para>
+                <para>
+                    Use <see cref="T:TechTalk.SpecFlow.BeforeScenarioAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterScenarioAttribute" /> method attributes to
+                    implement Scenario
+                    SetUp and TearDown non-static methods.
+                </para>
+                <para>
+                    Use <see cref="T:TechTalk.SpecFlow.BeforeScenarioBlockAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterScenarioBlockAttribute" /> method attributes
+                    to implement
+                    ScenarioBlock SetUp and TearDown non-static methods.
+                </para>
+                <para>
+                    Use <see cref="T:TechTalk.SpecFlow.BeforeStepAttribute" /> | <see cref="T:TechTalk.SpecFlow.AfterStepAttribute" /> method attributes to implement Step
+                    SetUp and
+                    TearDown non-static methods.
+                </para>
             </summary>
         </member>
         <member name="M:Drelanium.BDD.BaseBindingClass.#ctor(TechTalk.SpecFlow.TestThreadContext,TechTalk.SpecFlow.FeatureContext,TechTalk.SpecFlow.ScenarioContext)">
@@ -24,87 +48,107 @@
             <param name="featureContext">Context object, that can be used during the execution of the Feature.</param>
             <param name="scenarioContext">Context object, that can be used during the execution of the Scenario.</param>
         </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.TestThreadContext">
-            <summary>
-                Context object, that can be used during the usage of the TestThread.
-            </summary>
-        </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.FeatureContext">
-            <summary>
-                Context object, that can be used during the execution of the Feature.
-            </summary>
-        </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioContext">
-            <summary>
-                Context object, that can be used during the execution of the Scenario.
-            </summary>
-        </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.StepContext">
-            <summary>
-                Context object, that can be used during the execution of the Step.
-            </summary>
-        </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.TestThreadContainer">
             <summary>
-                <see cref="T:BoDi.IObjectContainer" /> object, that can be used during the usage of the TestThread.
+                Gets the <see cref="T:BoDi.IObjectContainer" /> object, that can be used during the usage of the TestThread.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.FeatureContainer">
             <summary>
-                <see cref="T:BoDi.IObjectContainer" /> object, that can be used during the usage of the Feature.
+                Gets the <see cref="T:BoDi.IObjectContainer" /> object, that can be used during the usage of the Feature.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioContainer">
             <summary>
-                <see cref="T:BoDi.IObjectContainer" /> object, that can be used during the usage of the Scenario.
+                Gets the <see cref="T:BoDi.IObjectContainer" /> object, that can be used during the usage of the Scenario.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.FeatureInfo">
             <summary>
-                <see cref="T:TechTalk.SpecFlow.FeatureInfo" /> object, that can be used to retrieve info about the currently executed
+                Gets the <see cref="T:TechTalk.SpecFlow.FeatureInfo" /> object, that can be used to retrieve info about the currently
+                executed
                 Feature.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioInfo">
             <summary>
-                <see cref="T:TechTalk.SpecFlow.ScenarioInfo" /> object, that can be used to retrieve info about the currently
+                Gets the <see cref="T:TechTalk.SpecFlow.ScenarioInfo" /> object, that can be used to retrieve info about the
+                currently
                 executed Scenario.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.StepInfo">
             <summary>
-                <see cref="T:TechTalk.SpecFlow.StepInfo" /> object, that can be used to retrieve info about the currently executed
+                Gets the <see cref="T:TechTalk.SpecFlow.StepInfo" /> object, that can be used to retrieve info about the currently
+                executed
                 Step.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.FeatureTitle">
             <summary>
-                The title of the currently executed Feature.
+                Gets the title of the currently executed Feature.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioTitle">
             <summary>
-                The title of the currently executed Scenario.
+                Gets the title of the currently executed Scenario.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.StepName">
             <summary>
-                The full name of the currently executed Step.
+                Gets the full name of the currently executed Step.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.BindingStepDefinitionMethod">
             <summary>
-                The StepDefinition method, that has been bound to the currently executed Step.
+                Gets the StepDefinition method, that has been bound to the currently executed Step.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioExecutionStatus">
             <summary>
-                The execution status of the currently executed Scenario.
+                Gets the execution status of the currently executed Scenario.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioError">
             <summary>
-                The <see cref="T:System.Exception" />, that was thrown during failing test execution.
+                Gets the <see cref="T:System.Exception" />, that was thrown during failing test execution.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.Driver">
+            <summary>
+                Gets or sets the currently used <see cref="T:OpenQA.Selenium.IWebDriver" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.Logger">
+            <summary>
+                Gets or sets the currently used <see cref="T:Serilog.Core.Logger" /> from a thread-safe
+                <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.CurrentPage">
+            <summary>
+                Gets or sets the currently used <see cref="T:Drelanium.IPageObject" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />
+                object.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.TestThreadContext">
+            <summary>
+                Gets the thread-safe context object, that can be used during the usage of the TestThread.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.FeatureContext">
+            <summary>
+                Gets the thread-safe context object, that can be used during the execution of the Feature.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioContext">
+            <summary>
+                Gets the thread-safe context object, that can be used during the execution of the Scenario.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.StepContext">
+            <summary>
+                Gets the thread-safe context object, that can be used during the execution of the Step.
             </summary>
         </member>
         <member name="M:Drelanium.BDD.BaseBindingClass.NotImplementedStepDefinition">
@@ -113,21 +157,6 @@
             </summary>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.Driver">
-            <summary>
-                Gets or sets the currently used <see cref="T:OpenQA.Selenium.IWebDriver" />, using a <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />.
-            </summary>
-        </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.Logger">
-            <summary>
-                Gets or sets the currently used <see cref="T:Serilog.Core.Logger" />, using a <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />.
-            </summary>
-        </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.CurrentPage">
-            <summary>
-                Gets or sets the currently used <see cref="T:Drelanium.IPageObject" />, using a <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />.
-            </summary>
-        </member>
         <member name="T:Drelanium.BDD.ISpecFlowContextContainer">
             <summary>
                 Interface, that demands to implement <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> properties.
@@ -135,22 +164,22 @@
         </member>
         <member name="P:Drelanium.BDD.ISpecFlowContextContainer.TestThreadContext">
             <summary>
-                Context object, that can be used during the usage of the TestThread.
+                Thread-safe context object, that can be used during the usage of the TestThread.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.ISpecFlowContextContainer.FeatureContext">
             <summary>
-                Context object, that can be used during the execution of the Feature.
+                Thread-safe context object, that can be used during the execution of the Feature.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.ISpecFlowContextContainer.ScenarioContext">
             <summary>
-                Context object, that can be used during the execution of the Scenario.
+                Thread-safe context object, that can be used during the execution of the Scenario.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.ISpecFlowContextContainer.StepContext">
             <summary>
-                Context object, that can be used during the execution of the Step.
+                Thread-safe context object, that can be used during the execution of the Step.
             </summary>
         </member>
     </members>

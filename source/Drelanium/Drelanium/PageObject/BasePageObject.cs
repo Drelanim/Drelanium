@@ -6,14 +6,20 @@ using OpenQA.Selenium.Remote;
 namespace Drelanium
 {
     /// <summary>
-    ///     ...Description to be added...
+    ///     BaseClass for Page Object Model that implements the <see cref="IPageObject" /> interface.
+    ///     <para>
+    ///         <see cref="IPageObject.Driver" /> and <see cref="IPageObject.PageObjectSearchContext" /> properties are set
+    ///         by the chosen constructor.
+    ///     </para>
     /// </summary>
     public abstract class BasePageObject : IPageObject
     {
         /// <summary>
-        ///     ...Description to be added...
+        ///     <inheritdoc cref="BasePageObject" />
+        ///     This constructor sets the scope of the Page Object (see <see cref="IPageObject.PageObjectSearchContext" />) to be
+        ///     the <see cref="IPageObject.Driver" />.
         /// </summary>
-        /// <param name="driver"></param>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
         protected BasePageObject([NotNull] IWebDriver driver)
         {
             Driver = driver ?? throw new ArgumentNullException(nameof(driver));
@@ -21,10 +27,16 @@ namespace Drelanium
         }
 
         /// <summary>
-        ///     ...Description to be added...
+        ///     <inheritdoc cref="BasePageObject" />
+        ///     This constructor sets the scope of the Page Object (see <see cref="IPageObject.PageObjectSearchContext" />) to be
+        ///     the <see cref="IWebElement" />,
+        ///     by setting it's value with the driver.FindElement(wrapperElementLocator) method.
         /// </summary>
-        /// <param name="driver"> ...Description to be added...</param>
-        /// <param name="wrapperElementLocator"> ...Description to be added...</param>
+        /// <param name="driver">The browser, that is represented by an <see cref="IWebDriver" /> instance.</param>
+        /// <param name="wrapperElementLocator">
+        ///     The locator, that is required to find the <see cref="IWebElement" /> in the DOM,
+        ///     that defines the scope of this current Page Object.
+        /// </param>
         protected BasePageObject([NotNull] IWebDriver driver, [NotNull] By wrapperElementLocator)
         {
             Driver = driver ?? throw new ArgumentNullException(nameof(driver));
@@ -35,9 +47,11 @@ namespace Drelanium
         }
 
         /// <summary>
-        ///     ...Description to be added...
+        ///     <inheritdoc cref="BasePageObject" />
+        ///     This constructor sets the scope of the Page Object (see <see cref="IPageObject.PageObjectSearchContext" />) to be
+        ///     the wrapperElement.
         /// </summary>
-        /// <param name="wrapperElement"> ...Description to be added...</param>
+        /// <param name="wrapperElement">The <see cref="IWebElement" />, that defines the scope of this current Page Object.</param>
         protected BasePageObject([NotNull] IWebElement wrapperElement)
         {
             if (wrapperElement == null) throw new ArgumentNullException(nameof(wrapperElement));
@@ -47,12 +61,12 @@ namespace Drelanium
         }
 
         /// <summary>
-        ///     ...Description to be added...
+        ///     <inheritdoc cref="IPageObject.Driver" />
         /// </summary>
         public IWebDriver Driver { get; }
 
         /// <summary>
-        ///     ...Description to be added...
+        ///     <inheritdoc cref="IPageObject.PageObjectSearchContext" />
         /// </summary>
         public ISearchContext PageObjectSearchContext { get; }
     }

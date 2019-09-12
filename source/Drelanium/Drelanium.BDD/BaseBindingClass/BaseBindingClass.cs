@@ -12,26 +12,35 @@ namespace Drelanium.BDD
     ///     BaseClass for StepDefinition and Hooks SpecFlow classes.
     ///     <para>Apply <see cref="BindingAttribute" /> on the inherited classes to make it visible for SpecFlow.</para>
     ///     <para>
-    ///         Use <see cref="GivenAttribute" /> | <see cref="WhenAttribute" /> | <see cref="ThenAttribute" /> attributes
-    ///         for StepDefinition methods.
+    ///         Use <see cref="GivenAttribute" /> | <see cref="WhenAttribute" /> | <see cref="ThenAttribute" /> method
+    ///         attributes
+    ///         for StepDefinition non-static methods.
     ///     </para>
     ///     <para>
-    ///         Use <see cref="BeforeTestRunAttribute" /> | <see cref="AfterTestRunAttribute" /> for TestRun SetUp and
-    ///         TearDowns.
+    ///         Use <see cref="BeforeTestRunAttribute" /> | <see cref="AfterTestRunAttribute" /> method attributes to implement
+    ///         TestRun SetUp
+    ///         and TearDown static methods.
     ///     </para>
     ///     <para>
-    ///         Use <see cref="BeforeFeatureAttribute" /> | <see cref="AfterFeatureAttribute" /> for Feature SetUp and
-    ///         TearDowns.
+    ///         Use <see cref="BeforeFeatureAttribute" /> | <see cref="AfterFeatureAttribute" /> method attributes to implement
+    ///         Feature SetUp
+    ///         and TearDown static methods.
     ///     </para>
     ///     <para>
-    ///         Use <see cref="BeforeScenarioAttribute" /> | <see cref="AfterScenarioAttribute" /> for Scenario SetUp and
-    ///         TearDowns.
+    ///         Use <see cref="BeforeScenarioAttribute" /> | <see cref="AfterScenarioAttribute" /> method attributes to
+    ///         implement Scenario
+    ///         SetUp and TearDown non-static methods.
     ///     </para>
     ///     <para>
-    ///         Use <see cref="BeforeScenarioBlockAttribute" /> | <see cref="AfterScenarioBlockAttribute" /> for
-    ///         ScenarioBlock SetUp and TearDowns.
+    ///         Use <see cref="BeforeScenarioBlockAttribute" /> | <see cref="AfterScenarioBlockAttribute" /> method attributes
+    ///         to implement
+    ///         ScenarioBlock SetUp and TearDown non-static methods.
     ///     </para>
-    ///     <para>Use <see cref="BeforeStepAttribute" /> | <see cref="AfterStepAttribute" /> for Step SetUp and TearDowns.</para>
+    ///     <para>
+    ///         Use <see cref="BeforeStepAttribute" /> | <see cref="AfterStepAttribute" /> method attributes to implement Step
+    ///         SetUp and
+    ///         TearDown non-static methods.
+    ///     </para>
     /// </summary>
     public abstract class BaseBindingClass : ISpecFlowContextContainer
     {
@@ -52,70 +61,73 @@ namespace Drelanium.BDD
         }
 
         /// <summary>
-        ///     <see cref="IObjectContainer" /> object, that can be used during the usage of the TestThread.
+        ///     Gets the <see cref="IObjectContainer" /> object, that can be used during the usage of the TestThread.
         /// </summary>
         public IObjectContainer TestThreadContainer => TestThreadContext.TestThreadContainer;
 
         /// <summary>
-        ///     <see cref="IObjectContainer" /> object, that can be used during the usage of the Feature.
+        ///     Gets the <see cref="IObjectContainer" /> object, that can be used during the usage of the Feature.
         /// </summary>
         public IObjectContainer FeatureContainer => FeatureContext.FeatureContainer;
 
         /// <summary>
-        ///     <see cref="IObjectContainer" /> object, that can be used during the usage of the Scenario.
+        ///     Gets the <see cref="IObjectContainer" /> object, that can be used during the usage of the Scenario.
         /// </summary>
         public IObjectContainer ScenarioContainer => ScenarioContext.ScenarioContainer;
 
         /// <summary>
-        ///     <see cref="TechTalk.SpecFlow.FeatureInfo" /> object, that can be used to retrieve info about the currently executed
+        ///     Gets the <see cref="TechTalk.SpecFlow.FeatureInfo" /> object, that can be used to retrieve info about the currently
+        ///     executed
         ///     Feature.
         /// </summary>
         public FeatureInfo FeatureInfo => FeatureContext.FeatureInfo;
 
         /// <summary>
-        ///     <see cref="TechTalk.SpecFlow.ScenarioInfo" /> object, that can be used to retrieve info about the currently
+        ///     Gets the <see cref="TechTalk.SpecFlow.ScenarioInfo" /> object, that can be used to retrieve info about the
+        ///     currently
         ///     executed Scenario.
         /// </summary>
         public ScenarioInfo ScenarioInfo => ScenarioContext.ScenarioInfo;
 
         /// <summary>
-        ///     <see cref="TechTalk.SpecFlow.StepInfo" /> object, that can be used to retrieve info about the currently executed
+        ///     Gets the <see cref="TechTalk.SpecFlow.StepInfo" /> object, that can be used to retrieve info about the currently
+        ///     executed
         ///     Step.
         /// </summary>
         public StepInfo StepInfo => StepContext.StepInfo;
 
         /// <summary>
-        ///     The title of the currently executed Feature.
+        ///     Gets the title of the currently executed Feature.
         /// </summary>
         public string FeatureTitle => FeatureInfo.Title;
 
         /// <summary>
-        ///     The title of the currently executed Scenario.
+        ///     Gets the title of the currently executed Scenario.
         /// </summary>
         public string ScenarioTitle => ScenarioInfo.Title;
 
         /// <summary>
-        ///     The full name of the currently executed Step.
+        ///     Gets the full name of the currently executed Step.
         /// </summary>
         public string StepName => StepInfo.StepDefinitionType + " " + StepInfo.Text;
 
         /// <summary>
-        ///     The StepDefinition method, that has been bound to the currently executed Step.
+        ///     Gets the StepDefinition method, that has been bound to the currently executed Step.
         /// </summary>
         public IBindingMethod BindingStepDefinitionMethod => StepInfo.BindingMatch.StepBinding.Method;
 
         /// <summary>
-        ///     The execution status of the currently executed Scenario.
+        ///     Gets the execution status of the currently executed Scenario.
         /// </summary>
         public ScenarioExecutionStatus ScenarioExecutionStatus => ScenarioContext.ScenarioExecutionStatus;
 
         /// <summary>
-        ///     The <see cref="Exception" />, that was thrown during failing test execution.
+        ///     Gets the <see cref="Exception" />, that was thrown during failing test execution.
         /// </summary>
         public Exception ScenarioError => ScenarioContext.TestError;
 
         /// <summary>
-        ///     Gets or sets the currently used <see cref="IWebDriver" />, using a <see cref="SpecFlowContext" />.
+        ///     Gets or sets the currently used <see cref="IWebDriver" /> from a thread-safe <see cref="SpecFlowContext" /> object.
         /// </summary>
         public virtual IWebDriver Driver
         {
@@ -124,7 +136,8 @@ namespace Drelanium.BDD
         }
 
         /// <summary>
-        ///     Gets or sets the currently used <see cref="Serilog.Core.Logger" />, using a <see cref="SpecFlowContext" />.
+        ///     Gets or sets the currently used <see cref="Serilog.Core.Logger" /> from a thread-safe
+        ///     <see cref="SpecFlowContext" /> object.
         /// </summary>
         public virtual Logger Logger
         {
@@ -133,7 +146,8 @@ namespace Drelanium.BDD
         }
 
         /// <summary>
-        ///     Gets or sets the currently used <see cref="IPageObject" />, using a <see cref="SpecFlowContext" />.
+        ///     Gets or sets the currently used <see cref="IPageObject" /> from a thread-safe <see cref="SpecFlowContext" />
+        ///     object.
         /// </summary>
         public virtual IPageObject CurrentPage
         {
@@ -142,22 +156,22 @@ namespace Drelanium.BDD
         }
 
         /// <summary>
-        ///     Context object, that can be used during the usage of the TestThread.
+        ///     Gets the thread-safe context object, that can be used during the usage of the TestThread.
         /// </summary>
         public TestThreadContext TestThreadContext { get; }
 
         /// <summary>
-        ///     Context object, that can be used during the execution of the Feature.
+        ///     Gets the thread-safe context object, that can be used during the execution of the Feature.
         /// </summary>
         public FeatureContext FeatureContext { get; }
 
         /// <summary>
-        ///     Context object, that can be used during the execution of the Scenario.
+        ///     Gets the thread-safe context object, that can be used during the execution of the Scenario.
         /// </summary>
         public ScenarioContext ScenarioContext { get; }
 
         /// <summary>
-        ///     Context object, that can be used during the execution of the Step.
+        ///     Gets the thread-safe context object, that can be used during the execution of the Step.
         /// </summary>
         public ScenarioStepContext StepContext => ScenarioContext.StepContext;
 
@@ -168,10 +182,7 @@ namespace Drelanium.BDD
         public void NotImplementedStepDefinition()
         {
             throw new NotImplementedException(
-                $"StepDefinition implementation in method {BindingStepDefinitionMethod} is incomplete for \n" +
-                $"Feature: {FeatureInfo.Title} \n" +
-                $"Scenario: {ScenarioInfo.Title} \n" +
-                $"Step: {StepName}",
+                $"StepDefinition implementation in Method: {BindingStepDefinitionMethod} is incomplete for Step: {StepName}",
                 new PendingStepException());
         }
     }

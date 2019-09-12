@@ -6,7 +6,22 @@
     <members>
         <member name="T:Drelanium.BaseTestClass">
             <summary>
-                Description to be added...
+                BaseClass for Selenium TestClasses.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BaseTestClass.Driver">
+            <summary>
+                Gets or sets the currently used <see cref="T:OpenQA.Selenium.IWebDriver" />.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BaseTestClass.CurrentPageObject">
+            <summary>
+                Gets or sets the currently used <see cref="T:Drelanium.IPageObject" />.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BaseTestClass.Logger">
+            <summary>
+                Gets or sets the currently used <see cref="T:Serilog.Core.Logger" />.
             </summary>
         </member>
         <member name="M:Drelanium.BaseTestClass.NotImplementedTest">
@@ -14,21 +29,6 @@
                 Method, that marks the Test method as incomplete by throwing a <see cref="T:System.NotImplementedException" />.
             </summary>
             <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="P:Drelanium.BaseTestClass.Driver">
-            <summary>
-                Description to be added...
-            </summary>
-        </member>
-        <member name="P:Drelanium.BaseTestClass.CurrentPageObject">
-            <summary>
-                Description to be added...
-            </summary>
-        </member>
-        <member name="P:Drelanium.BaseTestClass.Logger">
-            <summary>
-                Description to be added...
-            </summary>
         </member>
         <member name="T:Drelanium.DisposeDriverServices">
             <summary>
@@ -2375,71 +2375,67 @@
         </member>
         <member name="T:Drelanium.BasePageObject">
             <summary>
-                ...Description to be added...
+                BaseClass for Page Object Model that implements the <see cref="T:Drelanium.IPageObject" /> interface.
+                <para>
+                    <see cref="P:Drelanium.IPageObject.Driver" /> and <see cref="P:Drelanium.IPageObject.PageObjectSearchContext" /> properties are set
+                    by the chosen constructor.
+                </para>
             </summary>
         </member>
         <member name="M:Drelanium.BasePageObject.#ctor(OpenQA.Selenium.IWebDriver)">
             <summary>
-                ...Description to be added...
+                <inheritdoc cref="T:Drelanium.BasePageObject" />
+                This constructor sets the scope of the Page Object (see <see cref="P:Drelanium.IPageObject.PageObjectSearchContext" />) to be
+                the <see cref="P:Drelanium.IPageObject.Driver" />.
             </summary>
-            <param name="driver"></param>
+            <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
         </member>
         <member name="M:Drelanium.BasePageObject.#ctor(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By)">
             <summary>
-                ...Description to be added...
+                <inheritdoc cref="T:Drelanium.BasePageObject" />
+                This constructor sets the scope of the Page Object (see <see cref="P:Drelanium.IPageObject.PageObjectSearchContext" />) to be
+                the <see cref="T:OpenQA.Selenium.IWebElement" />,
+                by setting it's value with the driver.FindElement(wrapperElementLocator) method.
             </summary>
-            <param name="driver"> ...Description to be added...</param>
-            <param name="wrapperElementLocator"> ...Description to be added...</param>
+            <param name="driver">The browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.</param>
+            <param name="wrapperElementLocator">
+                The locator, that is required to find the <see cref="T:OpenQA.Selenium.IWebElement" /> in the DOM,
+                that defines the scope of this current Page Object.
+            </param>
         </member>
         <member name="M:Drelanium.BasePageObject.#ctor(OpenQA.Selenium.IWebElement)">
             <summary>
-                ...Description to be added...
+                <inheritdoc cref="T:Drelanium.BasePageObject" />
+                This constructor sets the scope of the Page Object (see <see cref="P:Drelanium.IPageObject.PageObjectSearchContext" />) to be
+                the wrapperElement.
             </summary>
-            <param name="wrapperElement"> ...Description to be added...</param>
+            <param name="wrapperElement">The <see cref="T:OpenQA.Selenium.IWebElement" />, that defines the scope of this current Page Object.</param>
         </member>
         <member name="P:Drelanium.BasePageObject.Driver">
             <summary>
-                ...Description to be added...
+                <inheritdoc cref="P:Drelanium.IPageObject.Driver" />
             </summary>
         </member>
         <member name="P:Drelanium.BasePageObject.PageObjectSearchContext">
             <summary>
-                ...Description to be added...
-            </summary>
-        </member>
-        <member name="T:Drelanium.IPage">
-            <summary>
-                ...Description to be added...
-            </summary>
-        </member>
-        <member name="P:Drelanium.IPage.Url">
-            <summary>
-                ...Description to be added...
+                <inheritdoc cref="P:Drelanium.IPageObject.PageObjectSearchContext" />
             </summary>
         </member>
         <member name="T:Drelanium.IPageObject">
             <summary>
-                ...Description to be added...
+                Interface for Page Object Model, that demands to implement <see cref="T:OpenQA.Selenium.IWebDriver" /> to interact with the browser,
+                <para>and <see cref="T:OpenQA.Selenium.ISearchContext" /> to define the scope of the PageObject.</para>
             </summary>
         </member>
         <member name="P:Drelanium.IPageObject.Driver">
             <summary>
-                ...Description to be added...
+                Gets the browser, that is represented by an <see cref="T:OpenQA.Selenium.IWebDriver" /> instance.
             </summary>
         </member>
         <member name="P:Drelanium.IPageObject.PageObjectSearchContext">
             <summary>
-                ...Description to be added...
-            </summary>
-        </member>
-        <member name="T:Drelanium.IPageWidget">
-            <summary>
-                ...Description to be added...
-            </summary>
-        </member>
-        <member name="P:Drelanium.IPageWidget.WidgetLocator">
-            <summary>
-                ...Description to be added...
+                Gets the <see cref="T:OpenQA.Selenium.ISearchContext" /> within we search for the elements.
+                <para>This property defines the scope of the Page Object.</para>
             </summary>
         </member>
         <member name="T:Drelanium.ChromeConfiguration">
