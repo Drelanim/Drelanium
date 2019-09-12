@@ -1,7 +1,7 @@
-﻿using TechTalk.SpecFlow;
-using Drelanium.BDD;
+﻿using Drelanium.BDD;
+using TechTalk.SpecFlow;
 
-namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
+namespace Drelanium.ExampleSolution.UITests.Hooks.ScenarioHooks
 {
     [Binding]
     public class AfterScenarioHooks : BaseBindingClass

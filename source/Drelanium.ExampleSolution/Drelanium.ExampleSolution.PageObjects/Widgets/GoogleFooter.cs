@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace Drelanium.ExampleSolution.PageObjects.Widgets
 {
-    public class GoogleFooter : BasePageObject, IPageWidget
+    public class GoogleFooter : BasePageObject
     {
         public GoogleFooter([NotNull] IWebDriver driver) : base(driver, Locator)
         {

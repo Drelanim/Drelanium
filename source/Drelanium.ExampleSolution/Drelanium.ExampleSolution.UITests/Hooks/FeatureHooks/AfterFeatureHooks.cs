@@ -1,6 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using Drelanium.BDD;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
-using Drelanium.BDD;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.FeatureHooks
 {

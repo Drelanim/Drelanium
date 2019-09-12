@@ -2,11 +2,9 @@
 using JetBrains.Annotations;
 using OpenQA.Selenium;
 
-// ReSharper disable IdentifierTypo
-
 namespace Drelanium.ExampleSolution.PageObjects.Pages
 {
-    public class GoogleSearchResultsPage : BasePageObject, IPage
+    public class GoogleSearchResultsPage : BasePageObject
     {
         public GoogleSearchResultsPage([NotNull] IWebDriver driver) : base(driver)
         {

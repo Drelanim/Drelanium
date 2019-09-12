@@ -3,12 +3,9 @@ using Drelanium.ExampleSolution.PageObjects.Widgets;
 using JetBrains.Annotations;
 using OpenQA.Selenium;
 
-// ReSharper disable StringLiteralTypo
-// ReSharper disable IdentifierTypo
-
 namespace Drelanium.ExampleSolution.PageObjects.Pages
 {
-    public class GoogleMainPage : BasePageObject, IPage
+    public class GoogleMainPage : BasePageObject
     {
         public GoogleMainPage([NotNull] IWebDriver driver) : base(driver)
         {

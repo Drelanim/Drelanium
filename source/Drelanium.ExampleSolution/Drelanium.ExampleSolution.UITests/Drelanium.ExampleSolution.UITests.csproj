@@ -28,15 +28,11 @@
     <PackageReference Include="Selenium.PhantomJS.WebDriver" Version="2.1.1" />
     <PackageReference Include="Selenium.WebDriver.MicrosoftDriver" Version="17.17134.0" />
     <!--SpecFlow packages-->
-    <PackageReference Include="SpecFlow" Version="3.0.225" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
     <!--SpecFlow with xUnit packages-->
     <PackageReference Include="SpecFlow.xUnit" Version="3.0.225" />
     <!--Serilog Sinks packages-->
     <PackageReference Include="Serilog.Sinks.XUnit" Version="1.0.21" />
-    <!--Pickles packages-->
-    <PackageReference Include="Pickles" Version="2.20.1" />
-    <PackageReference Include="Pickles.MSBuild" Version="2.20.1" />
   </ItemGroup>
 
 
