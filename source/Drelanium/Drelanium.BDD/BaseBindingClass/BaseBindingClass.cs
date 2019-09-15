@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using BoDi;
 using JetBrains.Annotations;
 using OpenQA.Selenium;
@@ -149,11 +150,82 @@ namespace Drelanium.BDD
         ///     Gets or sets the currently used <see cref="IPageObject" /> from a thread-safe <see cref="SpecFlowContext" />
         ///     object.
         /// </summary>
-        public virtual IPageObject CurrentPage
+        public virtual IPageObject CurrentPageObject
         {
             get => ScenarioContext.Get<IPageObject>();
             set => ScenarioContext.Set(value);
         }
+
+
+
+
+
+        /// <summary>
+        ///     Gets or sets the currently used <see cref="System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="TechTalk.SpecFlow.TestThreadContext" />object.
+        /// </summary>
+        public Stopwatch TestThreadStopWatch
+        {
+            get => TestThreadContext.Get<Stopwatch>();
+            set => TestThreadContext.Set(value);
+        }
+
+
+
+
+
+
+
+
+        /// <summary>
+        ///     Gets or sets the currently used <see cref="System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="TechTalk.SpecFlow.FeatureContext" />object.
+        /// </summary>
+        public Stopwatch FeatureStopwatch
+        {
+            get => FeatureContext.Get<Stopwatch>();
+            set => FeatureContext.Set(value);
+        }
+
+
+
+
+
+
+
+
+        /// <summary>
+        ///     Gets or sets the currently used <see cref="System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="TechTalk.SpecFlow.ScenarioContext" />object.
+        /// </summary>
+        public Stopwatch ScenarioStopwatch
+        {
+            get => ScenarioContext.Get<Stopwatch>();
+            set => ScenarioContext.Set(value);
+        }
+
+
+
+
+
+
+
+        /// <summary>
+        ///     Gets or sets the currently used <see cref="System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="TechTalk.SpecFlow.ScenarioStepContext" />object.
+        /// </summary>
+        public Stopwatch StepStopWatch
+        {
+            get => StepContext.Get<Stopwatch>();
+            set => StepContext.Set(value);
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         /// <summary>
         ///     Gets the thread-safe context object, that can be used during the usage of the TestThread.

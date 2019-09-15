@@ -24,6 +24,11 @@
                 Gets or sets the currently used <see cref="T:Serilog.Core.Logger" />.
             </summary>
         </member>
+        <member name="P:Drelanium.BaseTestClass.StopWatch">
+            <summary>
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" />.
+            </summary>
+        </member>
         <member name="M:Drelanium.BaseTestClass.NotImplementedTest">
             <summary>
                 Method, that marks the Test method as incomplete by throwing a <see cref="T:System.NotImplementedException" />.

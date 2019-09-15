@@ -125,10 +125,30 @@
                 <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object.
             </summary>
         </member>
-        <member name="P:Drelanium.BDD.BaseBindingClass.CurrentPage">
+        <member name="P:Drelanium.BDD.BaseBindingClass.CurrentPageObject">
             <summary>
                 Gets or sets the currently used <see cref="T:Drelanium.IPageObject" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />
                 object.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.TestThreadStopWatch">
+            <summary>
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.TestThreadContext" />object.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.FeatureStopwatch">
+            <summary>
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.FeatureContext" />object.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioStopwatch">
+            <summary>
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.ScenarioContext" />object.
+            </summary>
+        </member>
+        <member name="P:Drelanium.BDD.BaseBindingClass.StepStopWatch">
+            <summary>
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.ScenarioStepContext" />object.
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.TestThreadContext">
