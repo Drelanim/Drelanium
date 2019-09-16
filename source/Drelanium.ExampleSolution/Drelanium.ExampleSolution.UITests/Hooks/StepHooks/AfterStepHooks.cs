@@ -1,4 +1,4 @@
-﻿using Drelanium.BDD;
+﻿using System;
 using TechTalk.SpecFlow;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.StepHooks
@@ -17,6 +17,10 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.StepHooks
         [AfterStep(Order = 1)]
         public void AfterStep1()
         {
+            StepStopWatch.Stop();
+
+            Logger?.Information(
+                $"Elapsed time in the Step: {Math.Round(StepStopWatch.Elapsed.TotalSeconds, 2)} seconds");
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using Drelanium.BDD;
 using Drelanium.ExampleSolution.PageObjects.Pages;
 using TechTalk.SpecFlow;
 
@@ -21,7 +20,7 @@ namespace Drelanium.ExampleSolution.UITests.StepDefinitions
         {
             Driver.Navigation().GoToUrl(new Uri("https://www.google.com/"));
 
-            CurrentPage = new GoogleMainPage(Driver);
+            CurrentPageObject = new GoogleMainPage(Driver);
         }
 
         [Then(@"the word ""([^\""]*)"" can be found in every search result")]
@@ -33,9 +32,9 @@ namespace Drelanium.ExampleSolution.UITests.StepDefinitions
         [When(@"I search for ""([^\""]*)""")]
         public void WhenISearchFor(string parameter)
         {
-            ((GoogleMainPage) CurrentPage).SearchForContent(parameter);
+            ((GoogleMainPage) CurrentPageObject).SearchForContent(parameter);
 
-            CurrentPage = new GoogleSearchResultsPage(Driver);
+            CurrentPageObject = new GoogleSearchResultsPage(Driver);
         }
     }
 }

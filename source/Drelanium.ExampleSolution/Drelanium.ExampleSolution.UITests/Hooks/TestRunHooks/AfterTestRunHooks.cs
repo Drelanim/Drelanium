@@ -1,5 +1,4 @@
-﻿using Drelanium.BDD;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.TestRunHooks
 {

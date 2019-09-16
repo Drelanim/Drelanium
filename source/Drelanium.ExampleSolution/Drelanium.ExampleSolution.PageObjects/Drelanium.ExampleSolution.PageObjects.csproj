@@ -12,7 +12,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Drelanium.BDD" Version="1.13.0002" />
+    <PackageReference Include="Drelanium.BDD" Version="1.13.1" />
   </ItemGroup>
 
 

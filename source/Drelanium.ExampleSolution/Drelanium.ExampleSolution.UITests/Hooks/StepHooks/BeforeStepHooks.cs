@@ -1,4 +1,4 @@
-﻿using Drelanium.BDD;
+﻿using System.Diagnostics;
 using TechTalk.SpecFlow;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.StepHooks
@@ -17,6 +17,8 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.StepHooks
         [BeforeStep(Order = 1)]
         public void BeforeStep1()
         {
+            StepStopWatch = new Stopwatch();
+            StepStopWatch.Start();
         }
     }
 }

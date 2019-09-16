@@ -1,5 +1,7 @@
-﻿using Drelanium.BDD;
+﻿using System.Diagnostics;
+using Serilog;
 using TechTalk.SpecFlow;
+using Xunit.Abstractions;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.ScenarioHooks
 {
@@ -15,8 +17,19 @@ namespace Drelanium.ExampleSolution.UITests.Hooks.ScenarioHooks
         }
 
         [BeforeScenario(Order = 1)]
-        public void BeforeScenario1()
+        public void BeforeScenario1(ITestOutputHelper testOutputHelper)
         {
+            Logger = new LoggerConfiguration()
+                .WriteTo
+                .TestOutput(testOutputHelper)
+                .CreateLogger();
+        }
+
+        [BeforeScenario(Order = 2)]
+        public void BeforeScenario2()
+        {
+            ScenarioStopwatch = new Stopwatch();
+            ScenarioStopwatch.Start();
         }
     }
 }
