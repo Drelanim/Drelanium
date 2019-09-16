@@ -25,18 +25,10 @@ namespace Drelanium
         /// </summary>
         public Logger Logger { get; set; }
 
-
-
-
         /// <summary>
         ///     Gets or sets the currently used <see cref="System.Diagnostics.Stopwatch" />.
         /// </summary>
         public Stopwatch StopWatch { get; set; }
-
-
-
-
-
 
         /// <summary>
         ///     Method, that marks the Test method as incomplete by throwing a <see cref="NotImplementedException" />.

@@ -39,7 +39,7 @@
   <!--Package Version Properties-->
   <PropertyGroup>
     <PackageVersion>1.13.1</PackageVersion>
-    <PackageReleaseNotes>Added BaseBindingClass for Binding classes.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added StopWatch properties to BaseBindingClass.</PackageReleaseNotes>
   </PropertyGroup>
 
 

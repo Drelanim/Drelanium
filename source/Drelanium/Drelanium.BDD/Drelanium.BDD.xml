@@ -116,39 +116,86 @@
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.Driver">
             <summary>
-                Gets or sets the currently used <see cref="T:OpenQA.Selenium.IWebDriver" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object.
+                Gets or sets the currently used <see cref="T:OpenQA.Selenium.IWebDriver" /> from a thread-safe
+                <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object, by it's <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />
+                .Get() or <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />.Set() methods.
+                <para>Default virtual getter and setter implementation:</para>
+                <para>get => TestThreadContext.Get&lt;<see cref="T:OpenQA.Selenium.IWebDriver" />&gt;( nameof(Driver) );</para>
+                <para>set => TestThreadContext.Set(value, nameof(Driver) );</para>
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.Logger">
             <summary>
                 Gets or sets the currently used <see cref="T:Serilog.Core.Logger" /> from a thread-safe
-                <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object.
+                <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object, by it's <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />
+                .Get() or <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />.Set() methods.
+                <para>Default virtual getter and setter implementation:</para>
+                <para>get => TestThreadContext.Get&lt;<see cref="T:Serilog.Core.Logger" />&gt;( nameof(Logger) );</para>
+                <para>set => TestThreadContext.Set(value, nameof(Logger) );</para>
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.CurrentPageObject">
             <summary>
-                Gets or sets the currently used <see cref="T:Drelanium.IPageObject" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />
-                object.
+                Gets or sets the currently used <see cref="T:Drelanium.IPageObject" /> from a thread-safe
+                <see cref="T:TechTalk.SpecFlow.SpecFlowContext" /> object, by it's <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />
+                .Get() or <see cref="T:TechTalk.SpecFlow.SpecFlowContext" />.Set() methods.
+                <para>Default virtual getter and setter implementation:</para>
+                <para>get => ScenarioContext.Get&lt;<see cref="T:Drelanium.IPageObject" />&gt;( nameof(CurrentPageObject) );</para>
+                <para>set => ScenarioContext.Set(value, nameof(CurrentPageObject) );</para>
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.TestThreadStopWatch">
             <summary>
-                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.TestThreadContext" />object.
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe
+                <see cref="T:TechTalk.SpecFlow.TestThreadContext" /> object, by it's
+                <see cref="T:TechTalk.SpecFlow.TestThreadContext" />.Get() or <see cref="T:TechTalk.SpecFlow.TestThreadContext" />
+                .Set() methods.
+                <para>
+                    Should be Initialized, Started and Stopped by Hook methods with <see cref="T:TechTalk.SpecFlow.BeforeFeatureAttribute" /> and
+                    <see cref="T:TechTalk.SpecFlow.AfterFeatureAttribute" /> attributes, with the following methods:
+                </para>
+                <para>get => TestThreadContext.Get&lt;<see cref="T:System.Diagnostics.Stopwatch" />&gt;( nameof(TestThreadStopWatch) );</para>
+                <para>set => TestThreadContext.Set(value, nameof(TestThreadStopWatch) );</para>
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.FeatureStopwatch">
             <summary>
-                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.FeatureContext" />object.
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe
+                <see cref="T:TechTalk.SpecFlow.FeatureContext" />object, by it's <see cref="T:TechTalk.SpecFlow.FeatureContext" />
+                .Get() or <see cref="T:TechTalk.SpecFlow.FeatureContext" />.Set() methods.
+                <para>
+                    Should be Initialized, Started and Stopped by Hook methods with <see cref="T:TechTalk.SpecFlow.BeforeFeatureAttribute" /> and
+                    <see cref="T:TechTalk.SpecFlow.AfterFeatureAttribute" /> attributes, with the following methods:
+                </para>
+                <para>get => FeatureContext.Get&lt;<see cref="T:System.Diagnostics.Stopwatch" />&gt;( nameof(FeatureStopwatch) );</para>
+                <para>set => FeatureContext.Set(value, nameof(FeatureStopwatch) );</para>
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.ScenarioStopwatch">
             <summary>
-                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.ScenarioContext" />object.
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe
+                <see cref="T:TechTalk.SpecFlow.ScenarioContext" />object, by it's <see cref="T:TechTalk.SpecFlow.ScenarioContext" />
+                .Get() or <see cref="T:TechTalk.SpecFlow.ScenarioContext" />.Set() methods.
+                <para>
+                    Should be Initialized, Started and Stopped by Hook methods with <see cref="T:TechTalk.SpecFlow.BeforeScenarioAttribute" /> and
+                    <see cref="T:TechTalk.SpecFlow.AfterScenarioAttribute" /> attributes, with the following methods:
+                </para>
+                <para>get => ScenarioContext.Get&lt;<see cref="T:System.Diagnostics.Stopwatch" />&gt;( nameof(ScenarioStopwatch) );</para>
+                <para>set => ScenarioContext.Set(value, nameof(ScenarioStopwatch) );</para>
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.StepStopWatch">
             <summary>
-                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe <see cref="T:TechTalk.SpecFlow.ScenarioStepContext" />object.
+                Gets or sets the currently used <see cref="T:System.Diagnostics.Stopwatch" /> from a thread-safe
+                <see cref="T:TechTalk.SpecFlow.ScenarioStepContext" />object, by it's
+                <see cref="T:TechTalk.SpecFlow.ScenarioStepContext" />.Get() or <see cref="T:TechTalk.SpecFlow.ScenarioStepContext" />
+                .Set() methods.
+                <para>
+                    Should be Initialized, Started and Stopped by Hook methods with <see cref="T:TechTalk.SpecFlow.BeforeStepAttribute" /> and
+                    <see cref="T:TechTalk.SpecFlow.AfterStepAttribute" /> attributes, with the following methods:
+                </para>
+                <para>get => StepContext.Get&lt;<see cref="T:System.Diagnostics.Stopwatch" />&gt;( nameof(StepStopWatch) );</para>
+                <para>set => StepContext.Set(value, nameof(StepStopWatch) );</para>
             </summary>
         </member>
         <member name="P:Drelanium.BDD.BaseBindingClass.TestThreadContext">

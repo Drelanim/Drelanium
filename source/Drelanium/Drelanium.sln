@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drelanium", "Drelanium\Drelanium.csproj", "{47610D29-29CB-4EB5-89CE-9FE790731EA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drelanium.BDD", "Drelanium.BDD\Drelanium.BDD.csproj", "{07299B77-0F20-4449-92C4-22CE7052C551}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drelanium.BDD", "Drelanium.BDD\Drelanium.BDD.csproj", "{07299B77-0F20-4449-92C4-22CE7052C551}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
