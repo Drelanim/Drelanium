@@ -41,11 +41,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Drelanium.ExampleSolution.PageObjects\Drelanium.ExampleSolution.PageObjects.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\GoogleSearch.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-    </SpecFlowFeatureFiles>
-  </ItemGroup>
 
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System;
+using Drelanium.BDD;
 using TechTalk.SpecFlow;
 
 namespace Drelanium.ExampleSolution.UITests.Hooks.ScenarioHooks
