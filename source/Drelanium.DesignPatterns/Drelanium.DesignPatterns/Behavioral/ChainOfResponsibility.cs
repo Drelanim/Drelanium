@@ -7,8 +7,18 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
     // https://refactoring.guru/design-patterns/chain-of-responsibility
     // Also known as CoR, or Chain of Command
 
-    // The Handler interface declares a method for building the chain of
-    // handlers. It also declares a method for executing a request.
+    // Chain of Responsibility is a behavioral design pattern 
+    // that allows passing request along the chain of potential handlers until one of them handles request.
+    // The pattern allows multiple objects to handle the request without coupling sender class
+    // to the concrete classes of the receivers.The chain can be composed dynamically at runtime
+    // with any handler that follows a standard handler interface.
+    
+    // Usage examples: The Chain of Responsibility pattern isn’t a frequent guest
+    // in a C# program since it’s only relevant when code operates with chains of objects.
+     
+    // Identification: The pattern is recognizable by behavioral methods of one group of objects
+    // indirectly call the same methods in other objects, while all the objects follow the common interface.
+
     public interface IHandler
     {
         IHandler SetNext(IHandler handler);
@@ -16,15 +26,14 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
         object Handle(object request);
     }
 
-    // The default chaining behavior can be implemented inside a base handler
-    // class.
+    // The default chaining behavior can be implemented inside a base handler class.
     abstract class AbstractHandler : IHandler
     {
         private IHandler _nextHandler;
 
         public IHandler SetNext(IHandler handler)
         {
-            this._nextHandler = handler;
+            _nextHandler = handler;
 
             // Returning a handler from here will let us link handlers in a
             // convenient way like this:
@@ -34,9 +43,9 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
 
         public virtual object Handle(object request)
         {
-            if (this._nextHandler != null)
+            if (_nextHandler != null)
             {
-                return this._nextHandler.Handle(request);
+                return _nextHandler.Handle(request);
             }
             else
             {

@@ -1,11 +1,24 @@
 ﻿using System;
 
-namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
+namespace Drelanium.DesignPatterns.Behavioral.Command
 {
     // https://refactoring.guru/design-patterns/command
     // Also known as Action, Transaction
 
-    // The Command interface declares a method for executing a command.
+    // Command is a behavioral design pattern that turns a request into a stand-alone object
+    // that contains all information about the request.This transformation lets you parameterize methods with
+    // different requests, delay or queue a request’s execution, and support undoable operations.
+    // The conversion allows deferred or remote execution of commands, storing command history, etc.
+
+    // Usage examples: The Command pattern is pretty common in C# code.
+    // Most often it’s used as an alternative for callbacks to parameterizing UI elements with actions.
+    // It’s also used for queueing tasks, tracking operations history, etc.
+
+    // Identification: The Command pattern is recognizable by behavioral methods in an abstract/interface type (sender)
+    // which invokes a method in an implementation of a different abstract/interface type (receiver) which has
+    // been encapsulated by the command implementation during its creation.
+    // Command classes are usually limited to specific actions.
+
     public interface ICommand
     {
         void Execute();
@@ -18,12 +31,12 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
 
         public SimpleCommand(string payload)
         {
-            this._payload = payload;
+            _payload = payload;
         }
 
         public void Execute()
         {
-            Console.WriteLine($"SimpleCommand: See, I can do simple things like printing ({this._payload})");
+            Console.WriteLine($"SimpleCommand: See, I can do simple things like printing ({_payload})");
         }
     }
 
@@ -42,17 +55,17 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
         // with any context data via the constructor.
         public ComplexCommand(Receiver receiver, string a, string b)
         {
-            this._receiver = receiver;
-            this._a = a;
-            this._b = b;
+            _receiver = receiver;
+            _a = a;
+            _b = b;
         }
 
         // Commands can delegate to any methods of a receiver.
         public void Execute()
         {
             Console.WriteLine("ComplexCommand: Complex stuff should be done by a receiver object.");
-            this._receiver.DoSomething(this._a);
-            this._receiver.DoSomethingElse(this._b);
+            _receiver.DoSomething(_a);
+            _receiver.DoSomethingElse(_b);
         }
     }
 
@@ -72,8 +85,8 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
         }
     }
 
-    // The Invoker is associated with one or several commands. It sends a
-    // request to the command.
+    // The Invoker is associated with one or several commands.
+    // It sends a request to the command.
     class Invoker
     {
         private ICommand _onStart;
@@ -83,12 +96,12 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
         // Initialize commands.
         public void SetOnStart(ICommand command)
         {
-            this._onStart = command;
+            _onStart = command;
         }
 
         public void SetOnFinish(ICommand command)
         {
-            this._onFinish = command;
+            _onFinish = command;
         }
 
         // The Invoker does not depend on concrete command or receiver classes.
@@ -97,17 +110,17 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
         public void DoSomethingImportant()
         {
             Console.WriteLine("Invoker: Does anybody want something done before I begin?");
-            if (this._onStart is ICommand)
+            if (_onStart is ICommand)
             {
-                this._onStart.Execute();
+                _onStart.Execute();
             }
 
             Console.WriteLine("Invoker: ...doing something really important...");
 
             Console.WriteLine("Invoker: Does anybody want something done after I finish?");
-            if (this._onFinish is ICommand)
+            if (_onFinish is ICommand)
             {
-                this._onFinish.Execute();
+                _onFinish.Execute();
             }
         }
     }

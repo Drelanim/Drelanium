@@ -2,9 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
+namespace Drelanium.DesignPatterns.Behavioral.Iterator
 {
     // https://refactoring.guru/design-patterns/iterator
+
+    // Iterator is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation(list, stack, tree, etc.).
+    // Iterator is a behavioral design pattern that allows sequential traversal through a complex data structure without exposing its internal details.
+
+    // Thanks to the Iterator, clients can go over elements of different collections in a similar fashion using a single iterator interface.
+
+    // Usage examples: The pattern is very common in C# code.
+    // Many frameworks and libraries use it to provide a standard way for traversing their collections.
+
+    // Identification: Iterator is easy to recognize by the navigation methods(such as next, previous and others).
+    // Client code that uses iterators might not have direct access to the collection being traversed.
 
     abstract class Iterator : IEnumerator
     {
@@ -25,13 +36,13 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
 
     abstract class IteratorAggregate : IEnumerable
     {
-        // Returns an Iterator or another IteratorAggregate for the implementing
-        // object.
+        // Returns an Iterator or another IteratorAggregate
+        // for the implementing object.
         public abstract IEnumerator GetEnumerator();
     }
 
-    // Concrete Iterators implement various traversal algorithms. These classes
-    // store the current traversal position at all times.
+    // Concrete Iterators implement various traversal algorithms.
+    // These classes store the current traversal position at all times.
     class AlphabeticalOrderIterator : Iterator
     {
         private WordsCollection _collection;
@@ -45,32 +56,32 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
 
         public AlphabeticalOrderIterator(WordsCollection collection, bool reverse = false)
         {
-            this._collection = collection;
-            this._reverse = reverse;
+            _collection = collection;
+            _reverse = reverse;
 
             if (reverse)
             {
-                this._position = collection.getItems().Count;
+                _position = collection.getItems().Count;
             }
         }
 
         public override object Current()
         {
-            return this._collection.getItems()[_position];
+            return _collection.getItems()[_position];
         }
 
         public override int Key()
         {
-            return this._position;
+            return _position;
         }
 
         public override bool MoveNext()
         {
-            int updatedPosition = this._position + (this._reverse ? -1 : 1);
+            int updatedPosition = _position + (_reverse ? -1 : 1);
 
-            if (updatedPosition >= 0 && updatedPosition < this._collection.getItems().Count)
+            if (updatedPosition >= 0 && updatedPosition < _collection.getItems().Count)
             {
-                this._position = updatedPosition;
+                _position = updatedPosition;
                 return true;
             }
             else
@@ -81,7 +92,7 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
 
         public override void Reset()
         {
-            this._position = this._reverse ? this._collection.getItems().Count - 1 : 0;
+            _position = _reverse ? _collection.getItems().Count - 1 : 0;
         }
     }
 
@@ -105,7 +116,7 @@ namespace Drelanium.DesignPatterns.Behavioral.ChainOfResponsibility
 
         public void AddItem(string item)
         {
-            this._collection.Add(item);
+            _collection.Add(item);
         }
 
         public override IEnumerator GetEnumerator()
