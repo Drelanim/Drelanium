@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Drelanium.DesignPatterns.Structural.Flyweight
 {

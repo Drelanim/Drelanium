@@ -11,14 +11,14 @@ namespace Drelanium.DesignPatterns.Behavioral.Mediator
         {
             Console.WriteLine("Component 1 does A.");
 
-            this._mediator.Notify(this, "A");
+            this.mediator.Notify(this, "A");
         }
 
         public void DoB()
         {
             Console.WriteLine("Component 1 does B.");
 
-            this._mediator.Notify(this, "B");
+            this.mediator.Notify(this, "B");
         }
     }
 }

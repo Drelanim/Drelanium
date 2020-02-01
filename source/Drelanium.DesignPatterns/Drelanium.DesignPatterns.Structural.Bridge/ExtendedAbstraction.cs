@@ -11,7 +11,7 @@
         public override string Operation()
         {
             return "ExtendedAbstraction: Extended operation with:\n" +
-                base._implementation.OperationImplementation();
+                base.implementation.OperationImplementation();
         }
     }
 }

@@ -6,17 +6,17 @@
     // object.
     public class Abstraction
     {
-        protected IImplementation _implementation;
+        protected IImplementation implementation;
 
         public Abstraction(IImplementation implementation)
         {
-            this._implementation = implementation;
+            this.implementation = implementation;
         }
 
         public virtual string Operation()
         {
             return "Abstract: Base operation with:\n" +
-                _implementation.OperationImplementation();
+                implementation.OperationImplementation();
         }
     }
 }

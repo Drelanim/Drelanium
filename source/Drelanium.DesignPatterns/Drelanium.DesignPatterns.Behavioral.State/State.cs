@@ -6,11 +6,11 @@
     // transition the Context to another State.
     public abstract class State
     {
-        protected Context _context;
+        protected Context context;
 
         public void SetContext(Context context)
         {
-            this._context = context;
+            this.context = context;
         }
 
         public abstract void Handle1();

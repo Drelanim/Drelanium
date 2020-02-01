@@ -13,7 +13,7 @@ namespace Drelanium.DesignPatterns.Behavioral.State
         {
             Console.WriteLine("ConcreteStateB handles request2.");
             Console.WriteLine("ConcreteStateB wants to change the state of the context.");
-            this._context.TransitionTo(new ConcreteStateA());
+            this.context.TransitionTo(new ConcreteStateA());
         }
     }
 }
