@@ -10,7 +10,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Visitor
     // case, it might be helpful to store some intermediate state of the
     // algorithm while executing visitor's methods over various objects of the
     // structure.
-    class ConcreteVisitor1 : IVisitor
+    public class ConcreteVisitor1 : IVisitor
     {
         public void VisitConcreteComponentA(ConcreteComponentA element)
         {

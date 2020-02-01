@@ -7,7 +7,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Strategy
     // https://refactoring.guru/design-patterns/strategy/csharp/example
 
     // The Context defines the interface of interest to clients.
-    class Context
+    public class Context
     {
         // The Context maintains a reference to one of the Strategy objects. The
         // Context does not know the concrete class of a strategy. It should
@@ -57,7 +57,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Strategy
         object DoAlgorithm(object data);
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

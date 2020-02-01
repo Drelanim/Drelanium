@@ -5,7 +5,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Template_Method
     // Concrete classes have to implement all abstract operations of the base
     // class. They can also override some operations with a default
     // implementation.
-    class ConcreteClass1 : AbstractClass
+    public class ConcreteClass1 : AbstractClass
     {
         protected override void RequiredOperations1()
         {

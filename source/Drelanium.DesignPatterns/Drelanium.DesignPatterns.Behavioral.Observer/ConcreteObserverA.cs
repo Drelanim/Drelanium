@@ -4,7 +4,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Observer
 {
     // Concrete Observers react to the updates issued by the Subject they had
     // been attached to.
-    class ConcreteObserverA : IObserver
+    public class ConcreteObserverA : IObserver
     {
         public void Update(ISubject subject)
         {

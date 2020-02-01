@@ -2,7 +2,7 @@
 {
     // The Adapter makes the Adaptee's interface compatible with the Target's
     // interface.
-    class Adapter : ITarget
+    public class Adapter : ITarget
     {
         private readonly Adaptee _adaptee;
 

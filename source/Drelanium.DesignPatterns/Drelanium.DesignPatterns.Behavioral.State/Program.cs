@@ -8,7 +8,7 @@ namespace Drelanium.DesignPatterns.Behavioral.State
     // The Context defines the interface of interest to clients. It also
     // maintains a reference to an instance of a State subclass, which
     // represents the current state of the Context.
-    class Context
+    public class Context
     {
         // A reference to the current state of the Context.
         private State _state = null;
@@ -39,7 +39,7 @@ namespace Drelanium.DesignPatterns.Behavioral.State
         }
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

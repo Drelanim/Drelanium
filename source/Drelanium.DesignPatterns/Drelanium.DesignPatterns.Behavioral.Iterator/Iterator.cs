@@ -6,7 +6,7 @@ using System.Text;
 namespace Drelanium.DesignPatterns.Behavioral.Iterator
 {
 
-    abstract class Iterator : IEnumerator
+    public abstract class Iterator : IEnumerator
     {
         object IEnumerator.Current => Current();
 

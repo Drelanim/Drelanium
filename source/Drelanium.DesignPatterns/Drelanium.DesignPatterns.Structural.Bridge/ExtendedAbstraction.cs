@@ -2,7 +2,7 @@
 {
     // You can extend the Abstraction without changing the Implementation
     // classes.
-    class ExtendedAbstraction : Abstraction
+    public class ExtendedAbstraction : Abstraction
     {
         public ExtendedAbstraction(IImplementation implementation) : base(implementation)
         {

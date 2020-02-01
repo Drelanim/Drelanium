@@ -11,7 +11,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Template_Method
     //
     // Concrete subclasses should implement these operations, but leave the
     // template method itself intact.
-    abstract class AbstractClass
+    public abstract class AbstractClass
     {
         // The template method defines the skeleton of an algorithm.
         public void TemplateMethod()
@@ -55,7 +55,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Template_Method
         protected virtual void Hook2() { }
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

@@ -1,6 +1,6 @@
 ﻿namespace Drelanium.DesignPatterns.Behavioral.Chain_Of_Responsibility
 {
-    class MonkeyHandler : AbstractHandler
+    public class MonkeyHandler : AbstractHandler
     {
         public override object Handle(object request)
         {

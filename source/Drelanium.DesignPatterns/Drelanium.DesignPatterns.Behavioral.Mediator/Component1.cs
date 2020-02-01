@@ -5,7 +5,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Mediator
     // Concrete Components implement various functionality. They don't depend on
     // other components. They also don't depend on any concrete mediator
     // classes.
-    class Component1 : BaseComponent
+    public class Component1 : BaseComponent
     {
         public void DoA()
         {

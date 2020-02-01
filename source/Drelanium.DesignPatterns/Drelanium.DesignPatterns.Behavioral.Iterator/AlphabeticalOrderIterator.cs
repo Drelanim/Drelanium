@@ -2,7 +2,7 @@
 {
     // Concrete Iterators implement various traversal algorithms.
     // These classes store the current traversal position at all times.
-    class AlphabeticalOrderIterator : Iterator
+    public class AlphabeticalOrderIterator : Iterator
     {
         private WordsCollection _collection;
 

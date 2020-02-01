@@ -1,6 +1,6 @@
 ﻿namespace Drelanium.DesignPatterns.Behavioral.Chain_Of_Responsibility
 {
-    abstract class AbstractHandler : IHandler
+    public abstract class AbstractHandler : IHandler
     {
         private IHandler _nextHandler;
 

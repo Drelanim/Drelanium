@@ -1,6 +1,6 @@
 ﻿namespace Drelanium.DesignPatterns.Creational.Factory_Method
 {
-    class ConcreteProduct2 : IProduct
+    public class ConcreteProduct2 : IProduct
     {
         public string Operation()
         {

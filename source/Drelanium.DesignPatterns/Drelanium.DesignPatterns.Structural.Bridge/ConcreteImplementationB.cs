@@ -1,6 +1,6 @@
 ﻿namespace Drelanium.DesignPatterns.Structural.Bridge
 {
-    class ConcreteImplementationB : IImplementation
+    public class ConcreteImplementationB : IImplementation
     {
         public string OperationImplementation()
         {

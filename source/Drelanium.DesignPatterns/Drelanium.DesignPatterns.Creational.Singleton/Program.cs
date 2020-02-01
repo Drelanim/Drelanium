@@ -8,7 +8,7 @@ namespace Drelanium.DesignPatterns.Creational.Singleton
     // The Singleton class defines the `GetInstance` method that serves as an
     // alternative to constructor and lets clients access the same instance of
     // this class over and over.
-    class Singleton
+    public class Singleton
     {
         // The Singleton's constructor should always be private to prevent
         // direct construction calls with the `new` operator.
@@ -41,7 +41,7 @@ namespace Drelanium.DesignPatterns.Creational.Singleton
         }
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

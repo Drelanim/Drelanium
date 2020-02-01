@@ -1,6 +1,6 @@
 ﻿namespace Drelanium.DesignPatterns.Creational.Factory_Method
 {
-    class ConcreteCreator2 : Creator
+    public class ConcreteCreator2 : Creator
     {
         public override IProduct FactoryMethod()
         {

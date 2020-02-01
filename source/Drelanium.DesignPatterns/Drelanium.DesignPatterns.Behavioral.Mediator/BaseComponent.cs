@@ -2,7 +2,7 @@
 {
     // The Base Component provides the basic functionality of storing a
     // mediator's instance inside component objects.
-    class BaseComponent
+    public class BaseComponent
     {
         protected IMediator _mediator;
 

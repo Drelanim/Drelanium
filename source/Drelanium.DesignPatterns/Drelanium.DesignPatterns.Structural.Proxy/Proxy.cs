@@ -3,7 +3,7 @@
 namespace Drelanium.DesignPatterns.Structural.Proxy
 {
     // The Proxy has an interface identical to the RealSubject.
-    class Proxy : ISubject
+    public class Proxy : ISubject
     {
         private RealSubject _realSubject;
 

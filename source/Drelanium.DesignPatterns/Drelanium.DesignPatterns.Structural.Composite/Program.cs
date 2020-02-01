@@ -7,7 +7,7 @@ namespace Drelanium.DesignPatterns.Structural.Composite
 
     // The base Component class declares common operations for both simple and
     // complex objects of a composition.
-    abstract class Component
+    public abstract class Component
     {
         public Component() { }
 
@@ -39,7 +39,7 @@ namespace Drelanium.DesignPatterns.Structural.Composite
         }
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

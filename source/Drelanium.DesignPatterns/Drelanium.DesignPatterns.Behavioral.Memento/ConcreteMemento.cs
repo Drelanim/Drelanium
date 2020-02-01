@@ -4,7 +4,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Memento
 {
     // The Concrete Memento contains the infrastructure for storing the
     // Originator's state.
-    class ConcreteMemento : IMemento
+    public class ConcreteMemento : IMemento
     {
         private string _state;
 

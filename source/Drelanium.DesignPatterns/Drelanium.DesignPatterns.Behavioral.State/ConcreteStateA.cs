@@ -4,7 +4,7 @@ namespace Drelanium.DesignPatterns.Behavioral.State
 {
     // Concrete States implement various behaviors, associated with a state of
     // the Context.
-    class ConcreteStateA : State
+    public class ConcreteStateA : State
     {
         public override void Handle1()
         {

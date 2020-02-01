@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Structural.Facade
 {
-    class Client
+    public class Client
     {
         // The client code works with complex subsystems through a simple
         // interface provided by the Facade. When a facade manages the lifecycle

@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Creational.Factory_Method
 {
-    class Client
+    public class Client
     {
         public void Main()
         {

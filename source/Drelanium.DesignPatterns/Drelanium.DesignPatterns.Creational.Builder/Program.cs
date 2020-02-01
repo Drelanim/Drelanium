@@ -16,7 +16,7 @@ namespace Drelanium.DesignPatterns.Creational.Builder
         void BuildPartC();
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

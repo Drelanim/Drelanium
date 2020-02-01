@@ -1,6 +1,6 @@
 ﻿namespace Drelanium.DesignPatterns.Creational.Abstract_Factory
 {
-    class ConcreteProductA2 : IAbstractProductA
+    public class ConcreteProductA2 : IAbstractProductA
     {
         public string UsefulFunctionA()
         {

@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Behavioral.Observer
 {
-    class ConcreteObserverB : IObserver
+    public class ConcreteObserverB : IObserver
     {
         public void Update(ISubject subject)
         {

@@ -4,7 +4,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Command
 {
     // However, some commands can delegate more complex operations to other
     // objects, called "receivers."
-    class ComplexCommand : ICommand
+    public class ComplexCommand : ICommand
     {
         private Receiver _receiver;
 

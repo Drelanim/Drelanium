@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Structural.Bridge
 {
-    class Client
+    public class Client
     {
         // Except for the initialization phase, where an Abstraction object gets
         // linked with a specific Implementation object, the client code should

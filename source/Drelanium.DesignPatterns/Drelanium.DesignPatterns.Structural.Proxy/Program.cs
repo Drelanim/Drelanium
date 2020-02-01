@@ -14,7 +14,7 @@ namespace Drelanium.DesignPatterns.Structural.Proxy
         void Request();
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

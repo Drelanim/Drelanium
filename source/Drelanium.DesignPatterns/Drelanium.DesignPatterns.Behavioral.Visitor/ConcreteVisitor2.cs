@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Behavioral.Visitor
 {
-    class ConcreteVisitor2 : IVisitor
+    public class ConcreteVisitor2 : IVisitor
     {
         public void VisitConcreteComponentA(ConcreteComponentA element)
         {

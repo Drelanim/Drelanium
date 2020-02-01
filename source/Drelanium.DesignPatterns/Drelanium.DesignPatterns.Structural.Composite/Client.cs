@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Structural.Composite
 {
-    class Client
+    public class Client
     {
         // The client code works with all of the components via the base
         // interface.

@@ -9,7 +9,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Mediator
     // mediator about various events. The Mediator may react to these events and
     // pass the execution to other components.
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

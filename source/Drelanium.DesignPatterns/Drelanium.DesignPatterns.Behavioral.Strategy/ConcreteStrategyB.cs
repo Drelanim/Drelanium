@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Behavioral.Strategy
 {
-    class ConcreteStrategyB : IStrategy
+    public class ConcreteStrategyB : IStrategy
     {
         public object DoAlgorithm(object data)
         {

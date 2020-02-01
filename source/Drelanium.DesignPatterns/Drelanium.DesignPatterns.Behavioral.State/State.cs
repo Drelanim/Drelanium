@@ -4,7 +4,7 @@
     // implement and also provides a backreference to the Context object,
     // associated with the State. This backreference can be used by States to
     // transition the Context to another State.
-    abstract class State
+    public abstract class State
     {
         protected Context _context;
 

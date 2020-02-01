@@ -5,7 +5,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Iterator
 {
     // Concrete Collections provide one or several methods for retrieving fresh
     // iterator instances, compatible with the collection class.
-    class WordsCollection : IteratorAggregate
+    public class WordsCollection : IteratorAggregate
     {
         List<string> _collection = new List<string>();
 

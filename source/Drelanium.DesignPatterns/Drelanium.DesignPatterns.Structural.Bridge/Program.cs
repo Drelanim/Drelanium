@@ -9,7 +9,7 @@ namespace Drelanium.DesignPatterns.Structural.Bridge
     // class hierarchies. It maintains a reference to an object of the
     // Implementation hierarchy and delegates all of the real work to this
     // object.
-    class Abstraction
+    public class Abstraction
     {
         protected IImplementation _implementation;
 
@@ -35,7 +35,7 @@ namespace Drelanium.DesignPatterns.Structural.Bridge
         string OperationImplementation();
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

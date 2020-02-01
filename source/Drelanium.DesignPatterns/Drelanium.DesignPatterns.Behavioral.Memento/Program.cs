@@ -10,7 +10,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Memento
     // The Originator holds some important state that may change over time. It
     // also defines a method for saving the state inside a memento and another
     // method for restoring the state from it.
-    class Originator
+    public class Originator
     {
         // For the sake of simplicity, the originator's state is stored inside a
         // single variable.
@@ -80,7 +80,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Memento
         DateTime GetDate();
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

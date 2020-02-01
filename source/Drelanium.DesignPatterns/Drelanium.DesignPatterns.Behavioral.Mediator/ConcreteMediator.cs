@@ -4,7 +4,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Mediator
 {
     // Concrete Mediators implement cooperative behavior by coordinating several
     // components.
-    class ConcreteMediator : IMediator
+    public class ConcreteMediator : IMediator
     {
         private Component1 _component1;
 

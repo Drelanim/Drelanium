@@ -1,7 +1,7 @@
 ﻿namespace Drelanium.DesignPatterns.Creational.Abstract_Factory
 {
     // Each Concrete Factory has a corresponding product variant.
-    class ConcreteFactory2 : IAbstractFactory
+    public class ConcreteFactory2 : IAbstractFactory
     {
         public IAbstractProductA CreateProductA()
         {

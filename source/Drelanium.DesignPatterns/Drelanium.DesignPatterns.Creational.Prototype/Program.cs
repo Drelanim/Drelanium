@@ -6,7 +6,7 @@ namespace Drelanium.DesignPatterns.Creational.Prototype
     // https://refactoring.guru/design-patterns/prototype/csharp/example
 
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

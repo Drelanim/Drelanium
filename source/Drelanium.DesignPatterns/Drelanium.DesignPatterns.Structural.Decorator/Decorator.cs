@@ -5,7 +5,7 @@
     // interface for all concrete decorators. The default implementation of the
     // wrapping code might include a field for storing a wrapped component and
     // the means to initialize it.
-    abstract class Decorator : Component
+    public abstract class Decorator : Component
     {
         protected Component _component;
 

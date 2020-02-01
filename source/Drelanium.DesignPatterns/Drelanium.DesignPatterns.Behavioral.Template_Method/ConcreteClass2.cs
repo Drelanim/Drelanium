@@ -4,7 +4,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Template_Method
 {
     // Usually, concrete classes override only a fraction of base class'
     // operations.
-    class ConcreteClass2 : AbstractClass
+    public class ConcreteClass2 : AbstractClass
     {
         protected override void RequiredOperations1()
         {

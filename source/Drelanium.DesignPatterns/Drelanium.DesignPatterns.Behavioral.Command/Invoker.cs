@@ -4,7 +4,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Command
 {
     // The Invoker is associated with one or several commands.
     // It sends a request to the command.
-    class Invoker
+    public class Invoker
     {
         private ICommand _onStart;
 

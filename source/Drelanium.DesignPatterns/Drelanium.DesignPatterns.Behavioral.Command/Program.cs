@@ -19,7 +19,7 @@
     // been encapsulated by the command implementation during its creation.
     // Command classes are usually limited to specific actions.
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

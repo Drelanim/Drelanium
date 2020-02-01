@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Behavioral.Mediator
 {
-    class Component2 : BaseComponent
+    public class Component2 : BaseComponent
     {
         public void DoC()
         {

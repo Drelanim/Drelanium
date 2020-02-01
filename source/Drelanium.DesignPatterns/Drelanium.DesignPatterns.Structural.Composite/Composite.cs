@@ -5,7 +5,7 @@ namespace Drelanium.DesignPatterns.Structural.Composite
     // The Composite class represents the complex components that may have
     // children. Usually, the Composite objects delegate the actual work to
     // their children and then "sum-up" the result.
-    class Composite : Component
+    public class Composite : Component
     {
         protected List<Component> _children = new List<Component>();
 

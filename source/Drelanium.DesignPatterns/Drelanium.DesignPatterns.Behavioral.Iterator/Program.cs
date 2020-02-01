@@ -17,7 +17,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Iterator
     // Identification: Iterator is easy to recognize by the navigation methods(such as next, previous and others).
     // Client code that uses iterators might not have direct access to the collection being traversed.
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

@@ -1,6 +1,6 @@
 ﻿namespace Drelanium.DesignPatterns.Behavioral.Template_Method
 {
-    class Client
+    public class Client
     {
         // The client code calls the template method to execute the algorithm.
         // Client code does not have to know the concrete class of an object it

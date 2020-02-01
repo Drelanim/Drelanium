@@ -2,7 +2,7 @@
 
 namespace Drelanium.DesignPatterns.Behavioral.State
 {
-    class ConcreteStateB : State
+    public class ConcreteStateB : State
     {
         public override void Handle1()
         {

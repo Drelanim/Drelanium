@@ -1,7 +1,7 @@
 ﻿namespace Drelanium.DesignPatterns.Creational.Abstract_Factory
 {
     // Concrete Products are created by corresponding Concrete Factories.
-    class ConcreteProductB1 : IAbstractProductB
+    public class ConcreteProductB1 : IAbstractProductB
     {
         public string UsefulFunctionB()
         {

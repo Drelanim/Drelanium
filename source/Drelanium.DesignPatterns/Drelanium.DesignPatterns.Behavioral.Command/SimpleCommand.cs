@@ -3,7 +3,7 @@
 namespace Drelanium.DesignPatterns.Behavioral.Command
 {
     // Some commands can implement simple operations on their own.
-    class SimpleCommand : ICommand
+    public class SimpleCommand : ICommand
     {
         private string _payload = string.Empty;
 

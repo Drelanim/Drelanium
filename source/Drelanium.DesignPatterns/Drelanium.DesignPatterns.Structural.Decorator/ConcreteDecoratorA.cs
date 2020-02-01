@@ -2,7 +2,7 @@
 {
     // Concrete Decorators call the wrapped object and alter its result in some
     // way.
-    class ConcreteDecoratorA : Decorator
+    public class ConcreteDecoratorA : Decorator
     {
         public ConcreteDecoratorA(Component comp) : base(comp)
         {

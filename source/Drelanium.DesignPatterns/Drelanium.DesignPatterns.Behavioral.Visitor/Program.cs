@@ -24,7 +24,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Visitor
         void VisitConcreteComponentB(ConcreteComponentB element);
     }
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

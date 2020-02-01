@@ -6,7 +6,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Observer
 {
     // The Subject owns some important state and notifies observers when the
     // state changes.
-    public class Subject : ISubject
+    public public class Subject : ISubject
     {
         // For the sake of simplicity, the Subject's state, essential to all
         // subscribers, is stored in this variable.
