@@ -17,9 +17,3 @@
         }
     }
 }
-
-//Output
-
-//Adaptee interface is incompatible with the client.
-//But with adapter client can call it's method.
-//This is 'Specific request.'

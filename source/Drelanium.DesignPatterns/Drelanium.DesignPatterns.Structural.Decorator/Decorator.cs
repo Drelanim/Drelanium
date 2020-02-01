@@ -33,11 +33,3 @@
         }
     }
 }
-
-//Output
-
-//Client: I get a simple component:
-//RESULT: ConcreteComponent
-
-//Client: Now I've got a decorated component:
-//RESULT: ConcreteDecoratorB(ConcreteDecoratorA(ConcreteComponent))

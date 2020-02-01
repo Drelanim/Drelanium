@@ -5,14 +5,6 @@ namespace Drelanium.DesignPatterns.Structural.Decorator
     // https://refactoring.guru/design-patterns/decorator
     // https://refactoring.guru/design-patterns/decorator/csharp/example
 
-
-    // The base Component interface defines operations that can be altered by
-    // decorators.
-    public abstract class Component
-    {
-        public abstract string Operation();
-    }
-
     public class Program
     {
         static void Main(string[] args)

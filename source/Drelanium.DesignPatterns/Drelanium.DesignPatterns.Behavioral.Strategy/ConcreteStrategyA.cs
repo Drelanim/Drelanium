@@ -16,13 +16,3 @@ namespace Drelanium.DesignPatterns.Behavioral.Strategy
         }
     }
 }
-
-//Output
-
-//Client: Strategy is set to normal sorting.
-//Context: Sorting data using the strategy(not sure how it'll do it)
-//a, b, c, d, e
-
-//Client: Strategy is set to reverse sorting.
-//Context: Sorting data using the strategy(not sure how it'll do it)
-//e, d, c, b, a

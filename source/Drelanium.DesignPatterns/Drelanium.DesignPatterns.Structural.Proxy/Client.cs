@@ -17,13 +17,3 @@
         }
     }
 }
-
-//Output
-
-//Client: Executing the client code with a real subject:
-//RealSubject: Handling Request.
-
-//Client: Executing the same client code with a proxy:
-//Proxy: Checking access prior to firing a real request.
-//RealSubject: Handling Request.
-//Proxy: Logging the time of request.

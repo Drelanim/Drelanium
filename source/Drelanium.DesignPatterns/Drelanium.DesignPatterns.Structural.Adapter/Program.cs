@@ -5,12 +5,6 @@ namespace Drelanium.DesignPatterns.Structural.Adapter
     // https://refactoring.guru/design-patterns/adapter
     // https://refactoring.guru/design-patterns/adapter/csharp/example
 
-    // The Target defines the domain-specific interface used by the client code.
-    public interface ITarget
-    {
-        string GetRequest();
-    }
-
     public class Program
     {
         static void Main(string[] args)

@@ -3,24 +3,6 @@
     // https://refactoring.guru/design-patterns/observer
     // https://refactoring.guru/design-patterns/observer/csharp/example
 
-    public interface IObserver
-    {
-        // Receive update from subject
-        void Update(ISubject subject);
-    }
-
-    public interface ISubject
-    {
-        // Attach an observer to the subject.
-        void Attach(IObserver observer);
-
-        // Detach an observer from the subject.
-        void Detach(IObserver observer);
-
-        // Notify all observers about an event.
-        void Notify();
-    }
-
     public class Program
     {
         static void Main(string[] args)
