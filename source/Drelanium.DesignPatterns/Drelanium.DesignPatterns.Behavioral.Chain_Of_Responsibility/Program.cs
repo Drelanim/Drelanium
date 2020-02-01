@@ -21,7 +21,7 @@ namespace Drelanium.DesignPatterns.Behavioral.Chain_Of_Responsibility
 
 
     // The default chaining behavior can be implemented inside a base handler class.
-    public class A_Program
+    public class Program
     {
         static void Main(string[] args)
         {
