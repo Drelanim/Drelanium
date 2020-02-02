@@ -4,7 +4,7 @@
     {
         public override object Handle(object request)
         {
-            if ((request as string) == "Banana")
+            if (request.ToString() == "Banana")
             {
                 return $"Monkey: I'll eat the {request.ToString()}.\n";
             }

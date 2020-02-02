@@ -30,7 +30,9 @@ namespace Drelanium.DesignPatterns.Behavioral.Chain_Of_Responsibility
             var squirrel = new SquirrelHandler();
             var dog = new DogHandler();
 
-            monkey.SetNext(squirrel).SetNext(dog);
+            monkey
+                .SetNext(squirrel)
+                .SetNext(dog);
 
             // The client should be able to send a request to any handler, not
             // just the first one in the chain.
@@ -40,6 +42,8 @@ namespace Drelanium.DesignPatterns.Behavioral.Chain_Of_Responsibility
 
             Console.WriteLine("Subchain: Squirrel > Dog\n");
             Client.ClientCode(squirrel);
+
+            Console.ReadKey();
         }
     }
 }

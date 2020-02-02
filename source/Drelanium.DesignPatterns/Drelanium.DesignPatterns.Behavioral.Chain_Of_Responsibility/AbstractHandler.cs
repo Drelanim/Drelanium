@@ -11,7 +11,7 @@
             // Returning a handler from here will let us link handlers in a
             // convenient way like this:
             // monkey.SetNext(squirrel).SetNext(dog);
-            return handler;
+            return _nextHandler;
         }
 
         public virtual object Handle(object request)
